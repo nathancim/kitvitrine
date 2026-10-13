@@ -122,6 +122,53 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "4a8ab3f8e9de05be3c24716ec4429cfb"
+    },
+    {
+      "slug": "faitage",
+      "title": "Faîtage",
+      "tagline": "Site vitrine pour couvreur zingueur",
+      "description": "Une page complète pour une entreprise de couverture et de zinguerie : les travaux proposés avec leurs délais, les matériaux (ardoise, tuile, zinc, bac acier) et leur durée de vie, un bandeau d'urgence pour le bâchage après tempête, le déroulé d'un chantier jour par jour, les avis, les garanties et un formulaire de devis avec envoi de photos. Typographie haute et franche, palette ardoise et jaune chantier, illustration de toits en SVG.",
+      "univers": [
+        "artisans"
+      ],
+      "style": "Audacieux",
+      "couleur": "bleu",
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-13",
+      "tags": [
+        "couvreur",
+        "zingueur",
+        "toiture",
+        "charpente",
+        "ardoise",
+        "zinguerie",
+        "gouttière",
+        "fuite de toit",
+        "rénovation",
+        "artisan"
+      ],
+      "sections": [
+        "Accueil avec illustration de toits",
+        "Travaux et délais",
+        "Matériaux et durée de vie",
+        "Urgence et bâchage",
+        "Déroulé d'un chantier",
+        "Avis clients",
+        "Engagements et zone d'intervention",
+        "Questions fréquentes",
+        "Formulaire de devis avec photos"
+      ],
+      "palette": [
+        "#1E3448",
+        "#3E6B92",
+        "#B7C1C8",
+        "#F4C430",
+        "#EEF2F4"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "d46e3b52af5ffd781223cb9c53daaf2a"
     }
   ]
 }

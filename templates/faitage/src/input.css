@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Big Shoulders Display'; src: url('fonts/big-shoulders-display-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'Big Shoulders Display'; src: url('fonts/big-shoulders-display-latin-800-normal.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+  @font-face { font-family: 'Public Sans'; src: url('fonts/public-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Public Sans'; src: url('fonts/public-sans-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Public Sans'; src: url('fonts/public-sans-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  :focus-visible { outline: 3px solid #F4C430; outline-offset: 3px; }
+  .on-light :focus-visible, .on-light:focus-visible { outline-color: #1E3448; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+}
+
+@layer components {
+  .field { @apply w-full rounded-md bg-white border-2 border-ardoise/15 px-4 py-3 text-ardoise placeholder-ardoise/40 focus:outline-none focus:border-ardoise; }
+  /* Pignon : bord supérieur en pente de toit */
+  .pignon { clip-path: polygon(0 3.5rem, 50% 0, 100% 3.5rem, 100% 100%, 0 100%); }
+  @media (min-width: 768px) { .pignon { clip-path: polygon(0 6rem, 50% 0, 100% 6rem, 100% 100%, 0 100%); } }
+}
+
+@layer utilities {
+  /* Le toit du héros se pose au chargement, une seule fois */
+  .pose { animation: pose 900ms cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes pose { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+}
