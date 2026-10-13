@@ -5,7 +5,14 @@
     "shop": "https://qg0s3t-sj.myshopify.com",
     "tagline": "Des sites vitrines prêts à l'emploi, pensés pour votre métier"
   },
-  "styles": ["Minimal", "Chaleureux", "Élégant", "Audacieux", "Nature", "Moderne"],
+  "styles": [
+    "Minimal",
+    "Chaleureux",
+    "Élégant",
+    "Audacieux",
+    "Nature",
+    "Moderne"
+  ],
   "couleurs": {
     "vert": "#3F7A5A",
     "bleu": "#2F5D8C",
@@ -17,16 +24,56 @@
     "violet": "#6B5BA8"
   },
   "univers": [
-    { "slug": "sante-bien-etre", "label": "Santé & bien-être", "description": "Ostéopathes, kinés, naturopathes, sophrologues, praticiens bien-être." },
-    { "slug": "animaux", "label": "Animaux & équitation", "description": "Vétérinaires, ostéopathes animaliers, toiletteurs, pensions, centres équestres." },
-    { "slug": "artisans", "label": "Artisans & bâtiment", "description": "Menuisiers, plombiers, électriciens, paysagistes, couvreurs." },
-    { "slug": "restauration", "label": "Restaurants & cafés", "description": "Restaurants, bistrots, food trucks, boulangeries, traiteurs." },
-    { "slug": "commerces", "label": "Commerces de proximité", "description": "Boutiques, fleuristes, épiceries fines, caves, librairies." },
-    { "slug": "independants", "label": "Consultants & indépendants", "description": "Consultants, coachs, formateurs, freelances, professions libérales." },
-    { "slug": "tourisme", "label": "Gîtes & tourisme", "description": "Gîtes, chambres d'hôtes, campings, activités de plein air." },
-    { "slug": "associations", "label": "Associations & sport", "description": "Clubs sportifs, associations, salles de sport, événements." },
-    { "slug": "creatifs", "label": "Photographes & créatifs", "description": "Photographes, illustrateurs, musiciens, artistes, studios." },
-    { "slug": "terroir", "label": "Agriculture & terroir", "description": "Fermes, producteurs locaux, vignerons, vente directe." }
+    {
+      "slug": "sante-bien-etre",
+      "label": "Santé & bien-être",
+      "description": "Ostéopathes, kinés, naturopathes, sophrologues, praticiens bien-être."
+    },
+    {
+      "slug": "animaux",
+      "label": "Animaux & équitation",
+      "description": "Vétérinaires, ostéopathes animaliers, toiletteurs, pensions, centres équestres."
+    },
+    {
+      "slug": "artisans",
+      "label": "Artisans & bâtiment",
+      "description": "Menuisiers, plombiers, électriciens, paysagistes, couvreurs."
+    },
+    {
+      "slug": "restauration",
+      "label": "Restaurants & cafés",
+      "description": "Restaurants, bistrots, food trucks, boulangeries, traiteurs."
+    },
+    {
+      "slug": "commerces",
+      "label": "Commerces de proximité",
+      "description": "Boutiques, fleuristes, épiceries fines, caves, librairies."
+    },
+    {
+      "slug": "independants",
+      "label": "Consultants & indépendants",
+      "description": "Consultants, coachs, formateurs, freelances, professions libérales."
+    },
+    {
+      "slug": "tourisme",
+      "label": "Gîtes & tourisme",
+      "description": "Gîtes, chambres d'hôtes, campings, activités de plein air."
+    },
+    {
+      "slug": "associations",
+      "label": "Associations & sport",
+      "description": "Clubs sportifs, associations, salles de sport, événements."
+    },
+    {
+      "slug": "creatifs",
+      "label": "Photographes & créatifs",
+      "description": "Photographes, illustrateurs, musiciens, artistes, studios."
+    },
+    {
+      "slug": "terroir",
+      "label": "Agriculture & terroir",
+      "description": "Fermes, producteurs locaux, vignerons, vente directe."
+    }
   ],
   "templates": [
     {
@@ -34,16 +81,45 @@
       "title": "Équilibre",
       "tagline": "Site vitrine pour ostéopathe animalier",
       "description": "Une page complète pour présenter une activité d'ostéopathie animale : les animaux pris en charge, le déroulé d'une séance, les tarifs, la zone de déplacement et un formulaire de prise de rendez-vous. Ton rassurant, palette végétale, lecture facile sur mobile pour les propriétaires qui cherchent depuis l'écurie.",
-      "univers": ["animaux", "sante-bien-etre"],
+      "univers": [
+        "animaux",
+        "sante-bien-etre"
+      ],
       "style": "Nature",
       "couleur": "vert",
       "pages": 1,
       "prix": 29,
       "date": "2026-10-13",
-      "tags": ["ostéopathe", "ostéopathie animale", "cheval", "chien", "chat", "équin", "vétérinaire", "rendez-vous", "one page"],
-      "sections": ["Accueil avec appel à l'action", "Animaux pris en charge", "Quand consulter", "Déroulé d'une séance", "Tarifs", "Zone d'intervention", "Avis clients", "Questions fréquentes", "Formulaire de contact"],
-      "palette": ["#1F3A2E", "#9BB09A", "#C08A3E", "#FBFAF7"],
-      "shopify_url": ""
+      "tags": [
+        "ostéopathe",
+        "ostéopathie animale",
+        "cheval",
+        "chien",
+        "chat",
+        "équin",
+        "vétérinaire",
+        "rendez-vous",
+        "one page"
+      ],
+      "sections": [
+        "Accueil avec appel à l'action",
+        "Animaux pris en charge",
+        "Quand consulter",
+        "Déroulé d'une séance",
+        "Tarifs",
+        "Zone d'intervention",
+        "Avis clients",
+        "Questions fréquentes",
+        "Formulaire de contact"
+      ],
+      "palette": [
+        "#1F3A2E",
+        "#9BB09A",
+        "#C08A3E",
+        "#FBFAF7"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "gid://shopify/Product/16103544127818"
     }
   ]
 }

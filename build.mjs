@@ -11,6 +11,8 @@ const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const r = (...p) => path.join(ROOT, ...p);
 const sh = cmd => execSync(cmd, { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'] }).toString();
 const write = (p, s) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, s); };
+const FORCE = process.argv.includes('--force');
+const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? (e.name === 'node_modules' ? [] : walk(path.join(d, e.name))) : [path.join(d, e.name)]);
 const mtime = p => fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0;
 
 const cat = JSON.parse(fs.readFileSync(r('catalog.json'), 'utf8'));
@@ -54,7 +56,10 @@ const demoBar = t => `
 fs.mkdirSync(r('packages'), { recursive: true });
 for (const t of cat.templates) {
   const tdir = r('templates', t.slug);
-  sh(`npx tailwindcss -c templates/${t.slug}/tailwind.config.js -i templates/${t.slug}/src/input.css -o templates/${t.slug}/assets/styles.css --minify`);
+  // Incremental: only recompile / re-shoot / re-zip a template whose sources changed
+  const newest = Math.max(...walk(tdir).filter(f => !f.endsWith('styles.css')).map(mtime));
+  if (FORCE || mtime(path.join(tdir, 'assets/styles.css')) < newest)
+    sh(`npx tailwindcss -c templates/${t.slug}/tailwind.config.js -i templates/${t.slug}/src/input.css -o templates/${t.slug}/assets/styles.css --minify`);
 
   // Demo (public): site + bandeau
   const demo = r('dist/demo', t.slug);
@@ -71,6 +76,8 @@ for (const t of cat.templates) {
   for (const f of ['thumb.jpg', 'full.jpg']) { fs.mkdirSync(r('dist/templates', t.slug), { recursive: true }); fs.copyFileSync(path.join(shots, f), r('dist/templates', t.slug, f)); }
 
   // Package for buyers (never deployed)
+  const zip = r('packages', `kitvitrine-${t.slug}.zip`);
+  if (!FORCE && mtime(zip) >= Math.max(...walk(tdir).map(mtime))) continue;
   const stage = r('.stage', t.slug);
   fs.rmSync(stage, { recursive: true, force: true });
   fs.mkdirSync(stage, { recursive: true });
@@ -84,7 +91,6 @@ for (const t of cat.templates) {
   }
   write(path.join(stage, 'LISEZMOI.md'), readme(t));
   write(path.join(stage, 'LICENCE.txt'), licenceTxt(t));
-  const zip = r('packages', `kitvitrine-${t.slug}.zip`);
   fs.rmSync(zip, { force: true });
   execSync(`zip -qr "${zip}" .`, { cwd: stage });
 }
