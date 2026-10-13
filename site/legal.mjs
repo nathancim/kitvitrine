@@ -23,7 +23,7 @@ export const legalPages = [
   ['mentions-legales', 'Mentions légales', `
 <p><strong>Éditeur du site</strong> : [Nom et prénom ou raison sociale], [statut, ex. entrepreneur individuel], [adresse], SIRET [numéro], e-mail : [adresse de contact].</p>
 <p><strong>Directeur de la publication</strong> : [Nom et prénom].</p>
-<p><strong>Hébergeur</strong> : Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis.</p>
+<p><strong>Hébergeur</strong> : Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis.</p>
 <p><strong>Boutique et paiement</strong> : Shopify International Limited, Dublin, Irlande.</p>
 <p>Les textes, images et codes des templates sont la propriété de l'éditeur. Les contenus des démos (noms, coordonnées, avis) sont fictifs.</p>`],
   ['cgv', 'Conditions générales de vente', `

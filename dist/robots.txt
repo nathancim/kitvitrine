@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /demo/
 Disallow: /dl/
-Sitemap: https://kitvitrine.netlify.app/sitemap.xml
+Sitemap: https://kitvitrine.pages.dev/sitemap.xml

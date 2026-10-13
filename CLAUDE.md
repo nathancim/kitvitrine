@@ -1,7 +1,7 @@
 # Kit Vitrine — procédure de la tâche planifiée
 
 Boutique de templates de sites vitrines (HTML + Tailwind CSS) classés par métier.
-Site : https://kitvitrine.netlify.app (Netlify publie `dist/` à chaque push sur `main`).
+Site : https://kitvitrine.pages.dev (Cloudflare Pages publie `dist/` à chaque push sur `main` (projet « kitvitrine »)).
 Paiement : boutique Shopify connectée, app « Digital Products ». Livraison : produit « lien » vers un Google Doc qui contient le lien de téléchargement du zip.
 Langue : tout est en français (textes, fiches, commits).
 
@@ -44,9 +44,9 @@ Ajouter l'entrée **à la fin** de `catalog.json > templates` avec tous les cham
 
 ### 5. Publier (directement, sans validation : le propriétaire vérifie sur la boutique)
 1. `git add -A && git commit -m "Nouveau template : <title> (<métier>)"` puis `git push`. `node build.mjs` a créé `dl_token` dans la fiche et copié le zip dans `dist/dl/<dl_token>/` (lien de téléchargement secret, non indexé).
-2. Attendre que Netlify ait publié : vérifier (WebFetch, plusieurs essais espacés, 5 min max) que `https://kitvitrine.netlify.app/templates/<slug>/` répond.
-3. Créer la fiche de téléchargement dans Google Drive, dossier « Kit Vitrine — téléchargements clients » (id `13zRGx6roucARUSY8XWG-PiybC9rH58-q`, partagé « tous les utilisateurs disposant du lien ») : `create_file` avec `parentId` = ce dossier, titre « Kit Vitrine — <title> — Téléchargement », `contentMimeType` `text/plain` (converti en Google Doc). Contenu : remerciement, lien `https://kitvitrine.netlify.app/dl/<dl_token>/kitvitrine-<slug>.zip`, 3 étapes de démarrage (dézipper, ouvrir LISEZMOI.md, publier), rappel de licence (un site).
-4. Shopify : `create-digital-product-from-link` (titre « Template <title> — <tagline> », url = viewUrl du Google Doc, name « Télécharger votre template »), puis `update-product` (prix, description HTML avec lien de la démo `https://kitvitrine.netlify.app/demo/<slug>/`, SKU `KV-<SLUG>`, image `https://kitvitrine.netlify.app/templates/<slug>/thumb.jpg`), puis `publish-digital-product` avec le titre actuel.
+2. Attendre que Cloudflare Pages ait publié : vérifier (WebFetch, plusieurs essais espacés, 5 min max) que `https://kitvitrine.pages.dev/templates/<slug>/` répond.
+3. Créer la fiche de téléchargement dans Google Drive, dossier « Kit Vitrine — téléchargements clients » (id `13zRGx6roucARUSY8XWG-PiybC9rH58-q`, partagé « tous les utilisateurs disposant du lien ») : `create_file` avec `parentId` = ce dossier, titre « Kit Vitrine — <title> — Téléchargement », `contentMimeType` `text/plain` (converti en Google Doc). Contenu : remerciement, lien `https://kitvitrine.pages.dev/dl/<dl_token>/kitvitrine-<slug>.zip`, 3 étapes de démarrage (dézipper, ouvrir LISEZMOI.md, publier), rappel de licence (un site).
+4. Shopify : `create-digital-product-from-link` (titre « Template <title> — <tagline> », url = viewUrl du Google Doc, name « Télécharger votre template »), puis `update-product` (prix, description HTML avec lien de la démo `https://kitvitrine.pages.dev/demo/<slug>/`, SKU `KV-<SLUG>`, image `https://kitvitrine.pages.dev/templates/<slug>/thumb.jpg`), puis `publish-digital-product` avec le titre actuel.
 5. Lire `onlineStoreUrl` du produit (graphql_query sur `product(id)`) et l'enregistrer dans `shopify_url`, ainsi que `shopify_product_id`. `node build.mjs`, commit, push.
 6. Si une étape Shopify ou Drive échoue : laisser le template en ligne sur le site (bouton « Bientôt en vente »), ne rien publier de bancal, signaler l'incident.
 
