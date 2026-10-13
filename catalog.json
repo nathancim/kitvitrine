@@ -169,6 +169,51 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "d46e3b52af5ffd781223cb9c53daaf2a"
+    },
+    {
+      "slug": "billig",
+      "title": "Billig",
+      "tagline": "Site vitrine pour crêperie",
+      "description": "Une page chaleureuse pour une crêperie : la carte en onglets (galettes de blé noir, crêpes de froment, boissons) avec les prix, les formules du midi, enfant et goûter, les quatre gestes de la galette, les producteurs locaux et leur distance, les avis, les horaires avec l'indication « ouvert en ce moment » et un formulaire de réservation. Nappe vichy rouge, palette sarrasin et beurre, galette complète illustrée en SVG.",
+      "univers": [
+        "restauration"
+      ],
+      "style": "Chaleureux",
+      "couleur": "rouge",
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-13",
+      "tags": [
+        "crêperie",
+        "galette",
+        "crêpe",
+        "blé noir",
+        "sarrasin",
+        "restaurant breton",
+        "cidre",
+        "sans gluten",
+        "restaurant"
+      ],
+      "sections": [
+        "Accueil avec galette illustrée et statut d'ouverture",
+        "La carte en onglets",
+        "Formules",
+        "Le geste de la galette",
+        "Producteurs locaux",
+        "Avis clients",
+        "Horaires et accès",
+        "Formulaire de réservation"
+      ],
+      "palette": [
+        "#3A2418",
+        "#B5302A",
+        "#C98A4B",
+        "#E9B949",
+        "#FDFAF4"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "9179adff9d6bc70237967d605116a938"
     }
   ]
 }
