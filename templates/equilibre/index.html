@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Équilibre — Ostéopathie animale à domicile</title>
+  <meta name="description" content="Ostéopathe animalier pour chevaux, chiens et chats. Séances à domicile ou à l'écurie dans un rayon de 60 km autour de Tours.">
+  <meta name="theme-color" content="#1F3A2E">
+  <link rel="preload" href="assets/fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-bone text-forest font-sans antialiased">
+
+  <!-- ===== En-tête ===== -->
+  <header class="sticky top-0 z-30 bg-bone/90 backdrop-blur border-b border-forest/10">
+    <div class="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 font-serif text-xl">
+        <svg class="w-7 h-7 text-ochre" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M8 26V14a8 8 0 0 1 16 0v12"/><path d="M8 20h2M22 20h2M8 15h2M22 15h2"/></svg>
+        Équilibre
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-[15px]">
+        <a href="#animaux" class="hover:text-ochre">Animaux</a>
+        <a href="#seance" class="hover:text-ochre">La séance</a>
+        <a href="#tarifs" class="hover:text-ochre">Tarifs</a>
+        <a href="#faq" class="hover:text-ochre">Questions</a>
+      </nav>
+      <a href="#contact" class="hidden sm:inline-flex rounded-full bg-forest text-bone px-5 py-2.5 text-sm font-medium hover:bg-forest-deep">Prendre rendez-vous</a>
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <nav id="menu" class="md:hidden hidden border-t border-forest/10 px-5 py-4 flex-col gap-3 text-lg">
+      <a href="#animaux">Animaux</a><a href="#seance">La séance</a><a href="#tarifs">Tarifs</a><a href="#faq">Questions</a>
+      <a href="#contact" class="mt-2 rounded-full bg-forest text-bone px-5 py-3 text-center text-base">Prendre rendez-vous</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Accueil ===== -->
+    <section class="relative overflow-hidden">
+      <div class="mx-auto max-w-6xl px-5 pt-14 pb-20 md:pt-24 md:pb-28 grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-7">
+          <p class="text-ochre font-medium mb-5">Ostéopathe animalier · Tours et 60 km alentour</p>
+          <h1 class="font-serif text-[2.6rem] leading-[1.05] sm:text-6xl md:text-[4.25rem] tracking-tight">Retrouver la mobilité, le confort et l'envie de bouger.</h1>
+          <p class="mt-6 text-lg leading-relaxed text-forest/75 max-w-xl">Je me déplace à l'écurie ou à domicile pour soigner chevaux, chiens et chats : boiterie légère, raideur, baisse de performance, suites de chute ou simple suivi annuel.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#contact" class="rounded-full bg-forest text-bone px-7 py-3.5 font-medium hover:bg-forest-deep">Prendre rendez-vous</a>
+            <a href="tel:+33600000000" class="rounded-full border border-forest/25 px-7 py-3.5 font-medium hover:border-forest">06 00 00 00 00</a>
+          </div>
+        </div>
+        <div class="md:col-span-5">
+          <div class="relative aspect-[4/5] rounded-[2.5rem] bg-sage/40 overflow-hidden">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <circle cx="320" cy="90" r="150" fill="#9BB09A" opacity=".55"/>
+              <circle cx="60" cy="420" r="190" fill="#1F3A2E" opacity=".9"/>
+              <path d="M200 120 C 260 160, 280 260, 230 330 S 120 420, 150 480" stroke="#C08A3E" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <g fill="#FBFAF7" opacity=".95" transform="translate(62 232)">
+                <ellipse cx="40" cy="58" rx="26" ry="22"/><ellipse cx="10" cy="22" rx="10" ry="13"/><ellipse cx="32" cy="6" rx="10" ry="13"/><ellipse cx="56" cy="8" rx="10" ry="13"/><ellipse cx="74" cy="28" rx="10" ry="13"/>
+              </g>
+            </svg>
+            <div class="absolute left-5 right-5 bottom-5 rounded-2xl bg-bone/95 p-5">
+              <p class="font-serif text-lg">« Notre jument a retrouvé une belle foulée en deux séances. »</p>
+              <p class="mt-2 text-sm text-forest/65">Claire, cavalière de CSO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Animaux ===== -->
+    <section id="animaux" class="bg-forest text-bone">
+      <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
+        <h2 class="font-serif text-4xl md:text-5xl max-w-2xl">Chaque animal a sa morphologie et son métier.</h2>
+        <div class="mt-14 grid md:grid-cols-3 gap-px bg-bone/15 rounded-3xl overflow-hidden">
+          <article class="bg-forest p-8">
+            <svg class="w-10 h-10 text-ochre" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8 27V14a8 8 0 0 1 16 0v13"/><path d="M8 21h2M22 21h2M8 15h2M22 15h2"/></svg>
+            <h3 class="mt-6 font-serif text-2xl">Chevaux</h3>
+            <p class="mt-3 text-bone/75 leading-relaxed">Chevaux de sport, de loisir, poneys et retraités. Travail sur le dos, la nuque, le bassin et les membres, en lien avec votre maréchal et votre vétérinaire.</p>
+          </article>
+          <article class="bg-forest p-8">
+            <svg class="w-10 h-10 text-ochre" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><ellipse cx="16" cy="21" rx="7" ry="6"/><ellipse cx="7" cy="13" rx="3" ry="4"/><ellipse cx="13" cy="8" rx="3" ry="4"/><ellipse cx="19" cy="8" rx="3" ry="4"/><ellipse cx="25" cy="13" rx="3" ry="4"/></svg>
+            <h3 class="mt-6 font-serif text-2xl">Chiens</h3>
+            <p class="mt-3 text-bone/75 leading-relaxed">Chiens de compagnie, de sport (agility, canicross) ou de travail. Suivi du chiot en croissance comme du chien âgé qui se raidit.</p>
+          </article>
+          <article class="bg-forest p-8">
+            <svg class="w-10 h-10 text-ochre" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M7 26V9l5 5h8l5-5v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3z"/><path d="M12 20h.01M20 20h.01" stroke-linecap="round" stroke-width="3"/></svg>
+            <h3 class="mt-6 font-serif text-2xl">Chats</h3>
+            <p class="mt-3 text-bone/75 leading-relaxed">Séances courtes et au calme, chez vous, pour limiter le stress. Après une chute, une opération ou quand le chat ne saute plus comme avant.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Quand consulter ===== -->
+    <section class="mx-auto max-w-6xl px-5 py-20 md:py-28 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <h2 class="font-serif text-4xl md:text-5xl">Quand faire appel à moi ?</h2>
+        <p class="mt-5 text-forest/75 leading-relaxed">L'ostéopathie ne remplace pas le vétérinaire : en cas de douleur aiguë, de fièvre ou de boiterie franche, consultez-le d'abord. Je travaille en complément, souvent sur ses conseils.</p>
+      </div>
+      <ul class="md:col-span-7 grid sm:grid-cols-2 gap-x-8 gap-y-5 text-[17px]">
+        <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Raideur au réveil ou difficulté à se relever</li>
+        <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Refus d'obstacle, défense au montoir</li>
+        <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Changement d'allure ou de comportement</li>
+        <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Après une chute, un transport long ou une mise bas</li>
+        <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Reprise du travail après une période de repos</li>
+        <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Suivi préventif une à deux fois par an</li>
+      </ul>
+    </section>
+
+    <!-- ===== La séance ===== -->
+    <section id="seance" class="bg-sand">
+      <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+        <h2 class="font-serif text-4xl md:text-5xl max-w-2xl">Comment se passe une séance</h2>
+        <ol class="mt-14 grid md:grid-cols-4 gap-10">
+          <li>
+            <span class="font-serif text-5xl text-ochre">1</span>
+            <h3 class="mt-4 font-semibold text-lg">L'échange</h3>
+            <p class="mt-2 text-forest/75 leading-relaxed">Historique, activité, alimentation, ce que vous avez remarqué. Environ 10 minutes.</p>
+          </li>
+          <li>
+            <span class="font-serif text-5xl text-ochre">2</span>
+            <h3 class="mt-4 font-semibold text-lg">L'observation</h3>
+            <p class="mt-2 text-forest/75 leading-relaxed">Posture à l'arrêt, puis au pas et au trot pour repérer les compensations.</p>
+          </li>
+          <li>
+            <span class="font-serif text-5xl text-ochre">3</span>
+            <h3 class="mt-4 font-semibold text-lg">Le traitement</h3>
+            <p class="mt-2 text-forest/75 leading-relaxed">Techniques douces et adaptées à l'animal, sans contrainte. 45 minutes à 1 heure.</p>
+          </li>
+          <li>
+            <span class="font-serif text-5xl text-ochre">4</span>
+            <h3 class="mt-4 font-semibold text-lg">Les conseils</h3>
+            <p class="mt-2 text-forest/75 leading-relaxed">Repos, reprise progressive, exercices : vous repartez avec un compte rendu écrit.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Tarifs ===== -->
+    <section id="tarifs" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <h2 class="font-serif text-4xl md:text-5xl">Tarifs</h2>
+        <p class="text-forest/70">Frais de déplacement inclus jusqu'à 30 km.</p>
+      </div>
+      <div class="mt-12 divide-y divide-forest/15 border-y border-forest/15">
+        <div class="py-6 grid grid-cols-[1fr_auto] gap-4 items-baseline">
+          <div><h3 class="font-serif text-2xl">Cheval, poney</h3><p class="mt-1 text-forest/70">Séance complète, compte rendu inclus</p></div>
+          <p class="font-serif text-3xl">70 €</p>
+        </div>
+        <div class="py-6 grid grid-cols-[1fr_auto] gap-4 items-baseline">
+          <div><h3 class="font-serif text-2xl">Chien</h3><p class="mt-1 text-forest/70">À domicile ou au cabinet partenaire</p></div>
+          <p class="font-serif text-3xl">55 €</p>
+        </div>
+        <div class="py-6 grid grid-cols-[1fr_auto] gap-4 items-baseline">
+          <div><h3 class="font-serif text-2xl">Chat, NAC</h3><p class="mt-1 text-forest/70">Séance courte, au calme</p></div>
+          <p class="font-serif text-3xl">45 €</p>
+        </div>
+        <div class="py-6 grid grid-cols-[1fr_auto] gap-4 items-baseline">
+          <div><h3 class="font-serif text-2xl">Tournée d'écurie</h3><p class="mt-1 text-forest/70">À partir de 4 chevaux sur le même site</p></div>
+          <p class="font-serif text-3xl">60 € <span class="text-base font-sans text-forest/60">/ cheval</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Zone ===== -->
+    <section class="mx-auto max-w-6xl px-5 pb-20 md:pb-28">
+      <div class="rounded-[2rem] bg-forest text-bone p-8 md:p-14 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="font-serif text-4xl">Je viens jusqu'à vous</h2>
+          <p class="mt-4 text-bone/75 leading-relaxed">Tours, Amboise, Chinon, Loches, Blois et tout le secteur dans un rayon de 60 km. Au-delà, une tournée est organisée dès trois animaux sur le même lieu.</p>
+        </div>
+        <svg class="w-full max-w-sm mx-auto" viewBox="0 0 300 300" aria-label="Carte de la zone d'intervention">
+          <circle cx="150" cy="150" r="140" fill="none" stroke="#9BB09A" stroke-dasharray="4 8" stroke-width="2"/>
+          <circle cx="150" cy="150" r="80" fill="#9BB09A" opacity=".18"/>
+          <circle cx="150" cy="150" r="9" fill="#C08A3E"/>
+          <g fill="#FBFAF7" font-family="Figtree, sans-serif" font-size="13">
+            <circle cx="210" cy="118" r="4"/><text x="219" y="122">Amboise</text>
+            <circle cx="70" cy="190" r="4"/><text x="28" y="212">Chinon</text>
+            <circle cx="205" cy="230" r="4"/><text x="214" y="234">Loches</text>
+            <circle cx="245" cy="60" r="4"/><text x="208" y="48">Blois</text>
+            <text x="163" y="155" font-weight="600">Tours</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== Avis ===== -->
+    <section class="bg-sand">
+      <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+        <h2 class="font-serif text-4xl md:text-5xl">Ils m'ont fait confiance</h2>
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <figure class="bg-bone rounded-3xl p-8">
+            <blockquote class="font-serif text-xl leading-snug">« Très à l'écoute, explications claires. Mon chien de 12 ans remonte enfin les escaliers. »</blockquote>
+            <figcaption class="mt-6 text-sm text-forest/65">Martine, propriétaire d'un labrador</figcaption>
+          </figure>
+          <figure class="bg-bone rounded-3xl p-8">
+            <blockquote class="font-serif text-xl leading-snug">« Intervient sur toute l'écurie deux fois par an. Les chevaux sont détendus et le suivi écrit est précieux. »</blockquote>
+            <figcaption class="mt-6 text-sm text-forest/65">Julien, gérant d'écurie de propriétaires</figcaption>
+          </figure>
+          <figure class="bg-bone rounded-3xl p-8">
+            <blockquote class="font-serif text-xl leading-snug">« Notre chatte, très craintive, s'est laissée faire sans stress. Séance à la maison, vraiment appréciable. »</blockquote>
+            <figcaption class="mt-6 text-sm text-forest/65">Sophie et Marc</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="mx-auto max-w-3xl px-5 py-20 md:py-28">
+      <h2 class="font-serif text-4xl md:text-5xl">Questions fréquentes</h2>
+      <div class="mt-10 divide-y divide-forest/15 border-y border-forest/15">
+        <details class="group py-5">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-lg">Combien de séances faut-il prévoir ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
+          <p class="mt-3 text-forest/75 leading-relaxed">Une séance suffit souvent. Un contrôle est parfois proposé trois à quatre semaines plus tard, surtout après un traumatisme.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-lg">Mon animal doit-il être au repos après ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
+          <p class="mt-3 text-forest/75 leading-relaxed">Oui, 24 à 48 heures de repos ou de travail léger sont conseillées. Les consignes précises figurent dans le compte rendu.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-lg">Les séances sont-elles remboursées ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
+          <p class="mt-3 text-forest/75 leading-relaxed">Certaines assurances santé animale prennent en charge l'ostéopathie. Une facture détaillée vous est remise pour vos démarches.</p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-lg">Faut-il un avis du vétérinaire ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
+          <p class="mt-3 text-forest/75 leading-relaxed">Ce n'est pas obligatoire, mais c'est recommandé en cas de douleur récente. Je travaille volontiers en lien avec votre vétérinaire.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="bg-forest text-bone">
+      <div class="mx-auto max-w-6xl px-5 py-20 md:py-28 grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-5">
+          <h2 class="font-serif text-4xl md:text-5xl">Prendre rendez-vous</h2>
+          <p class="mt-5 text-bone/75 leading-relaxed">Décrivez votre animal et ce que vous avez observé. Je vous rappelle sous 24 heures pour fixer un créneau.</p>
+          <dl class="mt-10 space-y-5">
+            <div><dt class="text-bone/60 text-sm">Téléphone</dt><dd class="text-xl"><a href="tel:+33600000000" class="hover:text-ochre">06 00 00 00 00</a></dd></div>
+            <div><dt class="text-bone/60 text-sm">E-mail</dt><dd class="text-xl"><a href="mailto:contact@exemple.fr" class="hover:text-ochre">contact@exemple.fr</a></dd></div>
+            <div><dt class="text-bone/60 text-sm">Horaires</dt><dd class="text-xl">Lundi au samedi, 8 h – 19 h</dd></div>
+          </dl>
+        </div>
+        <!-- Remplacez l'attribut action par votre service de formulaire (Formspree, Netlify Forms, etc.) -->
+        <form class="md:col-span-7 grid sm:grid-cols-2 gap-5" action="#" method="post">
+          <label class="flex flex-col gap-2"><span class="text-sm text-bone/70">Votre nom</span><input required name="nom" autocomplete="name" class="field"></label>
+          <label class="flex flex-col gap-2"><span class="text-sm text-bone/70">Téléphone</span><input required name="telephone" type="tel" autocomplete="tel" class="field"></label>
+          <label class="flex flex-col gap-2"><span class="text-sm text-bone/70">Animal</span>
+            <select name="animal" class="field"><option>Cheval / poney</option><option>Chien</option><option>Chat</option><option>Autre</option></select>
+          </label>
+          <label class="flex flex-col gap-2"><span class="text-sm text-bone/70">Commune</span><input name="commune" autocomplete="address-level2" class="field"></label>
+          <label class="sm:col-span-2 flex flex-col gap-2"><span class="text-sm text-bone/70">Ce que vous avez observé</span><textarea name="message" rows="5" class="field"></textarea></label>
+          <button type="submit" class="sm:col-span-2 justify-self-start rounded-full bg-ochre text-forest-deep px-8 py-3.5 font-semibold hover:bg-bone">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-forest-deep text-bone/60 text-sm">
+    <div class="mx-auto max-w-6xl px-5 py-8 flex flex-wrap justify-between gap-4">
+      <p>© 2026 Équilibre — Ostéopathie animale</p>
+      <p><a href="#" class="hover:text-bone">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    b.addEventListener('click', () => {
+      const open = m.classList.toggle('hidden') === false;
+      m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open);
+    });
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { m.classList.add('hidden'); m.classList.remove('flex'); b.setAttribute('aria-expanded', false); }));
+  </script>
+</body>
+</html>
