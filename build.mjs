@@ -16,6 +16,10 @@ const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDi
 const mtime = p => fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0;
 
 const cat = JSON.parse(fs.readFileSync(r('catalog.json'), 'utf8'));
+// Each template gets a secret download folder token (zip served at /dl/<token>/).
+let tokensAdded = false;
+for (const t of cat.templates) if (!t.dl_token) { t.dl_token = (await import('node:crypto')).randomBytes(16).toString('hex'); tokensAdded = true; }
+if (tokensAdded) fs.writeFileSync(r('catalog.json'), JSON.stringify(cat, null, 2) + '\n');
 const { site } = cat;
 // Newest first; for the same date, the template added last comes first.
 cat.templates = cat.templates.map((t, i) => ({ ...t, _i: i }))
@@ -95,6 +99,8 @@ for (const t of cat.templates) {
   execSync(`zip -qr "${zip}" .`, { cwd: stage });
 }
 fs.rmSync(r('.stage'), { recursive: true, force: true });
+// Buyer downloads (secret, unlisted URLs)
+for (const t of cat.templates) { const d = r('dist/dl', t.dl_token); fs.mkdirSync(d, { recursive: true }); fs.copyFileSync(r('packages', `kitvitrine-${t.slug}.zip`), path.join(d, `kitvitrine-${t.slug}.zip`)); }
 
 // ---- Site pages ----
 const univMap = Object.fromEntries(cat.univers.map(u => [u.slug, u]));
@@ -132,14 +138,14 @@ for (const [slug, title, html] of legalPages) page(slug, { title: `${title} — 
 write(r('dist/404.html'), P.layout({ site, path: '/404', title: 'Page introuvable — Kit Vitrine', description: 'Page introuvable', body: `<section class="mx-auto max-w-3xl px-4 sm:px-6 pt-16"><h1 class="font-display font-extrabold text-4xl">Cette page n'existe pas ou plus.</h1><p class="mt-4 text-ink/70">Le template a peut-être changé de nom. Cherchez-le dans le catalogue.</p><p class="mt-8 flex gap-3"><a href="/catalogue/" class="btn-sign">Ouvrir le catalogue</a><a href="/" class="btn-line">Accueil</a></p></section>` }));
 
 // ---- Data, assets, SEO files ----
-const pub = { univers: cat.univers.map(({ slug, label, description }) => ({ slug, label, description })), templates: cat.templates.map(({ _i, sections, palette, description, ...t }) => ({ ...t, description })) };
+const pub = { univers: cat.univers.map(({ slug, label, description }) => ({ slug, label, description })), templates: cat.templates.map(({ _i, sections, palette, dl_token, shopify_product_id, ...t }) => t) };
 write(r('dist/data/catalog.json'), JSON.stringify(pub));
 fs.copyFileSync(r('site/catalogue.js'), r('dist/assets/catalogue.js'));
 write(r('dist/favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#fff"/><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg>`);
 const urls = ['', 'catalogue/', 'univers/', ...cat.univers.map(u => `univers/${u.slug}/`), ...cat.templates.map(t => `templates/${t.slug}/`), ...legalPages.map(([s]) => s + '/')];
 write(r('dist/sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `<url><loc>${site.url}/${u}</loc></url>`).join('\n')}\n</urlset>\n`);
-write(r('dist/robots.txt'), `User-agent: *\nDisallow: /demo/\nSitemap: ${site.url}/sitemap.xml\n`);
-write(r('dist/_headers'), `/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n/demo/*\n  X-Robots-Tag: noindex\n`);
+write(r('dist/robots.txt'), `User-agent: *\nDisallow: /demo/\nDisallow: /dl/\nSitemap: ${site.url}/sitemap.xml\n`);
+write(r('dist/_headers'), `/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n/demo/*\n  X-Robots-Tag: noindex\n/dl/*\n  X-Robots-Tag: noindex\n  Content-Disposition: attachment\n`);
 
 // ---- Site CSS (after HTML so Tailwind sees every class) ----
 sh('npx tailwindcss -c site/tailwind.config.js -i site/site.css -o dist/assets/site.css --minify');

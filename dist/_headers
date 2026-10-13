@@ -2,3 +2,6 @@
   Cache-Control: public, max-age=31536000, immutable
 /demo/*
   X-Robots-Tag: noindex
+/dl/*
+  X-Robots-Tag: noindex
+  Content-Disposition: attachment

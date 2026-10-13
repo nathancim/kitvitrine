@@ -2,7 +2,7 @@
 
 Boutique de templates de sites vitrines (HTML + Tailwind CSS) classés par métier.
 Site : https://kitvitrine.netlify.app (Netlify publie `dist/` à chaque push sur `main`).
-Paiement : boutique Shopify connectée, app « Digital Products ».
+Paiement : boutique Shopify connectée, app « Digital Products ». Livraison : produit « lien » vers un Google Doc qui contient le lien de téléchargement du zip.
 Langue : tout est en français (textes, fiches, commits).
 
 ## Arborescence
@@ -16,7 +16,7 @@ Langue : tout est en français (textes, fiches, commits).
 
 ### 0. Préparer
 1. `npm ci` (ou `npm install`) puis `python3 -c "import playwright"` pour vérifier les captures.
-2. Synchroniser les ventes : pour chaque fiche avec `shopify_product_id` mais `shopify_url` vide, lire le produit Shopify. S'il est **ACTIVE** (le propriétaire a joint le zip et publié), renseigner `shopify_url` avec son `onlineStoreUrl`.
+2. Rattrapage : pour chaque fiche dont `shopify_url` est vide, reprendre l'étape 5 (points 3 à 5) pour la mettre en vente, sauf si `shopify_product_id` pointe vers un produit déjà actif (alors seulement renseigner `shopify_url`).
 
 ### 1. Choisir le sujet
 - Prendre l'univers qui a **le moins** de templates (à égalité, celui dont le dernier ajout est le plus ancien).
@@ -42,14 +42,16 @@ Ajouter l'entrée **à la fin** de `catalog.json > templates` avec tous les cham
 1. `node build.mjs` (s'arrête en cas de fiche invalide : corriger).
 2. Regarder `shots/<slug>/thumb.jpg` et `full.jpg` avec Read, et une capture mobile (`python3 shoot.py <chemin>/index.html /tmp/<slug> full`). Corriger tout défaut visible avant de continuer.
 
-### 5. Publier
-1. `git add -A && git commit -m "Nouveau template : <title> (<métier>)"` puis `git push`.
-2. Créer le produit Shopify en **brouillon** : `create-digital-product` (titre « Template <title> — <tagline> »), puis `update-product` avec le prix, la description HTML et le SKU `KV-<SLUG>`. Ne jamais publier le produit : le propriétaire joint le zip et publie lui-même.
-3. Attendre ~2 minutes, vérifier que `https://kitvitrine.netlify.app/templates/<slug>/thumb.jpg` répond, puis l'ajouter comme image du produit.
-4. Enregistrer `shopify_product_id` dans `catalog.json`, commit, push.
+### 5. Publier (directement, sans validation : le propriétaire vérifie sur la boutique)
+1. `git add -A && git commit -m "Nouveau template : <title> (<métier>)"` puis `git push`. `node build.mjs` a créé `dl_token` dans la fiche et copié le zip dans `dist/dl/<dl_token>/` (lien de téléchargement secret, non indexé).
+2. Attendre que Netlify ait publié : vérifier (WebFetch, plusieurs essais espacés, 5 min max) que `https://kitvitrine.netlify.app/templates/<slug>/` répond.
+3. Créer la fiche de téléchargement dans Google Drive, dossier « Kit Vitrine — téléchargements clients » (id `13zRGx6roucARUSY8XWG-PiybC9rH58-q`, partagé « tous les utilisateurs disposant du lien ») : `create_file` avec `parentId` = ce dossier, titre « Kit Vitrine — <title> — Téléchargement », `contentMimeType` `text/plain` (converti en Google Doc). Contenu : remerciement, lien `https://kitvitrine.netlify.app/dl/<dl_token>/kitvitrine-<slug>.zip`, 3 étapes de démarrage (dézipper, ouvrir LISEZMOI.md, publier), rappel de licence (un site).
+4. Shopify : `create-digital-product-from-link` (titre « Template <title> — <tagline> », url = viewUrl du Google Doc, name « Télécharger votre template »), puis `update-product` (prix, description HTML avec lien de la démo `https://kitvitrine.netlify.app/demo/<slug>/`, SKU `KV-<SLUG>`, image `https://kitvitrine.netlify.app/templates/<slug>/thumb.jpg`), puis `publish-digital-product` avec le titre actuel.
+5. Lire `onlineStoreUrl` du produit (graphql_query sur `product(id)`) et l'enregistrer dans `shopify_url`, ainsi que `shopify_product_id`. `node build.mjs`, commit, push.
+6. Si une étape Shopify ou Drive échoue : laisser le template en ligne sur le site (bouton « Bientôt en vente »), ne rien publier de bancal, signaler l'incident.
 
 ### 6. Compte rendu (via SendUserMessage)
-Trois lignes : le template créé (nom, métier, lien de la fiche), le produit Shopify en brouillon à compléter (joindre `packages/kitvitrine-<slug>.zip` puis publier), et tout problème rencontré.
+Trois lignes : le template créé (nom, métier, lien de la fiche), le produit Shopify publié (lien), et tout problème rencontré.
 
 ## Règles
 - En cas d'échec d'une étape (build, push, Shopify), ne pas insister en boucle : noter le problème dans le compte rendu et s'arrêter proprement, sans laisser de fiche à moitié remplie dans `catalog.json`.
