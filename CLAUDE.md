@@ -16,7 +16,8 @@ Langue : tout est en français (textes, fiches, commits).
 
 ### 0. Préparer
 1. `npm ci` (ou `npm install`) puis `python3 -c "import playwright"` pour vérifier les captures.
-2. Rattrapage : pour chaque fiche dont `shopify_url` est vide, reprendre l'étape 5 (points 3 à 5) pour la mettre en vente, sauf si `shopify_product_id` pointe vers un produit déjà actif (alors seulement renseigner `shopify_url`).
+2. **Ventes fermées pour l'instant** : tant que `site.ventes_ouvertes` vaut `false` dans `catalog.json`, ne fais AUCUNE action Shopify ni Google Drive (pas de rattrapage, pas de produit, pas de Doc) : le template est seulement publié sur le site, avec la mention « Bientôt en vente ». Seul Nathan passe ce réglage à `true`.
+3. Rattrapage (uniquement si `site.ventes_ouvertes` vaut `true`) : pour chaque fiche dont `shopify_url` est vide, reprendre l'étape 5 (points 3 à 5) pour la mettre en vente, sauf si `shopify_product_id` pointe vers un produit déjà actif (alors seulement renseigner `shopify_url`).
 
 ### 1. Choisir le sujet
 - Prendre l'univers qui a **le moins** de templates (à égalité, celui dont le dernier ajout est le plus ancien).
@@ -44,6 +45,7 @@ Ajouter l'entrée **à la fin** de `catalog.json > templates` avec tous les cham
 
 ### 5. Publier (directement, sans validation : le propriétaire vérifie sur la boutique)
 1. `git add -A && git commit -m "Nouveau template : <title> (<métier>)"` puis `git push`. `node build.mjs` a créé `dl_token` dans la fiche et copié le zip dans `dist/dl/<dl_token>/` (lien de téléchargement secret, non indexé).
+Si `site.ventes_ouvertes` vaut `false`, s'arrêter après les points 1 et 2, puis passer au compte rendu.
 2. Attendre que Cloudflare Pages ait publié : vérifier (WebFetch, plusieurs essais espacés, 5 min max) que `https://kitvitrine.pages.dev/templates/<slug>/` répond.
 3. Créer la fiche de téléchargement dans Google Drive, dossier « Kit Vitrine — téléchargements clients » (id `13zRGx6roucARUSY8XWG-PiybC9rH58-q`, partagé « tous les utilisateurs disposant du lien ») : `create_file` avec `parentId` = ce dossier, titre « Kit Vitrine — <title> — Téléchargement », `contentMimeType` `text/plain` (converti en Google Doc). Contenu : remerciement, lien `https://kitvitrine.pages.dev/dl/<dl_token>/kitvitrine-<slug>.zip`, 3 étapes de démarrage (dézipper, ouvrir LISEZMOI.md, publier), rappel de licence (un site).
 4. Shopify : `create-digital-product-from-link` (titre « Template <title> — <tagline> », url = viewUrl du Google Doc, name « Télécharger votre template »), puis `update-product` (prix, description HTML avec lien de la démo `https://kitvitrine.pages.dev/demo/<slug>/`, SKU `KV-<SLUG>`, image `https://kitvitrine.pages.dev/templates/<slug>/thumb.jpg`), puis `publish-digital-product` avec le titre actuel.
@@ -51,7 +53,7 @@ Ajouter l'entrée **à la fin** de `catalog.json > templates` avec tous les cham
 6. Si une étape Shopify ou Drive échoue : laisser le template en ligne sur le site (bouton « Bientôt en vente »), ne rien publier de bancal, signaler l'incident.
 
 ### 6. Compte rendu (via SendUserMessage)
-Trois lignes : le template créé (nom, métier, lien de la fiche), le produit Shopify publié (lien), et tout problème rencontré.
+Trois lignes : le template créé (nom, métier, lien de la fiche), le produit Shopify publié (lien, ou « ventes fermées »), et tout problème rencontré.
 
 ## Règles
 - En cas d'échec d'une étape (build, push, Shopify), ne pas insister en boucle : noter le problème dans le compte rendu et s'arrêter proprement, sans laisser de fiche à moitié remplie dans `catalog.json`.
