@@ -105,6 +105,14 @@ for (const t of cat.templates) {
     if (fs.existsSync(lic)) fs.copyFileSync(lic, path.join(fdir, `LICENCE-${fam}.txt`));
     else throw new Error(`${t.slug}: licence de police introuvable pour ${fam}`);
   }
+  // Keep the build tooling out of the site root: hosts like Netlify Drop would try to run
+  // package.json. Move it to sources-tailwind/ and fix the relative paths.
+  const src = path.join(stage, 'sources-tailwind');
+  fs.mkdirSync(src);
+  for (const f of ['package.json', 'tailwind.config.js', 'src']) if (fs.existsSync(path.join(stage, f))) fs.renameSync(path.join(stage, f), path.join(src, f));
+  const fix = (file, from, to) => { const p = path.join(src, file); const c = fs.readFileSync(p, 'utf8'); if (!c.includes(from)) throw new Error(`${t.slug}: « ${from} » introuvable dans ${file}`); fs.writeFileSync(p, c.split(from).join(to)); };
+  fix('tailwind.config.js', "'./*.html'", "'../*.html'");
+  fix('package.json', '-o assets/styles.css', '-o ../assets/styles.css');
   for (const f of fs.readdirSync(stage)) if (f.endsWith('.html')) write(path.join(stage, f), withEdit(fs.readFileSync(path.join(stage, f), 'utf8')));
   fs.copyFileSync(EDIT_JS, path.join(stage, 'assets/kv-edition.js'));
   write(path.join(stage, 'MODIFIER-MON-SITE.html'), EDIT_LAUNCHER);
@@ -149,6 +157,8 @@ for (const t of cat.templates) {
     jsonld: { '@context': 'https://schema.org', '@type': 'Product', name: `Template ${t.title}`, description: t.description, image: `${site.url}/templates/${t.slug}/thumb.jpg`, brand: { '@type': 'Brand', name: site.name }, offers: { '@type': 'Offer', price: t.prix, priceCurrency: 'EUR', availability: t.shopify_url ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder', url: `${site.url}/templates/${t.slug}/` } }
   });
 }
+page('guide', { title: 'Guide : personnaliser et mettre en ligne votre site — Kit Vitrine', description: 'Modifier les textes de votre template sans logiciel, puis le mettre en ligne gratuitement avec Netlify Drop, étape par étape.', body: P.guidePage() });
+fs.cpSync(r('site/guide'), r('dist/assets/guide'), { recursive: true });
 for (const [slug, title, html] of legalPages) page(slug, { title: `${title} — Kit Vitrine`, description: title, body: P.textPage(title, html) });
 write(r('dist/404.html'), P.layout({ site, path: '/404', title: 'Page introuvable — Kit Vitrine', description: 'Page introuvable', body: `<section class="mx-auto max-w-3xl px-4 sm:px-6 pt-16"><h1 class="font-display font-extrabold text-4xl">Cette page n'existe pas ou plus.</h1><p class="mt-4 text-ink/70">Le template a peut-être changé de nom. Cherchez-le dans le catalogue.</p><p class="mt-8 flex gap-3"><a href="/catalogue/" class="btn-sign">Ouvrir le catalogue</a><a href="/" class="btn-line">Accueil</a></p></section>` }));
 
@@ -157,7 +167,7 @@ const pub = { univers: cat.univers.map(({ slug, label, description }) => ({ slug
 write(r('dist/data/catalog.json'), JSON.stringify(pub));
 fs.copyFileSync(r('site/catalogue.js'), r('dist/assets/catalogue.js'));
 write(r('dist/favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#fff"/><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg>`);
-const urls = ['', 'catalogue/', 'univers/', ...cat.univers.map(u => `univers/${u.slug}/`), ...cat.templates.map(t => `templates/${t.slug}/`), ...legalPages.map(([s]) => s + '/')];
+const urls = ['', 'catalogue/', 'univers/', 'guide/', ...cat.univers.map(u => `univers/${u.slug}/`), ...cat.templates.map(t => `templates/${t.slug}/`), ...legalPages.map(([s]) => s + '/')];
 write(r('dist/sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `<url><loc>${site.url}/${u}</loc></url>`).join('\n')}\n</urlset>\n`);
 write(r('dist/robots.txt'), `User-agent: *\nDisallow: /demo/\nDisallow: /dl/\nSitemap: ${site.url}/sitemap.xml\n`);
 write(r('dist/_headers'), `/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n/demo/*\n  X-Robots-Tag: noindex\n/dl/*\n  X-Robots-Tag: noindex\n  Content-Disposition: attachment\n`);
@@ -177,7 +187,8 @@ Merci pour votre achat ! Ce dossier contient un site vitrine complet, prêt à �
 - \`index.html\` : la page du site. Ouvrez-la dans votre navigateur pour la voir.
 - \`assets/styles.css\` : la feuille de style compilée (ne pas modifier à la main).
 - \`assets/fonts/\` : les polices, hébergées avec le site (aucun appel à Google Fonts).
-- \`src/input.css\` et \`tailwind.config.js\` : les sources pour changer couleurs et polices.
+- \`MODIFIER-MON-SITE.html\` : ouvre le site en mode édition pour changer les textes.
+- \`sources-tailwind/\` : les sources pour changer couleurs et polices (inutile pour la mise en ligne).
 
 ## Modifier les textes (sans rien installer)
 
@@ -192,9 +203,9 @@ Vous préférez un éditeur de texte ? Ouvrez \`index.html\` dans VS Code ou Not
 ## Changer les couleurs ou les polices
 
 1. Installez Node.js (https://nodejs.org).
-2. Dans ce dossier, lancez : \`npm install\`
-3. Modifiez les couleurs dans \`tailwind.config.js\`.
-4. Recompilez : \`npm run build\` (ou \`npm run dev\` pour recompiler à chaque modification).
+2. Ouvrez un terminal dans le dossier \`sources-tailwind\` et lancez : \`npm install\`
+3. Modifiez les couleurs dans \`sources-tailwind/tailwind.config.js\`.
+4. Recompilez : \`npm run build\` (la feuille \`assets/styles.css\` est mise à jour).
 
 ## Formulaire de contact
 
@@ -203,7 +214,7 @@ Le plus simple : Netlify Forms (ajoutez \`data-netlify="true"\` sur la balise \`
 
 ## Mettre en ligne
 
-Glissez le dossier complet sur https://app.netlify.com/drop, ou envoyez-le par FTP chez votre hébergeur (OVH, o2switch, Ionos…).
+Glissez le dossier complet sur https://app.netlify.com/drop (gratuit, pas besoin de compte pour commencer), ou envoyez-le par FTP chez votre hébergeur (OVH, o2switch, Ionos…). Guide illustré : https://kitvitrine.pages.dev/guide/
 Pensez à ajouter vos mentions légales, obligatoires en France pour un site professionnel.
 
 ## Besoin d'aide ?

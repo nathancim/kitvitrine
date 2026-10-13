@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guide : personnaliser et mettre en ligne votre site — Kit Vitrine</title>
-<meta name="description" content="Guide : personnaliser et mettre en ligne votre site">
+<meta name="description" content="Modifier les textes de votre template sans logiciel, puis le mettre en ligne gratuitement avec Netlify Drop, étape par étape.">
 <link rel="canonical" href="https://kitvitrine.pages.dev/guide/">
-<meta property="og:type" content="website"><meta property="og:title" content="Guide : personnaliser et mettre en ligne votre site — Kit Vitrine"><meta property="og:description" content="Guide : personnaliser et mettre en ligne votre site"><meta property="og:url" content="https://kitvitrine.pages.dev/guide/">
+<meta property="og:type" content="website"><meta property="og:title" content="Guide : personnaliser et mettre en ligne votre site — Kit Vitrine"><meta property="og:description" content="Modifier les textes de votre template sans logiciel, puis le mettre en ligne gratuitement avec Netlify Drop, étape par étape."><meta property="og:url" content="https://kitvitrine.pages.dev/guide/">
 <meta name="theme-color" content="#0E5A47">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -36,35 +36,38 @@
   </div>
 </header>
 <main id="contenu">
-<section class="mx-auto max-w-3xl px-4 sm:px-6 pt-10"><h1 class="font-display font-extrabold text-4xl sm:text-5xl tracking-tight">Guide : personnaliser et mettre en ligne votre site</h1><div class="prose-kv mt-8 text-[17px]">
-<p>Pas besoin de savoir coder. Comptez une trentaine de minutes entre le téléchargement et votre site en ligne.</p>
-<h2>1. Ouvrir le dossier</h2>
-<p>Après l'achat, vous recevez un lien de téléchargement. Enregistrez le fichier .zip, puis faites un clic droit et « Extraire tout » (Windows) ou double-cliquez dessus (Mac). Vous obtenez un dossier qui contient tout le site.</p>
-<h2>2. Modifier les textes, directement sur la page</h2>
-<ul>
-<li>Double-cliquez sur <strong>MODIFIER-MON-SITE.html</strong> : votre site s'ouvre dans votre navigateur, en mode édition.</li>
-<li>Cliquez sur n'importe quel texte et tapez par-dessus : nom, slogan, tarifs, horaires, avis, questions fréquentes.</li>
-<li>Le téléphone et l'e-mail se mettent à jour partout où on clique dessus.</li>
-<li>Cliquez sur <strong>Télécharger ma page</strong>, puis remplacez le fichier <strong>index.html</strong> du dossier par celui qui vient d'arriver dans vos Téléchargements.</li>
-</ul>
-<p>Vous pouvez essayer ce mode édition avant d'acheter : ouvrez la démo d'un template et cliquez sur « Essayer l'édition ».</p>
-<p>Vous êtes à l'aise avec un éditeur de texte ? Ouvrez index.html dans VS Code ou Notepad++, cherchez le texte avec Ctrl+F et remplacez-le.</p>
-<h2>3. Relier le formulaire de contact</h2>
-<p>Le formulaire n'envoie rien tant qu'il n'est pas relié à un service gratuit. Le plus simple :</p>
-<ul>
-<li><strong>Si vous publiez sur Netlify</strong> : ajoutez <code>data-netlify="true"</code> dans la balise &lt;form&gt;. Les messages arrivent dans votre espace Netlify et par e-mail.</li>
-<li><strong>Ailleurs</strong> : créez un formulaire gratuit sur Formspree et remplacez <code>action="#"</code> par l'adresse qu'il vous donne.</li>
-</ul>
-<h2>4. Mettre le site en ligne</h2>
-<ul>
-<li><strong>La solution la plus simple, gratuite</strong> : ouvrez <strong>app.netlify.com/drop</strong>, créez un compte et glissez le dossier du site dans la page. Votre site est en ligne en une minute, à une adresse du type monsite.netlify.app.</li>
-<li><strong>Avec votre hébergeur</strong> (OVH, o2switch, Ionos…) : envoyez le contenu du dossier par FTP ou via le gestionnaire de fichiers de votre espace client.</li>
-<li><strong>Votre propre adresse</strong> (moncabinet.fr) : achetez le nom de domaine chez un registraire, puis reliez-le depuis votre hébergeur. Comptez une dizaine d'euros par an.</li>
-</ul>
-<h2>5. Ajouter vos mentions légales</h2>
-<p>Elles sont obligatoires pour un site professionnel en France : nom ou raison sociale, adresse, SIRET, contact et hébergeur. Le lien « Mentions légales » en bas de page est prévu pour cela.</p>
-<h2>Pour aller plus loin : changer les couleurs</h2>
-<p>Les couleurs et les polices se règlent dans <strong>tailwind.config.js</strong>. Il faut ensuite recompiler la feuille de style avec Node.js (deux commandes, expliquées dans le fichier LISEZMOI.md du dossier).</p></div></section>
+
+<section class="mx-auto max-w-4xl px-4 sm:px-6 pt-10">
+  <h1 class="font-display font-extrabold text-4xl sm:text-5xl tracking-tight">Personnaliser et mettre en ligne votre site</h1>
+  <p class="mt-4 text-lg text-ink/70 max-w-2xl">Aucune connaissance technique nécessaire. Comptez une trentaine de minutes entre le téléchargement et votre site en ligne.</p>
+  <ol class="mt-14 border-t border-line pt-12">
+    <li class="grid sm:grid-cols-[3.5rem_1fr] gap-x-6 pt-12 first:pt-0"><p class="font-display font-extrabold text-5xl text-sign leading-none" aria-hidden="true">1</p><div><h2 class="font-display font-bold text-2xl sm:text-3xl">Ouvrir le dossier</h2><div class="mt-4 space-y-4 text-[17px] leading-relaxed text-ink/80">
+      <p>Après l'achat, vous recevez un lien de téléchargement. Enregistrez le fichier .zip, puis faites un clic droit et <strong>Extraire tout</strong> (Windows) ou double-cliquez dessus (Mac). Vous obtenez un dossier qui contient tout le site.</p>
+      <figure class="mt-6"><img src="/assets/guide/g-dossier.svg" alt="Le fichier zip devient un dossier contenant index.html, MODIFIER-MON-SITE.html et les autres fichiers" width="720" height="360" loading="lazy" class="w-full rounded-md border border-line bg-mist"><figcaption class="mt-2 text-sm text-ink/60">Le fichier à ouvrir pour modifier vos textes est surligné.</figcaption></figure></div></div></li>
+    <li class="grid sm:grid-cols-[3.5rem_1fr] gap-x-6 pt-12 first:pt-0"><p class="font-display font-extrabold text-5xl text-sign leading-none" aria-hidden="true">2</p><div><h2 class="font-display font-bold text-2xl sm:text-3xl">Modifier les textes, directement sur la page</h2><div class="mt-4 space-y-4 text-[17px] leading-relaxed text-ink/80">
+      <p>Double-cliquez sur <strong>MODIFIER-MON-SITE.html</strong> : votre site s'ouvre dans votre navigateur avec un bandeau « Mode édition ». Cliquez sur n'importe quel texte et tapez par-dessus : nom, slogan, tarifs, horaires, avis, questions fréquentes.</p>
+      <figure class="mt-6"><img src="/assets/guide/g-edition.jpg" alt="Capture du mode édition : le titre de la page est sélectionné et remplacé par un nouveau texte" width="1200" height="680" loading="lazy" class="w-full rounded-md border border-line bg-mist"><figcaption class="mt-2 text-sm text-ink/60">Le texte en cours de modification est encadré en jaune. Les pointillés montrent ce qui est modifiable.</figcaption></figure>
+      <p>Le numéro de téléphone et l'adresse e-mail se mettent à jour partout où l'on clique dessus. Vous pouvez essayer ce mode sur la démo de chaque template avant d'acheter, avec le bouton <strong>Essayer l'édition</strong>.</p></div></div></li>
+    <li class="grid sm:grid-cols-[3.5rem_1fr] gap-x-6 pt-12 first:pt-0"><p class="font-display font-extrabold text-5xl text-sign leading-none" aria-hidden="true">3</p><div><h2 class="font-display font-bold text-2xl sm:text-3xl">Enregistrer vos modifications</h2><div class="mt-4 space-y-4 text-[17px] leading-relaxed text-ink/80">
+      <p>Cliquez sur <strong>Télécharger ma page</strong>. Un fichier <strong>index.html</strong> arrive dans vos Téléchargements : déplacez-le dans le dossier du site et acceptez de remplacer l'ancien.</p>
+      <figure class="mt-6"><img src="/assets/guide/g-telecharger.jpg" alt="Le bandeau du mode édition avec le bouton Télécharger ma page" width="800" height="90" loading="lazy" class="w-full rounded-md border border-line bg-mist"><figcaption class="mt-2 text-sm text-ink/60">Pensez à télécharger avant de fermer l'onglet : le navigateur vous prévient s'il reste des modifications.</figcaption></figure></div></div></li>
+    <li class="grid sm:grid-cols-[3.5rem_1fr] gap-x-6 pt-12 first:pt-0"><p class="font-display font-extrabold text-5xl text-sign leading-none" aria-hidden="true">4</p><div><h2 class="font-display font-bold text-2xl sm:text-3xl">Mettre le site en ligne avec Netlify Drop</h2><div class="mt-4 space-y-4 text-[17px] leading-relaxed text-ink/80">
+      <p>C'est la solution la plus simple, et elle est gratuite. Ouvrez <strong>app.netlify.com/drop</strong> et glissez le dossier du site dans la zone prévue. Pas besoin de compte pour commencer.</p>
+      <figure class="mt-6"><img src="/assets/guide/g-drop.svg" alt="Illustration : le dossier du site est glissé dans la zone de dépôt de Netlify Drop" width="720" height="400" loading="lazy" class="w-full rounded-md border border-line bg-mist"><figcaption class="mt-2 text-sm text-ink/60">Glissez le dossier entier, pas seulement le fichier index.html.</figcaption></figure>
+      <p>Votre site est en ligne en quelques secondes, à une adresse attribuée automatiquement. <strong>Créez un compte gratuit</strong> pour le conserver : vous pourrez ensuite renommer l'adresse, et republier en glissant à nouveau le dossier après chaque modification.</p>
+      <figure class="mt-6"><img src="/assets/guide/g-enligne.svg" alt="Illustration : la page de confirmation avec l&#39;adresse du site en netlify.app" width="720" height="400" loading="lazy" class="w-full rounded-md border border-line bg-mist"><figcaption class="mt-2 text-sm text-ink/60">Illustration simplifiée : les écrans de Netlify peuvent évoluer, mais les étapes restent les mêmes.</figcaption></figure>
+      <p>Vous avez déjà un hébergeur (OVH, o2switch, Ionos…) ? Envoyez le contenu du dossier par FTP ou par le gestionnaire de fichiers de votre espace client.</p></div></div></li>
+    <li class="grid sm:grid-cols-[3.5rem_1fr] gap-x-6 pt-12 first:pt-0"><p class="font-display font-extrabold text-5xl text-sign leading-none" aria-hidden="true">5</p><div><h2 class="font-display font-bold text-2xl sm:text-3xl">Relier le formulaire de contact</h2><div class="mt-4 space-y-4 text-[17px] leading-relaxed text-ink/80">
+      <p>Le formulaire n'envoie rien tant qu'il n'est pas relié à un service. Sur Netlify, ouvrez <strong>index.html</strong> avec le Bloc-notes, cherchez <code class="bg-mist px-1 rounded">&lt;form</code> et ajoutez <code class="bg-mist px-1 rounded">data-netlify="true"</code> juste après. Les messages arrivent dans votre espace Netlify et par e-mail. Ailleurs, utilisez Formspree (gratuit) et remplacez <code class="bg-mist px-1 rounded">action="#"</code> par l'adresse qu'il vous donne.</p></div></div></li>
+    <li class="grid sm:grid-cols-[3.5rem_1fr] gap-x-6 pt-12 first:pt-0"><p class="font-display font-extrabold text-5xl text-sign leading-none" aria-hidden="true">6</p><div><h2 class="font-display font-bold text-2xl sm:text-3xl">Ajouter vos mentions légales et votre adresse</h2><div class="mt-4 space-y-4 text-[17px] leading-relaxed text-ink/80">
+      <p>Les mentions légales sont obligatoires pour un site professionnel en France : nom ou raison sociale, adresse, SIRET, contact et hébergeur. Le lien prévu en bas de page est là pour ça.</p>
+      <p>Pour une adresse à votre nom (moncabinet.fr), achetez le nom de domaine chez un registraire (une dizaine d'euros par an), puis reliez-le depuis les réglages de votre site sur Netlify.</p></div></div></li>
+  </ol>
+  <div class="mt-16 rounded-md border border-line bg-mist p-6">
+    <h2 class="font-display font-bold text-xl">Pour aller plus loin : changer les couleurs</h2>
+    <p class="mt-2 text-ink/75 leading-relaxed">Les couleurs et les polices se règlent dans <strong>sources-tailwind/tailwind.config.js</strong>, puis la feuille de style se recompile avec Node.js en deux commandes. Tout est expliqué dans le fichier LISEZMOI.md du dossier.</p>
+  </div>
+</section>
 </main>
 <footer class="mt-24 bg-ink text-white/70">
   <div class="awning opacity-90"></div>

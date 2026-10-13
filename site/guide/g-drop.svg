@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="Instrument Sans, system-ui, sans-serif" role="img" aria-label="Illustration : glisser le dossier du site dans la zone de dépôt de Netlify Drop">
+  <rect width="720" height="400" rx="14" fill="#EEF1F3"/>
+  <g transform="translate(40 30)">
+    <rect width="640" height="340" rx="10" fill="#fff" stroke="#161B26" stroke-width="2"/>
+    <path d="M0 10a10 10 0 0 1 10-10h620a10 10 0 0 1 10 10v30H0z" fill="#DDE2E7"/>
+    <circle cx="18" cy="20" r="5" fill="#B4443A"/><circle cx="34" cy="20" r="5" fill="#E2B13C"/><circle cx="50" cy="20" r="5" fill="#3F7A5A"/>
+    <rect x="80" y="9" width="420" height="22" rx="11" fill="#fff"/><text x="96" y="25" font-size="13" fill="#161B26">app.netlify.com/drop</text>
+    <text x="320" y="86" text-anchor="middle" font-size="20" font-weight="700" fill="#161B26">Glissez votre dossier ici</text>
+    <rect x="90" y="110" width="460" height="190" rx="12" fill="#EEF1F3" stroke="#0E5A47" stroke-width="2.5" stroke-dasharray="10 8"/>
+    <path d="M320 150v60M298 190l22 22 22-22" fill="none" stroke="#0E5A47" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="320" y="250" text-anchor="middle" font-size="15" fill="#161B26">Déposez le dossier du site (ou le .zip)</text>
+    <text x="320" y="272" text-anchor="middle" font-size="13" fill="#5b6270">Pas besoin de compte pour commencer</text>
+  </g>
+  <!-- dragged folder -->
+  <g transform="translate(450 150) rotate(-8)">
+    <path d="M0 10a8 8 0 0 1 8-8h40l10 12h66a8 8 0 0 1 8 8v70a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8z" fill="#F0BE3D" stroke="#161B26" stroke-width="2"/>
+    <text x="66" y="66" text-anchor="middle" font-size="13" font-weight="700" fill="#161B26">Mon site</text>
+  </g>
+  <path d="M578 238l18 44 7-17 18-4z" fill="#fff" stroke="#161B26" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="392" text-anchor="end" font-size="11" fill="#5b6270">Illustration simplifiée, l'écran réel peut différer</text>
+</svg>
