@@ -48,14 +48,14 @@ function header() {
     <nav class="hidden md:flex items-center gap-6 text-[15px] ml-auto">
       <a href="/catalogue/" class="hover:text-sign">Catalogue</a>
       <a href="/univers/" class="hover:text-sign">Métiers</a>
-      <a href="/licence/" class="hover:text-sign">Licence</a>
+      <a href="/guide/" class="hover:text-sign">Guide</a>
       <a href="/faq/" class="hover:text-sign">Questions</a>
     </nav>
     <button id="menuBtn" class="md:hidden ml-auto p-2 -mr-2" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
   <div id="menu" class="hidden md:hidden border-t border-line px-4 py-4 space-y-4">
     <form action="/catalogue/" role="search"><input name="q" type="search" aria-label="Rechercher un template" placeholder="Rechercher un métier…" class="w-full rounded-md border border-line bg-mist px-4 py-3 text-base"></form>
-    <nav class="grid gap-3 text-lg"><a href="/catalogue/">Catalogue</a><a href="/univers/">Métiers</a><a href="/licence/">Licence</a><a href="/faq/">Questions</a></nav>
+    <nav class="grid gap-3 text-lg"><a href="/catalogue/">Catalogue</a><a href="/univers/">Métiers</a><a href="/guide/">Guide</a><a href="/faq/">Questions</a></nav>
   </div>
 </header>`;
 }
@@ -68,7 +68,7 @@ function footer(site) {
       <p class="font-display font-extrabold text-white text-xl">Kit Vitrine</p>
       <p class="mt-3 max-w-sm">${esc(site.tagline)}. Fichiers HTML et Tailwind CSS, livrés dès le paiement.</p>
     </div>
-    <nav class="grid gap-2 content-start"><p class="text-white font-medium mb-1">Boutique</p><a href="/catalogue/" class="hover:text-white">Tous les templates</a><a href="/univers/" class="hover:text-white">Par métier</a><a href="/licence/" class="hover:text-white">Licence</a><a href="/faq/" class="hover:text-white">Questions fréquentes</a></nav>
+    <nav class="grid gap-2 content-start"><p class="text-white font-medium mb-1">Boutique</p><a href="/catalogue/" class="hover:text-white">Tous les templates</a><a href="/univers/" class="hover:text-white">Par métier</a><a href="/guide/" class="hover:text-white">Guide de mise en ligne</a><a href="/licence/" class="hover:text-white">Licence</a><a href="/faq/" class="hover:text-white">Questions fréquentes</a></nav>
     <nav class="grid gap-2 content-start"><p class="text-white font-medium mb-1">Informations</p><a href="/mentions-legales/" class="hover:text-white">Mentions légales</a><a href="/cgv/" class="hover:text-white">Conditions de vente</a><a href="/confidentialite/" class="hover:text-white">Confidentialité</a></nav>
   </div>
   <p class="mx-auto max-w-7xl px-4 sm:px-6 pb-10 text-sm text-white/50">© ${new Date().getFullYear()} Kit Vitrine</p>
@@ -137,7 +137,7 @@ export function homePage(cat, univMap, counts) {
   <ol class="mt-10 grid md:grid-cols-3 gap-10">
     <li><p class="font-display font-extrabold text-5xl text-sign">1</p><h3 class="mt-3 font-display font-bold text-xl">Choisissez et testez</h3><p class="mt-2 text-ink/70 leading-relaxed">Chaque template a une démo en ligne. Parcourez-la sur ordinateur et sur téléphone avant d'acheter.</p></li>
     <li><p class="font-display font-extrabold text-5xl text-sign">2</p><h3 class="mt-3 font-display font-bold text-xl">Téléchargez</h3><p class="mt-2 text-ink/70 leading-relaxed">Le fichier .zip arrive par e-mail dès le paiement : HTML, CSS compilé, polices incluses et guide en français.</p></li>
-    <li><p class="font-display font-extrabold text-5xl text-sign">3</p><h3 class="mt-3 font-display font-bold text-xl">Personnalisez et publiez</h3><p class="mt-2 text-ink/70 leading-relaxed">Modifiez les textes dans n'importe quel éditeur, puis déposez le dossier sur Netlify, OVH, o2switch ou tout autre hébergeur.</p></li>
+    <li><p class="font-display font-extrabold text-5xl text-sign">3</p><h3 class="mt-3 font-display font-bold text-xl">Personnalisez et publiez</h3><p class="mt-2 text-ink/70 leading-relaxed">Cliquez sur les textes pour les modifier directement dans la page, puis publiez le dossier en le glissant sur Netlify ou chez votre hébergeur. <a href="/guide/" class="underline underline-offset-4">Voir le guide</a></p></li>
   </ol>
 </section>
 
@@ -243,9 +243,11 @@ export function templatePage(t, univMap, related, site) {
       <ul class="mt-3 grid gap-2 text-ink/80 list-disc pl-5">
         <li>Le site prêt à publier (index.html, CSS compilé, polices)</li>
         <li>Les sources Tailwind pour changer couleurs et polices</li>
+        <li>Un mode édition : cliquez sur un texte pour le modifier, sans logiciel</li>
         <li>Un guide de personnalisation en français</li>
         <li>La licence d'utilisation</li>
       </ul>
+      <p class="mt-6"><a href="/guide/" class="font-medium underline underline-offset-4 hover:text-sign">Comment le personnaliser et le mettre en ligne</a></p>
       <p class="mt-8 flex flex-wrap gap-2">${univ.map(u => `<a href="/univers/${u.slug}/" class="chip">${esc(u.label)}</a>`).join('')}</p>
     </div>
   </div>

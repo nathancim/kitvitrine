@@ -51,12 +51,23 @@ for (const f of ['bricolage-grotesque/files/bricolage-grotesque-latin-500-normal
 // ---- Templates: compile CSS, demo copy, images, zip ----
 const demoBar = t => `
 <!-- Bandeau ajouté uniquement sur la démo Kit Vitrine -->
-<div style="position:fixed;left:12px;right:12px;bottom:12px;z-index:2147483000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 16px;background:#161B26;color:#fff;border-radius:10px;font:500 14px/1.3 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:640px;margin:0 auto">
+<div data-kv-demo style="position:fixed;left:12px;right:12px;bottom:12px;z-index:2147483000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 16px;background:#161B26;color:#fff;border-radius:10px;font:500 14px/1.3 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:640px;margin:0 auto">
   <span>Démo du template <strong>${P.esc(t.title)}</strong> · ${t.prix} €</span>
+  <span style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
+  <a href="#edition" style="color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
   <a href="/templates/${t.slug}/" style="background:#F0BE3D;color:#161B26;padding:8px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
 </div>
 `;
 
+// Built-in edit mode (tools/kv-edition.js), added to every demo and every zip
+const EDIT_JS = r('tools/kv-edition.js');
+const withEdit = html => html.includes('kv-edition.js') ? html : html.replace('</body>', '<script src="assets/kv-edition.js" defer></script>\n</body>');
+const EDIT_LAUNCHER = `<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Modifier mon site</title>
+<meta http-equiv="refresh" content="0; url=index.html#edition"></head>
+<body style="font:16px system-ui,sans-serif;padding:2rem">Ouverture du mode édition… <a href="index.html#edition">Cliquez ici si rien ne se passe</a>.</body></html>
+`;
 fs.mkdirSync(r('packages'), { recursive: true });
 for (const t of cat.templates) {
   const tdir = r('templates', t.slug);
@@ -69,9 +80,10 @@ for (const t of cat.templates) {
   const demo = r('dist/demo', t.slug);
   fs.cpSync(path.join(tdir, 'assets'), path.join(demo, 'assets'), { recursive: true });
   const html = fs.readFileSync(path.join(tdir, 'index.html'), 'utf8');
-  write(path.join(demo, 'index.html'), html.replace('</body>', demoBar(t) + '</body>').replace('<head>', '<head>\n  <meta name="robots" content="noindex">'));
+  fs.copyFileSync(EDIT_JS, path.join(demo, 'assets/kv-edition.js'));
+  write(path.join(demo, 'index.html'), withEdit(html).replace('</body>', demoBar(t) + '</body>').replace('<head>', '<head>\n  <meta name="robots" content="noindex">'));
   for (const f of fs.readdirSync(tdir)) if (f.endsWith('.html') && f !== 'index.html')
-    write(path.join(demo, f), fs.readFileSync(path.join(tdir, f), 'utf8').replace('</body>', demoBar(t) + '</body>'));
+    write(path.join(demo, f), withEdit(fs.readFileSync(path.join(tdir, f), 'utf8')).replace('</body>', demoBar(t) + '</body>'));
 
   // Images (cached in shots/, regenerated when the template changes)
   const shots = r('shots', t.slug);
@@ -81,7 +93,7 @@ for (const t of cat.templates) {
 
   // Package for buyers (never deployed)
   const zip = r('packages', `kitvitrine-${t.slug}.zip`);
-  if (!FORCE && mtime(zip) >= Math.max(...walk(tdir).map(mtime))) continue;
+  if (!FORCE && mtime(zip) >= Math.max(...walk(tdir).map(mtime), mtime(EDIT_JS), mtime(r('build.mjs')))) continue;
   const stage = r('.stage', t.slug);
   fs.rmSync(stage, { recursive: true, force: true });
   fs.mkdirSync(stage, { recursive: true });
@@ -93,6 +105,9 @@ for (const t of cat.templates) {
     if (fs.existsSync(lic)) fs.copyFileSync(lic, path.join(fdir, `LICENCE-${fam}.txt`));
     else throw new Error(`${t.slug}: licence de police introuvable pour ${fam}`);
   }
+  for (const f of fs.readdirSync(stage)) if (f.endsWith('.html')) write(path.join(stage, f), withEdit(fs.readFileSync(path.join(stage, f), 'utf8')));
+  fs.copyFileSync(EDIT_JS, path.join(stage, 'assets/kv-edition.js'));
+  write(path.join(stage, 'MODIFIER-MON-SITE.html'), EDIT_LAUNCHER);
   write(path.join(stage, 'LISEZMOI.md'), readme(t));
   write(path.join(stage, 'LICENCE.txt'), licenceTxt(t));
   fs.rmSync(zip, { force: true });
@@ -164,11 +179,15 @@ Merci pour votre achat ! Ce dossier contient un site vitrine complet, prêt à �
 - \`assets/fonts/\` : les polices, hébergées avec le site (aucun appel à Google Fonts).
 - \`src/input.css\` et \`tailwind.config.js\` : les sources pour changer couleurs et polices.
 
-## Modifier les textes
+## Modifier les textes (sans rien installer)
 
-Ouvrez \`index.html\` dans un éditeur de texte (VS Code, Notepad++, Sublime Text…).
-Remplacez le nom, les textes, le téléphone, l'e-mail et la zone d'intervention.
-Enregistrez puis rechargez la page dans le navigateur.
+1. Double-cliquez sur \`MODIFIER-MON-SITE.html\` : votre site s'ouvre dans le navigateur, en mode édition.
+2. Cliquez sur n'importe quel texte et tapez par-dessus (nom, téléphone, e-mail, tarifs, avis…).
+3. Cliquez sur « Télécharger ma page », puis remplacez \`index.html\` dans ce dossier par le fichier téléchargé.
+
+Guide illustré : https://kitvitrine.pages.dev/guide/
+
+Vous préférez un éditeur de texte ? Ouvrez \`index.html\` dans VS Code ou Notepad++, cherchez le texte à changer (Ctrl+F) et remplacez-le.
 
 ## Changer les couleurs ou les polices
 

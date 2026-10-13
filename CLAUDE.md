@@ -31,6 +31,7 @@ Langue : tout est en français (textes, fiches, commits).
 - **Aucune image externe ni photo de banque d'images** : illustrations en SVG/CSS uniquement.
 - **Polices hébergées en local** via `@fontsource/<famille>` (npm), copiées dans `assets/fonts/`, déclarées en `@font-face` dans `src/input.css`. Jamais de Google Fonts.
 - Obligatoire : responsive mobile, menu mobile fonctionnel, focus clavier visible, `prefers-reduced-motion` respecté, formulaire de contact avec le commentaire expliquant comment le relier.
+- **Mode édition** : le build ajoute automatiquement `assets/kv-edition.js` (édition des textes dans le navigateur) à la démo et au zip. Ne pas l'ajouter soi-même. Mettre chaque texte modifiable dans une balise texte simple (`h1`–`h6`, `p`, `li`, `a`, `span`, `dt`, `dd`, `blockquote`, `figcaption`, `summary`, `label`) plutôt que directement dans une `div`, et garder téléphone/e-mail dans des liens `tel:` / `mailto:`.
 - Copier la structure de fichiers de `templates/equilibre/` (`package.json`, `tailwind.config.js` avec `content: { relative: true, files: ['./*.html'] }`).
 
 ### 3. Enregistrer la fiche
