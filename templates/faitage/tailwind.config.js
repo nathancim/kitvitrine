@@ -1,6 +1,8 @@
 /** Couleurs et polices du template — modifiez-les ici puis relancez `npm run build`. */
 module.exports = {
   content: { relative: true, files: ['./*.html'] },
+  // Couleurs proposées dans le mode édition (bouton « Couleurs »), avec leur libellé.
+  kvCouleurs: { ardoise: 'Couleur principale', signal: 'Couleur d\'accent', zinc: 'Gris secondaire', ciel: 'Fond de page' },
   theme: {
     extend: {
       colors: {

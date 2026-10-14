@@ -15,7 +15,7 @@
   <header class="sticky top-0 z-30 bg-bone/90 backdrop-blur border-b border-forest/10">
     <div class="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2.5 font-serif text-xl min-h-11">
-        <svg class="w-7 h-7 text-ochre" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M8 26V14a8 8 0 0 1 16 0v12"/><path d="M8 20h2M22 20h2M8 15h2M22 15h2"/></svg>
+        <svg data-kv-logo="Logo" class="w-7 h-7 text-ochre" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M8 26V14a8 8 0 0 1 16 0v12"/><path d="M8 20h2M22 20h2M8 15h2M22 15h2"/></svg>
         Équilibre
       </a>
       <nav class="hidden md:flex items-center gap-8 text-[15px]">
@@ -49,7 +49,8 @@
           </div>
         </div>
         <div class="md:col-span-5">
-          <div class="relative aspect-[5/4] md:aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] bg-sage/40 overflow-hidden">
+          <!-- Photo : en mode édition, cliquez sur l'illustration pour la remplacer par une photo -->
+          <div data-kv-image="Photo d'une séance d'ostéopathie" class="relative aspect-[5/4] md:aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] bg-sage/40 overflow-hidden">
             <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
               <circle cx="320" cy="90" r="150" fill="#9BB09A" opacity=".55"/>
               <circle cx="60" cy="420" r="190" fill="#1F3A2E" opacity=".9"/>
@@ -168,6 +169,8 @@
         <div>
           <h2 class="font-serif text-[2rem] leading-tight md:text-4xl">Je viens jusqu'à vous</h2>
           <p class="mt-4 text-bone/75 leading-relaxed">Tours, Amboise, Chinon, Loches, Blois et tout le secteur dans un rayon de 60 km. Au-delà, une tournée est organisée dès trois animaux sur le même lieu.</p>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Tours, France" class="mt-6 md:h-56 rounded-2xl overflow-hidden bg-bone/5 border border-bone/15 text-bone"></div>
         </div>
         <svg class="hidden md:block w-full max-w-sm mx-auto" viewBox="0 0 300 300" aria-label="Carte de la zone d'intervention">
           <circle cx="150" cy="150" r="140" fill="none" stroke="#9BB09A" stroke-dasharray="4 8" stroke-width="2"/>

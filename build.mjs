@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
+import { createRequire } from 'node:module';
 import * as P from './site/pages.mjs';
 import { legalPages } from './site/legal.mjs';
 
@@ -71,7 +72,19 @@ const demoBar = t => `
 // Built-in edit mode (tools/kv-edition.js), added to every demo and every zip
 const EDIT_JS = r('tools/kv-edition.js');
 const addDemoBar = (html, t) => html.replace(/<body([^>]*)>/, m => m + demoBar(t));
-const withEdit = html => html.includes('kv-edition.js') ? html : html.replace('</body>', '<script src="assets/kv-edition.js" defer></script>\n</body>');
+const withEdit = (html, couleurs) => {
+  if (couleurs && !html.includes('name="kv-couleurs"')) html = html.replace('</head>', `  <meta name="kv-couleurs" content="${couleurs.replace(/"/g, '&quot;')}">\n</head>`);
+  return html.includes('kv-edition.js') ? html : html.replace('</body>', '<script src="assets/kv-edition.js" defer></script>\n</body>');
+};
+// Template colours become CSS variables (tools/kv-couleurs.cjs) so the edit mode can change them.
+const KV_COLORS = r('tools/kv-couleurs.cjs');
+const requireCjs = createRequire(import.meta.url);
+const twConfig = slug => { const p = r('templates', slug, 'tailwind.config.js'); delete requireCjs.cache[p]; return requireCjs(p); };
+const KV_WRAPPER = `// Config utilisée par « npm run build » : vos couleurs de tailwind.config.js, transformées en
+// variables CSS pour que le mode édition (bouton « Couleurs ») puisse les changer.
+const path = require('path');
+module.exports = require('./kv-couleurs.cjs').withVars(require('./tailwind.config.js'), path.join(__dirname, '../*.html'));
+`;
 const EDIT_LAUNCHER = `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><title>Modifier mon site</title>
 <meta http-equiv="refresh" content="0; url=index.html#edition"></head>
@@ -82,17 +95,22 @@ for (const t of cat.templates) {
   const tdir = r('templates', t.slug);
   // Incremental: only recompile / re-shoot / re-zip a template whose sources changed
   const newest = Math.max(...walk(tdir).filter(f => !f.endsWith('styles.css')).map(mtime));
-  if (FORCE || mtime(path.join(tdir, 'assets/styles.css')) < newest)
-    sh(`npx tailwindcss -c templates/${t.slug}/tailwind.config.js -i templates/${t.slug}/src/input.css -o templates/${t.slug}/assets/styles.css --minify`);
+  if (FORCE || mtime(path.join(tdir, 'assets/styles.css')) < Math.max(newest, mtime(KV_COLORS))) {
+    const wrap = r('.kv', `${t.slug}.tailwind.cjs`);
+    write(wrap, `module.exports = require(${JSON.stringify(KV_COLORS)}).withVars(require(${JSON.stringify(path.join(tdir, 'tailwind.config.js'))}), ${JSON.stringify(path.join(tdir, '*.html'))});\n`);
+    sh(`npx tailwindcss -c .kv/${t.slug}.tailwind.cjs -i templates/${t.slug}/src/input.css -o templates/${t.slug}/assets/styles.css --minify`);
+  }
+  const couleurs = requireCjs(KV_COLORS).meta(twConfig(t.slug));
+  { const src = fs.readFileSync(path.join(tdir, 'index.html'), 'utf8'); for (const [a, what] of [['data-kv-logo', 'logo'], ['data-kv-image', 'photo']]) if (!src.includes(a)) console.warn(`! ${t.slug} : aucun emplacement ${what} (${a}) pour le mode édition`); if (!couleurs) console.warn(`! ${t.slug} : aucune couleur modifiable (tailwind.config.js)`); }
 
   // Demo (public): site + bandeau
   const demo = r('dist/demo', t.slug);
   fs.cpSync(path.join(tdir, 'assets'), path.join(demo, 'assets'), { recursive: true });
   const html = fs.readFileSync(path.join(tdir, 'index.html'), 'utf8');
   fs.copyFileSync(EDIT_JS, path.join(demo, 'assets/kv-edition.js'));
-  write(path.join(demo, 'index.html'), addDemoBar(withEdit(html), t).replace('<head>', '<head>\n  <meta name="robots" content="noindex">'));
+  write(path.join(demo, 'index.html'), addDemoBar(withEdit(html, couleurs), t).replace('<head>', '<head>\n  <meta name="robots" content="noindex">'));
   for (const f of fs.readdirSync(tdir)) if (f.endsWith('.html') && f !== 'index.html')
-    write(path.join(demo, f), addDemoBar(withEdit(fs.readFileSync(path.join(tdir, f), 'utf8')), t));
+    write(path.join(demo, f), addDemoBar(withEdit(fs.readFileSync(path.join(tdir, f), 'utf8'), couleurs), t));
 
   // Images (cached in shots/, regenerated when the template changes)
   const shots = r('shots', t.slug);
@@ -103,7 +121,7 @@ for (const t of cat.templates) {
 
   // Package for buyers (never deployed)
   const zip = r('packages', `kitvitrine-${t.slug}.zip`);
-  if (!FORCE && mtime(zip) >= Math.max(...walk(tdir).map(mtime), mtime(EDIT_JS), mtime(r('build.mjs')))) continue;
+  if (!FORCE && mtime(zip) >= Math.max(...walk(tdir).map(mtime), mtime(EDIT_JS), mtime(KV_COLORS), mtime(r('build.mjs')))) continue;
   const stage = r('.stage', t.slug);
   fs.rmSync(stage, { recursive: true, force: true });
   fs.mkdirSync(stage, { recursive: true });
@@ -123,7 +141,10 @@ for (const t of cat.templates) {
   const fix = (file, from, to) => { const p = path.join(src, file); const c = fs.readFileSync(p, 'utf8'); if (!c.includes(from)) throw new Error(`${t.slug}: « ${from} » introuvable dans ${file}`); fs.writeFileSync(p, c.split(from).join(to)); };
   fix('tailwind.config.js', "'./*.html'", "'../*.html'");
   fix('package.json', '-o assets/styles.css', '-o ../assets/styles.css');
-  for (const f of fs.readdirSync(stage)) if (f.endsWith('.html')) write(path.join(stage, f), withEdit(fs.readFileSync(path.join(stage, f), 'utf8')));
+  fix('package.json', '-c tailwind.config.js', '-c kv.config.cjs');
+  fs.copyFileSync(KV_COLORS, path.join(src, 'kv-couleurs.cjs'));
+  write(path.join(src, 'kv.config.cjs'), KV_WRAPPER);
+  for (const f of fs.readdirSync(stage)) if (f.endsWith('.html')) write(path.join(stage, f), withEdit(fs.readFileSync(path.join(stage, f), 'utf8'), couleurs));
   fs.copyFileSync(EDIT_JS, path.join(stage, 'assets/kv-edition.js'));
   write(path.join(stage, 'MODIFIER-MON-SITE.html'), EDIT_LAUNCHER);
   write(path.join(stage, 'LISEZMOI.md'), readme(t));
@@ -132,6 +153,7 @@ for (const t of cat.templates) {
   execSync(`zip -qr "${zip}" .`, { cwd: stage });
 }
 fs.rmSync(r('.stage'), { recursive: true, force: true });
+fs.rmSync(r('.kv'), { recursive: true, force: true });
 // Buyer downloads (secret, unlisted URLs)
 for (const t of cat.templates) { const d = r('dist/dl', t.dl_token); fs.mkdirSync(d, { recursive: true }); fs.copyFileSync(r('packages', `kitvitrine-${t.slug}.zip`), path.join(d, `kitvitrine-${t.slug}.zip`)); }
 
@@ -198,24 +220,27 @@ Merci pour votre achat ! Ce dossier contient un site vitrine complet, prêt à �
 - \`index.html\` : la page du site. Ouvrez-la dans votre navigateur pour la voir.
 - \`assets/styles.css\` : la feuille de style compilée (ne pas modifier à la main).
 - \`assets/fonts/\` : les polices, hébergées avec le site (aucun appel à Google Fonts).
-- \`MODIFIER-MON-SITE.html\` : ouvre le site en mode édition pour changer les textes.
+- \`MODIFIER-MON-SITE.html\` : ouvre le site en mode édition (textes, photos, logo, carte, liens, couleurs).
 - \`sources-tailwind/\` : les sources pour changer couleurs et polices (inutile pour la mise en ligne).
 
 ## Modifier les textes (sans rien installer)
 
 1. Double-cliquez sur \`MODIFIER-MON-SITE.html\` : votre site s'ouvre dans le navigateur, en mode édition.
 2. Cliquez sur n'importe quel texte et tapez par-dessus (nom, téléphone, e-mail, tarifs, avis…).
-3. Cliquez sur « Télécharger ma page », puis remplacez \`index.html\` dans ce dossier par le fichier téléchargé.
+3. Photos et logo : cliquez sur une image encadrée de jaune et choisissez votre photo (elle est redimensionnée et intégrée à la page).
+4. Carte : bouton « Modifier l'adresse ». Liens (réseaux sociaux, réservation) : cliquez sur le lien puis « Modifier le lien ».
+5. Couleurs : bouton « Couleurs » dans le bandeau.
+6. Cliquez sur « Télécharger ma page », puis remplacez \`index.html\` dans ce dossier par le fichier téléchargé.
 
 Guide illustré : https://kitvitrine.pages.dev/guide/
 
 Vous préférez un éditeur de texte ? Ouvrez \`index.html\` dans VS Code ou Notepad++, cherchez le texte à changer (Ctrl+F) et remplacez-le.
 
-## Changer les couleurs ou les polices
+## Changer les polices ou la mise en page (avancé)
 
 1. Installez Node.js (https://nodejs.org).
 2. Ouvrez un terminal dans le dossier \`sources-tailwind\` et lancez : \`npm install\`
-3. Modifiez les couleurs dans \`sources-tailwind/tailwind.config.js\`.
+3. Modifiez les couleurs de base ou les polices dans \`sources-tailwind/tailwind.config.js\`.
 4. Recompilez : \`npm run build\` (la feuille \`assets/styles.css\` est mise à jour).
 
 ## Formulaire de contact

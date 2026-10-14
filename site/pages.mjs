@@ -419,7 +419,13 @@ export function guidePage() {
     ${step(2, 'Modifier les textes, directement sur la page', `
       <p>Double-cliquez sur <strong>MODIFIER-MON-SITE.html</strong> : votre site s'ouvre dans votre navigateur avec un bandeau « Mode édition ». Cliquez sur n'importe quel texte et tapez par-dessus : nom, slogan, tarifs, horaires, avis, questions fréquentes.</p>
       ${fig('g-edition.jpg', 'Capture du mode édition : le titre de la page est sélectionné et remplacé par un nouveau texte', 'Le texte en cours de modification est encadré en jaune. Les pointillés montrent ce qui est modifiable.', 1200, 680)}
-      <p>Le numéro de téléphone et l'adresse e-mail se mettent à jour partout où l'on clique dessus. Vous pouvez essayer ce mode sur la démo de chaque template avant d'acheter, avec le bouton <strong>Essayer l'édition</strong>.</p>`)}
+      <p>Le numéro de téléphone et l'adresse e-mail se mettent à jour partout où l'on clique dessus. Vous pouvez essayer ce mode sur la démo de chaque template avant d'acheter, avec le bouton <strong>Essayer l'édition</strong>.</p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li><strong>Photos et logo</strong> : cliquez sur une image encadrée de jaune et choisissez une photo de votre ordinateur ou de votre téléphone. Elle est redimensionnée et intégrée à la page.</li>
+        <li><strong>Carte</strong> : bouton « Modifier l'adresse » sur le plan. Pour vos visiteurs, le plan se charge seulement quand ils cliquent sur « Afficher le plan » (pas de cookie Google sans leur accord).</li>
+        <li><strong>Liens</strong> (Instagram, Facebook, réservation en ligne…) : cliquez sur le lien puis sur « Modifier le lien ».</li>
+        <li><strong>Couleurs</strong> : bouton « Couleurs » dans le bandeau, puis choisissez vos teintes. « Couleurs d'origine » annule.</li>
+      </ul>`)}
     ${step(3, 'Enregistrer vos modifications', `
       <p>Cliquez sur <strong>Télécharger ma page</strong>. Un fichier <strong>index.html</strong> arrive dans vos Téléchargements : déplacez-le dans le dossier du site et acceptez de remplacer l'ancien.</p>
       ${fig('g-telecharger.jpg', 'Le bandeau du mode édition avec le bouton Télécharger ma page', 'Pensez à télécharger avant de fermer l\'onglet : le navigateur vous prévient s\'il reste des modifications.', 800, 90)}`)}
@@ -436,8 +442,8 @@ export function guidePage() {
       <p>Pour une adresse à votre nom (moncabinet.fr), achetez le nom de domaine chez un registraire (une dizaine d'euros par an), puis reliez-le depuis les réglages de votre site sur Netlify.</p>`)}
   </ol>
   <div class="mt-16 rounded-md border border-line bg-mist p-6">
-    <h2 class="font-display font-bold text-xl">Pour aller plus loin : changer les couleurs</h2>
-    <p class="mt-2 text-ink/75 leading-relaxed">Les couleurs et les polices se règlent dans <strong>sources-tailwind/tailwind.config.js</strong>, puis la feuille de style se recompile avec Node.js en deux commandes. Tout est expliqué dans le fichier LISEZMOI.md du dossier.</p>
+    <h2 class="font-display font-bold text-xl">Pour aller plus loin : polices et mise en page</h2>
+    <p class="mt-2 text-ink/75 leading-relaxed">Les couleurs se changent directement dans le mode édition. Pour changer les polices ou la mise en page, les sources sont dans <strong>sources-tailwind/</strong> et la feuille de style se recompile avec Node.js en deux commandes. Tout est expliqué dans le fichier LISEZMOI.md du dossier.</p>
   </div>
 </section>`;
 }

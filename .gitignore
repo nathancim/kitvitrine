@@ -2,3 +2,4 @@ node_modules/
 .deploy/
 .stage/
 kitvitrine-site.zip
+.kv/

@@ -9,7 +9,7 @@ export const legalPages = [
 <p>Pour plusieurs sites, achetez une licence par site.</p>`],
   ['faq', 'Questions fréquentes', `
 <h2>Faut-il savoir coder ?</h2>
-<p>Non. Chaque template a un mode édition : vous cliquez sur un texte, vous le modifiez, vous téléchargez votre page. Tout est expliqué dans le <a href="/guide/" class="underline">guide</a>, et vous pouvez l'essayer sur la démo avant d'acheter.</p>
+<p>Non. Chaque template a un mode édition : vous cliquez sur un texte pour le modifier, sur une image pour mettre votre photo ou votre logo, vous changez l'adresse de la carte et les couleurs, puis vous téléchargez votre page. Tout est expliqué dans le <a href="/guide/" class="underline">guide</a>, et vous pouvez l'essayer sur la démo avant d'acheter.</p>
 <h2>Comment je reçois le template ?</h2>
 <p>Un lien de téléchargement arrive par e-mail juste après le paiement. Il contient un fichier .zip avec le site prêt à publier.</p>
 <h2>Où héberger le site ?</h2>

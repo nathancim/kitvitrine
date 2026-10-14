@@ -55,6 +55,8 @@ async def audit(slug, browser):
     if not html.exists():
         print(f"{slug} : templates/{slug}/index.html introuvable"); return False
     await page.goto(html.as_uri(), wait_until="networkidle")
+    # Le mode édition (ajouté par le build) affiche les cartes : on le charge pour mesurer la vraie page
+    await page.add_script_tag(path=str(ROOT / "tools" / "kv-edition.js"))
     await page.evaluate("document.fonts.ready"); await page.wait_for_timeout(300)
     res = await page.evaluate(CHECK)
     # Mobile menu must open

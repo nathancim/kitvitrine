@@ -47,7 +47,7 @@
           <a href="#arrivage" class="py-2 hover:text-rose">L'arrivage</a>
         </nav>
       </div>
-      <a href="#" class="inline-flex min-h-11 items-center font-display text-2xl md:text-[1.75rem] tracking-tight">Capucine</a>
+      <a href="#" class="inline-flex min-h-11 items-center gap-2 font-display text-2xl md:text-[1.75rem] tracking-tight"><svg data-kv-logo="Logo" class="w-7 h-7 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><use href="#anemone" x="2" y="2" width="36" height="36"/></svg><span>Capucine</span></a>
       <div class="flex items-center justify-end gap-6">
         <a href="#livraison" class="hidden lg:inline text-[15px] font-medium hover:text-rose">Livraison</a>
         <a href="#commander" class="hidden md:inline-flex min-h-11 items-center rounded-full bg-prune px-5 text-[15px] font-semibold text-papier hover:bg-rose-deep">Commander un bouquet</a>
@@ -82,7 +82,7 @@
       </div>
 
       <!-- Illustration : un bouquet dans l'arche de la vitrine -->
-      <div class="relative arche bg-poudre h-[38vh] min-h-[250px] max-h-[340px] md:h-auto md:max-h-none md:aspect-[4/5] overflow-hidden">
+      <div data-kv-image="Photo d'un bouquet de la boutique" class="relative arche bg-poudre h-[38vh] min-h-[250px] max-h-[340px] md:h-auto md:max-h-none md:aspect-[4/5] overflow-hidden">
         <svg class="eclot absolute inset-x-0 bottom-0 mx-auto h-[96%] w-auto" viewBox="0 0 400 460" role="img" aria-label="Bouquet d'anémones blanches, de renoncules roses et de tulipes jaunes, emballé dans du papier kraft noué d'un ruban">
           <!-- tiges -->
           <g stroke="#5E7458" stroke-width="3" fill="none" stroke-linecap="round">
@@ -239,6 +239,8 @@
           <div class="flex items-baseline justify-between gap-4 py-4"><dt class="font-medium">Métropole de Lyon</dt><dd class="text-prune/80">15 €</dd></div>
         </dl>
         <p class="mt-5 text-[15px] text-prune/70">Commande avant 12 h pour une livraison l'après-midi. Le samedi, avant 10 h.</p>
+        <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+        <div data-kv-map="Croix-Rousse, Lyon" class="mt-6 md:h-56 rounded-2xl overflow-hidden bg-poudre/60 text-prune"></div>
       </div>
     </section>
 

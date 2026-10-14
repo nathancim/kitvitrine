@@ -15,7 +15,7 @@
   <header class="sticky top-0 z-30 bg-lait/95 backdrop-blur border-b border-sarrasin/10">
     <div class="mx-auto max-w-7xl px-5 h-16 flex items-center justify-between gap-4">
       <a href="#" class="flex items-center gap-3 min-h-11 font-display font-bold text-xl text-sarrasin">
-        <svg class="w-9 h-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#C98A4B"/><circle cx="20" cy="20" r="18" fill="none" stroke="#8A5428" stroke-width="2"/><circle cx="13" cy="15" r="1.6" fill="#8A5428"/><circle cx="26" cy="12" r="1.2" fill="#8A5428"/><circle cx="28" cy="25" r="1.8" fill="#8A5428"/><circle cx="14" cy="27" r="1.3" fill="#8A5428"/><circle cx="20" cy="20" r="5" fill="#E9B949"/></svg>
+        <svg data-kv-logo="Logo" class="w-9 h-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#C98A4B"/><circle cx="20" cy="20" r="18" fill="none" stroke="#8A5428" stroke-width="2"/><circle cx="13" cy="15" r="1.6" fill="#8A5428"/><circle cx="26" cy="12" r="1.2" fill="#8A5428"/><circle cx="28" cy="25" r="1.8" fill="#8A5428"/><circle cx="14" cy="27" r="1.3" fill="#8A5428"/><circle cx="20" cy="20" r="5" fill="#E9B949"/></svg>
         <span>Crêperie Maëlle</span>
       </a>
       <nav class="hidden lg:flex items-center gap-8 font-medium" aria-label="Navigation principale">
@@ -53,7 +53,7 @@
 
         <!-- Illustration : la nappe vichy, l'assiette, la galette complète et la bolée de cidre -->
         <div class="relative vichy min-h-[260px] sm:min-h-[480px] lg:min-h-0 lg:-mr-[max(0px,calc((100vw-80rem)/2))] flex items-center justify-center p-6">
-          <svg class="relative w-full max-w-[300px] sm:max-w-[520px]" viewBox="0 0 460 440" role="img" aria-label="Une galette complète avec son œuf au centre, servie dans une assiette, à côté d'une bolée de cidre">
+          <svg data-kv-image="Photo d'une galette de la maison" class="relative w-full max-w-[300px] sm:max-w-[520px]" viewBox="0 0 460 440" role="img" aria-label="Une galette complète avec son œuf au centre, servie dans une assiette, à côté d'une bolée de cidre">
             <defs>
               <radialGradient id="g-galette" cx="50%" cy="45%" r="65%">
                 <stop offset="0" stop-color="#C98A4B"/><stop offset=".7" stop-color="#A86A34"/><stop offset="1" stop-color="#8A5428"/>
@@ -289,12 +289,14 @@
             <div class="flex justify-between gap-6 py-3"><dt class="font-bold">Samedi</dt><dd class="text-right text-encre/75">12 h – 22 h, en continu</dd></div>
             <div class="flex justify-between gap-6 py-3"><dt class="font-bold">Dimanche</dt><dd class="text-right text-encre/75">12 h – 18 h</dd></div>
           </dl>
-          <div class="mt-6 md:mt-10 space-y-4 md:space-y-5 leading-relaxed">
+          <div class="mt-5 md:mt-10 space-y-3 md:space-y-5 leading-relaxed">
             <p><span class="font-bold">Adresse.</span> 12 rue de l'Exemple, 22100 Dinan, à deux minutes de la place des Merciers.</p>
             <p><span class="font-bold">Venir.</span> Parking du Châtelet à 300 m. La rue est piétonne et pavée ; une rampe permet d'entrer en fauteuil.</p>
             <p><span class="font-bold">Groupes.</span> Jusqu'à 30 couverts, salle privatisable le lundi. Écrivez-nous à <a href="mailto:contact@exemple.fr" class="font-bold text-rouge underline underline-offset-4">contact@exemple.fr</a>.</p>
             <p><span class="font-bold">Téléphone.</span> <a href="tel:+33600000000" class="font-bold text-rouge underline underline-offset-4">06 00 00 00 00</a>, pendant les heures d'ouverture.</p>
           </div>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Place des Merciers, 22100 Dinan" class="mt-4 md:mt-6 md:h-64 rounded-2xl overflow-hidden border-2 border-sarrasin/10 bg-farine text-sarrasin"></div>
         </div>
 
         <div id="reserver" class="lg:col-span-7 -mx-1 sm:mx-0 rounded-3xl bg-white border-2 border-sarrasin/10 p-5 md:p-10 scroll-mt-24">
