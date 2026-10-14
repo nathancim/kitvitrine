@@ -46,6 +46,20 @@ for (const t of cat.templates) {
   if (!cat.styles.includes(t.style)) throw new Error(`${t.slug}: style inconnu « ${t.style} »`);
   if (!cat.couleurs[t.couleur]) throw new Error(`${t.slug}: couleur inconnue « ${t.couleur} »`);
   if (!fs.existsSync(r('templates', t.slug, 'index.html'))) throw new Error(`${t.slug}: templates/${t.slug}/index.html introuvable`);
+  if (t.date >= '2026-10-15') {
+    if (!t.direction) throw new Error(`${t.slug}: champ manquant « direction » (une des directions de catalog.json)`);
+    if (!Array.isArray(t.animations) || t.animations.length < 3) throw new Error(`${t.slug}: « animations » doit lister au moins 3 animations`);
+  }
+  if (t.direction && !cat.directions[t.direction]) throw new Error(`${t.slug}: direction inconnue « ${t.direction} » (voir catalog.json > directions)`);
+}
+// Variety: within a univers, a direction is reused only once every direction has been used there.
+for (const u of cat.univers) {
+  const used = new Set();
+  for (const t of [...cat.templates].sort((a, b) => a._i - b._i).filter(t => t.univers.includes(u.slug) && t.direction)) {
+    if (used.has(t.direction) && used.size < Object.keys(cat.directions).length) throw new Error(`${t.slug}: direction « ${t.direction} » déjà utilisée dans l'univers « ${u.label} ». Libres : ${Object.keys(cat.directions).filter(d => !used.has(d)).join(', ')}`);
+    used.add(t.direction);
+    if (used.size === Object.keys(cat.directions).length) used.clear();
+  }
 }
 
 const DIST = r('dist');
@@ -195,7 +209,7 @@ for (const [slug, title, html] of legalPages) page(slug, { title: `${title} — 
 write(r('dist/404.html'), P.layout({ site, path: '/404', title: 'Page introuvable — Kit Vitrine', description: 'Page introuvable', body: `<section class="mx-auto max-w-3xl px-4 sm:px-6 pt-16"><h1 class="font-display font-bold text-3xl">Cette page n'existe pas ou plus.</h1><p class="mt-4 text-ink/70">Le template a peut-être changé de nom. Cherchez-le dans le catalogue.</p><p class="mt-8 flex gap-3"><a href="/" class="btn-sign">Voir les templates</a><a href="/guide/" class="btn-line">Lire le guide</a></p></section>` }));
 
 // ---- Data, assets, SEO files ----
-const pub = { univers: cat.univers.map(({ slug, label, description }) => ({ slug, label, description })), templates: cat.templates.map(({ _i, sections, palette, dl_token, shopify_product_id, ...t }) => t) };
+const pub = { univers: cat.univers.map(({ slug, label, description }) => ({ slug, label, description })), templates: cat.templates.map(({ _i, sections, palette, dl_token, shopify_product_id, direction, animations, ...t }) => t) };
 write(r('dist/data/catalog.json'), JSON.stringify(pub));
 fs.copyFileSync(r('site/explore.js'), r('dist/assets/explore.js'));
 fs.copyFileSync(r('site/chat.js'), r('dist/assets/chat.js'));

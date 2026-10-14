@@ -40,7 +40,7 @@ async def main(src, out, bg, accent):
     out = Path(out); out.mkdir(parents=True, exist_ok=True)
     async with async_playwright() as p:
         b = await p.chromium.launch()
-        pg = await b.new_page(viewport={"width": 1440, "height": 1080})
+        pg = await b.new_page(viewport={"width": 1440, "height": 1080}, reduced_motion="reduce")
         await pg.goto(Path(src).resolve().as_uri(), wait_until="networkidle")
         await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(300)
         top = Image.open(io.BytesIO(await pg.screenshot()))
@@ -48,7 +48,7 @@ async def main(src, out, bg, accent):
         full = Image.open(io.BytesIO(await pg.screenshot(full_page=True))).convert("RGB")
         w, h = full.size
         full.resize((1000, int(h * 1000 / w)), Image.LANCZOS).save(out / "full.jpg", quality=78, optimize=True, progressive=True)
-        m = await b.new_page(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True, device_scale_factor=2)
+        m = await b.new_page(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True, device_scale_factor=2, reduced_motion="reduce")
         await m.goto(Path(src).resolve().as_uri(), wait_until="networkidle")
         await m.evaluate("document.fonts.ready"); await m.wait_for_timeout(300)
         mtop = Image.open(io.BytesIO(await m.screenshot())).convert("RGB")

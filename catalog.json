@@ -27,6 +27,22 @@
     "rose": "#C76B8E",
     "violet": "#6B5BA8"
   },
+  "directions": {
+    "editorial": "Éditorial magazine : grandes typos à empattements, colonnes asymétriques, filets fins, lettrines, beaucoup d'air",
+    "organique": "Organique doux : formes arrondies et blobs, tons naturels, coins très ronds, rythme calme",
+    "affiche": "Affiche audacieuse : typo condensée géante, aplats francs, contrastes forts, bandeaux obliques",
+    "retro": "Rétro chaleureux : motifs (vichy, rayures), badges ronds, typos display vintage, couleurs chaudes",
+    "suisse": "Grille suisse : sans-serif, grille stricte et visible, gros numéros, alignements à gauche, très peu de couleurs",
+    "brutaliste": "Néo-brutaliste : bordures noires épaisses, ombres décalées pleines, couleurs vives, boutons « autocollants »",
+    "luxe": "Luxe minimal : fond très sombre ou crème, serif fine, capitales espacées, détails dorés, grands blancs",
+    "bento": "Bento moderne : grille de tuiles de tailles différentes, coins arrondis, mini-widgets (horaires, avis, chiffres)",
+    "sombre": "Sombre lumineux : fond foncé, dégradés et halos de couleur, cartes en verre dépoli, accents néon discrets",
+    "illustre": "Illustré ludique : grandes scènes SVG, couleurs pop, formes qui flottent, ton léger",
+    "artisanal": "Papier artisanal : texture papier, typo manuscrite pour les accents, tampons, étiquettes, traits dessinés",
+    "recit": "Récit au défilement : sections plein écran, étapes qui se révèlent, chiffres qui défilent, fil conducteur vertical",
+    "split": "Écran partagé : sur ordinateur, une moitié fixe (titre, visuel) et l'autre qui défile ; sur mobile, empilé",
+    "galerie": "Galerie d'abord : grandes zones photo (emplacements data-kv-image), mosaïque, légendes, texte en appui"
+  },
   "univers": [
     {
       "slug": "sante-bien-etre",
@@ -91,6 +107,8 @@
       ],
       "style": "Nature",
       "couleur": "vert",
+      "direction": "organique",
+      "animations": [],
       "pages": 1,
       "prix": 29,
       "date": "2026-10-13",
@@ -136,6 +154,10 @@
       ],
       "style": "Audacieux",
       "couleur": "bleu",
+      "direction": "affiche",
+      "animations": [
+        "dessin de toits qui se pose"
+      ],
       "pages": 1,
       "prix": 29,
       "date": "2026-10-13",
@@ -183,6 +205,10 @@
       ],
       "style": "Chaleureux",
       "couleur": "rouge",
+      "direction": "retro",
+      "animations": [
+        "galette qui tourne"
+      ],
       "pages": 1,
       "prix": 29,
       "date": "2026-10-13",
@@ -228,6 +254,10 @@
       ],
       "style": "Élégant",
       "couleur": "rose",
+      "direction": "editorial",
+      "animations": [
+        "bouquet qui éclot"
+      ],
       "pages": 1,
       "prix": 29,
       "date": "2026-10-14",

@@ -49,8 +49,20 @@ CHECK = r"""() => {
   return out;
 }"""
 
+# Textes visibles dans la page mais à opacité nulle (animation d'apparition bloquée)
+HIDDEN = """() => {
+  const out = [];
+  for (const el of document.querySelectorAll('h1,h2,h3,p,li,a,button,blockquote,dd')) {
+    if (el.closest('[aria-hidden="true"],[hidden],dialog,details:not([open]),#menu,[data-kv-gen]')) continue;
+    const r = el.getBoundingClientRect(); if (!r.width || !r.height || !el.textContent.trim()) continue;
+    let o = 1, n = el; while (n && n.nodeType === 1) { const cs = getComputedStyle(n); if (cs.display === 'none' || cs.visibility === 'hidden') { o = -1; break; } o *= parseFloat(cs.opacity); n = n.parentElement; }
+    if (o >= 0 && o < 0.1) out.push(el.textContent.trim().slice(0, 40));
+  }
+  return out;
+}"""
+
 async def audit(slug, browser):
-    page = await browser.new_page(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True, device_scale_factor=2)
+    page = await browser.new_page(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True, device_scale_factor=2, reduced_motion="reduce")
     html = ROOT / "templates" / slug / "index.html"
     if not html.exists():
         print(f"{slug} : templates/{slug}/index.html introuvable"); return False
@@ -68,6 +80,21 @@ async def audit(slug, browser):
         await btn.click(); await page.wait_for_timeout(200)
     else:
         res["block"].append("aucun bouton de menu mobile visible (button avec aria-expanded)")
+    # Animations : tout doit être visible sans animation (prefers-reduced-motion)…
+    hidden = await page.evaluate(HIDDEN)
+    for h in hidden[:5]: res["block"].append(f"texte invisible quand les animations sont désactivées (prefers-reduced-motion) : « {h} »")
+    # … et avec animations, après avoir fait défiler toute la page
+    mp = await browser.new_page(viewport={"width": 390, "height": 844}, is_mobile=True, has_touch=True, device_scale_factor=2)
+    await mp.goto(html.as_uri(), wait_until="networkidle")
+    await mp.add_script_tag(path=str(ROOT / "tools" / "kv-edition.js"))
+    total = await mp.evaluate("document.documentElement.scrollHeight")
+    for y in range(0, int(total) + 844, 400):
+        await mp.evaluate(f"window.scrollTo(0, {y})"); await mp.wait_for_timeout(120)
+    await mp.wait_for_timeout(1200)
+    if await mp.evaluate("document.documentElement.scrollWidth > window.innerWidth + 1"):
+        res["block"].append("une animation provoque un défilement horizontal (overflow-x) : ajouter overflow-x-clip au conteneur ou réduire le décalage")
+    for h in (await mp.evaluate(HIDDEN))[:5]: res["block"].append(f"texte resté invisible après défilement (animation d'apparition qui ne se déclenche pas) : « {h} »")
+    await mp.close()
     screens = res["height"] / 844
     if screens > MAX_SCREENS:
         res["block"].append(f"page trop longue sur mobile : {screens:.1f} écrans (maxi {MAX_SCREENS}). Condenser : carrousels horizontaux, accordéons, textes plus courts")

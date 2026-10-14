@@ -23,6 +23,7 @@ Langue : tout est en français (textes, fiches, commits).
 - Prendre l'univers qui a **le moins** de templates (à égalité, celui dont le dernier ajout est le plus ancien).
 - Choisir un **métier précis** pas encore couvert dans cet univers (ex. « podologue », pas « santé »). Vérifier avec `grep` dans `catalog.json` que le métier n'existe pas déjà.
 - Choisir un style et une couleur **différents des 3 derniers templates ajoutés**.
+- Choisir une **direction artistique** dans `catalog.json > directions` (voir « Variété » ci-dessous) : jamais une direction déjà prise **dans le même univers** (le build refuse), et différente des **5 derniers templates** ajoutés tous univers confondus.
 
 ### 2. Concevoir (qualité avant tout)
 - Lire la skill `frontend-design` avant d'écrire le code.
@@ -39,6 +40,23 @@ Langue : tout est en français (textes, fiches, commits).
   - **Couleurs** : couleurs du `tailwind.config.js` en hexadécimal (le build les convertit en variables CSS) et ajouter `kvCouleurs: { <nom>: '<libellé en français>', … }` (couleur principale, accent, fonds, texte : 4 à 7 entrées). Utiliser les classes Tailwind (`bg-…`, `text-…`, `fill-…`) plutôt que des couleurs en dur pour tout ce qui doit suivre le changement de couleur (les dessins SVG peuvent garder des couleurs en dur).
 - Copier la structure de fichiers de `templates/equilibre/` (`package.json`, `tailwind.config.js` avec `content: { relative: true, files: ['./*.html'] }`).
 
+### 2 ter. Variété et animations (bloquant)
+Le propriétaire veut des sites qui ne se ressemblent pas : chaque template doit avoir **sa propre identité**, pas la même trame recolorée.
+- **Direction artistique** : appliquer franchement celle choisie (typographies, formes, grille, textures, ton). Deux templates d'un même univers ne doivent jamais pouvoir être confondus.
+- **Varier la structure**, en changeant au moins 3 de ces éléments par rapport aux 3 derniers templates :
+  - héros : texte + illustration côte à côte, titre géant plein écran, héros centré, héros en mosaïque, héros en écran partagé, bandeau défilant, carte « ticket »…
+  - grille : colonnes classiques, bento, asymétrique, zigzag, grille suisse numérotée, cartes empilées…
+  - navigation : barre classique, menu centré, menu latéral, pilule flottante…
+  - rythme : fonds alternés, sections plein écran, séparateurs dessinés, grandes citations, chiffres-clés…
+  - typographies : ne pas reprendre le couple de polices d'un des 5 derniers templates.
+- **Animations** (au moins 3, dont une « signature » propre au template), en CSS et JS léger, sans bibliothèque :
+  - apparition au défilement (IntersectionObserver : ajouter une classe qui passe opacité/translation à l'état final ; le contenu doit être visible si JS ou l'observateur manque),
+  - entrée du héros (titre mot par mot, illustration qui se dessine avec stroke-dasharray, éléments qui se posent),
+  - au survol / au toucher (cartes qui se soulèvent, boutons qui réagissent, soulignements animés),
+  - au choix : bandeau défilant (marquee), chiffres qui comptent, parallaxe légère, onglets ou accordéons animés, dessin SVG qui bouge doucement.
+  - Règles : `@media (prefers-reduced-motion: reduce)` désactive tout et **laisse tout visible** ; aucune animation ne doit créer de défilement horizontal (utiliser `overflow-x-clip` sur les sections qui glissent) ; durées 300–800 ms, pas de clignotement. L'audit mobile vérifie ces points.
+- Enregistrer dans la fiche `direction` et `animations` (liste courte en français, ex. `["titre qui apparaît mot par mot", "cartes qui se soulèvent au survol", "chiffres qui comptent"]`).
+
 ### 2 bis. Mobile d'abord (bloquant)
 La majorité des visiteurs d'un artisan ou d'un commerce arrivent sur téléphone. Concevoir d'abord pour un écran de 390 px, puis enrichir pour l'ordinateur (`md:` / `lg:`).
 - **Barre d'action fixée en bas** sur mobile uniquement (`md:hidden`, `position: fixed; bottom: 0`, `padding-bottom: env(safe-area-inset-bottom)`) avec les 1 ou 2 actions du métier : « Appeler » (`tel:`) + « Devis » / « Réserver » / « Rendez-vous ». Ajouter un `padding-bottom` au `body` sur mobile pour qu'elle ne cache rien.
@@ -51,7 +69,7 @@ La majorité des visiteurs d'un artisan ou d'un commerce arrivent sur téléphon
 - **Menu mobile** : bouton avec `aria-expanded`, panneau plein écran ou déroulant avec liens de 48 px de haut, fermeture au clic sur un lien.
 
 ### 3. Enregistrer la fiche
-Ajouter l'entrée **à la fin** de `catalog.json > templates` avec tous les champs : `slug, title, tagline, description, univers, style, couleur, pages, prix, date (AAAA-MM-JJ, heure de Paris), tags, sections, palette, shopify_url: "", shopify_product_id: ""`.
+Ajouter l'entrée **à la fin** de `catalog.json > templates` avec tous les champs : `slug, title, tagline, description, univers, style, couleur, direction, animations, pages, prix, date (AAAA-MM-JJ, heure de Paris), tags, sections, palette, shopify_url: "", shopify_product_id: ""`.
 - `title` : un nom court et évocateur, unique. `tagline` : « Site vitrine pour <métier> ».
 - Prix : 29 € pour une page, 39 € pour 2 à 4 pages, 49 € au-delà.
 - `tags` : 6 à 10 mots que tape un client (métier, synonymes, spécialités).
