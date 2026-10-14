@@ -6,7 +6,8 @@
     "tagline": "Des sites vitrines prêts à l'emploi, pensés pour votre métier",
     "ventes_ouvertes": false,
     "messagerie_active": true,
-    "messagerie_emails": false
+    "messagerie_emails": false,
+    "messagerie_delai": "sous 48 h"
   },
   "styles": [
     "Minimal",

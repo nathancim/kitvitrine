@@ -66,7 +66,7 @@ ${body}
 </main>
 ${footer(site)}
 ${tabbar ? tabBar(path, site.messagerie_active) : ''}
-${site.messagerie_active ? chatWidget(site.messagerie_emails) : ''}
+${site.messagerie_active ? chatWidget(site.messagerie_emails, site.messagerie_delai || 'sous 48 h') : ''}
 <script src="/assets/explore.js" defer></script>
 ${scripts}
 </body>
@@ -144,16 +144,16 @@ function footer(site) {
 }
 
 
-function chatWidget(emails) {
+function chatWidget(emails, delai) {
   return `<button type="button" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-3 h-14 pl-5 pr-6 rounded-full bg-ink text-white font-semibold shadow-card hover:bg-black" data-open-chat>
   <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/></svg>
   <span>Une question ?</span><span class="hidden min-w-5 h-5 px-1 rounded-full bg-[#E1305A] text-[11px] font-bold grid place-items-center" data-chat-badge></span>
 </button>
-<dialog class="kv-chat" aria-labelledby="chat-t" data-emails="${emails ? 'oui' : 'non'}">
+<dialog class="kv-chat" aria-labelledby="chat-t" data-emails="${emails ? 'oui' : 'non'}" data-delai="${delai}">
   <div class="flex flex-col h-full">
     <div class="flex items-center gap-3 px-4 h-16 border-b border-line shrink-0">
       <span class="grid place-items-center w-10 h-10 rounded-full bg-mist shrink-0">${logo}</span>
-      <div class="min-w-0 flex-1"><h2 id="chat-t" class="font-semibold leading-tight">Kit Vitrine</h2><p class="text-[13px] text-ink/60 leading-tight">Réponse sous 2 h · 8 h – 22 h</p></div>
+      <div class="min-w-0 flex-1"><h2 id="chat-t" class="font-semibold leading-tight">Kit Vitrine</h2><p class="text-[13px] text-ink/60 leading-tight">Réponse ${delai}</p></div>
       <form method="dialog"><button class="grid place-items-center w-11 h-11 rounded-full hover:bg-mist" aria-label="Fermer la messagerie">${icon('close', 'w-5 h-5', 2.2)}</button></form>
     </div>
     <p class="px-4 py-2 text-[12px] leading-snug text-ink/55 bg-mist/60 border-b border-line">Les réponses sont rédigées par l'assistant IA de Kit Vitrine. Les demandes particulières (devis, sur-mesure) sont transmises à l'équipe.</p>
