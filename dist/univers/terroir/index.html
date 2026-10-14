@@ -2,64 +2,167 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Templates de sites agriculture &amp; terroir — Kit Vitrine</title>
 <meta name="description" content="Fermes, producteurs locaux, vignerons, vente directe. Templates de sites vitrines prêts à l&#39;emploi, démo en ligne.">
 <link rel="canonical" href="https://kitvitrine.pages.dev/univers/terroir/">
 <meta property="og:type" content="website"><meta property="og:title" content="Templates de sites agriculture &amp; terroir — Kit Vitrine"><meta property="og:description" content="Fermes, producteurs locaux, vignerons, vente directe. Templates de sites vitrines prêts à l&#39;emploi, démo en ligne."><meta property="og:url" content="https://kitvitrine.pages.dev/univers/terroir/">
-<meta name="theme-color" content="#0E5A47">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 
 </head>
-<body>
-<a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-3 py-2 rounded">Aller au contenu</a>
-<header class="border-b border-line bg-white sticky top-0 z-40">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center gap-6">
-    <a href="/" class="flex items-center gap-2 font-display font-extrabold text-xl tracking-tight shrink-0"><svg class="w-8 h-8" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><path d="M9.5 9h6.5v5c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14z" fill="#F0BE3D"/><path d="M22.5 9H29v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14z" fill="#F0BE3D"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg>Kit Vitrine</a>
-    <form action="/catalogue/" class="hidden md:flex flex-1 max-w-md" role="search">
-      <label class="sr-only" for="hq">Rechercher un template</label>
-      <input id="hq" name="q" type="search" placeholder="Rechercher : ostéopathe, boulangerie, gîte…" class="w-full rounded-md border border-line bg-mist px-4 py-2.5 text-[15px] focus:bg-white focus:border-ink focus:outline-none">
+<body class="pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-0">
+<a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] bg-white px-3 py-2 rounded-lg shadow">Aller au contenu</a>
+<header class="kv-header sticky top-0 z-40 bg-white ">
+  <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 h-[4.5rem] md:h-20 flex items-center gap-4">
+    <a href="/" class="hidden md:flex items-center gap-2 min-h-11 font-display font-bold text-xl tracking-tight shrink-0"><svg class="w-8 h-8 shrink-0" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><path d="M9.5 9h6.5v5c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14z" fill="#F0BE3D"/><path d="M22.5 9H29v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14z" fill="#F0BE3D"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg><span>Kit Vitrine</span></a>
+    
+    <form action="/" role="search" class="md:hidden flex-1 flex items-center gap-2 min-w-0" data-pill-mobile>
+      <label class="flex-1 min-w-0 flex items-center gap-3 rounded-full bg-white border border-line shadow-pill px-4 h-14">
+        <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.3-4.3M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"/></svg>
+        <span class="flex flex-col min-w-0 flex-1">
+          <span class="sr-only">Rechercher un métier</span>
+          <input name="q" type="search" autocomplete="off" placeholder="Quel métier ?" class="kv-q w-full bg-transparent font-semibold text-base placeholder:text-ink focus:outline-none" data-live>
+          <span class="text-xs text-ink/55 truncate" data-summary-mobile>Tous les styles · toutes les tailles</span>
+        </span>
+      </label>
+      <button type="button" class="relative grid place-items-center w-12 h-12 shrink-0 rounded-full border border-line bg-white" aria-label="Filtres" data-open-filters><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span class="kv-badge hidden absolute -top-1 -right-1 min-w-5 h-5 px-1 rounded-full bg-ink text-white text-[11px] font-bold grid place-items-center" data-filter-count></span></button>
     </form>
-    <nav class="hidden md:flex items-center gap-6 text-[15px] ml-auto">
-      <a href="/catalogue/" class="hover:text-sign">Catalogue</a>
-      <a href="/univers/" class="hover:text-sign">Métiers</a>
-      <a href="/guide/" class="hover:text-sign">Guide</a>
-      <a href="/faq/" class="hover:text-sign">Questions</a>
+    <div class="hidden md:flex flex-1 justify-center"><form action="/" role="search" class="kv-pill hidden md:flex items-center rounded-full border border-line bg-white shadow-pill hover:shadow-pill-hover transition-shadow" data-pill>
+    <label class="flex flex-col px-6 py-2.5 rounded-full hover:bg-mist focus-within:bg-mist cursor-text min-w-0 w-64 lg:w-72">
+      <span class="text-xs font-semibold">Métier</span>
+      <input name="q" type="search" autocomplete="off" placeholder="Fleuriste, couvreur, gîte…" class="kv-q bg-transparent text-[15px] placeholder:text-ink/45 focus:outline-none min-w-0" data-live>
+    </label>
+    <span class="h-8 w-px bg-line"></span>
+    <button type="button" class="flex flex-col items-start px-6 py-2.5 rounded-full hover:bg-mist text-left" data-open-filters>
+      <span class="text-xs font-semibold">Style</span><span class="text-[15px] text-ink/55" data-summary-style>Tous les styles</span>
+    </button>
+    <span class="h-8 w-px bg-line"></span>
+    <button type="button" class="flex flex-col items-start pl-6 pr-2 py-2.5 rounded-full hover:bg-mist text-left" data-open-filters>
+      <span class="text-xs font-semibold">Pages</span><span class="text-[15px] text-ink/55" data-summary-pages>Indifférent</span>
+    </button>
+    <button class="ml-2 mr-2 grid place-items-center w-12 h-12 rounded-full bg-sign text-white hover:bg-sign-deep" aria-label="Rechercher"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.3-4.3M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z"/></svg></button>
+  </form></div>
+    <nav class="hidden md:flex items-center gap-1 shrink-0" aria-label="Navigation">
+      <a href="/guide/" class="px-4 py-3 rounded-full hover:bg-mist font-medium">Guide</a>
+      <a href="/favoris/" class="flex items-center gap-2 px-4 py-3 rounded-full hover:bg-mist font-medium"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><span>Favoris</span><span class="kv-fav-count hidden text-xs font-bold bg-ink text-white rounded-full px-1.5 py-0.5"></span></a>
     </nav>
-    <button id="menuBtn" class="md:hidden ml-auto p-2 -mr-2" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-  </div>
-  <div id="menu" class="hidden md:hidden border-t border-line px-4 py-4 space-y-4">
-    <form action="/catalogue/" role="search"><input name="q" type="search" aria-label="Rechercher un template" placeholder="Rechercher un métier…" class="w-full rounded-md border border-line bg-mist px-4 py-3 text-base"></form>
-    <nav class="grid gap-3 text-lg"><a href="/catalogue/">Catalogue</a><a href="/univers/">Métiers</a><a href="/guide/">Guide</a><a href="/faq/">Questions</a></nav>
   </div>
 </header>
 <main id="contenu">
 
-<section class="mx-auto max-w-7xl px-4 sm:px-6 pt-10">
-  <nav class="text-sm text-ink/55" aria-label="Fil d'Ariane"><a href="/" class="hover:text-ink">Accueil</a> / <a href="/univers/" class="hover:text-ink">Métiers</a> / <span class="text-ink">Agriculture &amp; terroir</span></nav>
-  <h1 class="mt-4 font-display font-extrabold text-4xl sm:text-5xl tracking-tight">Templates de sites agriculture &amp; terroir</h1>
-  <p class="mt-4 text-lg text-ink/70 max-w-2xl">Fermes, producteurs locaux, vignerons, vente directe. </p>
-  <div class="mt-10 rounded-md border border-line bg-mist p-8"><p class="font-display font-bold text-xl">Les premiers templates de cette famille arrivent bientôt.</p><p class="mt-2 text-ink/70">En attendant, parcourez le <a href="/catalogue/" class="underline underline-offset-4">catalogue complet</a> : beaucoup de modèles s'adaptent facilement à un métier proche.</p></div>
-</section>
-</main>
-<footer class="mt-24 bg-ink text-white/70">
-  <div class="awning opacity-90"></div>
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-4 text-[15px]">
-    <div class="md:col-span-2">
-      <p class="font-display font-extrabold text-white text-xl">Kit Vitrine</p>
-      <p class="mt-3 max-w-sm">Des sites vitrines prêts à l&#39;emploi, pensés pour votre métier. Fichiers HTML et Tailwind CSS, livrés dès le paiement.</p>
-    </div>
-    <nav class="grid gap-2 content-start"><p class="text-white font-medium mb-1">Boutique</p><a href="/catalogue/" class="hover:text-white">Tous les templates</a><a href="/univers/" class="hover:text-white">Par métier</a><a href="/guide/" class="hover:text-white">Guide de mise en ligne</a><a href="/licence/" class="hover:text-white">Licence</a><a href="/faq/" class="hover:text-white">Questions fréquentes</a></nav>
-    <nav class="grid gap-2 content-start"><p class="text-white font-medium mb-1">Informations</p><a href="/mentions-legales/" class="hover:text-white">Mentions légales</a><a href="/cgv/" class="hover:text-white">Conditions de vente</a><a href="/confidentialite/" class="hover:text-white">Confidentialité</a></nav>
+<div class="kv-catbar sticky top-[4.5rem] md:top-20 z-30 bg-white border-b border-line">
+  <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 flex items-center gap-6">
+    <nav class="flex-1 min-w-0 flex gap-3 sm:gap-8 overflow-x-auto no-scrollbar snap-x scroll-px-4 -mx-4 px-4 sm:mx-0 sm:px-0" aria-label="Métiers">
+      <a href="/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg><span class="whitespace-nowrap">Tous</span></a>
+      <a href="/univers/sante-bien-etre/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="sante-bien-etre" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/><path d="M8.5 12h2l1-2 1.5 4 1-2h1.5"/></svg><span class="whitespace-nowrap">Santé</span></a><a href="/univers/animaux/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="animaux" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="16" rx="4" ry="3.5"/><circle cx="6.5" cy="10.5" r="1.8"/><circle cx="10" cy="6.5" r="1.8"/><circle cx="14" cy="6.5" r="1.8"/><circle cx="17.5" cy="10.5" r="1.8"/></svg><span class="whitespace-nowrap">Animaux</span></a><a href="/univers/artisans/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="artisans" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6.5 17.5 3l3.5 3.5L17.5 10zM15.8 8.2 5 19l-1.5-1.5L14.2 6.8"/><path d="M3 21h6"/></svg><span class="whitespace-nowrap">Artisans</span></a><a href="/univers/restauration/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="restauration" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8a2 2 0 0 0 4 0V3M9 11v10M17 21V3c-2 0-3.5 2.5-3.5 6S15 13 17 13"/></svg><span class="whitespace-nowrap">Restaurants</span></a><a href="/univers/commerces/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="commerces" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16l-1.5-5h-13zM5 9v11h14V9"/><path d="M4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0A2.7 2.7 0 0 0 20 9M10 20v-5h4v5"/></svg><span class="whitespace-nowrap">Commerces</span></a><a href="/univers/independants/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="independants" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h17"/></svg><span class="whitespace-nowrap">Indépendants</span></a><a href="/univers/tourisme/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="tourisme" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20 12 4l9 16zM12 4v16M9 20l3-5 3 5"/></svg><span class="whitespace-nowrap">Gîtes</span></a><a href="/univers/associations/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="associations" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m12 7.5 3.5 2.5-1.3 4h-4.4L8.5 10zM12 3.5v4M15.5 10l4-1.5M14.2 14l2.3 3.5M9.8 14l-2.3 3.5M8.5 10l-4-1.5"/></svg><span class="whitespace-nowrap">Sport</span></a><a href="/univers/creatifs/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-transparent text-ink/60 hover:text-ink hover:border-line" data-cat="creatifs" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2.5h7L17 8h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/></svg><span class="whitespace-nowrap">Créatifs</span></a><a href="/univers/terroir/" class="kv-cat group shrink-0 snap-start flex flex-col items-center gap-1.5 pt-3 pb-2.5 min-w-[4.25rem] text-xs font-medium border-b-2 border-ink text-ink" data-cat="terroir" aria-current="true"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V9M12 13c-3 0-5-2-5-5 3 0 5 2 5 5ZM12 13c3 0 5-2 5-5-3 0-5 2-5 5ZM12 9c-2.2 0-3.5-1.5-3.5-4 2.2 0 3.5 1.5 3.5 4ZM12 9c2.2 0 3.5-1.5 3.5-4-2.2 0-3.5 1.5-3.5 4Z"/></svg><span class="whitespace-nowrap">Terroir</span></a>
+    </nav>
+    <button type="button" class="hidden md:flex relative items-center gap-2 shrink-0 h-12 px-4 rounded-xl border border-line hover:border-ink text-sm font-semibold" data-open-filters><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>Filtres<span class="kv-badge hidden absolute -top-2 -right-2 min-w-5 h-5 px-1 rounded-full bg-ink text-white text-[11px] font-bold grid place-items-center" data-filter-count></span></button>
   </div>
-  <p class="mx-auto max-w-7xl px-4 sm:px-6 pb-10 text-sm text-white/50">© 2026 Kit Vitrine</p>
+</div>
+<section class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 pt-6 md:pt-8" data-explore data-current="terroir" >
+  <div class="mb-6 md:mb-8">
+    <nav class="text-sm text-ink/55" aria-label="Fil d'Ariane"><a href="/" class="inline-flex items-center min-h-11 hover:text-ink">Accueil</a> / <a href="/univers/" class="inline-flex items-center min-h-11 hover:text-ink">Métiers</a> / <span class="text-ink">Agriculture &amp; terroir</span></nav>
+    <h1 class="font-display font-bold text-[1.75rem] leading-tight md:text-4xl tracking-tight">Templates de sites agriculture &amp; terroir</h1>
+    <p class="mt-2 text-ink/65 max-w-2xl">Fermes, producteurs locaux, vignerons, vente directe. Les premiers modèles de cette famille arrivent bientôt : en attendant, beaucoup de templates s'adaptent à un métier proche.</p>
+  </div>
+  <div class="flex items-baseline justify-between gap-4">
+    <p class="text-[15px] text-ink/60" data-count aria-live="polite">3 templates</p>
+  </div>
+  <div class="mt-4 grid gap-x-6 gap-y-10 grid-cols-1 min-[560px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" data-grid>
+    <article class="kv-card" data-slug="billig" data-u="restauration" data-style="Chaleureux" data-couleur="rouge" data-pages="1" data-prix="29" data-date="2026-10-13" data-title="billig" data-text="billig site vitrine pour creperie une page chaleureuse pour une creperie : la carte en onglets (galettes de ble noir, crepes de froment, boissons) avec les prix, les formules du midi, enfant et gouter, les quatre gestes de la galette, les producteurs locaux et leur distance, les avis, les horaires avec l&#39;indication « ouvert en ce moment » et un formulaire de reservation. nappe vichy rouge, palette sarrasin et beurre, galette complete illustree en svg. chaleureux rouge creperie galette crepe ble noir sarrasin restaurant breton cidre sans gluten restaurant restaurants &amp; cafes">
+  <div class="relative">
+    <div class="kv-slides flex overflow-x-auto snap-x snap-mandatory no-scrollbar rounded-2xl bg-mist aspect-[4/3]" tabindex="-1">
+      <a href="/templates/billig/" class="snap-center shrink-0 w-full h-full" tabindex="-1" aria-hidden="true"><img src="/templates/billig/thumb.jpg" alt="" width="800" height="600"  class="w-full h-full object-cover object-top"></a>
+      <a href="/templates/billig/" class="snap-center shrink-0 w-full h-full" tabindex="-1" aria-hidden="true"><img src="/templates/billig/phone.jpg" alt="" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></a>
+    </div>
+    <div class="kv-dots pointer-events-none absolute bottom-3 inset-x-0 flex justify-center gap-1.5" aria-hidden="true"><span class="on"></span><span></span></div>
+    <span class="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 text-[13px] font-semibold shadow-sm">Nouveau</span>
+    <button type="button" class="kv-heart absolute top-2 right-2 grid place-items-center w-11 h-11" aria-pressed="false" aria-label="Ajouter Billig aux favoris" data-fav="billig"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></button>
+  </div>
+  <a href="/templates/billig/" class="block mt-3">
+    <h3 class="flex justify-between gap-3 font-semibold text-[15px] leading-snug"><span>Crêperie</span></h3>
+    <p class="text-[15px] text-ink/60 leading-snug">Template Billig · Chaleureux</p>
+    <p class="mt-1 text-[15px] leading-snug"><span class="font-semibold">29 €</span> <span class="text-ink/60">· une page</span></p>
+  </a>
+</article>
+<article class="kv-card" data-slug="faitage" data-u="artisans" data-style="Audacieux" data-couleur="bleu" data-pages="1" data-prix="29" data-date="2026-10-13" data-title="faitage" data-text="faitage site vitrine pour couvreur zingueur une page complete pour une entreprise de couverture et de zinguerie : les travaux proposes avec leurs delais, les materiaux (ardoise, tuile, zinc, bac acier) et leur duree de vie, un bandeau d&#39;urgence pour le bachage apres tempete, le deroule d&#39;un chantier jour par jour, les avis, les garanties et un formulaire de devis avec envoi de photos. typographie haute et franche, palette ardoise et jaune chantier, illustration de toits en svg. audacieux bleu couvreur zingueur toiture charpente ardoise zinguerie gouttiere fuite de toit renovation artisan artisans &amp; batiment">
+  <div class="relative">
+    <div class="kv-slides flex overflow-x-auto snap-x snap-mandatory no-scrollbar rounded-2xl bg-mist aspect-[4/3]" tabindex="-1">
+      <a href="/templates/faitage/" class="snap-center shrink-0 w-full h-full" tabindex="-1" aria-hidden="true"><img src="/templates/faitage/thumb.jpg" alt="" width="800" height="600"  class="w-full h-full object-cover object-top"></a>
+      <a href="/templates/faitage/" class="snap-center shrink-0 w-full h-full" tabindex="-1" aria-hidden="true"><img src="/templates/faitage/phone.jpg" alt="" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></a>
+    </div>
+    <div class="kv-dots pointer-events-none absolute bottom-3 inset-x-0 flex justify-center gap-1.5" aria-hidden="true"><span class="on"></span><span></span></div>
+    <span class="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 text-[13px] font-semibold shadow-sm">Nouveau</span>
+    <button type="button" class="kv-heart absolute top-2 right-2 grid place-items-center w-11 h-11" aria-pressed="false" aria-label="Ajouter Faîtage aux favoris" data-fav="faitage"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></button>
+  </div>
+  <a href="/templates/faitage/" class="block mt-3">
+    <h3 class="flex justify-between gap-3 font-semibold text-[15px] leading-snug"><span>Couvreur zingueur</span></h3>
+    <p class="text-[15px] text-ink/60 leading-snug">Template Faîtage · Audacieux</p>
+    <p class="mt-1 text-[15px] leading-snug"><span class="font-semibold">29 €</span> <span class="text-ink/60">· une page</span></p>
+  </a>
+</article>
+<article class="kv-card" data-slug="equilibre" data-u="animaux sante-bien-etre" data-style="Nature" data-couleur="vert" data-pages="1" data-prix="29" data-date="2026-10-13" data-title="equilibre" data-text="equilibre site vitrine pour osteopathe animalier une page complete pour presenter une activite d&#39;osteopathie animale : les animaux pris en charge, le deroule d&#39;une seance, les tarifs, la zone de deplacement et un formulaire de prise de rendez-vous. ton rassurant, palette vegetale, lecture facile sur mobile pour les proprietaires qui cherchent depuis l&#39;ecurie. nature vert osteopathe osteopathie animale cheval chien chat equin veterinaire rendez-vous one page animaux &amp; equitation sante &amp; bien-etre">
+  <div class="relative">
+    <div class="kv-slides flex overflow-x-auto snap-x snap-mandatory no-scrollbar rounded-2xl bg-mist aspect-[4/3]" tabindex="-1">
+      <a href="/templates/equilibre/" class="snap-center shrink-0 w-full h-full" tabindex="-1" aria-hidden="true"><img src="/templates/equilibre/thumb.jpg" alt="" width="800" height="600"  class="w-full h-full object-cover object-top"></a>
+      <a href="/templates/equilibre/" class="snap-center shrink-0 w-full h-full" tabindex="-1" aria-hidden="true"><img src="/templates/equilibre/phone.jpg" alt="" width="800" height="600" loading="lazy" class="w-full h-full object-cover"></a>
+    </div>
+    <div class="kv-dots pointer-events-none absolute bottom-3 inset-x-0 flex justify-center gap-1.5" aria-hidden="true"><span class="on"></span><span></span></div>
+    <span class="absolute top-3 left-3 rounded-full bg-white/95 px-3 py-1 text-[13px] font-semibold shadow-sm">Nouveau</span>
+    <button type="button" class="kv-heart absolute top-2 right-2 grid place-items-center w-11 h-11" aria-pressed="false" aria-label="Ajouter Équilibre aux favoris" data-fav="equilibre"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></button>
+  </div>
+  <a href="/templates/equilibre/" class="block mt-3">
+    <h3 class="flex justify-between gap-3 font-semibold text-[15px] leading-snug"><span>Ostéopathe animalier</span></h3>
+    <p class="text-[15px] text-ink/60 leading-snug">Template Équilibre · Nature</p>
+    <p class="mt-1 text-[15px] leading-snug"><span class="font-semibold">29 €</span> <span class="text-ink/60">· une page</span></p>
+  </a>
+</article>
+  </div>
+  <div class="hidden mt-8 rounded-2xl border border-line p-8 text-center" data-empty>
+    <p class="font-display font-bold text-2xl">Aucun template ne correspond</p><p class="mt-2 text-ink/65 max-w-md mx-auto">Essayez un mot plus général (« santé » plutôt que « podologue ») ou retirez un filtre. De nouveaux templates arrivent chaque jour.</p><button type="button" class="mt-6 inline-flex items-center h-12 px-6 rounded-xl border border-ink font-semibold" data-reset>Effacer la recherche et les filtres</button>
+  </div>
+  <div class="mt-12 text-center"><button type="button" class="hidden h-12 px-6 rounded-xl border border-ink font-semibold" data-more>Afficher plus de templates</button></div>
+</section>
+<dialog class="kv-sheet" aria-labelledby="ft">
+  <form method="dialog" class="flex flex-col max-h-[88vh] md:max-h-[80vh]">
+    <div class="relative flex items-center justify-center h-16 border-b border-line shrink-0">
+      <button value="cancel" class="absolute left-3 grid place-items-center w-11 h-11 rounded-full hover:bg-mist" aria-label="Fermer"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <h2 id="ft" class="font-semibold">Filtres</h2>
+    </div>
+    <div class="overflow-y-auto px-6 py-2 divide-y divide-line">
+      <fieldset class="py-6"><legend class="float-left w-full font-display font-bold text-xl mb-4">Style</legend><div class="clear-both flex flex-wrap gap-2.5"><label class="kv-chip"><input type="checkbox" name="style" value="Minimal" class="sr-only">Minimal</label><label class="kv-chip"><input type="checkbox" name="style" value="Chaleureux" class="sr-only">Chaleureux</label><label class="kv-chip"><input type="checkbox" name="style" value="Élégant" class="sr-only">Élégant</label><label class="kv-chip"><input type="checkbox" name="style" value="Audacieux" class="sr-only">Audacieux</label><label class="kv-chip"><input type="checkbox" name="style" value="Nature" class="sr-only">Nature</label><label class="kv-chip"><input type="checkbox" name="style" value="Moderne" class="sr-only">Moderne</label></div></fieldset>
+      <fieldset class="py-6"><legend class="float-left w-full font-display font-bold text-xl mb-4">Couleur dominante</legend><div class="clear-both flex flex-wrap gap-2.5"><label class="kv-chip"><input type="checkbox" name="couleur" value="vert" class="sr-only"><span class="w-4 h-4 rounded-full border border-black/10" style="background:#3F7A5A"></span>Vert</label><label class="kv-chip"><input type="checkbox" name="couleur" value="bleu" class="sr-only"><span class="w-4 h-4 rounded-full border border-black/10" style="background:#2F5D8C"></span>Bleu</label><label class="kv-chip"><input type="checkbox" name="couleur" value="rouge" class="sr-only"><span class="w-4 h-4 rounded-full border border-black/10" style="background:#B4443A"></span>Rouge</label><label class="kv-chip"><input type="checkbox" name="couleur" value="jaune" class="sr-only"><span class="w-4 h-4 rounded-full border border-black/10" style="background:#E2B13C"></span>Jaune</label><label class="kv-chip"><input type="checkbox" name="couleur" value="neutre" class="sr-only"><span class="w-4 h-4 rounded-full border border-black/10" style="background:#8A8F98"></span>Neutre</label><label class="kv-chip"><input type="checkbox" name="couleur" value="sombre" class="sr-only"><span class="w-4 h-4 rounded-full border border-black/10" style="background:#22262E"></span>Sombre</label><label class="kv-chip"><input type="checkbox" name="couleur" value="rose" class="sr-only"><span class="w-4 h-4 rounded-full border border-black/10" style="background:#C76B8E"></span>Rose</label><label class="kv-chip"><input type="checkbox" name="couleur" value="violet" class="sr-only"><span class="w-4 h-4 rounded-full border border-black/10" style="background:#6B5BA8"></span>Violet</label></div></fieldset>
+      <fieldset class="py-6"><legend class="float-left w-full font-display font-bold text-xl mb-4">Taille du site</legend><div class="clear-both flex flex-wrap gap-2.5"><label class="kv-chip"><input type="checkbox" name="pages" value="1" class="sr-only">Une page</label><label class="kv-chip"><input type="checkbox" name="pages" value="multi" class="sr-only">Plusieurs pages</label></div></fieldset>
+      <fieldset class="py-6"><legend class="float-left w-full font-display font-bold text-xl mb-4">Trier par</legend>
+        <div class="clear-both grid gap-1"><label class="flex items-center justify-between min-h-12 cursor-pointer"><span>Les plus récents</span><input type="radio" name="tri" value="recent" checked class="w-5 h-5 accent-ink"></label><label class="flex items-center justify-between min-h-12 cursor-pointer"><span>Prix croissant</span><input type="radio" name="tri" value="prix-asc"  class="w-5 h-5 accent-ink"></label><label class="flex items-center justify-between min-h-12 cursor-pointer"><span>Prix décroissant</span><input type="radio" name="tri" value="prix-desc"  class="w-5 h-5 accent-ink"></label><label class="flex items-center justify-between min-h-12 cursor-pointer"><span>Ordre alphabétique</span><input type="radio" name="tri" value="az"  class="w-5 h-5 accent-ink"></label></div>
+      </fieldset>
+    </div>
+    <div class="flex items-center justify-between gap-4 px-6 py-4 border-t border-line shrink-0 pb-[max(1rem,env(safe-area-inset-bottom))]">
+      <button type="button" class="font-semibold underline underline-offset-4 min-h-11" data-reset>Tout effacer</button>
+      <button value="ok" class="h-12 px-6 rounded-xl bg-ink text-white font-semibold" data-apply>Afficher les templates</button>
+    </div>
+  </form>
+</dialog>
+</main>
+<footer class="mt-20 md:mt-28 bg-ink text-white/70">
+  <div class="awning"></div>
+  <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 text-[15px]">
+    <div class="lg:col-span-2">
+      <p class="flex items-center gap-2 font-display font-bold text-white text-xl">Kit Vitrine</p>
+      <p class="mt-3 max-w-sm leading-relaxed">Des sites vitrines prêts à l&#39;emploi, pensés pour votre métier. Fichiers HTML et Tailwind CSS, pensés d'abord pour le téléphone.</p>
+    </div>
+    <nav class="grid gap-1 content-start" aria-label="Boutique"><p class="text-white font-medium mb-1">Boutique</p><a href="/" class="py-2.5 hover:text-white">Tous les templates</a><a href="/univers/" class="py-2.5 hover:text-white">Par métier</a><a href="/guide/" class="py-2.5 hover:text-white">Guide de mise en ligne</a><a href="/licence/" class="py-2.5 hover:text-white">Licence</a><a href="/faq/" class="py-2.5 hover:text-white">Questions fréquentes</a></nav>
+    <nav class="grid gap-1 content-start" aria-label="Informations"><p class="text-white font-medium mb-1">Informations</p><a href="/mentions-legales/" class="py-2.5 hover:text-white">Mentions légales</a><a href="/cgv/" class="py-2.5 hover:text-white">Conditions de vente</a><a href="/confidentialite/" class="py-2.5 hover:text-white">Confidentialité</a></nav>
+  </div>
+  <p class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 pb-10 text-sm text-white/50">© 2026 Kit Vitrine</p>
 </footer>
-<script>
-  const mb=document.getElementById('menuBtn'),mn=document.getElementById('menu');
-  mb&&mb.addEventListener('click',()=>{const o=mn.classList.toggle('hidden')===false;mb.setAttribute('aria-expanded',o)});
-</script>
+<nav class="kv-tabbar md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-line pb-[env(safe-area-inset-bottom)] grid grid-cols-3" aria-label="Navigation principale">
+  <a href="/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-sign" aria-current="page"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg><span>Explorer</span></a><a href="/favoris/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-ink/60" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><span>Favoris</span></a><a href="/guide/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-ink/60" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM13 4h5.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H13z"/></svg><span>Guide</span></a>
+</nav>
+<script src="/assets/explore.js" defer></script>
 
 </body>
 </html>
