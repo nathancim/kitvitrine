@@ -4,7 +4,8 @@
     "url": "https://kitvitrine.pages.dev",
     "shop": "https://qg0s3t-sj.myshopify.com",
     "tagline": "Des sites vitrines prêts à l'emploi, pensés pour votre métier",
-    "ventes_ouvertes": false
+    "ventes_ouvertes": false,
+    "messagerie_active": false
   },
   "styles": [
     "Minimal",

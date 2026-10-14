@@ -58,6 +58,19 @@
   .kv-heart-plain:active svg { transform: scale(.88); }
   .kv-heart-plain[aria-pressed="true"] svg { fill: #E1305A; stroke: #E1305A; }
 
+  /* Messagerie */
+  .kv-chat { @apply p-0 m-0 bg-white text-ink border-0; position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; }
+  .kv-chat::backdrop { background: rgb(22 27 38 / .35); }
+  @media (min-width: 768px) { .kv-chat { inset: auto 24px 24px auto; width: 400px; height: min(640px, calc(100vh - 48px)); border-radius: 20px; box-shadow: 0 12px 40px rgb(0 0 0 / .2); } }
+  .kv-chat[open] { animation: kv-up .25s cubic-bezier(.2, .8, .2, 1); }
+  @media (min-width: 768px) { .kv-chat[open] { animation: kv-fade .18s ease-out; } }
+  .kv-bubble { @apply max-w-[85%] rounded-2xl px-4 py-2.5 text-[15px] leading-relaxed break-words; }
+  .kv-them { @apply bg-mist rounded-bl-md; }
+  .kv-me { @apply ml-auto bg-ink text-white rounded-br-md; }
+  .kv-time { @apply block mt-1 text-[11px] opacity-60; }
+  .kv-pending { @apply text-center text-[13px] text-ink/55 py-1; }
+  .kv-input { @apply w-full min-w-0 rounded-xl border border-line bg-white px-3.5 py-3 text-base focus:outline-none focus:border-ink; }
+
   .kv-tab[aria-selected="true"] { @apply bg-white shadow-sm; }
   .kv-tab[aria-selected="false"] { @apply text-ink/60; }
 

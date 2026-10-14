@@ -35,7 +35,13 @@ export const legalPages = [
 <h2>Licence</h2><p>L'achat donne droit à la licence décrite sur la page <a href="/licence/" class="underline">Licence</a>.</p>
 <h2>Médiation</h2><p>[Coordonnées du médiateur de la consommation choisi.]</p>`],
   ['confidentialite', 'Politique de confidentialité', `
-<p>Ce site ne dépose aucun cookie publicitaire et n'utilise aucun outil de suivi. Les polices sont hébergées avec le site.</p>
+<p>Ce site ne dépose aucun cookie publicitaire et n'utilise aucun outil de suivi. Les polices sont hébergées avec le site. Vos favoris sont enregistrés uniquement dans votre navigateur.</p>
+<h2>Messagerie</h2>
+<p>Quand vous nous écrivez, nous conservons votre prénom, votre e-mail, vos messages et la page d'où vous écrivez, pour vous répondre. Ces données sont stockées dans un espace privé (GitHub) et ne sont jamais revendues ni utilisées pour de la publicité. Les réponses sont rédigées par un assistant d'intelligence artificielle (Claude, d'Anthropic) ; les demandes particulières sont transmises à l'équipe. Les conversations sont supprimées 12 mois après le dernier message.</p>
+<h2>Liste d'attente</h2>
+<p>Si vous demandez à être prévenu de l'ouverture des ventes, nous conservons votre e-mail pour vous envoyer ce seul message, puis nous le supprimons.</p>
+<h2>Achats</h2>
 <p>Lors d'un achat, vos données (nom, e-mail, informations de paiement) sont traitées par Shopify pour exécuter la commande et envoyer le lien de téléchargement. Elles sont conservées pendant la durée légale de conservation des factures.</p>
+<h2>Vos droits</h2>
 <p>Vous pouvez demander l'accès, la rectification ou la suppression de vos données à : [adresse de contact].</p>`],
 ];

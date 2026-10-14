@@ -48,6 +48,20 @@
   const back = $('[data-back]');
   if (back) back.addEventListener('click', e => { if (document.referrer.startsWith(location.origin)) { e.preventDefault(); history.back(); } });
 
+  // ---------- Liste d'attente ----------
+  document.querySelectorAll('[data-waitlist]').forEach(f => f.addEventListener('submit', async e => {
+    e.preventDefault();
+    const msg = f.querySelector('[data-waitlist-msg]'), btn = f.querySelector('button'), fd = new FormData(f);
+    btn.disabled = true; msg.textContent = '';
+    try {
+      const r = await fetch('/api/liste-attente', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: fd.get('email'), template: f.dataset.waitlist, site: fd.get('site') }) });
+      const d = await r.json().catch(() => ({}));
+      if (r.ok) { f.querySelector('input[name=email]').value = ''; msg.textContent = 'C\'est noté : vous serez prévenu à l\'ouverture.'; msg.className = 'mt-2 text-sm text-sign'; }
+      else { msg.textContent = d.erreur || 'L\'inscription a échoué. Réessayez.'; msg.className = 'mt-2 text-sm text-[#B4443A]'; }
+    } catch { msg.textContent = 'Pas de connexion. Réessayez.'; msg.className = 'mt-2 text-sm text-[#B4443A]'; }
+    btn.disabled = false;
+  }));
+
   // ---------- Exploration : recherche + filtres ----------
   const explore = $('[data-explore]');
   const sheet = $('dialog.kv-sheet');

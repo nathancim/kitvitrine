@@ -12,6 +12,8 @@ const I = {
   heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/>',
   book: '<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM13 4h5.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H13z"/>',
   explore: '<circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
+  chat: '<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4A1.5 1.5 0 0 1 4 14.5z"/>',
+  mail: '<rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4 7 8 6 8-6"/>',
   back: '<path d="M15 5 8 12l7 7"/>',
   close: '<path d="M6 6l12 12M18 6 6 18"/>',
   phone: '<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
@@ -39,7 +41,7 @@ export const icon = (name, cls = 'w-6 h-6', sw = 1.8) => `<svg class="${cls}" vi
 const logo = `<svg class="w-8 h-8 shrink-0" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><path d="M9.5 9h6.5v5c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14z" fill="#F0BE3D"/><path d="M22.5 9H29v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14z" fill="#F0BE3D"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg>`;
 
 // ---------- Layout ----------
-export function layout({ site, title, description, path, body, jsonld = null, scripts = '', explore = false, tabbar = true, image = null }) {
+export function layout({ site, title, description, path, body, jsonld = null, scripts = '', explore = false, tabbar = true, image = null, bodyAttrs = '' }) {
   const url = site.url + path;
   return `<!doctype html>
 <html lang="fr">
@@ -56,14 +58,15 @@ export function layout({ site, title, description, path, body, jsonld = null, sc
 <link rel="stylesheet" href="/assets/site.css">
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
 </head>
-<body class="${tabbar ? 'pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-0' : ''}">
+<body class="${tabbar ? 'pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-0' : ''}" ${bodyAttrs}>
 <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] bg-white px-3 py-2 rounded-lg shadow">Aller au contenu</a>
 ${header(explore)}
 <main id="contenu">
 ${body}
 </main>
 ${footer(site)}
-${tabbar ? tabBar(path) : ''}
+${tabbar ? tabBar(path, site.messagerie_active) : ''}
+${site.messagerie_active ? chatWidget() : ''}
 <script src="/assets/explore.js" defer></script>
 ${scripts}
 </body>
@@ -114,13 +117,14 @@ function header(explore) {
 </header>`;
 }
 
-function tabBar(path) {
+function tabBar(path, chat) {
   const tab = (href, name, label) => {
     const on = href === '/' ? (path === '/' || path.startsWith('/univers') || path.startsWith('/catalogue')) : path.startsWith(href);
     return `<a href="${href}" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium ${on ? 'text-sign' : 'text-ink/60'}" ${on ? 'aria-current="page"' : ''}>${icon(name, 'w-6 h-6', on ? 2.2 : 1.8)}<span>${label}</span></a>`;
   };
-  return `<nav class="kv-tabbar md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-line pb-[env(safe-area-inset-bottom)] grid grid-cols-3" aria-label="Navigation principale">
-  ${tab('/', 'explore', 'Explorer')}${tab('/favoris/', 'heart', 'Favoris')}${tab('/guide/', 'book', 'Guide')}
+  const msg = chat ? `<button type="button" class="relative flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-ink/60" data-open-chat>${icon('chat', 'w-6 h-6')}<span>Messages</span><span class="hidden absolute top-1.5 left-1/2 ml-2 min-w-5 h-5 px-1 rounded-full bg-[#E1305A] text-white text-[11px] font-bold grid place-items-center" data-chat-badge></span></button>` : '';
+  return `<nav class="kv-tabbar md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-line pb-[env(safe-area-inset-bottom)] grid ${chat ? 'grid-cols-4' : 'grid-cols-3'}" aria-label="Navigation principale">
+  ${tab('/', 'explore', 'Explorer')}${tab('/favoris/', 'heart', 'Favoris')}${tab('/guide/', 'book', 'Guide')}${msg}
 </nav>`;
 }
 
@@ -137,6 +141,41 @@ function footer(site) {
   </div>
   <p class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 pb-10 text-sm text-white/50">© ${new Date().getFullYear()} Kit Vitrine</p>
 </footer>`;
+}
+
+
+function chatWidget() {
+  return `<button type="button" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-3 h-14 pl-5 pr-6 rounded-full bg-ink text-white font-semibold shadow-card hover:bg-black" data-open-chat>
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/></svg>
+  <span>Une question ?</span><span class="hidden min-w-5 h-5 px-1 rounded-full bg-[#E1305A] text-[11px] font-bold grid place-items-center" data-chat-badge></span>
+</button>
+<dialog class="kv-chat" aria-labelledby="chat-t">
+  <div class="flex flex-col h-full">
+    <div class="flex items-center gap-3 px-4 h-16 border-b border-line shrink-0">
+      <span class="grid place-items-center w-10 h-10 rounded-full bg-mist shrink-0">${logo}</span>
+      <div class="min-w-0 flex-1"><h2 id="chat-t" class="font-semibold leading-tight">Kit Vitrine</h2><p class="text-[13px] text-ink/60 leading-tight">Réponse sous 2 h · 8 h – 22 h</p></div>
+      <form method="dialog"><button class="grid place-items-center w-11 h-11 rounded-full hover:bg-mist" aria-label="Fermer la messagerie">${icon('close', 'w-5 h-5', 2.2)}</button></form>
+    </div>
+    <p class="px-4 py-2 text-[12px] leading-snug text-ink/55 bg-mist/60 border-b border-line">Les réponses sont rédigées par l'assistant IA de Kit Vitrine. Les demandes particulières (devis, sur-mesure) sont transmises à l'équipe.</p>
+    <div class="flex-1 overflow-y-auto px-4 py-4 space-y-3" data-chat-list aria-live="polite"></div>
+    <form class="shrink-0 border-t border-line p-4 grid gap-3" data-chat-first>
+      <label class="grid gap-1"><span class="text-sm font-semibold">Votre message</span> <textarea name="message" required rows="2" maxlength="2000" class="kv-input resize-none" placeholder="Votre question ou votre projet…"></textarea></label>
+      <div class="grid grid-cols-2 gap-3">
+        <label class="grid gap-1 min-w-0"><span class="text-sm font-semibold">Prénom</span><input name="prenom" required maxlength="60" autocomplete="given-name" class="kv-input"></label>
+        <label class="grid gap-1 min-w-0"><span class="text-sm font-semibold">E-mail</span><input name="email" type="email" required autocomplete="email" class="kv-input" placeholder="pour la réponse"></label>
+      </div>
+      <label class="hidden" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
+      <label class="flex items-start gap-3 text-[13px] leading-snug text-ink/70 min-h-11"><input type="checkbox" name="consentement" required class="mt-0.5 w-5 h-5 shrink-0 accent-ink"><span>J'accepte que Kit Vitrine conserve mon message et mon e-mail pour me répondre (<a href="/confidentialite/" class="underline">confidentialité</a>).</span></label>
+      <p class="text-sm text-[#B4443A]" data-chat-error role="alert"></p>
+      <button type="submit" class="h-12 rounded-xl bg-sign text-white font-semibold hover:bg-sign-deep">Envoyer</button>
+    </form>
+    <form class="shrink-0 border-t border-line p-3 flex items-end gap-2" data-chat-reply hidden>
+      <label class="flex-1"><span class="sr-only">Votre message</span><textarea rows="2" maxlength="2000" class="kv-input resize-none w-full" placeholder="Écrire un message…"></textarea></label>
+      <button type="submit" class="h-12 px-5 rounded-xl bg-sign text-white font-semibold shrink-0">Envoyer</button>
+    </form>
+  </div>
+</dialog>
+<script src="/assets/chat.js" defer></script>`;
 }
 
 // ---------- Explore (home, univers, catalogue, favoris) ----------
@@ -252,6 +291,13 @@ export function universIndexPage(cat, counts) {
 }
 
 // ---------- Template page ----------
+const waitlist = t => `<form class="kv-waitlist mt-4 rounded-2xl border border-line p-5" data-waitlist="${t.slug}">
+  <p class="font-semibold">Les ventes ouvrent bientôt</p>
+  <p class="mt-1 text-[15px] text-ink/60">Laissez votre e-mail : un seul message, le jour de l'ouverture.</p>
+  <label class="hidden" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
+  <div class="mt-3 flex gap-2"><label class="flex-1 min-w-0"><span class="sr-only">Votre e-mail</span><input name="email" type="email" required autocomplete="email" placeholder="vous@exemple.fr" class="kv-input w-full"></label><button class="h-12 px-4 rounded-xl bg-ink text-white font-semibold shrink-0">Me prévenir</button></div>
+  <p class="mt-2 text-sm" role="status" data-waitlist-msg></p>
+</form>`;
 export function templatePage(t, univMap, related, site) {
   const univ = t.univers.map(s => univMap[s]).filter(Boolean);
   const salesOpen = site.ventes_ouvertes && t.shopify_url;
@@ -321,6 +367,7 @@ export function templatePage(t, univMap, related, site) {
         ${perk('font', 'Les polices, hébergées avec le site', 'Aucun appel à Google Fonts, plus simple pour le RGPD.')}
         ${perk('book', 'Un guide en français et la licence', 'Et les sources Tailwind pour changer les couleurs.')}
       </ul>
+      ${!salesOpen && site.messagerie_active ? `<div class="md:hidden mt-10" id="prevenu">${waitlist(t)}</div>` : ''}
       <div class="mt-8 flex items-center gap-3"><span class="text-[15px] text-ink/60">Couleurs :</span>${t.palette.map(c => `<span class="w-7 h-7 rounded-full border border-black/10" style="background:${c}" title="${c}"></span>`).join('')}</div>
     </div>
 
@@ -335,8 +382,10 @@ export function templatePage(t, univMap, related, site) {
         <ul class="mt-5 pt-5 border-t border-line space-y-2 text-[15px]">
           <li><a href="/demo/${t.slug}/#edition" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-sign">Essayer le mode édition</a></li>
           <li><a href="/guide/" class="underline underline-offset-4 hover:text-sign">Comment le mettre en ligne</a></li>
+          ${site.messagerie_active ? '<li><button type="button" class="underline underline-offset-4 hover:text-sign" data-open-chat>Poser une question</button></li>' : ''}
         </ul>
       </div>
+      ${!salesOpen && site.messagerie_active ? waitlist(t) : ''}
     </aside>
   </div>
 </article>
@@ -348,7 +397,7 @@ ${related.length ? `<section class="mx-auto max-w-[1120px] px-4 md:px-6 lg:px-10
 
 <!-- Barre fixe téléphone : prix + démo -->
 <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white border-t border-line px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] flex items-center justify-between gap-4">
-  <div class="min-w-0"><p class="font-semibold">${euro(t.prix)} <span class="font-normal text-ink/60">· un site</span></p><p class="text-sm ${salesOpen ? 'text-sign' : 'text-ink/60'} underline underline-offset-2">${salesOpen ? `<a href="${esc(t.shopify_url)}">Acheter maintenant</a>` : 'Bientôt en vente'}</p></div>
+  <div class="min-w-0"><p class="font-semibold">${euro(t.prix)} <span class="font-normal text-ink/60">· un site</span></p><p class="text-sm ${salesOpen ? 'text-sign' : 'text-ink/60'} underline underline-offset-2">${salesOpen ? `<a href="${esc(t.shopify_url)}">Acheter maintenant</a>` : (site.messagerie_active ? '<a href="#prevenu">Être prévenu de l\'ouverture</a>' : 'Bientôt en vente')}</p></div>
   <a href="/demo/${t.slug}/" class="flex items-center h-12 px-6 rounded-xl bg-sign text-white font-semibold shrink-0">Voir la démo</a>
 </div>`;
 }

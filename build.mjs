@@ -150,6 +150,7 @@ page('', {
 // Former catalogue URL: same explore view, canonical points to the home page
 write(r('dist/catalogue/index.html'), `<!doctype html><meta charset="utf-8"><title>Catalogue — Kit Vitrine</title><link rel="canonical" href="${site.url}/"><meta http-equiv="refresh" content="0; url=/"><a href="/">Voir tous les templates</a>`);
 page('favoris', { title: 'Mes favoris — Kit Vitrine', description: 'Les templates que vous avez enregistrés.', explore: true, body: P.explorePage(cat, univMap, { favoris: true, intro: '<h1 class="mb-2 font-display font-bold text-[1.75rem] md:text-4xl tracking-tight">Mes favoris</h1><p class="mb-6 text-ink/65">Enregistrés sur cet appareil uniquement.</p>' }) });
+page('messages', { title: 'Messagerie — Kit Vitrine', description: 'Votre conversation avec Kit Vitrine.', bodyAttrs: 'data-open-chat-now', body: `<section class="mx-auto max-w-2xl px-4 sm:px-6 pt-10 text-center"><h1 class="font-display font-bold text-3xl">Votre conversation</h1><p class="mt-3 text-ink/65">${site.messagerie_active ? 'La messagerie s\'ouvre automatiquement. Sinon :' : 'La messagerie ouvre très bientôt.'}</p>${site.messagerie_active ? '<button type="button" class="btn-sign mt-6" data-open-chat>Ouvrir la messagerie</button>' : ''}</section>` });
 page('univers', { title: 'Templates par métier — Kit Vitrine', description: 'Tous les métiers couverts par les templates Kit Vitrine.', body: P.universIndexPage(cat, counts) });
 for (const u of cat.univers) {
   const n = counts[u.slug] || 0;
@@ -175,6 +176,7 @@ write(r('dist/404.html'), P.layout({ site, path: '/404', title: 'Page introuvabl
 const pub = { univers: cat.univers.map(({ slug, label, description }) => ({ slug, label, description })), templates: cat.templates.map(({ _i, sections, palette, dl_token, shopify_product_id, ...t }) => t) };
 write(r('dist/data/catalog.json'), JSON.stringify(pub));
 fs.copyFileSync(r('site/explore.js'), r('dist/assets/explore.js'));
+fs.copyFileSync(r('site/chat.js'), r('dist/assets/chat.js'));
 write(r('dist/favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#fff"/><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg>`);
 const urls = ['', 'univers/', 'guide/', ...cat.univers.map(u => `univers/${u.slug}/`), ...cat.templates.map(t => `templates/${t.slug}/`), ...legalPages.map(([s]) => s + '/')];
 write(r('dist/sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `<url><loc>${site.url}/${u}</loc></url>`).join('\n')}\n</urlset>\n`);
