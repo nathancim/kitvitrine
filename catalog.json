@@ -215,6 +215,51 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "9179adff9d6bc70237967d605116a938"
+    },
+    {
+      "slug": "capucine",
+      "title": "Capucine",
+      "tagline": "Site vitrine pour fleuriste",
+      "description": "Une page élégante pour un fleuriste de quartier : la vitrine en arche avec un bouquet illustré, trois tailles de bouquets à choisir avec leur prix, les occasions en accordéon (mariage, deuil, naissance, abonnements d'entreprise), l'arrivage de la semaine présenté en étiquettes de fleuriste avec noms latins et provenance, les zones de livraison, les avis et un formulaire de commande avec choix de la couleur dominante et mot sur la carte. Palette prune et rose poudré, anémones et renoncules dessinées en SVG.",
+      "univers": [
+        "commerces"
+      ],
+      "style": "Élégant",
+      "couleur": "rose",
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-14",
+      "tags": [
+        "fleuriste",
+        "fleurs",
+        "bouquet",
+        "composition florale",
+        "fleurs de saison",
+        "mariage",
+        "deuil",
+        "livraison de fleurs",
+        "abonnement floral",
+        "artisan fleuriste"
+      ],
+      "sections": [
+        "Accueil avec bouquet illustré dans une arche",
+        "Bouquets en trois tailles",
+        "Occasions en accordéon",
+        "L'arrivage de la semaine",
+        "Zones de livraison",
+        "Avis clients",
+        "Formulaire de commande et coordonnées"
+      ],
+      "palette": [
+        "#3A1D2C",
+        "#B9476F",
+        "#E08AA6",
+        "#F2D9DE",
+        "#FBF5F3"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "f326a72792e827b31100e8647c16ac71"
     }
   ]
 }

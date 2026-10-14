@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capucine Fleurs — Fleuriste à la Croix-Rousse, Lyon</title>
+  <meta name="description" content="Fleuriste de quartier à la Croix-Rousse : bouquets de saison composés le matin, fleurs de producteurs français, mariages, deuil, abonnements pour entreprises. Livraison le jour même dans Lyon.">
+  <meta name="theme-color" content="#3A1D2C">
+  <link rel="preload" href="assets/fonts/gloock-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-papier text-prune font-sans antialiased pb-24 md:pb-0">
+
+  <!-- Fleurs réutilisées dans les illustrations (modifiez les couleurs ici) -->
+  <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="anemone" viewBox="-30 -30 60 60">
+        <g fill="#FFFFFF" stroke="#E6CBD2" stroke-width="1">
+          <ellipse cx="0" cy="-15" rx="10" ry="14"/><ellipse cx="0" cy="-15" rx="10" ry="14" transform="rotate(60)"/><ellipse cx="0" cy="-15" rx="10" ry="14" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-15" rx="10" ry="14" transform="rotate(180)"/><ellipse cx="0" cy="-15" rx="10" ry="14" transform="rotate(240)"/><ellipse cx="0" cy="-15" rx="10" ry="14" transform="rotate(300)"/>
+        </g>
+        <circle r="8" fill="#2A1420"/><g fill="#2A1420"><circle cx="0" cy="-12" r="1.6"/><circle cx="10" cy="-6" r="1.6"/><circle cx="10" cy="6" r="1.6"/><circle cx="0" cy="12" r="1.6"/><circle cx="-10" cy="6" r="1.6"/><circle cx="-10" cy="-6" r="1.6"/></g>
+      </symbol>
+      <symbol id="renoncule" viewBox="-30 -30 60 60">
+        <circle r="27" fill="#E08AA6"/><circle r="21" fill="#D06C90" /><circle r="15" fill="#E08AA6"/><circle r="10" fill="#B9476F"/><circle r="5" fill="#9A3459"/>
+        <path d="M-27 2a27 27 0 0 0 54 0" fill="none" stroke="#9A3459" stroke-opacity=".35" stroke-width="2"/>
+      </symbol>
+      <symbol id="tulipe" viewBox="-20 -30 40 50">
+        <path d="M-15 -14c0 18 6 30 15 30s15-12 15-30l-7 8-8-14-8 14z" fill="#F2B23F"/>
+        <path d="M-8 -6l8-14 8 14c-2 12-5 20-8 22-3-2-6-10-8-22z" fill="#E59A2A"/>
+      </symbol>
+      <symbol id="feuille" viewBox="-6 -14 12 28"><ellipse rx="6" ry="13" fill="#8FA38A"/><path d="M0-12v24" stroke="#5E7458" stroke-width="1"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== En-tête : nom centré, menu à gauche sur mobile ===== -->
+  <header class="sticky top-0 z-30 bg-papier/95 backdrop-blur border-b border-prune/10">
+    <div class="mx-auto max-w-6xl px-5 h-16 md:h-20 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+      <div class="flex items-center">
+        <button id="menuBtn" class="md:hidden inline-flex min-h-11 items-center gap-2 -ml-2 px-2 font-medium" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+          <span>Menu</span>
+        </button>
+        <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium" aria-label="Navigation principale">
+          <a href="#bouquets" class="py-2 hover:text-rose">Bouquets</a>
+          <a href="#occasions" class="py-2 hover:text-rose">Occasions</a>
+          <a href="#arrivage" class="py-2 hover:text-rose">L'arrivage</a>
+        </nav>
+      </div>
+      <a href="#" class="inline-flex min-h-11 items-center font-display text-2xl md:text-[1.75rem] tracking-tight">Capucine</a>
+      <div class="flex items-center justify-end gap-6">
+        <a href="#livraison" class="hidden lg:inline text-[15px] font-medium hover:text-rose">Livraison</a>
+        <a href="#commander" class="hidden md:inline-flex min-h-11 items-center rounded-full bg-prune px-5 text-[15px] font-semibold text-papier hover:bg-rose-deep">Commander un bouquet</a>
+        <a href="tel:+33600000000" class="md:hidden inline-flex min-h-11 items-center -mr-2 px-2" aria-label="Appeler la boutique">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1"/></svg>
+        </a>
+      </div>
+    </div>
+    <!-- Menu mobile : panneau plein écran -->
+    <nav id="menu" class="md:hidden hidden fixed inset-x-0 top-16 bottom-0 bg-papier px-5 pt-4 pb-10 flex-col text-2xl font-display overflow-y-auto" aria-label="Navigation mobile">
+      <a href="#bouquets" class="flex items-center min-h-14 border-b border-prune/10">Bouquets</a>
+      <a href="#occasions" class="flex items-center min-h-14 border-b border-prune/10">Occasions</a>
+      <a href="#arrivage" class="flex items-center min-h-14 border-b border-prune/10">L'arrivage de la semaine</a>
+      <a href="#livraison" class="flex items-center min-h-14 border-b border-prune/10">Livraison</a>
+      <a href="#commander" class="flex items-center min-h-14">Commander</a>
+      <p class="mt-auto pt-8 font-sans text-base text-prune/70">12 rue d'Austerlitz, Lyon 4e<br>Du mardi au samedi, 9 h – 19 h 30</p>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Accueil : la vitrine en arche ===== -->
+    <section class="mx-auto max-w-6xl px-5 pt-8 pb-14 md:pt-16 md:pb-24 grid md:grid-cols-[1.1fr_1fr] gap-8 md:gap-14 items-end">
+      <div class="md:pb-8">
+        <p class="text-[15px] font-medium text-tige">Fleuriste à la Croix-Rousse depuis 2014</p>
+        <h1 class="mt-4 font-display text-[2.6rem] leading-[1.06] sm:text-6xl lg:text-[4.6rem] lg:leading-[1.02] tracking-tight">Des fleurs de saison, composées le matin même.</h1>
+        <p class="mt-5 md:mt-7 text-[17px] md:text-lg leading-relaxed text-prune/80 max-w-lg">Camille achète au marché aux fleurs de Lyon chaque mardi et vendredi, en priorité chez des horticulteurs de la Drôme et du Var. Pas de bouquets tout faits : chacun est composé pour vous.</p>
+        <div class="mt-7 md:mt-9 flex flex-col sm:flex-row gap-3">
+          <a href="#commander" class="w-full sm:w-auto inline-flex justify-center items-center min-h-12 rounded-full bg-rose px-7 font-semibold text-white hover:bg-rose-deep">Commander un bouquet</a>
+          <a href="tel:+33600000000" class="w-full sm:w-auto inline-flex justify-center items-center min-h-12 rounded-full border border-prune/30 px-7 font-semibold hover:border-prune">06 00 00 00 00</a>
+        </div>
+        <p class="mt-5 text-[15px] text-prune/70">Commandé avant 12 h, livré l'après-midi dans Lyon.</p>
+      </div>
+
+      <!-- Illustration : un bouquet dans l'arche de la vitrine -->
+      <div class="relative arche bg-poudre h-[38vh] min-h-[250px] max-h-[340px] md:h-auto md:max-h-none md:aspect-[4/5] overflow-hidden">
+        <svg class="eclot absolute inset-x-0 bottom-0 mx-auto h-[96%] w-auto" viewBox="0 0 400 460" role="img" aria-label="Bouquet d'anémones blanches, de renoncules roses et de tulipes jaunes, emballé dans du papier kraft noué d'un ruban">
+          <!-- tiges -->
+          <g stroke="#5E7458" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M200 400 150 170"/><path d="M200 400 110 230"/><path d="M200 400 250 160"/><path d="M200 400 300 230"/><path d="M200 400 200 120"/><path d="M200 400 175 220"/><path d="M200 400 230 250"/><path d="M200 400 85 150"/><path d="M200 400 320 140"/>
+          </g>
+          <!-- feuillage d'eucalyptus -->
+          <use href="#feuille" x="66" y="120" width="16" height="36" transform="rotate(-30 74 138)"/><use href="#feuille" x="92" y="168" width="16" height="36" transform="rotate(-50 100 186)"/>
+          <use href="#feuille" x="312" y="110" width="16" height="36" transform="rotate(30 320 128)"/><use href="#feuille" x="300" y="160" width="16" height="36" transform="rotate(55 308 178)"/>
+          <use href="#feuille" x="120" y="250" width="16" height="36" transform="rotate(-60 128 268)"/><use href="#feuille" x="270" y="250" width="16" height="36" transform="rotate(60 278 268)"/>
+          <use href="#feuille" x="192" y="70" width="16" height="36"/><use href="#feuille" x="226" y="96" width="14" height="32" transform="rotate(25 233 112)"/>
+          <!-- fleurs -->
+          <use href="#tulipe" x="90" y="200" width="44" height="55" transform="rotate(-25 112 228)"/>
+          <use href="#tulipe" x="282" y="196" width="44" height="55" transform="rotate(22 304 224)"/>
+          <use href="#renoncule" x="118" y="132" width="70" height="70"/>
+          <use href="#renoncule" x="214" y="200" width="62" height="62"/>
+          <use href="#anemone" x="216" y="116" width="76" height="76"/>
+          <use href="#anemone" x="150" y="190" width="64" height="64"/>
+          <use href="#renoncule" x="166" y="86" width="56" height="56"/>
+          <use href="#anemone" x="58" y="126" width="56" height="56"/>
+          <use href="#renoncule" x="292" y="104" width="52" height="52"/>
+          <!-- papier kraft et ruban -->
+          <path d="M96 262 200 452 304 262 252 300 200 270 148 300z" fill="#D9B79B"/>
+          <path d="M148 300 200 270 252 300 200 452z" fill="#E6C9AF"/>
+          <path d="M168 362h64" stroke="#3A1D2C" stroke-width="7" stroke-linecap="round"/>
+          <path d="M200 362c-18-22-40-16-34 0 6 12 34 0 34 0zM200 362c18-22 40-16 34 0-6 12-34 0-34 0zM200 362l-14 34M200 362l16 32" fill="none" stroke="#3A1D2C" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== Bouquets : trois tailles, toujours de saison ===== -->
+    <section id="bouquets" class="bg-prune text-papier py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:flex md:items-end md:justify-between md:gap-10">
+        <h2 class="font-display text-4xl md:text-5xl leading-tight max-w-md">Trois tailles, et le choix de la couleur.</h2>
+        <p class="mt-4 md:mt-0 text-[17px] leading-relaxed text-papier/75 max-w-md">Vous donnez une teinte dominante et l'occasion, Camille compose avec les plus belles fleurs du jour.</p>
+      </div>
+      <ul class="mt-9 md:mt-14 mx-auto max-w-6xl px-5 flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-5 no-scrollbar">
+        <li class="snap-start shrink-0 w-[78%] sm:w-[46%] md:w-auto rounded-t-[140px] rounded-b-2xl bg-papier/[.06] ring-1 ring-papier/15 px-6 pt-10 pb-7 flex flex-col">
+          <svg class="h-28 w-auto self-center" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 112 52 64M60 112 70 62" stroke="#8FA38A" stroke-width="2.5"/><use href="#renoncule" x="30" y="30" width="40" height="40"/><use href="#anemone" x="56" y="34" width="34" height="34"/><path d="M44 80 60 116 76 80z" fill="#D9B79B"/></svg>
+          <h3 class="mt-6 font-display text-[1.7rem]">Le petit mot</h3>
+          <p class="mt-2 text-papier/75 leading-relaxed">Une dizaine de tiges, pour dire merci ou fleurir une table de chevet.</p>
+          <p class="mt-auto pt-6 text-2xl font-semibold">35 €</p>
+        </li>
+        <li class="snap-start shrink-0 w-[78%] sm:w-[46%] md:w-auto rounded-t-[140px] rounded-b-2xl bg-rose text-white px-6 pt-10 pb-7 flex flex-col">
+          <svg class="h-28 w-auto self-center" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 112 40 50M60 112 60 40M60 112 82 50" stroke="#F2D9DE" stroke-width="2.5"/><use href="#tulipe" x="20" y="34" width="30" height="38" transform="rotate(-20 35 52)"/><use href="#anemone" x="40" y="22" width="40" height="40"/><use href="#renoncule" x="66" y="40" width="34" height="34"/><path d="M38 80 60 118 82 80z" fill="#E6C9AF"/></svg>
+          <h3 class="mt-6 font-display text-[1.7rem]">Le bavard</h3>
+          <p class="mt-2 text-white/85 leading-relaxed">Le plus commandé : généreux sans encombrer, il tient dans un vase classique.</p>
+          <p class="mt-auto pt-6 text-2xl font-semibold">55 €</p>
+        </li>
+        <li class="snap-start shrink-0 w-[78%] sm:w-[46%] md:w-auto rounded-t-[140px] rounded-b-2xl bg-papier/[.06] ring-1 ring-papier/15 px-6 pt-10 pb-7 flex flex-col">
+          <svg class="h-28 w-auto self-center" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 112 30 46M60 112 50 30M60 112 72 30M60 112 92 46" stroke="#8FA38A" stroke-width="2.5"/><use href="#anemone" x="12" y="30" width="34" height="34"/><use href="#renoncule" x="34" y="12" width="36" height="36"/><use href="#anemone" x="58" y="14" width="36" height="36"/><use href="#tulipe" x="78" y="34" width="28" height="36" transform="rotate(18 92 52)"/><use href="#renoncule" x="44" y="42" width="32" height="32"/><path d="M32 78 60 118 88 78z" fill="#D9B79B"/></svg>
+          <h3 class="mt-6 font-display text-[1.7rem]">Le grand discours</h3>
+          <p class="mt-2 text-papier/75 leading-relaxed">Pour un anniversaire qui compte, une entrée de maison ou un comptoir.</p>
+          <p class="mt-auto pt-6 text-2xl font-semibold">85 €</p>
+        </li>
+      </ul>
+      <p class="mt-6 mx-auto max-w-6xl px-5 text-[15px] text-papier/60">Vase en verre soufflé en option : 18 €. Carte écrite à la main offerte.</p>
+    </section>
+
+    <!-- ===== Occasions : accordéon ===== -->
+    <section id="occasions" class="mx-auto max-w-6xl px-5 py-14 md:py-24 grid md:grid-cols-[1fr_1.4fr] gap-8 md:gap-16">
+      <div>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">Pour les jours qui comptent.</h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-prune/80">Un premier échange, par téléphone ou à la boutique, pour comprendre le lieu, les couleurs et l'ambiance.</p>
+      </div>
+      <div class="border-t border-prune/15">
+        <details class="group border-b border-prune/15" open>
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            <h3 class="font-display text-2xl">Mariage</h3>
+            <svg class="w-5 h-5 shrink-0 transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <div class="pb-6 text-prune/80 leading-relaxed">
+            <p>Bouquet de mariée, boutonnières, centres de table et arche de cérémonie. Rendez-vous de préparation offert, devis sous 48 h. À partir de 450 €.</p>
+          </div>
+        </details>
+        <details class="group border-b border-prune/15">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            <h3 class="font-display text-2xl">Deuil</h3>
+            <svg class="w-5 h-5 shrink-0 transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <div class="pb-6 text-prune/80 leading-relaxed">
+            <p>Gerbes, coussins et raquettes livrés directement au funérarium ou à l'église. Nous nous occupons des horaires avec les pompes funèbres.</p>
+          </div>
+        </details>
+        <details class="group border-b border-prune/15">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            <h3 class="font-display text-2xl">Naissance</h3>
+            <svg class="w-5 h-5 shrink-0 transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <div class="pb-6 text-prune/80 leading-relaxed">
+            <p>Bouquets sans parfum fort ni pollen, adaptés aux maternités. Livraison à l'hôpital de la Croix-Rousse et à la clinique du Val d'Ouest.</p>
+          </div>
+        </details>
+        <details class="group border-b border-prune/15">
+          <summary class="flex items-center justify-between gap-4 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+            <h3 class="font-display text-2xl">Entreprises et abonnements</h3>
+            <svg class="w-5 h-5 shrink-0 transition-transform group-open:rotate-45" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3v14M3 10h14"/></svg>
+          </summary>
+          <div class="pb-6 text-prune/80 leading-relaxed">
+            <p>Un bouquet frais chaque semaine pour votre accueil, votre restaurant ou votre cabinet, avec reprise de l'ancien. À partir de 40 € par semaine, sans engagement.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== L'arrivage : étiquettes de fleuriste ===== -->
+    <section id="arrivage" class="bg-poudre py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">L'arrivage de la semaine</h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-prune/80 max-w-xl">Ce que Camille a rapporté du marché mardi matin, et d'où ça vient. La liste change toutes les semaines.</p>
+      </div>
+      <ul class="mt-9 md:mt-12 mx-auto max-w-6xl px-5 flex lg:grid lg:grid-cols-5 gap-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-px-5 no-scrollbar">
+        <li class="etiquette snap-start shrink-0 w-[60%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier rounded-b-xl [clip-path:polygon(22%_0,78%_0,100%_14%,100%_100%,0_100%,0_14%)] px-5 pt-12 pb-6">
+          <p class="font-display text-2xl">Renoncule</p>
+          <p class="mt-1 italic text-prune/70">Ranunculus asiaticus</p>
+          <p class="mt-4 text-[15px] text-tige font-medium">Hyères, Var</p>
+        </li>
+        <li class="etiquette snap-start shrink-0 w-[60%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier rounded-b-xl [clip-path:polygon(22%_0,78%_0,100%_14%,100%_100%,0_100%,0_14%)] px-5 pt-12 pb-6">
+          <p class="font-display text-2xl">Anémone</p>
+          <p class="mt-1 italic text-prune/70">Anemone coronaria</p>
+          <p class="mt-4 text-[15px] text-tige font-medium">Ollioules, Var</p>
+        </li>
+        <li class="etiquette snap-start shrink-0 w-[60%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier rounded-b-xl [clip-path:polygon(22%_0,78%_0,100%_14%,100%_100%,0_100%,0_14%)] px-5 pt-12 pb-6">
+          <p class="font-display text-2xl">Chrysanthème</p>
+          <p class="mt-1 italic text-prune/70">Chrysanthemum</p>
+          <p class="mt-4 text-[15px] text-tige font-medium">Saint-Rambert, Drôme</p>
+        </li>
+        <li class="etiquette snap-start shrink-0 w-[60%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier rounded-b-xl [clip-path:polygon(22%_0,78%_0,100%_14%,100%_100%,0_100%,0_14%)] px-5 pt-12 pb-6">
+          <p class="font-display text-2xl">Eucalyptus</p>
+          <p class="mt-1 italic text-prune/70">Eucalyptus cinerea</p>
+          <p class="mt-4 text-[15px] text-tige font-medium">Mandelieu, Alpes-Maritimes</p>
+        </li>
+        <li class="etiquette snap-start shrink-0 w-[60%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier rounded-b-xl [clip-path:polygon(22%_0,78%_0,100%_14%,100%_100%,0_100%,0_14%)] px-5 pt-12 pb-6">
+          <p class="font-display text-2xl">Cosmos</p>
+          <p class="mt-1 italic text-prune/70">Cosmos bipinnatus</p>
+          <p class="mt-4 text-[15px] text-tige font-medium">Notre jardin, Caluire</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Livraison : trois zones autour de la boutique ===== -->
+    <section id="livraison" class="mx-auto max-w-6xl px-5 py-14 md:py-24 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+      <svg class="order-2 md:order-1 w-full max-w-[220px] md:max-w-[420px] mx-auto" viewBox="0 0 300 300" role="img" aria-label="Trois cercles autour de la boutique : la Croix-Rousse, Lyon et la métropole">
+        <circle cx="150" cy="150" r="140" fill="#F2D9DE" fill-opacity=".45" stroke="#B9476F" stroke-opacity=".35" stroke-dasharray="4 6"/>
+        <circle cx="150" cy="150" r="92" fill="#F2D9DE" stroke="#B9476F" stroke-opacity=".5"/>
+        <circle cx="150" cy="150" r="44" fill="#E08AA6"/>
+        <use href="#anemone" x="132" y="132" width="36" height="36"/>
+        <g font-family="Hanken Grotesk, sans-serif" font-size="13" fill="#3A1D2C" text-anchor="middle"><text x="150" y="216">Lyon</text><text x="150" y="276">Métropole</text></g>
+      </svg>
+      <div class="order-1 md:order-2">
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">Livré à vélo, le jour même.</h2>
+        <dl class="mt-7 divide-y divide-prune/15 border-y border-prune/15">
+          <div class="flex items-baseline justify-between gap-4 py-4"><dt class="font-medium">Croix-Rousse</dt><dd class="text-prune/80">Offerte</dd></div>
+          <div class="flex items-baseline justify-between gap-4 py-4"><dt class="font-medium">Lyon, tous arrondissements</dt><dd class="text-prune/80">9 €</dd></div>
+          <div class="flex items-baseline justify-between gap-4 py-4"><dt class="font-medium">Métropole de Lyon</dt><dd class="text-prune/80">15 €</dd></div>
+        </dl>
+        <p class="mt-5 text-[15px] text-prune/70">Commande avant 12 h pour une livraison l'après-midi. Le samedi, avant 10 h.</p>
+      </div>
+    </section>
+
+    <!-- ===== Avis ===== -->
+    <section class="border-t border-prune/10 py-14 md:py-20" aria-labelledby="avis-titre">
+      <h2 id="avis-titre" class="mx-auto max-w-6xl px-5 font-display text-3xl md:text-4xl">Ce qu'en disent les clients</h2>
+      <ul class="mt-8 mx-auto max-w-6xl px-5 flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-5 no-scrollbar">
+        <li class="snap-start shrink-0 w-[82%] md:w-auto">
+          <blockquote class="font-display text-xl leading-snug">« J'ai demandé du blanc et du vert pour ma mère. Le bouquet ressemblait à son jardin. »</blockquote>
+          <p class="mt-4 text-[15px] text-prune/70">Hélène, livraison à Caluire</p>
+        </li>
+        <li class="snap-start shrink-0 w-[82%] md:w-auto">
+          <blockquote class="font-display text-xl leading-snug">« Camille a fleuri notre mariage avec des fleurs de septembre. Les invités repartaient avec les centres de table. »</blockquote>
+          <p class="mt-4 text-[15px] text-prune/70">Inès et Malik, mariage à Fourvière</p>
+        </li>
+        <li class="snap-start shrink-0 w-[82%] md:w-auto">
+          <blockquote class="font-display text-xl leading-snug">« Abonnés depuis deux ans pour l'accueil du cabinet : jamais deux fois le même bouquet. »</blockquote>
+          <p class="mt-4 text-[15px] text-prune/70">Thomas, cabinet d'architectes</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Commander ===== -->
+    <section id="commander" class="bg-prune text-papier py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 grid lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-16">
+        <div>
+          <h2 class="font-display text-4xl md:text-5xl leading-tight">Commander un bouquet</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-papier/75">Camille vous rappelle dans l'heure pour confirmer et régler par téléphone.</p>
+          <div class="mt-8 space-y-1 text-papier/85">
+            <p class="font-medium text-papier">Capucine Fleurs</p>
+            <p>12 rue d'Austerlitz, 69004 Lyon</p>
+            <p>Du mardi au samedi, 9 h – 19 h 30</p>
+            <p>Le dimanche, 9 h – 13 h</p>
+            <p><a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-semibold underline underline-offset-4 decoration-rose-clair">06 00 00 00 00</a></p>
+            <p><a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center underline underline-offset-4 decoration-rose-clair">contact@exemple.fr</a></p>
+          </div>
+        </div>
+
+        <!--
+          Formulaire de commande : il n'envoie rien tant qu'il n'est pas relié à un service.
+          - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+          - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+          - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+        -->
+        <form class="rounded-2xl bg-papier text-prune p-5 sm:p-8 grid sm:grid-cols-2 gap-5" action="#" method="post">
+          <fieldset class="sm:col-span-2">
+            <legend class="font-medium">Couleur dominante</legend>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <label class="chip"><input type="radio" name="couleur" value="Blanc et vert" class="sr-only" checked><span class="w-3.5 h-3.5 rounded-full bg-white ring-1 ring-prune/30" aria-hidden="true"></span><span>Blanc et vert</span></label>
+              <label class="chip"><input type="radio" name="couleur" value="Rose" class="sr-only"><span class="w-3.5 h-3.5 rounded-full bg-rose-clair" aria-hidden="true"></span><span>Rose</span></label>
+              <label class="chip"><input type="radio" name="couleur" value="Jaune et orangé" class="sr-only"><span class="w-3.5 h-3.5 rounded-full bg-[#F2B23F]" aria-hidden="true"></span><span>Jaune et orangé</span></label>
+              <label class="chip"><input type="radio" name="couleur" value="Champêtre" class="sr-only"><span class="w-3.5 h-3.5 rounded-full bg-tige" aria-hidden="true"></span><span>Champêtre</span></label>
+            </div>
+          </fieldset>
+          <label class="block"><span class="font-medium">Taille</span>
+            <select name="taille" class="field mt-2">
+              <option>Le petit mot, 35 €</option><option selected>Le bavard, 55 €</option><option>Le grand discours, 85 €</option>
+            </select>
+          </label>
+          <label class="block"><span class="font-medium">Jour de livraison</span>
+            <input type="date" name="date" class="field mt-2" required>
+          </label>
+          <label class="block"><span class="font-medium">Votre nom</span>
+            <input type="text" name="nom" autocomplete="name" class="field mt-2" required>
+          </label>
+          <label class="block"><span class="font-medium">Votre téléphone</span>
+            <input type="tel" name="telephone" autocomplete="tel" class="field mt-2" required>
+          </label>
+          <label class="block sm:col-span-2"><span class="font-medium">Adresse de livraison</span>
+            <input type="text" name="adresse" autocomplete="street-address" class="field mt-2" placeholder="Ou « retrait à la boutique »">
+          </label>
+          <label class="block sm:col-span-2"><span class="font-medium">Le mot sur la carte</span>
+            <textarea name="carte" rows="3" class="field mt-2" placeholder="Camille l'écrira à la main"></textarea>
+          </label>
+          <button type="submit" class="sm:col-span-2 w-full min-h-12 rounded-full bg-rose font-semibold text-white hover:bg-rose-deep">Envoyer la commande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-prune-deep text-papier/60 text-[15px]">
+    <div class="mx-auto max-w-6xl px-5 py-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+      <p><span class="font-display text-lg text-papier">Capucine</span> <span>Fleuriste, Lyon 4e</span></p>
+      <p>© 2026 Capucine Fleurs. <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-papier/95 backdrop-blur border-t border-prune/15 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-2 gap-3">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center rounded-full border border-prune/30 font-semibold">Appeler</a>
+    <a href="#commander" class="inline-flex min-h-12 items-center justify-center rounded-full bg-rose font-semibold text-white">Commander</a>
+  </div>
+
+  <script>
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Date de livraison : pas avant aujourd'hui
+    const d = document.querySelector('input[type="date"]');
+    if (d) d.min = new Date().toISOString().slice(0, 10);
+  </script>
+</body>
+</html>
