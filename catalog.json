@@ -5,7 +5,8 @@
     "shop": "https://qg0s3t-sj.myshopify.com",
     "tagline": "Des sites vitrines prêts à l'emploi, pensés pour votre métier",
     "ventes_ouvertes": false,
-    "messagerie_active": false
+    "messagerie_active": true,
+    "messagerie_emails": false
   },
   "styles": [
     "Minimal",

@@ -175,10 +175,40 @@
   </div>
   <p class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 pb-10 text-sm text-white/50">© 2026 Kit Vitrine</p>
 </footer>
-<nav class="kv-tabbar md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-line pb-[env(safe-area-inset-bottom)] grid grid-cols-3" aria-label="Navigation principale">
-  <a href="/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-sign" aria-current="page"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg><span>Explorer</span></a><a href="/favoris/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-ink/60" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><span>Favoris</span></a><a href="/guide/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-ink/60" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM13 4h5.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H13z"/></svg><span>Guide</span></a>
+<nav class="kv-tabbar md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-line pb-[env(safe-area-inset-bottom)] grid grid-cols-4" aria-label="Navigation principale">
+  <a href="/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-sign" aria-current="page"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg><span>Explorer</span></a><a href="/favoris/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-ink/60" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg><span>Favoris</span></a><a href="/guide/" class="flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-ink/60" ><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM13 4h5.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H13z"/></svg><span>Guide</span></a><button type="button" class="relative flex flex-col items-center justify-center gap-1 min-h-14 text-[11px] font-medium text-ink/60" data-open-chat><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4A1.5 1.5 0 0 1 4 14.5z"/></svg><span>Messages</span><span class="hidden absolute top-1.5 left-1/2 ml-2 min-w-5 h-5 px-1 rounded-full bg-[#E1305A] text-white text-[11px] font-bold grid place-items-center" data-chat-badge></span></button>
 </nav>
-
+<button type="button" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-3 h-14 pl-5 pr-6 rounded-full bg-ink text-white font-semibold shadow-card hover:bg-black" data-open-chat>
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/></svg>
+  <span>Une question ?</span><span class="hidden min-w-5 h-5 px-1 rounded-full bg-[#E1305A] text-[11px] font-bold grid place-items-center" data-chat-badge></span>
+</button>
+<dialog class="kv-chat" aria-labelledby="chat-t" data-emails="non">
+  <div class="flex flex-col h-full">
+    <div class="flex items-center gap-3 px-4 h-16 border-b border-line shrink-0">
+      <span class="grid place-items-center w-10 h-10 rounded-full bg-mist shrink-0"><svg class="w-8 h-8 shrink-0" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><path d="M9.5 9h6.5v5c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14z" fill="#F0BE3D"/><path d="M22.5 9H29v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14z" fill="#F0BE3D"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg></span>
+      <div class="min-w-0 flex-1"><h2 id="chat-t" class="font-semibold leading-tight">Kit Vitrine</h2><p class="text-[13px] text-ink/60 leading-tight">Réponse sous 2 h · 8 h – 22 h</p></div>
+      <form method="dialog"><button class="grid place-items-center w-11 h-11 rounded-full hover:bg-mist" aria-label="Fermer la messagerie"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></form>
+    </div>
+    <p class="px-4 py-2 text-[12px] leading-snug text-ink/55 bg-mist/60 border-b border-line">Les réponses sont rédigées par l'assistant IA de Kit Vitrine. Les demandes particulières (devis, sur-mesure) sont transmises à l'équipe.</p>
+    <div class="flex-1 overflow-y-auto px-4 py-4 space-y-3" data-chat-list aria-live="polite"></div>
+    <form class="shrink-0 border-t border-line p-4 grid gap-3" data-chat-first>
+      <label class="grid gap-1"><span class="text-sm font-semibold">Votre message</span> <textarea name="message" required rows="2" maxlength="2000" class="kv-input resize-none" placeholder="Votre question ou votre projet…"></textarea></label>
+      <div class="grid grid-cols-2 gap-3">
+        <label class="grid gap-1 min-w-0"><span class="text-sm font-semibold">Prénom</span><input name="prenom" required maxlength="60" autocomplete="given-name" class="kv-input"></label>
+        <label class="grid gap-1 min-w-0"><span class="text-sm font-semibold">E-mail</span><input name="email" type="email" required autocomplete="email" class="kv-input" placeholder="si besoin"></label>
+      </div>
+      <label class="hidden" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
+      <label class="flex items-start gap-3 text-[13px] leading-snug text-ink/70 min-h-11"><input type="checkbox" name="consentement" required class="mt-0.5 w-5 h-5 shrink-0 accent-ink"><span>J'accepte que Kit Vitrine conserve mon message et mon e-mail pour me répondre (<a href="/confidentialite/" class="underline">confidentialité</a>).</span></label>
+      <p class="text-sm text-[#B4443A]" data-chat-error role="alert"></p>
+      <button type="submit" class="h-12 rounded-xl bg-sign text-white font-semibold hover:bg-sign-deep">Envoyer</button>
+    </form>
+    <form class="shrink-0 border-t border-line p-3 flex items-end gap-2" data-chat-reply hidden>
+      <label class="flex-1"><span class="sr-only">Votre message</span><textarea rows="2" maxlength="2000" class="kv-input resize-none w-full" placeholder="Écrire un message…"></textarea></label>
+      <button type="submit" class="h-12 px-5 rounded-xl bg-sign text-white font-semibold shrink-0">Envoyer</button>
+    </form>
+  </div>
+</dialog>
+<script src="/assets/chat.js" defer></script>
 <script src="/assets/explore.js" defer></script>
 
 </body>

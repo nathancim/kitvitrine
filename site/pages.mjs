@@ -66,7 +66,7 @@ ${body}
 </main>
 ${footer(site)}
 ${tabbar ? tabBar(path, site.messagerie_active) : ''}
-${site.messagerie_active ? chatWidget() : ''}
+${site.messagerie_active ? chatWidget(site.messagerie_emails) : ''}
 <script src="/assets/explore.js" defer></script>
 ${scripts}
 </body>
@@ -144,12 +144,12 @@ function footer(site) {
 }
 
 
-function chatWidget() {
+function chatWidget(emails) {
   return `<button type="button" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-3 h-14 pl-5 pr-6 rounded-full bg-ink text-white font-semibold shadow-card hover:bg-black" data-open-chat>
   <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/></svg>
   <span>Une question ?</span><span class="hidden min-w-5 h-5 px-1 rounded-full bg-[#E1305A] text-[11px] font-bold grid place-items-center" data-chat-badge></span>
 </button>
-<dialog class="kv-chat" aria-labelledby="chat-t">
+<dialog class="kv-chat" aria-labelledby="chat-t" data-emails="${emails ? 'oui' : 'non'}">
   <div class="flex flex-col h-full">
     <div class="flex items-center gap-3 px-4 h-16 border-b border-line shrink-0">
       <span class="grid place-items-center w-10 h-10 rounded-full bg-mist shrink-0">${logo}</span>
@@ -162,7 +162,7 @@ function chatWidget() {
       <label class="grid gap-1"><span class="text-sm font-semibold">Votre message</span> <textarea name="message" required rows="2" maxlength="2000" class="kv-input resize-none" placeholder="Votre question ou votre projet…"></textarea></label>
       <div class="grid grid-cols-2 gap-3">
         <label class="grid gap-1 min-w-0"><span class="text-sm font-semibold">Prénom</span><input name="prenom" required maxlength="60" autocomplete="given-name" class="kv-input"></label>
-        <label class="grid gap-1 min-w-0"><span class="text-sm font-semibold">E-mail</span><input name="email" type="email" required autocomplete="email" class="kv-input" placeholder="pour la réponse"></label>
+        <label class="grid gap-1 min-w-0"><span class="text-sm font-semibold">E-mail</span><input name="email" type="email" required autocomplete="email" class="kv-input" placeholder="${emails ? 'pour la réponse' : 'si besoin'}"></label>
       </div>
       <label class="hidden" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
       <label class="flex items-start gap-3 text-[13px] leading-snug text-ink/70 min-h-11"><input type="checkbox" name="consentement" required class="mt-0.5 w-5 h-5 shrink-0 accent-ink"><span>J'accepte que Kit Vitrine conserve mon message et mon e-mail pour me répondre (<a href="/confidentialite/" class="underline">confidentialité</a>).</span></label>

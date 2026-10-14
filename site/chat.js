@@ -10,6 +10,8 @@
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const fmt = iso => { const d = new Date(iso); return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }) + ', ' + d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }); };
 
+  const emails = dlg.dataset.emails === 'oui';
+  const promesse = emails ? 'la réponse arrive ici et par e-mail, sous 2 h entre 8 h et 22 h.' : 'la réponse s\'affiche ici, sous 2 h entre 8 h et 22 h. Vous pouvez fermer la page : la conversation reste enregistrée sur cet appareil.';
   let conv = get(KEY);           // { id, jeton }
   let thread = null, timer = null;
   const list = $('[data-chat-list]'), first = $('[data-chat-first]'), reply = $('[data-chat-reply]'), err = $('[data-chat-error]');
@@ -22,11 +24,11 @@
   const unread = () => thread ? thread.messages.filter(m => m.de !== 'visiteur').length - (get(SEEN) || 0) : 0;
 
   function render() {
-    const intro = `<div class="kv-bubble kv-them">Bonjour ! Une question sur un template, sa mise en ligne, ou un projet à nous raconter ? Écrivez-nous : la réponse arrive ici et par e-mail, sous 2 h entre 8 h et 22 h.</div>`;
+    const intro = `<div class="kv-bubble kv-them">Bonjour ! Une question sur un template, sa mise en ligne, ou un projet à nous raconter ? Écrivez-nous : ${promesse}</div>`;
     if (!thread) { list.innerHTML = intro; first.hidden = false; reply.hidden = true; return; }
     list.innerHTML = intro + thread.messages.map(m => `<div class="kv-bubble ${m.de === 'visiteur' ? 'kv-me' : 'kv-them'}">${esc(m.texte).replace(/\n/g, '<br>')}<span class="kv-time">${m.de === 'visiteur' ? 'Vous' : 'Kit Vitrine'} · ${fmt(m.le)}</span></div>`).join('');
     const last = thread.messages[thread.messages.length - 1];
-    if (last && last.de === 'visiteur') list.insertAdjacentHTML('beforeend', '<p class="kv-pending">Message reçu. Réponse ici et par e-mail sous 2 h (8 h – 22 h).</p>');
+    if (last && last.de === 'visiteur') list.insertAdjacentHTML('beforeend', `<p class="kv-pending">Message reçu. Réponse ${emails ? 'ici et par e-mail' : 'ici'} sous 2 h (8 h – 22 h).</p>`);
     if (thread.statut === 'clos') list.insertAdjacentHTML('beforeend', '<p class="kv-pending">Conversation terminée. Écrivez un nouveau message pour la rouvrir.</p>');
     first.hidden = true; reply.hidden = false;
     list.scrollTop = list.scrollHeight;
