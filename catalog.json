@@ -7,7 +7,8 @@
     "ventes_ouvertes": false,
     "messagerie_active": true,
     "messagerie_emails": false,
-    "messagerie_delai": "sous 48 h"
+    "messagerie_delai": "sous 48 h",
+    "offre_publique": false
   },
   "styles": [
     "Minimal",

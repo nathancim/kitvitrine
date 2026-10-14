@@ -38,6 +38,8 @@ export const legalPages = [
 <p>Ce site ne dépose aucun cookie publicitaire et n'utilise aucun outil de suivi. Les polices sont hébergées avec le site. Vos favoris sont enregistrés uniquement dans votre navigateur.</p>
 <h2>Messagerie</h2>
 <p>Quand vous nous écrivez, nous conservons votre prénom, votre e-mail, vos messages et la page d'où vous écrivez, pour vous répondre. Ces données sont stockées dans un espace privé (GitHub) et ne sont jamais revendues ni utilisées pour de la publicité. Les réponses sont rédigées par un assistant d'intelligence artificielle (Claude, d'Anthropic) ; les demandes particulières sont transmises à l'équipe. Les conversations sont supprimées 12 mois après le dernier message.</p>
+<h2>Demandes de démo</h2>
+<p>Quand vous remplissez le questionnaire « On s'occupe de tout », nous conservons vos réponses et vos coordonnées pour préparer votre démo et vous recontacter, dans le même espace privé que la messagerie. Sans suite de votre part, elles sont supprimées 12 mois après votre dernier échange.</p>
 <h2>Liste d'attente</h2>
 <p>Si vous demandez à être prévenu de l'ouverture des ventes, nous conservons votre e-mail pour vous envoyer ce seul message, puis nous le supprimons.</p>
 <h2>Achats</h2>

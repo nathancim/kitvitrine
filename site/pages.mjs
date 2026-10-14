@@ -41,7 +41,7 @@ export const icon = (name, cls = 'w-6 h-6', sw = 1.8) => `<svg class="${cls}" vi
 const logo = `<svg class="w-8 h-8 shrink-0" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><path d="M9.5 9h6.5v5c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14z" fill="#F0BE3D"/><path d="M22.5 9H29v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14z" fill="#F0BE3D"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg>`;
 
 // ---------- Layout ----------
-export function layout({ site, title, description, path, body, jsonld = null, scripts = '', explore = false, tabbar = true, image = null, bodyAttrs = '' }) {
+export function layout({ site, title, description, path, body, jsonld = null, scripts = '', explore = false, tabbar = true, image = null, bodyAttrs = '', robots = '' }) {
   const url = site.url + path;
   return `<!doctype html>
 <html lang="fr">
@@ -50,7 +50,7 @@ export function layout({ site, title, description, path, body, jsonld = null, sc
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<link rel="canonical" href="${url}">
+<link rel="canonical" href="${url}">${robots ? `<meta name="robots" content="${robots}">` : ''}
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${url}">${image ? `<meta property="og:image" content="${site.url}${image}">` : ''}
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">

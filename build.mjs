@@ -7,6 +7,7 @@ import { execSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import * as P from './site/pages.mjs';
 import { legalPages } from './site/legal.mjs';
+import { offrePage, suiviPage } from './site/offre.mjs';
 
 const ROOT = path.dirname(new URL(import.meta.url).pathname);
 const r = (...p) => path.join(ROOT, ...p);
@@ -203,6 +204,9 @@ for (const t of cat.templates) {
     jsonld: { '@context': 'https://schema.org', '@type': 'Product', name: `Template ${t.title}`, description: t.description, image: `${site.url}/templates/${t.slug}/thumb.jpg`, brand: { '@type': 'Brand', name: site.name }, offers: { '@type': 'Offer', price: t.prix, priceCurrency: 'EUR', availability: t.shopify_url ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder', url: `${site.url}/templates/${t.slug}/` } }
   });
 }
+// « On s'occupe de tout » : non indexée et absente des menus tant que Nathan ne l'a pas validée (site.offre_publique)
+page('on-s-occupe-de-tout', { title: 'On s\'occupe de tout : votre site vitrine en ligne, sans rien toucher — Kit Vitrine', description: 'Choisissez un template, répondez à quelques questions : nous préparons votre site, vous le voyez avant de payer, puis nous le mettons en ligne avec votre nom de domaine.', robots: site.offre_publique ? '' : 'noindex', body: offrePage(cat), scripts: '<script src="/assets/brief.js" defer></script>' });
+page('suivi', { title: 'Suivi de votre demande — Kit Vitrine', description: 'Où en est votre site.', robots: 'noindex', body: suiviPage(), scripts: '<script src="/assets/brief.js" defer></script>' });
 page('guide', { title: 'Guide : personnaliser et mettre en ligne votre site — Kit Vitrine', description: 'Modifier les textes de votre template sans logiciel, puis le mettre en ligne gratuitement avec Netlify Drop, étape par étape.', body: P.guidePage() });
 fs.cpSync(r('site/guide'), r('dist/assets/guide'), { recursive: true });
 for (const [slug, title, html] of legalPages) page(slug, { title: `${title} — Kit Vitrine`, description: title, body: P.textPage(title, html) });
@@ -213,10 +217,11 @@ const pub = { univers: cat.univers.map(({ slug, label, description }) => ({ slug
 write(r('dist/data/catalog.json'), JSON.stringify(pub));
 fs.copyFileSync(r('site/explore.js'), r('dist/assets/explore.js'));
 fs.copyFileSync(r('site/chat.js'), r('dist/assets/chat.js'));
+fs.copyFileSync(r('site/brief.js'), r('dist/assets/brief.js'));
 write(r('dist/favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#fff"/><path d="M3 9h26v5c0 2-1.6 3.5-3.25 3.5S22.5 16 22.5 14c0 2-1.6 3.5-3.25 3.5S16 16 16 14c0 2-1.6 3.5-3.25 3.5S9.5 16 9.5 14c0 2-1.6 3.5-3.25 3.5S3 16 3 14z" fill="#0E5A47"/><rect x="6" y="20" width="20" height="8" rx="1" fill="none" stroke="#161B26" stroke-width="2"/></svg>`);
 const urls = ['', 'univers/', 'guide/', ...cat.univers.map(u => `univers/${u.slug}/`), ...cat.templates.map(t => `templates/${t.slug}/`), ...legalPages.map(([s]) => s + '/')];
 write(r('dist/sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `<url><loc>${site.url}/${u}</loc></url>`).join('\n')}\n</urlset>\n`);
-write(r('dist/robots.txt'), `User-agent: *\nDisallow: /demo/\nDisallow: /dl/\nSitemap: ${site.url}/sitemap.xml\n`);
+write(r('dist/robots.txt'), `User-agent: *\nDisallow: /demo/\nDisallow: /dl/\nDisallow: /suivi/\nSitemap: ${site.url}/sitemap.xml\n`);
 write(r('dist/_headers'), `/assets/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n/demo/*\n  X-Robots-Tag: noindex\n/dl/*\n  X-Robots-Tag: noindex\n  Content-Disposition: attachment\n`);
 
 // ---- Site CSS (after HTML so Tailwind sees every class) ----

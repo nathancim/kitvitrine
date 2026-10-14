@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /demo/
 Disallow: /dl/
+Disallow: /suivi/
 Sitemap: https://kitvitrine.pages.dev/sitemap.xml
