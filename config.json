@@ -1,0 +1,5 @@
+{
+  "email_reponses": false,
+  "expediteur_note": "Tant que email_reponses vaut false, les réponses sont visibles uniquement dans la messagerie du site.",
+  "nathan_email_alertes": true
+}
