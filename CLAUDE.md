@@ -34,6 +34,17 @@ Langue : tout est en français (textes, fiches, commits).
 - **Mode édition** : le build ajoute automatiquement `assets/kv-edition.js` (édition des textes dans le navigateur) à la démo et au zip. Ne pas l'ajouter soi-même. Mettre chaque texte modifiable dans une balise texte simple (`h1`–`h6`, `p`, `li`, `a`, `span`, `dt`, `dd`, `blockquote`, `figcaption`, `summary`, `label`) plutôt que directement dans une `div`, et garder téléphone/e-mail dans des liens `tel:` / `mailto:`.
 - Copier la structure de fichiers de `templates/equilibre/` (`package.json`, `tailwind.config.js` avec `content: { relative: true, files: ['./*.html'] }`).
 
+### 2 bis. Mobile d'abord (bloquant)
+La majorité des visiteurs d'un artisan ou d'un commerce arrivent sur téléphone. Concevoir d'abord pour un écran de 390 px, puis enrichir pour l'ordinateur (`md:` / `lg:`).
+- **Barre d'action fixée en bas** sur mobile uniquement (`md:hidden`, `position: fixed; bottom: 0`, `padding-bottom: env(safe-area-inset-bottom)`) avec les 1 ou 2 actions du métier : « Appeler » (`tel:`) + « Devis » / « Réserver » / « Rendez-vous ». Ajouter un `padding-bottom` au `body` sur mobile pour qu'elle ne cache rien.
+- **Page courte** : 8 écrans maximum sur mobile. Pour y arriver : listes de cartes, avis et galeries en **carrousel horizontal** (`flex overflow-x-auto snap-x snap-mandatory`, cartes à `w-[82%]` ou `min-w-[280px]`, `scroll-padding`, bord de la carte suivante visible) ; listes longues en accordéon ; textes plus courts sur mobile ; sections à `py-14` sur mobile (`md:py-24` ensuite).
+- **Jamais deux colonnes de texte côte à côte sous 640 px** (pas de `grid-cols-2` avec des paragraphes sur mobile) : une colonne ou un carrousel.
+- **Zones tactiles de 44 px minimum** : boutons, liens du menu, `summary` des FAQ (`py-4`), liens téléphone/e-mail (`inline-flex min-h-11 items-center`), logo (`min-h-11`).
+- **Boutons d'action pleine largeur sur mobile** (`w-full sm:w-auto`), empilés.
+- **Typographie** : texte courant 16 px minimum, titres en `clamp()` ou `text-4xl sm:text-6xl` (jamais de titre qui déborde) ; champs de formulaire en 16 px minimum (sinon l'iPhone zoome).
+- **Premier écran** : nom, promesse, et un bouton d'action visible sans faire défiler. L'illustration du héros passe sous le texte et reste compacte (hauteur max ~40 % de l'écran).
+- **Menu mobile** : bouton avec `aria-expanded`, panneau plein écran ou déroulant avec liens de 48 px de haut, fermeture au clic sur un lien.
+
 ### 3. Enregistrer la fiche
 Ajouter l'entrée **à la fin** de `catalog.json > templates` avec tous les champs : `slug, title, tagline, description, univers, style, couleur, pages, prix, date (AAAA-MM-JJ, heure de Paris), tags, sections, palette, shopify_url: "", shopify_product_id: ""`.
 - `title` : un nom court et évocateur, unique. `tagline` : « Site vitrine pour <métier> ».
@@ -42,7 +53,8 @@ Ajouter l'entrée **à la fin** de `catalog.json > templates` avec tous les cham
 
 ### 4. Construire et vérifier
 1. `node build.mjs` (s'arrête en cas de fiche invalide : corriger).
-2. Regarder `shots/<slug>/thumb.jpg` et `full.jpg` avec Read, et une capture mobile (`python3 shoot.py <chemin>/index.html /tmp/<slug> full`). Corriger tout défaut visible avant de continuer.
+2. **Contrôle mobile obligatoire** : `python3 tools/audit-mobile.py <slug>` doit afficher « OK ». Sinon, corriger chaque point listé et relancer jusqu'à « OK ». Ne jamais publier un template « À CORRIGER ».
+3. Regarder avec Read `shots/<slug>/mobile.jpg` (rendu téléphone, créé par l'audit) **puis** `shots/<slug>/thumb.jpg` et `full.jpg`. Corriger tout défaut visible (chevauchement, texte coupé, carrousel qui ne montre pas la carte suivante, barre fixe qui cache du contenu) avant de continuer.
 
 ### 5. Publier (directement, sans validation : le propriétaire vérifie sur la boutique)
 1. `git add -A && git commit -m "Nouveau template : <title> (<métier>)"` puis `git push`. `node build.mjs` a créé `dl_token` dans la fiche et copié le zip dans `dist/dl/<dl_token>/` (lien de téléchargement secret, non indexé).
