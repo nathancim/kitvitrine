@@ -15,9 +15,11 @@ CHECK = r"""() => {
   const vis = e => { const s = getComputedStyle(e), r = e.getBoundingClientRect();
     return r.width > 0 && r.height > 0 && s.visibility !== 'hidden' && s.display !== 'none' && !e.closest('[aria-hidden="true"]'); };
   if (document.documentElement.scrollWidth > W + 1) out.block.push(`défilement horizontal : largeur ${document.documentElement.scrollWidth}px pour ${W}px`);
+  // Inside a horizontal carousel (overflow-x auto/scroll) is fine
+  const inScroller = e => { for (let a = e.parentElement; a && a !== document.body; a = a.parentElement) { const o = getComputedStyle(a).overflowX; if (o === 'auto' || o === 'scroll') return true; } return false; };
   // Text that overflows the screen (decorative SVG excluded)
   document.querySelectorAll('h1,h2,h3,p,li,a,button,label,input,select,textarea,table').forEach(e => {
-    if (!vis(e) || e.closest('svg')) return; const r = e.getBoundingClientRect();
+    if (!vis(e) || e.closest('svg') || inScroller(e)) return; const r = e.getBoundingClientRect();
     if (r.right > W + 1 || r.left < -1) out.block.push(`déborde de l'écran : <${e.tagName.toLowerCase()}> « ${e.textContent.trim().slice(0, 40)} »`);
   });
   // Tap targets
@@ -32,9 +34,13 @@ CHECK = r"""() => {
   document.querySelectorAll('input,select,textarea').forEach(e => { if (vis(e) && parseFloat(getComputedStyle(e).fontSize) < 16) out.block.push(`champ de formulaire en ${getComputedStyle(e).fontSize} (16px mini, sinon zoom auto sur iPhone) : ${e.name || e.type}`); });
   document.querySelectorAll('p,li,dd,blockquote,td').forEach(e => { if (vis(e) && e.textContent.trim().length > 30 && parseFloat(getComputedStyle(e).fontSize) < 15) out.warn.push(`texte courant en ${getComputedStyle(e).fontSize} (15px mini conseillé) : « ${e.textContent.trim().slice(0, 30)} »`); });
   // Narrow text columns (side-by-side cards with long text)
-  document.querySelectorAll('p').forEach(e => { if (vis(e) && e.textContent.trim().length > 60 && e.getBoundingClientRect().width < 230) out.block.push(`colonne de texte trop étroite (${Math.round(e.getBoundingClientRect().width)}px) : « ${e.textContent.trim().slice(0, 30)} »`); });
+  document.querySelectorAll('p').forEach(e => { if (vis(e) && e.textContent.trim().length > 60 && e.getBoundingClientRect().width < (inScroller(e) ? 190 : 230)) out.block.push(`colonne de texte trop étroite (${Math.round(e.getBoundingClientRect().width)}px) : « ${e.textContent.trim().slice(0, 30)} »`); });
   // Quick call action reachable without scrolling
   const call = [...document.querySelectorAll('a[href^="tel:"], a[href="#contact"], a[href*="devis"], a[href*="reserv"]')].some(a => { const r = a.getBoundingClientRect(); return vis(a) && r.top < 844 && r.bottom > 0; });
+  // Carousels must hint that there is more (next card partly visible)
+  document.querySelectorAll('*').forEach(a => { const o = getComputedStyle(a).overflowX; if ((o === 'auto' || o === 'scroll') && a.scrollWidth > a.clientWidth + 4 && vis(a)) {
+    const kids = [...a.children].filter(vis); const second = kids[1]; if (!second) return; const r = second.getBoundingClientRect(), ar = a.getBoundingClientRect();
+    if (r.left >= ar.right - 8) out.block.push(`carrousel sans carte suivante visible : on ne devine pas qu'il faut faire glisser (« ${kids[0].textContent.trim().slice(0, 25)} »)`); } });
   if (!call) out.block.push("aucun bouton d'action (appel, devis, réservation, contact) visible dans le premier écran");
   // Sticky mobile action bar
   const sticky = [...document.querySelectorAll('body *')].some(e => { const s = getComputedStyle(e); return (s.position === 'fixed' || s.position === 'sticky') && e.querySelector('a[href^="tel:"], a[href^="#"]') && e.getBoundingClientRect().bottom >= window.innerHeight - 2; });

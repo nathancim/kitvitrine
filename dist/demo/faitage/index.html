@@ -10,7 +10,16 @@
   <link rel="preload" href="assets/fonts/big-shoulders-display-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="bg-ciel text-ardoise font-sans antialiased">
+<body class="bg-ciel text-ardoise font-sans antialiased pb-24 md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Faîtage</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/faitage/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
 
   <!-- Motifs SVG réutilisés (ardoise, zinc, tuile, bac acier) -->
   <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
@@ -43,7 +52,7 @@
   <!-- ===== En-tête ===== -->
   <header class="sticky top-0 z-30 bg-ciel/95 backdrop-blur border-b border-ardoise/10 on-light">
     <div class="mx-auto max-w-7xl px-5 h-16 flex items-center justify-between gap-4">
-      <a href="#" class="flex items-center gap-2 font-display font-extrabold text-2xl tracking-wide">
+      <a href="#" class="flex items-center gap-2 min-h-11 font-display font-extrabold text-2xl tracking-wide">
         <svg class="w-8 h-8" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 20 16 7l14 13" fill="none" stroke="#1E3448" stroke-width="3.5" stroke-linejoin="round"/><path d="M16 7 30 20" stroke="#F4C430" stroke-width="3.5"/><rect x="21" y="6" width="4" height="8" fill="#1E3448"/></svg>
         Toitures Lebrun
       </a>
@@ -58,35 +67,35 @@
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
         06 00 00 00 00
       </a>
-      <button id="menuBtn" class="lg:hidden p-2 -mr-2" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <button id="menuBtn" class="lg:hidden p-2.5 -mr-2.5" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
         <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
-    <nav id="menu" class="lg:hidden hidden border-t border-ardoise/10 px-5 py-5 flex-col gap-4 text-lg font-medium" aria-label="Navigation mobile">
-      <a href="#travaux">Travaux</a><a href="#materiaux">Matériaux</a><a href="#chantier">Un chantier</a><a href="#avis">Avis</a><a href="#contact">Demander un devis</a>
-      <a href="tel:+33600000000" class="mt-1 rounded-md bg-signal px-5 py-3 text-center font-bold text-ardoise-deep">Appeler le 06 00 00 00 00</a>
+    <nav id="menu" class="lg:hidden hidden border-t border-ardoise/10 px-5 py-3 flex-col text-lg font-medium" aria-label="Navigation mobile">
+      <a href="#travaux" class="flex items-center min-h-12 border-b border-ardoise/10">Travaux</a><a href="#materiaux" class="flex items-center min-h-12 border-b border-ardoise/10">Matériaux</a><a href="#chantier" class="flex items-center min-h-12 border-b border-ardoise/10">Un chantier</a><a href="#avis" class="flex items-center min-h-12 border-b border-ardoise/10">Avis</a><a href="#contact" class="flex items-center min-h-12">Demander un devis</a>
+      <a href="tel:+33600000000" class="mt-2 mb-2 rounded-md bg-signal px-5 py-3 text-center font-bold text-ardoise-deep">Appeler le 06 00 00 00 00</a>
     </nav>
   </header>
 
   <main>
     <!-- ===== Accueil : le ciel et les toits ===== -->
     <section class="relative overflow-hidden on-light">
-      <div class="mx-auto max-w-7xl px-5 pt-12 md:pt-20 grid lg:grid-cols-12 gap-10 items-end">
+      <div class="mx-auto max-w-7xl px-5 pt-9 md:pt-20 grid lg:grid-cols-12 gap-6 lg:gap-10 items-end">
         <div class="lg:col-span-8">
           <p class="font-medium text-ardoise-soft text-lg">Couvreur zingueur à Angers depuis 1998</p>
-          <h1 class="mt-3 font-display font-extrabold text-[3.1rem] leading-[1.04] sm:text-7xl sm:leading-[0.96] lg:text-[7.5rem] tracking-tight">Un toit refait dans les règles, de la gouttière au faîtage.</h1>
+          <h1 class="mt-3 font-display font-extrabold text-[2.6rem] leading-[1.02] sm:text-7xl sm:leading-[0.96] lg:text-[7.5rem] tracking-tight">Un toit refait dans les règles, de la gouttière au faîtage.</h1>
         </div>
         <div class="lg:col-span-4 lg:pb-3">
-          <p class="text-lg leading-relaxed text-ardoise/80">Rénovation en ardoise et en tuile, zinguerie, fenêtres de toit et réparation de fuites. Devis détaillé sous 48 h, avec photos de votre toiture.</p>
-          <div class="mt-7 flex flex-wrap gap-3">
-            <a href="#contact" class="rounded-md bg-ardoise text-ciel px-6 py-3.5 font-bold hover:bg-ardoise-deep">Demander un devis</a>
-            <a href="#urgence" class="rounded-md border-2 border-ardoise px-6 py-3 font-bold hover:bg-ardoise hover:text-ciel">Fuite urgente</a>
+          <p class="text-[17px] md:text-lg leading-relaxed text-ardoise/80">Rénovation en ardoise et en tuile, zinguerie, fenêtres de toit et réparation de fuites. Devis détaillé sous 48 h, avec photos de votre toiture.</p>
+          <div class="mt-6 md:mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="#contact" class="inline-flex justify-center rounded-md bg-ardoise text-ciel px-6 py-3.5 font-bold hover:bg-ardoise-deep">Demander un devis</a>
+            <a href="#urgence" class="inline-flex justify-center rounded-md border-2 border-ardoise px-6 py-3 font-bold hover:bg-ardoise hover:text-ciel">Fuite urgente</a>
           </div>
         </div>
       </div>
 
       <!-- Illustration : trois toits, trois matériaux. Le faîtage jaune est la signature visuelle. -->
-      <svg class="pose mt-10 md:mt-6 block w-full h-[230px] sm:h-[300px] md:h-[380px]" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Silhouette de toitures en ardoise, zinc et bac acier">
+      <svg class="pose mt-6 md:mt-6 block w-full h-[150px] sm:h-[300px] md:h-[380px]" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Silhouette de toitures en ardoise, zinc et bac acier">
         <!-- toit zinc à gauche -->
         <path d="M-20 380V210l300-70v240z" fill="url(#p-zinc)"/>
         <path d="M-20 210l300-70" stroke="#8E9BA5" stroke-width="6"/>
@@ -116,43 +125,43 @@
 
     <!-- ===== Travaux ===== -->
     <section id="travaux" class="bg-ardoise-deep text-ciel">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28 grid lg:grid-cols-12 gap-8 lg:gap-12">
         <div class="lg:col-span-4">
           <div class="lg:sticky lg:top-28">
-            <h2 class="font-display font-extrabold text-5xl md:text-6xl leading-none">Ce que nous faisons sur votre toit</h2>
-            <p class="mt-6 text-ciel/75 leading-relaxed max-w-sm">Une équipe de quatre compagnons, sans sous-traitance. Le même chef de chantier du premier rendez-vous à la réception des travaux.</p>
+            <h2 class="font-display font-extrabold text-[2.6rem] md:text-6xl leading-none">Ce que nous faisons sur votre toit</h2>
+            <p class="mt-4 md:mt-6 text-ciel/75 leading-relaxed max-w-sm">Une équipe de quatre compagnons, sans sous-traitance. Le même chef de chantier du premier rendez-vous à la réception des travaux.</p>
           </div>
         </div>
         <dl class="lg:col-span-8 border-t border-zinc/25">
-          <div class="grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2 py-7 border-b border-zinc/25">
-            <dt class="font-display font-bold text-3xl">Rénovation complète de toiture</dt>
-            <dd class="sm:row-span-2 text-signal font-medium sm:text-right whitespace-nowrap">8 à 15 jours</dd>
-            <dd class="text-ciel/75 leading-relaxed max-w-xl">Dépose de l'ancienne couverture, contrôle de la charpente, écran sous-toiture, liteaux neufs et pose en ardoise naturelle ou en tuile.</dd>
+          <div class="grid grid-cols-[1fr_auto] gap-x-4 sm:gap-x-8 gap-y-1 sm:gap-y-2 py-5 md:py-7 border-b border-zinc/25">
+            <dt class="font-display font-bold text-2xl md:text-3xl">Rénovation complète de toiture</dt>
+            <dd class="row-span-2 text-signal font-medium text-right whitespace-nowrap text-[15px] sm:text-base pt-1">8 à 15 jours</dd>
+            <dd class="text-ciel/75 leading-relaxed max-w-xl text-[15px] sm:text-base line-clamp-2 sm:line-clamp-none">Dépose de l'ancienne couverture, contrôle de la charpente, écran sous-toiture, liteaux neufs et pose en ardoise naturelle ou en tuile.</dd>
           </div>
-          <div class="grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2 py-7 border-b border-zinc/25">
-            <dt class="font-display font-bold text-3xl">Recherche et réparation de fuite</dt>
-            <dd class="sm:row-span-2 text-signal font-medium sm:text-right whitespace-nowrap">Sous 72 h</dd>
-            <dd class="text-ciel/75 leading-relaxed max-w-xl">Ardoises glissées, tuiles cassées, solin fissuré autour de la cheminée : nous trouvons l'origine de l'infiltration avant de réparer.</dd>
+          <div class="grid grid-cols-[1fr_auto] gap-x-4 sm:gap-x-8 gap-y-1 sm:gap-y-2 py-5 md:py-7 border-b border-zinc/25">
+            <dt class="font-display font-bold text-2xl md:text-3xl">Recherche et réparation de fuite</dt>
+            <dd class="row-span-2 text-signal font-medium text-right whitespace-nowrap text-[15px] sm:text-base pt-1">Sous 72 h</dd>
+            <dd class="text-ciel/75 leading-relaxed max-w-xl text-[15px] sm:text-base line-clamp-2 sm:line-clamp-none">Ardoises glissées, tuiles cassées, solin fissuré autour de la cheminée : nous trouvons l'origine de l'infiltration avant de réparer.</dd>
           </div>
-          <div class="grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2 py-7 border-b border-zinc/25">
-            <dt class="font-display font-bold text-3xl">Zinguerie</dt>
-            <dd class="sm:row-span-2 text-signal font-medium sm:text-right whitespace-nowrap">1 à 3 jours</dd>
-            <dd class="text-ciel/75 leading-relaxed max-w-xl">Gouttières pendantes et havraises, chéneaux, descentes, noues et habillages de lucarnes, façonnés à l'atelier en zinc naturel ou prépatiné.</dd>
+          <div class="grid grid-cols-[1fr_auto] gap-x-4 sm:gap-x-8 gap-y-1 sm:gap-y-2 py-5 md:py-7 border-b border-zinc/25">
+            <dt class="font-display font-bold text-2xl md:text-3xl">Zinguerie</dt>
+            <dd class="row-span-2 text-signal font-medium text-right whitespace-nowrap text-[15px] sm:text-base pt-1">1 à 3 jours</dd>
+            <dd class="text-ciel/75 leading-relaxed max-w-xl text-[15px] sm:text-base line-clamp-2 sm:line-clamp-none">Gouttières pendantes et havraises, chéneaux, descentes, noues et habillages de lucarnes, façonnés à l'atelier en zinc naturel ou prépatiné.</dd>
           </div>
-          <div class="grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2 py-7 border-b border-zinc/25">
-            <dt class="font-display font-bold text-3xl">Isolation par l'extérieur</dt>
-            <dd class="sm:row-span-2 text-signal font-medium sm:text-right whitespace-nowrap">Avec la réfection</dd>
-            <dd class="text-ciel/75 leading-relaxed max-w-xl">Isolation en sarking posée sur les chevrons pendant la rénovation : les combles restent habitables et la facture de chauffage baisse dès l'hiver suivant.</dd>
+          <div class="grid grid-cols-[1fr_auto] gap-x-4 sm:gap-x-8 gap-y-1 sm:gap-y-2 py-5 md:py-7 border-b border-zinc/25">
+            <dt class="font-display font-bold text-2xl md:text-3xl">Isolation par l'extérieur</dt>
+            <dd class="row-span-2 text-signal font-medium text-right whitespace-nowrap text-[15px] sm:text-base pt-1">Avec la réfection</dd>
+            <dd class="text-ciel/75 leading-relaxed max-w-xl text-[15px] sm:text-base line-clamp-2 sm:line-clamp-none">Isolation en sarking posée sur les chevrons pendant la rénovation : les combles restent habitables et la facture de chauffage baisse dès l'hiver suivant.</dd>
           </div>
-          <div class="grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2 py-7 border-b border-zinc/25">
-            <dt class="font-display font-bold text-3xl">Fenêtres de toit</dt>
-            <dd class="sm:row-span-2 text-signal font-medium sm:text-right whitespace-nowrap">1 journée</dd>
-            <dd class="text-ciel/75 leading-relaxed max-w-xl">Création ou remplacement de fenêtres de toit, raccord d'étanchéité et finitions intérieures, sans dépose de la couverture.</dd>
+          <div class="grid grid-cols-[1fr_auto] gap-x-4 sm:gap-x-8 gap-y-1 sm:gap-y-2 py-5 md:py-7 border-b border-zinc/25">
+            <dt class="font-display font-bold text-2xl md:text-3xl">Fenêtres de toit</dt>
+            <dd class="row-span-2 text-signal font-medium text-right whitespace-nowrap text-[15px] sm:text-base pt-1">1 journée</dd>
+            <dd class="text-ciel/75 leading-relaxed max-w-xl text-[15px] sm:text-base line-clamp-2 sm:line-clamp-none">Création ou remplacement de fenêtres de toit, raccord d'étanchéité et finitions intérieures, sans dépose de la couverture.</dd>
           </div>
-          <div class="grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2 py-7 border-b border-zinc/25">
-            <dt class="font-display font-bold text-3xl">Démoussage et entretien</dt>
-            <dd class="sm:row-span-2 text-signal font-medium sm:text-right whitespace-nowrap">Tous les 5 ans</dd>
-            <dd class="text-ciel/75 leading-relaxed max-w-xl">Nettoyage à basse pression, traitement anti-mousse, remplacement des éléments abîmés et curage des gouttières, avec un rapport photo.</dd>
+          <div class="grid grid-cols-[1fr_auto] gap-x-4 sm:gap-x-8 gap-y-1 sm:gap-y-2 py-5 md:py-7 border-b border-zinc/25">
+            <dt class="font-display font-bold text-2xl md:text-3xl">Démoussage et entretien</dt>
+            <dd class="row-span-2 text-signal font-medium text-right whitespace-nowrap text-[15px] sm:text-base pt-1">Tous les 5 ans</dd>
+            <dd class="text-ciel/75 leading-relaxed max-w-xl text-[15px] sm:text-base line-clamp-2 sm:line-clamp-none">Nettoyage à basse pression, traitement anti-mousse, remplacement des éléments abîmés et curage des gouttières, avec un rapport photo.</dd>
           </div>
         </dl>
       </div>
@@ -160,33 +169,33 @@
 
     <!-- ===== Matériaux ===== -->
     <section id="materiaux" class="on-light">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28">
-        <div class="grid md:grid-cols-2 gap-8 items-end">
-          <h2 class="font-display font-extrabold text-5xl md:text-6xl leading-none">Le bon matériau pour votre maison</h2>
-          <p class="text-ardoise/80 leading-relaxed text-lg max-w-lg">Le choix dépend de la pente du toit, du règlement d'urbanisme de la commune et de votre budget. Nous vous conseillons avant de chiffrer.</p>
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28">
+        <div class="grid md:grid-cols-2 gap-4 md:gap-8 items-end">
+          <h2 class="font-display font-extrabold text-[2.6rem] md:text-6xl leading-none">Le bon matériau pour votre maison</h2>
+          <p class="text-ardoise/80 leading-relaxed text-[17px] md:text-lg max-w-lg">Le choix dépend de la pente du toit, du règlement d'urbanisme de la commune et de votre budget. Nous vous conseillons avant de chiffrer.</p>
         </div>
-        <ul class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10">
-          <li>
-            <svg class="w-full aspect-[3/4] rounded-t-[50%_18%] block" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="120" height="160" fill="url(#p-ardoise)"/></svg>
-            <h3 class="mt-5 font-display font-bold text-3xl">Ardoise naturelle</h3>
+        <ul class="mt-8 md:mt-14 -mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-x-5 md:gap-y-10">
+          <li class="snap-start shrink-0 w-[72%] sm:w-[45%] md:w-auto">
+            <svg class="w-full aspect-[4/3] md:aspect-[3/4] rounded-t-[50%_18%] block" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="120" height="160" fill="url(#p-ardoise)"/></svg>
+            <h3 class="mt-4 md:mt-5 font-display font-bold text-2xl md:text-3xl">Ardoise naturelle</h3>
             <p class="mt-1 font-medium text-ardoise-soft">Dure de 80 à 100 ans</p>
             <p class="mt-3 text-ardoise/75 leading-relaxed">La couverture de référence en Anjou, posée au crochet ou au clou selon le bâti.</p>
           </li>
-          <li>
-            <svg class="w-full aspect-[3/4] rounded-t-[50%_18%] block" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="120" height="160" fill="url(#p-tuile)"/></svg>
-            <h3 class="mt-5 font-display font-bold text-3xl">Tuile terre cuite</h3>
+          <li class="snap-start shrink-0 w-[72%] sm:w-[45%] md:w-auto">
+            <svg class="w-full aspect-[4/3] md:aspect-[3/4] rounded-t-[50%_18%] block" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="120" height="160" fill="url(#p-tuile)"/></svg>
+            <h3 class="mt-4 md:mt-5 font-display font-bold text-2xl md:text-3xl">Tuile terre cuite</h3>
             <p class="mt-1 font-medium text-ardoise-soft">Dure de 50 à 80 ans</p>
             <p class="mt-3 text-ardoise/75 leading-relaxed">Tuile mécanique ou plate, adaptée aux pentes plus douces et aux maisons des années 60 à 80.</p>
           </li>
-          <li>
-            <svg class="w-full aspect-[3/4] rounded-t-[50%_18%] block" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="120" height="160" fill="url(#p-zinc)"/></svg>
-            <h3 class="mt-5 font-display font-bold text-3xl">Zinc à joint debout</h3>
+          <li class="snap-start shrink-0 w-[72%] sm:w-[45%] md:w-auto">
+            <svg class="w-full aspect-[4/3] md:aspect-[3/4] rounded-t-[50%_18%] block" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="120" height="160" fill="url(#p-zinc)"/></svg>
+            <h3 class="mt-4 md:mt-5 font-display font-bold text-2xl md:text-3xl">Zinc à joint debout</h3>
             <p class="mt-1 font-medium text-ardoise-soft">Dure environ 50 ans</p>
             <p class="mt-3 text-ardoise/75 leading-relaxed">Pour les toits à faible pente, les extensions et les lignes contemporaines.</p>
           </li>
-          <li>
-            <svg class="w-full aspect-[3/4] rounded-t-[50%_18%] block" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="120" height="160" fill="url(#p-bac)"/></svg>
-            <h3 class="mt-5 font-display font-bold text-3xl">Bac acier</h3>
+          <li class="snap-start shrink-0 w-[72%] sm:w-[45%] md:w-auto">
+            <svg class="w-full aspect-[4/3] md:aspect-[3/4] rounded-t-[50%_18%] block" viewBox="0 0 120 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="120" height="160" fill="url(#p-bac)"/></svg>
+            <h3 class="mt-4 md:mt-5 font-display font-bold text-2xl md:text-3xl">Bac acier</h3>
             <p class="mt-1 font-medium text-ardoise-soft">Dure de 30 à 40 ans</p>
             <p class="mt-3 text-ardoise/75 leading-relaxed">La solution économique pour un garage, un atelier ou un bâtiment agricole.</p>
           </li>
@@ -196,50 +205,50 @@
 
     <!-- ===== Urgence ===== -->
     <section id="urgence" class="pignon bg-signal text-ardoise-deep on-light">
-      <div class="mx-auto max-w-5xl px-5 pt-24 pb-16 md:pt-36 md:pb-20 text-center">
-        <h2 class="font-display font-extrabold text-5xl md:text-7xl leading-[0.95]">Tuiles envolées, fuite au plafond ?</h2>
-        <p class="mt-5 text-lg md:text-xl max-w-2xl mx-auto">Après un coup de vent ou un orage, nous bâchons votre toit sous 24 h, 7 jours sur 7, puis nous chiffrons la réparation pour votre assurance.</p>
-        <a href="tel:+33600000000" class="mt-8 inline-block font-display font-extrabold text-5xl sm:text-6xl md:text-7xl underline decoration-4 underline-offset-8 hover:decoration-ardoise-soft">06 00 00 00 00</a>
+      <div class="mx-auto max-w-5xl px-5 pt-14 pb-10 md:pt-36 md:pb-20 text-center">
+        <h2 class="font-display font-extrabold text-[2.6rem] md:text-7xl leading-[0.95]">Tuiles envolées, fuite au plafond ?</h2>
+        <p class="mt-4 md:mt-5 text-[17px] md:text-xl max-w-2xl mx-auto">Après un coup de vent ou un orage, nous bâchons votre toit sous 24 h, 7 jours sur 7, puis nous chiffrons la réparation pour votre assurance.</p>
+        <a href="tel:+33600000000" class="mt-6 md:mt-8 inline-flex items-center min-h-12 font-display font-extrabold text-[2.6rem] sm:text-6xl md:text-7xl underline decoration-4 underline-offset-8 hover:decoration-ardoise-soft">06 00 00 00 00</a>
       </div>
     </section>
 
     <!-- ===== Un chantier type ===== -->
     <section id="chantier" class="bg-white on-light">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28">
-        <h2 class="font-display font-extrabold text-5xl md:text-6xl leading-none max-w-3xl">Dix jours sur une rénovation en ardoise</h2>
-        <p class="mt-5 text-ardoise/80 text-lg max-w-2xl leading-relaxed">L'exemple d'une maison de 110 m² au sol à Avrillé. Chaque soir, le toit est fermé et le chantier rangé.</p>
-        <div class="mt-14 relative">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28">
+        <h2 class="font-display font-extrabold text-[2.6rem] md:text-6xl leading-none max-w-3xl">Dix jours sur une rénovation en ardoise</h2>
+        <p class="mt-4 md:mt-5 text-ardoise/80 text-[17px] md:text-lg max-w-2xl leading-relaxed">L'exemple d'une maison de 110 m² au sol à Avrillé. Chaque soir, le toit est fermé et le chantier rangé.</p>
+        <div class="mt-8 md:mt-14 relative">
         <!-- ligne d'échafaudage -->
         <div aria-hidden="true" class="hidden md:block absolute left-0 right-0 top-[1.15rem] h-1 bg-zinc"></div>
-        <ol class="relative grid md:grid-cols-6 gap-y-10 md:gap-x-6">
-          <li class="relative pl-14 md:pl-0">
-            <span class="absolute left-0 top-0 md:static flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">1</span>
-            <h3 class="md:mt-6 font-bold text-lg">Jour 1</h3>
+        <ol class="relative -mx-5 px-5 flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar md:mx-0 md:px-0 md:grid md:grid-cols-6 md:gap-x-6 md:overflow-visible">
+          <li class="relative snap-start shrink-0 w-[72%] sm:w-[40%] md:w-auto rounded-lg bg-ciel md:bg-transparent p-5 md:p-0">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">1</span>
+            <h3 class="mt-4 md:mt-6 font-bold text-lg">Jour 1</h3>
             <p class="mt-1 text-ardoise/75 leading-relaxed">Échafaudage, filets de protection et bâches sur les massifs.</p>
           </li>
-          <li class="relative pl-14 md:pl-0">
-            <span class="absolute left-0 top-0 md:static flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">2</span>
-            <h3 class="md:mt-6 font-bold text-lg">Jour 2</h3>
+          <li class="relative snap-start shrink-0 w-[72%] sm:w-[40%] md:w-auto rounded-lg bg-ciel md:bg-transparent p-5 md:p-0">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">2</span>
+            <h3 class="mt-4 md:mt-6 font-bold text-lg">Jour 2</h3>
             <p class="mt-1 text-ardoise/75 leading-relaxed">Dépose des vieilles ardoises et évacuation en benne.</p>
           </li>
-          <li class="relative pl-14 md:pl-0">
-            <span class="absolute left-0 top-0 md:static flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">3</span>
-            <h3 class="md:mt-6 font-bold text-lg">Jours 3 et 4</h3>
+          <li class="relative snap-start shrink-0 w-[72%] sm:w-[40%] md:w-auto rounded-lg bg-ciel md:bg-transparent p-5 md:p-0">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">3</span>
+            <h3 class="mt-4 md:mt-6 font-bold text-lg">Jours 3 et 4</h3>
             <p class="mt-1 text-ardoise/75 leading-relaxed">Charpente contrôlée, écran sous-toiture, voliges et liteaux.</p>
           </li>
-          <li class="relative pl-14 md:pl-0">
-            <span class="absolute left-0 top-0 md:static flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">4</span>
-            <h3 class="md:mt-6 font-bold text-lg">Jours 5 à 8</h3>
+          <li class="relative snap-start shrink-0 w-[72%] sm:w-[40%] md:w-auto rounded-lg bg-ciel md:bg-transparent p-5 md:p-0">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">4</span>
+            <h3 class="mt-4 md:mt-6 font-bold text-lg">Jours 5 à 8</h3>
             <p class="mt-1 text-ardoise/75 leading-relaxed">Pose de l'ardoise rang par rang, du bas vers le haut.</p>
           </li>
-          <li class="relative pl-14 md:pl-0">
-            <span class="absolute left-0 top-0 md:static flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">5</span>
-            <h3 class="md:mt-6 font-bold text-lg">Jour 9</h3>
+          <li class="relative snap-start shrink-0 w-[72%] sm:w-[40%] md:w-auto rounded-lg bg-ciel md:bg-transparent p-5 md:p-0">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-ardoise text-ciel font-display font-bold text-xl">5</span>
+            <h3 class="mt-4 md:mt-6 font-bold text-lg">Jour 9</h3>
             <p class="mt-1 text-ardoise/75 leading-relaxed">Faîtage, noues, solins de cheminée et gouttières en zinc.</p>
           </li>
-          <li class="relative pl-14 md:pl-0">
-            <span class="absolute left-0 top-0 md:static flex h-10 w-10 items-center justify-center rounded-full bg-signal text-ardoise-deep font-display font-bold text-xl">6</span>
-            <h3 class="md:mt-6 font-bold text-lg">Jour 10</h3>
+          <li class="relative snap-start shrink-0 w-[72%] sm:w-[40%] md:w-auto rounded-lg bg-ciel md:bg-transparent p-5 md:p-0">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-signal text-ardoise-deep font-display font-bold text-xl">6</span>
+            <h3 class="mt-4 md:mt-6 font-bold text-lg">Jour 10</h3>
             <p class="mt-1 text-ardoise/75 leading-relaxed">Nettoyage, visite de réception ensemble et remise des photos.</p>
           </li>
         </ol>
@@ -249,57 +258,57 @@
 
     <!-- ===== Avis et garanties ===== -->
     <section id="avis" class="on-light">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28 grid lg:grid-cols-12 gap-14">
-        <div class="lg:col-span-7">
-          <h2 class="font-display font-extrabold text-5xl md:text-6xl leading-none">Ils nous ont confié leur toit</h2>
-          <div class="mt-12 space-y-12">
-            <figure class="border-l-4 border-signal pl-6">
-              <blockquote class="text-xl md:text-2xl leading-snug">« Devis clair, poste par poste, et un chantier tenu dans les délais annoncés. Le voisin a demandé leur numéro dès la dépose de l'échafaudage. »</blockquote>
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14">
+        <div class="lg:col-span-7 min-w-0">
+          <h2 class="font-display font-extrabold text-[2.6rem] md:text-6xl leading-none">Ils nous ont confié leur toit</h2>
+          <div class="mt-8 md:mt-12 -mx-5 px-5 flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar md:mx-0 md:px-0 md:block md:space-y-12">
+            <figure class="snap-start shrink-0 w-[82%] md:w-auto rounded-lg md:rounded-none bg-white md:bg-transparent border-l-4 border-signal p-5 md:p-0 md:pl-6">
+              <blockquote class="text-lg md:text-2xl leading-snug">« Devis clair, poste par poste, et un chantier tenu dans les délais annoncés. Le voisin a demandé leur numéro dès la dépose de l'échafaudage. »</blockquote>
               <figcaption class="mt-4 text-ardoise/65">Hélène, rénovation complète à Avrillé</figcaption>
             </figure>
-            <figure class="border-l-4 border-signal pl-6">
-              <blockquote class="text-xl md:text-2xl leading-snug">« Fuite trouvée en une heure alors que deux entreprises n'avaient rien vu. C'était le solin de la cheminée. »</blockquote>
+            <figure class="snap-start shrink-0 w-[82%] md:w-auto rounded-lg md:rounded-none bg-white md:bg-transparent border-l-4 border-signal p-5 md:p-0 md:pl-6">
+              <blockquote class="text-lg md:text-2xl leading-snug">« Fuite trouvée en une heure alors que deux entreprises n'avaient rien vu. C'était le solin de la cheminée. »</blockquote>
               <figcaption class="mt-4 text-ardoise/65">Thomas, réparation aux Ponts-de-Cé</figcaption>
             </figure>
-            <figure class="border-l-4 border-signal pl-6">
-              <blockquote class="text-xl md:text-2xl leading-snug">« Bâchés le lendemain de la tempête, un dimanche. Ils ont aussi monté le dossier photo pour l'assurance. »</blockquote>
+            <figure class="snap-start shrink-0 w-[82%] md:w-auto rounded-lg md:rounded-none bg-white md:bg-transparent border-l-4 border-signal p-5 md:p-0 md:pl-6">
+              <blockquote class="text-lg md:text-2xl leading-snug">« Bâchés le lendemain de la tempête, un dimanche. Ils ont aussi monté le dossier photo pour l'assurance. »</blockquote>
               <figcaption class="mt-4 text-ardoise/65">Nadia et Paul, sinistre à Trélazé</figcaption>
             </figure>
           </div>
         </div>
-        <aside class="lg:col-span-5 self-start rounded-lg bg-ardoise text-ciel p-8 md:p-10" aria-labelledby="garanties">
+        <aside class="lg:col-span-5 self-start rounded-lg bg-ardoise text-ciel p-6 md:p-10" aria-labelledby="garanties">
           <h2 id="garanties" class="font-display font-extrabold text-4xl">Nos engagements</h2>
-          <ul class="mt-8 space-y-6">
-            <li class="flex gap-4"><svg class="w-6 h-6 mt-0.5 shrink-0 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6"/></svg><div><p class="font-bold">Garantie décennale</p><p class="text-ciel/70 mt-1">Attestation d'assurance jointe à chaque devis.</p></div></li>
-            <li class="flex gap-4"><svg class="w-6 h-6 mt-0.5 shrink-0 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6"/></svg><div><p class="font-bold">Entreprise certifiée RGE</p><p class="text-ciel/70 mt-1">Vos travaux d'isolation peuvent ouvrir droit aux aides de l'État.</p></div></li>
-            <li class="flex gap-4"><svg class="w-6 h-6 mt-0.5 shrink-0 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6"/></svg><div><p class="font-bold">Devis gratuit sous 48 h</p><p class="text-ciel/70 mt-1">Après visite sur place et photos de la toiture.</p></div></li>
-            <li class="flex gap-4"><svg class="w-6 h-6 mt-0.5 shrink-0 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6"/></svg><div><p class="font-bold">Chantier propre</p><p class="text-ciel/70 mt-1">Déchets triés et évacués, jardin protégé, rien ne reste au sol.</p></div></li>
+          <ul class="mt-6 md:mt-8 space-y-4 md:space-y-6">
+            <li class="flex gap-4"><svg class="w-6 h-6 mt-0.5 shrink-0 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6"/></svg><div><p class="font-bold">Garantie décennale</p><p class="text-ciel/70 mt-0.5 text-[15px] md:text-base">Attestation d'assurance jointe à chaque devis.</p></div></li>
+            <li class="flex gap-4"><svg class="w-6 h-6 mt-0.5 shrink-0 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6"/></svg><div><p class="font-bold">Entreprise certifiée RGE</p><p class="text-ciel/70 mt-0.5 text-[15px] md:text-base">Vos travaux d'isolation peuvent ouvrir droit aux aides de l'État.</p></div></li>
+            <li class="flex gap-4"><svg class="w-6 h-6 mt-0.5 shrink-0 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6"/></svg><div><p class="font-bold">Devis gratuit sous 48 h</p><p class="text-ciel/70 mt-0.5 text-[15px] md:text-base">Après visite sur place et photos de la toiture.</p></div></li>
+            <li class="flex gap-4"><svg class="w-6 h-6 mt-0.5 shrink-0 text-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6"/></svg><div><p class="font-bold">Chantier propre</p><p class="text-ciel/70 mt-0.5 text-[15px] md:text-base">Déchets triés et évacués, jardin protégé, rien ne reste au sol.</p></div></li>
           </ul>
-          <p class="mt-10 pt-6 border-t border-ciel/15 text-ciel/70">Zone d'intervention : Angers, Avrillé, Trélazé, Les Ponts-de-Cé, Saint-Barthélemy-d'Anjou, Beaucouzé, Brissac et 40 km alentour.</p>
+          <p class="mt-6 md:mt-10 pt-5 md:pt-6 border-t border-ciel/15 text-ciel/70 text-[15px] md:text-base">Zone d'intervention : Angers, Avrillé, Trélazé, Les Ponts-de-Cé, Saint-Barthélemy-d'Anjou, Beaucouzé, Brissac et 40 km alentour.</p>
         </aside>
       </div>
     </section>
 
     <!-- ===== Questions ===== -->
     <section class="bg-white on-light">
-      <div class="mx-auto max-w-3xl px-5 py-20 md:py-24">
-        <h2 class="font-display font-extrabold text-5xl leading-none">Questions fréquentes</h2>
-        <div class="mt-10 border-t-2 border-ardoise">
-          <details class="group border-b border-ardoise/15 py-5">
-            <summary class="flex justify-between items-center gap-4 cursor-pointer list-none font-bold text-lg">Faut-il une autorisation pour refaire ma toiture ?<span class="text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
-            <p class="mt-3 text-ardoise/80 leading-relaxed">Une déclaration préalable en mairie est nécessaire si l'aspect change (matériau, couleur, fenêtre de toit). Nous préparons le dossier avec vous.</p>
+      <div class="mx-auto max-w-3xl px-5 py-14 md:py-24">
+        <h2 class="font-display font-extrabold text-[2.6rem] md:text-5xl leading-none">Questions fréquentes</h2>
+        <div class="mt-8 md:mt-10 border-t-2 border-ardoise">
+          <details class="group border-b border-ardoise/15">
+            <summary class="flex justify-between items-center gap-4 py-4 min-h-14 cursor-pointer list-none font-bold text-lg">Faut-il une autorisation pour refaire ma toiture ?<span class="text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-ardoise/80 leading-relaxed">Une déclaration préalable en mairie est nécessaire si l'aspect change (matériau, couleur, fenêtre de toit). Nous préparons le dossier avec vous.</p>
           </details>
-          <details class="group border-b border-ardoise/15 py-5">
-            <summary class="flex justify-between items-center gap-4 cursor-pointer list-none font-bold text-lg">Peut-on rester dans la maison pendant les travaux ?<span class="text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
-            <p class="mt-3 text-ardoise/80 leading-relaxed">Oui. Nous ne découvrons chaque jour que la surface que nous pouvons refermer avant le soir.</p>
+          <details class="group border-b border-ardoise/15">
+            <summary class="flex justify-between items-center gap-4 py-4 min-h-14 cursor-pointer list-none font-bold text-lg">Peut-on rester dans la maison pendant les travaux ?<span class="text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-ardoise/80 leading-relaxed">Oui. Nous ne découvrons chaque jour que la surface que nous pouvons refermer avant le soir.</p>
           </details>
-          <details class="group border-b border-ardoise/15 py-5">
-            <summary class="flex justify-between items-center gap-4 cursor-pointer list-none font-bold text-lg">Que faire après une tempête ?<span class="text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
-            <p class="mt-3 text-ardoise/80 leading-relaxed">Prenez des photos, ne montez pas sur le toit et appelez-nous. Déclarez le sinistre à votre assureur sous 5 jours ouvrés : nous fournissons le devis et le rapport photo.</p>
+          <details class="group border-b border-ardoise/15">
+            <summary class="flex justify-between items-center gap-4 py-4 min-h-14 cursor-pointer list-none font-bold text-lg">Que faire après une tempête ?<span class="text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-ardoise/80 leading-relaxed">Prenez des photos, ne montez pas sur le toit et appelez-nous. Déclarez le sinistre à votre assureur sous 5 jours ouvrés : nous fournissons le devis et le rapport photo.</p>
           </details>
-          <details class="group border-b border-ardoise/15 py-5">
-            <summary class="flex justify-between items-center gap-4 cursor-pointer list-none font-bold text-lg">Le devis est-il vraiment gratuit ?<span class="text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
-            <p class="mt-3 text-ardoise/80 leading-relaxed">Oui, déplacement compris dans notre zone. Il détaille chaque poste : dépose, fournitures, main-d'œuvre, zinguerie et évacuation.</p>
+          <details class="group border-b border-ardoise/15">
+            <summary class="flex justify-between items-center gap-4 py-4 min-h-14 cursor-pointer list-none font-bold text-lg">Le devis est-il vraiment gratuit ?<span class="text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-ardoise/80 leading-relaxed">Oui, déplacement compris dans notre zone. Il détaille chaque poste : dépose, fournitures, main-d'œuvre, zinguerie et évacuation.</p>
           </details>
         </div>
       </div>
@@ -307,15 +316,15 @@
 
     <!-- ===== Contact ===== -->
     <section id="contact" class="bg-ardoise-deep text-ciel">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-12">
         <div class="lg:col-span-5">
-          <h2 class="font-display font-extrabold text-5xl md:text-6xl leading-none">Demander un devis</h2>
-          <p class="mt-6 text-ciel/75 leading-relaxed max-w-md">Décrivez votre toiture et le problème constaté. Nous vous rappelons sous 24 h pour fixer une visite.</p>
-          <dl class="mt-10 space-y-6">
-            <div><dt class="text-ciel/60 text-sm">Téléphone, urgences comprises</dt><dd class="font-display font-bold text-4xl mt-1"><a href="tel:+33600000000" class="hover:text-signal">06 00 00 00 00</a></dd></div>
-            <div><dt class="text-ciel/60 text-sm">E-mail</dt><dd class="text-xl mt-1"><a href="mailto:contact@exemple.fr" class="hover:text-signal">contact@exemple.fr</a></dd></div>
-            <div><dt class="text-ciel/60 text-sm">Atelier</dt><dd class="text-xl mt-1">12 rue de l'Exemple, 49000 Angers</dd></div>
-            <div><dt class="text-ciel/60 text-sm">Horaires</dt><dd class="text-xl mt-1">Du lundi au vendredi, 7 h 30 à 18 h</dd></div>
+          <h2 class="font-display font-extrabold text-[2.6rem] md:text-6xl leading-none">Demander un devis</h2>
+          <p class="mt-4 md:mt-6 text-ciel/75 leading-relaxed max-w-md">Décrivez votre toiture et le problème constaté. Nous vous rappelons sous 24 h pour fixer une visite.</p>
+          <dl class="mt-6 md:mt-10 grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-3 md:gap-y-6">
+            <div class="col-span-2 md:col-span-1"><dt class="text-ciel/60 text-sm">Téléphone, urgences comprises</dt><dd class="font-display font-bold text-4xl mt-1"><a href="tel:+33600000000" class="inline-flex items-center min-h-12 hover:text-signal">06 00 00 00 00</a></dd></div>
+            <div class="col-span-2 md:col-span-1"><dt class="text-ciel/60 text-sm">E-mail</dt><dd class="text-xl mt-1"><a href="mailto:contact@exemple.fr" class="inline-flex items-center min-h-11 hover:text-signal">contact@exemple.fr</a></dd></div>
+            <div><dt class="text-ciel/60 text-sm">Atelier</dt><dd class="text-base md:text-xl mt-1">12 rue de l'Exemple, 49000 Angers</dd></div>
+            <div><dt class="text-ciel/60 text-sm">Horaires</dt><dd class="text-base md:text-xl mt-1">Du lundi au vendredi, 7 h 30 à 18 h</dd></div>
           </dl>
         </div>
         <!--
@@ -324,7 +333,7 @@
           - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
           Le champ « photos » nécessite un service qui accepte les fichiers (Formspree payant, Netlify Forms).
         -->
-        <form class="lg:col-span-7 rounded-lg bg-ciel text-ardoise p-6 md:p-10 grid sm:grid-cols-2 gap-5 on-light" action="#" method="post" enctype="multipart/form-data">
+        <form class="lg:col-span-7 -mx-1 sm:mx-0 rounded-lg bg-ciel text-ardoise p-5 md:p-10 grid sm:grid-cols-2 gap-5 on-light" action="#" method="post" enctype="multipart/form-data">
           <label class="flex flex-col gap-2"><span class="font-medium">Nom</span><input required name="nom" autocomplete="name" class="field"></label>
           <label class="flex flex-col gap-2"><span class="font-medium">Téléphone</span><input required name="telephone" type="tel" autocomplete="tel" class="field"></label>
           <label class="flex flex-col gap-2"><span class="font-medium">Type de travaux</span>
@@ -333,19 +342,26 @@
             </select>
           </label>
           <label class="flex flex-col gap-2"><span class="font-medium">Commune du chantier</span><input name="commune" autocomplete="address-level2" class="field"></label>
-          <label class="sm:col-span-2 flex flex-col gap-2"><span class="font-medium">Ce que vous avez constaté</span><textarea name="message" rows="5" class="field" placeholder="Tache au plafond de la chambre après les pluies, ardoises au sol côté jardin…"></textarea></label>
-          <label class="sm:col-span-2 flex flex-col gap-2"><span class="font-medium">Photos de la toiture (facultatif)</span><input name="photos" type="file" accept="image/*" multiple class="text-sm file:mr-4 file:rounded-md file:border-0 file:bg-ardoise file:px-4 file:py-2.5 file:font-bold file:text-ciel hover:file:bg-ardoise-deep"></label>
-          <label class="sm:col-span-2 flex items-start gap-3"><input type="checkbox" name="urgence" class="mt-1 h-5 w-5 accent-ardoise"><span>C'est urgent : de l'eau entre dans la maison</span></label>
-          <button type="submit" class="sm:col-span-2 justify-self-start rounded-md bg-signal px-8 py-4 font-bold text-ardoise-deep hover:bg-signal-deep">Envoyer ma demande de devis</button>
+          <label class="sm:col-span-2 flex flex-col gap-2"><span class="font-medium">Ce que vous avez constaté</span><textarea name="message" rows="5" class="field h-28 md:h-auto" placeholder="Tache au plafond de la chambre après les pluies, ardoises au sol côté jardin…"></textarea></label>
+          <label class="sm:col-span-2 flex flex-col gap-2"><span class="font-medium">Photos de la toiture (facultatif)</span><input name="photos" type="file" accept="image/*" multiple class="text-base file:mr-4 file:rounded-md file:border-0 file:bg-ardoise file:px-4 file:py-2.5 file:font-bold file:text-ciel hover:file:bg-ardoise-deep"></label>
+          <label class="sm:col-span-2 flex items-start gap-3 min-h-11 py-1"><input type="checkbox" name="urgence" class="mt-1 h-5 w-5 accent-ardoise"><span>C'est urgent : de l'eau entre dans la maison</span></label>
+          <button type="submit" class="sm:col-span-2 w-full sm:w-auto sm:justify-self-start rounded-md bg-signal px-8 py-4 font-bold text-ardoise-deep hover:bg-signal-deep">Envoyer ma demande de devis</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="bg-ardoise-deep border-t border-ciel/10 text-ciel/60 text-sm">
-    <div class="mx-auto max-w-7xl px-5 py-8 flex flex-wrap justify-between gap-4">
+  <!-- Barre d'action fixe, téléphone uniquement -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-ciel/95 backdrop-blur border-t border-ardoise/15 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-2 gap-3">
+    <a href="tel:+33600000000" class="inline-flex items-center justify-center gap-2 min-h-12 rounded-md bg-signal font-bold text-ardoise-deep">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Appeler</span></a>
+    <a href="#contact" class="inline-flex items-center justify-center min-h-12 rounded-md bg-ardoise font-bold text-ciel"><span>Devis gratuit</span></a>
+  </div>
+
+  <footer class="bg-ardoise-deep border-t border-ciel/10 text-ciel/60 text-[15px]">
+    <div class="mx-auto max-w-7xl px-5 py-6 flex flex-wrap items-center justify-between gap-x-4">
       <p>© 2026 Toitures Lebrun, couverture et zinguerie à Angers</p>
-      <p class="flex gap-6"><a href="#" class="hover:text-ciel">Mentions légales</a><a href="#" class="hover:text-ciel">SIRET 000 000 000 00000</a></p>
+      <p class="flex flex-wrap gap-x-6"><a href="#" class="inline-flex items-center min-h-11 hover:text-ciel">Mentions légales</a><span class="inline-flex items-center min-h-11">SIRET 000 000 000 00000</span></p>
     </div>
   </footer>
 
@@ -357,14 +373,5 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
   </script>
 <script src="assets/kv-edition.js" defer></script>
-
-<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine -->
-<div data-kv-demo style="position:fixed;left:12px;right:12px;bottom:12px;z-index:2147483000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 16px;background:#161B26;color:#fff;border-radius:10px;font:500 14px/1.3 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:640px;margin:0 auto">
-  <span>Démo du template <strong>Faîtage</strong> · 29 €</span>
-  <span style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
-  <a href="#edition" style="color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
-  <a href="/templates/faitage/" style="background:#F0BE3D;color:#161B26;padding:8px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
-  </span>
-</div>
 </body>
 </html>

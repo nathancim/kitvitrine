@@ -16,6 +16,10 @@
   }
 }
 
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
 @layer components {
   /* Nappe vichy : la signature du site */
   .vichy {

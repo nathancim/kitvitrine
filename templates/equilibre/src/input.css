@@ -11,7 +11,11 @@
   :focus-visible { outline: 2px solid #C08A3E; outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 }
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
 @layer components {
-  .field { @apply rounded-xl bg-bone/10 border border-bone/20 px-4 py-3 text-bone placeholder-bone/40 focus:outline-none focus:border-ochre; }
+  .field { @apply text-base rounded-xl bg-bone/10 border border-bone/20 px-4 py-3 text-bone placeholder-bone/40 focus:outline-none focus:border-ochre; }
   .field option { @apply text-forest; }
 }

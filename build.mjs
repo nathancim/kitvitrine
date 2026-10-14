@@ -50,18 +50,19 @@ for (const f of ['bricolage-grotesque/files/bricolage-grotesque-latin-500-normal
 
 // ---- Templates: compile CSS, demo copy, images, zip ----
 const demoBar = t => `
-<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine -->
-<div data-kv-demo style="position:fixed;left:12px;right:12px;bottom:12px;z-index:2147483000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 16px;background:#161B26;color:#fff;border-radius:10px;font:500 14px/1.3 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:640px;margin:0 auto">
-  <span>Démo du template <strong>${P.esc(t.title)}</strong> · ${t.prix} €</span>
-  <span style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
-  <a href="#edition" style="color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
-  <a href="/templates/${t.slug}/" style="background:#F0BE3D;color:#161B26;padding:8px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>${P.esc(t.title)}</strong> · ${t.prix} €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/${t.slug}/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
   </span>
 </div>
 `;
 
 // Built-in edit mode (tools/kv-edition.js), added to every demo and every zip
 const EDIT_JS = r('tools/kv-edition.js');
+const addDemoBar = (html, t) => html.replace(/<body([^>]*)>/, m => m + demoBar(t));
 const withEdit = html => html.includes('kv-edition.js') ? html : html.replace('</body>', '<script src="assets/kv-edition.js" defer></script>\n</body>');
 const EDIT_LAUNCHER = `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><title>Modifier mon site</title>
@@ -81,9 +82,9 @@ for (const t of cat.templates) {
   fs.cpSync(path.join(tdir, 'assets'), path.join(demo, 'assets'), { recursive: true });
   const html = fs.readFileSync(path.join(tdir, 'index.html'), 'utf8');
   fs.copyFileSync(EDIT_JS, path.join(demo, 'assets/kv-edition.js'));
-  write(path.join(demo, 'index.html'), withEdit(html).replace('</body>', demoBar(t) + '</body>').replace('<head>', '<head>\n  <meta name="robots" content="noindex">'));
+  write(path.join(demo, 'index.html'), addDemoBar(withEdit(html), t).replace('<head>', '<head>\n  <meta name="robots" content="noindex">'));
   for (const f of fs.readdirSync(tdir)) if (f.endsWith('.html') && f !== 'index.html')
-    write(path.join(demo, f), withEdit(fs.readFileSync(path.join(tdir, f), 'utf8')).replace('</body>', demoBar(t) + '</body>'));
+    write(path.join(demo, f), addDemoBar(withEdit(fs.readFileSync(path.join(tdir, f), 'utf8')), t));
 
   // Images (cached in shots/, regenerated when the template changes)
   const shots = r('shots', t.slug);

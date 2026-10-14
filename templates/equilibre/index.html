@@ -9,12 +9,12 @@
   <link rel="preload" href="assets/fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="bg-bone text-forest font-sans antialiased">
+<body class="bg-bone text-forest font-sans antialiased pb-24 md:pb-0">
 
   <!-- ===== En-tête ===== -->
   <header class="sticky top-0 z-30 bg-bone/90 backdrop-blur border-b border-forest/10">
     <div class="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5 font-serif text-xl">
+      <a href="#" class="flex items-center gap-2.5 font-serif text-xl min-h-11">
         <svg class="w-7 h-7 text-ochre" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M8 26V14a8 8 0 0 1 16 0v12"/><path d="M8 20h2M22 20h2M8 15h2M22 15h2"/></svg>
         Équilibre
       </a>
@@ -25,12 +25,12 @@
         <a href="#faq" class="hover:text-ochre">Questions</a>
       </nav>
       <a href="#contact" class="hidden sm:inline-flex rounded-full bg-forest text-bone px-5 py-2.5 text-sm font-medium hover:bg-forest-deep">Prendre rendez-vous</a>
-      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <button id="menuBtn" class="md:hidden p-2.5 -mr-2.5" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
-    <nav id="menu" class="md:hidden hidden border-t border-forest/10 px-5 py-4 flex-col gap-3 text-lg">
-      <a href="#animaux">Animaux</a><a href="#seance">La séance</a><a href="#tarifs">Tarifs</a><a href="#faq">Questions</a>
+    <nav id="menu" class="md:hidden hidden border-t border-forest/10 px-5 py-3 flex-col text-lg">
+      <a href="#animaux" class="flex items-center min-h-12 border-b border-forest/10">Animaux</a><a href="#seance" class="flex items-center min-h-12 border-b border-forest/10">La séance</a><a href="#tarifs" class="flex items-center min-h-12 border-b border-forest/10">Tarifs</a><a href="#faq" class="flex items-center min-h-12">Questions</a>
       <a href="#contact" class="mt-2 rounded-full bg-forest text-bone px-5 py-3 text-center text-base">Prendre rendez-vous</a>
     </nav>
   </header>
@@ -38,18 +38,18 @@
   <main>
     <!-- ===== Accueil ===== -->
     <section class="relative overflow-hidden">
-      <div class="mx-auto max-w-6xl px-5 pt-14 pb-20 md:pt-24 md:pb-28 grid md:grid-cols-12 gap-12 items-center">
+      <div class="mx-auto max-w-6xl px-5 pt-10 pb-14 md:pt-24 md:pb-28 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
         <div class="md:col-span-7">
-          <p class="text-ochre font-medium mb-5">Ostéopathe animalier · Tours et 60 km alentour</p>
-          <h1 class="font-serif text-[2.6rem] leading-[1.05] sm:text-6xl md:text-[4.25rem] tracking-tight">Retrouver la mobilité, le confort et l'envie de bouger.</h1>
-          <p class="mt-6 text-lg leading-relaxed text-forest/75 max-w-xl">Je me déplace à l'écurie ou à domicile pour soigner chevaux, chiens et chats : boiterie légère, raideur, baisse de performance, suites de chute ou simple suivi annuel.</p>
-          <div class="mt-9 flex flex-wrap gap-3">
-            <a href="#contact" class="rounded-full bg-forest text-bone px-7 py-3.5 font-medium hover:bg-forest-deep">Prendre rendez-vous</a>
-            <a href="tel:+33600000000" class="rounded-full border border-forest/25 px-7 py-3.5 font-medium hover:border-forest">06 00 00 00 00</a>
+          <p class="text-ochre font-medium mb-4 md:mb-5">Ostéopathe animalier · Tours et 60 km alentour</p>
+          <h1 class="font-serif text-[2.35rem] leading-[1.06] sm:text-6xl md:text-[4.25rem] tracking-tight">Retrouver la mobilité, le confort et l'envie de bouger.</h1>
+          <p class="mt-5 md:mt-6 text-[17px] md:text-lg leading-relaxed text-forest/75 max-w-xl">Je me déplace à l'écurie ou à domicile pour soigner chevaux, chiens et chats : boiterie légère, raideur, baisse de performance, suites de chute ou simple suivi annuel.</p>
+          <div class="mt-8 md:mt-9 flex flex-col sm:flex-row gap-3">
+            <a href="#contact" class="inline-flex justify-center rounded-full bg-forest text-bone px-7 py-3.5 font-medium hover:bg-forest-deep">Prendre rendez-vous</a>
+            <a href="tel:+33600000000" class="inline-flex justify-center rounded-full border border-forest/25 px-7 py-3.5 font-medium hover:border-forest">06 00 00 00 00</a>
           </div>
         </div>
         <div class="md:col-span-5">
-          <div class="relative aspect-[4/5] rounded-[2.5rem] bg-sage/40 overflow-hidden">
+          <div class="relative aspect-[5/4] md:aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] bg-sage/40 overflow-hidden">
             <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
               <circle cx="320" cy="90" r="150" fill="#9BB09A" opacity=".55"/>
               <circle cx="60" cy="420" r="190" fill="#1F3A2E" opacity=".9"/>
@@ -58,8 +58,8 @@
                 <ellipse cx="40" cy="58" rx="26" ry="22"/><ellipse cx="10" cy="22" rx="10" ry="13"/><ellipse cx="32" cy="6" rx="10" ry="13"/><ellipse cx="56" cy="8" rx="10" ry="13"/><ellipse cx="74" cy="28" rx="10" ry="13"/>
               </g>
             </svg>
-            <div class="absolute left-5 right-5 bottom-5 rounded-2xl bg-bone/95 p-5">
-              <p class="font-serif text-lg">« Notre jument a retrouvé une belle foulée en deux séances. »</p>
+            <div class="absolute left-4 right-4 bottom-4 md:left-5 md:right-5 md:bottom-5 rounded-2xl bg-bone/95 p-4 md:p-5">
+              <p class="font-serif text-base md:text-lg">« Notre jument a retrouvé une belle foulée en deux séances. »</p>
               <p class="mt-2 text-sm text-forest/65">Claire, cavalière de CSO</p>
             </div>
           </div>
@@ -69,22 +69,22 @@
 
     <!-- ===== Animaux ===== -->
     <section id="animaux" class="bg-forest text-bone">
-      <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
-        <h2 class="font-serif text-4xl md:text-5xl max-w-2xl">Chaque animal a sa morphologie et son métier.</h2>
-        <div class="mt-14 grid md:grid-cols-3 gap-px bg-bone/15 rounded-3xl overflow-hidden">
-          <article class="bg-forest p-8">
+      <div class="mx-auto max-w-6xl px-5 py-14 md:py-24">
+        <h2 class="font-serif text-[2rem] leading-tight md:text-5xl max-w-2xl">Chaque animal a sa morphologie et son métier.</h2>
+        <div class="mt-8 md:mt-14 -mx-5 px-5 flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-px md:bg-bone/15 md:rounded-3xl md:overflow-hidden">
+          <article class="snap-start shrink-0 w-[82%] sm:w-[60%] md:w-auto rounded-3xl md:rounded-none bg-bone/[.07] md:bg-forest p-7 md:p-8">
             <svg class="w-10 h-10 text-ochre" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M8 27V14a8 8 0 0 1 16 0v13"/><path d="M8 21h2M22 21h2M8 15h2M22 15h2"/></svg>
-            <h3 class="mt-6 font-serif text-2xl">Chevaux</h3>
+            <h3 class="mt-5 md:mt-6 font-serif text-2xl">Chevaux</h3>
             <p class="mt-3 text-bone/75 leading-relaxed">Chevaux de sport, de loisir, poneys et retraités. Travail sur le dos, la nuque, le bassin et les membres, en lien avec votre maréchal et votre vétérinaire.</p>
           </article>
-          <article class="bg-forest p-8">
+          <article class="snap-start shrink-0 w-[82%] sm:w-[60%] md:w-auto rounded-3xl md:rounded-none bg-bone/[.07] md:bg-forest p-7 md:p-8">
             <svg class="w-10 h-10 text-ochre" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><ellipse cx="16" cy="21" rx="7" ry="6"/><ellipse cx="7" cy="13" rx="3" ry="4"/><ellipse cx="13" cy="8" rx="3" ry="4"/><ellipse cx="19" cy="8" rx="3" ry="4"/><ellipse cx="25" cy="13" rx="3" ry="4"/></svg>
-            <h3 class="mt-6 font-serif text-2xl">Chiens</h3>
+            <h3 class="mt-5 md:mt-6 font-serif text-2xl">Chiens</h3>
             <p class="mt-3 text-bone/75 leading-relaxed">Chiens de compagnie, de sport (agility, canicross) ou de travail. Suivi du chiot en croissance comme du chien âgé qui se raidit.</p>
           </article>
-          <article class="bg-forest p-8">
+          <article class="snap-start shrink-0 w-[82%] sm:w-[60%] md:w-auto rounded-3xl md:rounded-none bg-bone/[.07] md:bg-forest p-7 md:p-8">
             <svg class="w-10 h-10 text-ochre" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M7 26V9l5 5h8l5-5v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3z"/><path d="M12 20h.01M20 20h.01" stroke-linecap="round" stroke-width="3"/></svg>
-            <h3 class="mt-6 font-serif text-2xl">Chats</h3>
+            <h3 class="mt-5 md:mt-6 font-serif text-2xl">Chats</h3>
             <p class="mt-3 text-bone/75 leading-relaxed">Séances courtes et au calme, chez vous, pour limiter le stress. Après une chute, une opération ou quand le chat ne saute plus comme avant.</p>
           </article>
         </div>
@@ -92,12 +92,12 @@
     </section>
 
     <!-- ===== Quand consulter ===== -->
-    <section class="mx-auto max-w-6xl px-5 py-20 md:py-28 grid md:grid-cols-12 gap-10">
+    <section class="mx-auto max-w-6xl px-5 py-14 md:py-28 grid md:grid-cols-12 gap-8 md:gap-10">
       <div class="md:col-span-5">
-        <h2 class="font-serif text-4xl md:text-5xl">Quand faire appel à moi ?</h2>
-        <p class="mt-5 text-forest/75 leading-relaxed">L'ostéopathie ne remplace pas le vétérinaire : en cas de douleur aiguë, de fièvre ou de boiterie franche, consultez-le d'abord. Je travaille en complément, souvent sur ses conseils.</p>
+        <h2 class="font-serif text-[2rem] leading-tight md:text-5xl">Quand faire appel à moi ?</h2>
+        <p class="mt-4 md:mt-5 text-forest/75 leading-relaxed">L'ostéopathie ne remplace pas le vétérinaire : en cas de douleur aiguë, de fièvre ou de boiterie franche, consultez-le d'abord. Je travaille en complément, souvent sur ses conseils.</p>
       </div>
-      <ul class="md:col-span-7 grid sm:grid-cols-2 gap-x-8 gap-y-5 text-[17px]">
+      <ul class="md:col-span-7 grid sm:grid-cols-2 gap-x-8 gap-y-3.5 md:gap-y-5 text-[17px]">
         <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Raideur au réveil ou difficulté à se relever</li>
         <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Refus d'obstacle, défense au montoir</li>
         <li class="flex gap-3"><span class="mt-2 h-2 w-2 rounded-full bg-ochre shrink-0"></span>Changement d'allure ou de comportement</li>
@@ -109,40 +109,40 @@
 
     <!-- ===== La séance ===== -->
     <section id="seance" class="bg-sand">
-      <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-        <h2 class="font-serif text-4xl md:text-5xl max-w-2xl">Comment se passe une séance</h2>
-        <ol class="mt-14 grid md:grid-cols-4 gap-10">
-          <li>
-            <span class="font-serif text-5xl text-ochre">1</span>
-            <h3 class="mt-4 font-semibold text-lg">L'échange</h3>
-            <p class="mt-2 text-forest/75 leading-relaxed">Historique, activité, alimentation, ce que vous avez remarqué. Environ 10 minutes.</p>
+      <div class="mx-auto max-w-6xl px-5 py-14 md:py-28">
+        <h2 class="font-serif text-[2rem] leading-tight md:text-5xl max-w-2xl">Comment se passe une séance</h2>
+        <ol class="mt-8 md:mt-14 grid md:grid-cols-4 gap-x-10 gap-y-6">
+          <li class="grid grid-cols-[2.5rem_1fr] md:block gap-x-3">
+            <span class="row-span-2 font-serif text-4xl md:text-5xl text-ochre leading-none">1</span>
+            <h3 class="md:mt-4 font-semibold text-lg">L'échange</h3>
+            <p class="mt-1 md:mt-2 text-forest/75 leading-relaxed">Historique, activité, alimentation, ce que vous avez remarqué. Environ 10 minutes.</p>
           </li>
-          <li>
-            <span class="font-serif text-5xl text-ochre">2</span>
-            <h3 class="mt-4 font-semibold text-lg">L'observation</h3>
-            <p class="mt-2 text-forest/75 leading-relaxed">Posture à l'arrêt, puis au pas et au trot pour repérer les compensations.</p>
+          <li class="grid grid-cols-[2.5rem_1fr] md:block gap-x-3">
+            <span class="row-span-2 font-serif text-4xl md:text-5xl text-ochre leading-none">2</span>
+            <h3 class="md:mt-4 font-semibold text-lg">L'observation</h3>
+            <p class="mt-1 md:mt-2 text-forest/75 leading-relaxed">Posture à l'arrêt, puis au pas et au trot pour repérer les compensations.</p>
           </li>
-          <li>
-            <span class="font-serif text-5xl text-ochre">3</span>
-            <h3 class="mt-4 font-semibold text-lg">Le traitement</h3>
-            <p class="mt-2 text-forest/75 leading-relaxed">Techniques douces et adaptées à l'animal, sans contrainte. 45 minutes à 1 heure.</p>
+          <li class="grid grid-cols-[2.5rem_1fr] md:block gap-x-3">
+            <span class="row-span-2 font-serif text-4xl md:text-5xl text-ochre leading-none">3</span>
+            <h3 class="md:mt-4 font-semibold text-lg">Le traitement</h3>
+            <p class="mt-1 md:mt-2 text-forest/75 leading-relaxed">Techniques douces et adaptées à l'animal, sans contrainte. 45 minutes à 1 heure.</p>
           </li>
-          <li>
-            <span class="font-serif text-5xl text-ochre">4</span>
-            <h3 class="mt-4 font-semibold text-lg">Les conseils</h3>
-            <p class="mt-2 text-forest/75 leading-relaxed">Repos, reprise progressive, exercices : vous repartez avec un compte rendu écrit.</p>
+          <li class="grid grid-cols-[2.5rem_1fr] md:block gap-x-3">
+            <span class="row-span-2 font-serif text-4xl md:text-5xl text-ochre leading-none">4</span>
+            <h3 class="md:mt-4 font-semibold text-lg">Les conseils</h3>
+            <p class="mt-1 md:mt-2 text-forest/75 leading-relaxed">Repos, reprise progressive, exercices : vous repartez avec un compte rendu écrit.</p>
           </li>
         </ol>
       </div>
     </section>
 
     <!-- ===== Tarifs ===== -->
-    <section id="tarifs" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-      <div class="flex flex-wrap items-end justify-between gap-6">
-        <h2 class="font-serif text-4xl md:text-5xl">Tarifs</h2>
+    <section id="tarifs" class="mx-auto max-w-6xl px-5 py-14 md:py-28">
+      <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
+        <h2 class="font-serif text-[2rem] leading-tight md:text-5xl">Tarifs</h2>
         <p class="text-forest/70">Frais de déplacement inclus jusqu'à 30 km.</p>
       </div>
-      <div class="mt-12 divide-y divide-forest/15 border-y border-forest/15">
+      <div class="mt-8 md:mt-12 divide-y divide-forest/15 border-y border-forest/15">
         <div class="py-6 grid grid-cols-[1fr_auto] gap-4 items-baseline">
           <div><h3 class="font-serif text-2xl">Cheval, poney</h3><p class="mt-1 text-forest/70">Séance complète, compte rendu inclus</p></div>
           <p class="font-serif text-3xl">70 €</p>
@@ -163,13 +163,13 @@
     </section>
 
     <!-- ===== Zone ===== -->
-    <section class="mx-auto max-w-6xl px-5 pb-20 md:pb-28">
-      <div class="rounded-[2rem] bg-forest text-bone p-8 md:p-14 grid md:grid-cols-2 gap-10 items-center">
+    <section class="mx-auto max-w-6xl px-5 pb-14 md:pb-28">
+      <div class="rounded-[2rem] bg-forest text-bone p-7 md:p-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <h2 class="font-serif text-4xl">Je viens jusqu'à vous</h2>
+          <h2 class="font-serif text-[2rem] leading-tight md:text-4xl">Je viens jusqu'à vous</h2>
           <p class="mt-4 text-bone/75 leading-relaxed">Tours, Amboise, Chinon, Loches, Blois et tout le secteur dans un rayon de 60 km. Au-delà, une tournée est organisée dès trois animaux sur le même lieu.</p>
         </div>
-        <svg class="w-full max-w-sm mx-auto" viewBox="0 0 300 300" aria-label="Carte de la zone d'intervention">
+        <svg class="hidden md:block w-full max-w-sm mx-auto" viewBox="0 0 300 300" aria-label="Carte de la zone d'intervention">
           <circle cx="150" cy="150" r="140" fill="none" stroke="#9BB09A" stroke-dasharray="4 8" stroke-width="2"/>
           <circle cx="150" cy="150" r="80" fill="#9BB09A" opacity=".18"/>
           <circle cx="150" cy="150" r="9" fill="#C08A3E"/>
@@ -186,18 +186,18 @@
 
     <!-- ===== Avis ===== -->
     <section class="bg-sand">
-      <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-        <h2 class="font-serif text-4xl md:text-5xl">Ils m'ont fait confiance</h2>
-        <div class="mt-12 grid md:grid-cols-3 gap-8">
-          <figure class="bg-bone rounded-3xl p-8">
+      <div class="mx-auto max-w-6xl px-5 py-14 md:py-28">
+        <h2 class="font-serif text-[2rem] leading-tight md:text-5xl">Ils m'ont fait confiance</h2>
+        <div class="mt-8 md:mt-12 -mx-5 px-5 flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-8">
+          <figure class="snap-start shrink-0 w-[82%] sm:w-[60%] md:w-auto bg-bone rounded-3xl p-7 md:p-8">
             <blockquote class="font-serif text-xl leading-snug">« Très à l'écoute, explications claires. Mon chien de 12 ans remonte enfin les escaliers. »</blockquote>
             <figcaption class="mt-6 text-sm text-forest/65">Martine, propriétaire d'un labrador</figcaption>
           </figure>
-          <figure class="bg-bone rounded-3xl p-8">
+          <figure class="snap-start shrink-0 w-[82%] sm:w-[60%] md:w-auto bg-bone rounded-3xl p-7 md:p-8">
             <blockquote class="font-serif text-xl leading-snug">« Intervient sur toute l'écurie deux fois par an. Les chevaux sont détendus et le suivi écrit est précieux. »</blockquote>
             <figcaption class="mt-6 text-sm text-forest/65">Julien, gérant d'écurie de propriétaires</figcaption>
           </figure>
-          <figure class="bg-bone rounded-3xl p-8">
+          <figure class="snap-start shrink-0 w-[82%] sm:w-[60%] md:w-auto bg-bone rounded-3xl p-7 md:p-8">
             <blockquote class="font-serif text-xl leading-snug">« Notre chatte, très craintive, s'est laissée faire sans stress. Séance à la maison, vraiment appréciable. »</blockquote>
             <figcaption class="mt-6 text-sm text-forest/65">Sophie et Marc</figcaption>
           </figure>
@@ -206,37 +206,37 @@
     </section>
 
     <!-- ===== FAQ ===== -->
-    <section id="faq" class="mx-auto max-w-3xl px-5 py-20 md:py-28">
-      <h2 class="font-serif text-4xl md:text-5xl">Questions fréquentes</h2>
-      <div class="mt-10 divide-y divide-forest/15 border-y border-forest/15">
-        <details class="group py-5">
-          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-lg">Combien de séances faut-il prévoir ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
-          <p class="mt-3 text-forest/75 leading-relaxed">Une séance suffit souvent. Un contrôle est parfois proposé trois à quatre semaines plus tard, surtout après un traumatisme.</p>
+    <section id="faq" class="mx-auto max-w-3xl px-5 py-14 md:py-28">
+      <h2 class="font-serif text-[2rem] leading-tight md:text-5xl">Questions fréquentes</h2>
+      <div class="mt-8 md:mt-10 divide-y divide-forest/15 border-y border-forest/15">
+        <details class="group">
+          <summary class="flex justify-between items-center gap-4 py-4 min-h-14 cursor-pointer list-none font-medium text-lg">Combien de séances faut-il prévoir ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
+          <p class="pb-5 text-forest/75 leading-relaxed">Une séance suffit souvent. Un contrôle est parfois proposé trois à quatre semaines plus tard, surtout après un traumatisme.</p>
         </details>
-        <details class="group py-5">
-          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-lg">Mon animal doit-il être au repos après ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
-          <p class="mt-3 text-forest/75 leading-relaxed">Oui, 24 à 48 heures de repos ou de travail léger sont conseillées. Les consignes précises figurent dans le compte rendu.</p>
+        <details class="group">
+          <summary class="flex justify-between items-center gap-4 py-4 min-h-14 cursor-pointer list-none font-medium text-lg">Mon animal doit-il être au repos après ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
+          <p class="pb-5 text-forest/75 leading-relaxed">Oui, 24 à 48 heures de repos ou de travail léger sont conseillées. Les consignes précises figurent dans le compte rendu.</p>
         </details>
-        <details class="group py-5">
-          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-lg">Les séances sont-elles remboursées ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
-          <p class="mt-3 text-forest/75 leading-relaxed">Certaines assurances santé animale prennent en charge l'ostéopathie. Une facture détaillée vous est remise pour vos démarches.</p>
+        <details class="group">
+          <summary class="flex justify-between items-center gap-4 py-4 min-h-14 cursor-pointer list-none font-medium text-lg">Les séances sont-elles remboursées ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
+          <p class="pb-5 text-forest/75 leading-relaxed">Certaines assurances santé animale prennent en charge l'ostéopathie. Une facture détaillée vous est remise pour vos démarches.</p>
         </details>
-        <details class="group py-5">
-          <summary class="flex justify-between items-center cursor-pointer list-none font-medium text-lg">Faut-il un avis du vétérinaire ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
-          <p class="mt-3 text-forest/75 leading-relaxed">Ce n'est pas obligatoire, mais c'est recommandé en cas de douleur récente. Je travaille volontiers en lien avec votre vétérinaire.</p>
+        <details class="group">
+          <summary class="flex justify-between items-center gap-4 py-4 min-h-14 cursor-pointer list-none font-medium text-lg">Faut-il un avis du vétérinaire ?<span class="text-ochre text-2xl transition group-open:rotate-45">+</span></summary>
+          <p class="pb-5 text-forest/75 leading-relaxed">Ce n'est pas obligatoire, mais c'est recommandé en cas de douleur récente. Je travaille volontiers en lien avec votre vétérinaire.</p>
         </details>
       </div>
     </section>
 
     <!-- ===== Contact ===== -->
     <section id="contact" class="bg-forest text-bone">
-      <div class="mx-auto max-w-6xl px-5 py-20 md:py-28 grid md:grid-cols-12 gap-12">
+      <div class="mx-auto max-w-6xl px-5 py-14 md:py-28 grid md:grid-cols-12 gap-10 md:gap-12">
         <div class="md:col-span-5">
-          <h2 class="font-serif text-4xl md:text-5xl">Prendre rendez-vous</h2>
+          <h2 class="font-serif text-[2rem] leading-tight md:text-5xl">Prendre rendez-vous</h2>
           <p class="mt-5 text-bone/75 leading-relaxed">Décrivez votre animal et ce que vous avez observé. Je vous rappelle sous 24 heures pour fixer un créneau.</p>
-          <dl class="mt-10 space-y-5">
-            <div><dt class="text-bone/60 text-sm">Téléphone</dt><dd class="text-xl"><a href="tel:+33600000000" class="hover:text-ochre">06 00 00 00 00</a></dd></div>
-            <div><dt class="text-bone/60 text-sm">E-mail</dt><dd class="text-xl"><a href="mailto:contact@exemple.fr" class="hover:text-ochre">contact@exemple.fr</a></dd></div>
+          <dl class="mt-8 md:mt-10 space-y-4">
+            <div><dt class="text-bone/60 text-sm">Téléphone</dt><dd class="text-xl"><a href="tel:+33600000000" class="inline-flex items-center min-h-11 hover:text-ochre">06 00 00 00 00</a></dd></div>
+            <div><dt class="text-bone/60 text-sm">E-mail</dt><dd class="text-xl"><a href="mailto:contact@exemple.fr" class="inline-flex items-center min-h-11 hover:text-ochre">contact@exemple.fr</a></dd></div>
             <div><dt class="text-bone/60 text-sm">Horaires</dt><dd class="text-xl">Lundi au samedi, 8 h – 19 h</dd></div>
           </dl>
         </div>
@@ -249,16 +249,23 @@
           </label>
           <label class="flex flex-col gap-2"><span class="text-sm text-bone/70">Commune</span><input name="commune" autocomplete="address-level2" class="field"></label>
           <label class="sm:col-span-2 flex flex-col gap-2"><span class="text-sm text-bone/70">Ce que vous avez observé</span><textarea name="message" rows="5" class="field"></textarea></label>
-          <button type="submit" class="sm:col-span-2 justify-self-start rounded-full bg-ochre text-forest-deep px-8 py-3.5 font-semibold hover:bg-bone">Envoyer ma demande</button>
+          <button type="submit" class="sm:col-span-2 w-full sm:w-auto sm:justify-self-start rounded-full bg-ochre text-forest-deep px-8 py-3.5 font-semibold hover:bg-bone">Envoyer ma demande</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="bg-forest-deep text-bone/60 text-sm">
-    <div class="mx-auto max-w-6xl px-5 py-8 flex flex-wrap justify-between gap-4">
+  <!-- Barre d'action fixe, téléphone uniquement -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-bone/95 backdrop-blur border-t border-forest/10 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-2 gap-3">
+    <a href="tel:+33600000000" class="inline-flex items-center justify-center gap-2 min-h-12 rounded-full border border-forest/25 font-medium">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Appeler</span></a>
+    <a href="#contact" class="inline-flex items-center justify-center min-h-12 rounded-full bg-forest text-bone font-medium"><span>Rendez-vous</span></a>
+  </div>
+
+  <footer class="bg-forest-deep text-bone/60 text-[15px]">
+    <div class="mx-auto max-w-6xl px-5 py-6 flex flex-wrap items-center justify-between gap-x-4">
       <p>© 2026 Équilibre — Ostéopathie animale</p>
-      <p><a href="#" class="hover:text-bone">Mentions légales</a></p>
+      <p><a href="#" class="inline-flex items-center min-h-11 hover:text-bone">Mentions légales</a></p>
     </div>
   </footer>
 

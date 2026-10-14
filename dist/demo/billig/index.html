@@ -10,12 +10,21 @@
   <link rel="preload" href="assets/fonts/corben-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="bg-lait text-encre font-sans antialiased">
+<body class="bg-lait text-encre font-sans antialiased pb-24 md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Billig</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/billig/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
 
   <!-- ===== En-tête ===== -->
   <header class="sticky top-0 z-30 bg-lait/95 backdrop-blur border-b border-sarrasin/10">
     <div class="mx-auto max-w-7xl px-5 h-16 flex items-center justify-between gap-4">
-      <a href="#" class="flex items-center gap-3 font-display font-bold text-xl text-sarrasin">
+      <a href="#" class="flex items-center gap-3 min-h-11 font-display font-bold text-xl text-sarrasin">
         <svg class="w-9 h-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#C98A4B"/><circle cx="20" cy="20" r="18" fill="none" stroke="#8A5428" stroke-width="2"/><circle cx="13" cy="15" r="1.6" fill="#8A5428"/><circle cx="26" cy="12" r="1.2" fill="#8A5428"/><circle cx="28" cy="25" r="1.8" fill="#8A5428"/><circle cx="14" cy="27" r="1.3" fill="#8A5428"/><circle cx="20" cy="20" r="5" fill="#E9B949"/></svg>
         <span>Crêperie Maëlle</span>
       </a>
@@ -26,13 +35,13 @@
         <a href="#infos" class="hover:text-rouge">Horaires et accès</a>
       </nav>
       <a href="#reserver" class="hidden sm:inline-flex rounded-full bg-rouge px-5 py-2.5 font-bold text-lait hover:bg-rouge-deep">Réserver une table</a>
-      <button id="menuBtn" class="lg:hidden p-2 -mr-2 text-sarrasin" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <button id="menuBtn" class="lg:hidden p-2.5 -mr-2.5 text-sarrasin" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
         <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
-    <nav id="menu" class="lg:hidden hidden border-t border-sarrasin/10 px-5 py-5 flex-col gap-4 text-lg font-medium" aria-label="Navigation mobile">
-      <a href="#carte">La carte</a><a href="#geste">Le geste</a><a href="#producteurs">Nos producteurs</a><a href="#infos">Horaires et accès</a>
-      <a href="#reserver" class="mt-1 rounded-full bg-rouge px-5 py-3 text-center font-bold text-lait">Réserver une table</a>
+    <nav id="menu" class="lg:hidden hidden border-t border-sarrasin/10 px-5 py-3 flex-col text-lg font-medium" aria-label="Navigation mobile">
+      <a href="#carte" class="flex items-center min-h-12 border-b border-sarrasin/10">La carte</a><a href="#geste" class="flex items-center min-h-12 border-b border-sarrasin/10">Le geste</a><a href="#producteurs" class="flex items-center min-h-12 border-b border-sarrasin/10">Nos producteurs</a><a href="#infos" class="flex items-center min-h-12">Horaires et accès</a>
+      <a href="#reserver" class="mt-2 mb-2 rounded-full bg-rouge px-5 py-3 text-center font-bold text-lait">Réserver une table</a>
     </nav>
   </header>
 
@@ -40,21 +49,21 @@
     <!-- ===== Accueil : la galette complète posée sur la nappe ===== -->
     <section class="relative overflow-hidden">
       <div class="mx-auto max-w-7xl grid lg:grid-cols-2 lg:min-h-[640px]">
-        <div class="px-5 pt-14 pb-12 lg:py-24 lg:pr-12 flex flex-col justify-center">
+        <div class="px-5 pt-8 pb-8 lg:py-24 lg:pr-12 flex flex-col justify-center">
           <p id="statut" class="inline-flex self-start items-center gap-2 rounded-full bg-farine px-4 py-1.5 text-sm font-medium text-sarrasin" aria-live="polite">
             <span class="w-2 h-2 rounded-full bg-sarrasin-light" aria-hidden="true"></span><span id="statutTexte">Service du midi de 12 h à 14 h 30, le soir de 19 h à 22 h</span>
           </p>
-          <h1 class="mt-7 font-display font-bold text-sarrasin text-5xl sm:text-6xl xl:text-7xl leading-[1.12] sm:leading-[1.16] xl:leading-[1.18] tracking-tight">Galettes de blé noir, tournées à la minute.</h1>
-          <p class="mt-7 text-lg leading-relaxed text-encre/80 max-w-xl">Dans une ruelle pavée du vieux Dinan, Maëlle et Yann tournent vos galettes sur deux billigs en fonte. La farine vient d'un moulin à 18 km, le cidre d'une ferme de la vallée de la Rance.</p>
-          <div class="mt-9 flex flex-wrap gap-3">
-            <a href="#reserver" class="rounded-full bg-rouge px-7 py-3.5 font-bold text-lait hover:bg-rouge-deep">Réserver une table</a>
-            <a href="#carte" class="rounded-full border-2 border-sarrasin px-7 py-3 font-bold text-sarrasin hover:bg-sarrasin hover:text-lait">Voir la carte</a>
+          <h1 class="mt-5 md:mt-7 font-display font-bold text-sarrasin text-[2.5rem] sm:text-6xl xl:text-7xl leading-[1.12] sm:leading-[1.16] xl:leading-[1.18] tracking-tight">Galettes de blé noir, tournées à la minute.</h1>
+          <p class="mt-5 md:mt-7 text-[17px] md:text-lg leading-relaxed text-encre/80 max-w-xl">Dans une ruelle pavée du vieux Dinan, Maëlle et Yann tournent vos galettes sur deux billigs en fonte. La farine vient d'un moulin à 18 km, le cidre d'une ferme de la vallée de la Rance.</p>
+          <div class="mt-7 md:mt-9 flex flex-col sm:flex-row gap-3">
+            <a href="#reserver" class="inline-flex justify-center rounded-full bg-rouge px-7 py-3.5 font-bold text-lait hover:bg-rouge-deep">Réserver une table</a>
+            <a href="#carte" class="inline-flex justify-center rounded-full border-2 border-sarrasin px-7 py-3 font-bold text-sarrasin hover:bg-sarrasin hover:text-lait">Voir la carte</a>
           </div>
         </div>
 
         <!-- Illustration : la nappe vichy, l'assiette, la galette complète et la bolée de cidre -->
-        <div class="relative vichy min-h-[380px] sm:min-h-[480px] lg:min-h-0 lg:-mr-[max(0px,calc((100vw-80rem)/2))] flex items-center justify-center p-6">
-          <svg class="relative w-full max-w-[520px]" viewBox="0 0 460 440" role="img" aria-label="Une galette complète avec son œuf au centre, servie dans une assiette, à côté d'une bolée de cidre">
+        <div class="relative vichy min-h-[260px] sm:min-h-[480px] lg:min-h-0 lg:-mr-[max(0px,calc((100vw-80rem)/2))] flex items-center justify-center p-6">
+          <svg class="relative w-full max-w-[300px] sm:max-w-[520px]" viewBox="0 0 460 440" role="img" aria-label="Une galette complète avec son œuf au centre, servie dans une assiette, à côté d'une bolée de cidre">
             <defs>
               <radialGradient id="g-galette" cx="50%" cy="45%" r="65%">
                 <stop offset="0" stop-color="#C98A4B"/><stop offset=".7" stop-color="#A86A34"/><stop offset="1" stop-color="#8A5428"/>
@@ -109,15 +118,15 @@
 
     <!-- ===== La carte (onglets) ===== -->
     <section id="carte" class="border-t-[10px] border-rouge">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28 grid lg:grid-cols-12 gap-8 lg:gap-12">
         <div class="lg:col-span-4">
           <div class="lg:sticky lg:top-28">
             <h2 class="font-display font-bold text-sarrasin text-4xl md:text-5xl leading-[1.15] md:leading-[1.15]">La carte</h2>
             <p class="mt-5 leading-relaxed text-encre/75 max-w-sm">Pâte de blé noir faite chaque soir et reposée toute la nuit. Les galettes sont 100 % sarrasin, donc sans gluten, mais préparées dans une cuisine où l'on travaille aussi le froment.</p>
-            <div class="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Rubriques de la carte">
-              <button class="onglet rounded-full border-2 border-sarrasin px-5 py-2 font-bold text-sarrasin" role="tab" id="t-galettes" aria-controls="p-galettes" aria-selected="true">Galettes</button>
-              <button class="onglet rounded-full border-2 border-sarrasin px-5 py-2 font-bold text-sarrasin" role="tab" id="t-crepes" aria-controls="p-crepes" aria-selected="false" tabindex="-1">Crêpes</button>
-              <button class="onglet rounded-full border-2 border-sarrasin px-5 py-2 font-bold text-sarrasin" role="tab" id="t-boire" aria-controls="p-boire" aria-selected="false" tabindex="-1">À boire</button>
+            <div class="mt-6 md:mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Rubriques de la carte">
+              <button class="onglet min-h-11 rounded-full border-2 border-sarrasin px-5 py-2 font-bold text-sarrasin" role="tab" id="t-galettes" aria-controls="p-galettes" aria-selected="true">Galettes</button>
+              <button class="onglet min-h-11 rounded-full border-2 border-sarrasin px-5 py-2 font-bold text-sarrasin" role="tab" id="t-crepes" aria-controls="p-crepes" aria-selected="false" tabindex="-1">Crêpes</button>
+              <button class="onglet min-h-11 rounded-full border-2 border-sarrasin px-5 py-2 font-bold text-sarrasin" role="tab" id="t-boire" aria-controls="p-boire" aria-selected="false" tabindex="-1">À boire</button>
             </div>
             <p class="mt-8 text-sm text-encre/60">Prix nets, service compris. Liste des allergènes disponible sur demande.</p>
           </div>
@@ -164,19 +173,19 @@
 
     <!-- ===== Formules ===== -->
     <section class="bg-farine">
-      <div class="mx-auto max-w-7xl px-5 py-16 md:py-20">
-        <div class="grid md:grid-cols-3 border-y-2 border-dashed border-sarrasin/30 md:divide-x-2 divide-y-2 md:divide-y-0 divide-dashed divide-sarrasin/30">
-          <div class="py-8 md:px-8 md:first:pl-0">
+      <div class="mx-auto max-w-7xl px-5 py-12 md:py-20">
+        <div class="-mx-5 px-5 flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-0 md:border-y-2 md:border-dashed md:border-sarrasin/30 md:divide-x-2 md:divide-dashed md:divide-sarrasin/30">
+          <div class="snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-lait md:bg-transparent border-2 border-dashed border-sarrasin/25 md:border-0 p-6 md:py-8 md:px-8 md:first:pl-0">
             <h3 class="font-display font-bold text-2xl text-sarrasin">Formule du midi</h3>
             <p class="mt-1 font-display text-4xl text-rouge">15,90 €</p>
             <p class="mt-3 text-encre/75 leading-relaxed">Complète ou galette du jour, crêpe beurre-sucre et bolée de cidre. Du mardi au vendredi.</p>
           </div>
-          <div class="py-8 md:px-8">
+          <div class="snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-lait md:bg-transparent border-2 border-dashed border-sarrasin/25 md:border-0 p-6 md:py-8 md:px-8">
             <h3 class="font-display font-bold text-2xl text-sarrasin">Menu enfant</h3>
             <p class="mt-1 font-display text-4xl text-rouge">9,50 €</p>
             <p class="mt-3 text-encre/75 leading-relaxed">Galette jambon-fromage, crêpe au chocolat et jus de pomme, jusqu'à 10 ans.</p>
           </div>
-          <div class="py-8 md:px-8 md:last:pr-0">
+          <div class="snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-lait md:bg-transparent border-2 border-dashed border-sarrasin/25 md:border-0 p-6 md:py-8 md:px-8 md:last:pr-0">
             <h3 class="font-display font-bold text-2xl text-sarrasin">Goûter du week-end</h3>
             <p class="mt-1 font-display text-4xl text-rouge">6,50 €</p>
             <p class="mt-3 text-encre/75 leading-relaxed">Une crêpe sucrée et une boisson chaude, le samedi et le dimanche de 15 h à 18 h.</p>
@@ -187,33 +196,33 @@
 
     <!-- ===== Le geste : une vraie séquence, donc numérotée ===== -->
     <section id="geste" class="bg-sarrasin text-lait">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28">
-        <div class="grid lg:grid-cols-12 gap-10 items-end">
-          <h2 class="lg:col-span-7 font-display font-bold text-4xl md:text-5xl leading-[1.15] md:leading-[1.15]">Une galette, c'est quatre gestes et deux minutes.</h2>
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28">
+        <div class="grid lg:grid-cols-12 gap-4 lg:gap-10 items-end">
+          <h2 class="lg:col-span-7 font-display font-bold text-[2.1rem] md:text-5xl leading-[1.15] md:leading-[1.15]">Une galette, c'est quatre gestes et deux minutes.</h2>
           <p class="lg:col-span-5 text-lait/75 leading-relaxed">On ne prépare rien à l'avance : chaque galette est tournée quand vous la commandez. Si vous êtes assis au comptoir, vous verrez tout.</p>
         </div>
-        <ol class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-          <li class="relative">
-            <svg class="w-20 h-20" viewBox="0 0 80 80" aria-hidden="true"><path d="M14 30h52l-6 34H20z" fill="#6B4A35"/><ellipse cx="40" cy="30" rx="26" ry="7" fill="#C98A4B"/><path d="M48 10c6 8 2 14-4 18" stroke="#FDFAF4" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".5"/></svg>
-            <span class="mt-5 block font-display text-5xl text-beurre" aria-hidden="true">1</span>
+        <ol class="mt-8 md:mt-16 -mx-5 px-5 flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-x-8 md:gap-y-12">
+          <li class="relative snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-lait/[.06] md:bg-transparent p-6 md:p-0">
+            <svg class="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 80 80" aria-hidden="true"><path d="M14 30h52l-6 34H20z" fill="#6B4A35"/><ellipse cx="40" cy="30" rx="26" ry="7" fill="#C98A4B"/><path d="M48 10c6 8 2 14-4 18" stroke="#FDFAF4" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".5"/></svg>
+            <span class="mt-4 md:mt-5 block font-display text-4xl md:text-5xl text-beurre" aria-hidden="true">1</span>
             <h3 class="mt-2 font-display font-bold text-xl">La pâte repose une nuit</h3>
             <p class="mt-2 text-lait/70 leading-relaxed">Farine de blé noir, eau, gros sel de Guérande. Battue à la main le soir, elle repose douze heures au frais.</p>
           </li>
-          <li class="relative">
-            <svg class="w-20 h-20" viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="52" rx="34" ry="12" fill="#22150E"/><ellipse cx="40" cy="48" rx="34" ry="12" fill="#4A3020"/><path d="M40 6v26" stroke="#C98A4B" stroke-width="4" stroke-linecap="round"/><path d="M28 32a12 8 0 0 0 24 0z" fill="#C98A4B"/></svg>
-            <span class="mt-5 block font-display text-5xl text-beurre" aria-hidden="true">2</span>
+          <li class="relative snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-lait/[.06] md:bg-transparent p-6 md:p-0">
+            <svg class="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="52" rx="34" ry="12" fill="#22150E"/><ellipse cx="40" cy="48" rx="34" ry="12" fill="#4A3020"/><path d="M40 6v26" stroke="#C98A4B" stroke-width="4" stroke-linecap="round"/><path d="M28 32a12 8 0 0 0 24 0z" fill="#C98A4B"/></svg>
+            <span class="mt-4 md:mt-5 block font-display text-4xl md:text-5xl text-beurre" aria-hidden="true">2</span>
             <h3 class="mt-2 font-display font-bold text-xl">Une louche sur la billig</h3>
             <p class="mt-2 text-lait/70 leading-relaxed">La plaque en fonte est à 250 °C. On la graisse au lard, puis on verse la pâte au centre.</p>
           </li>
-          <li class="relative">
-            <svg class="w-20 h-20" viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="50" rx="34" ry="12" fill="#C98A4B"/><path d="M40 50 66 20" stroke="#E9B949" stroke-width="5" stroke-linecap="round"/><path d="M56 14l18 16" stroke="#E9B949" stroke-width="6" stroke-linecap="round"/><path d="M10 46a34 12 0 0 1 22-7" stroke="#FDFAF4" stroke-width="2" fill="none" stroke-dasharray="4 4" opacity=".6"/></svg>
-            <span class="mt-5 block font-display text-5xl text-beurre" aria-hidden="true">3</span>
+          <li class="relative snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-lait/[.06] md:bg-transparent p-6 md:p-0">
+            <svg class="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 80 80" aria-hidden="true"><ellipse cx="40" cy="50" rx="34" ry="12" fill="#C98A4B"/><path d="M40 50 66 20" stroke="#E9B949" stroke-width="5" stroke-linecap="round"/><path d="M56 14l18 16" stroke="#E9B949" stroke-width="6" stroke-linecap="round"/><path d="M10 46a34 12 0 0 1 22-7" stroke="#FDFAF4" stroke-width="2" fill="none" stroke-dasharray="4 4" opacity=".6"/></svg>
+            <span class="mt-4 md:mt-5 block font-display text-4xl md:text-5xl text-beurre" aria-hidden="true">3</span>
             <h3 class="mt-2 font-display font-bold text-xl">Le rozell en un seul tour</h3>
             <p class="mt-2 text-lait/70 leading-relaxed">Le petit râteau en bois étale la pâte, fine et régulière. C'est lui qui fait la dentelle sur les bords.</p>
           </li>
-          <li class="relative">
-            <svg class="w-20 h-20" viewBox="0 0 80 80" aria-hidden="true"><path d="M14 18h52v46H14z" fill="#C98A4B"/><rect x="26" y="30" width="28" height="22" rx="3" fill="#E9A49A"/><circle cx="40" cy="41" r="7" fill="#EFA324"/><path d="M14 18l12 12M66 18 54 30M14 64l12-12M66 64 54 52" stroke="#8A5428" stroke-width="2.5"/></svg>
-            <span class="mt-5 block font-display text-5xl text-beurre" aria-hidden="true">4</span>
+          <li class="relative snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-lait/[.06] md:bg-transparent p-6 md:p-0">
+            <svg class="w-16 h-16 md:w-20 md:h-20" viewBox="0 0 80 80" aria-hidden="true"><path d="M14 18h52v46H14z" fill="#C98A4B"/><rect x="26" y="30" width="28" height="22" rx="3" fill="#E9A49A"/><circle cx="40" cy="41" r="7" fill="#EFA324"/><path d="M14 18l12 12M66 18 54 30M14 64l12-12M66 64 54 52" stroke="#8A5428" stroke-width="2.5"/></svg>
+            <span class="mt-4 md:mt-5 block font-display text-4xl md:text-5xl text-beurre" aria-hidden="true">4</span>
             <h3 class="mt-2 font-display font-bold text-xl">On garnit, on plie, on sert</h3>
             <p class="mt-2 text-lait/70 leading-relaxed">L'œuf cuit sur la galette, les bords se replient en carré. Elle arrive à table encore croustillante.</p>
           </li>
@@ -223,29 +232,29 @@
 
     <!-- ===== Producteurs : une route du moulin à la crêperie ===== -->
     <section id="producteurs">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28">
-        <h2 class="font-display font-bold text-sarrasin text-4xl md:text-5xl leading-[1.15] md:leading-[1.15] max-w-3xl">Tout ce qui entre en cuisine vient de moins de 20 km.</h2>
-        <div class="mt-14 relative">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28">
+        <h2 class="font-display font-bold text-sarrasin text-[2.1rem] md:text-5xl leading-[1.15] md:leading-[1.15] max-w-3xl">Tout ce qui entre en cuisine vient de moins de 20 km.</h2>
+        <div class="mt-8 md:mt-14 relative">
           <!-- Route en pointillés reliant les producteurs (cachée sur mobile) -->
           <svg class="hidden md:block absolute left-0 right-0 top-10 w-full h-10" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M30 20C200 0 300 40 450 20s300-20 400 0 250 10 320 0" fill="none" stroke="#B5302A" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/></svg>
-          <ul class="relative grid md:grid-cols-4 gap-10">
-            <li>
+          <ul class="relative -mx-5 px-5 flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar md:mx-0 md:px-0 md:grid md:grid-cols-4 md:gap-10 md:overflow-visible">
+            <li class="snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-farine md:bg-transparent p-6 md:p-0">
               <span class="flex w-20 h-20 items-center justify-center rounded-full bg-lait border-[3px] border-rouge font-display font-bold text-rouge text-base whitespace-nowrap">18 km</span>
               <h3 class="mt-5 font-display font-bold text-xl text-sarrasin">Le moulin d'Hervé</h3>
               <p class="mt-2 text-encre/75 leading-relaxed">Farine de blé noir de Bretagne, moulue à la meule de pierre. Livrée chaque lundi en sacs de 25 kg.</p>
             </li>
-            <li>
+            <li class="snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-farine md:bg-transparent p-6 md:p-0">
               <span class="flex w-20 h-20 items-center justify-center rounded-full bg-lait border-[3px] border-rouge font-display font-bold text-rouge text-base whitespace-nowrap">9 km</span>
               <h3 class="mt-5 font-display font-bold text-xl text-sarrasin">La cidrerie de Gaëlle</h3>
               <p class="mt-2 text-encre/75 leading-relaxed">Cidre brut et doux, jus de pomme pétillant. Vergers haute-tige au bord de la Rance.</p>
             </li>
-            <li>
+            <li class="snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-farine md:bg-transparent p-6 md:p-0">
               <span class="flex w-20 h-20 items-center justify-center rounded-full bg-lait border-[3px] border-rouge font-display font-bold text-rouge text-base whitespace-nowrap">12 km</span>
               <h3 class="mt-5 font-display font-bold text-xl text-sarrasin">La ferme de Loïc</h3>
               <p class="mt-2 text-encre/75 leading-relaxed">Œufs, beurre demi-sel, lait ribot et chèvre frais. Les poules sortent tous les jours.</p>
             </li>
-            <li>
-              <span class="flex w-20 h-20 items-center justify-center rounded-full bg-rouge text-lait">
+            <li class="snap-start shrink-0 w-[78%] sm:w-[48%] md:w-auto rounded-2xl md:rounded-none bg-farine md:bg-transparent p-6 md:p-0">
+              <span class="flex w-16 h-16 md:w-20 md:h-20 items-center justify-center rounded-full bg-rouge text-lait">
                 <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
               </span>
               <h3 class="mt-5 font-display font-bold text-xl text-sarrasin">Et chez nous</h3>
@@ -258,20 +267,20 @@
 
     <!-- ===== Avis ===== -->
     <section class="bg-farine">
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28 grid lg:grid-cols-12 gap-12 items-start">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         <figure class="lg:col-span-7">
           <svg class="w-12 h-12 text-rouge" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M8 30c0-9 5-16 13-19l2 4c-5 2-8 6-8 10h7v13H8zm20 0c0-9 5-16 13-19l2 4c-5 2-8 6-8 10h7v13H28z"/></svg>
-          <blockquote class="mt-6 font-display text-3xl md:text-4xl leading-snug md:leading-snug text-sarrasin">La galette est fine, croustillante sur les bords, l'œuf parfaitement coulant. On est revenus le lendemain.</blockquote>
+          <blockquote class="mt-4 md:mt-6 font-display text-2xl md:text-4xl leading-snug md:leading-snug text-sarrasin">La galette est fine, croustillante sur les bords, l'œuf parfaitement coulant. On est revenus le lendemain.</blockquote>
           <figcaption class="mt-6 font-medium text-encre/70">Camille, en vacances à Dinan en août</figcaption>
         </figure>
-        <div class="lg:col-span-5 space-y-10 lg:pt-16">
-          <figure class="border-l-4 border-rouge pl-6">
+        <div class="lg:col-span-5 min-w-0 -mx-5 px-5 flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-px-5 no-scrollbar lg:mx-0 lg:px-0 lg:block lg:space-y-10 lg:pt-16">
+          <figure class="snap-start shrink-0 w-[82%] lg:w-auto rounded-2xl lg:rounded-none bg-lait lg:bg-transparent border-l-4 border-rouge p-5 lg:p-0 lg:pl-6">
             <blockquote class="text-lg leading-relaxed">Le caramel au beurre salé, j'en ai acheté trois pots en partant. Service rapide même un samedi soir.</blockquote>
-            <figcaption class="mt-3 text-sm font-medium text-encre/60">Thomas</figcaption>
+            <figcaption class="mt-3 text-[15px] font-medium text-encre/60">Thomas</figcaption>
           </figure>
-          <figure class="border-l-4 border-rouge pl-6">
+          <figure class="snap-start shrink-0 w-[82%] lg:w-auto rounded-2xl lg:rounded-none bg-lait lg:bg-transparent border-l-4 border-rouge p-5 lg:p-0 lg:pl-6">
             <blockquote class="text-lg leading-relaxed">Ma fille ne mange pas de gluten : enfin une crêperie qui sait expliquer ce qu'elle sert. Accueil adorable.</blockquote>
-            <figcaption class="mt-3 text-sm font-medium text-encre/60">Nadia</figcaption>
+            <figcaption class="mt-3 text-[15px] font-medium text-encre/60">Nadia</figcaption>
           </figure>
         </div>
       </div>
@@ -280,9 +289,9 @@
     <!-- ===== Horaires, accès et réservation ===== -->
     <section id="infos" class="relative">
       <div class="vichy-band h-3" aria-hidden="true"></div>
-      <div class="mx-auto max-w-7xl px-5 py-20 md:py-28 grid lg:grid-cols-12 gap-14">
+      <div class="mx-auto max-w-7xl px-5 py-14 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14">
         <div class="lg:col-span-5">
-          <h2 class="font-display font-bold text-sarrasin text-4xl md:text-5xl leading-[1.15] md:leading-[1.15]">Horaires et accès</h2>
+          <h2 class="font-display font-bold text-sarrasin text-[2.1rem] md:text-5xl leading-[1.15] md:leading-[1.15]">Horaires et accès</h2>
           <!-- Horaires : pensez à modifier aussi le tableau HORAIRES dans le script en bas de page -->
           <dl class="mt-8 divide-y divide-sarrasin/10 border-y border-sarrasin/10">
             <div class="flex justify-between gap-6 py-3"><dt class="font-bold">Lundi</dt><dd class="text-right text-encre/75">Fermé (privatisation possible)</dd></div>
@@ -290,7 +299,7 @@
             <div class="flex justify-between gap-6 py-3"><dt class="font-bold">Samedi</dt><dd class="text-right text-encre/75">12 h – 22 h, en continu</dd></div>
             <div class="flex justify-between gap-6 py-3"><dt class="font-bold">Dimanche</dt><dd class="text-right text-encre/75">12 h – 18 h</dd></div>
           </dl>
-          <div class="mt-10 space-y-5 leading-relaxed">
+          <div class="mt-6 md:mt-10 space-y-4 md:space-y-5 leading-relaxed">
             <p><span class="font-bold">Adresse.</span> 12 rue de l'Exemple, 22100 Dinan, à deux minutes de la place des Merciers.</p>
             <p><span class="font-bold">Venir.</span> Parking du Châtelet à 300 m. La rue est piétonne et pavée ; une rampe permet d'entrer en fauteuil.</p>
             <p><span class="font-bold">Groupes.</span> Jusqu'à 30 couverts, salle privatisable le lundi. Écrivez-nous à <a href="mailto:contact@exemple.fr" class="font-bold text-rouge underline underline-offset-4">contact@exemple.fr</a>.</p>
@@ -298,7 +307,7 @@
           </div>
         </div>
 
-        <div id="reserver" class="lg:col-span-7 rounded-3xl bg-white border-2 border-sarrasin/10 p-6 md:p-10 scroll-mt-24">
+        <div id="reserver" class="lg:col-span-7 -mx-1 sm:mx-0 rounded-3xl bg-white border-2 border-sarrasin/10 p-5 md:p-10 scroll-mt-24">
           <h2 class="font-display font-bold text-sarrasin text-3xl md:text-4xl">Réserver une table</h2>
           <p class="mt-3 text-encre/75 leading-relaxed">Conseillé le week-end et en juillet-août. Nous confirmons par SMS dans l'heure pendant le service, sinon le lendemain matin.</p>
           <!--
@@ -307,28 +316,35 @@
             - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
             - Ou remplacez tout le formulaire par le lien de votre outil de réservation (TheFork, Zenchef…).
           -->
-          <form class="mt-8 grid sm:grid-cols-2 gap-5" action="#" method="post">
+          <form class="mt-6 md:mt-8 grid grid-cols-2 gap-4 md:gap-5" action="#" method="post">
             <label class="flex flex-col gap-2"><span class="font-bold">Date</span><input required name="date" type="date" class="field"></label>
             <label class="flex flex-col gap-2"><span class="font-bold">Service</span>
               <select name="service" class="field">
                 <option>Midi, 12 h</option><option>Midi, 12 h 30</option><option>Midi, 13 h 15</option><option>Soir, 19 h</option><option>Soir, 19 h 45</option><option>Soir, 20 h 30</option>
               </select>
             </label>
-            <label class="flex flex-col gap-2"><span class="font-bold">Nombre de personnes</span><input required name="couverts" type="number" min="1" max="30" value="2" class="field"></label>
-            <label class="flex flex-col gap-2"><span class="font-bold">Nom</span><input required name="nom" autocomplete="name" class="field"></label>
-            <label class="sm:col-span-2 flex flex-col gap-2"><span class="font-bold">Téléphone portable</span><input required name="telephone" type="tel" autocomplete="tel" class="field"></label>
-            <label class="sm:col-span-2 flex flex-col gap-2"><span class="font-bold">Une précision ?</span><textarea name="message" rows="3" class="field" placeholder="Une chaise haute, une allergie, un anniversaire…"></textarea></label>
-            <button type="submit" class="sm:col-span-2 justify-self-start rounded-full bg-rouge px-8 py-4 font-bold text-lait hover:bg-rouge-deep">Envoyer ma demande de réservation</button>
+            <label class="col-span-2 sm:col-span-1 flex flex-col gap-2"><span class="font-bold">Nombre de personnes</span><input required name="couverts" type="number" min="1" max="30" value="2" class="field"></label>
+            <label class="col-span-2 sm:col-span-1 flex flex-col gap-2"><span class="font-bold">Nom</span><input required name="nom" autocomplete="name" class="field"></label>
+            <label class="col-span-2 flex flex-col gap-2"><span class="font-bold">Téléphone portable</span><input required name="telephone" type="tel" autocomplete="tel" class="field"></label>
+            <label class="col-span-2 flex flex-col gap-2"><span class="font-bold">Une précision ?</span><textarea name="message" rows="3" class="field" placeholder="Une chaise haute, une allergie, un anniversaire…"></textarea></label>
+            <button type="submit" class="col-span-2 w-full sm:w-auto sm:justify-self-start rounded-full bg-rouge px-8 py-4 font-bold text-lait hover:bg-rouge-deep">Envoyer ma demande de réservation</button>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-sarrasin text-lait/70 text-sm">
-    <div class="mx-auto max-w-7xl px-5 py-10 flex flex-wrap justify-between gap-6">
+  <!-- Barre d'action fixe, téléphone uniquement -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-lait/95 backdrop-blur border-t border-sarrasin/15 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-2 gap-3">
+    <a href="tel:+33600000000" class="inline-flex items-center justify-center gap-2 min-h-12 rounded-full border-2 border-sarrasin font-bold text-sarrasin">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Appeler</span></a>
+    <a href="#reserver" class="inline-flex items-center justify-center min-h-12 rounded-full bg-rouge font-bold text-lait"><span>Réserver</span></a>
+  </div>
+
+  <footer class="bg-sarrasin text-lait/70 text-[15px]">
+    <div class="mx-auto max-w-7xl px-5 py-6 md:py-10 flex flex-wrap items-center justify-between gap-x-6">
       <p>© 2026 Crêperie Maëlle, galettes et crêpes à Dinan</p>
-      <p class="flex flex-wrap gap-6"><a href="#" class="hover:text-lait">Mentions légales</a><a href="#" class="hover:text-lait">Instagram</a><a href="#" class="hover:text-lait">SIRET 000 000 000 00000</a></p>
+      <p class="flex flex-wrap gap-x-6"><a href="#" class="inline-flex items-center min-h-11 hover:text-lait">Mentions légales</a><a href="#" class="inline-flex items-center min-h-11 hover:text-lait">Instagram</a><span class="inline-flex items-center min-h-11">SIRET 000 000 000 00000</span></p>
     </div>
   </footer>
 
@@ -368,14 +384,5 @@
     else txt.textContent = 'Fermé pour aujourd\'hui';
   </script>
 <script src="assets/kv-edition.js" defer></script>
-
-<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine -->
-<div data-kv-demo style="position:fixed;left:12px;right:12px;bottom:12px;z-index:2147483000;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 16px;background:#161B26;color:#fff;border-radius:10px;font:500 14px/1.3 system-ui,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:640px;margin:0 auto">
-  <span>Démo du template <strong>Billig</strong> · 29 €</span>
-  <span style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
-  <a href="#edition" style="color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
-  <a href="/templates/billig/" style="background:#F0BE3D;color:#161B26;padding:8px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
-  </span>
-</div>
 </body>
 </html>
