@@ -293,6 +293,61 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "f326a72792e827b31100e8647c16ac71"
+    },
+    {
+      "slug": "bilan",
+      "title": "Bilan",
+      "tagline": "Site vitrine pour expert-comptable",
+      "description": "Une page en grille suisse pour un cabinet d'expertise comptable : un titre géant, un bilan illustré dont l'actif et le passif s'équilibrent sous les yeux du visiteur, les missions en liste dépliable (tenue, bilan, TVA, paie, création), les forfaits mensuels par statut présentés en onglets (micro-entreprise, entreprise individuelle, société), le calendrier des échéances fiscales, les quatre étapes pour changer de cabinet, les avis et un formulaire de rendez-vous avec préférence de rappel. Menu latéral fixe sur ordinateur, noir, gris et jaune signalétique.",
+      "univers": [
+        "independants"
+      ],
+      "style": "Minimal",
+      "couleur": "jaune",
+      "direction": "suisse",
+      "animations": [
+        "bilan qui s'équilibre dans le héros (barres, totaux qui comptent, tampon)",
+        "titre qui apparaît ligne par ligne",
+        "onglets de tarifs avec repère jaune qui glisse",
+        "chiffres qui comptent",
+        "lignes et cartes qui apparaissent au défilement",
+        "boutons à ombre décalée au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-15",
+      "tags": [
+        "expert-comptable",
+        "cabinet comptable",
+        "comptable",
+        "expertise comptable",
+        "bilan",
+        "fiscalité",
+        "création d'entreprise",
+        "paie",
+        "comptabilité TPE",
+        "micro-entreprise"
+      ],
+      "sections": [
+        "Accueil avec titre géant et bilan illustré",
+        "Chiffres-clés du cabinet",
+        "Missions en liste dépliable",
+        "Forfaits mensuels en onglets par statut",
+        "Calendrier des échéances fiscales",
+        "Changer de cabinet en quatre étapes",
+        "Avis clients",
+        "Rendez-vous, coordonnées et carte"
+      ],
+      "palette": [
+        "#17191E",
+        "#F2C230",
+        "#5A5D66",
+        "#ECECE8",
+        "#F7F7F5"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "d46300cf2d040105af4e9d67695037f0"
     }
   ]
 }

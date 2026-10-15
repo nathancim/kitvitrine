@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cabinet Lemarié — Expert-comptable à Nantes</title>
+  <meta name="description" content="Expert-comptable à Nantes pour artisans, commerçants, indépendants et petites sociétés : tenue comptable, bilan, TVA, paie, création d'entreprise. Forfait mensuel fixe, réponse sous 24 heures.">
+  <meta name="theme-color" content="#F7F7F5">
+  <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <!-- Les animations ne masquent le contenu que si le navigateur sait le révéler -->
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-encre=Texte et aplats|--kv-encre-doux;--kv-jaune=Couleur d'accent|--kv-jaune-vif;--kv-gris=Texte secondaire;--kv-filet=Lignes de la grille;--kv-papier=Fond de page;--kv-calque=Fond des sections">
+</head>
+<body class="bg-papier text-encre font-sans antialiased pb-24 md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Bilan</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/bilan/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- ===== En-tête mobile et tablette (sur grand écran : menu latéral ci-dessous) ===== -->
+  <header class="lg:hidden sticky top-0 z-30 bg-papier/95 backdrop-blur border-b-2 border-encre">
+    <div class="px-5 md:px-10 h-16 flex items-center justify-between gap-4">
+      <a href="#" class="inline-flex min-h-11 items-center gap-3 font-bold text-lg tracking-tight">
+        <svg data-kv-logo="Logo" class="w-8 h-8 shrink-0" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" class="fill-encre"/><rect x="6" y="9" width="20" height="3" class="fill-papier"/><rect x="6" y="15" width="20" height="3" class="fill-papier"/><rect x="6" y="21" width="12" height="3" class="fill-jaune"/></svg>
+        <span>Cabinet Lemarié</span>
+      </a>
+      <button id="menuBtn" class="inline-flex min-h-11 items-center gap-2 -mr-2 px-2 font-medium" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span>Menu</span>
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h12"/></svg>
+      </button>
+    </div>
+    <!-- Menu mobile : panneau plein écran -->
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 bottom-0 bg-papier px-5 md:px-10 pt-2 pb-10 flex-col overflow-y-auto" aria-label="Navigation mobile">
+      <a href="#missions" class="flex items-center min-h-14 border-b border-filet text-2xl font-bold">Missions</a>
+      <a href="#tarifs" class="flex items-center min-h-14 border-b border-filet text-2xl font-bold">Tarifs</a>
+      <a href="#calendrier" class="flex items-center min-h-14 border-b border-filet text-2xl font-bold">Calendrier fiscal</a>
+      <a href="#changer" class="flex items-center min-h-14 border-b border-filet text-2xl font-bold">Changer de cabinet</a>
+      <a href="#contact" class="flex items-center min-h-14 text-2xl font-bold">Rendez-vous</a>
+      <p class="mt-auto pt-8 text-gris">8 rue Kervégan, 44000 Nantes<br>Du lundi au vendredi, 8 h 30 – 18 h 30</p>
+    </nav>
+  </header>
+
+  <!-- ===== Menu latéral fixe (grand écran) ===== -->
+  <aside class="hidden lg:flex fixed inset-y-0 left-0 z-30 w-60 flex-col border-r-2 border-encre bg-papier px-7 py-8">
+    <a href="#" class="inline-flex min-h-11 items-center gap-3 font-bold text-lg leading-tight tracking-tight">
+      <svg data-kv-logo="Logo" class="w-9 h-9 shrink-0" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" class="fill-encre"/><rect x="6" y="9" width="20" height="3" class="fill-papier"/><rect x="6" y="15" width="20" height="3" class="fill-papier"/><rect x="6" y="21" width="12" height="3" class="fill-jaune"/></svg>
+      <span>Cabinet Lemarié</span>
+    </a>
+    <nav class="mt-14 flex flex-col items-start gap-1 text-[17px] font-medium" aria-label="Navigation principale">
+      <a href="#missions" class="souligne inline-flex min-h-11 items-center" data-rail>Missions</a>
+      <a href="#tarifs" class="souligne inline-flex min-h-11 items-center" data-rail>Tarifs</a>
+      <a href="#calendrier" class="souligne inline-flex min-h-11 items-center" data-rail>Calendrier fiscal</a>
+      <a href="#changer" class="souligne inline-flex min-h-11 items-center" data-rail>Changer de cabinet</a>
+      <a href="#avis" class="souligne inline-flex min-h-11 items-center" data-rail>Avis</a>
+      <a href="#contact" class="souligne inline-flex min-h-11 items-center" data-rail>Contact</a>
+    </nav>
+    <div class="mt-auto space-y-1 text-[15px] text-gris">
+      <p>8 rue Kervégan<br>44000 Nantes</p>
+      <p><a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-bold text-encre">06 00 00 00 00</a></p>
+      <a href="#contact" class="btn mt-3 inline-flex w-full min-h-12 items-center justify-center bg-encre px-4 font-bold text-papier">Rendez-vous</a>
+    </div>
+  </aside>
+
+  <main class="lg:pl-60">
+
+    <!-- ===== Accueil : titre géant et bilan qui s'équilibre ===== -->
+    <section class="mx-auto max-w-[1200px] px-5 md:px-10">
+      <div class="grille pt-8 pb-12 md:pt-20 md:pb-20">
+        <p class="text-[15px] md:text-base font-medium text-gris md:pl-3">Expert-comptable à Nantes depuis 2013</p>
+        <h1 class="mt-4 md:mt-6 md:pl-3 font-extrabold tracking-[-0.04em] leading-[.98] text-[clamp(2.5rem,9.6vw,6.75rem)]">
+          <span class="ligne"><span>Des comptes justes,</span></span>
+          <span class="ligne"><span>des réponses</span></span>
+          <span class="ligne"><span>sous 24&nbsp;heures.</span></span>
+        </h1>
+
+        <div class="mt-8 md:mt-16 grid md:grid-cols-6 gap-8 md:gap-0">
+          <div class="md:col-span-2 md:px-3 flex flex-col">
+            <p class="text-[17px] leading-relaxed text-encre-doux">Le cabinet tient la comptabilité de 340 artisans, commerçants et petites sociétés de Loire-Atlantique. Un forfait mensuel fixe, un interlocuteur attitré, et vos déclarations déposées avant l'échéance.</p>
+            <div class="mt-7 flex flex-col sm:flex-row md:flex-col gap-3">
+              <a href="#contact" class="btn w-full sm:w-auto inline-flex justify-center items-center min-h-12 bg-encre px-6 font-bold text-papier">Prendre rendez-vous</a>
+              <a href="tel:+33600000000" class="btn w-full sm:w-auto inline-flex justify-center items-center min-h-12 border-2 border-encre px-6 font-bold">06 00 00 00 00</a>
+            </div>
+          </div>
+
+          <!-- Illustration : un bilan simplifié dont l'actif et le passif s'équilibrent -->
+          <div data-kv-image="Photo de l'équipe ou du cabinet" class="md:col-span-4 md:ml-[calc(100%/4)] md:-mr-px bg-calque h-[36vh] min-h-[220px] max-h-[330px] md:h-auto md:max-h-none md:aspect-[16/10] overflow-hidden">
+            <svg class="w-full h-full" viewBox="0 0 480 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Bilan simplifié : l'actif et le passif totalisent tous deux 184 250 euros">
+              <g font-family="Schibsted Grotesk, Helvetica, sans-serif">
+                <text x="40" y="38" font-size="13" class="fill-gris">Bilan au 31 décembre</text>
+                <text x="40" y="70" font-size="17" font-weight="700" class="fill-encre">Actif</text>
+                <text x="260" y="70" font-size="17" font-weight="700" class="fill-encre">Passif</text>
+                <path d="M40 80H220M260 80H440" class="stroke-encre" stroke-width="1.5"/>
+                <!-- Actif -->
+                <rect class="barre fill-jaune" style="animation-delay:.9s" x="40" y="90" width="180" height="28"/>
+                <rect class="barre fill-filet" style="animation-delay:.7s" x="40" y="118" width="180" height="26"/>
+                <rect class="barre fill-gris" style="animation-delay:.5s" x="40" y="144" width="180" height="32"/>
+                <rect class="barre fill-encre" style="animation-delay:.3s" x="40" y="176" width="180" height="56"/>
+                <g font-size="11.5">
+                  <text x="50" y="108" class="fill-encre">Trésorerie</text>
+                  <text x="50" y="135" class="fill-encre">Créances clients</text>
+                  <text x="50" y="164" class="fill-papier">Stocks</text>
+                  <text x="50" y="208" class="fill-papier">Immobilisations</text>
+                </g>
+                <!-- Passif -->
+                <rect class="barre fill-filet" style="animation-delay:.8s" x="260" y="90" width="180" height="38"/>
+                <rect class="barre fill-gris" style="animation-delay:.6s" x="260" y="128" width="180" height="44"/>
+                <rect class="barre fill-encre" style="animation-delay:.4s" x="260" y="172" width="180" height="60"/>
+                <g font-size="11.5">
+                  <text x="270" y="113" class="fill-encre">Dettes fournisseurs</text>
+                  <text x="270" y="154" class="fill-papier">Emprunts</text>
+                  <text x="270" y="206" class="fill-papier">Capitaux propres</text>
+                </g>
+                <!-- Totaux -->
+                <text id="totA" x="220" y="258" text-anchor="end" font-size="19" font-weight="700" class="fill-encre">184 250 €</text>
+                <text id="totP" x="440" y="258" text-anchor="end" font-size="19" font-weight="700" class="fill-encre">184 250 €</text>
+                <text x="40" y="258" font-size="13" class="fill-gris">Total</text>
+                <text x="260" y="258" font-size="13" class="fill-gris">Total</text>
+                <path class="trait stroke-encre" d="M40 268H440M440 274H40" stroke-width="2" fill="none" pathLength="360"/>
+                <!-- Tampon -->
+                <g class="tampon">
+                  <circle cx="404" cy="36" r="27" fill="none" class="stroke-jaune" stroke-width="4"/>
+                  <path d="M391 37l9 9 16-18" fill="none" class="stroke-encre" stroke-width="4" stroke-linecap="square"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Chiffres-clés ===== -->
+    <section class="mx-auto max-w-[1200px] px-5 md:px-10" aria-label="Le cabinet en chiffres">
+      <dl class="grid grid-cols-3 border-y-2 border-encre">
+        <div class="py-5 md:py-8 md:px-3 pr-2 flex flex-col-reverse justify-end">
+          <dt class="mt-1 text-[15px] leading-snug text-gris">entreprises suivies</dt>
+          <dd class="text-3xl md:text-6xl font-extrabold tracking-tight" data-compte="340">340</dd>
+        </div>
+        <div class="py-5 md:py-8 px-3 border-l border-filet flex flex-col-reverse justify-end">
+          <dt class="mt-1 text-[15px] leading-snug text-gris">pour vous répondre, au plus</dt>
+          <dd class="text-3xl md:text-6xl font-extrabold tracking-tight"><span data-compte="24">24</span> h</dd>
+        </div>
+        <div class="py-5 md:py-8 px-3 border-l border-filet flex flex-col-reverse justify-end">
+          <dt class="mt-1 text-[15px] leading-snug text-gris">pénalité de retard depuis 2013</dt>
+          <dd class="text-3xl md:text-6xl font-extrabold tracking-tight">0</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ===== Missions : liste dépliable ===== -->
+    <section id="missions" class="mx-auto max-w-[1200px] px-5 md:px-10">
+      <div class="grille py-14 md:py-24 grid md:grid-cols-6 gap-8 md:gap-0">
+        <div class="md:col-span-2 md:px-3">
+          <h2 class="text-[2rem] md:text-5xl font-extrabold tracking-[-0.03em] leading-[1.02]">Ce que le cabinet prend en charge</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-gris">Vous choisissez les missions, nous les écrivons dans la lettre de mission avec leur prix.</p>
+        </div>
+        <div class="md:col-span-4 md:px-3 border-t-2 border-encre">
+          <details class="revele group border-b border-filet" open>
+            <summary class="flex items-center justify-between gap-4 py-4 md:py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <h3 class="text-xl md:text-2xl font-bold">Tenue et révision comptable</h3>
+              <svg class="w-6 h-6 shrink-0 transition-transform duration-300 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+            </summary>
+            <div class="pb-6 md:grid md:grid-cols-[2fr_1fr] md:gap-8">
+              <p class="text-encre-doux leading-relaxed">Vous déposez factures et relevés dans votre espace ou par photo, nous saisissons et rapprochons chaque mois. Un point trimestriel sur la marge et la trésorerie.</p>
+              <p class="mt-3 md:mt-0 text-[15px] text-gris">Pour toutes les entreprises au réel</p>
+            </div>
+          </details>
+          <details class="revele group border-b border-filet">
+            <summary class="flex items-center justify-between gap-4 py-4 md:py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <h3 class="text-xl md:text-2xl font-bold">Bilan et liasse fiscale</h3>
+              <svg class="w-6 h-6 shrink-0 transition-transform duration-300 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+            </summary>
+            <div class="pb-6 md:grid md:grid-cols-[2fr_1fr] md:gap-8">
+              <p class="text-encre-doux leading-relaxed">Comptes annuels, liasse, déclaration de résultat et rendez-vous de présentation du bilan, avec une page de synthèse lisible sans être comptable.</p>
+              <p class="mt-3 md:mt-0 text-[15px] text-gris">Clôture à toute date</p>
+            </div>
+          </details>
+          <details class="revele group border-b border-filet">
+            <summary class="flex items-center justify-between gap-4 py-4 md:py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <h3 class="text-xl md:text-2xl font-bold">TVA et déclarations</h3>
+              <svg class="w-6 h-6 shrink-0 transition-transform duration-300 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+            </summary>
+            <div class="pb-6 md:grid md:grid-cols-[2fr_1fr] md:gap-8">
+              <p class="text-encre-doux leading-relaxed">Déclarations de TVA mensuelles ou trimestrielles, CFE, CVAE, DAS2 : préparées, vérifiées et télétransmises en votre nom.</p>
+              <p class="mt-3 md:mt-0 text-[15px] text-gris">Rappel 10 jours avant chaque échéance</p>
+            </div>
+          </details>
+          <details class="revele group border-b border-filet">
+            <summary class="flex items-center justify-between gap-4 py-4 md:py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <h3 class="text-xl md:text-2xl font-bold">Paie et social</h3>
+              <svg class="w-6 h-6 shrink-0 transition-transform duration-300 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+            </summary>
+            <div class="pb-6 md:grid md:grid-cols-[2fr_1fr] md:gap-8">
+              <p class="text-encre-doux leading-relaxed">Bulletins de paie, DSN, contrats de travail, entrées et sorties de salariés. Nous suivons les conventions du bâtiment, du commerce et de la restauration.</p>
+              <p class="mt-3 md:mt-0 text-[15px] text-gris">De 1 à 20 salariés</p>
+            </div>
+          </details>
+          <details class="revele group border-b border-filet">
+            <summary class="flex items-center justify-between gap-4 py-4 md:py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <h3 class="text-xl md:text-2xl font-bold">Création et reprise d'entreprise</h3>
+              <svg class="w-6 h-6 shrink-0 transition-transform duration-300 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+            </summary>
+            <div class="pb-6 md:grid md:grid-cols-[2fr_1fr] md:gap-8">
+              <p class="text-encre-doux leading-relaxed">Choix du statut, prévisionnel sur trois ans pour la banque, statuts et immatriculation. Pour une reprise, audit des comptes du cédant avant de signer.</p>
+              <p class="mt-3 md:mt-0 text-[15px] text-gris">Forfait de 390 € HT</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Tarifs : onglets par statut ===== -->
+    <section id="tarifs" class="bg-encre text-papier">
+      <div class="mx-auto max-w-[1200px] px-5 md:px-10 py-14 md:py-24 grid md:grid-cols-6 gap-8 md:gap-0">
+        <div class="md:col-span-2 md:px-3">
+          <h2 class="text-[2rem] md:text-5xl font-extrabold tracking-[-0.03em] leading-[1.02]">Un forfait fixe, connu d'avance</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-papier/70">Payé chaque mois, sans supplément au moment du bilan. Le devis est ferme pour toute la durée de l'exercice.</p>
+        </div>
+        <div class="md:col-span-4 md:px-3">
+          <div class="relative grid grid-cols-3 border-b-2 border-papier/25" role="tablist" aria-label="Forfaits selon votre statut">
+            <button type="button" role="tab" id="t-micro" aria-controls="p-micro" aria-selected="true" class="onglet min-h-14 px-1 text-left text-[15px] md:text-lg font-bold leading-tight">Micro-entreprise</button>
+            <button type="button" role="tab" id="t-ei" aria-controls="p-ei" aria-selected="false" tabindex="-1" class="onglet min-h-14 px-1 text-left text-[15px] md:text-lg font-bold leading-tight text-papier/55">Entreprise individuelle</button>
+            <button type="button" role="tab" id="t-soc" aria-controls="p-soc" aria-selected="false" tabindex="-1" class="onglet min-h-14 px-1 text-left text-[15px] md:text-lg font-bold leading-tight text-papier/55">Société (SARL, SAS)</button>
+            <span class="repere absolute -bottom-[2px] left-0 h-1 w-1/3 bg-jaune" aria-hidden="true"></span>
+          </div>
+
+          <div id="p-micro" role="tabpanel" aria-labelledby="t-micro" class="panneau pt-8" tabindex="0">
+            <p class="flex items-baseline gap-3"><span class="text-6xl md:text-8xl font-extrabold tracking-tight text-jaune">49 €</span><span class="text-papier/70">HT par mois</span></p>
+            <ul class="mt-7 grid sm:grid-cols-2 gap-x-8 border-t border-papier/20">
+              <li class="py-3 border-b border-papier/20">Déclarations de chiffre d'affaires à l'Urssaf</li>
+              <li class="py-3 border-b border-papier/20">Livre des recettes et registre des achats</li>
+              <li class="py-3 border-b border-papier/20">Alerte avant de dépasser les seuils</li>
+              <li class="py-3 border-b border-papier/20">Aide à la déclaration de revenus</li>
+            </ul>
+          </div>
+          <div id="p-ei" role="tabpanel" aria-labelledby="t-ei" class="panneau pt-8" tabindex="0" hidden>
+            <p class="flex items-baseline gap-3"><span class="text-6xl md:text-8xl font-extrabold tracking-tight text-jaune">129 €</span><span class="text-papier/70">HT par mois</span></p>
+            <ul class="mt-7 grid sm:grid-cols-2 gap-x-8 border-t border-papier/20">
+              <li class="py-3 border-b border-papier/20">Tenue comptable mensuelle</li>
+              <li class="py-3 border-b border-papier/20">Bilan et déclaration 2031 ou 2035</li>
+              <li class="py-3 border-b border-papier/20">Déclarations de TVA</li>
+              <li class="py-3 border-b border-papier/20">Point trimestriel de 30 minutes</li>
+            </ul>
+          </div>
+          <div id="p-soc" role="tabpanel" aria-labelledby="t-soc" class="panneau pt-8" tabindex="0" hidden>
+            <p class="flex items-baseline gap-3"><span class="text-6xl md:text-8xl font-extrabold tracking-tight text-jaune">219 €</span><span class="text-papier/70">HT par mois</span></p>
+            <ul class="mt-7 grid sm:grid-cols-2 gap-x-8 border-t border-papier/20">
+              <li class="py-3 border-b border-papier/20">Tenue et révision comptable</li>
+              <li class="py-3 border-b border-papier/20">Comptes annuels, liasse et approbation</li>
+              <li class="py-3 border-b border-papier/20">TVA, CFE et acomptes d'IS</li>
+              <li class="py-3 border-b border-papier/20">Rémunération du dirigeant optimisée</li>
+            </ul>
+          </div>
+          <p class="mt-6 text-[15px] text-papier/60">Paie : 29 € HT par bulletin. Premier mois offert si vous changez de cabinet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Calendrier fiscal : carrousel sur mobile ===== -->
+    <section id="calendrier" class="bg-calque py-14 md:py-24 overflow-x-clip">
+      <div class="mx-auto max-w-[1200px] px-5 md:px-10 md:grid md:grid-cols-6">
+        <div class="md:col-span-4 md:px-3">
+          <h2 class="text-[2rem] md:text-5xl font-extrabold tracking-[-0.03em] leading-[1.02]">Les échéances que nous surveillons pour vous</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-gris max-w-xl">Pour une société qui clôture au 31&nbsp;décembre. Vous recevez un rappel, nous déposons à votre place.</p>
+        </div>
+      </div>
+      <ol data-groupe class="mt-9 md:mt-12 mx-auto max-w-[1200px] px-5 md:px-10 flex lg:grid lg:grid-cols-5 gap-3 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-px-5 no-scrollbar">
+        <li class="echeance revele snap-start shrink-0 w-[62%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier border-t-4 border-encre p-5">
+          <p class="text-5xl font-extrabold tracking-tight">15</p>
+          <p class="font-bold">mars</p>
+          <p class="mt-5 text-encre-doux leading-snug">Premier acompte d'impôt sur les sociétés</p>
+        </li>
+        <li class="echeance revele snap-start shrink-0 w-[62%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier border-t-4 border-encre p-5">
+          <p class="text-5xl font-extrabold tracking-tight">Mi-mai</p>
+          <p class="font-bold">chaque année</p>
+          <p class="mt-5 text-encre-doux leading-snug">Liasse fiscale et déclaration de résultat</p>
+        </li>
+        <li class="echeance revele snap-start shrink-0 w-[62%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier border-t-4 border-jaune p-5">
+          <p class="text-5xl font-extrabold tracking-tight">30</p>
+          <p class="font-bold">juin</p>
+          <p class="mt-5 text-encre-doux leading-snug">Approbation des comptes par les associés</p>
+        </li>
+        <li class="echeance revele snap-start shrink-0 w-[62%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier border-t-4 border-encre p-5">
+          <p class="text-5xl font-extrabold tracking-tight">31</p>
+          <p class="font-bold">juillet</p>
+          <p class="mt-5 text-encre-doux leading-snug">Dépôt des comptes annuels au greffe</p>
+        </li>
+        <li class="echeance revele snap-start shrink-0 w-[62%] min-w-[220px] lg:w-auto lg:min-w-0 bg-papier border-t-4 border-encre p-5">
+          <p class="text-5xl font-extrabold tracking-tight">15</p>
+          <p class="font-bold">décembre</p>
+          <p class="mt-5 text-encre-doux leading-snug">Cotisation foncière des entreprises (CFE)</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== Changer de cabinet : quatre étapes ===== -->
+    <section id="changer" class="mx-auto max-w-[1200px] px-5 md:px-10">
+      <div class="grille py-14 md:py-24">
+        <h2 class="md:px-3 max-w-3xl text-[2rem] md:text-5xl font-extrabold tracking-[-0.03em] leading-[1.02]">Changer d'expert-comptable, sans rien perdre en route</h2>
+        <ol class="mt-8 md:mt-14 grid md:grid-cols-4 border-t-2 border-encre">
+          <li class="revele grid grid-cols-[3.5rem_1fr] md:block gap-3 py-5 md:py-0 md:pt-6 md:px-3 border-b md:border-b-0 border-filet">
+            <p class="text-5xl md:text-8xl font-extrabold leading-none tracking-tight" aria-hidden="true">1</p>
+            <div class="md:mt-8"><h3 class="text-lg md:text-xl font-bold">Un rendez-vous de 30 minutes</h3><p class="mt-1 md:mt-2 text-encre-doux leading-relaxed">Au cabinet ou en visio, offert. On regarde votre dernier bilan ensemble.</p></div>
+          </li>
+          <li class="revele grid grid-cols-[3.5rem_1fr] md:block gap-3 py-5 md:py-0 md:pt-6 md:px-3 border-b md:border-b-0 border-filet">
+            <p class="text-5xl md:text-8xl font-extrabold leading-none tracking-tight" aria-hidden="true">2</p>
+            <div class="md:mt-8"><h3 class="text-lg md:text-xl font-bold">Une lettre de mission ferme</h3><p class="mt-1 md:mt-2 text-encre-doux leading-relaxed">Les missions, le prix et le calendrier, écrits noir sur blanc sous 48 heures.</p></div>
+          </li>
+          <li class="revele grid grid-cols-[3.5rem_1fr] md:block gap-3 py-5 md:py-0 md:pt-6 md:px-3 border-b md:border-b-0 border-filet">
+            <p class="text-5xl md:text-8xl font-extrabold leading-none tracking-tight" aria-hidden="true">3</p>
+            <div class="md:mt-8"><h3 class="text-lg md:text-xl font-bold">Nous écrivons à l'ancien cabinet</h3><p class="mt-1 md:mt-2 text-encre-doux leading-relaxed">La reprise du dossier se fait entre confrères. Vous n'avez rien à demander.</p></div>
+          </li>
+          <li class="revele grid grid-cols-[3.5rem_1fr] md:block gap-3 py-5 md:py-0 md:pt-6 md:px-3">
+            <p class="text-5xl md:text-8xl font-extrabold leading-none tracking-tight text-jaune [-webkit-text-stroke:2px_rgb(var(--kv-encre))]" aria-hidden="true">4</p>
+            <div class="md:mt-8"><h3 class="text-lg md:text-xl font-bold">Votre espace ouvert, premier point</h3><p class="mt-1 md:mt-2 text-encre-doux leading-relaxed">Accès en ligne à vos pièces et à vos chiffres, et un premier point trimestriel.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Avis ===== -->
+    <section id="avis" class="border-t-2 border-encre py-14 md:py-20 overflow-x-clip">
+      <h2 class="mx-auto max-w-[1200px] px-5 md:px-10 text-[2rem] md:text-4xl font-extrabold tracking-[-0.03em]"><span class="md:px-3">Ils nous confient leurs comptes</span></h2>
+      <ul data-groupe class="mt-8 md:mt-12 mx-auto max-w-[1200px] px-5 md:px-10 flex md:grid md:grid-cols-3 gap-4 md:gap-0 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-px-5 no-scrollbar">
+        <li class="revele snap-start shrink-0 w-[82%] md:w-auto md:px-3 border-l-4 border-jaune pl-4">
+          <blockquote class="text-xl md:text-2xl font-medium leading-snug tracking-tight">« Je reçois un message dix jours avant chaque TVA. Je n'y pense plus du tout. »</blockquote>
+          <p class="mt-4 text-[15px] text-gris">Karim, plombier, SARL de 4 salariés</p>
+        </li>
+        <li class="revele snap-start shrink-0 w-[82%] md:w-auto md:px-3 border-l-4 border-jaune pl-4">
+          <blockquote class="text-xl md:text-2xl font-medium leading-snug tracking-tight">« Le prévisionnel a convaincu la banque du premier coup pour la reprise du restaurant. »</blockquote>
+          <p class="mt-4 text-[15px] text-gris">Sophie et Marc, restaurant, SAS</p>
+        </li>
+        <li class="revele snap-start shrink-0 w-[82%] md:w-auto md:px-3 border-l-4 border-jaune pl-4">
+          <blockquote class="text-xl md:text-2xl font-medium leading-snug tracking-tight">« Une vraie réponse le lendemain, même pour une question de micro-entrepreneuse. »</blockquote>
+          <p class="mt-4 text-[15px] text-gris">Léa, céramiste, micro-entreprise</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Contact et rendez-vous ===== -->
+    <section id="contact" class="bg-calque">
+      <div class="mx-auto max-w-[1200px] px-5 md:px-10 py-14 md:py-24 grid md:grid-cols-6 gap-10 md:gap-0">
+        <div class="md:col-span-2 md:px-3">
+          <h2 class="text-[2rem] md:text-5xl font-extrabold tracking-[-0.03em] leading-[1.02]">Prendre rendez-vous</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-gris">Le premier rendez-vous de 30 minutes est offert. Nous vous rappelons dans la journée pour fixer l'horaire.</p>
+          <dl class="mt-7 border-t-2 border-encre text-[16px]">
+            <div class="py-3 border-b border-filet"><dt class="text-[15px] text-gris">Adresse</dt><dd class="font-medium">8 rue Kervégan, 44000 Nantes</dd></div>
+            <div class="py-3 border-b border-filet"><dt class="text-[15px] text-gris">Horaires</dt><dd class="font-medium">Du lundi au vendredi, 8 h 30 – 18 h 30</dd></div>
+            <div class="py-2 border-b border-filet"><dt class="text-[15px] text-gris">Téléphone</dt><dd><a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-bold">06 00 00 00 00</a></dd></div>
+            <div class="py-2 border-b border-filet"><dt class="text-[15px] text-gris">E-mail</dt><dd><a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center font-bold">contact@exemple.fr</a></dd></div>
+          </dl>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="8 rue Kervégan, 44000 Nantes" class="mt-6 md:h-56 overflow-hidden bg-papier text-encre"></div>
+        </div>
+
+        <!--
+          Formulaire de rendez-vous : il n'envoie rien tant qu'il n'est pas relié à un service.
+          - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+          - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+          - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+        -->
+        <form class="md:col-span-4 md:ml-[calc(100%/4)] md:px-3 bg-papier p-5 sm:p-8 grid sm:grid-cols-2 gap-x-6 gap-y-6 border-t-4 border-encre" action="#" method="post">
+          <label class="block"><span class="font-bold">Votre nom</span>
+            <input type="text" name="nom" autocomplete="name" class="field mt-1" required>
+          </label>
+          <label class="block"><span class="font-bold">Téléphone</span>
+            <input type="tel" name="telephone" autocomplete="tel" class="field mt-1" required>
+          </label>
+          <label class="block sm:col-span-2"><span class="font-bold">E-mail</span>
+            <input type="email" name="email" autocomplete="email" class="field mt-1">
+          </label>
+          <label class="block sm:col-span-2"><span class="font-bold">Votre activité</span>
+            <select name="statut" class="field mt-1">
+              <option>Micro-entreprise</option><option>Entreprise individuelle</option><option selected>Société (SARL, SAS, EURL)</option><option>Projet de création</option><option>Association</option>
+            </select>
+          </label>
+          <fieldset class="sm:col-span-2">
+            <legend class="font-bold">Je préfère être rappelé</legend>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <label class="chip"><input type="radio" name="rappel" value="Le matin" class="sr-only" checked><span>Le matin</span></label>
+              <label class="chip"><input type="radio" name="rappel" value="L'après-midi" class="sr-only"><span>L'après-midi</span></label>
+              <label class="chip"><input type="radio" name="rappel" value="Après 18 h" class="sr-only"><span>Après 18 h</span></label>
+            </div>
+          </fieldset>
+          <label class="block sm:col-span-2"><span class="font-bold">Votre question</span>
+            <textarea name="message" rows="3" class="field mt-1" placeholder="Par exemple : je veux changer de cabinet avant mon prochain bilan"></textarea>
+          </label>
+          <button type="submit" class="btn sm:col-span-2 w-full min-h-12 bg-encre font-bold text-papier">Demander un rendez-vous</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lg:pl-60 bg-encre text-papier/65 text-[15px]">
+    <div class="mx-auto max-w-[1200px] px-5 md:px-10 py-8 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+      <p><span class="font-bold text-papier">Cabinet Lemarié</span> <span>Inscrit au tableau de l'Ordre des experts-comptables</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-papier border-t-2 border-encre px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-2 gap-3">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center border-2 border-encre font-bold">Appeler</a>
+    <a href="#contact" class="inline-flex min-h-12 items-center justify-center bg-encre font-bold text-papier">Rendez-vous</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Chiffres qui comptent (de 0 à la valeur écrite dans data-compte)
+    const fr = n => Math.round(n).toLocaleString('fr-FR');
+    const compte = (el, fin, duree, suffixe = '') => {
+      if (calme) return;
+      const t0 = performance.now();
+      const pas = t => { const p = Math.min(1, (t - t0) / duree); el.textContent = fr(fin * (1 - Math.pow(1 - p, 3))) + suffixe; if (p < 1) requestAnimationFrame(pas); };
+      requestAnimationFrame(pas);
+    };
+    // Totaux du bilan : comptent pendant que les barres poussent
+    setTimeout(() => ['totA', 'totP'].forEach(id => compte(document.getElementById(id), 184250, 900, ' €')), 500);
+
+    // Apparition au défilement
+    if ('IntersectionObserver' in window) {
+      document.querySelectorAll('.revele').forEach(el => { const i = [...el.parentElement.children].indexOf(el); el.style.transitionDelay = (i % 5) * 80 + 'ms'; });
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        (e.target.matches('[data-groupe]') ? e.target.querySelectorAll('.revele') : [e.target]).forEach(el => el.classList.add('vu'));
+        if (e.target.dataset.compte) compte(e.target, +e.target.dataset.compte, 800);
+        io.unobserve(e.target);
+      }), { rootMargin: '0px 0px -8% 0px' });
+      // Dans un carrousel, les cartes hors écran apparaissent avec la liste entière
+      document.querySelectorAll('.revele, [data-compte]').forEach(el => io.observe(el.closest('[data-groupe]') || el));
+
+      // Menu latéral : section en cours soulignée
+      const liens = document.querySelectorAll('[data-rail]');
+      const io2 = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) liens.forEach(a => a.setAttribute('aria-current', a.hash === '#' + e.target.id));
+      }), { rootMargin: '-45% 0px -50% 0px' });
+      liens.forEach(a => { const s = document.querySelector(a.hash); if (s) io2.observe(s); });
+    }
+
+    // Onglets des tarifs, avec repère jaune qui glisse
+    const onglets = [...document.querySelectorAll('[role="tab"]')], repere = document.querySelector('.repere');
+    const place = o => { repere.style.width = o.offsetWidth + 'px'; repere.style.transform = `translateX(${o.offsetLeft}px)`; };
+    const choisir = (o, focus) => {
+      onglets.forEach(x => {
+        const actif = x === o;
+        x.setAttribute('aria-selected', actif); x.tabIndex = actif ? 0 : -1;
+        x.classList.toggle('text-papier/55', !actif);
+        document.getElementById(x.getAttribute('aria-controls')).hidden = !actif;
+      });
+      place(o); if (focus) o.focus();
+    };
+    onglets.forEach((o, i) => {
+      o.addEventListener('click', () => choisir(o));
+      o.addEventListener('keydown', e => {
+        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (d) { e.preventDefault(); choisir(onglets[(i + d + onglets.length) % onglets.length], true); }
+      });
+    });
+    addEventListener('resize', () => place(onglets.find(o => o.getAttribute('aria-selected') === 'true')));
+    place(onglets[0]);
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>
