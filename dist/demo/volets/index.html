@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Clos des Hirondelles — Chambres d'hôtes dans le Perche</title>
+  <meta name="description" content="Trois chambres d'hôtes dans une ancienne grange du Perche, à dix minutes de Mortagne-au-Perche : petit-déjeuner fermier, table d'hôtes le soir sur réservation, vélos prêtés, forêt à 8 km.">
+  <meta name="theme-color" content="#E5E2D9">
+  <link rel="preload" href="assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <!-- Les animations ne masquent le contenu que si le navigateur sait le révéler -->
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-volet=Couleur principale (volets)|--kv-volet-fonce;--kv-mousse=Couleur d'accent;--kv-miel=Couleur lumière;--kv-lin=Fond du mur et des sections;--kv-craie=Fond de page;--kv-ardoise=Texte">
+</head>
+<body class="bg-craie text-ardoise font-sans antialiased pb-24 md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Volets</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/volets/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- ===== En-tête mobile et tablette (sur grand écran : panneau fixe à gauche) ===== -->
+  <header class="lg:hidden sticky top-0 z-30 bg-lin/95 backdrop-blur border-b border-ardoise/10">
+    <div class="px-5 md:px-10 h-16 flex items-center justify-between gap-4">
+      <a href="#" class="inline-flex min-h-11 items-center gap-2.5 font-serif text-[1.45rem] leading-none">
+        <svg data-kv-logo="Logo" class="w-9 h-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" class="fill-volet"/><path d="M7 17c5 1 9 3 13 7 4-4 8-6 13-7-4 3-7 5-9 9l-4 6-4-6c-2-4-5-6-9-9Z" class="fill-craie"/><path d="M20 24l-2.4 4.2L20 32l2.4-3.8Z" class="fill-miel"/></svg>
+        <span>Le Clos des Hirondelles</span>
+      </a>
+      <button id="menuBtn" class="inline-flex min-h-11 items-center gap-2 -mr-2 px-2 font-medium" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span>Menu</span>
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h11"/></svg>
+      </button>
+    </div>
+    <!-- Menu mobile : panneau plein écran -->
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 bottom-0 bg-lin px-5 md:px-10 pt-4 pb-10 flex-col overflow-y-auto" aria-label="Navigation mobile">
+      <a href="#chambres" class="flex items-center min-h-14 border-b border-ardoise/10 font-serif text-3xl">Les chambres</a>
+      <a href="#matin" class="flex items-center min-h-14 border-b border-ardoise/10 font-serif text-3xl">Le petit-déjeuner</a>
+      <a href="#alentours" class="flex items-center min-h-14 border-b border-ardoise/10 font-serif text-3xl">Autour du Clos</a>
+      <a href="#tarifs" class="flex items-center min-h-14 border-b border-ardoise/10 font-serif text-3xl">Tarifs et arrivée</a>
+      <a href="#table" class="flex items-center min-h-14 border-b border-ardoise/10 font-serif text-3xl">La table d'hôtes</a>
+      <a href="#reserver" class="flex items-center min-h-14 font-serif text-3xl">Réserver</a>
+      <p class="mt-auto pt-8 text-ardoise/70">La Vallée, 61400 Saint-Langis-lès-Mortagne<br>Arrivées de 17 h à 20 h</p>
+    </nav>
+  </header>
+
+  <div class="lg:grid lg:grid-cols-2 lg:bg-[linear-gradient(to_right,rgb(var(--kv-lin))_50%,transparent_50%)]">
+
+    <!-- ===== Moitié fixe : la fenêtre du Clos, le nom et la promesse ===== -->
+    <aside class="mur relative lg:sticky lg:top-0 lg:h-screen flex flex-col px-5 md:px-10 lg:px-12 pt-8 pb-6 lg:py-8 lg:border-r lg:border-ardoise/10" aria-label="Accueil">
+      <a href="#" class="hidden lg:inline-flex min-h-11 items-center gap-3 self-start font-serif text-[1.6rem] leading-none">
+        <svg data-kv-logo="Logo" class="w-10 h-10 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" class="fill-volet"/><path d="M7 17c5 1 9 3 13 7 4-4 8-6 13-7-4 3-7 5-9 9l-4 6-4-6c-2-4-5-6-9-9Z" class="fill-craie"/><path d="M20 24l-2.4 4.2L20 32l2.4-3.8Z" class="fill-miel"/></svg>
+        <span>Le Clos des Hirondelles</span>
+      </a>
+
+      <!-- Illustration : la fenêtre aux volets bleus, le bocage du Perche dont le ciel suit l'heure -->
+      <div data-kv-image="Photo de la maison, de la façade ou d'une chambre" class="order-2 lg:order-none mt-8 lg:mt-4 lg:flex-1 lg:min-h-0 h-[34vh] min-h-[210px] max-h-[300px] lg:h-auto lg:max-h-none flex items-end justify-center">
+        <svg id="fenetre" class="fenetre h-full w-auto max-w-full" data-heure="aube" viewBox="0 0 520 420" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Une fenêtre aux volets bleus ouverte sur le bocage du Perche">
+          <defs>
+            <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="ciel-1"/><stop offset="1" class="ciel-2"/></linearGradient>
+            <clipPath id="baie"><path d="M130 400V150a130 130 0 0 1 260 0v250Z"/></clipPath>
+          </defs>
+          <g clip-path="url(#baie)">
+            <rect x="130" y="20" width="260" height="380" fill="url(#ciel)"/>
+            <g class="etoiles" fill="#FFF7E0">
+              <circle cx="168" cy="96" r="1.6"/><circle cx="202" cy="62" r="1.2"/><circle cx="246" cy="44" r="1.8"/><circle cx="288" cy="78" r="1.3"/><circle cx="330" cy="58" r="1.7"/><circle cx="356" cy="112" r="1.2"/><circle cx="182" cy="150" r="1.1"/><circle cx="318" cy="140" r="1.4"/><circle cx="262" cy="118" r="1"/><circle cx="374" cy="176" r="1.2"/>
+            </g>
+            <circle class="soleil" r="21" cx="0" cy="0"/>
+            <g class="lune"><path d="M8-14a15 15 0 1 0 6 26A12 12 0 0 1 8-14Z" fill="#F4EBD0"/></g>
+            <!-- Collines lointaines et haies du bocage -->
+            <path d="M130 268c34-16 70-22 110-14s76 4 108-8c18-6 32-6 42-4v158H130Z" fill="#93A98F"/>
+            <g fill="#61785A"><circle cx="150" cy="262" r="9"/><circle cx="164" cy="258" r="11"/><circle cx="182" cy="256" r="8"/><circle cx="228" cy="252" r="10"/><circle cx="244" cy="255" r="8"/><circle cx="352" cy="244" r="9"/><circle cx="368" cy="241" r="11"/><circle cx="384" cy="243" r="8"/></g>
+            <!-- Manoir percheron au loin -->
+            <g transform="translate(278 222)"><path d="M0 34V14L16 2l16 12v20Z" fill="#EDE4CF"/><path d="M-3 15 16 0l19 15h-5L16 4 2 15Z" fill="#6F5848"/><rect x="28" y="6" width="8" height="28" fill="#E3D8BF"/><path d="M26 7l6-9 6 9Z" fill="#6F5848"/><rect x="6" y="19" width="5" height="7" fill="#5E6C70"/><rect x="21" y="19" width="5" height="7" fill="#5E6C70"/></g>
+            <path d="M130 300c40-14 92-18 140-10s86 6 120-4v114H130Z" fill="#AABA82"/>
+            <!-- Haie au milieu des prés -->
+            <path d="M130 312c50-8 120-10 180-4" fill="none" stroke="#6E8452" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 11"/>
+            <!-- Percheron dans le pré -->
+            <g transform="translate(176 286) scale(.95)" fill="#3A3330">
+              <path d="M8 22c2-8 10-10 18-9h14c4-3 6-8 10-10l4-1 2 4-4 3c-1 4-3 8-5 10v15h-3l-1-12-7 1-1 11h-3l-1-11H20l-2 11h-3V24c-3 1-5 5-6 9H7c0-5 1-8 1-11Z"/>
+              <path d="M9 18c-4 2-6 7-5 12 2-3 4-6 6-8Z"/>
+            </g>
+            <path d="M130 340c60-12 150-14 260-6v66H130Z" fill="#7F9A5A"/>
+            <!-- Pommier au premier plan -->
+            <g transform="translate(330 250)">
+              <path d="M22 110V62c0-8-6-14-10-18m10 18c2-8 10-14 16-16" fill="none" stroke="#5B4636" stroke-width="7" stroke-linecap="round"/>
+              <circle cx="22" cy="34" r="34" fill="#5F7A45"/><circle cx="-4" cy="46" r="20" fill="#6B8750"/><circle cx="46" cy="44" r="22" fill="#56703F"/>
+              <g fill="#C7533F"><circle cx="8" cy="30" r="4"/><circle cx="34" cy="22" r="4"/><circle cx="44" cy="48" r="4"/><circle cx="-6" cy="50" r="3.5"/><circle cx="22" cy="54" r="4"/></g>
+            </g>
+            <rect class="voile" x="130" y="20" width="260" height="380" fill="#16223F"/>
+            <!-- Fenêtres du manoir allumées le soir -->
+            <g class="lampes" fill="#FFD27A"><rect x="284" y="241" width="5" height="7"/><rect x="299" y="241" width="5" height="7"/></g>
+            <!-- Hirondelles -->
+            <g fill="none" stroke="#1F2830" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path class="hirondelle" d="M214 128l9 5 9-5m-9 5 0 0"/>
+              <path class="hirondelle" d="M262 164l7 4 7-4"/>
+            </g>
+          </g>
+          <!-- Encadrement de pierre et appui -->
+          <path d="M130 400V150a130 130 0 0 1 260 0v250" fill="none" stroke="#F4F2EC" stroke-width="16"/>
+          <path d="M138 400V150a122 122 0 0 1 244 0v250" fill="none" stroke="#1F2830" stroke-opacity=".18" stroke-width="2"/>
+          <!-- Jardinière -->
+          <g><circle cx="176" cy="380" r="9" fill="#C7533F"/><circle cx="194" cy="374" r="8" fill="#D9A23F"/><circle cx="214" cy="381" r="9" fill="#C7533F"/><circle cx="306" cy="379" r="9" fill="#C7533F"/><circle cx="326" cy="373" r="8" fill="#D9A23F"/><circle cx="344" cy="381" r="9" fill="#C7533F"/><path d="M168 388c20-10 40-10 56 0m74 0c20-10 40-10 56 0" stroke="#5F7140" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+          <rect x="160" y="386" width="200" height="16" rx="3" fill="#8A6A52"/>
+          <rect x="112" y="400" width="296" height="16" rx="2" fill="#F4F2EC"/>
+          <rect x="112" y="414" width="296" height="4" fill="#1F2830" fill-opacity=".14"/>
+          <!-- Volets à barres et écharpe (dessinés ouverts, ils se referment puis s'ouvrent à l'arrivée) -->
+          <g class="volet-g">
+            <path d="M130 400V150A130 130 0 0 0 0 20v380Z" class="fill-volet"/>
+            <g stroke="#1F2830" stroke-opacity=".22" stroke-width="2"><path d="M33 42v358M65 74v326M98 102v298"/></g>
+            <g class="fill-volet-fonce"><rect x="6" y="176" width="118" height="16" rx="2"/><rect x="6" y="344" width="118" height="16" rx="2"/></g>
+            <path d="M116 344 16 192" class="stroke-volet-fonce" stroke-width="14" stroke-linecap="round"/>
+          </g>
+          <g class="volet-d">
+            <path d="M390 400V150A130 130 0 0 1 520 20v380Z" class="fill-volet"/>
+            <g stroke="#1F2830" stroke-opacity=".22" stroke-width="2"><path d="M487 42v358M455 74v326M422 102v298"/></g>
+            <g class="fill-volet-fonce"><rect x="396" y="176" width="118" height="16" rx="2"/><rect x="396" y="344" width="118" height="16" rx="2"/></g>
+            <path d="M404 344 504 192" class="stroke-volet-fonce" stroke-width="14" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="order-1 lg:order-none lg:mt-6">
+        <h1 class="font-serif text-[2.7rem] leading-[1.02] sm:text-6xl lg:text-[clamp(2.6rem,4.4vw,4.4rem)] tracking-[-0.01em] max-w-[14ch]">
+          <span class="mot">Trois</span> <span class="mot">chambres</span> <span class="mot">sous</span> <span class="mot">les</span> <span class="mot">pommiers</span> <span class="mot">du</span> <span class="mot">Perche</span>
+        </h1>
+        <p class="mt-4 text-[17px] leading-relaxed text-ardoise/80 max-w-[44ch]">Chambres d'hôtes dans une ancienne grange, à dix minutes de Mortagne-au-Perche. Petit-déjeuner fermier, table d'hôtes le soir et le silence du bocage.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#reserver" class="btn w-full sm:w-auto bg-volet text-craie hover:bg-volet-fonce">Réserver une nuit</a>
+          <a href="tel:+33600000000" class="btn w-full sm:w-auto border border-ardoise/25 hover:bg-craie">Appeler le 06 00 00 00 00</a>
+        </div>
+        <p class="hidden lg:block mt-6 text-[15px] text-ardoise/65" aria-hidden="true">Au Clos, il est <span id="horloge" class="horloge heure text-xl text-ardoise">6 h 50</span></p>
+      </div>
+    </aside>
+
+    <!-- ===== Moitié qui défile : une journée au Clos ===== -->
+    <div>
+      <!-- Navigation principale (grand écran) -->
+      <nav class="hidden lg:flex sticky top-0 z-20 h-16 items-center gap-7 px-12 bg-craie/95 backdrop-blur border-b border-ardoise/10 text-[15px] font-medium" aria-label="Navigation principale">
+        <a href="#chambres" class="lien inline-flex min-h-11 items-center" data-nav>Chambres</a>
+        <a href="#matin" class="lien inline-flex min-h-11 items-center" data-nav>Petit-déjeuner</a>
+        <a href="#alentours" class="lien inline-flex min-h-11 items-center" data-nav>Alentours</a>
+        <a href="#tarifs" class="lien inline-flex min-h-11 items-center" data-nav>Tarifs</a>
+        <a href="#table" class="lien inline-flex min-h-11 items-center" data-nav>Table d'hôtes</a>
+        <a href="#reserver" class="btn ml-auto min-h-11 px-5 bg-volet text-craie hover:bg-volet-fonce">Réserver</a>
+      </nav>
+
+      <main>
+        <!-- ===== 7 h 40 : les chambres ===== -->
+        <section id="chambres" data-heure="matin" data-horloge="7 h 40" class="px-5 md:px-10 lg:px-12 py-14 md:py-20 lg:grid lg:grid-cols-[5.5rem_1fr]">
+          <p class="heure text-2xl lg:text-3xl text-mousse lg:sticky lg:top-24 lg:self-start">7 h 40</p>
+          <div>
+            <h2 class="mt-1 lg:mt-0 font-serif text-4xl sm:text-5xl leading-[1.05]">Les chambres</h2>
+            <p class="mt-3 text-[17px] leading-relaxed text-ardoise/80 max-w-[52ch]">Trois chambres dans l'ancienne grange, chacune avec sa salle d'eau et sa porte sur le verger. Draps en lin, linge de toilette fourni.</p>
+            <ul class="mt-8 flex overflow-x-auto snap-x snap-mandatory scroll-px-5 gap-4 -mx-5 px-5 md:-mx-10 md:px-10 lg:mx-0 lg:px-0 lg:flex-col lg:overflow-visible no-scrollbar" data-groupe>
+              <li class="chambre revele shrink-0 w-[82%] sm:w-[60%] lg:w-auto snap-start rounded-2xl bg-lin p-6 lg:grid lg:grid-cols-[5rem_1fr_auto] lg:gap-6 lg:items-start">
+                <svg class="dessin w-16 h-12 text-volet" viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M6 44V20L32 6l26 14v24Z"/><path d="M24 44V31a8 8 0 0 1 16 0v13M2 44h60"/></svg>
+                <div class="mt-4 lg:mt-0">
+                  <h3 class="font-serif text-[1.9rem] leading-none">La Grange</h3>
+                  <p class="mt-2 text-[16px] leading-relaxed text-ardoise/80">Poutres apparentes, baignoire sur pieds et grande fenêtre sur les prés.</p>
+                  <ul class="mt-3 flex flex-wrap gap-2 text-[15px]"><li class="rounded-full bg-craie px-3 py-1">2 personnes</li><li class="rounded-full bg-craie px-3 py-1">Lit de 160</li><li class="rounded-full bg-craie px-3 py-1">32 m²</li></ul>
+                </div>
+                <p class="mt-4 lg:mt-0 lg:text-right"><span class="font-serif text-3xl">95 €</span><span class="block text-[15px] text-ardoise/65">la nuit pour deux</span></p>
+              </li>
+              <li class="chambre revele shrink-0 w-[82%] sm:w-[60%] lg:w-auto snap-start rounded-2xl bg-lin p-6 lg:grid lg:grid-cols-[5rem_1fr_auto] lg:gap-6 lg:items-start">
+                <svg class="dessin w-16 h-12 text-volet" viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M8 44V22l20-12 20 12v22Z"/><path d="M38 16V5h6v15M20 44v-8a8 8 0 0 1 16 0v8M2 44h60"/></svg>
+                <div class="mt-4 lg:mt-0">
+                  <h3 class="font-serif text-[1.9rem] leading-none">Le Fournil</h3>
+                  <p class="mt-2 text-[16px] leading-relaxed text-ardoise/80">L'ancien four à pain est resté dans le mur. Mezzanine pour les enfants.</p>
+                  <ul class="mt-3 flex flex-wrap gap-2 text-[15px]"><li class="rounded-full bg-craie px-3 py-1">2 à 4 personnes</li><li class="rounded-full bg-craie px-3 py-1">Lit de 160 et 2 lits de 90</li></ul>
+                </div>
+                <p class="mt-4 lg:mt-0 lg:text-right"><span class="font-serif text-3xl">120 €</span><span class="block text-[15px] text-ardoise/65">la nuit, jusqu'à quatre</span></p>
+              </li>
+              <li class="chambre revele shrink-0 w-[82%] sm:w-[60%] lg:w-auto snap-start rounded-2xl bg-lin p-6 lg:grid lg:grid-cols-[5rem_1fr_auto] lg:gap-6 lg:items-start">
+                <svg class="dessin w-16 h-12 text-volet" viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M20 44V18h24v26M15 18 32 4l17 14Z"/><circle cx="32" cy="27" r="2.5"/><path d="M28 44v-8h8v8M2 44h60"/></svg>
+                <div class="mt-4 lg:mt-0">
+                  <h3 class="font-serif text-[1.9rem] leading-none">Le Pigeonnier</h3>
+                  <p class="mt-2 text-[16px] leading-relaxed text-ardoise/80">Sous les toits, tout en haut d'un escalier en colimaçon. La plus calme.</p>
+                  <ul class="mt-3 flex flex-wrap gap-2 text-[15px]"><li class="rounded-full bg-craie px-3 py-1">2 personnes</li><li class="rounded-full bg-craie px-3 py-1">Lit de 140</li></ul>
+                </div>
+                <p class="mt-4 lg:mt-0 lg:text-right"><span class="font-serif text-3xl">85 €</span><span class="block text-[15px] text-ardoise/65">la nuit pour deux</span></p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== 8 h 30 : le petit-déjeuner ===== -->
+        <section id="matin" data-heure="matin" data-horloge="8 h 30" class="bg-lin px-5 md:px-10 lg:px-12 py-14 md:py-20 lg:grid lg:grid-cols-[5.5rem_1fr]">
+          <p class="heure text-2xl lg:text-3xl text-mousse lg:sticky lg:top-24 lg:self-start">8 h 30</p>
+          <div>
+            <h2 class="mt-1 lg:mt-0 font-serif text-4xl sm:text-5xl leading-[1.05]">Le petit-déjeuner</h2>
+            <p class="mt-3 text-[17px] leading-relaxed text-ardoise/80 max-w-[52ch]">Servi de 8 h à 10 h, dans la cuisine ou sous le tilleul quand il fait beau. Compris dans le prix de la nuit.</p>
+            <div class="revele mt-8 rounded-2xl bg-ardoise text-craie p-6 sm:p-8">
+              <ul class="space-y-3 text-[17px]">
+                <li class="flex items-baseline gap-3"><span>Pain au levain du fournil de Bellême</span></li>
+                <li class="flex items-baseline gap-3"><span>Beurre et yaourts de la ferme voisine</span></li>
+                <li class="flex items-baseline gap-3"><span>Confitures maison : rhubarbe, mirabelle, coing</span></li>
+                <li class="flex items-baseline gap-3"><span>Jus de pomme pressé à Mortagne</span></li>
+                <li class="flex items-baseline gap-3"><span>Œufs de nos poules, à la coque ou brouillés</span></li>
+              </ul>
+              <p class="mt-6 pt-5 border-t border-craie/15 font-serif italic text-xl text-miel">Sans gluten ou sans lactose : dites-le-nous la veille.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 14 h : autour du Clos ===== -->
+        <section id="alentours" data-heure="aprem" data-horloge="14 h 00" class="px-5 md:px-10 lg:px-12 py-14 md:py-20 lg:grid lg:grid-cols-[5.5rem_1fr]">
+          <p class="heure text-2xl lg:text-3xl text-mousse lg:sticky lg:top-24 lg:self-start">14 h 00</p>
+          <div>
+            <h2 class="mt-1 lg:mt-0 font-serif text-4xl sm:text-5xl leading-[1.05]">Autour du Clos</h2>
+            <p class="mt-3 text-[17px] leading-relaxed text-ardoise/80 max-w-[52ch]">Deux vélos sont prêtés, les cartes de randonnée attendent dans l'entrée.</p>
+            <ol class="mt-8 border-l-2 border-mousse/40 ml-1.5" data-groupe>
+              <li class="revele relative pl-6 pb-6 before:absolute before:-left-[7px] before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-mousse">
+                <p class="flex items-baseline gap-2 font-serif text-2xl"><span>Voie verte du Perche</span><span class="points" aria-hidden="true"></span><span class="font-sans text-[15px] font-semibold text-mousse whitespace-nowrap">3 km</span></p>
+                <p class="mt-1 text-[16px] text-ardoise/75">L'ancienne voie ferrée, plate et ombragée. Idéale à vélo.</p>
+              </li>
+              <li class="revele relative pl-6 pb-6 before:absolute before:-left-[7px] before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-mousse">
+                <p class="flex items-baseline gap-2 font-serif text-2xl"><span>Forêt de Réno-Valdieu</span><span class="points" aria-hidden="true"></span><span class="font-sans text-[15px] font-semibold text-mousse whitespace-nowrap">8 km</span></p>
+                <p class="mt-1 text-[16px] text-ardoise/75">Chênes et hêtres centenaires, sentiers balisés de 5 à 15 km.</p>
+              </li>
+              <li class="revele relative pl-6 pb-6 before:absolute before:-left-[7px] before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-mousse">
+                <p class="flex items-baseline gap-2 font-serif text-2xl"><span>Mortagne-au-Perche</span><span class="points" aria-hidden="true"></span><span class="font-sans text-[15px] font-semibold text-mousse whitespace-nowrap">10 min</span></p>
+                <p class="mt-1 text-[16px] text-ardoise/75">Marché le samedi matin, boudin noir et brocantes.</p>
+              </li>
+              <li class="revele relative pl-6 before:absolute before:-left-[7px] before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-mousse">
+                <p class="flex items-baseline gap-2 font-serif text-2xl"><span>Bellême</span><span class="points" aria-hidden="true"></span><span class="font-sans text-[15px] font-semibold text-mousse whitespace-nowrap">20 min</span></p>
+                <p class="mt-1 text-[16px] text-ardoise/75">Petite cité de caractère, forêt domaniale et golf.</p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- ===== 17 h : tarifs et arrivée ===== -->
+        <section id="tarifs" data-heure="arrivee" data-horloge="17 h 00" class="bg-lin px-5 md:px-10 lg:px-12 py-14 md:py-20 lg:grid lg:grid-cols-[5.5rem_1fr]">
+          <p class="heure text-2xl lg:text-3xl text-mousse lg:sticky lg:top-24 lg:self-start">17 h 00</p>
+          <div>
+            <h2 class="mt-1 lg:mt-0 font-serif text-4xl sm:text-5xl leading-[1.05]">Tarifs et arrivée</h2>
+            <p class="mt-3 text-[17px] leading-relaxed text-ardoise/80 max-w-[52ch]">On vous accueille de 17 h à 20 h. Départ avant 11 h, petit-déjeuner compris.</p>
+            <table class="revele tnum mt-7 w-full text-left text-[16px]">
+              <caption class="sr-only">Prix de la nuit selon la saison</caption>
+              <thead><tr class="border-b-2 border-ardoise/80 text-[15px]"><th scope="col" class="py-2 font-semibold">Chambre</th><th scope="col" class="py-2 font-semibold text-right">Nov. à mars</th><th scope="col" class="py-2 font-semibold text-right">Avr. à oct.</th></tr></thead>
+              <tbody>
+                <tr class="border-b border-ardoise/15"><th scope="row" class="py-3 font-serif text-xl font-normal">La Grange</th><td class="py-3 text-right">85 €</td><td class="py-3 text-right">95 €</td></tr>
+                <tr class="border-b border-ardoise/15"><th scope="row" class="py-3 font-serif text-xl font-normal">Le Fournil</th><td class="py-3 text-right">105 €</td><td class="py-3 text-right">120 €</td></tr>
+                <tr class="border-b border-ardoise/15"><th scope="row" class="py-3 font-serif text-xl font-normal">Le Pigeonnier</th><td class="py-3 text-right">75 €</td><td class="py-3 text-right">85 €</td></tr>
+              </tbody>
+            </table>
+            <p class="mt-3 text-[15px] text-ardoise/65">Taxe de séjour : 0,80 € par adulte et par nuit. Deux nuits minimum en juillet et août.</p>
+
+            <div class="mt-8 border-t border-ardoise/15">
+              <details class="border-b border-ardoise/15">
+                <summary class="flex items-center justify-between gap-4 py-4 min-h-11 cursor-pointer text-[17px] font-semibold">Les chiens sont-ils acceptés ?<span class="plus text-2xl font-normal text-volet" aria-hidden="true">+</span></summary>
+                <div class="pb-4 text-[16px] leading-relaxed text-ardoise/80"><p>Oui, les chiens calmes sont les bienvenus dans La Grange et Le Fournil (8 € par nuit). Les chats de la maison vous remercient de les tenir en laisse.</p></div>
+              </details>
+              <details class="border-b border-ardoise/15">
+                <summary class="flex items-center justify-between gap-4 py-4 min-h-11 cursor-pointer text-[17px] font-semibold">Peut-on venir sans voiture ?<span class="plus text-2xl font-normal text-volet" aria-hidden="true">+</span></summary>
+                <div class="pb-4 text-[16px] leading-relaxed text-ardoise/80"><p>Oui : nous venons vous chercher à la gare de Nogent-le-Rotrou, à 1 h 30 de Paris-Montparnasse (15 € l'aller-retour).</p></div>
+              </details>
+              <details class="border-b border-ardoise/15">
+                <summary class="flex items-center justify-between gap-4 py-4 min-h-11 cursor-pointer text-[17px] font-semibold">Comment payer et annuler ?<span class="plus text-2xl font-normal text-volet" aria-hidden="true">+</span></summary>
+                <div class="pb-4 text-[16px] leading-relaxed text-ardoise/80"><p>Acompte de 30 % par virement à la réservation, solde sur place (espèces, chèque, chèques-vacances). Annulation sans frais jusqu'à 7 jours avant l'arrivée.</p></div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 19 h 30 : la table d'hôtes ===== -->
+        <section id="table" data-heure="soir" data-horloge="19 h 30" class="bg-volet-fonce text-craie px-5 md:px-10 lg:px-12 py-14 md:py-20 lg:grid lg:grid-cols-[5.5rem_1fr]">
+          <p class="heure text-2xl lg:text-3xl text-miel lg:sticky lg:top-24 lg:self-start">19 h 30</p>
+          <div>
+            <h2 class="mt-1 lg:mt-0 font-serif text-4xl sm:text-5xl leading-[1.05]">La table d'hôtes</h2>
+            <p class="mt-3 text-[17px] leading-relaxed text-craie/80 max-w-[52ch]">Le mardi, le vendredi et le samedi, sur réservation la veille. Tout le monde à la même table, dans la cuisine ou dans le verger.</p>
+            <div class="revele mt-8 rounded-2xl border border-craie/20 p-6 sm:p-8 text-center">
+              <p class="font-serif italic text-xl text-miel">Un soir de septembre</p>
+              <ul class="mt-4 space-y-2 font-serif text-[1.55rem] leading-snug">
+                <li>Rillettes de la ferme et pain grillé</li>
+                <li>Poulet fermier au cidre, pommes du verger</li>
+                <li>Camembert et livarot</li>
+                <li>Tarte fine aux pommes du Clos</li>
+              </ul>
+              <p class="mt-6 pt-5 border-t border-craie/15 text-[16px] text-craie/75"><span class="font-semibold text-craie">32 € par personne</span>, apéritif, cidre et poiré compris. 15 € pour les moins de 12 ans.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 21 h : le livre d'or ===== -->
+        <section id="avis" data-heure="nuit" data-horloge="21 h 00" class="px-5 md:px-10 lg:px-12 py-14 md:py-20 lg:grid lg:grid-cols-[5.5rem_1fr] overflow-x-clip">
+          <p class="heure text-2xl lg:text-3xl text-mousse lg:sticky lg:top-24 lg:self-start">21 h 00</p>
+          <div class="min-w-0">
+            <h2 class="mt-1 lg:mt-0 font-serif text-4xl sm:text-5xl leading-[1.05]">Le livre d'or</h2>
+            <div class="mt-7 flex overflow-x-auto snap-x snap-mandatory scroll-px-5 gap-4 -mx-5 px-5 md:-mx-10 md:px-10 lg:mx-0 lg:px-0 no-scrollbar" data-groupe>
+              <figure class="revele shrink-0 w-[82%] sm:w-[60%] lg:w-[78%] snap-start rounded-2xl bg-lin p-6">
+                <blockquote class="font-serif text-[1.45rem] leading-snug">« Réveillés par les hirondelles, la confiture de rhubarbe encore tiède. On est repartis avec un pot et l'envie de revenir. »</blockquote>
+                <figcaption class="mt-4 text-[15px] text-ardoise/70">Hélène, deux nuits dans La Grange</figcaption>
+              </figure>
+              <figure class="revele shrink-0 w-[82%] sm:w-[60%] lg:w-[78%] snap-start rounded-2xl bg-lin p-6">
+                <blockquote class="font-serif text-[1.45rem] leading-snug">« Les enfants ont adoré la mezzanine et les poules. Le dîner du vendredi valait à lui seul le voyage. »</blockquote>
+                <figcaption class="mt-4 text-[15px] text-ardoise/70">Marc, en famille dans Le Fournil</figcaption>
+              </figure>
+              <figure class="revele shrink-0 w-[82%] sm:w-[60%] lg:w-[78%] snap-start rounded-2xl bg-lin p-6">
+                <blockquote class="font-serif text-[1.45rem] leading-snug">« Venus en train, accueillis à la gare. Trois jours sans voiture, à vélo sur la voie verte. Parfait. »</blockquote>
+                <figcaption class="mt-4 text-[15px] text-ardoise/70">Sophie et Julien, Le Pigeonnier</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 22 h 15 : réserver ===== -->
+        <section id="reserver" data-heure="nuit" data-horloge="22 h 15" class="bg-lin px-5 md:px-10 lg:px-12 py-14 md:py-20 lg:grid lg:grid-cols-[5.5rem_1fr]">
+          <p class="heure text-2xl lg:text-3xl text-mousse lg:sticky lg:top-24 lg:self-start">22 h 15</p>
+          <div>
+            <h2 class="mt-1 lg:mt-0 font-serif text-4xl sm:text-5xl leading-[1.05]">Réserver votre nuit</h2>
+            <p class="mt-3 text-[17px] leading-relaxed text-ardoise/80 max-w-[52ch]">Dites-nous vos dates : nous confirmons la disponibilité par téléphone ou par e-mail sous 24 heures.</p>
+
+            <!--
+              Formulaire de réservation : il n'envoie rien tant qu'il n'est pas relié à un service.
+              - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+              - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+              - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+            -->
+            <form class="mt-8 grid grid-cols-2 gap-x-3 sm:gap-x-5 gap-y-5" action="#" method="post">
+              <label class="block"><span class="font-semibold">Arrivée le</span>
+                <input type="date" name="arrivee" class="field mt-1.5" required>
+              </label>
+              <label class="block"><span class="font-semibold">Départ le</span>
+                <input type="date" name="depart" class="field mt-1.5" required>
+              </label>
+              <label class="block"><span class="font-semibold">Chambre</span>
+                <select name="chambre" class="field mt-1.5">
+                  <option>Peu importe</option><option>La Grange</option><option>Le Fournil</option><option>Le Pigeonnier</option>
+                </select>
+              </label>
+              <label class="block"><span class="font-semibold">Voyageurs</span>
+                <select name="voyageurs" class="field mt-1.5">
+                  <option>1 personne</option><option selected>2 personnes</option><option>3 personnes</option><option>4 personnes</option>
+                </select>
+              </label>
+              <label class="block col-span-2 sm:col-span-1"><span class="font-semibold">Votre nom</span>
+                <input type="text" name="nom" autocomplete="name" class="field mt-1.5" required>
+              </label>
+              <label class="block col-span-2 sm:col-span-1"><span class="font-semibold">Téléphone</span>
+                <input type="tel" name="telephone" autocomplete="tel" class="field mt-1.5" required>
+              </label>
+              <label class="block col-span-2"><span class="font-semibold">E-mail</span>
+                <input type="email" name="email" autocomplete="email" class="field mt-1.5">
+              </label>
+              <label class="block col-span-2"><span class="font-semibold">Un mot pour nous</span>
+                <textarea name="message" rows="3" class="field mt-1.5" placeholder="Par exemple : table d'hôtes le vendredi, arrivée vers 19 h"></textarea>
+              </label>
+              <button type="submit" class="btn col-span-2 w-full bg-volet text-craie hover:bg-volet-fonce">Envoyer ma demande</button>
+            </form>
+
+            <dl class="mt-10 grid gap-4 sm:grid-cols-2 text-[16px]">
+              <div><dt class="text-[15px] text-ardoise/65">Adresse</dt><dd class="font-medium">La Vallée, 61400 Saint-Langis-lès-Mortagne</dd></div>
+              <div><dt class="text-[15px] text-ardoise/65">Arrivée</dt><dd class="font-medium">De 17 h à 20 h, ou plus tard en prévenant</dd></div>
+              <div><dt class="text-[15px] text-ardoise/65">Téléphone</dt><dd><a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-semibold text-volet">06 00 00 00 00</a></dd></div>
+              <div><dt class="text-[15px] text-ardoise/65">E-mail</dt><dd><a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center font-semibold text-volet">contact@exemple.fr</a></dd></div>
+            </dl>
+            <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+            <div data-kv-map="Saint-Langis-lès-Mortagne, 61400" class="mt-6 md:h-56 rounded-2xl overflow-hidden bg-craie text-ardoise"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-ardoise text-craie/70 text-[15px]">
+        <div class="px-5 md:px-10 lg:px-12 py-8 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <p><span class="font-serif text-xl text-craie">Le Clos des Hirondelles</span> <span class="block sm:inline">Chambres d'hôtes dans le Perche</span></p>
+          <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Barre d'action mobile -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-craie/95 backdrop-blur border-t border-ardoise/10 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-2 gap-3">
+    <a href="tel:+33600000000" class="btn px-4 border border-ardoise/25">Appeler</a>
+    <a href="#reserver" class="btn px-4 bg-volet text-craie">Réserver</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Titre : les mots se posent l'un après l'autre
+    document.querySelectorAll('.mot').forEach((w, i) => { w.style.animationDelay = 150 + i * 80 + 'ms'; });
+
+    // Apparition au défilement
+    if ('IntersectionObserver' in window) {
+      document.querySelectorAll('[data-groupe] .revele').forEach(el => { el.style.transitionDelay = [...el.parentElement.children].indexOf(el) * 90 + 'ms'; });
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        (e.target.matches('[data-groupe]') ? e.target.querySelectorAll('.revele') : [e.target]).forEach(el => el.classList.add('vu'));
+        io.unobserve(e.target);
+      }), { rootMargin: '0px 0px -8% 0px' });
+      // Dans un carrousel, les cartes hors écran apparaissent avec la liste entière
+      document.querySelectorAll('.revele').forEach(el => io.observe(el.closest('[data-groupe]') || el));
+    }
+
+    // Signature : le ciel de la fenêtre suit l'heure de la section lue (aube, matin, après-midi, soir, nuit)
+    const fenetre = document.getElementById('fenetre'), horloge = document.getElementById('horloge');
+    const sections = [...document.querySelectorAll('main section[data-heure]')];
+    const liens = [...document.querySelectorAll('[data-nav]')];
+    let courante = null, attente = false;
+    const majHeure = () => {
+      attente = false;
+      let s = null;
+      if (scrollY > 60) for (const x of sections) if (x.getBoundingClientRect().top < innerHeight * 0.45) s = x;
+      if (s === courante) return;
+      courante = s;
+      fenetre.dataset.heure = s ? s.dataset.heure : 'aube';
+      const h = s ? s.dataset.horloge : '6 h 50';
+      if (calme) horloge.textContent = h;
+      else { horloge.classList.add('change'); setTimeout(() => { horloge.textContent = h; horloge.classList.remove('change'); }, 300); }
+      liens.forEach(a => a.setAttribute('aria-current', !!s && a.hash === '#' + s.id));
+    };
+    addEventListener('scroll', () => { if (!attente) { attente = true; requestAnimationFrame(majHeure); } }, { passive: true });
+    majHeure();
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>

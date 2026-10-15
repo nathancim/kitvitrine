@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Instrument Serif'; src: url('fonts/instrument-serif-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Instrument Serif'; src: url('fonts/instrument-serif-latin-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Albert Sans'; src: url('fonts/albert-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Albert Sans'; src: url('fonts/albert-sans-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Albert Sans'; src: url('fonts/albert-sans-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+  :focus-visible { outline: 3px solid #D9A23F; outline-offset: 3px; }
+  .tnum { font-variant-numeric: tabular-nums; }
+}
+
+@layer components {
+  /* Mur de pierres chaulées derrière la fenêtre */
+  .mur {
+    background-color: rgb(var(--kv-lin));
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140' viewBox='0 0 220 140'%3E%3Cg fill='none' stroke='%231F2830' stroke-opacity='.07' stroke-width='1.4'%3E%3Cpath d='M4 6h62c4 0 6 3 6 7v18c0 4-3 6-6 6H8c-4 0-6-3-6-7V12c0-3 1-6 2-6z'/%3E%3Cpath d='M82 4h70c4 0 7 2 7 6v16c0 5-3 8-7 8H84c-4 0-6-3-6-7V9c0-3 2-5 4-5z'/%3E%3Cpath d='M168 7h44c3 0 5 3 5 6v17c0 4-2 6-5 6h-42c-4 0-6-2-6-6V12c0-3 1-5 4-5z'/%3E%3Cpath d='M30 46h48c4 0 6 2 6 6v20c0 4-2 6-6 6H32c-4 0-7-2-7-6V52c0-4 2-6 5-6z'/%3E%3Cpath d='M96 44h76c3 0 6 3 6 7v19c0 4-3 7-6 7H98c-4 0-7-3-7-7V50c0-4 2-6 5-6z'/%3E%3Cpath d='M186 48h30M4 50h12c3 0 4 3 4 6v14c0 4-2 6-5 6H4'/%3E%3Cpath d='M8 90h58c4 0 7 2 7 6v17c0 4-3 7-7 7H10c-4 0-6-3-6-7V95c0-3 2-5 4-5z'/%3E%3Cpath d='M86 88h44c4 0 6 3 6 7v20c0 3-2 5-6 5H88c-4 0-6-2-6-6V94c0-4 1-6 4-6z'/%3E%3Cpath d='M148 90h62c4 0 6 2 6 6v16c0 4-2 7-6 7h-60c-4 0-7-3-7-7V96c0-4 2-6 5-6z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  /* Fil de la journée : heure dans la marge (ordinateur) */
+  .heure { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; }
+  .field { @apply block w-full text-base bg-craie border border-ardoise/20 rounded-md px-4 py-3 text-ardoise placeholder-ardoise/45 focus:outline-none focus:border-volet focus:ring-2 focus:ring-volet/25; }
+  .btn { @apply inline-flex min-h-12 items-center justify-center rounded-full px-7 font-semibold; }
+  .points { flex: 1; border-bottom: 2px dotted rgb(var(--kv-ardoise) / .25); transform: translateY(-.35em); min-width: 1.5rem; }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+/* ===== La fenêtre : ciel qui suit l'heure de la section en cours ===== */
+.fenetre { --c1: #93A9C9; --c2: #F1C9A5; --soleil: #F6B66A; --voile: .18; --etoiles: .25; --lune: 0; --lampes: .6; --sx: 180px; --sy: 300px; --lx: 214px; --ly: 330px; }
+.fenetre[data-heure="matin"]  { --c1: #7DAED8; --c2: #DCEAF1; --soleil: #FBE2A0; --voile: 0;   --etoiles: 0;   --lune: 0; --lampes: 0;  --sx: 196px; --sy: 178px; }
+.fenetre[data-heure="aprem"]  { --c1: #5C99CF; --c2: #CDE2EE; --soleil: #FFF1C2; --voile: 0;   --etoiles: 0;   --lune: 0; --lampes: 0;  --sx: 300px; --sy: 96px; }
+.fenetre[data-heure="arrivee"]{ --c1: #7DA1C7; --c2: #F2D7A2; --soleil: #FAD27F; --voile: .05; --etoiles: 0;   --lune: 0; --lampes: 0;  --sx: 336px; --sy: 176px; }
+.fenetre[data-heure="soir"]   { --c1: #4A5C8E; --c2: #EF9F71; --soleil: #F08A4B; --voile: .3;  --etoiles: .3;  --lune: 0; --lampes: .85; --sx: 352px; --sy: 268px; }
+.fenetre[data-heure="nuit"]   { --c1: #0F1A33; --c2: #2C3B60; --soleil: #F08A4B; --voile: .55; --etoiles: 1;   --lune: 1; --lampes: 1;  --sx: 360px; --sy: 380px; --ly: 104px; }
+.fenetre .ciel-1 { stop-color: var(--c1); }
+.fenetre .ciel-2 { stop-color: var(--c2); }
+.fenetre .soleil { fill: var(--soleil); transform: translate(var(--sx), var(--sy)); }
+.fenetre .lune { opacity: var(--lune); transform: translate(var(--lx), var(--ly)); }
+.fenetre .etoiles { opacity: var(--etoiles); }
+.fenetre .voile { opacity: var(--voile); }
+.fenetre .lampes { opacity: var(--lampes); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .fenetre .ciel-1, .fenetre .ciel-2 { transition: stop-color .8s ease; }
+  .fenetre .soleil { transition: transform .8s cubic-bezier(.3,.7,.3,1), fill .8s ease; }
+  .fenetre .lune, .fenetre .etoiles, .fenetre .voile, .fenetre .lampes { transition: opacity .8s ease, transform .8s cubic-bezier(.3,.7,.3,1); }
+
+  /* Volets qui s'ouvrent à l'arrivée (signature) */
+  .js .volet-g, .js .volet-d { transform-box: view-box; animation: ouvre .8s cubic-bezier(.5,0,.25,1) .35s both; }
+  .js .volet-g { transform-origin: 130px 0; }
+  .js .volet-d { transform-origin: 390px 0; animation-delay: .5s; }
+  @keyframes ouvre { from { transform: scaleX(-1); } to { transform: none; } }
+
+  /* Hirondelles qui passent doucement */
+  .hirondelle { animation: vole 9s ease-in-out infinite alternate; }
+  .hirondelle:nth-of-type(2) { animation-duration: 11s; animation-delay: -4s; }
+  @keyframes vole { from { transform: translate(0, 0); } to { transform: translate(34px, -12px); } }
+
+  /* Titre qui apparaît mot par mot */
+  .js .mot { display: inline-block; opacity: 0; transform: translateY(.4em); animation: pose .6s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes pose { to { opacity: 1; transform: none; } }
+
+  /* Apparition au défilement */
+  .js .revele { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+  .js .revele.vu { opacity: 1; transform: none; }
+
+  /* Heure de la journée qui change dans le panneau */
+  .horloge { transition: opacity .3s ease; }
+  .horloge.change { opacity: 0; }
+
+  /* Chambres qui se soulèvent, boutons et liens */
+  .chambre { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+  .chambre:hover { transform: translateY(-6px); box-shadow: 0 18px 30px -18px rgb(var(--kv-volet-fonce) / .45); }
+  .chambre:hover .dessin { transform: rotate(-3deg); }
+  .dessin { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .btn { transition: transform .2s ease, background-color .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: scale(.97); }
+  .lien { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .35s ease; }
+  .lien:hover, .lien[aria-current="true"] { background-size: 100% 1px; }
+  details > div { animation: deplie .35s ease-out; }
+  @keyframes deplie { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  details[open] summary .plus { transform: rotate(45deg); }
+  summary .plus { transition: transform .3s ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lien[aria-current="true"] { text-decoration: underline; text-underline-offset: 4px; }
+  details[open] summary .plus { transform: rotate(45deg); }
+}
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }

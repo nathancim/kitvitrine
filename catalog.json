@@ -348,6 +348,61 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "d46300cf2d040105af4e9d67695037f0"
+    },
+    {
+      "slug": "volets",
+      "title": "Volets",
+      "tagline": "Site vitrine pour chambres d'hôtes",
+      "description": "Une page en écran partagé pour des chambres d'hôtes à la campagne : à gauche, fixe, une fenêtre aux volets bleus qui s'ouvrent sur le bocage, avec le nom et la promesse ; à droite, une journée au Clos qui défile heure par heure (les chambres avec leurs prix, le petit-déjeuner, les balades alentour avec les distances, les tarifs par saison et les questions pratiques, la table d'hôtes, le livre d'or) jusqu'au formulaire de réservation avec dates et chambre. Le ciel de la fenêtre passe de l'aube à la nuit au fil de la lecture. Bleu volet, lin et vert mousse.",
+      "univers": [
+        "tourisme"
+      ],
+      "style": "Nature",
+      "couleur": "bleu",
+      "direction": "split",
+      "animations": [
+        "volets qui s'ouvrent à l'arrivée",
+        "ciel de la fenêtre qui passe de l'aube à la nuit au fil du défilement",
+        "titre qui apparaît mot par mot",
+        "hirondelles qui volent doucement",
+        "chambres qui se soulèvent au survol",
+        "cartes et étapes qui apparaissent au défilement",
+        "questions pratiques en accordéon animé"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-15",
+      "tags": [
+        "chambres d'hôtes",
+        "chambre d'hôte",
+        "maison d'hôtes",
+        "bed and breakfast",
+        "table d'hôtes",
+        "gîte",
+        "hébergement",
+        "campagne",
+        "séjour à la ferme"
+      ],
+      "sections": [
+        "Accueil en écran partagé avec la fenêtre aux volets",
+        "Les chambres avec leurs prix",
+        "Le petit-déjeuner",
+        "Balades et visites alentour avec distances",
+        "Tarifs par saison et questions pratiques",
+        "La table d'hôtes et son menu",
+        "Livre d'or",
+        "Réservation avec dates, coordonnées et carte"
+      ],
+      "palette": [
+        "#2F5878",
+        "#5F7140",
+        "#D9A23F",
+        "#E5E2D9",
+        "#1F2830"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "23a98f045fa05333f79062a0b7f64a99"
     }
   ]
 }
