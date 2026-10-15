@@ -403,6 +403,62 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "23a98f045fa05333f79062a0b7f64a99"
+    },
+    {
+      "slug": "fissure",
+      "title": "Fissure",
+      "tagline": "Site vitrine pour club d'escalade",
+      "description": "Une page néo-brutaliste pour un club d'escalade associatif : bordures noires épaisses, ombres pleines et boutons autocollants qui s'enfoncent. En ouverture, le mur du club où les prises se vissent une à une avant que la voie se trace jusqu'au « TOP ». Suivent les cours par âge (école d'escalade, ados, adultes débutants, grimpe libre, sorties en falaise), le planning de la semaine en onglets, le bandeau des nouveaux blocs du mois, les tarifs d'adhésion avec les chiffres du club, les avis des adhérents, les questions avant de venir et la réservation d'une séance d'essai avec carte. Violet, orange et vert menthe, comme les prises.",
+      "univers": [
+        "associations"
+      ],
+      "style": "Audacieux",
+      "couleur": "violet",
+      "direction": "brutaliste",
+      "animations": [
+        "prises qui se vissent une à une puis voie qui se trace jusqu'au TOP",
+        "titre tamponné mot par mot",
+        "boutons autocollants qui s'enfoncent au clic",
+        "cartes qui se soulèvent et penchent au survol",
+        "planning en onglets avec curseur qui glisse",
+        "bandeau défilant des nouveaux blocs",
+        "chiffres qui comptent"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-15",
+      "tags": [
+        "club d'escalade",
+        "escalade",
+        "salle d'escalade",
+        "bloc",
+        "grimpe",
+        "association sportive",
+        "école d'escalade",
+        "mur d'escalade",
+        "FFME"
+      ],
+      "sections": [
+        "Accueil avec le mur et la voie qui se trace",
+        "Les cours par âge",
+        "Planning de la semaine en onglets",
+        "Nouveaux blocs du mois",
+        "Adhésion, tarifs et chiffres du club",
+        "Avis des adhérents",
+        "Questions avant de venir",
+        "Séance d'essai : réservation, coordonnées et carte"
+      ],
+      "palette": [
+        "#6C4CF0",
+        "#FF7F3F",
+        "#6FE0C0",
+        "#FFD23F",
+        "#F6F4FB",
+        "#1B1530"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "0e9a788763e19878f9deb078238a25f2"
     }
   ]
 }

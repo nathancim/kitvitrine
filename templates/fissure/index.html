@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Fissure — Club d'escalade associatif à Annecy</title>
+  <meta name="description" content="La Fissure, club d'escalade associatif à Annecy : mur de 14 m et salle de bloc, école d'escalade dès 6 ans, cours ados et adultes, sorties en falaise. Séance d'essai offerte.">
+  <meta name="theme-color" content="#6C4CF0">
+  <link rel="preload" href="assets/fonts/unbounded-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-craie text-encre font-sans text-[17px] leading-relaxed antialiased pb-[5.5rem] md:pb-0">
+
+  <!-- ===== En-tête ===== -->
+  <header class="sticky top-0 z-30 bg-craie border-b-[3px] border-encre">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 h-[4.25rem] flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-2.5 min-h-11 font-display font-extrabold text-xl tracking-tight">
+        <svg data-kv-logo="Logo" class="w-9 h-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true">
+          <path class="fill-orange" d="M8 30c-4-6 0-17 9-21 8-4 17-1 16 7-1 6-6 6-8 11-2 6-13 9-17 3z" stroke="#1B1530" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="20" cy="20" r="3.2" fill="#1B1530"/>
+        </svg>
+        <span>La Fissure</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-1 rounded-full border-[3px] border-encre bg-white px-2 py-1 font-bold" aria-label="Navigation principale">
+        <a href="#cours" class="lien rounded-full px-4 py-2">Les cours</a>
+        <a href="#planning" class="lien rounded-full px-4 py-2">Planning</a>
+        <a href="#tarifs" class="lien rounded-full px-4 py-2">Tarifs</a>
+        <a href="#avis" class="lien rounded-full px-4 py-2">Adhérents</a>
+        <a href="#questions" class="lien rounded-full px-4 py-2">Questions</a>
+      </nav>
+      <a href="#essai" class="btn hidden md:inline-flex !min-h-11 !px-5 bg-soleil hover:bg-orange">Séance d'essai</a>
+      <button id="menuBtn" class="lg:hidden inline-flex min-h-11 items-center gap-2 rounded-xl border-[3px] border-encre bg-white px-4 font-display text-sm font-semibold" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+    <!-- Menu mobile plein écran -->
+    <nav id="menu" class="hidden fixed inset-x-0 top-[4.25rem] bottom-0 z-40 flex-col bg-violet text-craie px-5 pt-4 pb-28 overflow-y-auto" aria-label="Navigation mobile">
+      <a href="#cours" class="flex items-center min-h-14 border-b-[3px] border-encre/30 font-display text-2xl font-extrabold">Les cours</a>
+      <a href="#planning" class="flex items-center min-h-14 border-b-[3px] border-encre/30 font-display text-2xl font-extrabold">Planning</a>
+      <a href="#tarifs" class="flex items-center min-h-14 border-b-[3px] border-encre/30 font-display text-2xl font-extrabold">Tarifs</a>
+      <a href="#avis" class="flex items-center min-h-14 border-b-[3px] border-encre/30 font-display text-2xl font-extrabold">Adhérents</a>
+      <a href="#questions" class="flex items-center min-h-14 border-b-[3px] border-encre/30 font-display text-2xl font-extrabold">Questions</a>
+      <a href="#essai" class="btn mt-6 bg-soleil text-encre">Réserver une séance d'essai</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Accueil : le mur et la première voie ===== -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 pt-6 pb-14 md:pt-14 md:pb-24 grid lg:grid-cols-12 gap-7 lg:gap-10 items-center">
+      <div class="lg:col-span-7">
+        <p class="inline-flex items-center gap-2 rounded-full border-[3px] border-encre bg-menthe px-3.5 py-1 font-bold text-[15px]">Club associatif à Annecy</p>
+        <h1 id="titre" class="mt-4 font-display font-extrabold tracking-tight leading-[1.02] text-[2.35rem] sm:text-6xl lg:text-[5.2rem]">Grimper ensemble, dès 6 ans.</h1>
+        <p class="mt-4 md:mt-6 max-w-[34rem] text-[17px] md:text-xl">Un mur de 14 m, une salle de bloc renouvelée chaque mois et des moniteurs diplômés pour apprendre à votre rythme.</p>
+        <div class="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3.5">
+          <a href="#essai" class="btn w-full sm:w-auto bg-orange">Réserver une séance d'essai</a>
+          <a href="#planning" class="btn w-full sm:w-auto bg-white hidden sm:inline-flex">Voir le planning</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <!-- Illustration : le pan du club. Les prises orange forment une voie qui se trace jusqu'au « TOP ». -->
+        <div data-kv-image="Photo du mur d'escalade du club" class="dur rounded-2xl overflow-hidden bg-violet h-[32vh] min-h-[210px] max-h-[300px] lg:h-[520px] lg:max-h-none lg:rotate-[1.5deg]">
+          <svg class="block w-full h-full" viewBox="0 0 400 460" preserveAspectRatio="xMidYMin slice" role="img" aria-label="Mur d'escalade avec des prises de couleur et une voie tracée jusqu'au sommet">
+            <defs>
+              <pattern id="inserts" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="12" cy="12" r="2" fill="#1B1530" fill-opacity=".28"/></pattern>
+            </defs>
+            <rect class="fill-violet" width="400" height="460"/>
+            <path d="M262 0h138v460H262l40-150z" fill="#1B1530" fill-opacity=".16"/>
+            <rect width="400" height="460" fill="url(#inserts)"/>
+            <path d="M0 153h400M0 306h400M133 0v460M262 0l40 310-40 150" stroke="#1B1530" stroke-opacity=".3" stroke-width="2" fill="none"/>
+            <!-- La voie -->
+            <polyline class="voie" pathLength="1" points="190,425 232,362 176,306 226,248 184,192 240,138 214,84" fill="none" stroke="#F6F4FB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Prises vertes -->
+            <g class="fill-menthe" stroke="#1B1530" stroke-width="3">
+              <circle class="prise" cx="76" cy="404" r="12"/><circle class="prise" cx="112" cy="334" r="10"/><circle class="prise" cx="58" cy="262" r="13"/>
+              <circle class="prise" cx="118" cy="190" r="10"/><circle class="prise" cx="68" cy="118" r="12"/><circle class="prise" cx="104" cy="56" r="10"/>
+            </g>
+            <!-- Prises jaunes -->
+            <g class="fill-soleil" stroke="#1B1530" stroke-width="3" stroke-linejoin="round">
+              <path class="prise" d="M312 398l22-6 8 18-24 10z"/><path class="prise" d="M292 330l26-4 4 20-28 4z"/><path class="prise" d="M334 262l20-8 10 18-22 8z"/>
+              <path class="prise" d="M300 192l26-2 2 20-28 2z"/><path class="prise" d="M342 122l20-8 8 20-22 6z"/>
+            </g>
+            <!-- Volume -->
+            <path class="prise fill-craie" d="M286 236l52-30 18 58z" stroke="#1B1530" stroke-width="3" stroke-linejoin="round"/>
+            <!-- Prises blanches -->
+            <g fill="#F6F4FB" stroke="#1B1530" stroke-width="3">
+              <ellipse class="prise" cx="148" cy="440" rx="12" ry="7"/><ellipse class="prise" cx="160" cy="236" rx="9" ry="6"/><ellipse class="prise" cx="296" cy="84" rx="11" ry="7"/>
+            </g>
+            <!-- Prises orange : la voie -->
+            <g class="fill-orange" stroke="#1B1530" stroke-width="3" stroke-linejoin="round">
+              <path class="prise" d="M174 428c0-12 30-16 34-4 3 10-34 14-34 4z"/>
+              <path class="prise" d="M218 366c-2-12 26-14 28-3 2 9-26 12-28 3z"/>
+              <path class="prise" d="M160 310c0-13 32-14 32-2 0 10-32 12-32 2z"/>
+              <path class="prise" d="M212 252c-1-12 28-14 29-2 1 10-28 12-29 2z"/>
+              <path class="prise" d="M170 196c-1-12 28-13 29-2 1 10-28 12-29 2z"/>
+              <path class="prise" d="M226 142c-1-12 28-13 29-2 1 10-28 12-29 2z"/>
+              <path class="prise" d="M198 88c-1-14 32-15 33-2 1 11-32 13-33 2z"/>
+            </g>
+            <!-- Le TOP -->
+            <g class="souffle"><g class="top">
+              <path d="M214 74V40" stroke="#1B1530" stroke-width="3"/>
+              <rect x="186" y="16" width="62" height="30" rx="7" class="fill-soleil" stroke="#1B1530" stroke-width="3"/>
+              <text x="217" y="38" text-anchor="middle" font-family="Unbounded, sans-serif" font-weight="800" font-size="15" fill="#1B1530">TOP</text>
+            </g></g>
+          </svg>
+        </div>
+        <p class="badge absolute -top-4 -left-2 sm:-left-5 lg:-top-6 lg:-left-8 grid place-items-center w-[5.6rem] h-[5.6rem] lg:w-28 lg:h-28 rounded-full border-[3px] border-encre bg-soleil text-center font-display font-extrabold text-[12px] lg:text-[14px] leading-tight -rotate-6">Essai<br>offert</p>
+      </div>
+    </section>
+
+    <!-- ===== Les cours ===== -->
+    <section id="cours" class="border-t-[3px] border-encre bg-white overflow-x-clip">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24">
+        <div class="lg:flex lg:items-end lg:justify-between gap-10">
+          <h2 class="font-display font-extrabold tracking-tight text-[2rem] leading-[1.08] sm:text-5xl max-w-2xl">Un créneau pour chaque grimpeur</h2>
+          <p class="mt-3 lg:mt-0 max-w-sm text-encre/80">Groupes de 12 au maximum, encadrés par des moniteurs brevetés d'État.</p>
+        </div>
+
+        <ul data-groupe class="no-scrollbar mt-8 md:mt-12 -mx-4 px-4 pb-3 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:grid md:grid-cols-6 md:gap-6 md:overflow-visible">
+          <li class="revele shrink-0 w-[82%] sm:w-[48%] snap-start md:w-auto md:col-span-3 lg:col-span-2">
+            <article class="carte dur h-full rounded-2xl bg-craie p-5 sm:p-6 flex flex-col">
+              <span class="ruban self-start bg-menthe">6 – 11 ans</span>
+              <h3 class="mt-4 font-display font-extrabold text-xl leading-tight">École d'escalade</h3>
+              <p class="mt-2 text-encre/80">Jeux d'équilibre, premières voies en moulinette et nœud de huit. Les enfants repartent avec leur passeport.</p>
+              <p class="mt-auto pt-4 font-bold">Mercredi après-midi</p>
+            </article>
+          </li>
+          <li class="revele shrink-0 w-[82%] sm:w-[48%] snap-start md:w-auto md:col-span-3 lg:col-span-2">
+            <article class="carte dur h-full rounded-2xl bg-craie p-5 sm:p-6 flex flex-col">
+              <span class="ruban self-start bg-orange">12 – 17 ans</span>
+              <h3 class="mt-4 font-display font-extrabold text-xl leading-tight">Groupe ados</h3>
+              <p class="mt-2 text-encre/80">Grimpe en tête, technique de bloc et, pour ceux qui le veulent, les compétitions départementales.</p>
+              <p class="mt-auto pt-4 font-bold">Mardi et vendredi, 18 h</p>
+            </article>
+          </li>
+          <li class="revele shrink-0 w-[82%] sm:w-[48%] snap-start md:w-auto md:col-span-2 lg:col-span-2">
+            <article class="carte dur h-full rounded-2xl bg-craie p-5 sm:p-6 flex flex-col">
+              <span class="ruban self-start bg-soleil">Adultes</span>
+              <h3 class="mt-4 font-display font-extrabold text-xl leading-tight">Cycle débutants</h3>
+              <p class="mt-2 text-encre/80">Dix séances pour apprendre à assurer, à lire une voie et à grimper en autonomie.</p>
+              <p class="mt-auto pt-4 font-bold">Lundi, 19 h 30</p>
+            </article>
+          </li>
+          <li class="revele shrink-0 w-[82%] sm:w-[48%] snap-start md:w-auto md:col-span-2 lg:col-span-3">
+            <article class="carte dur h-full rounded-2xl bg-violet text-craie p-5 sm:p-6 flex flex-col">
+              <span class="ruban self-start bg-craie text-encre">Autonomes</span>
+              <h3 class="mt-4 font-display font-extrabold text-xl leading-tight">Grimpe libre</h3>
+              <p class="mt-2 text-craie/85">Le mur est ouvert aux adhérents tous les soirs et le week-end. Venez avec votre binôme, ou trouvez-en un sur place.</p>
+              <p class="mt-auto pt-4 font-bold">7 jours sur 7</p>
+            </article>
+          </li>
+          <li class="revele shrink-0 w-[82%] sm:w-[48%] snap-start md:w-auto md:col-span-2 lg:col-span-3">
+            <article class="carte dur h-full rounded-2xl bg-craie overflow-hidden flex flex-col">
+              <div data-kv-image="Photo d'une sortie en falaise" class="h-28 md:h-36 border-b-[3px] border-encre bg-menthe">
+                <svg class="block w-full h-full" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="400" height="150" class="fill-menthe"/>
+                  <circle cx="320" cy="42" r="20" class="fill-soleil" stroke="#1B1530" stroke-width="3"/>
+                  <path d="M0 150V96l60-40 30 18 40-58 46 34 34-30 50 80 40-22 100 60v12z" fill="#F6F4FB" stroke="#1B1530" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M130 16l-10 60M176 50l-14 40M226 20l8 52" stroke="#1B1530" stroke-width="2.5" fill="none"/>
+                  <path d="M120 76c10 8 30 6 42 14" stroke="#FF7F3F" stroke-width="4" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="p-5 sm:p-6 flex flex-col grow">
+                <span class="ruban self-start bg-white">Avril à octobre</span>
+                <h3 class="mt-4 font-display font-extrabold text-xl leading-tight">Sorties en falaise</h3>
+                <p class="mt-2 text-encre/80">Un dimanche sur deux au Salève ou à la Tournette, en covoiturage depuis le club.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Planning de la semaine (onglets) ===== -->
+    <section id="planning" class="border-t-[3px] border-encre bg-violet text-craie">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="lg:col-span-4">
+          <h2 class="font-display font-extrabold tracking-tight text-[2rem] leading-[1.08] sm:text-5xl">La semaine au club</h2>
+          <p class="mt-3 text-craie/85 max-w-sm">Le mur ouvre à 18 h en semaine et à 10 h le week-end. Fermé le 1er mai et du 24 décembre au 1er janvier.</p>
+        </div>
+
+        <div class="lg:col-span-8 dur rounded-2xl bg-craie text-encre overflow-hidden">
+          <div id="jours" role="tablist" aria-label="Jour de la semaine" class="relative grid grid-cols-7 border-b-[3px] border-encre bg-white">
+            <span id="curseur" class="curseur absolute inset-y-0 left-0 w-[calc(100%/7)] bg-soleil hidden" aria-hidden="true"></span>
+            <button role="tab" id="t-lun" aria-controls="p-lun" class="relative min-h-[3.25rem] font-display text-[13px] sm:text-base font-semibold">Lun</button>
+            <button role="tab" id="t-mar" aria-controls="p-mar" class="relative min-h-[3.25rem] font-display text-[13px] sm:text-base font-semibold border-l-[3px] border-encre">Mar</button>
+            <button role="tab" id="t-mer" aria-controls="p-mer" class="relative min-h-[3.25rem] font-display text-[13px] sm:text-base font-semibold border-l-[3px] border-encre">Mer</button>
+            <button role="tab" id="t-jeu" aria-controls="p-jeu" class="relative min-h-[3.25rem] font-display text-[13px] sm:text-base font-semibold border-l-[3px] border-encre">Jeu</button>
+            <button role="tab" id="t-ven" aria-controls="p-ven" class="relative min-h-[3.25rem] font-display text-[13px] sm:text-base font-semibold border-l-[3px] border-encre">Ven</button>
+            <button role="tab" id="t-sam" aria-controls="p-sam" class="relative min-h-[3.25rem] font-display text-[13px] sm:text-base font-semibold border-l-[3px] border-encre">Sam</button>
+            <button role="tab" id="t-dim" aria-controls="p-dim" class="relative min-h-[3.25rem] font-display text-[13px] sm:text-base font-semibold border-l-[3px] border-encre">Dim</button>
+          </div>
+
+          <div class="p-5 sm:p-8">
+            <div id="p-lun" role="tabpanel" aria-labelledby="t-lun" class="jour-panneau">
+              <h3 class="font-display font-extrabold text-lg">Lundi</h3>
+              <ul class="mt-3 divide-y-2 divide-encre/15">
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">18 h – 22 h</span><span>Grimpe libre</span></li>
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">19 h 30</span><span>Cycle débutants adultes</span></li>
+              </ul>
+            </div>
+            <div id="p-mar" role="tabpanel" aria-labelledby="t-mar" class="jour-panneau">
+              <h3 class="font-display font-extrabold text-lg">Mardi</h3>
+              <ul class="mt-3 divide-y-2 divide-encre/15">
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">18 h</span><span>Groupe ados 12 – 17 ans</span></li>
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">18 h – 22 h</span><span>Grimpe libre, côté bloc</span></li>
+              </ul>
+            </div>
+            <div id="p-mer" role="tabpanel" aria-labelledby="t-mer" class="jour-panneau">
+              <h3 class="font-display font-extrabold text-lg">Mercredi</h3>
+              <ul class="mt-3 divide-y-2 divide-encre/15">
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">14 h</span><span>École d'escalade 6 – 8 ans</span></li>
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">15 h 30</span><span>École d'escalade 9 – 11 ans</span></li>
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">18 h – 22 h</span><span>Grimpe libre</span></li>
+              </ul>
+            </div>
+            <div id="p-jeu" role="tabpanel" aria-labelledby="t-jeu" class="jour-panneau">
+              <h3 class="font-display font-extrabold text-lg">Jeudi</h3>
+              <ul class="mt-3 divide-y-2 divide-encre/15">
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">18 h – 22 h</span><span>Grimpe libre</span></li>
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">20 h</span><span>Ouverture des nouveaux blocs, le premier jeudi du mois</span></li>
+              </ul>
+            </div>
+            <div id="p-ven" role="tabpanel" aria-labelledby="t-ven" class="jour-panneau">
+              <h3 class="font-display font-extrabold text-lg">Vendredi</h3>
+              <ul class="mt-3 divide-y-2 divide-encre/15">
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">18 h</span><span>Groupe ados 12 – 17 ans</span></li>
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">18 h – 23 h</span><span>Grimpe libre, soirée longue</span></li>
+              </ul>
+            </div>
+            <div id="p-sam" role="tabpanel" aria-labelledby="t-sam" class="jour-panneau">
+              <h3 class="font-display font-extrabold text-lg">Samedi</h3>
+              <ul class="mt-3 divide-y-2 divide-encre/15">
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">10 h – 12 h</span><span>Séances d'essai, sur réservation</span></li>
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">14 h – 19 h</span><span>Grimpe libre</span></li>
+              </ul>
+            </div>
+            <div id="p-dim" role="tabpanel" aria-labelledby="t-dim" class="jour-panneau">
+              <h3 class="font-display font-extrabold text-lg">Dimanche</h3>
+              <ul class="mt-3 divide-y-2 divide-encre/15">
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">10 h – 13 h</span><span>Grimpe en famille, enfants accompagnés</span></li>
+                <li class="flex gap-4 py-3"><span class="tnum font-bold w-28 shrink-0">8 h 30</span><span>Départ en falaise, un dimanche sur deux</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Nouveaux blocs du mois (bandeau défilant) ===== -->
+    <div class="bande overflow-x-clip py-3 -my-3 relative z-10">
+      <div class="-rotate-[1.5deg] -mx-4 border-y-[3px] border-encre bg-orange py-3.5 overflow-hidden">
+        <span class="sr-only">Blocs ouverts ce mois-ci : Le Chamois 5b, Bec de corbin 6a+, Tartiflette 4c, Lac gelé 6b, La dalle à Mimi 5a, Col de la Forclaz 6c.</span>
+        <div class="defile font-display font-extrabold text-lg sm:text-xl whitespace-nowrap" aria-hidden="true">
+          <span class="flex items-center gap-6 pr-6"><span>Nouveaux ce mois-ci</span><span class="w-3 h-3 rounded-full bg-encre"></span><span>Le Chamois 5b</span><span class="w-3 h-3 rounded-full bg-menthe border-2 border-encre"></span><span>Bec de corbin 6a+</span><span class="w-3 h-3 rounded-full bg-soleil border-2 border-encre"></span><span>Tartiflette 4c</span><span class="w-3 h-3 rounded-full bg-craie border-2 border-encre"></span><span>Lac gelé 6b</span><span class="w-3 h-3 rounded-full bg-menthe border-2 border-encre"></span><span>La dalle à Mimi 5a</span><span class="w-3 h-3 rounded-full bg-soleil border-2 border-encre"></span><span>Col de la Forclaz 6c</span><span class="w-3 h-3 rounded-full bg-encre"></span></span>
+          <span class="copie flex items-center gap-6 pr-6"><span>Nouveaux ce mois-ci</span><span class="w-3 h-3 rounded-full bg-encre"></span><span>Le Chamois 5b</span><span class="w-3 h-3 rounded-full bg-menthe border-2 border-encre"></span><span>Bec de corbin 6a+</span><span class="w-3 h-3 rounded-full bg-soleil border-2 border-encre"></span><span>Tartiflette 4c</span><span class="w-3 h-3 rounded-full bg-craie border-2 border-encre"></span><span>Lac gelé 6b</span><span class="w-3 h-3 rounded-full bg-menthe border-2 border-encre"></span><span>La dalle à Mimi 5a</span><span class="w-3 h-3 rounded-full bg-soleil border-2 border-encre"></span><span>Col de la Forclaz 6c</span><span class="w-3 h-3 rounded-full bg-encre"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Tarifs et chiffres ===== -->
+    <section id="tarifs" class="bg-craie">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-12">
+        <div class="lg:col-span-5">
+          <h2 class="font-display font-extrabold tracking-tight text-[2rem] leading-[1.08] sm:text-5xl">Une adhésion, toute l'année</h2>
+          <p class="mt-3 max-w-md text-encre/80">De septembre à août. La licence FFME et l'assurance sont comprises, les chaussons et le baudrier sont prêtés la première année.</p>
+          <dl data-groupe class="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
+            <div class="revele dur-sm rounded-xl bg-white p-4 flex flex-col"><dt class="text-[15px] text-encre/75">adhérents</dt><dd class="order-first font-display font-extrabold text-3xl sm:text-4xl tnum" data-compte="420">420</dd></div>
+            <div class="revele dur-sm rounded-xl bg-white p-4 flex flex-col"><dt class="text-[15px] text-encre/75">mètres de mur</dt><dd class="order-first font-display font-extrabold text-3xl sm:text-4xl tnum" data-compte="14">14</dd></div>
+            <div class="revele dur-sm rounded-xl bg-white p-4 flex flex-col"><dt class="text-[15px] text-encre/75">blocs et voies</dt><dd class="order-first font-display font-extrabold text-3xl sm:text-4xl tnum" data-compte="180">180</dd></div>
+            <div class="revele dur-sm rounded-xl bg-white p-4 flex flex-col"><dt class="text-[15px] text-encre/75">blocs neufs par mois</dt><dd class="order-first font-display font-extrabold text-3xl sm:text-4xl tnum" data-compte="30">30</dd></div>
+          </dl>
+        </div>
+
+        <div class="lg:col-span-7 lg:pt-4">
+          <div class="revele dur rounded-2xl bg-white overflow-hidden">
+            <dl class="divide-y-[3px] divide-encre">
+              <div class="flex items-center justify-between gap-4 px-5 sm:px-7 py-5">
+                <dt><span class="block font-display font-extrabold text-lg sm:text-xl">Adulte</span><span class="block text-[15px] text-encre/70">À partir de 18 ans</span></dt>
+                <dd class="font-display font-extrabold text-2xl sm:text-3xl tnum whitespace-nowrap">165 €</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4 px-5 sm:px-7 py-5">
+                <dt><span class="block font-display font-extrabold text-lg sm:text-xl">Jeune</span><span class="block text-[15px] text-encre/70">6 à 17 ans, cours compris</span></dt>
+                <dd class="font-display font-extrabold text-2xl sm:text-3xl tnum whitespace-nowrap">190 €</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4 px-5 sm:px-7 py-5">
+                <dt><span class="block font-display font-extrabold text-lg sm:text-xl">Étudiant</span><span class="block text-[15px] text-encre/70">Ou demandeur d'emploi</span></dt>
+                <dd class="font-display font-extrabold text-2xl sm:text-3xl tnum whitespace-nowrap">125 €</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4 px-5 sm:px-7 py-5 bg-soleil">
+                <dt><span class="block font-display font-extrabold text-lg sm:text-xl">Séance d'essai</span><span class="block text-[15px] text-encre/80">Le samedi matin, matériel fourni</span></dt>
+                <dd class="font-display font-extrabold text-2xl sm:text-3xl whitespace-nowrap">Offerte</dd>
+              </div>
+            </dl>
+          </div>
+          <p class="mt-5 text-[16px] text-encre/80">Remise de 15 % dès le deuxième membre d'une même famille. Pass'Sport et coupons sport acceptés.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Avis des adhérents ===== -->
+    <section id="avis" class="border-y-[3px] border-encre bg-menthe overflow-x-clip">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24">
+        <h2 class="font-display font-extrabold tracking-tight text-[2rem] leading-[1.08] sm:text-5xl max-w-2xl">Ils grimpent au club</h2>
+        <div data-groupe class="no-scrollbar mt-8 md:mt-12 -mx-4 px-4 pb-3 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible">
+          <figure class="revele carte dur shrink-0 w-[82%] sm:w-[48%] md:w-auto snap-start rounded-2xl bg-white p-5 sm:p-6 md:-rotate-1">
+            <blockquote class="text-[17px]">« J'ai poussé la porte à 52 ans sans jamais avoir grimpé. Trois ans plus tard, je pars en falaise avec le groupe du dimanche. »</blockquote>
+            <figcaption class="mt-4 font-bold">Odile, adhérente depuis 2023</figcaption>
+          </figure>
+          <figure class="revele carte dur shrink-0 w-[82%] sm:w-[48%] md:w-auto snap-start rounded-2xl bg-white p-5 sm:p-6 md:translate-y-6">
+            <blockquote class="text-[17px]">« Inès attend le mercredi toute la semaine. Les moniteurs savent rassurer les plus timides sans les brusquer. »</blockquote>
+            <figcaption class="mt-4 font-bold">Karim, papa d'Inès (9 ans)</figcaption>
+          </figure>
+          <figure class="revele carte dur shrink-0 w-[82%] sm:w-[48%] md:w-auto snap-start rounded-2xl bg-white p-5 sm:p-6 md:rotate-1">
+            <blockquote class="text-[17px]">« Les blocs changent tous les mois, on ne s'ennuie jamais. Et il y a toujours quelqu'un pour vous assurer le vendredi soir. »</blockquote>
+            <figcaption class="mt-4 font-bold">Léa, grimpe libre</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Questions fréquentes ===== -->
+    <section id="questions" class="bg-craie">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 py-14 md:py-24">
+        <h2 class="font-display font-extrabold tracking-tight text-[2rem] leading-[1.08] sm:text-5xl">Avant de venir</h2>
+        <div class="mt-8 space-y-4">
+          <details class="dur-sm rounded-xl bg-white">
+            <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 px-5 py-4 font-bold text-lg">Faut-il un certificat médical ?<span class="plus grid place-items-center w-8 h-8 shrink-0 rounded-full border-[3px] border-encre bg-soleil font-display" aria-hidden="true">+</span></summary>
+            <div class="px-5 pb-5 text-encre/85"><p>Pour les adultes, un questionnaire de santé suffit au renouvellement. Pour une première licence ou pour les mineurs, nous vous indiquons la démarche à l'inscription.</p></div>
+          </details>
+          <details class="dur-sm rounded-xl bg-white">
+            <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 px-5 py-4 font-bold text-lg">Dois-je acheter du matériel ?<span class="plus grid place-items-center w-8 h-8 shrink-0 rounded-full border-[3px] border-encre bg-soleil font-display" aria-hidden="true">+</span></summary>
+            <div class="px-5 pb-5 text-encre/85"><p>Non. Chaussons, baudriers et cordes sont prêtés la première année. Prévoyez une tenue souple et une gourde.</p></div>
+          </details>
+          <details class="dur-sm rounded-xl bg-white">
+            <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 px-5 py-4 font-bold text-lg">À partir de quel âge ?<span class="plus grid place-items-center w-8 h-8 shrink-0 rounded-full border-[3px] border-encre bg-soleil font-display" aria-hidden="true">+</span></summary>
+            <div class="px-5 pb-5 text-encre/85"><p>L'école d'escalade accueille les enfants dès 6 ans. Le dimanche matin, les plus petits peuvent grimper en famille, accompagnés d'un adulte adhérent.</p></div>
+          </details>
+          <details class="dur-sm rounded-xl bg-white">
+            <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 px-5 py-4 font-bold text-lg">Peut-on s'inscrire en cours d'année ?<span class="plus grid place-items-center w-8 h-8 shrink-0 rounded-full border-[3px] border-encre bg-soleil font-display" aria-hidden="true">+</span></summary>
+            <div class="px-5 pb-5 text-encre/85"><p>Oui, tant qu'il reste des places dans le groupe. À partir de février, l'adhésion est réduite de moitié.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Séance d'essai : inscription et accès ===== -->
+    <section id="essai" class="border-t-[3px] border-encre bg-encre text-craie">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-14">
+        <div class="lg:col-span-5">
+          <h2 class="font-display font-extrabold tracking-tight text-[2rem] leading-[1.08] sm:text-5xl">Votre première séance</h2>
+          <ol class="mt-7 space-y-4">
+            <li class="flex gap-4"><span class="grid place-items-center w-10 h-10 shrink-0 rounded-full border-[3px] border-craie bg-orange text-encre font-display font-extrabold">1</span><span class="pt-1.5">Choisissez un samedi matin dans le formulaire.</span></li>
+            <li class="flex gap-4"><span class="grid place-items-center w-10 h-10 shrink-0 rounded-full border-[3px] border-craie bg-menthe text-encre font-display font-extrabold">2</span><span class="pt-1.5">Un moniteur vous confirme le créneau par téléphone.</span></li>
+            <li class="flex gap-4"><span class="grid place-items-center w-10 h-10 shrink-0 rounded-full border-[3px] border-craie bg-soleil text-encre font-display font-extrabold">3</span><span class="pt-1.5">Venez en tenue souple : on s'occupe du reste.</span></li>
+          </ol>
+
+          <dl class="mt-9 space-y-3 text-[16px]">
+            <div><dt class="text-craie/70">Adresse</dt><dd class="font-bold">Gymnase du Parmelan, 12 avenue du Stade, 74000 Annecy</dd></div>
+            <div class="flex flex-wrap gap-x-8"><div><dt class="text-craie/70">Téléphone</dt><dd><a href="tel:+33600000000" class="lien inline-flex min-h-11 items-center font-bold">06 00 00 00 00</a></dd></div>
+            <div><dt class="text-craie/70">E-mail</dt><dd><a href="mailto:contact@exemple.fr" class="lien inline-flex min-h-11 items-center font-bold">contact@exemple.fr</a></dd></div></div>
+          </dl>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Annecy, 74000" class="mt-6 md:h-56 rounded-xl border-[3px] border-craie overflow-hidden bg-craie text-encre"></div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <!--
+            Formulaire de réservation de la séance d'essai : il n'envoie rien tant qu'il n'est pas relié à un service.
+            - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+            - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+            - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+          -->
+          <form class="dur rounded-2xl bg-craie text-encre p-5 sm:p-8 grid sm:grid-cols-2 gap-x-5 gap-y-5" style="box-shadow: 8px 8px 0 rgb(var(--kv-orange))" action="#" method="post">
+            <label class="block"><span class="font-bold">Nom du grimpeur</span>
+              <input type="text" name="nom" autocomplete="name" class="field mt-1.5" required>
+            </label>
+            <label class="block"><span class="font-bold">Âge</span>
+              <input type="number" name="age" min="6" max="99" inputmode="numeric" class="field mt-1.5" required>
+            </label>
+            <label class="block"><span class="font-bold">Téléphone</span>
+              <input type="tel" name="telephone" autocomplete="tel" class="field mt-1.5" required>
+            </label>
+            <label class="block"><span class="font-bold">E-mail</span>
+              <input type="email" name="email" autocomplete="email" class="field mt-1.5">
+            </label>
+            <label class="block sm:col-span-2"><span class="font-bold">Ce qui vous intéresse</span>
+              <select name="cours" class="field mt-1.5">
+                <option>École d'escalade (6 – 11 ans)</option>
+                <option>Groupe ados (12 – 17 ans)</option>
+                <option selected>Cycle débutants adultes</option>
+                <option>Grimpe libre (déjà autonome)</option>
+              </select>
+            </label>
+            <label class="block sm:col-span-2"><span class="font-bold">Un mot pour le moniteur</span>
+              <textarea name="message" rows="3" class="field mt-1.5" placeholder="Par exemple : déjà grimpé en vacances, un peu peur du vide"></textarea>
+            </label>
+            <button type="submit" class="btn sm:col-span-2 w-full bg-orange">Réserver ma séance d'essai</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-encre text-craie/75 border-t-[3px] border-craie/15 text-[15px]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+      <p><span class="font-display font-extrabold text-craie">La Fissure</span> <span class="block sm:inline sm:ml-2">Club d'escalade associatif, affilié FFME</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-craie border-t-[3px] border-encre px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-[auto_1fr] gap-3">
+    <a href="tel:+33600000000" class="btn !px-5 bg-white">Appeler</a>
+    <a href="#essai" class="btn bg-orange">Séance d'essai</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Titre : chaque mot est tamponné l'un après l'autre
+    const titre = document.getElementById('titre');
+    if (document.documentElement.classList.contains('js') && !calme) {
+      titre.innerHTML = titre.textContent.trim().split(/\s+/).map((w, i) => `<span class="mot" style="animation-delay:${120 + i * 110}ms">${w}</span>`).join(' ');
+    }
+    // Signature : les prises se vissent une à une sur le mur
+    document.querySelectorAll('.prise').forEach((p, i) => { p.style.animationDelay = 250 + i * 45 + 'ms'; });
+
+    // Planning : onglets par jour (sans JavaScript, toute la semaine reste affichée)
+    const tabs = [...document.querySelectorAll('[role="tab"]')], curseur = document.getElementById('curseur');
+    const montre = (i, focus) => {
+      tabs.forEach((t, j) => {
+        const actif = i === j, p = document.getElementById(t.getAttribute('aria-controls'));
+        t.setAttribute('aria-selected', actif); t.tabIndex = actif ? 0 : -1;
+        p.hidden = !actif;
+        if (actif && !calme) { p.classList.remove('entre'); void p.offsetWidth; p.classList.add('entre'); }
+      });
+      curseur.style.transform = `translateX(${i * 100}%)`;
+      if (focus) tabs[i].focus();
+    };
+    curseur.classList.remove('hidden');
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => montre(i));
+      t.addEventListener('keydown', e => {
+        const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (k) { e.preventDefault(); montre((i + k + tabs.length) % tabs.length, true); }
+      });
+    });
+    montre((new Date().getDay() + 6) % 7);
+
+    // Apparition au défilement
+    if ('IntersectionObserver' in window) {
+      document.querySelectorAll('[data-groupe] .revele').forEach(el => { el.style.transitionDelay = [...el.parentElement.children].indexOf(el) * 90 + 'ms'; });
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        (e.target.matches('[data-groupe]') ? e.target.querySelectorAll('.revele') : [e.target]).forEach(el => el.classList.add('vu'));
+        io.unobserve(e.target);
+      }), { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.revele').forEach(el => io.observe(el.closest('[data-groupe]') || el));
+
+      // Chiffres qui comptent
+      const compte = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        compte.unobserve(e.target);
+        if (calme) return;
+        const el = e.target, fin = +el.dataset.compte, t0 = performance.now(), d = 800;
+        const pas = t => { const k = Math.min(1, (t - t0) / d); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); };
+        requestAnimationFrame(pas);
+      }), { threshold: .6 });
+      document.querySelectorAll('[data-compte]').forEach(el => compte.observe(el));
+    }
+  </script>
+</body>
+</html>
