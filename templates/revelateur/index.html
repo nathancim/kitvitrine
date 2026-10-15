@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lou Marchal — Photographe de mariage à Vannes et en Bretagne</title>
+  <meta name="description" content="Lou Marchal, photographe de mariage à Vannes : reportage du jour J des préparatifs à la première danse, numérique et argentique, galerie livrée en 6 semaines. Déplacement offert dans le Morbihan.">
+  <meta name="theme-color" content="#F4F4F1">
+  <link rel="preload" href="assets/fonts/bodoni-moda-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-papier text-encre font-sans text-[17px] leading-relaxed antialiased pb-[5.25rem] md:pb-0">
+
+  <!-- ===== En-tête : nom au centre, liens de part et d'autre ===== -->
+  <header class="sticky top-0 z-30 bg-papier/95 backdrop-blur border-b border-encre/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 h-16 lg:h-[4.5rem] flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between gap-4">
+      <nav class="hidden lg:flex items-center gap-7 text-[16px]" aria-label="Navigation principale">
+        <a href="#galerie" class="lien inline-flex min-h-11 items-center">Galerie</a>
+        <a href="#jour" class="lien inline-flex min-h-11 items-center">Le jour J</a>
+        <a href="#formules" class="lien inline-flex min-h-11 items-center">Formules</a>
+      </nav>
+      <a href="#" class="flex items-center gap-2.5 min-h-11 lg:justify-self-center">
+        <svg data-kv-logo="Logo" class="w-8 h-8 shrink-0 text-encre" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M20 6.5l8.2 6.2-1.4 9.9-9.4 3.8-8-6.1 1.3-10z" class="fill-eucalyptus" opacity=".9"/>
+          <circle cx="20" cy="20" r="5.2" fill="#F4F4F1"/>
+        </svg>
+        <span class="font-serif text-[1.35rem] leading-none tracking-[.02em]">Lou Marchal</span>
+      </a>
+      <div class="hidden lg:flex items-center justify-end gap-7 text-[16px]">
+        <a href="#avis" class="lien inline-flex min-h-11 items-center">Avis</a>
+        <a href="#questions" class="lien inline-flex min-h-11 items-center">Questions</a>
+        <a href="#contact" class="btn-plein !min-h-11 !px-5 !text-[16px]">Vérifier ma date</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden inline-flex min-h-11 items-center gap-2 rounded-full border border-encre/30 px-4 text-[16px]" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 9h16M4 15h16"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+    <!-- Menu mobile plein écran -->
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 bottom-0 z-40 flex-col bg-encre text-papier px-6 pt-6 pb-28 overflow-y-auto" aria-label="Navigation mobile">
+      <a href="#galerie" class="flex items-center min-h-14 border-b border-papier/15 font-serif text-3xl">Galerie</a>
+      <a href="#jour" class="flex items-center min-h-14 border-b border-papier/15 font-serif text-3xl">Le jour J</a>
+      <a href="#formules" class="flex items-center min-h-14 border-b border-papier/15 font-serif text-3xl">Formules</a>
+      <a href="#apropos" class="flex items-center min-h-14 border-b border-papier/15 font-serif text-3xl">Qui suis-je</a>
+      <a href="#avis" class="flex items-center min-h-14 border-b border-papier/15 font-serif text-3xl">Avis</a>
+      <a href="#questions" class="flex items-center min-h-14 border-b border-papier/15 font-serif text-3xl">Questions</a>
+      <a href="#contact" class="btn mt-8 bg-papier text-encre">Vérifier ma date</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Accueil : le titre et un mur de tirages ===== -->
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 pt-7 pb-12 md:pt-14 md:pb-24 grid lg:grid-cols-12 gap-7 lg:gap-12 items-center">
+      <div class="lg:col-span-5">
+        <p class="text-[16px] text-encre/70">Photographe de mariage à Vannes, partout en Bretagne</p>
+        <h1 class="mt-3 font-serif font-normal leading-[1.04] tracking-[-.01em] text-[2.45rem] sm:text-6xl lg:text-[4.4rem]">
+          <span class="titre-ligne block" style="--d:80ms">Le jour où tout</span>
+          <span class="titre-ligne block italic" style="--d:220ms">passe trop vite,</span>
+          <span class="titre-ligne block" style="--d:360ms">je le garde.</span>
+        </h1>
+        <p class="mt-4 md:mt-6 max-w-[30rem] text-encre/80 md:text-lg">Un reportage discret, de la robe sur le cintre au dernier slow. Des images vraies, en couleur et sur pellicule.</p>
+        <div class="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="#contact" class="btn-plein w-full sm:w-auto">Vérifier ma date</a>
+          <a href="#galerie" class="btn-trait w-full sm:w-auto hidden sm:inline-flex">Voir la galerie</a>
+        </div>
+      </div>
+
+      <!-- Mur de tirages : la grande photo se remplace en mode édition -->
+      <div class="lg:col-span-7 grid grid-cols-[1.45fr_1fr] gap-2.5 sm:gap-4 h-[34vh] min-h-[230px] max-h-[330px] sm:max-h-[420px] lg:h-[600px] lg:max-h-none">
+        <figure class="tirage flex flex-col min-h-0 lg:-rotate-[.6deg]">
+          <div data-kv-image="Votre plus belle photo de mariage" class="bain grain flex-1 min-h-0 bg-argent" style="--d:200ms">
+            <svg class="block w-full h-full" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Les mariés sortent de la mairie sous une pluie de pétales">
+              <defs>
+                <linearGradient id="mur" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8D9D6"/><stop offset="1" stop-color="#A9ABAC"/></linearGradient>
+                <linearGradient id="porte" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A3B3E"/><stop offset="1" stop-color="#55575B"/></linearGradient>
+              </defs>
+              <rect width="300" height="400" fill="url(#mur)"/>
+              <g stroke="#8E9092" stroke-width="1.2" fill="none" opacity=".7">
+                <path d="M0 60h300M0 120h300M0 180h80M220 180h80M0 240h70M230 240h70M0 300h70M230 300h70M0 360h70M230 360h70"/>
+                <path d="M40 0v60M120 0v60M200 0v60M270 0v60M80 60v60M160 60v60M240 60v60M30 120v60M260 120v60M40 180v60M260 180v60M30 240v60M265 240v60M45 300v60M255 300v60"/>
+              </g>
+              <path d="M78 400V190a72 72 0 0 1 144 0v210z" fill="#E4E4E1"/>
+              <path d="M88 400V192a62 62 0 0 1 124 0v208z" fill="url(#porte)"/>
+              <path d="M150 130v270" stroke="#2F3033" stroke-width="2"/>
+              <!-- Marches -->
+              <path d="M40 372h220v10H40zM24 386h252v14H24z" fill="#C3C4C2"/>
+              <!-- Le marié -->
+              <circle cx="128" cy="232" r="11.5" fill="#2B2C2F"/>
+              <path d="M110 254c4-8 32-8 36 0l6 72-4 46h-11l-5-58-6 58h-11l-6-48z" fill="#1F2023"/>
+              <path d="M124 252l4 18 4-18z" fill="#F4F4F1"/>
+              <path d="M146 262l14 26" stroke="#1F2023" stroke-width="9" stroke-linecap="round"/>
+              <!-- La mariée -->
+              <circle cx="170" cy="232" r="10.5" fill="#BDBEBB"/>
+              <path d="M161 224c2-10 18-12 20 0-4-4-14-4-20 0z" fill="#4A4C50"/>
+              <path d="M163 252c4-6 14-6 18 0l2 26 30 94h-70l16-94z" fill="#F7F7F5"/>
+              <path d="M178 226c22 12 44 50 58 110-18-24-34-40-52-48z" fill="#FFFFFF" opacity=".55"/>
+              <path d="M163 262l-6 24" stroke="#F7F7F5" stroke-width="7" stroke-linecap="round"/>
+              <!-- Bouquet -->
+              <g class="fill-eucalyptus"><circle cx="158" cy="290" r="6"/><circle cx="166" cy="296" r="5"/><circle cx="152" cy="297" r="4.5"/></g>
+              <!-- Pétales -->
+              <g fill="#FFFFFF">
+                <circle cx="70" cy="200" r="2.6"/><circle cx="96" cy="160" r="2"/><circle cx="232" cy="186" r="2.4"/><circle cx="214" cy="150" r="1.8"/><circle cx="120" cy="190" r="2"/>
+                <circle cx="190" cy="196" r="2.2"/><circle cx="246" cy="232" r="2"/><circle cx="60" cy="262" r="2"/><circle cx="150" cy="176" r="2.4"/><circle cx="104" cy="214" r="1.6"/>
+                <rect x="198" y="170" width="4" height="2.4" transform="rotate(30 200 171)"/><rect x="84" y="236" width="4" height="2.4" transform="rotate(-24 86 237)"/>
+              </g>
+              <g class="fill-eucalyptus" opacity=".8"><circle cx="226" cy="214" r="2.2"/><circle cx="80" cy="182" r="2"/><circle cx="174" cy="160" r="1.8"/></g>
+            </svg>
+          </div>
+          <figcaption class="pt-2 text-[14px] leading-snug text-encre/60 hidden sm:block">Sortie de mairie, Vannes</figcaption>
+        </figure>
+
+        <div class="grid grid-rows-2 gap-2.5 sm:gap-4 min-h-0 lg:pt-14 lg:pb-6">
+          <figure class="tirage flex flex-col min-h-0 lg:rotate-[1.2deg]">
+            <div class="bain grain flex-1 min-h-0" style="--d:420ms">
+              <svg class="block w-full h-full" viewBox="0 0 300 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Deux alliances posées sur un drap de lin">
+                <rect width="300" height="260" fill="#3E3F43"/>
+                <path d="M0 40c60 20 120-10 180 10s90 20 120 0v40c-40 20-90 0-140 10S40 110 0 90z" fill="#4A4C50"/>
+                <path d="M0 170c70-20 120 20 200 0s80-10 100 0v90H0z" fill="#36373A"/>
+                <ellipse cx="150" cy="176" rx="86" ry="14" fill="#2A2B2E" opacity=".7"/>
+                <ellipse cx="124" cy="132" rx="44" ry="44" fill="none" stroke="#D9D9D6" stroke-width="11"/>
+                <ellipse cx="124" cy="132" rx="44" ry="44" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="40 240" stroke-dashoffset="-30" opacity=".8"/>
+                <ellipse cx="180" cy="140" rx="36" ry="36" fill="none" stroke="#A7A9AA" stroke-width="8"/>
+                <path d="M150 112a36 36 0 0 1 12-6" stroke="#3E3F43" stroke-width="10"/>
+                <ellipse cx="180" cy="140" rx="36" ry="36" fill="none" stroke="#F4F4F1" stroke-width="2" stroke-dasharray="30 200" stroke-dashoffset="-140" opacity=".7"/>
+              </svg>
+            </div>
+            <figcaption class="pt-2 text-[14px] leading-snug text-encre/60 hidden sm:block">Les alliances, avant la cérémonie</figcaption>
+          </figure>
+          <figure class="tirage flex flex-col min-h-0 lg:-rotate-[.8deg] lg:ml-6">
+            <div class="bain grain flex-1 min-h-0" style="--d:640ms">
+              <svg class="block w-full h-full" viewBox="0 0 300 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bouquet d'eucalyptus et de roses blanches noué d'un ruban">
+                <rect width="300" height="260" fill="#DCDCD8"/>
+                <path d="M0 200h300v60H0z" fill="#CBCBC7"/>
+                <g stroke="#6E7470" stroke-width="2" fill="none" stroke-linecap="round">
+                  <path d="M150 250c-2-50-10-90-50-150M150 250c0-60 6-110 40-170M150 250c4-56 30-80 80-110M150 250c-6-50-40-70-90-80M150 250c0-70-2-120 0-200"/>
+                </g>
+                <g class="fill-eucalyptus">
+                  <circle cx="104" cy="104" r="11" opacity=".85"/><circle cx="118" cy="128" r="9" opacity=".7"/><circle cx="92" cy="84" r="8" opacity=".9"/>
+                  <circle cx="186" cy="86" r="10" opacity=".8"/><circle cx="176" cy="112" r="9" opacity=".65"/><circle cx="194" cy="62" r="7" opacity=".9"/>
+                  <circle cx="226" cy="142" r="10" opacity=".75"/><circle cx="206" cy="152" r="8" opacity=".6"/>
+                  <circle cx="66" cy="172" r="9" opacity=".8"/><circle cx="90" cy="180" r="7" opacity=".6"/>
+                  <circle cx="150" cy="54" r="8" opacity=".85"/><circle cx="150" cy="78" r="7" opacity=".65"/>
+                </g>
+                <g fill="#FAFAF8" stroke="#BDBEBB" stroke-width="1.5">
+                  <circle cx="138" cy="146" r="18"/><circle cx="168" cy="152" r="15"/><circle cx="152" cy="122" r="14"/>
+                </g>
+                <g fill="none" stroke="#C9CAC6" stroke-width="1.4"><path d="M130 146a8 8 0 1 0 14-4M162 152a6 6 0 1 0 10-3M147 122a6 6 0 1 0 10-2"/></g>
+                <path d="M138 206h26l-4 14h-18z" fill="#F4F4F1"/>
+                <path d="M150 212c-16 4-24 20-26 34M152 212c14 6 20 20 20 34" stroke="#F4F4F1" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <figcaption class="pt-2 text-[14px] leading-snug text-encre/60 hidden sm:block">Le bouquet de Maëlle</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Bandeau pellicule : les lieux photographiés ===== -->
+    <div class="pellicule bg-encre text-papier overflow-x-clip" aria-label="Quelques lieux de mariage photographiés">
+      <div class="perfos h-3 opacity-70" aria-hidden="true"></div>
+      <div class="defile py-2.5 font-serif italic text-[1.15rem] md:text-[1.35rem]">
+        <ul class="flex shrink-0 items-center">
+          <li class="px-5">Domaine de Kerlann</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]" aria-hidden="true">24A</li>
+          <li class="px-5">Chapelle de Locmariaquer</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]" aria-hidden="true">25</li>
+          <li class="px-5">Mairie de Vannes</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]" aria-hidden="true">25A</li>
+          <li class="px-5">Manoir de Kerazan</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]" aria-hidden="true">26</li>
+          <li class="px-5">Plage de Penthièvre</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]" aria-hidden="true">26A</li>
+          <li class="px-5">Île aux Moines</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]" aria-hidden="true">27</li>
+        </ul>
+        <ul class="copie flex shrink-0 items-center" aria-hidden="true">
+          <li class="px-5">Domaine de Kerlann</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]">24A</li>
+          <li class="px-5">Chapelle de Locmariaquer</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]">25</li>
+          <li class="px-5">Mairie de Vannes</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]">25A</li>
+          <li class="px-5">Manoir de Kerazan</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]">26</li>
+          <li class="px-5">Plage de Penthièvre</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]">26A</li>
+          <li class="px-5">Île aux Moines</li><li class="px-2 text-[13px] not-italic font-sans text-[#E07A5F]">27</li>
+        </ul>
+      </div>
+      <div class="perfos h-3 opacity-70" aria-hidden="true"></div>
+    </div>
+
+    <!-- ===== Galerie : mosaïque de tirages ===== -->
+    <section id="galerie" class="overflow-x-clip">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24">
+        <div class="md:flex md:items-end md:justify-between gap-10">
+          <h2 class="font-serif font-normal leading-[1.08] text-[2.1rem] sm:text-5xl max-w-xl">Quelques mariages de la saison</h2>
+          <p class="mt-3 md:mt-0 max-w-sm text-encre/75"><span class="md:hidden">Faites glisser pour voir les tirages. </span><span>Les galeries complètes s'envoient sur demande.</span></p>
+        </div>
+
+        <ul data-groupe class="no-scrollbar mt-7 md:mt-12 -mx-4 px-4 pb-4 flex gap-3.5 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-6 md:auto-rows-[190px] lg:auto-rows-[230px] md:gap-5 md:overflow-visible">
+          <li class="revele shrink-0 w-[80%] h-[300px] snap-start md:w-auto md:h-auto md:col-span-4 md:row-span-2">
+            <figure class="cadre tirage h-full flex flex-col">
+              <div data-kv-image="Photo d'un mariage que vous avez photographié" class="bain grain flex-1 min-h-0 bg-encre">
+                <svg class="block w-full h-full" viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Première danse sous une guirlande de lumières">
+                  <defs><radialGradient id="halo" cx=".5" cy=".55" r=".55"><stop offset="0" stop-color="#6B6D71"/><stop offset="1" stop-color="#1F2023"/></radialGradient></defs>
+                  <rect width="480" height="300" fill="url(#halo)"/>
+                  <path d="M0 230h480v70H0z" fill="#2A2B2E"/>
+                  <ellipse cx="240" cy="246" rx="120" ry="12" fill="#77797D" opacity=".5"/>
+                  <g fill="none" stroke="#55575B" stroke-width="1.2"><path d="M-10 30Q120 110 240 40T490 50"/><path d="M-10 80Q130 140 250 90T490 96"/></g>
+                  <g fill="#FFF7E6">
+                    <circle cx="20" cy="44" r="3"/><circle cx="60" cy="66" r="3"/><circle cx="100" cy="80" r="3"/><circle cx="140" cy="82" r="3"/><circle cx="180" cy="72" r="3"/><circle cx="220" cy="52" r="3"/><circle cx="262" cy="40" r="3"/><circle cx="304" cy="38" r="3"/><circle cx="346" cy="44" r="3"/><circle cx="390" cy="52" r="3"/><circle cx="432" cy="54" r="3"/><circle cx="470" cy="51" r="3"/>
+                    <circle cx="30" cy="94" r="2.6"/><circle cx="80" cy="114" r="2.6"/><circle cx="130" cy="124" r="2.6"/><circle cx="180" cy="118" r="2.6"/><circle cx="228" cy="100" r="2.6"/><circle cx="276" cy="88" r="2.6"/><circle cx="330" cy="86" r="2.6"/><circle cx="384" cy="92" r="2.6"/><circle cx="440" cy="96" r="2.6"/>
+                  </g>
+                  <g fill="#FFF7E6" opacity=".18"><circle cx="140" cy="82" r="12"/><circle cx="304" cy="38" r="12"/><circle cx="390" cy="52" r="12"/><circle cx="60" cy="66" r="12"/></g>
+                  <!-- Le couple qui danse -->
+                  <circle cx="226" cy="136" r="11" fill="#141517"/>
+                  <circle cx="252" cy="132" r="10" fill="#CFCFCB"/>
+                  <path d="M246 126c2-8 14-10 16 0-4-3-11-3-16 0z" fill="#4A4C50"/>
+                  <path d="M212 158c4-10 26-10 30 0l4 50-2 38h-10l-4-40-4 40h-10l-6-36z" fill="#141517"/>
+                  <path d="M244 152c6-6 16-4 18 4l4 28 30 64h-70l14-60z" fill="#F7F7F5"/>
+                  <path d="M240 160c6 4 10 10 14 4" stroke="#141517" stroke-width="8" stroke-linecap="round" fill="none"/>
+                  <path d="M262 136c18 20 30 60 38 108-12-20-22-34-34-40z" fill="#FFFFFF" opacity=".3"/>
+                  <g fill="#3A3B3E"><path d="M40 230c0-24 8-34 18-34s16 12 16 34z"/><path d="M400 230c0-28 10-38 20-38s18 14 18 38z"/><path d="M440 230c0-20 6-28 14-28s12 10 12 28z"/></g>
+                </svg>
+              </div>
+              <figcaption class="pt-2.5 text-[15px] text-encre/75"><span class="legende">Anaïs et Tom, au domaine de Kerlann</span></figcaption>
+            </figure>
+          </li>
+
+          <li class="revele shrink-0 w-[80%] h-[300px] snap-start md:w-auto md:h-auto md:col-span-2 md:row-span-2" style="--d:90ms">
+            <figure class="cadre tirage h-full flex flex-col">
+              <div class="bain grain flex-1 min-h-0">
+                <svg class="block w-full h-full" viewBox="0 0 240 320" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Une mariée de dos face à la mer, le voile soulevé par le vent">
+                  <rect width="240" height="320" fill="#E1E2DF"/>
+                  <path d="M0 150h240v170H0z" fill="#9C9EA0"/>
+                  <path d="M0 150h240v8H0z" fill="#B7B8B7"/>
+                  <g stroke="#B9BAB9" stroke-width="1.4" opacity=".8"><path d="M10 176h60M120 186h90M40 206h70M150 222h70M0 246h50M90 258h80"/></g>
+                  <path d="M0 270c50-14 120-8 240-20v70H0z" fill="#D2D2CE"/>
+                  <circle cx="118" cy="168" r="11" fill="#5A5C60"/>
+                  <path d="M110 160c4-6 14-6 17 2" stroke="#3A3B3E" stroke-width="5" fill="none"/>
+                  <path d="M106 184c6-6 18-6 24 0l4 30 22 76H82l20-76z" fill="#FAFAF8"/>
+                  <path d="M124 162c30-6 70-30 110-30-14 22-50 52-104 60z" fill="#FFFFFF" opacity=".75"/>
+                  <path d="M126 168c40 4 74-6 104-20" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity=".9"/>
+                </svg>
+              </div>
+              <figcaption class="pt-2.5 text-[15px] text-encre/75"><span class="legende">Lisa, plage de Penthièvre</span></figcaption>
+            </figure>
+          </li>
+
+          <li class="revele shrink-0 w-[80%] h-[300px] snap-start md:w-auto md:h-auto md:col-span-2" style="--d:0ms">
+            <figure class="cadre tirage h-full flex flex-col">
+              <div class="bain grain flex-1 min-h-0">
+                <svg class="block w-full h-full" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Longue table de banquet éclairée aux bougies">
+                  <rect width="300" height="200" fill="#4A4C50"/>
+                  <path d="M0 0h300v70H0z" fill="#3A3B3E"/>
+                  <path d="M120 70h60l140 130H-20z" fill="#EDEDEA"/>
+                  <path d="M120 70h60l8 8h-76z" fill="#D2D2CE"/>
+                  <g fill="#BDBEBB"><circle cx="70" cy="170" r="10"/><circle cx="230" cy="170" r="10"/><circle cx="98" cy="134" r="7"/><circle cx="202" cy="134" r="7"/><circle cx="116" cy="106" r="5"/><circle cx="184" cy="106" r="5"/></g>
+                  <g fill="#F7F7F5"><rect x="146" y="150" width="8" height="30"/><rect x="147" y="112" width="6" height="22"/><rect x="148" y="88" width="4" height="14"/></g>
+                  <g fill="#FFE9B8"><ellipse cx="150" cy="144" rx="3" ry="5"/><ellipse cx="150" cy="107" rx="2.4" ry="4"/><ellipse cx="150" cy="84" rx="1.8" ry="3"/></g>
+                  <g fill="#FFE9B8" opacity=".15"><circle cx="150" cy="144" r="18"/><circle cx="150" cy="107" r="13"/></g>
+                  <g class="fill-eucalyptus" opacity=".8"><circle cx="128" cy="176" r="4"/><circle cx="172" cy="176" r="4"/><circle cx="136" cy="128" r="3"/><circle cx="164" cy="128" r="3"/></g>
+                </svg>
+              </div>
+              <figcaption class="pt-2.5 text-[15px] text-encre/75"><span class="legende">Le dîner au manoir de Kerazan</span></figcaption>
+            </figure>
+          </li>
+
+          <li class="revele shrink-0 w-[80%] h-[300px] snap-start md:w-auto md:h-auto md:col-span-2 md:row-span-2" style="--d:90ms">
+            <figure class="cadre tirage h-full flex flex-col">
+              <div class="bain grain flex-1 min-h-0">
+                <svg class="block w-full h-full" viewBox="0 0 240 320" preserveAspectRatio="xMidYMid slice" role="img" aria-label="La robe de mariée suspendue devant une fenêtre lumineuse">
+                  <rect width="240" height="320" fill="#C9CAC7"/>
+                  <rect x="40" y="30" width="160" height="220" fill="#F4F4F1"/>
+                  <path d="M40 30h160v220H40z" fill="none" stroke="#8E9092" stroke-width="8"/>
+                  <path d="M120 30v220M40 140h160" stroke="#8E9092" stroke-width="5"/>
+                  <path d="M0 250h240v70H0z" fill="#AFB0AE"/>
+                  <path d="M120 48v14" stroke="#4A4C50" stroke-width="2"/>
+                  <path d="M100 74l20-12 20 12" stroke="#4A4C50" stroke-width="2.5" fill="none"/>
+                  <path d="M104 74c6 4 26 4 32 0l2 40c22 50 40 100 46 150H56c6-50 24-100 46-150z" fill="#FFFFFF" stroke="#D4D4D1" stroke-width="1.5"/>
+                  <path d="M104 114h32" stroke="#D4D4D1" stroke-width="1.5"/>
+                  <path d="M112 120c-6 50-14 100-20 144M128 120c6 50 16 100 26 144" stroke="#E6E6E3" stroke-width="1.2" fill="none"/>
+                  <path d="M0 0h40v250H0zM200 0h40v250h-40z" fill="#B3B4B2" opacity=".6"/>
+                </svg>
+              </div>
+              <figcaption class="pt-2.5 text-[15px] text-encre/75"><span class="legende">Les préparatifs de Maëlle</span></figcaption>
+            </figure>
+          </li>
+
+          <li class="revele shrink-0 w-[80%] h-[300px] snap-start md:w-auto md:h-auto md:col-span-2" style="--d:180ms">
+            <figure class="cadre tirage h-full flex flex-col">
+              <div class="bain grain flex-1 min-h-0">
+                <svg class="block w-full h-full" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Petite chapelle en pierre entourée d'invités">
+                  <rect width="300" height="200" fill="#E3E4E1"/>
+                  <path d="M0 150c60-10 140-14 300-6v56H0z" class="fill-eucalyptus" opacity=".45"/>
+                  <path d="M0 162c80-6 180-6 300 0v38H0z" class="fill-eucalyptus" opacity=".6"/>
+                  <path d="M108 156V96l42-30 42 30v60z" fill="#9C9EA0"/>
+                  <path d="M140 76V40h20v36z" fill="#8A8C8F"/>
+                  <path d="M136 42l14-22 14 22z" fill="#55575B"/>
+                  <path d="M100 98l50-36 50 36" stroke="#55575B" stroke-width="6" fill="none"/>
+                  <path d="M140 156v-30a10 10 0 0 1 20 0v30z" fill="#3A3B3E"/>
+                  <g fill="#3A3B3E"><circle cx="60" cy="150" r="4"/><circle cx="74" cy="152" r="4"/><circle cx="226" cy="150" r="4"/><circle cx="242" cy="152" r="4"/><circle cx="90" cy="156" r="4"/></g>
+                  <g fill="#55575B"><rect x="56" y="154" width="8" height="14" rx="3"/><rect x="70" y="156" width="8" height="14" rx="3"/><rect x="222" y="154" width="8" height="14" rx="3"/><rect x="238" y="156" width="8" height="14" rx="3"/><rect x="86" y="160" width="8" height="12" rx="3"/></g>
+                </svg>
+              </div>
+              <figcaption class="pt-2.5 text-[15px] text-encre/75"><span class="legende">Chapelle de Locmariaquer</span></figcaption>
+            </figure>
+          </li>
+
+          <li class="revele shrink-0 w-[80%] h-[300px] snap-start md:w-auto md:h-auto md:col-span-2" style="--d:0ms">
+            <figure class="cadre tirage h-full flex flex-col">
+              <div class="bain grain flex-1 min-h-0">
+                <svg class="block w-full h-full" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Deux coupes de champagne qui trinquent">
+                  <rect width="300" height="200" fill="#6E7074"/>
+                  <g fill="#FFFFFF" opacity=".12"><circle cx="60" cy="50" r="26"/><circle cx="250" cy="40" r="20"/><circle cx="230" cy="150" r="30"/></g>
+                  <path d="M104 40h44l-6 52a16 16 0 0 1-32 0z" fill="#E9E9E6" opacity=".9"/>
+                  <path d="M108 60h36l-3 32a15 15 0 0 1-30 0z" fill="#F6EED9"/>
+                  <path d="M126 108v56M108 168h36" stroke="#E9E9E6" stroke-width="4" stroke-linecap="round"/>
+                  <g transform="rotate(14 186 100)">
+                    <path d="M164 40h44l-6 52a16 16 0 0 1-32 0z" fill="#E9E9E6" opacity=".9"/>
+                    <path d="M168 60h36l-3 32a15 15 0 0 1-30 0z" fill="#F6EED9"/>
+                    <path d="M186 108v56M168 168h36" stroke="#E9E9E6" stroke-width="4" stroke-linecap="round"/>
+                  </g>
+                  <g fill="#FFFFFF"><circle cx="122" cy="80" r="1.6"/><circle cx="130" cy="70" r="1.2"/><circle cx="182" cy="84" r="1.6"/><circle cx="158" cy="36" r="2"/><circle cx="150" cy="28" r="1.4"/><circle cx="164" cy="24" r="1.2"/></g>
+                </svg>
+              </div>
+              <figcaption class="pt-2.5 text-[15px] text-encre/75"><span class="legende">Le vin d'honneur de Claire et Malo</span></figcaption>
+            </figure>
+          </li>
+
+          <li class="revele hidden md:flex md:col-span-2 flex-col justify-end" style="--d:180ms">
+            <p class="font-serif italic text-2xl leading-snug">Une galerie complète compte en moyenne 600 photos.</p>
+            <a href="#contact" class="lien mt-3 inline-flex min-h-11 items-center self-start">Demander une galerie entière</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Le jour J : la journée heure par heure ===== -->
+    <section id="jour" class="bg-voile overflow-x-clip">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24">
+        <h2 class="font-serif font-normal leading-[1.08] text-[2.1rem] sm:text-5xl max-w-2xl">Du café des préparatifs au dernier slow</h2>
+        <p class="mt-3 max-w-xl text-encre/75">Je reste avec vous toute la journée, sans vous demander de poser. Voici comment elle se déroule le plus souvent.</p>
+
+        <div class="revele relative mt-8 md:mt-14">
+          <span class="fil hidden md:block absolute left-0 right-0 top-[1.9rem] h-px bg-encre/40" aria-hidden="true"></span>
+          <ol class="no-scrollbar -mx-4 px-4 pb-3 flex gap-3.5 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-5 md:gap-8 md:overflow-visible">
+            <li class="shrink-0 w-[74%] sm:w-[44%] snap-start md:w-auto bg-papier md:bg-transparent p-5 md:p-0">
+              <p class="relative font-serif italic text-[2.1rem] leading-none tnum md:bg-voile md:pr-3 md:inline-block">10 h</p>
+              <h3 class="mt-4 font-medium text-lg">Les préparatifs</h3>
+              <p class="mt-1.5 text-encre/75">La robe sur le cintre, les boutons de manchette, les témoins qui rient trop fort.</p>
+            </li>
+            <li class="shrink-0 w-[74%] sm:w-[44%] snap-start md:w-auto bg-papier md:bg-transparent p-5 md:p-0">
+              <p class="relative font-serif italic text-[2.1rem] leading-none tnum md:bg-voile md:pr-3 md:inline-block">14 h 30</p>
+              <h3 class="mt-4 font-medium text-lg">La cérémonie</h3>
+              <p class="mt-1.5 text-encre/75">Sans flash et sans bruit, au fond de l'allée comme au premier rang.</p>
+            </li>
+            <li class="shrink-0 w-[74%] sm:w-[44%] snap-start md:w-auto bg-papier md:bg-transparent p-5 md:p-0">
+              <p class="relative font-serif italic text-[2.1rem] leading-none tnum md:bg-voile md:pr-3 md:inline-block">16 h</p>
+              <h3 class="mt-4 font-medium text-lg">Le vin d'honneur</h3>
+              <p class="mt-1.5 text-encre/75">Les retrouvailles, les grands-parents, les enfants qui courent entre les tables.</p>
+            </li>
+            <li class="shrink-0 w-[74%] sm:w-[44%] snap-start md:w-auto bg-papier md:bg-transparent p-5 md:p-0">
+              <p class="relative font-serif italic text-[2.1rem] leading-none tnum md:bg-voile md:pr-3 md:inline-block">18 h 30</p>
+              <h3 class="mt-4 font-medium text-lg">Vos portraits</h3>
+              <p class="mt-1.5 text-encre/75">Vingt minutes à deux dans la lumière dorée, loin du bruit, sans pose figée.</p>
+            </li>
+            <li class="shrink-0 w-[74%] sm:w-[44%] snap-start md:w-auto bg-papier md:bg-transparent p-5 md:p-0">
+              <p class="relative font-serif italic text-[2.1rem] leading-none tnum md:bg-voile md:pr-3 md:inline-block">23 h</p>
+              <h3 class="mt-4 font-medium text-lg">La soirée</h3>
+              <p class="mt-1.5 text-encre/75">Les discours, la pièce montée, la première danse, puis la piste qui s'emballe.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Formules ===== -->
+    <section id="formules" class="overflow-x-clip">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24">
+        <div class="md:flex md:items-end md:justify-between gap-10">
+          <h2 class="font-serif font-normal leading-[1.08] text-[2.1rem] sm:text-5xl max-w-xl">Trois formules, un devis clair</h2>
+          <p class="mt-3 md:mt-0 max-w-sm text-encre/75">Tarifs 2027. Déplacement offert dans le Morbihan, au réel ailleurs.</p>
+        </div>
+
+        <ul data-groupe class="no-scrollbar mt-7 md:mt-12 -mx-4 px-4 pb-3 flex gap-3.5 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-3 md:gap-0 md:overflow-visible md:border-y md:border-encre/20 items-stretch">
+          <li class="revele shrink-0 w-[80%] sm:w-[46%] snap-start md:w-auto border border-encre/20 md:border-0 p-6 md:p-10 flex flex-col">
+            <h3 class="font-serif text-[1.65rem] leading-tight">La cérémonie</h3>
+            <p class="mt-1 text-encre/70">4 heures de présence</p>
+            <p class="mt-5 font-serif text-[2.6rem] leading-none tnum">1 290 €</p>
+            <ul class="mt-5 space-y-1.5 text-[16px] text-encre/80">
+              <li>Cérémonie et vin d'honneur</li>
+              <li>Séance couple de 20 minutes</li>
+              <li>250 photos retouchées environ</li>
+              <li>Galerie privée en ligne</li>
+            </ul>
+          </li>
+          <li class="revele shrink-0 w-[80%] sm:w-[46%] snap-start md:w-auto bg-encre text-papier p-6 md:p-10 md:-my-6 flex flex-col" style="--d:90ms">
+            <p class="self-start rounded-full bg-eucalyptus px-3 py-0.5 text-[14px] text-papier">La plus choisie</p>
+            <h3 class="mt-3 font-serif text-[1.65rem] leading-tight">La journée</h3>
+            <p class="mt-1 text-papier/70">10 heures de présence</p>
+            <p class="mt-5 font-serif text-[2.6rem] leading-none tnum">2 190 €</p>
+            <ul class="mt-5 space-y-1.5 text-[16px] text-papier/85">
+              <li>Des préparatifs à la première danse</li>
+              <li>600 photos retouchées environ</li>
+              <li>Une pellicule argentique offerte</li>
+              <li>Galerie en ligne et clé USB</li>
+            </ul>
+          </li>
+          <li class="revele shrink-0 w-[80%] sm:w-[46%] snap-start md:w-auto border border-encre/20 md:border-0 md:border-l p-6 md:p-10 flex flex-col" style="--d:180ms">
+            <h3 class="font-serif text-[1.65rem] leading-tight">La journée racontée</h3>
+            <p class="mt-1 text-encre/70">La journée, plus l'album</p>
+            <p class="mt-5 font-serif text-[2.6rem] leading-none tnum">2 790 €</p>
+            <ul class="mt-5 space-y-1.5 text-[16px] text-encre/80">
+              <li>Tout ce que comprend la journée</li>
+              <li>Album en lin de 40 pages</li>
+              <li>Séance avant le mariage</li>
+              <li>Tirages pour vos parents</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Qui suis-je ===== -->
+    <section id="apropos" class="bg-encre text-papier overflow-x-clip">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24 grid md:grid-cols-12 gap-7 md:gap-12 items-center">
+        <figure class="revele md:col-span-5 flex gap-4 md:block">
+          <div class="tirage !p-1.5 md:!p-2.5 shrink-0 w-[38%] md:w-auto md:-rotate-[1deg]">
+            <div data-kv-image="Votre portrait, appareil photo à la main" class="bain grain h-40 md:h-[440px]">
+              <svg class="block w-full h-full" viewBox="0 0 300 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Portrait de la photographe, son appareil devant le visage">
+                <rect width="300" height="380" fill="#B9BAB8"/>
+                <path d="M0 0h300v380H0z" fill="#CDCECC" opacity=".5"/>
+                <path d="M60 380c0-80 40-120 90-120s90 40 90 120z" class="fill-eucalyptus"/>
+                <path d="M126 262l24 30 24-30" fill="none" stroke="#F4F4F1" stroke-width="3"/>
+                <path d="M100 150c0-50 22-76 52-76s50 26 50 76c0 30-6 60-10 70H110c-6-10-10-40-10-70z" fill="#2B2C2F"/>
+                <ellipse cx="150" cy="168" rx="38" ry="46" fill="#C8C8C4"/>
+                <path d="M112 140c10-30 30-44 46-44 24 0 38 16 44 40-24-10-56-12-90 4z" fill="#2B2C2F"/>
+                <rect x="104" y="150" width="96" height="58" rx="8" fill="#1F2023"/>
+                <rect x="112" y="140" width="26" height="12" rx="3" fill="#1F2023"/>
+                <circle cx="158" cy="180" r="22" fill="#3A3B3E" stroke="#8A8C8F" stroke-width="3"/>
+                <circle cx="158" cy="180" r="12" fill="#141517"/>
+                <circle cx="152" cy="174" r="4" fill="#FFFFFF" opacity=".55"/>
+                <path d="M96 210c-6 20 6 40 26 34M206 208c8 18-2 38-22 36" stroke="#C8C8C4" stroke-width="16" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <figcaption class="md:hidden self-end font-serif italic text-[1.35rem] leading-snug">« Je ne vous demanderai jamais de faire semblant. »</figcaption>
+        </figure>
+
+        <div class="md:col-span-7">
+          <h2 class="font-serif font-normal leading-[1.08] text-[2.1rem] sm:text-5xl">Lou, derrière l'appareil</h2>
+          <p class="mt-4 max-w-xl text-papier/80">Je photographie des mariages depuis 2016, entre le golfe du Morbihan et la presqu'île de Quiberon. Un boîtier argentique m'accompagne toujours : une pellicule de 36 vues, développée à la main, glissée dans votre galerie.</p>
+          <blockquote class="hidden md:block mt-8 font-serif italic text-[2rem] leading-snug max-w-xl">« Je ne vous demanderai jamais de faire semblant. »</blockquote>
+          <dl class="mt-7 md:mt-10 grid grid-cols-3 gap-3 md:gap-8 border-t border-papier/20 pt-5 max-w-xl">
+            <div><dt class="sr-only">Délai de livraison</dt><dd class="font-serif text-[2rem] md:text-[2.6rem] leading-none tnum">6</dd><dd class="mt-1.5 text-[15px] leading-snug text-papier/70">semaines pour la galerie</dd></div>
+            <div><dt class="sr-only">Nombre de mariages</dt><dd class="font-serif text-[2rem] md:text-[2.6rem] leading-none tnum">22</dd><dd class="mt-1.5 text-[15px] leading-snug text-papier/70">mariages par an, pas plus</dd></div>
+            <div><dt class="sr-only">Photos sur pellicule</dt><dd class="font-serif text-[2rem] md:text-[2.6rem] leading-none tnum">36</dd><dd class="mt-1.5 text-[15px] leading-snug text-papier/70">vues sur pellicule</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Avis ===== -->
+    <section id="avis" class="overflow-x-clip">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24">
+        <h2 class="font-serif font-normal leading-[1.08] text-[2.1rem] sm:text-5xl">Ils se sont dit oui</h2>
+        <ul data-groupe class="no-scrollbar mt-7 md:mt-12 -mx-4 px-4 pb-3 flex gap-3.5 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-3 md:gap-12 md:overflow-visible">
+          <li class="revele shrink-0 w-[82%] sm:w-[46%] snap-start md:w-auto border-l border-eucalyptus pl-5 md:pl-7">
+            <blockquote class="font-serif text-[1.3rem] md:text-[1.45rem] leading-snug">On a oublié qu'elle était là. Puis on a reçu la galerie et on a pleuré devant la photo de mon grand-père qui danse.</blockquote>
+            <p class="mt-4 text-[15px] text-encre/70">Camille et Jonas, manoir de Kerazan</p>
+          </li>
+          <li class="revele shrink-0 w-[82%] sm:w-[46%] snap-start md:w-auto border-l border-eucalyptus pl-5 md:pl-7" style="--d:90ms">
+            <blockquote class="font-serif text-[1.3rem] md:text-[1.45rem] leading-snug">Il a plu toute la journée. Lou nous a emmenés sous les halles et ce sont nos photos préférées.</blockquote>
+            <p class="mt-4 text-[15px] text-encre/70">Inès et Paul, mairie de Vannes</p>
+          </li>
+          <li class="revele shrink-0 w-[82%] sm:w-[46%] snap-start md:w-auto border-l border-eucalyptus pl-5 md:pl-7" style="--d:180ms">
+            <blockquote class="font-serif text-[1.3rem] md:text-[1.45rem] leading-snug">La pellicule argentique, c'est le cadeau qu'on n'attendait pas. Le grain, les couleurs : on les a fait encadrer.</blockquote>
+            <p class="mt-4 text-[15px] text-encre/70">Maëlle et Yann, île aux Moines</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Questions ===== -->
+    <section id="questions" class="bg-voile">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24 grid lg:grid-cols-12 gap-6 lg:gap-12">
+        <h2 class="lg:col-span-4 font-serif font-normal leading-[1.08] text-[2.1rem] sm:text-5xl">Avant de réserver</h2>
+        <div class="lg:col-span-8 border-t border-encre/25">
+          <details class="border-b border-encre/25">
+            <summary class="flex items-center justify-between gap-4 py-4 min-h-14 text-lg font-medium"><span>Quand recevrons-nous les photos ?</span><span class="plus text-2xl font-light leading-none" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/80"><p>Une sélection de 50 photos sous 10 jours, pour patienter, puis la galerie complète en 6 semaines au plus tard.</p></div>
+          </details>
+          <details class="border-b border-encre/25">
+            <summary class="flex items-center justify-between gap-4 py-4 min-h-14 text-lg font-medium"><span>Comment réserver notre date ?</span><span class="plus text-2xl font-light leading-none" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/80"><p>Après un appel ou un café pour faire connaissance, je vous envoie le contrat. La date est bloquée à la réception de 30 % d'acompte.</p></div>
+          </details>
+          <details class="border-b border-encre/25">
+            <summary class="flex items-center justify-between gap-4 py-4 min-h-14 text-lg font-medium"><span>Vous déplacez-vous hors de Bretagne ?</span><span class="plus text-2xl font-light leading-none" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/80"><p>Oui, partout en France. Le déplacement et, si besoin, une nuit sur place sont indiqués à part dans le devis.</p></div>
+          </details>
+          <details class="border-b border-encre/25">
+            <summary class="flex items-center justify-between gap-4 py-4 min-h-14 text-lg font-medium"><span>Proposez-vous aussi la vidéo ?</span><span class="plus text-2xl font-light leading-none" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/80"><p>Non, mais je travaille souvent avec deux vidéastes de la région. Je vous donne leurs coordonnées avec plaisir.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="overflow-x-clip">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 md:py-24 grid lg:grid-cols-12 gap-9 lg:gap-14">
+        <div class="lg:col-span-5">
+          <h2 class="font-serif font-normal leading-[1.08] text-[2.1rem] sm:text-5xl">Votre date est-elle encore libre ?</h2>
+          <p class="mt-3 text-encre/75">Je réponds sous 48 heures avec mes disponibilités et la brochure complète.</p>
+          <ul class="mt-5 space-y-0.5">
+            <li><a href="tel:+33600000000" class="lien inline-flex min-h-11 items-center text-lg">06 00 00 00 00</a></li>
+            <li><a href="mailto:contact@exemple.fr" class="lien inline-flex min-h-11 items-center text-lg">contact@exemple.fr</a></li>
+            <li><a href="#" class="lien inline-flex min-h-11 items-center">Instagram : @loumarchal.photo</a></li>
+          </ul>
+          <p class="mt-3 text-encre/75">Studio sur rendez-vous à Vannes. Déplacement offert dans tout le Morbihan.</p>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Vannes, Morbihan" class="mt-6 md:h-56 rounded-sm overflow-hidden border border-encre/20 text-encre"></div>
+        </div>
+
+        <!-- Formulaire : pour recevoir les messages, ajoutez data-netlify="true" sur <form> (Netlify Forms)
+             ou remplacez action="#" par l'adresse fournie par Formspree. -->
+        <form action="#" method="post" class="lg:col-span-7 grid sm:grid-cols-2 gap-x-8 gap-y-5 content-start">
+          <label class="block sm:col-span-2"><span class="text-[15px] text-encre/70">Vos prénoms</span>
+            <input type="text" name="prenoms" autocomplete="name" class="field" placeholder="Par exemple : Lisa et Hugo" required>
+          </label>
+          <label class="block"><span class="text-[15px] text-encre/70">E-mail</span>
+            <input type="email" name="email" autocomplete="email" class="field" required>
+          </label>
+          <label class="block"><span class="text-[15px] text-encre/70">Téléphone</span>
+            <input type="tel" name="telephone" autocomplete="tel" class="field">
+          </label>
+          <label class="block"><span class="text-[15px] text-encre/70">Date du mariage</span>
+            <input type="date" name="date" class="field min-h-[3.1rem]" required>
+          </label>
+          <label class="block"><span class="text-[15px] text-encre/70">Lieu</span>
+            <input type="text" name="lieu" class="field" placeholder="Ville ou domaine">
+          </label>
+          <label class="block sm:col-span-2"><span class="text-[15px] text-encre/70">Formule envisagée</span>
+            <select name="formule" class="field">
+              <option>La cérémonie</option>
+              <option selected>La journée</option>
+              <option>La journée racontée</option>
+              <option>Je ne sais pas encore</option>
+            </select>
+          </label>
+          <label class="block sm:col-span-2"><span class="text-[15px] text-encre/70">Racontez-moi votre journée</span>
+            <textarea name="message" rows="3" class="field resize-y" placeholder="Le nombre d'invités, ce qui compte pour vous"></textarea>
+          </label>
+          <button type="submit" class="btn-plein sm:col-span-2 w-full sm:w-auto sm:justify-self-start mt-1">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-encre text-papier/70 text-[15px]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8 flex flex-col sm:flex-row gap-1 sm:items-center sm:justify-between">
+      <p><span class="font-serif text-lg text-papier">Lou Marchal</span> <span class="block sm:inline sm:ml-2">Photographe de mariage à Vannes</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-papier/95 backdrop-blur border-t border-encre/15 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-[auto_1fr] gap-3">
+    <a href="tel:+33600000000" class="btn-trait !px-6">Appeler</a>
+    <a href="#contact" class="btn-plein">Vérifier ma date</a>
+  </div>
+
+  <script>
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open); m.classList.toggle('ouvert', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach((a, i) => { a.style.animationDelay = i * 50 + 'ms'; a.addEventListener('click', () => setMenu(false)); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    if ('IntersectionObserver' in window) {
+      // Signature : chaque tirage se révèle comme dans le bain du révélateur quand il arrive à l'écran
+      document.querySelectorAll('[class~="bain"]').forEach(el => el.classList.add('attente'));
+      const bain = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.remove('attente'); bain.unobserve(e.target);
+      }), { threshold: .25 });
+      document.querySelectorAll('.bain').forEach(el => bain.observe(el));
+
+      // Apparition au défilement
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        (e.target.matches('[data-groupe]') ? e.target.querySelectorAll('.revele') : [e.target]).forEach(el => el.classList.add('vu'));
+        io.unobserve(e.target);
+      }), { rootMargin: '0px 0px -8% 0px' });
+      // Dans les carrousels, les cartes hors écran apparaissent avec leur rangée
+      document.querySelectorAll('.revele').forEach(el => { const g = el.closest('[data-groupe]'); if (!g) io.observe(el); });
+      document.querySelectorAll('[data-groupe]').forEach(g => io.observe(g));
+    }
+  </script>
+</body>
+</html>

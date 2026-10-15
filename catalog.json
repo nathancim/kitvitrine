@@ -459,6 +459,61 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "0e9a788763e19878f9deb078238a25f2"
+    },
+    {
+      "slug": "revelateur",
+      "title": "Révélateur",
+      "tagline": "Site vitrine pour photographe de mariage",
+      "description": "Une page galerie pour photographe de mariage, où les images passent avant le texte. En ouverture, un mur de tirages sur passe-partout blanc qui se révèlent comme dans le bain du révélateur, d'abord blancs puis l'image qui monte. Suivent un bandeau de pellicule qui fait défiler les lieux photographiés, la mosaïque des mariages de la saison, la journée heure par heure des préparatifs au dernier slow, trois formules claires, le portrait de la photographe avec ses chiffres, les avis des mariés, les questions avant de réserver et la demande de disponibilité avec carte. Gris argentique, papier blanc et vert eucalyptus, titres en Bodoni.",
+      "univers": [
+        "creatifs"
+      ],
+      "style": "Élégant",
+      "couleur": "neutre",
+      "direction": "galerie",
+      "animations": [
+        "tirages qui se révèlent comme dans le bain du révélateur",
+        "titre qui apparaît ligne par ligne",
+        "bandeau de pellicule qui défile",
+        "tirages qui se soulèvent au survol avec légende soulignée",
+        "fil de la journée qui se trace",
+        "apparition au défilement"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-15",
+      "tags": [
+        "photographe de mariage",
+        "photographe",
+        "mariage",
+        "reportage de mariage",
+        "photo argentique",
+        "photographe Bretagne",
+        "photographe événementiel",
+        "shooting couple",
+        "album photo"
+      ],
+      "sections": [
+        "Accueil avec le mur de tirages qui se révèlent",
+        "Bandeau pellicule des lieux photographiés",
+        "Galerie des mariages de la saison",
+        "Le jour J heure par heure",
+        "Trois formules et tarifs",
+        "Portrait de la photographe et chiffres",
+        "Avis des mariés",
+        "Questions avant de réserver",
+        "Demande de disponibilité, coordonnées et carte"
+      ],
+      "palette": [
+        "#56705E",
+        "#A4A6A8",
+        "#E6E5E0",
+        "#F4F4F1",
+        "#1F2023"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "45642fafaeee22663fa6e663bc99c091"
     }
   ]
 }
