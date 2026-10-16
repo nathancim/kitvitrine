@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Rucher des Combes — Apiculteur récoltant dans la vallée de la Drôme</title>
+  <meta name="description" content="Le Rucher des Combes, apiculteur récoltant à Saillans (Drôme) : miels d'acacia, de lavande, de châtaignier et de montagne, mis en pot à la miellerie. Vente sur les marchés de Crest, Dieulefit et Saillans, et commande pour le retrait.">
+  <meta name="theme-color" content="#D08A17">
+  <link rel="preload" href="assets/fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-miel=Couleur principale (miel);--kv-lavande=Couleur d'accent (tampons, liens);--kv-cire=Couleur douce (surlignages);--kv-kraft=Fond des étiquettes;--kv-papier=Fond de page;--kv-brou=Texte">
+</head>
+<body class="bg-papier text-brou font-sans text-[17px] leading-relaxed antialiased pb-[5.5rem] md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Alvéole</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/alveole/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- ===== En-tête : logo au centre, liens de part et d'autre (ordinateur) ===== -->
+  <header class="sticky top-0 z-30 bg-papier/95 backdrop-blur-sm border-b-2 border-brou/15">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 h-16 md:h-[4.5rem] flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] gap-4">
+      <nav class="hidden lg:flex items-center gap-7 font-medium" aria-label="Navigation principale, partie gauche">
+        <a href="#miels" class="souligne inline-flex min-h-11 items-center">Nos miels</a>
+        <a href="#rucher" class="souligne inline-flex min-h-11 items-center">Le rucher</a>
+        <a href="#saison" class="souligne inline-flex min-h-11 items-center">L'année</a>
+      </nav>
+      <a href="#" class="flex items-center gap-2.5 min-h-11 font-display font-semibold text-[1.15rem] sm:text-[1.35rem] leading-none">
+        <svg data-kv-logo="Logo" class="w-9 h-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true">
+          <path class="fill-cire" d="M20 3l14.7 8.5v17L20 37 5.3 28.5v-17z" stroke="#3A2513" stroke-width="2.4" stroke-linejoin="round"/>
+          <path class="fill-miel" d="M20 11c3.6 5 6 8.4 6 11.4a6 6 0 01-12 0c0-3 2.4-6.4 6-11.4z" stroke="#3A2513" stroke-width="2.2" stroke-linejoin="round"/>
+        </svg>
+        <span>Le Rucher des Combes</span>
+      </a>
+      <div class="hidden lg:flex items-center justify-end gap-7 font-medium">
+        <a href="#avis" class="souligne inline-flex min-h-11 items-center">Avis</a>
+        <a href="#marches" class="souligne inline-flex min-h-11 items-center">Marchés</a>
+        <a href="#commande" class="btn-plein !min-h-11 !px-5">Commander</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden inline-flex min-h-11 items-center gap-2 rounded-lg border-2 border-brou px-4 font-semibold" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7c5-1 11 1 16 0M4 12.5c6 .8 10-.8 16 0M4 18c4-.6 7 .4 10 0"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+    <!-- Menu mobile déroulant -->
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 md:top-[4.5rem] bottom-0 z-40 flex-col bg-papier px-5 pt-3 pb-28 overflow-y-auto border-t-2 border-brou/15" aria-label="Navigation mobile">
+      <a href="#miels" class="flex items-center min-h-14 border-b-2 border-dashed border-brou/25 font-display text-2xl font-semibold">Nos miels</a>
+      <a href="#rucher" class="flex items-center min-h-14 border-b-2 border-dashed border-brou/25 font-display text-2xl font-semibold">Le rucher</a>
+      <a href="#saison" class="flex items-center min-h-14 border-b-2 border-dashed border-brou/25 font-display text-2xl font-semibold">L'année au rucher</a>
+      <a href="#avis" class="flex items-center min-h-14 border-b-2 border-dashed border-brou/25 font-display text-2xl font-semibold">Avis</a>
+      <a href="#marches" class="flex items-center min-h-14 border-b-2 border-dashed border-brou/25 font-display text-2xl font-semibold">Marchés et miellerie</a>
+      <a href="#commande" class="btn-plein mt-6">Commander des pots</a>
+      <p class="mt-6 font-main text-2xl text-lavande -rotate-2">À samedi à la miellerie !</p>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Accueil : le pot qui se remplit ===== -->
+    <section class="relative overflow-x-clip">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 pt-7 pb-12 md:pt-16 md:pb-20 text-center">
+        <p class="font-main text-[1.6rem] leading-none text-lavande -rotate-2">Apiculteur récoltant, à Saillans</p>
+        <h1 id="titre" class="mt-3 mx-auto max-w-4xl font-display font-semibold tracking-[-0.015em] leading-[1.06] text-[2.3rem] sm:text-6xl lg:text-[4.6rem]"><span class="ligne">Le miel de nos ruches,</span> <span class="ligne">mis en pot à la main</span> <span class="ligne">dans la vallée de la Drôme.</span></h1>
+        <p class="mt-4 md:mt-6 mx-auto max-w-[36rem] text-[17px] md:text-xl text-brou/85">180 ruches entre Saillans et le col de la Chaudière. Extraction à froid, aucun mélange, vente sur les marchés et à la miellerie.</p>
+        <div class="mt-6 md:mt-8 flex flex-col sm:flex-row sm:justify-center gap-3">
+          <a href="#commande" class="btn-plein w-full sm:w-auto">Commander des pots</a>
+          <a href="#marches" class="btn-papier w-full sm:w-auto hidden sm:inline-flex">Nous trouver au marché</a>
+        </div>
+
+        <div class="mt-8 md:mt-12 grid lg:grid-cols-12 gap-8 items-center text-left">
+          <!-- Étiquette « cette semaine » (ordinateur) -->
+          <div class="hidden lg:block lg:col-span-3">
+            <div class="kraft relative p-6 pt-10 -rotate-3">
+              <span class="trou" aria-hidden="true"></span>
+              <h2 class="font-display font-semibold text-xl">Cette semaine</h2>
+              <ul class="mt-3 space-y-2 text-[16px]">
+                <li>Lavande de juillet, cristallisé crémeux</li>
+                <li>Châtaignier, les derniers pots</li>
+                <li>Pain d'épices de la miellerie</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Illustration : le pot se remplit, le miel coule sous le couvercle, puis le tampon s'imprime -->
+          <div class="lg:col-span-6">
+            <div data-kv-image="Photo de vos pots de miel" class="mx-auto h-[36vh] min-h-[220px] max-h-[310px] lg:h-[430px] lg:max-h-none">
+              <svg class="block w-full h-full" viewBox="0 0 420 340" role="img" aria-label="Pot de miel de lavande à couvercle de tissu kraft, une abeille vole autour, tampon Récolte 2026">
+                <defs>
+                  <clipPath id="verre"><path d="M140 96h140q14 0 14 14v14q16 10 16 30v134q0 26-26 26H136q-26 0-26-26V154q0-20 16-30v-14q0-14 14-14z"/></clipPath>
+                  <mask id="masqueVol"><path class="vol" pathLength="1" d="M28 300C10 240 44 186 86 196s28 70-8 58-6-92 48-118 112-104 168-96" fill="none" stroke="#fff" stroke-width="8"/></mask>
+                </defs>
+                <ellipse cx="212" cy="320" rx="112" ry="9" fill="#3A2513" fill-opacity=".14"/>
+                <!-- Verre -->
+                <path d="M140 96h140q14 0 14 14v14q16 10 16 30v134q0 26-26 26H136q-26 0-26-26V154q0-20 16-30v-14q0-14 14-14z" fill="#FFFDF6" fill-opacity=".6"/>
+                <g clip-path="url(#verre)">
+                  <g class="niveau">
+                    <rect class="fill-miel" x="100" y="128" width="220" height="200"/>
+                    <path class="vague fill-miel" d="M100 132q15-9 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0v20H100z"/>
+                    <rect x="100" y="250" width="220" height="80" fill="#3A2513" fill-opacity=".14"/>
+                    <circle cx="150" cy="210" r="4" fill="#FFF6D8" fill-opacity=".55"/><circle cx="262" cy="176" r="3" fill="#FFF6D8" fill-opacity=".55"/><circle cx="238" cy="282" r="5" fill="#FFF6D8" fill-opacity=".4"/>
+                  </g>
+                </g>
+                <path d="M140 96h140q14 0 14 14v14q16 10 16 30v134q0 26-26 26H136q-26 0-26-26V154q0-20 16-30v-14q0-14 14-14z" fill="none" stroke="#3A2513" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M126 160v110" stroke="#fff" stroke-opacity=".7" stroke-width="7" stroke-linecap="round"/>
+                <!-- Coulure de miel sous le couvercle -->
+                <path class="coulure fill-miel" d="M252 112h18v34q0 9-9 9t-9-9z" stroke="#3A2513" stroke-width="2.5"/>
+                <!-- Couvercle en tissu kraft et ficelle -->
+                <path class="fill-kraft" d="M124 70q86-22 172 0l8 40q-8 8-16 2-8 8-16 0-8 8-16 0-8 8-16 0-8 8-16 0-8 8-16 0-8 8-16 0-8 8-16 0-8 8-16 0-8 8-16 0-8 8-16 0-8 6-14-2z" stroke="#3A2513" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M128 104q82 10 166 0" stroke="#3A2513" stroke-width="3" fill="none"/>
+                <path d="M292 104q14 4 10 18M292 104q20-2 22 10" stroke="#3A2513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <!-- Étiquette -->
+                <rect x="140" y="180" width="140" height="88" rx="5" fill="#FFF8E6" stroke="#3A2513" stroke-width="2.5"/>
+                <text x="210" y="205" text-anchor="middle" font-family="Caveat, cursive" font-weight="600" font-size="19" fill="#3A2513">Miel de</text>
+                <text x="210" y="234" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="600" font-size="28" class="fill-lavande">Lavande</text>
+                <text x="210" y="256" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="9" fill="#3A2513">Rucher des Combes, 500 g</text>
+                <!-- Vol de l'abeille, en pointillés -->
+                <path d="M28 300C10 240 44 186 86 196s28 70-8 58-6-92 48-118 112-104 168-96" fill="none" stroke="#3A2513" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="2 9" mask="url(#masqueVol)"/>
+                <g class="abeille"><g transform="translate(300 34) rotate(18)">
+                  <ellipse class="bzz" cx="-4" cy="-12" rx="8" ry="11" fill="#fff" fill-opacity=".85" stroke="#3A2513" stroke-width="2"/>
+                  <ellipse class="bzz" cx="8" cy="-11" rx="7" ry="10" fill="#fff" fill-opacity=".85" stroke="#3A2513" stroke-width="2"/>
+                  <ellipse class="fill-cire" cx="2" cy="0" rx="16" ry="10" stroke="#3A2513" stroke-width="2.2"/>
+                  <path d="M-3-9v18M5-9.5v19" stroke="#3A2513" stroke-width="3.2"/>
+                  <circle cx="16" cy="-1" r="2" fill="#3A2513"/>
+                </g></g>
+                <!-- Tampon -->
+                <g transform="translate(330 248)"><g class="coup">
+                  <g transform="rotate(-12)">
+                    <circle r="44" fill="none" class="stroke-lavande" stroke-width="3"/>
+                    <circle r="37" fill="none" class="stroke-lavande" stroke-width="1.6"/>
+                    <text y="-4" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="600" font-size="16" class="fill-lavande">Récolte</text>
+                    <text y="18" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="21" class="fill-lavande">2026</text>
+                  </g>
+                </g></g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Note manuscrite (ordinateur) -->
+          <div class="hidden lg:block lg:col-span-3">
+            <p class="font-main text-[1.75rem] leading-tight text-lavande rotate-2">Chaque pot porte le nom du rucher et la date de récolte. Rien d'autre dedans que du miel.</p>
+            <p class="mt-3 font-main text-xl text-brou/70 rotate-1">Élise et Bastien</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trait de pinceau -->
+    <svg class="block w-full h-4 text-brou/30" viewBox="0 0 1200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M0 9c120-6 240 5 360 1s260-8 400-2 300 6 440-1" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+
+    <!-- ===== Les miels : étiquettes à ficelle ===== -->
+    <section id="miels" class="overflow-x-clip">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 md:py-24">
+        <div class="md:flex md:items-end md:justify-between gap-10">
+          <h2 class="font-display font-semibold tracking-[-0.01em] text-[2rem] leading-[1.1] sm:text-5xl max-w-xl">Cinq miels, cinq floraisons</h2>
+          <p class="mt-3 md:mt-0 max-w-sm text-brou/80">Chaque récolte est extraite et mise en pot séparément. Le goût change d'une année à l'autre, comme le vin.</p>
+        </div>
+
+        <div class="relative mt-6 md:mt-12">
+          <!-- La corde où pendent les étiquettes -->
+          <svg class="hidden md:block absolute inset-x-0 top-0 w-full h-8 text-brou/70" viewBox="0 0 1000 30" preserveAspectRatio="none" aria-hidden="true"><path d="M0 4q250 26 500 10t500 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 3"/></svg>
+          <ul data-groupe class="no-scrollbar -mx-4 px-4 pb-4 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:grid md:grid-cols-5 md:gap-5 md:overflow-visible">
+            <li class="revele shrink-0 w-[78%] sm:w-[46%] md:w-auto snap-start pt-10 md:pt-12" style="--r:-2deg;--r-fin:-1deg">
+              <article class="etiquette kraft relative h-full p-5 pt-11" style="--balance:4deg">
+                <span class="ficelle" aria-hidden="true"></span><span class="trou" aria-hidden="true"></span>
+                <span class="block w-11 h-11 rounded-full border-2 border-brou" style="background:#F3DB8C" aria-hidden="true"></span>
+                <h3 class="mt-3 font-display font-semibold text-[1.4rem] leading-tight">Acacia</h3>
+                <p class="mt-1.5 text-[16px] text-brou/85">Liquide, très doux, il reste clair longtemps. Le préféré des enfants et du thé.</p>
+                <dl class="mt-4 pt-3 border-t-2 border-dashed border-brou/30 grid grid-cols-2 gap-2 text-[15px]">
+                  <div><dt class="text-brou/70">250 g</dt><dd class="font-semibold tnum">6,50 €</dd></div>
+                  <div><dt class="text-brou/70">500 g</dt><dd class="font-semibold tnum">11 €</dd></div>
+                </dl>
+              </article>
+            </li>
+            <li class="revele shrink-0 w-[78%] sm:w-[46%] md:w-auto snap-start pt-10 md:pt-16" style="--r:2deg;--r-fin:1.5deg">
+              <article class="etiquette kraft relative h-full p-5 pt-11" style="--balance:-4deg">
+                <span class="ficelle" aria-hidden="true"></span><span class="trou" aria-hidden="true"></span>
+                <span class="block w-11 h-11 rounded-full border-2 border-brou" style="background:#EBC468" aria-hidden="true"></span>
+                <h3 class="mt-3 font-display font-semibold text-[1.4rem] leading-tight">Lavande</h3>
+                <p class="mt-1.5 text-[16px] text-brou/85">Récolté en juillet sur les champs du Diois. Crémeux, parfum floral franc.</p>
+                <dl class="mt-4 pt-3 border-t-2 border-dashed border-brou/30 grid grid-cols-2 gap-2 text-[15px]">
+                  <div><dt class="text-brou/70">250 g</dt><dd class="font-semibold tnum">7 €</dd></div>
+                  <div><dt class="text-brou/70">500 g</dt><dd class="font-semibold tnum">12 €</dd></div>
+                </dl>
+              </article>
+            </li>
+            <li class="revele shrink-0 w-[78%] sm:w-[46%] md:w-auto snap-start pt-10 md:pt-[4.5rem]" style="--r:-1.5deg;--r-fin:-.5deg">
+              <article class="etiquette kraft relative h-full p-5 pt-11" style="--balance:3deg">
+                <span class="ficelle" aria-hidden="true"></span><span class="trou" aria-hidden="true"></span>
+                <span class="block w-11 h-11 rounded-full border-2 border-brou" style="background:#E0A43A" aria-hidden="true"></span>
+                <h3 class="mt-3 font-display font-semibold text-[1.4rem] leading-tight">Fleurs de printemps</h3>
+                <p class="mt-1.5 text-[16px] text-brou/85">Aubépine, cerisier, pissenlit. Il cristallise vite en une crème fine.</p>
+                <dl class="mt-4 pt-3 border-t-2 border-dashed border-brou/30 grid grid-cols-2 gap-2 text-[15px]">
+                  <div><dt class="text-brou/70">250 g</dt><dd class="font-semibold tnum">6 €</dd></div>
+                  <div><dt class="text-brou/70">500 g</dt><dd class="font-semibold tnum">10 €</dd></div>
+                </dl>
+              </article>
+            </li>
+            <li class="revele shrink-0 w-[78%] sm:w-[46%] md:w-auto snap-start pt-10 md:pt-14" style="--r:2.5deg;--r-fin:1deg">
+              <article class="etiquette kraft relative h-full p-5 pt-11" style="--balance:-3deg">
+                <span class="ficelle" aria-hidden="true"></span><span class="trou" aria-hidden="true"></span>
+                <span class="block w-11 h-11 rounded-full border-2 border-brou" style="background:#8A4A17" aria-hidden="true"></span>
+                <h3 class="mt-3 font-display font-semibold text-[1.4rem] leading-tight">Châtaignier</h3>
+                <p class="mt-1.5 text-[16px] text-brou/85">Ambré foncé, légèrement amer, plein de caractère. Parfait avec un fromage de chèvre.</p>
+                <dl class="mt-4 pt-3 border-t-2 border-dashed border-brou/30 grid grid-cols-2 gap-2 text-[15px]">
+                  <div><dt class="text-brou/70">250 g</dt><dd class="font-semibold tnum">7 €</dd></div>
+                  <div><dt class="text-brou/70">500 g</dt><dd class="font-semibold tnum">12 €</dd></div>
+                </dl>
+              </article>
+            </li>
+            <li class="revele shrink-0 w-[78%] sm:w-[46%] md:w-auto snap-start pt-10 md:pt-11" style="--r:-2deg;--r-fin:-1.5deg">
+              <article class="etiquette kraft relative h-full p-5 pt-11" style="--balance:4deg">
+                <span class="ficelle" aria-hidden="true"></span><span class="trou" aria-hidden="true"></span>
+                <span class="block w-11 h-11 rounded-full border-2 border-brou" style="background:#C07722" aria-hidden="true"></span>
+                <h3 class="mt-3 font-display font-semibold text-[1.4rem] leading-tight">Montagne</h3>
+                <p class="mt-1.5 text-[16px] text-brou/85">Au-dessus de 1 000 m, au col de la Chaudière : thym, serpolet, framboisier.</p>
+                <dl class="mt-4 pt-3 border-t-2 border-dashed border-brou/30 grid grid-cols-2 gap-2 text-[15px]">
+                  <div><dt class="text-brou/70">250 g</dt><dd class="font-semibold tnum">8 €</dd></div>
+                  <div><dt class="text-brou/70">500 g</dt><dd class="font-semibold tnum">14 €</dd></div>
+                </dl>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-8 md:mt-12 grid md:grid-cols-2 gap-3 md:gap-6 max-w-4xl">
+          <details class="rounded-xl border-2 border-brou/25 bg-papier">
+            <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 px-5 py-4 font-semibold">Mon miel a durci : est-il encore bon ?<span class="plus grid place-items-center w-8 h-8 shrink-0 rounded-full border-2 border-brou bg-cire font-display" aria-hidden="true">+</span></summary>
+            <div class="px-5 pb-5 text-brou/85"><p>Oui, c'est même le signe d'un miel non chauffé. Pour le rendre liquide, posez le pot au bain-marie tiède, sans dépasser 40 °C.</p></div>
+          </details>
+          <details class="rounded-xl border-2 border-brou/25 bg-papier">
+            <summary class="flex min-h-14 cursor-pointer items-center justify-between gap-4 px-5 py-4 font-semibold">Envoyez-vous vos pots par la poste ?<span class="plus grid place-items-center w-8 h-8 shrink-0 rounded-full border-2 border-brou bg-cire font-display" aria-hidden="true">+</span></summary>
+            <div class="px-5 pb-5 text-brou/85"><p>Oui, par colis de 3 ou 6 pots, partout en France. Les frais sont offerts à partir de 6 pots.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Le rucher : page de carnet et tampons ===== -->
+    <section id="rucher" class="bg-kraft/45 border-y-2 border-brou/15 overflow-x-clip">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="revele carnet relative rounded-sm bg-[#FFFAEE] px-5 sm:px-8 pt-7 pb-8 shadow-[0_18px_30px_-22px_rgba(58,37,19,.6)]" style="--r:-1.5deg;--r-fin:-.8deg">
+            <span class="absolute left-3 sm:left-5 inset-y-0 w-0.5 bg-miel/50" aria-hidden="true"></span>
+            <div class="pl-4 sm:pl-5">
+              <h2 class="font-display font-semibold text-[2rem] leading-[1.1] sm:text-[2.6rem]">Douze ans entre les ruches</h2>
+              <p class="mt-4 leading-8">Élise a repris les dix ruches de son grand-père en 2014. Avec Bastien, ils en soignent aujourd'hui 180, réparties sur six emplacements entre la vallée et la montagne.</p>
+              <p class="mt-2 leading-8 hidden sm:block">Les ruches suivent les floraisons : acacia au bord de la Drôme, lavande dans le Diois, châtaigniers et thym en altitude. Le miel est extrait à froid à la miellerie, puis mis en pot tel quel.</p>
+              <p class="mt-3 font-main text-[1.65rem] leading-tight text-lavande -rotate-1">Jamais de sirop dans les hausses, jamais de miel acheté.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2">
+          <!-- Illustration : les ruches au bord d'un champ de lavande -->
+          <div data-kv-image="Photo de vos ruches" class="revele h-48 sm:h-60 lg:h-72 rounded-[14px_20px_12px_22px] overflow-hidden border-2 border-brou bg-cire" style="--r:2deg;--r-fin:1deg">
+            <svg class="block w-full h-full" viewBox="0 0 480 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="480" height="240" class="fill-cire"/>
+              <circle cx="390" cy="58" r="30" fill="#FFF6D8" stroke="#3A2513" stroke-width="2.5"/>
+              <path d="M0 132q90-46 180-18t170-20 130 14v152H0z" fill="#B9A06B" stroke="#3A2513" stroke-width="2.5"/>
+              <g class="fill-lavande" fill-opacity=".85">
+                <path d="M0 176q240-26 480 0v64H0z"/>
+              </g>
+              <g stroke="#3A2513" stroke-width="2" stroke-linecap="round" fill="none" stroke-opacity=".7">
+                <path d="M20 240q30-36 60-62M80 240q30-36 70-62M150 240q30-36 70-62M230 240q30-36 70-62M310 240q30-36 70-62M390 240q30-36 70-62"/>
+              </g>
+              <!-- Ruches -->
+              <g stroke="#3A2513" stroke-width="2.5" stroke-linejoin="round">
+                <g transform="translate(90 112)"><path d="M-6 0h76l-8-14H2z" fill="#3A2513"/><rect x="0" y="0" width="64" height="26" fill="#FFF8E6"/><rect x="0" y="26" width="64" height="30" class="fill-miel"/><rect x="22" y="48" width="20" height="5" fill="#3A2513"/></g>
+                <g transform="translate(196 102)"><path d="M-6 0h76l-8-14H2z" fill="#3A2513"/><rect x="0" y="0" width="64" height="30" class="fill-lavande"/><rect x="0" y="30" width="64" height="32" fill="#FFF8E6"/><rect x="22" y="54" width="20" height="5" fill="#3A2513"/></g>
+                <g transform="translate(302 114)"><path d="M-6 0h76l-8-14H2z" fill="#3A2513"/><rect x="0" y="0" width="64" height="26" class="fill-miel"/><rect x="0" y="26" width="64" height="30" fill="#FFF8E6"/><rect x="22" y="48" width="20" height="5" fill="#3A2513"/></g>
+              </g>
+              <g fill="#3A2513"><circle cx="160" cy="80" r="2.4"/><circle cx="176" cy="66" r="2.4"/><circle cx="282" cy="72" r="2.4"/><circle cx="270" cy="88" r="2.4"/></g>
+            </svg>
+          </div>
+          <dl data-groupe class="mt-6 grid grid-cols-3 gap-2 sm:gap-5 justify-items-center">
+            <div class="revele tampon w-[6.4rem] h-[6.4rem] sm:w-[8.5rem] sm:h-[8.5rem] px-2 flex flex-col items-center justify-center" style="--r:-14deg;--r-fin:-8deg"><dt class="text-[13px] sm:text-[15px] not-italic font-sans font-medium">ruches</dt><dd class="order-first text-[1.75rem] sm:text-4xl not-italic font-bold tnum" data-compte="180">180</dd></div>
+            <div class="revele tampon w-[6.4rem] h-[6.4rem] sm:w-[8.5rem] sm:h-[8.5rem] px-2 flex flex-col items-center justify-center" style="--r:10deg;--r-fin:5deg"><dt class="text-[13px] sm:text-[15px] not-italic font-sans font-medium">ruchers</dt><dd class="order-first text-[1.75rem] sm:text-4xl not-italic font-bold tnum" data-compte="6">6</dd></div>
+            <div class="revele tampon w-[6.4rem] h-[6.4rem] sm:w-[8.5rem] sm:h-[8.5rem] px-2 flex flex-col items-center justify-center" style="--r:-6deg;--r-fin:-3deg"><dt class="text-[13px] sm:text-[15px] not-italic font-sans font-medium">tonnes</dt><dd class="order-first text-[1.75rem] sm:text-4xl not-italic font-bold tnum" data-compte="4">4</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== L'année au rucher : le fil des saisons ===== -->
+    <section id="saison" class="overflow-x-clip">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 md:py-24">
+        <h2 class="font-display font-semibold tracking-[-0.01em] text-[2rem] leading-[1.1] sm:text-5xl max-w-2xl">Une année au rucher</h2>
+        <p class="mt-3 max-w-xl text-brou/80">Trois récoltes, au rythme des fleurs, marquées d'une goutte de miel. Entre deux, on veille sur les colonies.</p>
+
+        <div class="relative mt-8 md:mt-14">
+          <!-- Fil pointillé entre les mois (ordinateur) -->
+          <svg class="hidden md:block absolute left-0 right-0 top-[2px] w-full h-10" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true">
+            <defs><mask id="masqueFil"><path class="fil" pathLength="1" d="M20 20q80-26 160 0t160 0 160 0 160 0 160 0 160 0" fill="none" stroke="#fff" stroke-width="10"/></mask></defs>
+            <path d="M20 20q80-26 160 0t160 0 160 0 160 0 160 0 160 0" fill="none" stroke="#64579E" stroke-width="2.5" stroke-dasharray="3 8" stroke-linecap="round" mask="url(#masqueFil)" class="stroke-lavande"/>
+          </svg>
+          <ol data-groupe class="no-scrollbar relative -mx-4 px-4 pb-3 flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:grid md:grid-cols-6 md:gap-5 md:overflow-visible">
+            <li class="revele shrink-0 w-[70%] sm:w-[40%] md:w-auto snap-start" style="--r:0deg">
+              <span class="grid place-items-center w-11 h-11 rounded-full border-2 border-brou bg-papier" aria-hidden="true"><svg class="w-5 h-5" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3.2" fill="none" stroke="#3A2513" stroke-width="1.8"/></svg></span>
+              <p class="mt-4 font-main text-[1.7rem] leading-none text-lavande">Mars</p>
+              <h3 class="mt-1 font-display font-semibold text-xl">La visite de printemps</h3>
+              <p class="mt-1.5 text-[16px] text-brou/80">On ouvre chaque ruche pour voir si la reine pond et si les réserves ont tenu.</p>
+            </li>
+            <li class="revele shrink-0 w-[70%] sm:w-[40%] md:w-auto snap-start" style="--r:0deg">
+              <span class="grid place-items-center w-11 h-11 rounded-full border-2 border-brou bg-cire" aria-hidden="true"><svg class="w-5 h-5" viewBox="0 0 20 20"><path class="fill-miel" d="M10 2c3 4.2 5 7 5 9.6a5 5 0 01-10 0C5 9 7 6.2 10 2z" stroke="#3A2513" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <p class="mt-4 font-main text-[1.7rem] leading-none text-lavande">Mai</p>
+              <h3 class="mt-1 font-display font-semibold text-xl">Printemps et acacia</h3>
+              <p class="mt-1.5 text-[16px] text-brou/80">Première récolte, puis l'acacia, à condition que le vent ne fasse pas tomber les grappes.</p>
+            </li>
+            <li class="revele shrink-0 w-[70%] sm:w-[40%] md:w-auto snap-start" style="--r:0deg">
+              <span class="grid place-items-center w-11 h-11 rounded-full border-2 border-brou bg-papier" aria-hidden="true"><svg class="w-5 h-5" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3.2" fill="none" stroke="#3A2513" stroke-width="1.8"/></svg></span>
+              <p class="mt-4 font-main text-[1.7rem] leading-none text-lavande">Juin</p>
+              <h3 class="mt-1 font-display font-semibold text-xl">La transhumance</h3>
+              <p class="mt-1.5 text-[16px] text-brou/80">Les ruches montent de nuit vers le Diois et le col de la Chaudière.</p>
+            </li>
+            <li class="revele shrink-0 w-[70%] sm:w-[40%] md:w-auto snap-start" style="--r:0deg">
+              <span class="grid place-items-center w-11 h-11 rounded-full border-2 border-brou bg-cire" aria-hidden="true"><svg class="w-5 h-5" viewBox="0 0 20 20"><path class="fill-miel" d="M10 2c3 4.2 5 7 5 9.6a5 5 0 01-10 0C5 9 7 6.2 10 2z" stroke="#3A2513" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <p class="mt-4 font-main text-[1.7rem] leading-none text-lavande">Juillet</p>
+              <h3 class="mt-1 font-display font-semibold text-xl">Lavande et montagne</h3>
+              <p class="mt-1.5 text-[16px] text-brou/80">La plus grosse récolte de l'année, extraite dans la semaine.</p>
+            </li>
+            <li class="revele shrink-0 w-[70%] sm:w-[40%] md:w-auto snap-start" style="--r:0deg">
+              <span class="grid place-items-center w-11 h-11 rounded-full border-2 border-brou bg-cire" aria-hidden="true"><svg class="w-5 h-5" viewBox="0 0 20 20"><path class="fill-miel" d="M10 2c3 4.2 5 7 5 9.6a5 5 0 01-10 0C5 9 7 6.2 10 2z" stroke="#3A2513" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <p class="mt-4 font-main text-[1.7rem] leading-none text-lavande">Septembre</p>
+              <h3 class="mt-1 font-display font-semibold text-xl">Le châtaignier</h3>
+              <p class="mt-1.5 text-[16px] text-brou/80">Dernière récolte. On laisse aux abeilles tout ce qu'il leur faut pour l'hiver.</p>
+            </li>
+            <li class="revele shrink-0 w-[70%] sm:w-[40%] md:w-auto snap-start" style="--r:0deg">
+              <span class="grid place-items-center w-11 h-11 rounded-full border-2 border-brou bg-papier" aria-hidden="true"><svg class="w-5 h-5" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3.2" fill="none" stroke="#3A2513" stroke-width="1.8"/></svg></span>
+              <p class="mt-4 font-main text-[1.7rem] leading-none text-lavande">Novembre</p>
+              <h3 class="mt-1 font-display font-semibold text-xl">L'hivernage</h3>
+              <p class="mt-1.5 text-[16px] text-brou/80">Les colonies se serrent en grappe. Nous, on prépare les cadres et les pots.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Avis : petits mots scotchés ===== -->
+    <section id="avis" class="bg-lavande text-papier overflow-x-clip">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 md:py-24">
+        <h2 class="font-display font-semibold tracking-[-0.01em] text-[2rem] leading-[1.1] sm:text-5xl max-w-2xl">Les mots laissés au stand</h2>
+        <div data-groupe class="no-scrollbar mt-9 md:mt-14 -mx-4 px-4 pt-3 pb-4 flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
+          <figure class="revele relative shrink-0 w-[80%] sm:w-[46%] md:w-auto snap-start bg-[#FFFAEE] text-brou p-6 pt-8 shadow-[0_16px_26px_-18px_rgba(0,0,0,.6)]" style="--r:-3deg;--r-fin:-1.5deg">
+            <span class="scotch" aria-hidden="true"></span>
+            <blockquote class="text-[17px]">« Le lavande a un goût de vacances. J'en prends six pots en septembre pour tenir jusqu'au printemps. »</blockquote>
+            <figcaption class="mt-4 font-main text-[1.5rem] leading-none text-lavande">Martine, marché de Crest</figcaption>
+          </figure>
+          <figure class="revele relative shrink-0 w-[80%] sm:w-[46%] md:w-auto snap-start bg-[#FFFAEE] text-brou p-6 pt-8 shadow-[0_16px_26px_-18px_rgba(0,0,0,.6)] md:translate-y-6" style="--r:2deg;--r-fin:1deg">
+            <span class="scotch" aria-hidden="true"></span>
+            <blockquote class="text-[17px]">« Bastien nous a fait visiter la miellerie avec les enfants. Ils ne mangent plus que celui-là au goûter. »</blockquote>
+            <figcaption class="mt-4 font-main text-[1.5rem] leading-none text-lavande">Yanis, Saillans</figcaption>
+          </figure>
+          <figure class="revele relative shrink-0 w-[80%] sm:w-[46%] md:w-auto snap-start bg-[#FFFAEE] text-brou p-6 pt-8 shadow-[0_16px_26px_-18px_rgba(0,0,0,.6)]" style="--r:-1.5deg;--r-fin:-.5deg">
+            <span class="scotch" aria-hidden="true"></span>
+            <blockquote class="text-[17px]">« Je sers le châtaignier avec mes tommes à la fromagerie. Les clients demandent toujours d'où il vient. »</blockquote>
+            <figcaption class="mt-4 font-main text-[1.5rem] leading-none text-lavande">Hélène, fromagère à Die</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Commander, marchés et miellerie ===== -->
+    <section id="commande" class="overflow-x-clip">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-14">
+        <div id="marches" class="lg:col-span-5 scroll-mt-20">
+          <h2 class="font-display font-semibold tracking-[-0.01em] text-[2rem] leading-[1.1] sm:text-5xl">Où trouver nos pots</h2>
+          <dl class="mt-6 divide-y-2 divide-dashed divide-brou/25 border-y-2 border-dashed border-brou/25">
+            <div class="flex gap-4 py-3"><dt class="w-24 shrink-0 font-main text-[1.5rem] leading-tight text-lavande">Mardi</dt><dd>Marché de Crest, place du Champ-de-Mars, le matin</dd></div>
+            <div class="flex gap-4 py-3"><dt class="w-24 shrink-0 font-main text-[1.5rem] leading-tight text-lavande">Vendredi</dt><dd>Marché de Dieulefit, sous la halle</dd></div>
+            <div class="flex gap-4 py-3"><dt class="w-24 shrink-0 font-main text-[1.5rem] leading-tight text-lavande">Samedi</dt><dd>À la miellerie, de 10 h à 12 h 30</dd></div>
+            <div class="flex gap-4 py-3"><dt class="w-24 shrink-0 font-main text-[1.5rem] leading-tight text-lavande">Dimanche</dt><dd>Marché de Saillans, d'avril à octobre</dd></div>
+          </dl>
+          <dl class="mt-6 space-y-1 text-[16px]">
+            <div><dt class="text-brou/70">Miellerie</dt><dd class="font-semibold">Quartier les Combes, 26340 Saillans</dd></div>
+            <div class="flex flex-wrap gap-x-8"><div><dt class="sr-only">Téléphone</dt><dd><a href="tel:+33600000000" class="souligne inline-flex min-h-11 items-center font-semibold">06 00 00 00 00</a></dd></div>
+            <div><dt class="sr-only">E-mail</dt><dd><a href="mailto:contact@exemple.fr" class="souligne inline-flex min-h-11 items-center font-semibold">contact@exemple.fr</a></dd></div></div>
+          </dl>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Saillans, 26340" class="mt-6 md:h-56 rounded-[12px_18px_10px_16px] border-2 border-brou overflow-hidden bg-kraft text-brou"></div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <!--
+            Formulaire de commande : il n'envoie rien tant qu'il n'est pas relié à un service.
+            - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+            - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+            - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+          -->
+          <form class="kraft relative p-5 pt-8 sm:p-8 sm:pt-10 grid sm:grid-cols-2 gap-x-5 gap-y-4" action="#" method="post">
+            <span class="trou" aria-hidden="true"></span>
+            <div class="sm:col-span-2">
+              <h3 class="font-display font-semibold text-[1.6rem] leading-tight">Réserver des pots</h3>
+              <p class="mt-1 text-[16px] text-brou/80">On les met de côté et on vous rappelle pour confirmer. Vous payez au retrait.</p>
+            </div>
+            <label class="block"><span class="font-semibold">Votre nom</span>
+              <input type="text" name="nom" autocomplete="name" class="field mt-1.5" required>
+            </label>
+            <label class="block"><span class="font-semibold">Téléphone</span>
+              <input type="tel" name="telephone" autocomplete="tel" class="field mt-1.5" required>
+            </label>
+            <label class="block"><span class="font-semibold">Miel</span>
+              <select name="miel" class="field mt-1.5">
+                <option>Acacia</option>
+                <option selected>Lavande</option>
+                <option>Fleurs de printemps</option>
+                <option>Châtaignier</option>
+                <option>Montagne</option>
+                <option>Un peu de chaque (colis découverte)</option>
+              </select>
+            </label>
+            <label class="block"><span class="font-semibold">Nombre de pots de 500 g</span>
+              <input type="number" name="quantite" min="1" max="48" value="2" inputmode="numeric" class="field mt-1.5">
+            </label>
+            <label class="block sm:col-span-2"><span class="font-semibold">Retrait</span>
+              <select name="retrait" class="field mt-1.5">
+                <option>À la miellerie, le samedi matin</option>
+                <option>Marché de Crest, le mardi</option>
+                <option>Marché de Dieulefit, le vendredi</option>
+                <option>Marché de Saillans, le dimanche</option>
+                <option>Envoi par colis</option>
+              </select>
+            </label>
+            <label class="block sm:col-span-2"><span class="font-semibold">Un mot</span>
+              <textarea name="message" rows="2" class="field mt-1.5" placeholder="Par exemple : deux pots en 250 g plutôt"></textarea>
+            </label>
+            <button type="submit" class="btn-plein sm:col-span-2 w-full">Réserver mes pots</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-brou text-papier/75 text-[15px]">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-8 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+      <p><span class="font-display font-semibold text-papier">Le Rucher des Combes</span> <span class="block sm:inline sm:ml-2">Apiculteurs récoltants à Saillans, Drôme</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-papier border-t-2 border-brou/20 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] grid grid-cols-[auto_1fr] gap-3">
+    <a href="tel:+33600000000" class="btn-papier !px-5">Appeler</a>
+    <a href="#commande" class="btn-plein">Commander</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Titre : les lignes s'écrivent l'une après l'autre
+    document.querySelectorAll('#titre .ligne').forEach((l, i) => { l.style.animationDelay = 100 + i * 260 + 'ms'; });
+
+    if ('IntersectionObserver' in window) {
+      // Apparition au défilement : les papiers se posent l'un après l'autre
+      document.querySelectorAll('[data-groupe] > .revele').forEach(el => { el.style.transitionDelay = [...el.parentElement.children].indexOf(el) * 90 + 'ms'; });
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        (e.target.matches('[data-groupe]') ? e.target.querySelectorAll('.revele') : [e.target]).forEach(el => el.classList.add('vu'));
+        io.unobserve(e.target);
+      }), { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.revele').forEach(el => io.observe(el.closest('[data-groupe]') || el));
+      document.querySelectorAll('.fil').forEach(el => io.observe(el.closest('svg')));
+
+      // Chiffres qui comptent dans les tampons
+      const compte = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        compte.unobserve(e.target);
+        if (calme) return;
+        const el = e.target, fin = +el.dataset.compte, t0 = performance.now(), d = 800;
+        const pas = t => { const k = Math.min(1, (t - t0) / d); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); };
+        requestAnimationFrame(pas);
+      }), { threshold: .6 });
+      document.querySelectorAll('[data-compte]').forEach(el => compte.observe(el));
+    }
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Fraunces'; src: url('fonts/fraunces-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  @font-face { font-family: 'Fraunces'; src: url('fonts/fraunces-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'Fraunces'; src: url('fonts/fraunces-latin-600-italic.woff2') format('woff2'); font-weight: 600; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Work Sans'; src: url('fonts/work-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Work Sans'; src: url('fonts/work-sans-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Work Sans'; src: url('fonts/work-sans-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  @font-face { font-family: 'Caveat'; src: url('fonts/caveat-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-tap-highlight-color: transparent; }
+  :focus-visible { outline: 3px dashed rgb(var(--kv-lavande)); outline-offset: 3px; border-radius: 4px; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  /* Grain du papier : bruit SVG généré, aucune image externe */
+  body { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .23 0 0 0 0 .15 0 0 0 0 .07 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+}
+
+@layer components {
+  /* Boutons : étiquette de papier épais, bord dessiné */
+  .btn { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px_14px_9px_13px] px-6 font-semibold text-[17px]; border: 2px solid rgb(var(--kv-brou)); }
+  .btn-plein { @apply btn bg-brou text-papier; }
+  .btn-papier { @apply btn bg-papier text-brou; }
+  /* Étiquette kraft (pots, avis) avec bord légèrement irrégulier */
+  .kraft { @apply bg-kraft text-brou; border-radius: 6px 10px 7px 12px / 10px 6px 12px 7px; box-shadow: 0 1px 0 rgb(var(--kv-brou) / .25), 0 10px 22px -14px rgb(var(--kv-brou) / .55); }
+  /* Tampon encreur rond */
+  .tampon { @apply rounded-full text-center text-lavande font-display italic font-semibold leading-tight; border: 3px solid currentColor; box-shadow: inset 0 0 0 4px rgb(var(--kv-papier)), inset 0 0 0 6px currentColor; mix-blend-mode: multiply; }
+  /* Page de carnet ligné */
+  .carnet { background-image: linear-gradient(transparent calc(2rem - 1px), rgb(var(--kv-lavande) / .18) calc(2rem - 1px)); background-size: 100% 2rem; }
+  .field { @apply block w-full rounded-lg bg-papier px-4 py-3 text-base text-brou placeholder-brou/45; border: 2px solid rgb(var(--kv-brou) / .7); }
+  .field:focus { outline: none; border-color: rgb(var(--kv-lavande)); box-shadow: 0 0 0 3px rgb(var(--kv-lavande) / .25); }
+  /* Ruban adhésif qui tient les avis */
+  .scotch { position: absolute; top: -12px; left: 50%; width: 84px; height: 24px; transform: translateX(-50%) rotate(-3deg); background: rgb(var(--kv-cire) / .75); }
+  /* Surlignage au feutre */
+  .feutre { background: linear-gradient(transparent 58%, rgb(var(--kv-cire)) 58%, rgb(var(--kv-cire)) 90%, transparent 90%); }
+  /* Trou et ficelle des étiquettes de pot */
+  .trou { position: absolute; top: 14px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 9999px; background: rgb(var(--kv-papier)); box-shadow: inset 0 1px 2px rgb(var(--kv-brou) / .5); }
+  .ficelle { position: absolute; bottom: calc(100% - 21px); left: 50%; width: 2px; height: 46px; margin-left: -1px; background: repeating-linear-gradient(rgb(var(--kv-brou) / .75) 0 4px, rgb(var(--kv-brou) / .45) 4px 7px); }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
+details[open] summary .plus { transform: rotate(45deg); }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Signature : le pot se remplit de miel, puis le tampon « Récolte 2026 » s'imprime */
+  .js .niveau { transform-box: fill-box; transform-origin: 50% 100%; animation: remplit 1.6s cubic-bezier(.45,0,.25,1) .35s both; }
+  @keyframes remplit { from { transform: translateY(100%); } to { transform: none; } }
+  .js .vague { animation: vague 3.6s ease-in-out infinite alternate; }
+  @keyframes vague { to { transform: translateX(-24px); } }
+  .js .coulure { transform-box: fill-box; transform-origin: 50% 0; animation: coule .8s cubic-bezier(.5,0,.3,1) 1.7s both; }
+  @keyframes coule { from { transform: scaleY(0); } to { transform: none; } }
+  .js .coup { animation: coup .45s cubic-bezier(.2,1.5,.4,1) 2.1s both; }
+  @keyframes coup { 0% { opacity: 0; transform: scale(1.6) rotate(-24deg); } 60% { opacity: 1; } 100% { opacity: 1; transform: rotate(-12deg); } }
+
+  /* Le vol de l'abeille se dessine en pointillés */
+  .js .vol { stroke-dasharray: 1; stroke-dashoffset: 1; animation: vol 2.2s ease-in-out .5s forwards; }
+  @keyframes vol { to { stroke-dashoffset: 0; } }
+  .js .abeille { animation: pose .5s ease-out 2.5s both; }
+  @keyframes pose { from { opacity: 0; transform: translate(-14px, 10px); } to { opacity: 1; transform: none; } }
+  .bzz { transform-box: fill-box; transform-origin: 50% 100%; animation: bzz .18s linear infinite alternate; }
+  @keyframes bzz { to { transform: scaleY(.55); } }
+
+  /* Titre : les lignes s'écrivent l'une après l'autre */
+  .js .ligne { display: inline-block; opacity: 0; animation: ecrit .7s cubic-bezier(.2,.8,.3,1) forwards; }
+  @keyframes ecrit { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 100% 0 0); } to { opacity: 1; transform: none; clip-path: inset(0 0 0 0); } }
+
+  /* Apparition au défilement : le papier se pose sur la table */
+  .js .revele { opacity: 0; transform: translateY(18px) rotate(var(--r, 1.2deg)); transition: opacity .5s ease, transform .7s cubic-bezier(.2,1,.3,1); }
+  .js .revele.vu { opacity: 1; transform: rotate(var(--r-fin, 0deg)); }
+
+  /* Étiquettes de pot qui se balancent au survol, accrochées à leur ficelle */
+  .etiquette { transform-origin: 50% 0; transition: transform .6s cubic-bezier(.3,1.6,.5,1); }
+  .etiquette:hover, .etiquette:focus-within { transform: rotate(var(--balance, 4deg)); }
+
+  /* Boutons et liens */
+  .btn, .btn-plein, .btn-papier { transition: transform .2s ease, background-color .2s ease, color .2s ease; }
+  .btn:hover, .btn-plein:hover, .btn-papier:hover { transform: translateY(-2px) rotate(-.6deg); }
+  .btn:active, .btn-plein:active, .btn-papier:active { transform: translateY(1px); }
+  .souligne { background: linear-gradient(rgb(var(--kv-miel)), rgb(var(--kv-miel))) 0 100% / 0 3px no-repeat; transition: background-size .35s ease; }
+  .souligne:hover { background-size: 100% 3px; }
+
+  /* Calendrier : le fil pointillé se trace au défilement */
+  .js .fil { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s ease-in-out; }
+  .js .vu .fil { stroke-dashoffset: 0; }
+
+  details > div { animation: deplie .35s ease-out; }
+  @keyframes deplie { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  summary .plus { transition: transform .3s cubic-bezier(.2,1.4,.4,1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

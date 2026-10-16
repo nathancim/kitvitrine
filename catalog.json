@@ -514,6 +514,62 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "45642fafaeee22663fa6e663bc99c091"
+    },
+    {
+      "slug": "alveole",
+      "title": "Alvéole",
+      "tagline": "Site vitrine pour apiculteur",
+      "description": "Une page au papier artisanal pour apiculteur récoltant qui vend en direct. En ouverture, un pot de miel à couvercle de tissu kraft qui se remplit, le miel qui coule sous le couvercle et le tampon « Récolte 2026 » qui s'imprime, pendant que le vol d'une abeille se dessine en pointillés. Suivent les miels de la saison présentés comme des étiquettes à ficelle qui se balancent, la page de carnet de l'apiculteur avec ses chiffres en tampons encreurs, l'année au rucher de la visite de printemps à l'hivernage, les petits mots des clients scotchés, puis les marchés de la semaine, la carte et le formulaire pour réserver des pots. Jaune miel, kraft et encre lavande, titres en Fraunces et annotations manuscrites.",
+      "univers": [
+        "terroir"
+      ],
+      "style": "Chaleureux",
+      "couleur": "jaune",
+      "direction": "artisanal",
+      "animations": [
+        "pot qui se remplit de miel puis tampon qui s'imprime",
+        "vol de l'abeille qui se dessine en pointillés",
+        "titre qui s'écrit ligne par ligne",
+        "étiquettes qui se balancent au survol",
+        "chiffres qui comptent dans les tampons",
+        "fil des saisons qui se trace au défilement",
+        "papiers qui se posent au défilement"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-16",
+      "tags": [
+        "apiculteur",
+        "miel",
+        "miellerie",
+        "apiculture",
+        "vente directe de miel",
+        "producteur de miel",
+        "miel de lavande",
+        "rucher",
+        "marché de producteurs"
+      ],
+      "sections": [
+        "Accueil avec le pot de miel qui se remplit",
+        "Les miels de la saison en étiquettes à ficelle",
+        "Questions sur le miel cristallisé et l'envoi",
+        "Le rucher : carnet de l'apiculteur et chiffres",
+        "L'année au rucher, de mars à novembre",
+        "Les mots des clients",
+        "Marchés de la semaine, coordonnées et carte",
+        "Formulaire de réservation de pots"
+      ],
+      "palette": [
+        "#D08A17",
+        "#64579E",
+        "#F6D27C",
+        "#DEC59A",
+        "#F5EBD5",
+        "#3A2513"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "35682e78ed658d3223775ee9cc50fe7b"
     }
   ]
 }
