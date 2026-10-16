@@ -683,6 +683,62 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "c5a6acdc3c119082ace0b03def5d3926"
+    },
+    {
+      "slug": "phase",
+      "title": "Phase",
+      "tagline": "Site vitrine pour électricien",
+      "description": "Une page sombre et lumineuse pour électricien dépanneur et rénovateur. En ouverture, une ampoule suspendue s'allume au chargement et le titre se rallume mot par mot ; un vrai interrupteur permet d'éteindre et de rallumer la lampe. Les interventions forment un tableau électrique : chaque service est un disjoncteur dont le levier s'enclenche et dont le voyant s'allume quand on arrive dessus. Viennent ensuite les signes d'alerte à côté d'un tableau dessiné au trait qui se trace tout seul, la méthode en quatre étapes parcourue par un fil de cuivre qui se charge au défilement, les chiffres-clés qui comptent, les avis sur cartes en verre dépoli, les questions fréquentes, puis l'électricien, ses horaires, la carte de sa zone et la demande de devis. Fond nuit, accent cuivre et halo bleu électrique, titres en Bricolage Grotesque et texte en Instrument Sans.",
+      "univers": [
+        "artisans"
+      ],
+      "style": "Audacieux",
+      "couleur": "sombre",
+      "direction": "sombre",
+      "animations": [
+        "ampoule qui s'allume au chargement, avec interrupteur pour l'éteindre",
+        "titre qui se rallume mot par mot",
+        "disjoncteurs qui s'enclenchent un par un",
+        "tableau électrique qui se dessine au trait",
+        "fil de cuivre qui parcourt les étapes au défilement",
+        "chiffres qui comptent",
+        "cartes de services qui se soulèvent au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-16",
+      "tags": [
+        "électricien",
+        "électricité générale",
+        "dépannage électrique",
+        "mise aux normes",
+        "NF C 15-100",
+        "rénovation électrique",
+        "borne de recharge",
+        "domotique",
+        "tableau électrique",
+        "artisan électricien"
+      ],
+      "sections": [
+        "Accueil avec la lampe et son interrupteur",
+        "Interventions présentées en tableau électrique",
+        "Signes d'alerte et tableau dessiné",
+        "Méthode en quatre étapes et chiffres-clés",
+        "Avis des clients",
+        "Questions fréquentes",
+        "L'électricien, horaires, carte de la zone et demande de devis"
+      ],
+      "palette": [
+        "#10151F",
+        "#1A2232",
+        "#E08A3C",
+        "#7CC6FF",
+        "#EDF0F5",
+        "#9AA5BA"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "00c0b73990ff0354fd4fae23f6b35106"
     }
   ]
 }

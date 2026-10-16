@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Phase Électricité — Électricien à Villeurbanne, dépannage sous 2 h</title>
+  <meta name="description" content="Phase Électricité, électricien à Villeurbanne et dans l'est lyonnais : dépannage 7 j/7 sous 2 h, mise aux normes NF C 15-100, rénovation électrique, borne de recharge et domotique. Devis écrit gratuit.">
+  <meta name="theme-color" content="#10151F">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-cuivre=Couleur principale (cuivre)|--kv-cuivre-fonce;--kv-arc=Couleur d'accent (lumière);--kv-nuit=Fond de page;--kv-ardoise=Fond des cartes|--kv-ardoise-clair;--kv-craie=Texte;--kv-brume=Texte secondaire">
+</head>
+<body class="bg-nuit font-sans text-[17px] leading-relaxed text-craie antialiased pb-24 md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Phase</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/phase/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- ===== Navigation : barre fixe avec le « courant » qui avance au défilement ===== -->
+  <header class="sticky top-0 z-40 border-b border-ardoise-clair/70 bg-nuit/85 backdrop-blur-md">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 md:h-[72px] md:px-6">
+      <a href="#accueil" class="inline-flex min-h-11 items-center gap-2.5" aria-label="Phase Électricité, retour en haut de page">
+        <svg data-kv-logo="Logo" class="h-9 w-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" class="fill-cuivre"/><path d="M22.5 6 11 22.5h7.5L16 34l13-17.5h-7.8L22.5 6Z" class="fill-nuit"/></svg>
+        <span class="font-display text-2xl font-extrabold tracking-tight">Phase</span>
+        <span class="hidden text-sm text-brume lg:inline">Électricité générale</span>
+      </a>
+      <nav class="hidden items-center gap-1 md:flex" aria-label="Navigation principale">
+        <a href="#services" class="inline-flex min-h-11 items-center rounded-lg px-3 font-medium text-brume transition hover:text-craie">Interventions</a>
+        <a href="#diagnostic" class="inline-flex min-h-11 items-center rounded-lg px-3 font-medium text-brume transition hover:text-craie">Diagnostic</a>
+        <a href="#methode" class="inline-flex min-h-11 items-center rounded-lg px-3 font-medium text-brume transition hover:text-craie">Méthode</a>
+        <a href="#avis" class="inline-flex min-h-11 items-center rounded-lg px-3 font-medium text-brume transition hover:text-craie">Avis</a>
+        <a href="#contact" class="inline-flex min-h-11 items-center rounded-lg px-3 font-medium text-brume transition hover:text-craie">Contact</a>
+      </nav>
+      <a href="tel:+33600000000" class="hidden min-h-11 items-center gap-2 rounded-xl border border-cuivre/60 px-4 font-display font-bold text-cuivre transition hover:bg-cuivre hover:text-nuit md:inline-flex">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z" fill="currentColor"/></svg>
+        <span>06 00 00 00 00</span>
+      </a>
+      <button id="menuBtn" type="button" class="inline-flex min-h-11 items-center gap-2 rounded-xl border border-ardoise-clair px-4 font-display font-bold md:hidden" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIco" d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+    <!-- Fil de cuivre : se remplit au fil de la lecture -->
+    <div class="absolute inset-x-0 -bottom-px h-0.5 overflow-hidden" aria-hidden="true"><div id="progression" class="courant h-full bg-cuivre" style="--p:0"></div></div>
+
+    <!-- Menu mobile -->
+    <nav id="menu" class="fixed inset-x-0 top-16 bottom-0 hidden flex-col gap-1 bg-nuit px-4 pt-4 md:hidden" aria-label="Menu mobile">
+      <a href="#services" class="flex min-h-12 items-center border-b border-ardoise-clair font-display text-2xl font-bold">Interventions</a>
+      <a href="#diagnostic" class="flex min-h-12 items-center border-b border-ardoise-clair font-display text-2xl font-bold">Diagnostic</a>
+      <a href="#methode" class="flex min-h-12 items-center border-b border-ardoise-clair font-display text-2xl font-bold">Méthode</a>
+      <a href="#avis" class="flex min-h-12 items-center border-b border-ardoise-clair font-display text-2xl font-bold">Avis</a>
+      <a href="#contact" class="flex min-h-12 items-center border-b border-ardoise-clair font-display text-2xl font-bold">Contact et devis</a>
+      <a href="tel:+33600000000" class="btn mt-6 bg-cuivre text-nuit">Appeler le 06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Accueil : la lampe s'allume, l'interrupteur l'éteint ===== -->
+    <section id="accueil" data-lumiere="on" class="relative overflow-x-clip pb-14 pt-4 text-center md:pb-24 md:pt-6">
+      <div class="lampe-halo pointer-events-none absolute inset-x-0 -top-16 mx-auto h-[22rem] w-[22rem] rounded-full bg-cuivre/25 blur-3xl md:h-[34rem] md:w-[34rem]" aria-hidden="true"></div>
+      <div class="lampe-halo pointer-events-none absolute inset-x-0 top-10 mx-auto h-40 w-40 rounded-full bg-arc/10 blur-2xl md:h-64 md:w-64" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-5xl px-4 md:px-6">
+        <!-- Interrupteur (essayez-le) -->
+        <button id="interrupteur" type="button" aria-pressed="true" class="absolute right-4 top-6 grid h-[72px] w-14 place-items-center rounded-xl border border-ardoise-clair bg-ardoise shadow-lg shadow-nuit transition hover:border-cuivre md:left-[calc(50%+7rem)] md:right-auto md:top-24">
+          <span class="levier-mur relative block h-11 w-8 rounded-md bg-craie/90 shadow-inner" aria-hidden="true"><span class="absolute inset-x-0 top-1.5 mx-auto block h-1.5 w-3 rounded-full bg-cuivre"></span></span>
+          <span class="sr-only">Allumer ou éteindre la lampe</span>
+        </button>
+
+        <svg class="lampe mx-auto h-40 w-auto md:h-56" viewBox="0 0 200 250" aria-hidden="true">
+          <line x1="100" y1="0" x2="100" y2="74" class="stroke-brume" stroke-width="3"/>
+          <rect x="84" y="72" width="32" height="34" rx="5" class="fill-ardoise-clair"/>
+          <rect x="88" y="100" width="24" height="12" rx="2" class="fill-brume"/>
+          <path class="ampoule fill-cuivre" d="M89 112h22v10c24 9 41 30 41 56a52 52 0 1 1-104 0c0-26 17-47 41-56v-10Z"/>
+          <path d="M89 112h22v10c24 9 41 30 41 56a52 52 0 1 1-104 0c0-26 17-47 41-56v-10Z" fill="none" stroke="#EDF0F5" stroke-opacity=".35" stroke-width="2"/>
+          <path class="filament stroke-nuit" d="M94 118v40M106 118v40M94 158l3 10 3-10 3 10 3-10" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="78" cy="170" rx="8" ry="16" fill="#fff" fill-opacity=".22" transform="rotate(18 78 170)"/>
+        </svg>
+
+        <h1 id="titre" class="mx-auto mt-6 max-w-4xl font-display text-[clamp(2.5rem,10.5vw,6.25rem)] font-extrabold leading-[0.95] tracking-tight">
+          <span class="mot" style="--d:0ms">Remis</span> <span class="mot" style="--d:90ms">sous</span> <span class="mot" style="--d:180ms">tension</span> <span class="mot" style="--d:270ms">en</span> <span class="mot" style="--d:360ms">moins</span> <span class="mot" style="--d:450ms">de</span> <span class="mot whitespace-nowrap text-cuivre" style="--d:540ms">2 heures.</span>
+        </h1>
+        <p class="mx-auto mt-5 max-w-2xl text-brume md:mt-7 md:text-xl">Julien, électricien à Villeurbanne depuis 2008&nbsp;: dépannage 7 j/7, mise aux normes et rénovation. Devis écrit et prix ferme avant de toucher à un seul&nbsp;fil.</p>
+        <div class="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-9">
+          <a href="tel:+33600000000" class="btn bg-cuivre text-nuit hover:bg-craie">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z" fill="currentColor"/></svg>
+            <span>Appeler pour un dépannage</span>
+          </a>
+          <a href="#contact" class="btn border border-ardoise-clair bg-ardoise/60 hover:border-arc">Demander un devis gratuit</a>
+        </div>
+        <p class="mt-6 text-[15px] text-brume">Villeurbanne, Lyon 3<sup>e</sup>, 6<sup>e</sup> et 8<sup>e</sup>, Bron, Vaulx-en-Velin et Décines.</p>
+      </div>
+    </section>
+
+    <!-- ===== Interventions : un tableau électrique, un disjoncteur par service ===== -->
+    <section id="services" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <div class="rv max-w-2xl">
+          <h2 class="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Un circuit par besoin</h2>
+          <p class="mt-3 text-brume">Du petit dépannage à la rénovation complète, je m'occupe de tout, seul, de la première visite à l'attestation.</p>
+        </div>
+
+        <div id="tableau" class="mt-8 rounded-[1.75rem] border border-ardoise-clair bg-ardoise/40 p-3 md:mt-12 md:p-6">
+          <div class="mb-3 hidden items-center gap-3 px-2 text-sm text-brume md:flex" aria-hidden="true"><span class="h-2 w-2 rounded-full bg-arc"></span><span class="h-1.5 flex-1 rounded-full bg-ardoise-clair"></span><span>Rail 1</span></div>
+          <div class="no-scrollbar -mx-3 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-3 px-3 pb-1 md:mx-0 md:grid md:grid-cols-5 md:overflow-visible md:px-0">
+            <article class="module on flex w-[78%] shrink-0 snap-start flex-col rounded-2xl border border-ardoise-clair bg-nuit p-5 md:w-auto">
+              <div class="flex items-start justify-between" aria-hidden="true">
+                <span class="relative block h-[60px] w-10 rounded-md bg-ardoise-clair"><span class="levier absolute inset-x-1.5 top-1.5 block h-6 rounded bg-craie"></span></span>
+                <span class="flex items-center gap-2 font-display font-bold text-brume">16 A <span class="led h-2.5 w-2.5 rounded-full bg-cuivre shadow-[0_0_12px] shadow-cuivre"></span></span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold">Dépannage</h3>
+              <p class="mt-2 flex-1 text-brume">Disjoncteur qui saute, panne générale, prise grillée&nbsp;: j'arrive en moins de 2&nbsp;h, 7&nbsp;j/7.</p>
+              <p class="mt-4 font-display font-bold text-cuivre">Déplacement 49 €</p>
+            </article>
+            <article class="module on flex w-[78%] shrink-0 snap-start flex-col rounded-2xl border border-ardoise-clair bg-nuit p-5 md:w-auto">
+              <div class="flex items-start justify-between" aria-hidden="true">
+                <span class="relative block h-[60px] w-10 rounded-md bg-ardoise-clair"><span class="levier absolute inset-x-1.5 top-1.5 block h-6 rounded bg-craie"></span></span>
+                <span class="flex items-center gap-2 font-display font-bold text-brume">30 mA <span class="led h-2.5 w-2.5 rounded-full bg-cuivre shadow-[0_0_12px] shadow-cuivre"></span></span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold">Mise aux normes</h3>
+              <p class="mt-2 flex-1 text-brume">Tableau, différentiels, mise à la terre&nbsp;: conformité NF C 15-100 pour vendre ou louer sereinement.</p>
+              <p class="mt-4 font-display font-bold text-cuivre">Diagnostic offert</p>
+            </article>
+            <article class="module on flex w-[78%] shrink-0 snap-start flex-col rounded-2xl border border-ardoise-clair bg-nuit p-5 md:w-auto">
+              <div class="flex items-start justify-between" aria-hidden="true">
+                <span class="relative block h-[60px] w-10 rounded-md bg-ardoise-clair"><span class="levier absolute inset-x-1.5 top-1.5 block h-6 rounded bg-craie"></span></span>
+                <span class="flex items-center gap-2 font-display font-bold text-brume">20 A <span class="led h-2.5 w-2.5 rounded-full bg-cuivre shadow-[0_0_12px] shadow-cuivre"></span></span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold">Rénovation</h3>
+              <p class="mt-2 flex-1 text-brume">Maison ou appartement recâblé pièce par pièce, avec un minimum de saignées et de poussière.</p>
+              <p class="mt-4 font-display font-bold text-cuivre">Sur devis détaillé</p>
+            </article>
+            <article class="module on flex w-[78%] shrink-0 snap-start flex-col rounded-2xl border border-ardoise-clair bg-nuit p-5 md:w-auto">
+              <div class="flex items-start justify-between" aria-hidden="true">
+                <span class="relative block h-[60px] w-10 rounded-md bg-ardoise-clair"><span class="levier absolute inset-x-1.5 top-1.5 block h-6 rounded bg-craie"></span></span>
+                <span class="flex items-center gap-2 font-display font-bold text-brume">32 A <span class="led h-2.5 w-2.5 rounded-full bg-cuivre shadow-[0_0_12px] shadow-cuivre"></span></span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold">Borne de recharge</h3>
+              <p class="mt-2 flex-1 text-brume">Wallbox 7 kW posée par un installateur qualifié IRVE, en maison comme en copropriété.</p>
+              <p class="mt-4 font-display font-bold text-cuivre">Dès 1 290 € posée</p>
+            </article>
+            <article class="module on flex w-[78%] shrink-0 snap-start flex-col rounded-2xl border border-ardoise-clair bg-nuit p-5 md:w-auto">
+              <div class="flex items-start justify-between" aria-hidden="true">
+                <span class="relative block h-[60px] w-10 rounded-md bg-ardoise-clair"><span class="levier absolute inset-x-1.5 top-1.5 block h-6 rounded bg-craie"></span></span>
+                <span class="flex items-center gap-2 font-display font-bold text-brume">10 A <span class="led h-2.5 w-2.5 rounded-full bg-cuivre shadow-[0_0_12px] shadow-cuivre"></span></span>
+              </div>
+              <h3 class="mt-5 font-display text-2xl font-bold">Éclairage et domotique</h3>
+              <p class="mt-2 flex-1 text-brume">Spots, variateurs, volets et chauffage pilotés depuis votre téléphone.</p>
+              <p class="mt-4 font-display font-bold text-cuivre">Sur devis détaillé</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Diagnostic : les signes d'alerte ===== -->
+    <section id="diagnostic" class="border-y border-ardoise-clair/60 bg-ardoise/30 py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl items-center gap-8 px-4 md:grid-cols-2 md:gap-14 md:px-6">
+        <div data-kv-image="Photo d'un tableau électrique que vous avez rénové" class="dessin rv relative aspect-[16/10] overflow-hidden rounded-[1.75rem] border border-ardoise-clair bg-nuit md:order-2 md:aspect-[4/3.4]">
+          <div class="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-arc/15 blur-3xl" aria-hidden="true"></div>
+          <svg class="relative h-full w-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <rect class="trace stroke-craie" pathLength="1" x="70" y="22" width="260" height="230" rx="16" stroke-width="3" stroke-opacity=".7"/>
+            <line class="trace stroke-brume" pathLength="1" x1="90" y1="86" x2="310" y2="86" stroke-width="3" style="--d:200ms"/>
+            <line class="trace stroke-brume" pathLength="1" x1="90" y1="150" x2="310" y2="150" stroke-width="3" style="--d:300ms"/>
+            <line class="trace stroke-brume" pathLength="1" x1="90" y1="214" x2="310" y2="214" stroke-width="3" style="--d:400ms"/>
+            <g class="stroke-craie fill-nuit" stroke-width="2.5">
+              <rect class="trace" pathLength="1" x="96" y="64" width="38" height="44" rx="5" style="--d:500ms"/>
+              <rect class="trace" pathLength="1" x="142" y="64" width="22" height="44" rx="4" style="--d:560ms"/>
+              <rect class="trace" pathLength="1" x="170" y="64" width="22" height="44" rx="4" style="--d:620ms"/>
+              <rect class="trace" pathLength="1" x="198" y="64" width="22" height="44" rx="4" style="--d:680ms"/>
+              <rect class="trace" pathLength="1" x="226" y="64" width="22" height="44" rx="4" style="--d:740ms"/>
+              <rect class="trace" pathLength="1" x="96" y="128" width="38" height="44" rx="5" style="--d:800ms"/>
+              <rect class="trace" pathLength="1" x="142" y="128" width="22" height="44" rx="4" style="--d:860ms"/>
+              <rect class="trace" pathLength="1" x="170" y="128" width="22" height="44" rx="4" style="--d:920ms"/>
+              <rect class="trace" pathLength="1" x="198" y="128" width="22" height="44" rx="4" style="--d:980ms"/>
+              <rect class="trace" pathLength="1" x="96" y="192" width="38" height="44" rx="5" style="--d:1040ms"/>
+              <rect class="trace" pathLength="1" x="142" y="192" width="22" height="44" rx="4" style="--d:1100ms"/>
+              <rect class="trace" pathLength="1" x="170" y="192" width="22" height="44" rx="4" style="--d:1160ms"/>
+            </g>
+            <g class="fill-cuivre" stroke="none">
+              <rect x="148" y="70" width="10" height="12" rx="2"/><rect x="176" y="70" width="10" height="12" rx="2"/><rect x="204" y="70" width="10" height="12" rx="2"/><rect x="232" y="70" width="10" height="12" rx="2"/>
+              <rect x="148" y="134" width="10" height="12" rx="2"/><rect x="176" y="134" width="10" height="12" rx="2"/><rect x="204" y="134" width="10" height="12" rx="2"/>
+              <rect x="148" y="198" width="10" height="12" rx="2"/><rect x="176" y="198" width="10" height="12" rx="2"/>
+            </g>
+            <path class="trace stroke-cuivre" pathLength="1" d="M153 236v30c0 12 8 20 20 20h170" stroke-width="3" style="--d:1200ms"/>
+            <path class="trace stroke-arc" pathLength="1" d="M181 236v18c0 10 8 16 18 16h20c10 0 16-8 16-18v-80c0-10 6-16 16-16h50" stroke-width="3" style="--d:1350ms"/>
+            <path class="trace" pathLength="1" d="M115 236v40c0 8-6 14-14 14H40" stroke="#C9D46B" stroke-width="3" style="--d:1500ms"/>
+            <circle cx="290" cy="58" r="10" class="trace stroke-cuivre" pathLength="1" stroke-width="2.5" style="--d:900ms"/>
+            <path class="trace stroke-cuivre" pathLength="1" d="m291 50-5 9h6l-3 8" stroke-width="2" style="--d:1100ms"/>
+          </svg>
+        </div>
+
+        <div class="md:order-1">
+          <h2 class="rv font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Votre installation vous prévient</h2>
+          <p class="rv mt-3 text-brume">Ces signes ne sont pas à laisser traîner. Un contrôle prend une heure et le diagnostic est offert.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="rv flex gap-4 rounded-2xl border border-ardoise-clair bg-nuit/60 p-4" style="--d:60ms"><svg class="mt-1 h-5 w-5 shrink-0 text-cuivre" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="currentColor"/></svg><span>Le disjoncteur saute dès que le four et le lave-linge tournent ensemble.</span></li>
+            <li class="rv flex gap-4 rounded-2xl border border-ardoise-clair bg-nuit/60 p-4" style="--d:120ms"><svg class="mt-1 h-5 w-5 shrink-0 text-cuivre" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="currentColor"/></svg><span>Une prise noircit, chauffe ou grésille quand on branche un appareil.</span></li>
+            <li class="rv flex gap-4 rounded-2xl border border-ardoise-clair bg-nuit/60 p-4" style="--d:180ms"><svg class="mt-1 h-5 w-5 shrink-0 text-cuivre" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="currentColor"/></svg><span>Encore des fusibles en porcelaine, ou aucun différentiel 30 mA au tableau.</span></li>
+            <li class="rv flex gap-4 rounded-2xl border border-ardoise-clair bg-nuit/60 p-4" style="--d:240ms"><svg class="mt-1 h-5 w-5 shrink-0 text-cuivre" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="currentColor"/></svg><span>Un logement de plus de 15 ans à vendre ou à louer, jamais contrôlé.</span></li>
+          </ul>
+          <a href="#contact" class="btn rv mt-7 bg-cuivre text-nuit hover:bg-craie">Faire vérifier mon installation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Méthode : le courant parcourt les étapes au défilement ===== -->
+    <section id="methode" class="py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <h2 class="rv max-w-2xl font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Comment se passe une intervention</h2>
+
+        <ol id="etapes" class="relative mt-8 grid gap-6 md:mt-14 md:grid-cols-4 md:gap-8">
+          <!-- fil vertical (mobile) -->
+          <li class="pointer-events-none absolute bottom-20 left-6 top-6 w-0.5 bg-ardoise-clair md:hidden" aria-hidden="true"><span class="courant-v block h-full w-full bg-cuivre" style="--p:0"></span></li>
+          <!-- fil horizontal (ordinateur) -->
+          <li class="pointer-events-none absolute left-6 right-[calc(25%-48px)] top-6 hidden h-0.5 bg-ardoise-clair md:block" aria-hidden="true"><span class="courant block h-full w-full bg-cuivre" style="--p:0"></span></li>
+          <li class="etape relative flex gap-4 md:block">
+            <span class="borne relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-cuivre bg-nuit font-display text-xl font-extrabold">1</span>
+            <div><h3 class="font-display text-xl font-bold md:mt-6">Vous appelez</h3><p class="mt-1 text-brume">Je décroche moi-même, de 7 h à 20 h. Souvent, on règle déjà la panne au téléphone.</p></div>
+          </li>
+          <li class="etape relative flex gap-4 md:block">
+            <span class="borne relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-cuivre bg-nuit font-display text-xl font-extrabold">2</span>
+            <div><h3 class="font-display text-xl font-bold md:mt-6">Diagnostic sur place</h3><p class="mt-1 text-brume">Tableau, circuits et terre contrôlés au multimètre et au testeur d'isolement.</p></div>
+          </li>
+          <li class="etape relative flex gap-4 md:block">
+            <span class="borne relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-cuivre bg-nuit font-display text-xl font-extrabold">3</span>
+            <div><h3 class="font-display text-xl font-bold md:mt-6">Devis écrit, prix ferme</h3><p class="mt-1 text-brume">Vous savez ce qui sera fait et ce que vous paierez avant le premier coup de tournevis.</p></div>
+          </li>
+          <li class="etape relative flex gap-4 md:block">
+            <span class="borne relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-cuivre bg-nuit font-display text-xl font-extrabold">4</span>
+            <div><h3 class="font-display text-xl font-bold md:mt-6">Travaux et attestation</h3><p class="mt-1 text-brume">Chantier propre, circuits repérés au tableau et attestation de conformité remise.</p></div>
+          </li>
+        </ol>
+
+        <dl class="rv mt-12 grid grid-cols-3 gap-3 rounded-[1.75rem] border border-ardoise-clair bg-ardoise/40 p-5 text-center md:mt-20 md:p-10">
+          <div><dt class="sr-only">Délai moyen en dépannage</dt><dd class="font-display text-4xl font-extrabold text-cuivre md:text-7xl"><span data-compte="2">2</span>&nbsp;h</dd><dd class="mt-1 text-[15px] leading-snug text-brume">délai d'arrivée</dd></div>
+          <div><dt class="sr-only">Années de métier</dt><dd class="font-display text-4xl font-extrabold text-cuivre md:text-7xl"><span data-compte="18">18</span></dd><dd class="mt-1 text-[15px] leading-snug text-brume">ans de métier</dd></div>
+          <div><dt class="sr-only">Avis clients</dt><dd class="font-display text-4xl font-extrabold text-cuivre md:text-7xl"><span data-compte="212">212</span></dd><dd class="mt-1 text-[15px] leading-snug text-brume">avis, 4,9 sur 5</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Avis ===== -->
+    <section id="avis" class="overflow-x-clip pb-14 md:pb-24">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <h2 class="rv font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Ce qu'en disent les voisins</h2>
+        <div class="carrousel no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-1 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
+          <figure class="verre rv flex w-[82%] shrink-0 snap-start flex-col rounded-[1.75rem] border border-ardoise-clair p-6 md:w-auto">
+            <svg class="h-5 w-24 text-cuivre" viewBox="0 0 120 24" aria-hidden="true"><g fill="currentColor"><path id="etoile" d="m12 2 2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.2 5.8 21l1.6-7L2 9.2l7.1-.6L12 2Z"/><use href="#etoile" x="24"/><use href="#etoile" x="48"/><use href="#etoile" x="72"/><use href="#etoile" x="96"/></g></svg>
+            <blockquote class="mt-4 flex-1">Coupure générale un dimanche soir, Julien était là 1&nbsp;h&nbsp;15 plus tard. Radiateur en cause, circuit isolé, tout est revenu. Facture identique au prix annoncé.</blockquote>
+            <figcaption class="mt-5 font-display font-bold">Sandrine <span class="font-sans font-normal text-brume">Charpennes</span></figcaption>
+          </figure>
+          <figure class="verre rv flex w-[82%] shrink-0 snap-start flex-col rounded-[1.75rem] border border-ardoise-clair p-6 md:w-auto" style="--d:100ms">
+            <svg class="h-5 w-24 text-cuivre" viewBox="0 0 120 24" aria-hidden="true"><g fill="currentColor"><use href="#etoile"/><use href="#etoile" x="24"/><use href="#etoile" x="48"/><use href="#etoile" x="72"/><use href="#etoile" x="96"/></g></svg>
+            <blockquote class="mt-4 flex-1">Mise aux normes de notre appartement des années 70 avant de le louer. Tableau neuf, terre partout, attestation Consuel obtenue du premier coup.</blockquote>
+            <figcaption class="mt-5 font-display font-bold">Karim <span class="font-sans font-normal text-brume">Gratte-Ciel</span></figcaption>
+          </figure>
+          <figure class="verre rv flex w-[82%] shrink-0 snap-start flex-col rounded-[1.75rem] border border-ardoise-clair p-6 md:w-auto" style="--d:200ms">
+            <svg class="h-5 w-24 text-cuivre" viewBox="0 0 120 24" aria-hidden="true"><g fill="currentColor"><use href="#etoile"/><use href="#etoile" x="24"/><use href="#etoile" x="48"/><use href="#etoile" x="72"/><use href="#etoile" x="96"/></g></svg>
+            <blockquote class="mt-4 flex-1">Borne posée au garage en une matinée, câble invisible. Il nous a montré comment programmer la charge en heures creuses.</blockquote>
+            <figcaption class="mt-5 font-display font-bold">Hélène <span class="font-sans font-normal text-brume">Bron</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Questions fréquentes ===== -->
+    <section id="questions" class="border-t border-ardoise-clair/60 py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-[1fr_1.6fr] md:gap-14 md:px-6">
+        <h2 class="rv font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Questions fréquentes</h2>
+        <div class="divide-y divide-ardoise-clair border-y border-ardoise-clair">
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-lg font-bold">Intervenez-vous le week-end&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ardoise-clair text-cuivre" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-brume">Oui, pour les pannes&nbsp;: 7&nbsp;j/7 de 7 h à 22 h. Le dimanche et les jours fériés, une majoration de 30 € s'applique, annoncée avant le déplacement.</p>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-lg font-bold">Le devis est-il payant&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ardoise-clair text-cuivre" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-brume">Non. Seul le déplacement de dépannage (49 €) est facturé, et il est déduit si vous me confiez les travaux.</p>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-lg font-bold">Serai-je privé de courant longtemps&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ardoise-clair text-cuivre" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-brume">Rarement plus d'une heure d'affilée. Je travaille circuit par circuit et je laisse le réfrigérateur alimenté autant que possible.</p>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-lg font-bold">Êtes-vous assuré&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ardoise-clair text-cuivre" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-brume">Oui&nbsp;: garantie décennale et responsabilité civile professionnelle. Les attestations sont jointes à chaque devis.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Électricien, zone et contact ===== -->
+    <section id="contact" class="relative overflow-x-clip border-t border-ardoise-clair/60 bg-ardoise/30 py-14 md:py-24">
+      <div class="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-cuivre/10 blur-3xl" aria-hidden="true"></div>
+      <div class="relative mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[1fr_1.1fr] md:gap-14 md:px-6">
+        <div>
+          <div class="rv flex items-center gap-4">
+            <div data-kv-image="Portrait de l'électricien" class="h-20 w-20 shrink-0 overflow-hidden rounded-full border-2 border-cuivre bg-ardoise-clair">
+              <svg class="h-full w-full" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="31" r="13" class="fill-brume"/><path d="M14 80c2-17 12-26 26-26s24 9 26 26Z" class="fill-cuivre"/><path d="M27 27c1-9 7-13 13-13s12 4 13 13c-4-3-8-4-13-4s-9 1-13 4Z" class="fill-craie"/></svg>
+            </div>
+            <div>
+              <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Julien, votre électricien</h2>
+              <p class="text-brume">Artisan à Villeurbanne depuis 2008</p>
+            </div>
+          </div>
+          <ul class="rv mt-6 flex flex-wrap gap-2 text-[15px]">
+            <li class="rounded-full border border-ardoise-clair px-3 py-1.5">Qualifié IRVE</li>
+            <li class="rounded-full border border-ardoise-clair px-3 py-1.5">Garantie décennale</li>
+            <li class="rounded-full border border-ardoise-clair px-3 py-1.5">Habilitation électrique</li>
+          </ul>
+          <dl class="rv mt-6 space-y-2">
+            <div class="flex justify-between gap-4 border-b border-ardoise-clair/70 pb-2"><dt class="text-brume">Lundi au vendredi</dt><dd class="font-semibold">7 h 30 – 19 h</dd></div>
+            <div class="flex justify-between gap-4 border-b border-ardoise-clair/70 pb-2"><dt class="text-brume">Samedi</dt><dd class="font-semibold">8 h – 12 h</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-brume">Pannes et urgences</dt><dd class="font-semibold text-cuivre">7 j/7, 7 h – 22 h</dd></div>
+          </dl>
+          <div class="rv mt-6 flex flex-col gap-1">
+            <a href="tel:+33600000000" class="inline-flex min-h-11 items-center gap-3 font-display text-2xl font-bold text-craie hover:text-cuivre">06 00 00 00 00</a>
+            <a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center text-brume underline decoration-ardoise-clair underline-offset-4 hover:text-craie">contact@exemple.fr</a>
+          </div>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Villeurbanne, 69100" class="mt-6 md:h-56 rounded-2xl overflow-hidden border border-ardoise-clair text-craie"></div>
+        </div>
+
+        <!-- Formulaire de contact.
+             Pour le relier : créez un formulaire gratuit sur https://formspree.io (ou Netlify Forms, Basin…),
+             puis remplacez action="#" par l'adresse fournie, par ex. action="https://formspree.io/f/xxxxxx".
+             Avec Netlify, ajoutez simplement l'attribut data-netlify="true" sur la balise <form>. -->
+        <form action="#" method="post" class="verre rv self-start rounded-[1.75rem] border border-ardoise-clair p-5 md:sticky md:top-28 md:p-8">
+          <h3 class="font-display text-2xl font-bold">Demander un devis gratuit</h3>
+          <p class="mt-1 text-brume">Réponse le jour même, photos du tableau bienvenues.</p>
+          <div class="mt-5 space-y-4">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="block"><span class="font-medium">Votre nom</span><input name="nom" autocomplete="name" required class="field mt-1.5"></label>
+              <label class="block"><span class="font-medium">Téléphone</span><input name="telephone" type="tel" autocomplete="tel" required class="field mt-1.5"></label>
+            </div>
+            <label class="block"><span class="font-medium">Type d'intervention</span>
+              <select name="intervention" class="field mt-1.5">
+                <option>Dépannage</option>
+                <option>Mise aux normes</option>
+                <option>Rénovation</option>
+                <option>Borne de recharge</option>
+                <option>Éclairage et domotique</option>
+                <option>Autre demande</option>
+              </select>
+            </label>
+            <label class="block"><span class="font-medium">Votre besoin</span><textarea name="message" rows="3" placeholder="Ex.&nbsp;: le différentiel saute depuis hier soir, maison de 1985" class="field mt-1.5"></textarea></label>
+          </div>
+          <button type="submit" class="btn mt-6 bg-cuivre text-nuit hover:bg-craie sm:w-full">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-ardoise-clair/60 py-8">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 text-[15px] text-brume md:flex-row md:items-center md:justify-between md:px-6">
+      <p><span class="font-display font-bold text-craie">Phase Électricité</span>, électricien à Villeurbanne. SIRET 000 000 000 00000.</p>
+      <p>© 2026 Phase Électricité. <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-craie">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-3 border-t border-ardoise-clair bg-nuit/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-cuivre font-display text-lg font-bold text-nuit">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z" fill="currentColor"/></svg>
+      <span>Appeler</span>
+    </a>
+    <a href="#contact" class="inline-flex min-h-12 items-center justify-center rounded-xl border border-ardoise-clair bg-ardoise font-display text-lg font-bold">Devis gratuit</a>
+  </div>
+
+  <script>
+  (function () {
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var $ = function (s, c) { return (c || document).querySelector(s); };
+    var $$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)); };
+
+    // Menu mobile
+    var b = $('#menuBtn'), m = $('#menu'), ico = $('#menuIco');
+    function menu(open) {
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      ico.setAttribute('d', open ? 'M6 6l12 12M18 6 6 18' : 'M4 7h16M4 12h16M4 17h10');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    b.addEventListener('click', function () { menu(b.getAttribute('aria-expanded') !== 'true'); });
+    $$('#menu a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && b.getAttribute('aria-expanded') === 'true') { menu(false); b.focus(); } });
+
+    // Signature : la lampe s'allume au chargement, puis l'interrupteur la commande
+    var hero = $('#accueil'), inter = $('#interrupteur'), titre = $('#titre');
+    function lumiere(on) { hero.setAttribute('data-lumiere', on ? 'on' : 'off'); inter.setAttribute('aria-pressed', on); }
+    inter.addEventListener('click', function () { lumiere(hero.getAttribute('data-lumiere') !== 'on'); });
+    if (reduit) { titre.classList.add('titre-allume'); }
+    else {
+      lumiere(false);
+      setTimeout(function () { lumiere(true); titre.classList.add('titre-allume'); }, 350);
+    }
+
+    // Fil de progression sous la barre
+    var prog = $('#progression');
+    // Le courant parcourt les étapes
+    var etapes = $('#etapes'), fils = $$('.courant, .courant-v', etapes), bornes = $$('.etape', etapes);
+    function defile() {
+      var h = document.documentElement.scrollHeight - innerHeight;
+      prog.style.setProperty('--p', h > 0 ? Math.min(1, scrollY / h) : 0);
+      if (reduit) return;
+      var r = etapes.getBoundingClientRect(), p = Math.max(0, Math.min(1, (innerHeight * 0.75 - r.top) / (r.height * 0.9)));
+      fils.forEach(function (f) { f.style.setProperty('--p', p); });
+      bornes.forEach(function (e, i) { e.classList.toggle('sous-tension', p >= i / (bornes.length - 1) - 0.02); });
+    }
+    if (reduit) bornes.forEach(function (e) { e.classList.add('sous-tension'); });
+    addEventListener('scroll', defile, { passive: true }); addEventListener('resize', defile); defile();
+
+    if (!('IntersectionObserver' in window)) return;
+
+    // Apparitions au défilement et dessin du tableau
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (!e.isIntersecting) return; var p = e.target.parentElement, lot = p.classList.contains('carrousel') ? $$('.rv', p) : [e.target]; lot.forEach(function (x) { x.classList.add('vu'); io.unobserve(x); }); });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv').forEach(function (el) { if (reduit) el.classList.add('vu'); else io.observe(el); });
+
+    // Les disjoncteurs s'enclenchent un par un
+    var modules = $$('.module');
+    if (!reduit) {
+      modules.forEach(function (x) { x.classList.remove('on'); });
+      var io2 = new IntersectionObserver(function (es) {
+        if (!es[0].isIntersecting) return;
+        modules.forEach(function (x, i) { setTimeout(function () { x.classList.add('on'); }, 200 + i * 160); });
+        io2.disconnect();
+      }, { threshold: 0.35 });
+      io2.observe($('#tableau'));
+    }
+
+    // Chiffres qui comptent
+    var io3 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io3.unobserve(e.target);
+        var el = e.target, fin = +el.getAttribute('data-compte'), t0 = null;
+        if (reduit) return;
+        function pas(t) { t0 = t0 || t; var k = Math.min(1, (t - t0) / 800); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); }
+        requestAnimationFrame(pas);
+      });
+    }, { threshold: 0.6 });
+    $$('[data-compte]').forEach(function (el) { io3.observe(el); });
+  })();
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>
