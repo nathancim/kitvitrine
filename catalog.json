@@ -570,6 +570,62 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "35682e78ed658d3223775ee9cc50fe7b"
+    },
+    {
+      "slug": "maree",
+      "title": "Marée",
+      "tagline": "Site vitrine pour sophrologue",
+      "description": "Une page calme qui se lit comme un récit, pour sophrologue en cabinet et en visio. En ouverture, un cercle qui respire, la mer au lever du jour à l'intérieur : un bouton lance une minute de respiration guidée, « Inspirez… Soufflez… », au rythme du cercle. Sur ordinateur, un rail latéral suit les chapitres et son fil se remplit à mesure qu'on descend. Suivent les motifs de consultation (sommeil, stress, examens, grossesse), le déroulé d'un accompagnement dont le fil lumineux se trace au défilement, le portrait de la praticienne avec ses chiffres, les mots des clients, les tarifs, les questions fréquentes et la demande de rendez-vous avec carte. Bleu houle, écume et lichen, titres en Newsreader léger et texte en Manrope.",
+      "univers": [
+        "sante-bien-etre"
+      ],
+      "style": "Minimal",
+      "couleur": "bleu",
+      "direction": "recit",
+      "animations": [
+        "cercle qui respire, avec une minute de respiration guidée",
+        "titre qui apparaît mot par mot",
+        "fil des étapes qui se trace au défilement",
+        "rail des chapitres qui se remplit et suit la lecture",
+        "chiffres qui comptent",
+        "vagues qui ondulent dans le cercle",
+        "questions qui s'ouvrent en douceur"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-16",
+      "tags": [
+        "sophrologue",
+        "sophrologie",
+        "relaxation",
+        "gestion du stress",
+        "troubles du sommeil",
+        "préparation aux examens",
+        "préparation à l'accouchement",
+        "respiration",
+        "bien-être"
+      ],
+      "sections": [
+        "Accueil avec le cercle qui respire et la minute guidée",
+        "Ce qui vous amène : sommeil, stress, examens, grossesse",
+        "Le déroulé d'un accompagnement en quatre étapes",
+        "Portrait de la sophrologue et chiffres",
+        "Les mots des clients",
+        "Tarifs",
+        "Questions fréquentes",
+        "Demande de rendez-vous, coordonnées et carte"
+      ],
+      "palette": [
+        "#2F5D8C",
+        "#CBD38A",
+        "#15233D",
+        "#D7E1EA",
+        "#F1F4F6",
+        "#7FA3C6"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "6b84c997f08d3ea75f0fc96e4c09c1ca"
     }
   ]
 }

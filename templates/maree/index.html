@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Claire Morvan — Sophrologue à Lorient</title>
+  <meta name="description" content="Sophrologue à Lorient et en visio : sommeil, stress au travail, examens, préparation à l'accouchement. Des exercices de respiration et de détente simples, à refaire chez vous.">
+  <meta name="theme-color" content="#F1F4F6">
+  <link rel="preload" href="assets/fonts/newsreader-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <!-- Les animations ne masquent le contenu que si le navigateur sait le révéler -->
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-ecume text-nuit font-sans antialiased pb-24 md:pb-0">
+
+  <!-- ===== Rail latéral (grand écran) : le fil des chapitres ===== -->
+  <aside class="hidden lg:flex fixed inset-y-0 left-0 z-30 w-60 flex-col border-r border-nuit/10 bg-ecume px-8 py-9" aria-label="Sommaire">
+    <a href="#" class="inline-flex min-h-11 items-center gap-3">
+      <svg data-kv-logo="Logo" class="h-10 w-10 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" class="fill-houle"/><path d="M9 23c3.5-3 7.5-3 11 0s7.5 3 11 0" fill="none" stroke="#F1F4F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 17c2.6-2.2 5.4-2.2 8 0s5.4 2.2 8 0" fill="none" stroke="#CBD38A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span class="whitespace-nowrap font-serif text-[1.3rem] leading-tight">Claire Morvan</span>
+    </a>
+    <p class="mt-1 pl-[3.25rem] text-[15px] text-nuit/60">Sophrologue</p>
+
+    <nav class="rail relative mt-14" aria-label="Chapitres de la page">
+      <span class="absolute left-[4px] top-3 bottom-3 w-px bg-nuit/15" aria-hidden="true"></span>
+      <span class="fil fil-rail absolute left-[4px] top-3 bottom-3 w-px bg-houle" aria-hidden="true"></span>
+      <ul class="space-y-1 text-[15px] text-nuit/60">
+        <li><a href="#motifs" class="relative flex min-h-11 items-center gap-4 transition-colors hover:text-nuit"><span class="pt h-2.5 w-2.5 shrink-0 rounded-full bg-nuit/25"></span><span>Ce qui vous amène</span></a></li>
+        <li><a href="#deroule" class="relative flex min-h-11 items-center gap-4 transition-colors hover:text-nuit"><span class="pt h-2.5 w-2.5 shrink-0 rounded-full bg-nuit/25"></span><span>Le déroulé</span></a></li>
+        <li><a href="#claire" class="relative flex min-h-11 items-center gap-4 transition-colors hover:text-nuit"><span class="pt h-2.5 w-2.5 shrink-0 rounded-full bg-nuit/25"></span><span>Qui je suis</span></a></li>
+        <li><a href="#avis" class="relative flex min-h-11 items-center gap-4 transition-colors hover:text-nuit"><span class="pt h-2.5 w-2.5 shrink-0 rounded-full bg-nuit/25"></span><span>Leurs mots</span></a></li>
+        <li><a href="#tarifs" class="relative flex min-h-11 items-center gap-4 transition-colors hover:text-nuit"><span class="pt h-2.5 w-2.5 shrink-0 rounded-full bg-nuit/25"></span><span>Tarifs et questions</span></a></li>
+        <li><a href="#contact" class="relative flex min-h-11 items-center gap-4 transition-colors hover:text-nuit"><span class="pt h-2.5 w-2.5 shrink-0 rounded-full bg-nuit/25"></span><span>Rendez-vous</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="mt-auto">
+      <p class="text-[15px] leading-relaxed text-nuit/70">Au cabinet à Lorient ou en visio, du lundi au samedi matin.</p>
+      <a href="tel:+33600000000" class="mt-3 inline-flex min-h-11 items-center font-semibold">06 00 00 00 00</a>
+      <a href="#contact" class="btn mt-2 flex min-h-12 items-center justify-center rounded-full bg-houle whitespace-nowrap px-5 font-semibold text-ecume hover:bg-nuit">Rendez-vous</a>
+    </div>
+  </aside>
+
+  <!-- ===== En-tête mobile et tablette ===== -->
+  <header class="lg:hidden sticky top-0 z-40 border-b border-nuit/10 bg-ecume/95 backdrop-blur">
+    <div class="flex h-16 items-center justify-between gap-4 px-5 md:px-10">
+      <a href="#" class="inline-flex min-h-11 items-center gap-2.5">
+        <svg data-kv-logo="Logo" class="h-9 w-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" class="fill-houle"/><path d="M9 23c3.5-3 7.5-3 11 0s7.5 3 11 0" fill="none" stroke="#F1F4F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 17c2.6-2.2 5.4-2.2 8 0s5.4 2.2 8 0" fill="none" stroke="#CBD38A" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span class="font-serif text-[1.3rem] leading-none">Claire Morvan</span>
+      </a>
+      <button id="menuBtn" class="-mr-2 inline-flex min-h-11 items-center gap-2 px-2 font-semibold" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span>Menu</span>
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9c2.7-2 5.3-2 8 0s5.3 2 8 0M4 16c2.7-2 5.3-2 8 0s5.3 2 8 0"/></svg>
+      </button>
+    </div>
+    <!-- Menu mobile : panneau plein écran -->
+    <nav id="menu" class="fixed inset-x-0 top-16 bottom-0 hidden flex-col overflow-y-auto bg-ecume px-5 pb-10 pt-4 md:px-10" aria-label="Navigation mobile">
+      <a href="#motifs" class="flex min-h-14 items-center border-b border-nuit/10 font-serif text-3xl font-light">Ce qui vous amène</a>
+      <a href="#deroule" class="flex min-h-14 items-center border-b border-nuit/10 font-serif text-3xl font-light">Le déroulé</a>
+      <a href="#claire" class="flex min-h-14 items-center border-b border-nuit/10 font-serif text-3xl font-light">Qui je suis</a>
+      <a href="#avis" class="flex min-h-14 items-center border-b border-nuit/10 font-serif text-3xl font-light">Leurs mots</a>
+      <a href="#tarifs" class="flex min-h-14 items-center border-b border-nuit/10 font-serif text-3xl font-light">Tarifs et questions</a>
+      <a href="#contact" class="flex min-h-14 items-center font-serif text-3xl font-light">Prendre rendez-vous</a>
+      <p class="mt-auto pt-8 text-nuit/70">14 rue des Fontaines, 56100 Lorient<br>Du lundi au vendredi, 9 h à 19 h, et le samedi matin</p>
+    </nav>
+  </header>
+
+  <main class="lg:pl-60">
+
+    <!-- ===== Accueil : le cercle qui respire ===== -->
+    <section id="accueil" class="relative flex flex-col items-center overflow-x-clip px-5 pb-10 pt-8 text-center md:px-10 md:pb-16 lg:min-h-screen lg:justify-center lg:py-12">
+      <div class="entre-hero flex w-full max-w-3xl flex-col items-center">
+        <h1 class="titre font-serif text-[2.55rem] font-light leading-[1.04] tracking-[-0.015em] sm:text-6xl lg:text-[4.6rem]">Reprendre son souffle, une séance à la fois</h1>
+        <p class="rv-hero mt-5 max-w-[46ch] text-[17px] leading-relaxed text-nuit/75 md:text-lg">Sommeil, stress, examens, grossesse : des exercices de respiration et de détente simples, que vous apprenez au cabinet et refaites chez vous.</p>
+        <div class="mt-7 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+          <a href="#contact" class="btn inline-flex min-h-12 w-full items-center justify-center rounded-full bg-houle px-7 font-semibold text-ecume hover:bg-nuit sm:w-auto">Prendre un premier rendez-vous</a>
+          <a href="tel:+33600000000" class="btn inline-flex min-h-12 w-full items-center justify-center rounded-full px-7 font-semibold ring-1 ring-inset ring-nuit/25 hover:ring-nuit sm:w-auto">06 00 00 00 00</a>
+        </div>
+
+        <!-- Le cercle : il respire doucement ; le bouton lance une minute de respiration guidée -->
+        <div id="souffle" class="respire mt-10 flex flex-col items-center lg:order-first lg:mb-10 lg:mt-0">
+          <div class="pose relative aspect-square w-[min(64vw,34vh)] lg:w-[min(26vw,40vh)]">
+            <div class="cercle absolute inset-0">
+              <svg class="pointer-events-none absolute -inset-[14%] h-[128%] w-[128%]" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+                <circle class="onde" cx="100" cy="100" r="96" stroke="#2F5D8C" stroke-opacity=".14" stroke-width="1"/>
+                <circle class="onde" cx="100" cy="100" r="88" stroke="#2F5D8C" stroke-opacity=".22" stroke-width="1"/>
+                <circle class="onde" cx="100" cy="100" r="81" stroke="#CBD38A" stroke-width="1.5"/>
+              </svg>
+              <div data-kv-image="Photo du cabinet, d'un paysage apaisant ou portrait" class="relative h-full w-full overflow-hidden rounded-full bg-brume">
+                <!-- Illustration : la rade au lever du jour, la mer qui ondule -->
+                <svg class="h-full w-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="La mer calme au lever du jour, une île au loin">
+                  <defs>
+                    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9D8E6"/><stop offset=".7" stop-color="#EEF0E4"/><stop offset="1" stop-color="#F4F1DA"/></linearGradient>
+                    <linearGradient id="mer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FA3C6"/><stop offset="1" stop-color="#21416A"/></linearGradient>
+                  </defs>
+                  <rect width="400" height="400" fill="url(#ciel)"/>
+                  <circle cx="250" cy="222" r="46" fill="#E4E7B4"/>
+                  <circle cx="250" cy="222" r="30" fill="#D9DE9A"/>
+                  <path d="M0 236c30-6 58-14 82-26 14-7 26-8 40-2 20 9 34 22 66 28H0Z" fill="#9DB4CB"/>
+                  <path d="M300 236c14-8 30-12 46-10 18 2 34 6 54 10Z" fill="#AFC2D5"/>
+                  <rect y="234" width="400" height="166" fill="url(#mer)"/>
+                  <g fill="none" stroke-linecap="round">
+                    <path d="M196 252h108M214 264h76M226 276h50" stroke="#EEF0C9" stroke-opacity=".7" stroke-width="3"/>
+                    <path class="vague" d="M-40 300c20-7 40-7 60 0s40 7 60 0 40-7 60 0 40 7 60 0 40-7 60 0 40 7 60 0 40-7 60 0 40 7 60 0" stroke="#F1F4F6" stroke-opacity=".35" stroke-width="2"/>
+                    <path class="vague vague-2" d="M-40 336c24-8 48-8 72 0s48 8 72 0 48-8 72 0 48 8 72 0 48-8 72 0 48 8 72 0 48-8 72 0" stroke="#F1F4F6" stroke-opacity=".22" stroke-width="2"/>
+                    <path class="vague" d="M-40 372c28-9 56-9 84 0s56 9 84 0 56-9 84 0 56 9 84 0 56-9 84 0 56 9 84 0" stroke="#F1F4F6" stroke-opacity=".16" stroke-width="2"/>
+                  </g>
+                  <path d="M120 118c6-4 10-4 14 0 4-4 8-4 14 0" fill="none" stroke="#21416A" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M160 96c4-3 7-3 10 0 3-3 6-3 10 0" fill="none" stroke="#21416A" stroke-opacity=".4" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p id="consigne" class="mt-6 min-h-[3.25rem] max-w-[32ch] font-serif text-xl font-light italic leading-snug text-nuit/80" aria-live="polite">Quand il s'ouvre, vous inspirez. Quand il se resserre, vous soufflez.</p>
+          <button id="guideBtn" type="button" class="btn mt-2 inline-flex min-h-11 items-center gap-2.5 rounded-full px-4 text-[15px] font-semibold text-houle hover:bg-brume/70">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="8"/><circle cx="10" cy="10" r="4"/></svg>
+            <span id="guideTxt">Respirer une minute avec le cercle</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Ce qui vous amène ===== -->
+    <section id="motifs" class="chap border-t border-nuit/10 px-5 py-14 md:px-10 md:py-24 lg:grid lg:min-h-screen lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:content-center lg:gap-16 lg:px-16">
+      <div class="lg:sticky lg:top-24 lg:self-start">
+        <h2 class="rv font-serif text-4xl font-light leading-[1.08] sm:text-5xl">On vient pour une chose, on repart avec des outils pour le reste</h2>
+        <p class="rv mt-4 max-w-[44ch] text-[17px] leading-relaxed text-nuit/75">La sophrologie ne soigne pas : elle vous apprend à agir sur votre respiration, vos tensions et vos pensées, avec des gestes que vous gardez.</p>
+      </div>
+      <ul class="rv no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-2 md:mx-0 md:block md:overflow-visible md:px-0 lg:mt-0">
+        <li class="motif w-[82%] shrink-0 snap-start rounded-2xl bg-brume/70 p-6 md:grid md:w-auto md:grid-cols-[13rem_1fr] md:gap-8 md:rounded-none md:border-t md:border-nuit/15 md:bg-transparent md:px-0 md:py-7">
+          <div><span class="trait mb-4 block h-0.5 w-full bg-houle" aria-hidden="true"></span><h3 class="font-serif text-2xl">Le sommeil</h3></div>
+          <p class="mt-2 leading-relaxed text-nuit/75 md:mt-5">Endormissement long, réveil à 4 h la tête pleine : on construit un rituel du soir de dix minutes.</p>
+        </li>
+        <li class="motif w-[82%] shrink-0 snap-start rounded-2xl bg-brume/70 p-6 md:grid md:w-auto md:grid-cols-[13rem_1fr] md:gap-8 md:rounded-none md:border-t md:border-nuit/15 md:bg-transparent md:px-0 md:py-7">
+          <div><span class="trait mb-4 block h-0.5 w-full bg-houle" aria-hidden="true"></span><h3 class="font-serif text-2xl">Le stress au travail</h3></div>
+          <p class="mt-2 leading-relaxed text-nuit/75 md:mt-5">Réunions, charge mentale, nuque crispée : des pauses de deux minutes, faisables à votre bureau.</p>
+        </li>
+        <li class="motif w-[82%] shrink-0 snap-start rounded-2xl bg-brume/70 p-6 md:grid md:w-auto md:grid-cols-[13rem_1fr] md:gap-8 md:rounded-none md:border-t md:border-nuit/15 md:bg-transparent md:px-0 md:py-7">
+          <div><span class="trait mb-4 block h-0.5 w-full bg-houle" aria-hidden="true"></span><h3 class="font-serif text-2xl">Examens et concours</h3></div>
+          <p class="mt-2 leading-relaxed text-nuit/75 md:mt-5">Bac, permis, oraux : garder ses moyens le jour J. Les adolescents sont accueillis dès 14 ans.</p>
+        </li>
+        <li class="motif w-[82%] shrink-0 snap-start rounded-2xl bg-brume/70 p-6 md:grid md:w-auto md:grid-cols-[13rem_1fr] md:gap-8 md:rounded-none md:border-t md:border-nuit/15 md:bg-transparent md:px-0 md:py-7">
+          <div><span class="trait mb-4 block h-0.5 w-full bg-houle" aria-hidden="true"></span><h3 class="font-serif text-2xl">La grossesse</h3></div>
+          <p class="mt-2 leading-relaxed text-nuit/75 md:mt-5">Préparer l'accouchement par la respiration et la visualisation, seule ou avec la personne qui vous accompagnera.</p>
+        </li>
+        <li class="motif w-[82%] shrink-0 snap-start rounded-2xl bg-brume/70 p-6 md:grid md:w-auto md:grid-cols-[13rem_1fr] md:gap-8 md:rounded-none md:border-t md:border-nuit/15 md:bg-transparent md:px-0 md:py-7">
+          <div><span class="trait mb-4 block h-0.5 w-full bg-houle" aria-hidden="true"></span><h3 class="font-serif text-2xl">Les douleurs chroniques</h3></div>
+          <p class="mt-2 leading-relaxed text-nuit/75 md:mt-5">En complément de votre suivi médical : relâcher les zones crispées et mieux traverser les jours difficiles.</p>
+        </li>
+        <li class="motif w-[82%] shrink-0 snap-start rounded-2xl bg-brume/70 p-6 md:grid md:w-auto md:grid-cols-[13rem_1fr] md:gap-8 md:rounded-none md:border-y md:border-nuit/15 md:bg-transparent md:px-0 md:py-7">
+          <div><span class="trait mb-4 block h-0.5 w-full bg-houle" aria-hidden="true"></span><h3 class="font-serif text-2xl">La confiance en soi</h3></div>
+          <p class="mt-2 leading-relaxed text-nuit/75 md:mt-5">Prise de parole, entretien, reprise du travail : répéter la scène en pensée jusqu'à ce qu'elle devienne familière.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Le déroulé : le fil se trace au défilement ===== -->
+    <section id="deroule" class="chap sombre bg-nuit px-5 py-14 text-ecume md:px-10 md:py-24 lg:flex lg:min-h-screen lg:flex-col lg:justify-center lg:px-16">
+      <div class="max-w-2xl md:mx-auto md:text-center">
+        <h2 class="rv font-serif text-4xl font-light leading-[1.08] sm:text-5xl">Comment se passe un accompagnement</h2>
+        <p class="rv mt-4 text-[17px] leading-relaxed text-ecume/70">Six à dix séances en général, à votre rythme. Rien d'étrange : vous restez habillé, assis ou debout, et vous parlez autant que vous le souhaitez.</p>
+      </div>
+      <ol id="etapes" class="relative mx-auto mt-10 max-w-4xl space-y-9 md:mt-16 md:space-y-4">
+        <span class="absolute bottom-3 left-[19px] top-3 w-px bg-ecume/15 md:left-1/2" aria-hidden="true"></span>
+        <span class="fil fil-etapes absolute bottom-3 left-[19px] top-3 w-px bg-lichen md:left-1/2" aria-hidden="true"></span>
+        <li class="etape relative grid grid-cols-[40px_1fr] gap-5 md:grid-cols-[1fr_40px_1fr] md:gap-10">
+          <span class="point relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-nuit font-serif text-lg ring-1 ring-ecume/30 md:col-start-2 md:row-start-1">1</span>
+          <div class="rv md:col-start-1 md:row-start-1 md:text-right">
+            <h3 class="font-serif text-2xl">Le premier rendez-vous</h3>
+            <p class="mt-1 text-[15px] font-semibold text-lichen">1 h 15</p>
+            <p class="mt-2 leading-relaxed text-ecume/75">On parle de ce qui vous amène, de votre sommeil, de votre rythme. Vous essayez deux exercices pour sentir ce que c'est.</p>
+          </div>
+        </li>
+        <li class="etape relative grid grid-cols-[40px_1fr] gap-5 md:grid-cols-[1fr_40px_1fr] md:gap-10">
+          <span class="point relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-nuit font-serif text-lg ring-1 ring-ecume/30 md:col-start-2 md:row-start-1">2</span>
+          <div class="rv md:col-start-3 md:row-start-1">
+            <h3 class="font-serif text-2xl">Les séances</h3>
+            <p class="mt-1 text-[15px] font-semibold text-lichen">45 minutes, tous les 10 à 15 jours</p>
+            <p class="mt-2 leading-relaxed text-ecume/75">Respiration, détente du corps, visualisation : chaque séance s'appuie sur la précédente.</p>
+          </div>
+        </li>
+        <li class="etape relative grid grid-cols-[40px_1fr] gap-5 md:grid-cols-[1fr_40px_1fr] md:gap-10">
+          <span class="point relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-nuit font-serif text-lg ring-1 ring-ecume/30 md:col-start-2 md:row-start-1">3</span>
+          <div class="rv md:col-start-1 md:row-start-1 md:text-right">
+            <h3 class="font-serif text-2xl">Entre deux séances</h3>
+            <p class="mt-1 text-[15px] font-semibold text-lichen">5 à 10 minutes par jour</p>
+            <p class="mt-2 leading-relaxed text-ecume/75">Vous repartez avec l'enregistrement de vos exercices, à refaire chez vous, dans le train ou avant un moment difficile.</p>
+          </div>
+        </li>
+        <li class="etape relative grid grid-cols-[40px_1fr] gap-5 md:grid-cols-[1fr_40px_1fr] md:gap-10">
+          <span class="point relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-nuit font-serif text-lg ring-1 ring-ecume/30 md:col-start-2 md:row-start-1">4</span>
+          <div class="rv md:col-start-3 md:row-start-1">
+            <h3 class="font-serif text-2xl">Le bilan</h3>
+            <p class="mt-1 text-[15px] font-semibold text-lichen">Vers la sixième séance</p>
+            <p class="mt-2 leading-relaxed text-ecume/75">On regarde ce qui a changé. Beaucoup s'arrêtent là ; d'autres reviennent avant un examen ou une période chargée.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== Qui je suis ===== -->
+    <section id="claire" class="chap bg-brume px-5 py-14 md:px-10 md:py-24 lg:grid lg:min-h-screen lg:grid-cols-[minmax(0,4fr)_minmax(0,6fr)] lg:items-center lg:gap-20 lg:px-16">
+      <div class="flex items-end gap-5 lg:block">
+        <!-- Emplacement photo : portrait (cliquez dessus en mode édition pour mettre le vôtre) -->
+        <div data-kv-image="Portrait de la sophrologue" class="rv aspect-[4/5] w-32 shrink-0 overflow-hidden rounded-t-full bg-houle-clair/50 sm:w-44 lg:w-full lg:max-w-sm">
+          <svg class="h-full w-full" viewBox="0 0 240 300" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration : une femme assise, les yeux fermés, qui respire">
+            <rect width="240" height="300" fill="#A9C1D8"/>
+            <circle cx="120" cy="118" r="92" fill="#C3D4E4"/>
+            <path d="M44 300c2-58 34-98 76-98s74 40 76 98Z" class="fill-houle"/>
+            <path d="M98 196h44l-4 22c-6 6-30 6-36 0Z" fill="#E7C9B4"/>
+            <ellipse cx="120" cy="150" rx="34" ry="40" fill="#EDD3C0"/>
+            <path d="M84 150c-6-40 16-62 40-62 26 0 42 22 36 58-6-20-16-30-34-34-14 10-28 18-42 38Z" fill="#33284A"/>
+            <path d="M156 132c10 18 12 46 2 70-4-10-6-20-6-30Z" fill="#33284A"/>
+            <path d="M104 152c4 3 8 3 12 0M128 152c4 3 8 3 12 0" fill="none" stroke="#5A4038" stroke-width="2" stroke-linecap="round"/>
+            <path d="M114 172c4 2 8 2 12 0" fill="none" stroke="#B57B6A" stroke-width="2" stroke-linecap="round"/>
+            <path d="M70 262c18-10 34-12 50-6 16-6 32-4 50 6" fill="none" stroke="#F1F4F6" stroke-opacity=".4" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="lg:mt-6">
+          <p class="font-serif text-2xl leading-tight lg:text-3xl">Claire Morvan</p>
+          <p class="mt-1 text-[15px] text-nuit/70">Sophrologue certifiée, installée à Lorient depuis 2014</p>
+        </div>
+      </div>
+      <div class="mt-8 lg:mt-0">
+        <h2 class="rv font-serif text-4xl font-light leading-[1.08] sm:text-5xl">Je ne vous apprends rien que votre corps ne sache déjà faire</h2>
+        <p class="rv mt-5 max-w-[56ch] text-[17px] leading-relaxed text-nuit/80">Infirmière pendant dix ans, j'ai découvert la sophrologie en accompagnant des patients avant leurs opérations. Aujourd'hui, je reçois surtout des adultes fatigués de mal dormir, des étudiants avant leurs concours et des futures mamans.</p>
+        <p class="rv mt-4 max-w-[56ch] text-[17px] leading-relaxed text-nuit/80">Mon parti pris : peu de théorie, des exercices courts que vous pouvez vraiment refaire seul.</p>
+        <dl class="mt-10 grid grid-cols-3 gap-4 border-t border-nuit/15 pt-6">
+          <div class="flex flex-col-reverse"><dt class="mt-1 text-[15px] leading-snug text-nuit/70">ans de pratique</dt><dd class="font-serif text-5xl font-light leading-none md:text-6xl"><span class="compte" data-fin="12">12</span></dd></div>
+          <div class="flex flex-col-reverse"><dt class="mt-1 text-[15px] leading-snug text-nuit/70">séances en moyenne</dt><dd class="font-serif text-5xl font-light leading-none md:text-6xl"><span class="compte" data-fin="8">8</span></dd></div>
+          <div class="flex flex-col-reverse"><dt class="mt-1 text-[15px] leading-snug text-nuit/70">minutes par séance</dt><dd class="font-serif text-5xl font-light leading-none md:text-6xl"><span class="compte" data-fin="45">45</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Leurs mots ===== -->
+    <section id="avis" class="chap px-5 py-14 md:px-10 md:py-24 lg:flex lg:min-h-[80vh] lg:flex-col lg:justify-center lg:px-16">
+      <h2 class="rv font-serif text-4xl font-light leading-[1.08] sm:text-5xl">Leurs mots, quelques semaines après</h2>
+      <div class="rv no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-10 md:overflow-visible md:px-0 md:mt-12">
+        <figure class="w-[82%] shrink-0 snap-start border-t-2 border-houle pt-5 md:w-auto">
+          <blockquote class="font-serif text-xl font-light italic leading-snug md:text-2xl">« Je m'endors maintenant en moins d'une demi-heure. Le petit exercice du soir est devenu un réflexe. »</blockquote>
+          <figcaption class="mt-4 text-[15px] text-nuit/70">Maëlle, venue pour des insomnies</figcaption>
+        </figure>
+        <figure class="w-[82%] shrink-0 snap-start border-t-2 border-houle pt-5 md:w-auto">
+          <blockquote class="font-serif text-xl font-light italic leading-snug md:text-2xl">« Mon oral de concours s'est passé sans trou de mémoire. J'avais répété la scène tellement de fois avec Claire. »</blockquote>
+          <figcaption class="mt-4 text-[15px] text-nuit/70">Gaël, 19 ans, concours d'infirmier</figcaption>
+        </figure>
+        <figure class="w-[82%] shrink-0 snap-start border-t-2 border-houle pt-5 md:w-auto">
+          <blockquote class="font-serif text-xl font-light italic leading-snug md:text-2xl">« Pendant l'accouchement, j'ai retrouvé la respiration apprise en séance. Mon compagnon aussi s'en souvenait. »</blockquote>
+          <figcaption class="mt-4 text-[15px] text-nuit/70">Inès, préparation à la naissance</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Tarifs et questions ===== -->
+    <section id="tarifs" class="chap border-t border-nuit/10 bg-white/60 px-5 py-14 md:px-10 md:py-24 lg:grid lg:min-h-screen lg:grid-cols-2 lg:content-center lg:gap-16 lg:px-16">
+      <div>
+        <h2 class="rv font-serif text-4xl font-light leading-[1.08] sm:text-5xl">Tarifs</h2>
+        <dl class="rv mt-7 divide-y divide-nuit/10 border-y border-nuit/10">
+          <div class="flex items-baseline gap-3 py-4"><dt class="flex-1"><span class="font-semibold">Premier rendez-vous</span><span class="block text-[15px] text-nuit/65">1 h 15, bilan et premiers exercices</span></dt><dd class="font-serif text-3xl">70 €</dd></div>
+          <div class="flex items-baseline gap-3 py-4"><dt class="flex-1"><span class="font-semibold">Séance individuelle</span><span class="block text-[15px] text-nuit/65">45 minutes, au cabinet ou en visio</span></dt><dd class="font-serif text-3xl">60 €</dd></div>
+          <div class="flex items-baseline gap-3 py-4"><dt class="flex-1"><span class="font-semibold">Séance adolescent</span><span class="block text-[15px] text-nuit/65">40 minutes, de 14 à 18 ans</span></dt><dd class="font-serif text-3xl">50 €</dd></div>
+          <div class="flex items-baseline gap-3 py-4"><dt class="flex-1"><span class="font-semibold">Atelier du jeudi soir</span><span class="block text-[15px] text-nuit/65">1 h 30 en petit groupe de 8</span></dt><dd class="font-serif text-3xl">20 €</dd></div>
+        </dl>
+        <p class="rv mt-4 text-[15px] leading-relaxed text-nuit/70">Une facture vous est remise à chaque séance : de nombreuses mutuelles en remboursent une partie.</p>
+      </div>
+      <div class="mt-12 lg:mt-0">
+        <h2 class="rv font-serif text-4xl font-light leading-[1.08] sm:text-5xl">Vos questions</h2>
+        <div class="rv mt-7 border-t border-nuit/10">
+          <details class="q border-b border-nuit/10">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-semibold">Concrètement, que fait-on en séance ?<span class="plus font-serif text-2xl font-light text-houle" aria-hidden="true">+</span></summary>
+            <p class="pb-5 leading-relaxed text-nuit/75">Des exercices de respiration, de détente musculaire et de visualisation, guidés par ma voix. Vous restez habillé, assis ou debout, les yeux ouverts ou fermés.</p>
+          </details>
+          <details class="q border-b border-nuit/10">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-semibold">Combien de séances faut-il ?<span class="plus font-serif text-2xl font-light text-houle" aria-hidden="true">+</span></summary>
+            <p class="pb-5 leading-relaxed text-nuit/75">Six à dix en général, espacées de dix à quinze jours. Nous faisons le point ensemble à chaque étape, sans engagement.</p>
+          </details>
+          <details class="q border-b border-nuit/10">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-semibold">Les séances en visio, ça marche ?<span class="plus font-serif text-2xl font-light text-houle" aria-hidden="true">+</span></summary>
+            <p class="pb-5 leading-relaxed text-nuit/75">Oui, très bien pour le suivi. Je conseille seulement de faire le premier rendez-vous au cabinet quand c'est possible.</p>
+          </details>
+          <details class="q border-b border-nuit/10">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-semibold">Je suis suivi par un médecin, puis-je venir ?<span class="plus font-serif text-2xl font-light text-houle" aria-hidden="true">+</span></summary>
+            <p class="pb-5 leading-relaxed text-nuit/75">Bien sûr. La sophrologie accompagne votre traitement sans jamais le remplacer : n'arrêtez rien sans l'avis de votre médecin.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Rendez-vous ===== -->
+    <section id="contact" class="chap sombre bg-nuit px-5 py-14 text-ecume md:px-10 md:py-24 lg:grid lg:min-h-screen lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:content-center lg:gap-16 lg:px-16">
+      <div>
+        <h2 class="rv font-serif text-4xl font-light leading-[1.08] sm:text-5xl">Prendre rendez-vous</h2>
+        <p class="rv mt-4 max-w-[46ch] text-[17px] leading-relaxed text-ecume/75">Laissez vos coordonnées, je vous rappelle sous 48 heures. Par téléphone, le plus simple est entre 12 h et 14 h.</p>
+        <ul class="rv mt-6 space-y-1">
+          <li><a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-serif text-2xl">06 00 00 00 00</a></li>
+          <li><a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center underline decoration-ecume/30 underline-offset-4 hover:decoration-lichen">contact@exemple.fr</a></li>
+        </ul>
+        <p class="rv mt-4 leading-relaxed text-ecume/75">14 rue des Fontaines, 56100 Lorient<br>Lundi au vendredi 9 h à 19 h, samedi 9 h à 12 h</p>
+        <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+        <div data-kv-map="14 rue des Fontaines, 56100 Lorient" class="mt-6 md:h-56 rounded-2xl overflow-hidden bg-ecume/10 text-ecume"></div>
+      </div>
+
+      <!--
+        Formulaire de demande de rendez-vous : il n'envoie rien tant qu'il n'est pas relié à un service.
+        - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+        - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+        - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+      -->
+      <form class="rv mt-10 grid gap-4 sm:grid-cols-2 lg:mt-0" action="#" method="post">
+        <label class="block"><span class="text-[15px] font-semibold">Prénom et nom</span>
+          <input type="text" name="nom" autocomplete="name" class="field mt-1.5" required>
+        </label>
+        <label class="block"><span class="text-[15px] font-semibold">Téléphone</span>
+          <input type="tel" name="telephone" autocomplete="tel" class="field mt-1.5" required>
+        </label>
+        <label class="block"><span class="text-[15px] font-semibold">Ce qui vous amène</span>
+          <select name="motif" class="field mt-1.5">
+            <option>Le sommeil</option><option>Le stress</option><option>Un examen ou un concours</option><option>La grossesse</option><option>Des douleurs</option><option>Autre chose</option>
+          </select>
+        </label>
+        <label class="block"><span class="text-[15px] font-semibold">Je préfère</span>
+          <select name="lieu" class="field mt-1.5">
+            <option>Au cabinet</option><option>En visio</option><option>L'atelier du jeudi</option>
+          </select>
+        </label>
+        <label class="block sm:col-span-2"><span class="text-[15px] font-semibold">Un mot (facultatif)</span>
+          <textarea name="message" rows="3" class="field mt-1.5" placeholder="Vos disponibilités, une question…"></textarea>
+        </label>
+        <button type="submit" class="btn inline-flex min-h-12 w-full items-center justify-center rounded-full bg-lichen px-7 font-semibold text-nuit hover:bg-ecume sm:col-span-2 sm:w-auto sm:justify-self-start">Envoyer ma demande</button>
+      </form>
+    </section>
+
+    <footer class="sombre bg-nuit-deep px-5 py-6 text-[15px] text-ecume/60 md:px-10 lg:px-16">
+      <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+        <p>Claire Morvan, sophrologue à Lorient</p>
+        <a href="#" class="inline-flex min-h-11 items-center hover:text-ecume">Mentions légales</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-3 border-t border-nuit/10 bg-ecume/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur">
+    <a href="tel:+33600000000" class="flex min-h-12 items-center justify-center gap-2 rounded-full font-semibold ring-1 ring-inset ring-nuit/25">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+      <span>Appeler</span>
+    </a>
+    <a href="#contact" class="flex min-h-12 items-center justify-center rounded-full bg-houle font-semibold text-ecume">Rendez-vous</a>
+  </div>
+
+  <script>
+  (function () {
+    var calme = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile
+    var b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    function menu(open) {
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    b.addEventListener('click', function () { menu(b.getAttribute('aria-expanded') !== 'true'); });
+    m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') menu(false); });
+
+    // Entrée du héros : le titre monte mot par mot, le cercle se pose
+    var h = document.querySelector('.titre'), hero = document.querySelector('.entre-hero');
+    if (h && !calme && document.documentElement.classList.contains('js')) {
+      h.innerHTML = h.textContent.trim().split(/\s+/).map(function (w, i) {
+        return '<span class="mot" style="transition-delay:' + (i * 70) + 'ms">' + w + '</span>';
+      }).join(' ');
+    }
+    requestAnimationFrame(function () { requestAnimationFrame(function () { hero.classList.add('entre'); }); });
+
+    // Apparition au défilement
+    var rv = document.querySelectorAll('.rv');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+      rv.forEach(function (el) { io.observe(el); });
+    } else rv.forEach(function (el) { el.classList.add('vu'); });
+
+    // Chiffres qui comptent
+    var cs = document.querySelectorAll('.compte');
+    if (!calme && 'IntersectionObserver' in window) {
+      var ioc = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return; ioc.unobserve(e.target);
+          var el = e.target, fin = +el.getAttribute('data-fin'), t0 = null;
+          (function pas(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 800); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); })(performance.now());
+        });
+      }, { threshold: 0.6 });
+      cs.forEach(function (el) { el.textContent = '0'; ioc.observe(el); });
+    }
+
+    // Fil du souffle : la ligne des étapes et celle du rail se tracent au défilement
+    var ol = document.getElementById('etapes'), filE = ol.querySelector('.fil-etapes'), etapes = ol.querySelectorAll('.etape');
+    var filR = document.querySelector('.fil-rail'), liens = document.querySelectorAll('.rail a'), chaps = document.querySelectorAll('.chap');
+    var attente = false;
+    function trace() {
+      attente = false;
+      var vh = window.innerHeight, r = ol.getBoundingClientRect(), ligne = vh * 0.62;
+      filE.style.setProperty('--p', Math.max(0, Math.min(1, (ligne - r.top) / r.height)).toFixed(3));
+      etapes.forEach(function (e) { e.classList.toggle('atteinte', e.querySelector('.point').getBoundingClientRect().top < ligne); });
+      var doc = document.documentElement, p = doc.scrollTop / Math.max(1, doc.scrollHeight - vh);
+      if (filR) filR.style.setProperty('--p', p.toFixed(3));
+      var cur = null;
+      chaps.forEach(function (c) { if (c.getBoundingClientRect().top < vh * 0.45) cur = c.id; });
+      liens.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + cur ? 'true' : 'false'); });
+    }
+    function demande() { if (!attente) { attente = true; requestAnimationFrame(trace); } }
+    window.addEventListener('scroll', demande, { passive: true });
+    window.addEventListener('resize', demande);
+    trace();
+
+    // Respirer une minute avec le cercle : inspirez 4 s, soufflez 6 s, six fois
+    var s = document.getElementById('souffle'), gb = document.getElementById('guideBtn'), gt = document.getElementById('guideTxt'),
+        cons = document.getElementById('consigne'), repos = cons.textContent, minuteur = null;
+    function stop(fini) {
+      clearTimeout(minuteur); minuteur = null;
+      s.classList.remove('guide', 'inspire', 'expire'); s.classList.add('respire');
+      gt.textContent = 'Respirer une minute avec le cercle';
+      cons.textContent = fini ? 'Voilà, une minute. Ce sont ces petits moments que l’on construit ensemble.' : repos;
+    }
+    function cycle(n) {
+      if (n === 0) { stop(true); return; }
+      s.classList.remove('expire'); s.classList.add('inspire');
+      cons.textContent = 'Inspirez par le nez…';
+      minuteur = setTimeout(function () {
+        s.classList.remove('inspire'); s.classList.add('expire');
+        cons.textContent = 'Soufflez lentement par la bouche…' + (n > 1 ? ' (encore ' + (n - 1) + ')' : '');
+        minuteur = setTimeout(function () { cycle(n - 1); }, 6000);
+      }, 4000);
+    }
+    gb.addEventListener('click', function () {
+      if (minuteur) { stop(false); return; }
+      s.classList.remove('respire'); s.classList.add('guide');
+      gt.textContent = 'Arrêter';
+      cycle(6);
+    });
+  })();
+  </script>
+</body>
+</html>

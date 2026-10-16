@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Newsreader'; src: url('fonts/newsreader-latin-300-normal.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+  @font-face { font-family: 'Newsreader'; src: url('fonts/newsreader-latin-300-italic.woff2') format('woff2'); font-weight: 300; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Newsreader'; src: url('fonts/newsreader-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Manrope'; src: url('fonts/manrope-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Manrope'; src: url('fonts/manrope-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Manrope'; src: url('fonts/manrope-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  @font-face { font-family: 'Manrope'; src: url('fonts/manrope-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; -webkit-tap-highlight-color: transparent; }
+  @media (min-width: 1024px) { html { scroll-padding-top: 0; } }
+  :focus-visible { outline: 2px solid #2F5D8C; outline-offset: 3px; border-radius: 4px; }
+  .sombre :focus-visible { outline-color: #CBD38A; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+@layer components {
+  .field { @apply block w-full text-base rounded-lg bg-white/5 border border-ecume/25 px-4 py-3 text-ecume placeholder-ecume/40 transition-colors focus:outline-none focus:border-lichen; }
+  .field option { @apply text-nuit; }
+
+  /* ---- Le cercle qui respire (signature) ---- */
+  .cercle { transition: transform 4s cubic-bezier(.45,.05,.35,1); }
+  .respire .onde { animation: onde 10s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  .respire .onde:nth-child(2) { animation-delay: .35s; }
+  .respire .onde:nth-child(3) { animation-delay: .7s; }
+  @keyframes onde { 0%, 100% { transform: scale(.94); opacity: .55; } 40% { transform: scale(1.05); opacity: 1; } }
+  .guide .onde { animation: none; }
+  .guide.inspire .cercle { transform: scale(1.12); transition-duration: 4s; }
+  .guide.expire .cercle { transform: scale(.9); transition-duration: 6s; }
+  .vague { animation: vague 9s ease-in-out infinite alternate; }
+  .vague-2 { animation-duration: 12s; animation-delay: -3s; }
+  @keyframes vague { to { transform: translateX(-28px); } }
+
+  /* ---- Entrée du héros : mots qui montent, cercle qui se pose ---- */
+  .js .mot { display: inline-block; opacity: 0; transform: translateY(.45em); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .js .entre .mot { opacity: 1; transform: none; }
+  .js .pose { opacity: 0; transform: scale(.92); transition: opacity .8s ease .2s, transform .8s cubic-bezier(.2,.7,.2,1) .2s; }
+  .js .entre .pose, .js .entre.pose { opacity: 1; transform: none; }
+
+  /* ---- Apparition au défilement ---- */
+  .js .rv { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .js .rv.vu { opacity: 1; transform: none; }
+
+  /* ---- Fil du souffle : ligne qui se trace ---- */
+  .fil { transform-origin: top; transform: scaleY(var(--p, 1)); }
+  .js .fil { transform: scaleY(var(--p, 0)); }
+  .etape .point { transition: background-color .5s ease, transform .5s ease, color .5s ease; }
+  .etape.atteinte .point { @apply bg-lichen text-nuit; transform: scale(1.08); }
+
+  /* ---- Rail latéral : chapitre courant ---- */
+  .rail a .pt { transition: transform .4s ease, background-color .4s ease; }
+  .rail a[aria-current="true"] { @apply text-nuit; }
+  .rail a[aria-current="true"] .pt { @apply bg-houle; transform: scale(1.6); }
+
+  /* ---- Motifs : la ligne se remplit au survol ---- */
+  .motif .trait { transform-origin: left; transform: scaleX(.18); transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .motif:hover .trait, .motif:focus-within .trait { transform: scaleX(1); }
+
+  /* ---- Boutons ---- */
+  .btn { transition: transform .3s ease, background-color .3s ease, box-shadow .3s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0) scale(.98); }
+
+  /* ---- FAQ animée ---- */
+  details.q > summary { list-style: none; }
+  details.q > summary::-webkit-details-marker { display: none; }
+  details.q .plus { transition: transform .4s ease; }
+  details.q[open] .plus { transform: rotate(45deg); }
+  details.q::details-content { block-size: 0; overflow: hidden; transition: block-size .45s ease, content-visibility .45s allow-discrete; }
+  details.q[open]::details-content { block-size: auto; }
+  :root { interpolate-size: allow-keywords; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .respire .onde, .vague { animation: none; }
+    .cercle, .guide.inspire .cercle, .guide.expire .cercle { transition: none; transform: none; }
+    .js .mot, .js .pose, .js .rv { opacity: 1; transform: none; transition: none; }
+    .fil, .js .fil { transform: none; }
+    .etape .point, .rail a .pt, .motif .trait, .btn, details.q .plus { transition: none; }
+    .btn:hover { transform: none; }
+    details.q::details-content { transition: none; }
+  }
+}
