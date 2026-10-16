@@ -626,6 +626,63 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "6b84c997f08d3ea75f0fc96e4c09c1ca"
+    },
+    {
+      "slug": "pompon",
+      "title": "Pompon",
+      "tagline": "Site vitrine pour toiletteur canin et félin",
+      "description": "Une page joyeuse et illustrée pour salon de toilettage chiens et chats. En ouverture, un grand titre qui rebondit mot par mot au-dessus d'une scène dessinée : un chien tout sourire dans une baignoire pleine de mousse, des bulles de savon qui montent et un canard en caoutchouc. Un bandeau défilant annonce les soins, puis les prestations s'affichent en cartes-autocollants penchées qui se redressent au survol. Le moment fort : un curseur avant / après qui montre la transformation d'une chienne emmêlée en boule de poils impeccable. Suivent les tarifs par gabarit dans des onglets (petit, moyen, grand chien, chat), les avis, la toiletteuse, les horaires avec carte, les questions fréquentes et la demande de rendez-vous. Rose bonbon, bleu lagon et jaune soleil, titres en Fredoka et texte en Nunito.",
+      "univers": [
+        "animaux"
+      ],
+      "style": "Moderne",
+      "couleur": "rose",
+      "direction": "illustre",
+      "animations": [
+        "titre qui rebondit mot par mot",
+        "bulles de savon qui montent dans la scène du bain",
+        "curseur avant / après qui se balance pour inviter à glisser",
+        "bandeau défilant des prestations",
+        "cartes-autocollants qui se redressent au survol",
+        "onglets de tarifs avec pastille qui glisse",
+        "autocollants qui flottent autour du héros"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-16",
+      "tags": [
+        "toiletteur",
+        "toilettage canin",
+        "toilettage chat",
+        "salon de toilettage",
+        "toiletteuse",
+        "épilation chien",
+        "bain chien",
+        "démêlage",
+        "chiot"
+      ],
+      "sections": [
+        "Accueil avec la scène du bain illustrée",
+        "Bandeau défilant des soins",
+        "Prestations en cartes-autocollants",
+        "Avant / après à faire glisser et engagements du salon",
+        "Tarifs par gabarit en onglets",
+        "Avis des clients",
+        "Toiletteuse, coordonnées, horaires et carte",
+        "Questions fréquentes",
+        "Demande de rendez-vous"
+      ],
+      "palette": [
+        "#D6437A",
+        "#14958F",
+        "#FFC94A",
+        "#FFF7EE",
+        "#FDE4EC",
+        "#2A1D3B"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "c5a6acdc3c119082ace0b03def5d3926"
     }
   ]
 }
