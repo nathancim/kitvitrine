@@ -739,6 +739,61 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "00c0b73990ff0354fd4fae23f6b35106"
+    },
+    {
+      "slug": "fournil",
+      "title": "Fournil",
+      "tagline": "Site vitrine pour boulangerie",
+      "description": "Une page en grille bento pour boulangerie artisanale au levain. En ouverture, les tuiles se posent une à une : le titre sur fond seigle, un four à bois dessiné où le pain lève, dore et voit sa grigne se tracer sous la vapeur, une pastille « Ouvert » calculée à l'heure réelle et l'heure de la prochaine fournée de tradition. Un bandeau fait défiler les pains du jour, puis la vitrine présente les pains en tuiles de tailles variées (carrousel sur téléphone), la nuit au fournil heure par heure, les avis des clients, et un bento final avec les horaires du jour surlignés, la carte, les questions fréquentes et le formulaire pour réserver son pain. Vert seigle, jaune blé et brun croûte, titres en Calistoga et texte en Onest.",
+      "univers": [
+        "restauration"
+      ],
+      "style": "Nature",
+      "couleur": "jaune",
+      "direction": "bento",
+      "animations": [
+        "tuiles du héros qui se posent en cascade",
+        "pain qui lève et dore dans le four, grigne qui se dessine et vapeur qui monte",
+        "pastille « Ouvert » et prochaine fournée calculées à l'heure réelle",
+        "bandeau défilant des pains du jour",
+        "chiffres qui comptent",
+        "tuiles de pains qui se soulèvent au survol",
+        "questions qui s'ouvrent en douceur"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-17",
+      "tags": [
+        "boulangerie",
+        "boulanger",
+        "pain au levain",
+        "boulangerie artisanale",
+        "feu de bois",
+        "viennoiseries",
+        "pâtisserie",
+        "fournil",
+        "pain bio"
+      ],
+      "sections": [
+        "Accueil en bento : titre, four à bois, ouverture en direct, prochaine fournée, chiffres",
+        "Bandeau des pains du jour",
+        "Les pains en tuiles de tailles variées",
+        "Une nuit au fournil, heure par heure",
+        "Avis des clients",
+        "Horaires, carte, questions fréquentes et réservation du pain"
+      ],
+      "palette": [
+        "#2F3B2A",
+        "#E2B13C",
+        "#9A5424",
+        "#F2DFA6",
+        "#E8E5D2",
+        "#F8F5EA",
+        "#1F231B"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "bf2150e1c2d411f7082b286a97cf0c89"
     }
   ]
 }

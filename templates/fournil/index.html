@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fournil des Tilleuls — Boulangerie au levain et au feu de bois à Crest</title>
+  <meta name="description" content="Fournil des Tilleuls, boulangerie artisanale à Crest (Drôme) : pains au levain naturel cuits au feu de bois, farines meunières locales, viennoiseries pur beurre. Commande la veille, retrait dès 6 h 30.">
+  <meta name="theme-color" content="#2F3B2A">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-fond font-sans text-[17px] leading-relaxed text-encre antialiased pb-24 md:pb-0">
+
+  <!-- ===== Navigation : pilule flottante ===== -->
+  <header class="fixed inset-x-3 top-3 z-40 md:inset-x-0 md:top-4">
+    <div class="mx-auto flex h-[60px] max-w-3xl items-center justify-between gap-3 rounded-full bg-seigle pl-3 pr-2 text-farine shadow-[0_14px_30px_-18px_rgb(31_35_27/.8)] md:h-16 md:pl-4">
+      <a href="#accueil" class="inline-flex min-h-11 items-center gap-2.5" aria-label="Fournil des Tilleuls, retour en haut de page">
+        <svg data-kv-logo="Logo" class="h-10 w-10 shrink-0" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" class="fill-ble"/><path d="M8 25c0-7.5 5.4-12 12-12s12 4.5 12 12c0 2-1.6 3-3.5 3h-17C9.6 28 8 27 8 25Z" class="fill-croute"/><path d="M14 18.5l3 4M19 16.5l3 4.5M24.5 17l2.5 4" class="stroke-mie" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        <span class="font-display text-xl leading-none">Fournil <span class="text-ble">des Tilleuls</span></span>
+      </a>
+      <nav class="hidden items-center md:flex" aria-label="Navigation principale">
+        <a href="#pains" class="inline-flex min-h-11 items-center rounded-full px-3 font-medium text-farine/80 transition hover:bg-seigle-clair hover:text-farine">Les pains</a>
+        <a href="#nuit" class="inline-flex min-h-11 items-center rounded-full px-3 font-medium text-farine/80 transition hover:bg-seigle-clair hover:text-farine">Le fournil</a>
+        <a href="#avis" class="inline-flex min-h-11 items-center rounded-full px-3 font-medium text-farine/80 transition hover:bg-seigle-clair hover:text-farine">Avis</a>
+        <a href="#infos" class="inline-flex min-h-11 items-center rounded-full px-3 font-medium text-farine/80 transition hover:bg-seigle-clair hover:text-farine">Horaires</a>
+      </nav>
+      <a href="#commande" class="btn-pain hidden min-h-11 items-center rounded-full bg-ble px-5 font-bold text-encre transition hover:bg-mie md:inline-flex">Commander</a>
+      <button id="menuBtn" type="button" class="inline-flex min-h-11 items-center gap-2 rounded-full bg-seigle-clair px-4 font-bold md:hidden" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIco" d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+
+    <!-- Menu mobile : panneau déroulant sous la pilule -->
+    <nav id="menu" class="mt-2 hidden flex-col rounded-[1.6rem] bg-seigle p-3 text-farine shadow-xl md:hidden" aria-label="Menu mobile">
+      <a href="#pains" class="flex min-h-12 items-center rounded-2xl px-4 font-display text-2xl hover:bg-seigle-clair">Les pains du jour</a>
+      <a href="#nuit" class="flex min-h-12 items-center rounded-2xl px-4 font-display text-2xl hover:bg-seigle-clair">Une nuit au fournil</a>
+      <a href="#avis" class="flex min-h-12 items-center rounded-2xl px-4 font-display text-2xl hover:bg-seigle-clair">Avis</a>
+      <a href="#infos" class="flex min-h-12 items-center rounded-2xl px-4 font-display text-2xl hover:bg-seigle-clair">Horaires et accès</a>
+      <a href="#commande" class="btn mt-3 bg-ble text-encre">Commander pour demain</a>
+    </nav>
+  </header>
+
+  <main class="px-3 pt-[84px] md:px-6 md:pt-28">
+
+    <!-- ===== Accueil : héros en bento ===== -->
+    <section id="accueil" class="mx-auto grid max-w-6xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+
+      <!-- Tuile titre -->
+      <div class="pose tuile farine-poudre col-span-2 bg-seigle p-6 text-farine md:row-span-2 md:p-10" style="--d:0ms">
+        <p class="inline-flex rounded-full bg-seigle-clair px-3 py-1 text-[15px] text-mie">Boulangerie au levain, Crest</p>
+        <h1 class="mt-4 font-display text-[clamp(2.4rem,9.6vw,4.4rem)] leading-[1.02]">Pétri la veille, cuit au bois, prêt à 6&nbsp;h&nbsp;30.</h1>
+        <p class="mt-4 max-w-md text-farine/80 md:text-lg">Mathilde et Bastien façonnent chaque nuit des pains au levain naturel, avec des farines moulues à 20&nbsp;km d'ici.</p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+          <a href="#commande" class="btn btn-pain bg-ble text-encre hover:bg-mie">Commander pour demain</a>
+          <a href="tel:+33600000000" class="btn btn-pain border-2 border-farine/25 text-farine hover:border-ble">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z" fill="currentColor"/></svg>
+            <span>06 00 00 00 00</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tuile signature : le four à bois (emplacement photo) -->
+      <div data-kv-image="Photo de vos pains à la sortie du four" class="four pose tuile col-span-2 h-[30vh] min-h-[200px] bg-mie md:row-span-2 md:h-auto md:min-h-[420px]" style="--d:120ms">
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 400 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <!-- voûte en briques -->
+          <path d="M40 320V190C40 105 112 44 200 44s160 61 160 146v130Z" fill="#9A5424"/>
+          <g stroke="#7A3F18" stroke-width="3" fill="none" opacity=".55">
+            <path d="M58 190c0-80 64-128 142-128s142 48 142 128"/>
+            <path d="M200 44v18M140 56l6 17M260 56l-6 17M95 86l12 13M305 86l-12 13M64 132l16 7M336 132l-16 7"/>
+          </g>
+          <!-- bouche du four -->
+          <path d="M84 320V200c0-62 52-108 116-108s116 46 116 108v120Z" fill="#2B1A10"/>
+          <ellipse class="lueur" cx="200" cy="290" rx="120" ry="70" fill="#E2B13C" opacity=".55"/>
+          <ellipse class="lueur" cx="200" cy="300" rx="70" ry="34" fill="#F7C95A" opacity=".8"/>
+          <!-- braises -->
+          <g fill="#F28C28"><circle cx="108" cy="300" r="5"/><circle cx="124" cy="306" r="4"/><circle cx="290" cy="302" r="5"/><circle cx="276" cy="308" r="3.5"/></g>
+          <!-- la pelle -->
+          <rect x="120" y="296" width="160" height="10" rx="5" fill="#C9A26B"/>
+          <!-- le pain qui lève -->
+          <g class="pain">
+            <path class="croute-pain" d="M132 296c0-34 30-56 68-56s68 22 68 56Z" fill="#B8692C"/>
+            <path d="M140 290c6-22 30-38 60-38" stroke="#E9B46A" stroke-width="4" stroke-linecap="round" fill="none" opacity=".6"/>
+            <g stroke="#F2DFA6" stroke-width="5" stroke-linecap="round" fill="none">
+              <path class="grigne" pathLength="1" d="M160 270l18 14" style="--d:700ms"/>
+              <path class="grigne" pathLength="1" d="M190 258l18 16" style="--d:820ms"/>
+              <path class="grigne" pathLength="1" d="M222 256l16 15" style="--d:940ms"/>
+            </g>
+          </g>
+          <!-- vapeur -->
+          <g stroke="#F8F5EA" stroke-width="4" stroke-linecap="round" fill="none">
+            <path class="vapeur" d="M178 232c-8-10 8-16 0-28" style="--d:0ms"/>
+            <path class="vapeur" d="M202 226c-8-10 8-16 0-28" style="--d:900ms"/>
+            <path class="vapeur" d="M226 232c-8-10 8-16 0-28" style="--d:1800ms"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Widget : ouvert maintenant -->
+      <div class="pose tuile rounded-[1.25rem] bg-ble p-4 md:p-5" style="--d:220ms">
+        <p class="flex items-center gap-2 text-[15px] font-medium"><span class="pastille inline-block h-2.5 w-2.5 rounded-full bg-seigle" aria-hidden="true"></span><span id="etat">Du mardi au dimanche</span></p>
+        <p id="etatDetail" class="mt-2 font-display text-2xl leading-tight md:text-3xl">6&nbsp;h&nbsp;30 – 19&nbsp;h&nbsp;30</p>
+      </div>
+
+      <!-- Widget : prochaine fournée -->
+      <div class="pose tuile rounded-[1.25rem] bg-farine p-4 md:p-5" style="--d:300ms">
+        <p class="text-[15px] font-medium text-croute">Tradition chaude</p>
+        <p id="fournee" class="mt-2 font-display text-2xl leading-tight md:text-3xl">6&nbsp;h&nbsp;30, 11&nbsp;h et 16&nbsp;h&nbsp;30</p>
+      </div>
+
+      <!-- Widget : chiffres -->
+      <div class="pose tuile rounded-[1.25rem] bg-croute p-4 text-farine md:p-5" style="--d:380ms">
+        <p class="font-display text-4xl md:text-5xl"><span data-compte="36">36</span>&nbsp;h</p>
+        <p class="mt-1 text-[15px] leading-snug text-farine/85">de fermentation lente</p>
+      </div>
+      <div class="pose tuile rounded-[1.25rem] bg-farine p-4 md:p-5" style="--d:460ms">
+        <p class="font-display text-4xl md:text-5xl">4,9<span class="text-2xl text-encre/50">/5</span></p>
+        <p class="mt-1 text-[15px] leading-snug text-encre/70"><span data-compte="214">214</span> avis de clients</p>
+      </div>
+    </section>
+
+    <!-- ===== Bandeau défilant des pains du jour ===== -->
+    <div class="mx-auto mt-3 max-w-6xl overflow-x-clip rounded-full border-2 border-seigle/15 py-2.5 font-display text-lg text-seigle md:mt-4">
+      <span class="sr-only">Pains du jour : tradition, grand campagne, tourte de seigle, épeautre aux graines, fougasse aux olives, brioche au beurre, pain aux noix.</span>
+      <div class="defile flex w-max gap-6 whitespace-nowrap" aria-hidden="true">
+        <span>Tradition</span><span class="text-ble-fonce">✺</span><span>Grand campagne</span><span class="text-ble-fonce">✺</span><span>Tourte de seigle</span><span class="text-ble-fonce">✺</span><span>Épeautre aux graines</span><span class="text-ble-fonce">✺</span><span>Fougasse aux olives</span><span class="text-ble-fonce">✺</span><span>Brioche au beurre</span><span class="text-ble-fonce">✺</span><span>Pain aux noix</span><span class="text-ble-fonce">✺</span>
+        <span>Tradition</span><span class="text-ble-fonce">✺</span><span>Grand campagne</span><span class="text-ble-fonce">✺</span><span>Tourte de seigle</span><span class="text-ble-fonce">✺</span><span>Épeautre aux graines</span><span class="text-ble-fonce">✺</span><span>Fougasse aux olives</span><span class="text-ble-fonce">✺</span><span>Brioche au beurre</span><span class="text-ble-fonce">✺</span><span>Pain aux noix</span><span class="text-ble-fonce">✺</span>
+      </div>
+    </div>
+
+    <!-- ===== Les pains : bento de tailles variées (carrousel sur mobile) ===== -->
+    <section id="pains" class="mx-auto max-w-6xl py-14 md:py-24">
+      <div class="rv flex flex-col gap-2 px-1 md:flex-row md:items-end md:justify-between">
+        <h2 class="font-display text-4xl sm:text-5xl">Sur les planches ce matin</h2>
+        <p class="max-w-sm text-encre/70">Prix au pain entier. Les gros pains se vendent aussi à la coupe, au poids.</p>
+      </div>
+
+      <div class="no-scrollbar -mx-3 mt-7 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-3 px-3 pb-2 md:mx-0 md:mt-10 md:grid md:grid-cols-4 md:gap-4 md:overflow-visible md:px-0">
+        <article class="leve tuile flex w-[80%] shrink-0 snap-start flex-col bg-farine p-5 md:col-span-2 md:row-span-2 md:w-auto md:p-8">
+          <svg class="miche mx-auto h-32 w-full md:my-auto md:h-60" viewBox="0 0 300 160" aria-hidden="true">
+            <g transform="rotate(-14 150 80)"><path d="M20 78c0-12 10-18 26-18h208c16 0 26 6 26 18s-10 18-26 18H46c-16 0-26-6-26-18Z" fill="#C27A35"/><g stroke="#F2DFA6" stroke-width="5" stroke-linecap="round"><path d="M52 72l26 10M100 70l26 10M148 70l26 10M196 70l26 10"/></g></g>
+            <g transform="rotate(-6 150 110)"><path d="M28 112c0-11 9-17 24-17h196c15 0 24 6 24 17s-9 17-24 17H52c-15 0-24-6-24-17Z" fill="#A9622A"/><g stroke="#F2DFA6" stroke-width="5" stroke-linecap="round"><path d="M60 106l24 10M108 104l24 10M156 104l24 10M204 104l24 10"/></g></g>
+          </svg>
+          <h3 class="mt-4 font-display text-2xl md:text-4xl">Baguette tradition</h3>
+          <p class="mt-2 flex-1 text-encre/75">Farine Label Rouge, levain et un peu de levure, 18&nbsp;h de pousse. Trois fournées par jour, croûte qui chante.</p>
+          <p class="mt-4 font-bold text-croute">1,40 €</p>
+        </article>
+
+        <article class="leve tuile flex w-[80%] shrink-0 snap-start flex-col bg-seigle p-5 text-farine md:w-auto">
+          <svg class="miche h-24 w-24" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="54" r="40" fill="#5A3A22"/><g stroke="#F8F5EA" stroke-width="3" stroke-linecap="round" opacity=".75"><path d="M26 36l48 36M26 72l48-36M50 16v76"/></g></svg>
+          <h3 class="mt-4 font-display text-2xl">Tourte de seigle</h3>
+          <p class="mt-2 flex-1 text-farine/80">Seigle de l'Ardèche, mie dense et acidulée. Se garde une semaine.</p>
+          <p class="mt-4 font-bold text-ble">7,80 € le kilo</p>
+        </article>
+
+        <article class="leve tuile flex w-[80%] shrink-0 snap-start flex-col bg-mie p-5 md:w-auto">
+          <svg class="miche h-24 w-32" viewBox="0 0 130 100" aria-hidden="true"><ellipse cx="65" cy="56" rx="58" ry="32" fill="#B8692C"/><path d="M28 50c14-10 54-14 76-2" stroke="#F8F5EA" stroke-width="5" stroke-linecap="round" fill="none"/></svg>
+          <h3 class="mt-4 font-display text-2xl">Grand campagne</h3>
+          <p class="mt-2 flex-1 text-encre/75">Blé et une pointe de seigle, au levain pur. Le pain de la semaine.</p>
+          <p class="mt-4 font-bold text-croute">6,50 € le kilo</p>
+        </article>
+
+        <article class="leve tuile flex w-[80%] shrink-0 snap-start flex-col bg-farine p-5 md:w-auto">
+          <svg class="miche h-24 w-32" viewBox="0 0 130 100" aria-hidden="true"><path d="M18 86V50c0-16 12-24 26-24h42c14 0 26 8 26 24v36Z" fill="#A9622A"/><g fill="#F2DFA6"><circle cx="40" cy="44" r="3"/><circle cx="58" cy="38" r="3"/><circle cx="76" cy="44" r="3"/><circle cx="92" cy="40" r="3"/><circle cx="50" cy="56" r="3"/><circle cx="70" cy="58" r="3"/><circle cx="86" cy="56" r="3"/></g></svg>
+          <h3 class="mt-4 font-display text-2xl">Épeautre aux graines</h3>
+          <p class="mt-2 flex-1 text-encre/75">Petit épeautre de Haute-Provence, lin, tournesol et courge.</p>
+          <p class="mt-4 font-bold text-croute">5,20 € le moule</p>
+        </article>
+
+        <article class="leve tuile flex w-[80%] shrink-0 snap-start flex-col bg-mie p-5 md:w-auto">
+          <svg class="miche h-24 w-32" viewBox="0 0 130 100" aria-hidden="true"><path d="M65 8c30 14 50 40 50 64 0 14-22 22-50 22S15 86 15 72C15 48 35 22 65 8Z" fill="#C27A35"/><g fill="#F2DFA6"><ellipse cx="65" cy="40" rx="5" ry="12"/><ellipse cx="45" cy="62" rx="5" ry="11" transform="rotate(30 45 62)"/><ellipse cx="85" cy="62" rx="5" ry="11" transform="rotate(-30 85 62)"/></g><g fill="#2F3B2A"><circle cx="50" cy="38" r="3"/><circle cx="80" cy="78" r="3"/><circle cx="62" cy="82" r="3"/></g></svg>
+          <h3 class="mt-4 font-display text-2xl">Fougasse aux olives</h3>
+          <p class="mt-2 flex-1 text-encre/75">Huile d'olive de Nyons et olives noires, cuite en bouche de four.</p>
+          <p class="mt-4 font-bold text-croute">3,90 € pièce</p>
+        </article>
+
+        <article class="leve tuile flex w-[80%] shrink-0 snap-start flex-col bg-ble p-5 md:col-span-2 md:w-auto md:flex-row md:items-center md:gap-6">
+          <svg class="miche h-24 w-36 shrink-0" viewBox="0 0 140 90" aria-hidden="true"><path d="M8 66C22 30 46 14 70 14s48 16 62 52c-10-6-20-6-26 0-8-18-22-28-36-28S42 48 34 66c-6-6-16-6-26 0Z" fill="#9A5424"/><g stroke="#F2DFA6" stroke-width="4" stroke-linecap="round" fill="none"><path d="M42 30l10 14M70 22v18M98 30l-10 14"/></g></svg>
+          <div class="flex flex-1 flex-col">
+            <h3 class="mt-4 font-display text-2xl md:mt-0">Viennoiseries pur beurre</h3>
+            <p class="mt-2 flex-1 text-encre/80">Croissants et pains au chocolat feuilletés sur trois jours, beurre AOP Charentes-Poitou. Le week-end, brioche tressée.</p>
+            <p class="mt-4 font-bold text-seigle">Croissant 1,30 €</p>
+          </div>
+        </article>
+
+        <article class="leve tuile flex w-[80%] shrink-0 snap-start flex-col bg-croute p-5 text-farine md:col-span-2 md:w-auto">
+          <h3 class="font-display text-2xl">Grands pains et commandes</h3>
+          <p class="mt-2 flex-1 text-farine/85">Miches de 2 kg pour les tablées, petits pains pour les mariages et les baptêmes, pains spéciaux pour les restaurants du coin.</p>
+          <a href="#commande" class="btn btn-pain mt-4 bg-farine text-encre hover:bg-mie">Passer une commande</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Une nuit au fournil : les étapes en tuiles ===== -->
+    <section id="nuit" class="mx-auto grid max-w-6xl gap-3 pb-14 md:grid-cols-4 md:gap-4 md:pb-24">
+      <div class="rv tuile farine-poudre bg-seigle p-6 text-farine md:col-span-3 md:p-10">
+        <h2 class="font-display text-4xl sm:text-5xl">Une nuit au fournil</h2>
+        <p class="mt-3 max-w-xl text-farine/75">Pas d'additif, pas de pâte surgelée : juste du temps. Voici ce qui se passe pendant que Crest dort.</p>
+        <ol class="mt-7 grid gap-x-8 gap-y-5 md:grid-cols-4">
+          <li class="rv border-t-2 border-ble/60 pt-3" style="--d:60ms"><span class="block font-display text-3xl text-ble">17 h</span><span class="mt-1 block text-farine/85">Pétrissage lent, au levain nourri le matin.</span></li>
+          <li class="rv border-t-2 border-ble/60 pt-3" style="--d:140ms"><span class="block font-display text-3xl text-ble">Nuit</span><span class="mt-1 block text-farine/85">Pousse au frais, 14 heures, en bannetons de lin.</span></li>
+          <li class="rv border-t-2 border-ble/60 pt-3" style="--d:220ms"><span class="block font-display text-3xl text-ble">3 h 30</span><span class="mt-1 block text-farine/85">Façonnage à la main, four chauffé au chêne.</span></li>
+          <li class="rv border-t-2 border-ble/60 pt-3" style="--d:300ms"><span class="block font-display text-3xl text-ble">6 h 30</span><span class="mt-1 block text-farine/85">Premières fournées, la porte s'ouvre.</span></li>
+        </ol>
+      </div>
+      <div class="rv tuile flex flex-col justify-between gap-3 bg-ble p-6" style="--d:100ms">
+        <p class="font-display text-5xl md:text-6xl"><span data-compte="260">260</span>&nbsp;°C</p>
+        <p class="text-encre/80">sous la voûte de briques, pour une croûte épaisse et une mie qui se garde.</p>
+      </div>
+      <div class="rv tuile hidden bg-farine p-6 md:col-span-2 md:block">
+        <h3 class="font-display text-2xl">Nos meuniers et paysans</h3>
+        <p class="mt-2 text-encre/75">Moulin de la Gervanne pour le blé, une ferme de Saoû pour le seigle, du petit épeautre de la Drôme provençale. Tout est bio et moulu sur meule de pierre.</p>
+      </div>
+      <div data-kv-image="Photo du fournil ou de l'équipe au travail" class="rv tuile h-48 bg-mie md:col-span-2 md:h-auto" style="--d:120ms">
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="200" fill="#F2DFA6"/>
+          <g fill="#E2B13C" opacity=".55"><circle cx="40" cy="30" r="26"/><circle cx="360" cy="170" r="40"/></g>
+          <!-- bannetons sur une étagère -->
+          <rect x="30" y="128" width="340" height="10" rx="5" fill="#9A5424"/>
+          <g><ellipse cx="90" cy="118" rx="44" ry="14" fill="#C9A26B"/><ellipse cx="90" cy="114" rx="36" ry="9" fill="#F8F5EA"/></g>
+          <g><ellipse cx="200" cy="118" rx="44" ry="14" fill="#C9A26B"/><ellipse cx="200" cy="114" rx="36" ry="9" fill="#F8F5EA"/></g>
+          <g><ellipse cx="310" cy="118" rx="44" ry="14" fill="#C9A26B"/><ellipse cx="310" cy="114" rx="36" ry="9" fill="#F8F5EA"/></g>
+          <g stroke="#9A5424" stroke-width="2" opacity=".5" fill="none"><path d="M58 120h64M168 120h64M278 120h64"/></g>
+          <!-- épis de blé -->
+          <g stroke="#2F3B2A" stroke-width="3" stroke-linecap="round" fill="none"><path d="M200 100V40M186 70l14 10 14-10M186 56l14 10 14-10M188 44l12 8 12-8"/></g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== Avis : carrousel ===== -->
+    <section id="avis" class="mx-auto max-w-6xl pb-14 md:pb-24">
+      <h2 class="rv px-1 font-display text-4xl sm:text-5xl">On en parle sur la place</h2>
+      <div class="no-scrollbar -mx-3 mt-7 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-3 px-3 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0">
+        <figure class="leve tuile flex w-[82%] shrink-0 snap-start flex-col bg-farine p-6 md:w-auto">
+          <blockquote class="flex-1 text-lg leading-relaxed">« La tourte de seigle tient toute la semaine, et le samedi on fait la queue pour la brioche. Ça vaut chaque minute. »</blockquote>
+          <figcaption class="mt-5 font-bold">Anne-Laure <span class="font-normal text-encre/60">cliente du samedi</span></figcaption>
+        </figure>
+        <figure class="leve tuile flex w-[82%] shrink-0 snap-start flex-col bg-mie p-6 md:w-auto">
+          <blockquote class="flex-1 text-lg leading-relaxed">« J'ai commandé quarante petits pains pour un baptême la veille au soir : prêts à 8 h, emballés, avec le sourire. »</blockquote>
+          <figcaption class="mt-5 font-bold">Rachid <span class="font-normal text-encre/60">Aouste-sur-Sye</span></figcaption>
+        </figure>
+        <figure class="leve tuile flex w-[82%] shrink-0 snap-start flex-col bg-seigle p-6 text-farine md:w-auto">
+          <blockquote class="flex-1 text-lg leading-relaxed">« Enfin une baguette qui a du goût le lendemain. Mes enfants réclament le pain aux noix au goûter. »</blockquote>
+          <figcaption class="mt-5 font-bold">Coralie <span class="font-normal text-farine/60">Crest, quartier des Tilleuls</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Commande, horaires, accès : bento final ===== -->
+    <section id="infos" class="mx-auto grid max-w-6xl gap-3 pb-14 md:grid-cols-4 md:gap-4 md:pb-24">
+      <h2 class="rv px-1 font-display text-4xl sm:text-5xl md:col-span-4">Passer au fournil</h2>
+
+      <!-- Horaires (le jour en cours est surligné) -->
+      <div class="rv tuile bg-farine p-6 md:col-span-2">
+        <h3 class="font-display text-2xl">Horaires</h3>
+        <dl id="horaires" class="mt-4 space-y-1">
+          <div data-jour="2" class="flex justify-between gap-4 rounded-xl px-3 py-1.5"><dt>Mardi au vendredi</dt><dd class="text-right font-bold"><span class="block">6 h 30 – 13 h 30</span><span class="block">15 h 30 – 19 h 30</span></dd></div>
+          <div data-jour="6" class="flex justify-between gap-4 rounded-xl px-3 py-1.5"><dt>Samedi</dt><dd class="font-bold">6 h 30 – 19 h 30</dd></div>
+          <div data-jour="0" class="flex justify-between gap-4 rounded-xl px-3 py-1.5"><dt>Dimanche</dt><dd class="font-bold">7 h – 12 h 30</dd></div>
+          <div data-jour="1" class="flex justify-between gap-4 rounded-xl px-3 py-1.5 text-encre/55"><dt>Lundi</dt><dd>Fermé, on dort</dd></div>
+        </dl>
+      </div>
+
+      <!-- Accès et carte -->
+      <div class="rv tuile bg-mie p-6 md:col-span-2" style="--d:80ms">
+        <h3 class="font-display text-2xl">Place des Tilleuls, Crest</h3>
+        <p class="mt-1 text-encre/75">Au pied de la tour, stationnement gratuit 15 minutes devant la boutique.</p>
+        <div class="mt-3 flex flex-col">
+          <a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-display text-2xl hover:text-croute">06 00 00 00 00</a>
+          <a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center underline decoration-croute/40 underline-offset-4 hover:text-croute">contact@exemple.fr</a>
+        </div>
+        <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+        <div data-kv-map="Place des Tilleuls, 26400 Crest" class="mt-6 md:h-56 rounded-[1.25rem] overflow-hidden text-encre"></div>
+      </div>
+
+      <!-- Questions fréquentes -->
+      <div class="rv tuile bg-farine p-6 md:col-span-2">
+        <h3 class="font-display text-2xl">Questions fréquentes</h3>
+        <div class="mt-2 divide-y divide-seigle/15">
+          <details>
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-bold">Faites-vous du pain sans gluten&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mie text-xl" aria-hidden="true">+</span></summary>
+            <p class="pb-4 text-encre/75">Non : la farine vole partout au fournil, on ne peut rien garantir. Le petit épeautre et le seigle longue fermentation sont souvent mieux digérés.</p>
+          </details>
+          <details>
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-bold">Livrez-vous les restaurants&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mie text-xl" aria-hidden="true">+</span></summary>
+            <p class="pb-4 text-encre/75">Oui, du mardi au samedi avant 9 h, dans un rayon de 15 km autour de Crest. Appelez-nous pour un tarif.</p>
+          </details>
+          <details>
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-bold">Peut-on payer par carte&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mie text-xl" aria-hidden="true">+</span></summary>
+            <p class="pb-4 text-encre/75">Carte, espèces et paiement sans contact, dès le premier euro.</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Formulaire de commande.
+           Pour le relier : créez un formulaire gratuit sur https://formspree.io (ou Netlify Forms, Basin…),
+           puis remplacez action="#" par l'adresse fournie, par ex. action="https://formspree.io/f/xxxxxx".
+           Avec Netlify, ajoutez simplement l'attribut data-netlify="true" sur la balise <form>. -->
+      <form id="commande" action="#" method="post" class="rv tuile bg-seigle p-6 text-farine md:col-span-2 md:row-span-1 md:p-8" style="--d:80ms">
+        <h3 class="font-display text-3xl">Réserver son pain</h3>
+        <p class="mt-1 text-farine/75">Avant 18 h pour le lendemain. On vous le garde jusqu'à midi.</p>
+        <div class="mt-5 space-y-4">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="block"><span class="font-medium">Votre prénom</span><input name="prenom" autocomplete="given-name" required class="field mt-1.5"></label>
+            <label class="block"><span class="font-medium">Téléphone</span><input name="telephone" type="tel" autocomplete="tel" required class="field mt-1.5"></label>
+          </div>
+          <label class="block"><span class="font-medium">Jour de retrait</span>
+            <select name="jour" class="field mt-1.5">
+              <option>Demain matin</option>
+              <option>Samedi</option>
+              <option>Dimanche</option>
+              <option>Autre date (précisez ci-dessous)</option>
+            </select>
+          </label>
+          <label class="block"><span class="font-medium">Votre commande</span><textarea name="commande" rows="3" placeholder="Ex. : 1 tourte de seigle, 2 traditions bien cuites, 6 croissants" class="field mt-1.5"></textarea></label>
+        </div>
+        <button type="submit" class="btn btn-pain mt-6 bg-ble text-encre hover:bg-mie sm:w-full">Envoyer ma commande</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="mx-3 mb-3 rounded-[1.6rem] bg-encre px-6 py-8 text-[15px] text-farine/70 md:mx-6">
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 md:flex-row md:items-center md:justify-between">
+      <p><span class="font-display text-lg text-farine">Fournil des Tilleuls</span>, boulangerie au levain à Crest. SIRET 000 000 000 00000.</p>
+      <p>© 2026 Fournil des Tilleuls. <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-farine">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-3 bg-fond/95 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-seigle text-lg font-bold text-farine">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z" fill="currentColor"/></svg>
+      <span>Appeler</span>
+    </a>
+    <a href="#commande" class="inline-flex min-h-12 items-center justify-center rounded-full bg-ble text-lg font-bold text-encre">Réserver</a>
+  </div>
+
+  <script>
+  (function () {
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var $ = function (s, c) { return (c || document).querySelector(s); };
+    var $$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)); };
+
+    // Menu mobile
+    var b = $('#menuBtn'), m = $('#menu'), ico = $('#menuIco');
+    function menu(open) {
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      ico.setAttribute('d', open ? 'M6 6l12 12M18 6 6 18' : 'M4 8h16M4 16h16');
+    }
+    b.addEventListener('click', function () { menu(b.getAttribute('aria-expanded') !== 'true'); });
+    $$('#menu a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && b.getAttribute('aria-expanded') === 'true') { menu(false); b.focus(); } });
+
+    // Horaires : modifiez ce tableau si vos horaires changent (minutes depuis minuit, 0 = dimanche)
+    var H = { 0: [[420, 750]], 1: [], 2: [[390, 810], [930, 1170]], 3: [[390, 810], [930, 1170]], 4: [[390, 810], [930, 1170]], 5: [[390, 810], [930, 1170]], 6: [[390, 1170]] };
+    var FOURNEES = [390, 660, 990]; // 6 h 30, 11 h, 16 h 30
+    var JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+    function hh(min) { var h = Math.floor(min / 60), mm = min % 60; return h + ' h' + (mm ? ' ' + (mm < 10 ? '0' : '') + mm : ''); }
+    function maj() {
+      var d = new Date(), j = d.getDay(), t = d.getHours() * 60 + d.getMinutes();
+      var etat = $('#etat'), det = $('#etatDetail'), f = $('#fournee'), plage = (H[j] || []).filter(function (p) { return t >= p[0] && t < p[1]; })[0];
+      if (plage) { etat.textContent = 'Ouvert'; det.textContent = "Jusqu'à " + hh(plage[1]); }
+      else {
+        var auj = (H[j] || []).filter(function (p) { return p[0] > t; })[0], k = 1;
+        etat.textContent = 'Fermé';
+        if (auj) det.textContent = 'Réouverture à ' + hh(auj[0]);
+        else {
+          while (k < 7 && !H[(j + k) % 7].length) k++;
+          var nom = k === 1 ? 'Demain' : JOURS[(j + k) % 7].charAt(0).toUpperCase() + JOURS[(j + k) % 7].slice(1);
+          det.textContent = nom + ' dès ' + hh(H[(j + k) % 7][0][0]);
+        }
+      }
+      var prochaine = (H[j] || []).length ? FOURNEES.filter(function (x) { return x > t && (H[j] || []).some(function (p) { return x >= p[0] && x < p[1]; }); })[0] : null;
+      if (prochaine != null) { var reste = prochaine - t; f.textContent = reste <= 90 ? 'Sort du four dans ' + (reste >= 60 ? hh(reste) : reste + ' min') : 'Prochaine fournée à ' + hh(prochaine); }
+      else f.textContent = "Première fournée à l'ouverture";
+      $$('#horaires [data-jour]').forEach(function (row) { var dj = +row.getAttribute('data-jour'); var actif = dj === j || (dj === 2 && j >= 2 && j <= 5); row.classList.toggle('bg-mie', actif); });
+    }
+    maj(); setInterval(maj, 60000);
+
+    // Signature : le pain lève et dore dans le four
+    var four = $('.four');
+    if (reduit || !('IntersectionObserver' in window)) four.classList.add('cuit');
+    else setTimeout(function () { four.classList.add('cuit'); }, 650);
+
+    if (!('IntersectionObserver' in window)) return;
+
+    // Tuiles du héros qui se posent en cascade
+    if (reduit) $$('.pose').forEach(function (el) { el.classList.add('vu'); });
+    else requestAnimationFrame(function () { setTimeout(function () { $$('.pose').forEach(function (el) { el.classList.add('vu'); }); }, 60); });
+
+    // Apparitions au défilement
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv').forEach(function (el) { if (reduit) el.classList.add('vu'); else io.observe(el); });
+
+    // Chiffres qui comptent
+    var io3 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io3.unobserve(e.target);
+        var el = e.target, fin = +el.getAttribute('data-compte'), t0 = null;
+        if (reduit) return;
+        function pas(t) { t0 = t0 || t; var k = Math.min(1, (t - t0) / 800); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); }
+        requestAnimationFrame(pas);
+      });
+    }, { threshold: 0.6 });
+    $$('[data-compte]').forEach(function (el) { io3.observe(el); });
+  })();
+  </script>
+</body>
+</html>
