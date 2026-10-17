@@ -794,6 +794,59 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "bf2150e1c2d411f7082b286a97cf0c89"
+    },
+    {
+      "slug": "sarment",
+      "title": "Sarment",
+      "tagline": "Site vitrine pour caviste",
+      "description": "Une page sombre et feutrée pour cave à vins indépendante. En ouverture, dans un fin cadre doré, le titre se pose mot par mot en resserrant ses lettres, puis une bouteille s'incline et remplit un verre dont le vin ondule doucement. Viennent le mot de la caviste en grande citation sous une arche de casiers, la sélection du mois en étagère de bouteilles dessinées (carrousel sur téléphone), des accords mets et vins en onglets, l'agenda des dégustations du jeudi qui présélectionne la date dans le formulaire, les avis, puis horaires du jour soulignés, carte, questions et réservation. Bordeaux, or et lie-de-vin, titres en Cormorant Garamond et texte en Commissioner.",
+      "univers": [
+        "commerces"
+      ],
+      "style": "Élégant",
+      "couleur": "rouge",
+      "direction": "luxe",
+      "animations": [
+        "titre qui se pose mot par mot en resserrant ses lettres",
+        "bouteille qui verse et verre qui se remplit, vin qui ondule",
+        "filets dorés qui se tracent au défilement",
+        "bouteilles qui se soulèvent et s'inclinent au survol",
+        "accords mets et vins en onglets avec curseur doré qui glisse",
+        "apparition douce au défilement"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-17",
+      "tags": [
+        "caviste",
+        "cave à vins",
+        "vin",
+        "vins nature",
+        "vins bio",
+        "dégustation",
+        "épicerie fine",
+        "coffrets cadeaux",
+        "sommelier"
+      ],
+      "sections": [
+        "Accueil centré dans un cadre doré, avec la bouteille qui remplit le verre",
+        "Le mot de la caviste et les services (coffrets, livraison, cave de garde)",
+        "La sélection du mois en étagère de bouteilles",
+        "Accords mets et vins en onglets",
+        "Agenda des dégustations du jeudi",
+        "Avis des clients",
+        "Horaires, carte, questions fréquentes et réservation"
+      ],
+      "palette": [
+        "#8C2A3C",
+        "#C8A45D",
+        "#1A1013",
+        "#271A1E",
+        "#F1E8DC"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "a8dbcad2c25466e53c54a15b7fa736c7"
     }
   ]
 }

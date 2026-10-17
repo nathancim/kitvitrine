@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Le Sarment — Caviste indépendant à Tours, vins de vignerons</title>
+  <meta name="description" content="Le Sarment, cave à vins indépendante à Tours : 340 références de vignerons, beaucoup de Loire, des vins bio et nature, dégustations le jeudi soir, coffrets cadeaux et livraison à vélo.">
+  <meta name="theme-color" content="#1A1013">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="grain bg-nuit font-sans text-[17px] leading-relaxed text-craie antialiased pb-24 md:pb-0">
+
+  <!-- ===== Navigation : logo centré, liens de part et d'autre ===== -->
+  <header class="relative z-50">
+    <div class="mx-auto grid h-[72px] max-w-6xl grid-cols-[1fr_auto] items-center px-5 md:h-24 md:grid-cols-[1fr_auto_1fr] md:px-8">
+      <nav class="hidden items-center gap-1 md:flex" aria-label="Navigation principale, gauche">
+        <a href="#selection" class="lien-or inline-flex min-h-11 items-center px-3 text-[15px] text-craie/80 hover:text-craie">La sélection</a>
+        <a href="#accords" class="lien-or inline-flex min-h-11 items-center px-3 text-[15px] text-craie/80 hover:text-craie">Accords</a>
+      </nav>
+      <a href="#accueil" class="inline-flex min-h-11 items-center gap-3 justify-self-start md:justify-self-center" aria-label="Le Sarment, retour en haut de page">
+        <svg data-kv-logo="Logo" class="h-10 w-10 shrink-0 md:h-11 md:w-11" viewBox="0 0 44 44" aria-hidden="true">
+          <circle cx="22" cy="22" r="20.5" fill="none" class="stroke-or" stroke-width="1.2"/>
+          <path d="M22 9c0 6-6 7-6 12s4 6 6 6 6-1.5 6-5-3-4-5-3" fill="none" class="stroke-or" stroke-width="1.4" stroke-linecap="round"/>
+          <g class="fill-vin-clair"><circle cx="18" cy="31" r="2.4"/><circle cx="22.5" cy="32" r="2.4"/><circle cx="27" cy="31" r="2.4"/><circle cx="20.3" cy="35.2" r="2.4"/><circle cx="24.8" cy="35.2" r="2.4"/></g>
+        </svg>
+        <span class="font-display text-[1.7rem] font-medium leading-none tracking-wide">Le Sarment</span>
+      </a>
+      <div class="hidden items-center justify-end gap-1 md:flex">
+        <nav class="flex items-center gap-1" aria-label="Navigation principale, droite">
+          <a href="#degustations" class="lien-or inline-flex min-h-11 items-center px-3 text-[15px] text-craie/80 hover:text-craie">Dégustations</a>
+          <a href="#venir" class="lien-or inline-flex min-h-11 items-center px-3 text-[15px] text-craie/80 hover:text-craie">Venir</a>
+        </nav>
+        <a href="#reserver" class="ml-3 inline-flex min-h-11 items-center border border-or/60 px-4 text-[15px] font-semibold text-or transition hover:bg-or hover:text-nuit">Réserver</a>
+      </div>
+      <button id="menuBtn" type="button" class="relative z-50 inline-flex min-h-11 items-center gap-2 border border-or/40 px-4 text-[15px] font-semibold text-craie md:hidden" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIco" d="M4 9h16M8 15h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span id="menuTxt">Menu</span>
+      </button>
+    </div>
+
+    <!-- Menu mobile : panneau plein écran -->
+    <nav id="menu" class="fixed inset-0 z-40 hidden flex-col justify-center bg-nuit px-8 md:hidden" aria-label="Menu mobile">
+      <a href="#selection" class="flex min-h-12 items-center border-b border-craie/10 py-2 font-display text-4xl font-light">La sélection</a>
+      <a href="#accords" class="flex min-h-12 items-center border-b border-craie/10 py-2 font-display text-4xl font-light">Accords mets et vins</a>
+      <a href="#degustations" class="flex min-h-12 items-center border-b border-craie/10 py-2 font-display text-4xl font-light">Dégustations</a>
+      <a href="#venir" class="flex min-h-12 items-center border-b border-craie/10 py-2 font-display text-4xl font-light">Venir à la cave</a>
+      <a href="#reserver" class="btn mt-8 bg-or text-nuit">Réserver une dégustation</a>
+      <a href="tel:+33600000000" class="mt-4 inline-flex min-h-11 items-center justify-center text-craie/75">06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== Accueil : héros centré dans un cadre doré ===== -->
+    <section id="accueil" class="relative mx-auto max-w-6xl overflow-x-clip px-5 pb-14 pt-6 text-center md:px-8 md:pb-24 md:pt-12">
+      <div class="pointer-events-none absolute inset-x-3 inset-y-0 border border-or/20 md:inset-x-6" aria-hidden="true"></div>
+
+      <div id="titre" class="relative mx-auto max-w-3xl">
+        <p class="pose capitales text-[13px] text-or" style="--d:0ms">Caviste indépendant à Tours</p>
+        <h1 class="mt-5 font-display text-[clamp(2.55rem,10.5vw,5.4rem)] font-light leading-[1.02]">
+          <span class="mot" style="--d:100ms">Des</span> <span class="mot" style="--d:180ms">vins</span> <span class="mot" style="--d:260ms">de</span> <span class="mot" style="--d:340ms">vignerons,</span>
+          <span class="mot" style="--d:460ms">choisis</span> <span class="mot" style="--d:540ms">un</span> <span class="mot" style="--d:620ms">à</span> <span class="mot" style="--d:700ms">un.</span>
+        </h1>
+        <p class="pose mx-auto mt-5 max-w-xl text-craie/75 md:text-lg" style="--d:850ms">Trois cent quarante bouteilles, presque toutes goûtées au domaine, et quelqu'un derrière le comptoir pour vous trouver la bonne.</p>
+        <div class="pose mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row" style="--d:950ms">
+          <a href="#reserver" class="btn btn-plein bg-or text-nuit hover:bg-or-pale">Réserver une dégustation</a>
+          <a href="tel:+33600000000" class="btn border border-craie/25 text-craie hover:border-or hover:text-or">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z" fill="currentColor"/></svg>
+            <span>06 00 00 00 00</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Signature : la bouteille verse, le verre se remplit (emplacement photo) -->
+      <div data-kv-image="Photo de votre cave ou d'un verre servi au comptoir" class="scene relative mx-auto mt-2 h-[30vh] max-h-[300px] min-h-[200px] w-full max-w-md md:mt-12 md:h-[400px] md:max-h-none">
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 -12 320 322" aria-hidden="true">
+          <defs>
+            <clipPath id="interieur"><path d="M111 112c-3 58 12 112 49 116 37-4 52-58 49-116Z"/></clipPath>
+            <radialGradient id="halo" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#8C2A3C" stop-opacity=".45"/><stop offset="1" stop-color="#8C2A3C" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="160" cy="180" rx="150" ry="120" fill="url(#halo)"/>
+          <!-- arcs dorés -->
+          <g fill="none" stroke="#C8A45D" stroke-width=".8" opacity=".45">
+            <path d="M40 290a120 120 0 0 1 240 0"/><path d="M20 290a140 140 0 0 1 280 0" stroke-dasharray="2 6"/>
+          </g>
+          <!-- le vin dans le verre -->
+          <g clip-path="url(#interieur)">
+            <g class="niveau">
+              <rect x="96" y="168" width="128" height="64" fill="#7A2133"/>
+              <path class="vague" d="M60 170c16-6 32-6 48 0s32 6 48 0 32-6 48 0 32 6 48 0 32-6 48 0v14H60Z" fill="#9C3346"/>
+            </g>
+          </g>
+          <!-- le verre -->
+          <path d="M108 108c-4 62 12 118 52 122 40-4 56-60 52-122" fill="none" stroke="#F1E8DC" stroke-width="2.2" stroke-linecap="round"/>
+          <ellipse cx="160" cy="108" rx="52" ry="5" fill="none" stroke="#F1E8DC" stroke-width="1.4" opacity=".6"/>
+          <path class="reflet" d="M122 124c-2 34 4 62 18 80" fill="none" stroke="#F1E8DC" stroke-width="5" stroke-linecap="round"/>
+          <path d="M160 230v52" stroke="#F1E8DC" stroke-width="2.4"/>
+          <ellipse cx="160" cy="285" rx="44" ry="6" fill="none" stroke="#F1E8DC" stroke-width="2.2"/>
+          <!-- le filet de vin -->
+          <path class="filet" pathLength="1" d="M197 62c-6 30-24 60-31 122" fill="none" stroke="#9C3346" stroke-width="4" stroke-linecap="round"/>
+          <!-- la bouteille inclinée -->
+          <g class="bouteille">
+            <g transform="translate(198 60) rotate(-140) scale(.62)">
+              <path d="M-7 0H7V40C7 55 22 58 22 75V146Q22 152 16 152H-16Q-22 152-22 146V75C-22 58-7 55-7 40Z" fill="#2B3A2E"/>
+              <rect x="-8" y="0" width="16" height="22" fill="#C8A45D"/>
+              <rect x="-22" y="88" width="44" height="40" fill="#F1E8DC"/>
+              <rect x="-14" y="98" width="28" height="3" fill="#8C2A3C"/>
+              <rect x="-10" y="106" width="20" height="2" fill="#1A1013" opacity=".5"/>
+              <rect x="-12" y="112" width="24" height="2" fill="#1A1013" opacity=".5"/>
+              <path d="M-16 80V140" stroke="#F1E8DC" stroke-width="3" opacity=".15"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== Le mot de la caviste : grande citation et arche ===== -->
+    <section class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-5 py-14 md:grid-cols-[5fr_7fr] md:gap-20 md:px-8 md:py-28">
+      <div data-kv-image="Portrait de vous derrière le comptoir ou photo des rayonnages" class="rv relative mx-auto aspect-[4/5] w-3/5 max-w-[340px] overflow-hidden rounded-t-full border border-or/40 bg-cave md:w-full">
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="200" height="250" fill="#271A1E"/>
+          <!-- casiers : culs de bouteilles -->
+          <g fill="#3A252B">
+            <rect x="0" y="70" width="200" height="4"/><rect x="0" y="122" width="200" height="4"/><rect x="0" y="174" width="200" height="4"/><rect x="0" y="226" width="200" height="4"/>
+          </g>
+          <g>
+            <g fill="#1A1013" stroke="#4A2F36" stroke-width="2">
+              <circle cx="24" cy="96" r="13"/><circle cx="56" cy="96" r="13"/><circle cx="88" cy="96" r="13"/><circle cx="120" cy="96" r="13"/><circle cx="152" cy="96" r="13"/><circle cx="184" cy="96" r="13"/>
+              <circle cx="24" cy="148" r="13"/><circle cx="56" cy="148" r="13"/><circle cx="88" cy="148" r="13"/><circle cx="120" cy="148" r="13"/><circle cx="152" cy="148" r="13"/><circle cx="184" cy="148" r="13"/>
+              <circle cx="24" cy="200" r="13"/><circle cx="56" cy="200" r="13"/><circle cx="88" cy="200" r="13"/><circle cx="120" cy="200" r="13"/><circle cx="152" cy="200" r="13"/><circle cx="184" cy="200" r="13"/>
+            </g>
+            <g fill="#C8A45D" opacity=".85"><circle cx="88" cy="96" r="4"/><circle cx="152" cy="148" r="4"/><circle cx="24" cy="200" r="4"/><circle cx="120" cy="200" r="4"/></g>
+            <g fill="#8C2A3C"><circle cx="56" cy="148" r="5"/><circle cx="184" cy="96" r="5"/></g>
+          </g>
+          <path d="M100 18l4 8 8 1-6 6 2 8-8-4-8 4 2-8-6-6 8-1Z" fill="#C8A45D" opacity=".7"/>
+        </svg>
+      </div>
+
+      <figure class="rv" style="--d:120ms">
+        <span class="filet-or block h-px w-24 bg-or" aria-hidden="true"></span>
+        <blockquote class="mt-6 font-display text-[1.85rem] font-light italic leading-[1.2] md:text-[2.9rem]">
+          <p>« Je ne vends que ce que j'ai bu avec le vigneron. Si une bouteille ne me donne pas envie d'en parler, elle ne rentre pas. »</p>
+        </blockquote>
+        <figcaption class="mt-6 text-craie/70"><span class="font-semibold text-craie">Hélène</span>, caviste, ancienne sommelière</figcaption>
+        <ul class="mt-10 space-y-4 border-t border-craie/10 pt-6 md:grid md:grid-cols-3 md:gap-6 md:space-y-0">
+          <li><span class="block font-display text-2xl font-medium text-or">Coffrets</span><span class="block text-[15px] text-craie/70">Composés sur place, à partir de 25 €, emballage offert.</span></li>
+          <li><span class="block font-display text-2xl font-medium text-or">À vélo</span><span class="block text-[15px] text-craie/70">Livraison dans Tours le vendredi, dès six bouteilles.</span></li>
+          <li><span class="block font-display text-2xl font-medium text-or">En cave</span><span class="block text-[15px] text-craie/70">Vos grands vins gardés à 13 °C, au sous-sol.</span></li>
+        </ul>
+      </figure>
+    </section>
+
+    <!-- ===== La sélection du mois : étagère de bouteilles (carrousel sur mobile) ===== -->
+    <section id="selection" class="bg-cave py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <div class="rv flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <h2 class="font-display text-[2.6rem] font-light leading-none sm:text-6xl">La sélection d'octobre</h2>
+          <p class="max-w-sm text-craie/70">Cinq bouteilles qu'Hélène ouvre au comptoir ce mois-ci. Prix à emporter.</p>
+        </div>
+
+        <div class="no-scrollbar -mx-5 mt-9 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-2 md:mx-0 md:mt-14 md:grid md:grid-cols-5 md:gap-6 md:overflow-visible md:px-0">
+          <article class="carte-bouteille flex w-[72%] shrink-0 snap-start flex-col border-t border-or/30 pt-6 md:w-auto">
+            <svg class="mx-auto h-44 w-20" viewBox="0 0 80 220" aria-hidden="true"><path d="M33 0h14v58c0 12 23 18 23 40v112a8 8 0 0 1-8 8H18a8 8 0 0 1-8-8V98c0-22 23-28 23-40Z" fill="#2B1418"/><rect x="32" y="0" width="16" height="30" fill="#8C2A3C"/><rect x="12" y="120" width="56" height="58" fill="#F1E8DC"/><rect x="22" y="134" width="36" height="4" fill="#8C2A3C"/><rect x="26" y="146" width="28" height="2" fill="#1A1013" opacity=".5"/><rect x="22" y="152" width="36" height="2" fill="#1A1013" opacity=".5"/><rect class="etiquette-ombre" x="12" y="120" width="56" height="58" fill="#1A1013" opacity="0"/></svg>
+            <h3 class="mt-6 font-display text-2xl font-medium leading-tight">Chinon « Les Puys »</h3>
+            <p class="mt-1 text-[15px] text-or">Domaine Lorrain-Bey, 2022</p>
+            <p class="mt-3 flex-1 text-craie/75">Cabernet franc sur tuffeau. Fruit noir, graphite, à carafer une heure.</p>
+            <p class="mt-4 font-display text-2xl">16,50 €</p>
+          </article>
+
+          <article class="carte-bouteille flex w-[72%] shrink-0 snap-start flex-col border-t border-or/30 pt-6 md:w-auto">
+            <svg class="mx-auto h-44 w-20" viewBox="0 0 80 220" aria-hidden="true"><path d="M35 0h10v60c0 26 16 40 16 64v86a8 8 0 0 1-8 8H27a8 8 0 0 1-8-8v-86c0-24 16-38 16-64Z" fill="#6E7A3C"/><rect x="34" y="0" width="12" height="34" fill="#C8A45D"/><rect x="21" y="136" width="38" height="50" fill="#F1E8DC"/><rect x="27" y="148" width="26" height="3" fill="#C8A45D"/><rect x="29" y="158" width="22" height="2" fill="#1A1013" opacity=".5"/><rect class="etiquette-ombre" x="21" y="136" width="38" height="50" fill="#1A1013" opacity="0"/></svg>
+            <h3 class="mt-6 font-display text-2xl font-medium leading-tight">Vouvray sec</h3>
+            <p class="mt-1 text-[15px] text-or">Clos des Grives, 2021</p>
+            <p class="mt-3 flex-1 text-craie/75">Chenin tendu, coing et cire d'abeille. Une acidité qui tient toute la table.</p>
+            <p class="mt-4 font-display text-2xl">19 €</p>
+          </article>
+
+          <article class="carte-bouteille flex w-[72%] shrink-0 snap-start flex-col border-t border-or/30 pt-6 md:w-auto">
+            <svg class="mx-auto h-44 w-20" viewBox="0 0 80 220" aria-hidden="true"><path d="M33 0h14v44c0 34 30 46 30 76v90a8 8 0 0 1-8 8H11a8 8 0 0 1-8-8v-90c0-30 30-42 30-76Z" fill="#26302A"/><path d="M31 0h18v48H31Z" fill="#C8A45D"/><rect x="8" y="128" width="64" height="40" fill="#1A1013"/><rect x="18" y="140" width="44" height="3" fill="#C8A45D"/><rect x="24" y="150" width="32" height="2" fill="#F1E8DC" opacity=".6"/><rect class="etiquette-ombre" x="8" y="128" width="64" height="40" fill="#000" opacity="0"/></svg>
+            <h3 class="mt-6 font-display text-2xl font-medium leading-tight">Montlouis brut nature</h3>
+            <p class="mt-1 text-[15px] text-or">Domaine Avril, sans année</p>
+            <p class="mt-3 flex-1 text-craie/75">Bulles fines, pomme verte et brioche. L'apéritif de la maison.</p>
+            <p class="mt-4 font-display text-2xl">17 €</p>
+          </article>
+
+          <article class="carte-bouteille flex w-[72%] shrink-0 snap-start flex-col border-t border-or/30 pt-6 md:w-auto">
+            <svg class="mx-auto h-44 w-20" viewBox="0 0 80 220" aria-hidden="true"><path d="M34 40h12v40c0 18 26 22 26 46v84a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8v-84c0-24 26-28 26-46Z" fill="#5A3B1E"/><rect x="33" y="40" width="14" height="22" fill="#F1E8DC"/><rect x="10" y="140" width="60" height="44" fill="#E3CC97"/><rect x="20" y="152" width="40" height="3" fill="#5A3B1E"/><rect x="24" y="162" width="32" height="2" fill="#1A1013" opacity=".5"/><rect class="etiquette-ombre" x="10" y="140" width="60" height="44" fill="#1A1013" opacity="0"/></svg>
+            <h3 class="mt-6 font-display text-2xl font-medium leading-tight">Côtes du Jura savagnin</h3>
+            <p class="mt-1 text-[15px] text-or">Maison Brévans, 2020</p>
+            <p class="mt-3 flex-1 text-craie/75">Ouillé, sans voile. Noix fraîche et citron confit, pour le comté de 24 mois.</p>
+            <p class="mt-4 font-display text-2xl">24 €</p>
+          </article>
+
+          <article class="carte-bouteille flex w-[72%] shrink-0 snap-start flex-col border-t border-or/30 pt-6 md:w-auto">
+            <svg class="mx-auto h-44 w-20" viewBox="0 0 80 220" aria-hidden="true"><path d="M34 0h12v50c0 30 26 44 26 70v90a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8v-90c0-26 26-40 26-70Z" fill="#D9908E" opacity=".9"/><rect x="33" y="0" width="14" height="28" fill="#F1E8DC"/><rect x="12" y="132" width="56" height="48" fill="#F1E8DC"/><rect x="20" y="146" width="40" height="3" fill="#8C2A3C"/><rect x="26" y="156" width="28" height="2" fill="#1A1013" opacity=".5"/><rect class="etiquette-ombre" x="12" y="132" width="56" height="48" fill="#1A1013" opacity="0"/></svg>
+            <h3 class="mt-6 font-display text-2xl font-medium leading-tight">Touraine gris</h3>
+            <p class="mt-1 text-[15px] text-or">Les Vignes du Cher, 2024</p>
+            <p class="mt-3 flex-1 text-craie/75">Gamay pressé très pâle. Pamplemousse rose, servi bien frais en terrasse.</p>
+            <p class="mt-4 font-display text-2xl">11,90 €</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Accords mets et vins : onglets ===== -->
+    <section id="accords" class="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-28">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-[4fr_8fr] md:gap-16">
+        <div class="rv">
+          <h2 class="font-display text-[2.6rem] font-light leading-none sm:text-6xl">Qu'est-ce qu'on mange&nbsp;?</h2>
+          <p class="mt-4 text-craie/70">Dites-nous le plat, on vous dit la bouteille. Et si vous hésitez, venez avec la recette.</p>
+        </div>
+
+        <div class="rv" style="--d:120ms">
+          <div id="onglets" role="tablist" aria-label="Choisir un plat" class="no-scrollbar relative -mx-5 flex gap-1 overflow-x-auto border-b border-craie/15 px-5 md:mx-0 md:px-0">
+            <button role="tab" id="t0" aria-controls="p0" aria-selected="true" class="onglet min-h-12 shrink-0 px-3 text-base font-semibold text-craie transition-colors aria-[selected=false]:text-craie/55 hover:text-craie">Fromages de chèvre</button>
+            <button role="tab" id="t1" aria-controls="p1" aria-selected="false" tabindex="-1" class="onglet min-h-12 shrink-0 px-3 text-base font-semibold text-craie transition-colors aria-[selected=false]:text-craie/55 hover:text-craie">Volaille rôtie</button>
+            <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1" class="onglet min-h-12 shrink-0 px-3 text-base font-semibold text-craie transition-colors aria-[selected=false]:text-craie/55 hover:text-craie">Huîtres</button>
+            <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1" class="onglet min-h-12 shrink-0 px-3 text-base font-semibold text-craie transition-colors aria-[selected=false]:text-craie/55 hover:text-craie">Chocolat</button>
+            <span id="curseur" class="curseur absolute bottom-[-1px] left-0 h-0.5 w-24 bg-or" aria-hidden="true"></span>
+          </div>
+
+          <div id="p0" role="tabpanel" aria-labelledby="t0" class="panneau pt-8">
+            <h3 class="font-display text-4xl font-light italic text-or-pale md:text-5xl">Touraine sauvignon, Domaine Avril</h3>
+            <p class="mt-4 max-w-xl text-craie/80">Un sainte-maure bien affiné demande un blanc vif et salin. Celui-ci a la même craie dans les pieds que les chèvres du coin.</p>
+            <p class="mt-5 font-display text-2xl">12,50 €</p>
+          </div>
+          <div id="p1" role="tabpanel" aria-labelledby="t1" class="panneau pt-8" hidden>
+            <h3 class="font-display text-4xl font-light italic text-or-pale md:text-5xl">Saint-Nicolas-de-Bourgueil, Lorrain-Bey</h3>
+            <p class="mt-4 max-w-xl text-craie/80">Un rouge léger, servi à 15 °C, qui ne couvre pas la peau croustillante. Parfait aussi avec un rôti de porc aux pruneaux.</p>
+            <p class="mt-5 font-display text-2xl">13,80 €</p>
+          </div>
+          <div id="p2" role="tabpanel" aria-labelledby="t2" class="panneau pt-8" hidden>
+            <h3 class="font-display text-4xl font-light italic text-or-pale md:text-5xl">Muscadet sur lie, Clos de la Pierre Grise</h3>
+            <p class="mt-4 max-w-xl text-craie/80">Iodé, droit, presque perlant. On le garde pour les huîtres du dimanche et les moules marinières.</p>
+            <p class="mt-5 font-display text-2xl">10,90 €</p>
+          </div>
+          <div id="p3" role="tabpanel" aria-labelledby="t3" class="panneau pt-8" hidden>
+            <h3 class="font-display text-4xl font-light italic text-or-pale md:text-5xl">Maury grenat, Mas des Aspres</h3>
+            <p class="mt-4 max-w-xl text-craie/80">Un vin doux du Roussillon, cerise à l'eau-de-vie et cacao. L'un des rares vins qui tiennent tête à un fondant.</p>
+            <p class="mt-5 font-display text-2xl">22 €</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Dégustations du jeudi : agenda ===== -->
+    <section id="degustations" class="border-y border-or/20 bg-vin/20 py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <div class="rv flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <h2 class="font-display text-[2.6rem] font-light leading-none sm:text-6xl">Les jeudis au comptoir</h2>
+          <p class="max-w-sm text-craie/70">De 19 h à 21 h, six vins, du pain et du fromage. Douze places, pas une de plus.</p>
+        </div>
+        <ol class="mt-8 md:mt-12">
+          <li class="rv relative grid gap-1 py-5 md:grid-cols-[14rem_1fr_auto] md:items-center md:gap-8 md:py-7">
+            <span class="filet-or absolute inset-x-0 top-0 h-px bg-or/40" aria-hidden="true"></span>
+            <p class="font-display text-2xl text-or md:text-3xl">Jeudi 5 novembre</p>
+            <p class="text-lg">Les chenins de Loire, du sec au moelleux <span class="block text-[15px] text-craie/60">25 € par personne, encore 6 places</span></p>
+            <a href="#reserver" data-atelier="Jeudi 5 novembre : les chenins de Loire" class="lien-or inline-flex min-h-11 items-center self-start font-semibold text-or md:self-auto">Réserver ma place</a>
+          </li>
+          <li class="rv relative grid gap-1 py-5 md:grid-cols-[14rem_1fr_auto] md:items-center md:gap-8 md:py-7" style="--d:100ms">
+            <span class="filet-or absolute inset-x-0 top-0 h-px bg-or/40" aria-hidden="true"></span>
+            <p class="font-display text-2xl text-or md:text-3xl">Jeudi 19 novembre</p>
+            <p class="text-lg">Vins nature : ce qu'on y trouve vraiment <span class="block text-[15px] text-craie/60">25 € par personne, encore 9 places</span></p>
+            <a href="#reserver" data-atelier="Jeudi 19 novembre : vins nature" class="lien-or inline-flex min-h-11 items-center self-start font-semibold text-or md:self-auto">Réserver ma place</a>
+          </li>
+          <li class="rv relative grid gap-1 py-5 md:grid-cols-[14rem_1fr_auto] md:items-center md:gap-8 md:py-7" style="--d:200ms">
+            <span class="filet-or absolute inset-x-0 top-0 h-px bg-or/40" aria-hidden="true"></span>
+            <span class="filet-or absolute inset-x-0 bottom-0 h-px bg-or/40" aria-hidden="true"></span>
+            <p class="font-display text-2xl text-or md:text-3xl">Jeudi 3 décembre</p>
+            <p class="text-lg">Champagnes de vignerons pour les fêtes <span class="block text-[15px] text-craie/60">35 € par personne, encore 4 places</span></p>
+            <a href="#reserver" data-atelier="Jeudi 3 décembre : champagnes de vignerons" class="lien-or inline-flex min-h-11 items-center self-start font-semibold text-or md:self-auto">Réserver ma place</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Avis : carrousel sur mobile ===== -->
+    <section id="avis" class="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-24">
+      <h2 class="rv font-display text-[2.6rem] font-light leading-none sm:text-6xl">Ils reviennent</h2>
+      <div class="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-px-5 px-5 pb-2 md:mx-0 md:mt-12 md:grid md:grid-cols-3 md:gap-10 md:overflow-visible md:px-0">
+        <figure class="flex w-[82%] shrink-0 snap-start flex-col border-l border-or/40 pl-5 md:w-auto">
+          <blockquote class="flex-1 font-display text-2xl font-light italic leading-snug"><p>« J'ai dit : un rouge pour un pot-au-feu, moins de quinze euros. Hélène m'a sorti trois bouteilles et une histoire pour chacune. »</p></blockquote>
+          <figcaption class="mt-4 text-[15px] text-craie/70"><span class="font-semibold text-craie">Mathieu</span>, client depuis 2019</figcaption>
+        </figure>
+        <figure class="flex w-[82%] shrink-0 snap-start flex-col border-l border-or/40 pl-5 md:w-auto">
+          <blockquote class="flex-1 font-display text-2xl font-light italic leading-snug"><p>« Les jeudis sont devenus notre rendez-vous entre amies. On repart toujours avec un carton. »</p></blockquote>
+          <figcaption class="mt-4 text-[15px] text-craie/70"><span class="font-semibold text-craie">Sophie</span>, quartier Velpeau</figcaption>
+        </figure>
+        <figure class="flex w-[82%] shrink-0 snap-start flex-col border-l border-or/40 pl-5 md:w-auto">
+          <blockquote class="flex-1 font-display text-2xl font-light italic leading-snug"><p>« Quarante coffrets pour nos clients en décembre, composés, emballés et livrés à vélo. Rien à redire. »</p></blockquote>
+          <figcaption class="mt-4 text-[15px] text-craie/70"><span class="font-semibold text-craie">Karim</span>, cabinet d'architectes</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Venir à la cave : horaires, accès, réservation ===== -->
+    <section id="venir" class="bg-cave py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-2 md:gap-20 md:px-8">
+        <div class="rv">
+          <h2 class="font-display text-[2.6rem] font-light leading-none sm:text-6xl">Venir à la cave</h2>
+          <p class="mt-4 text-craie/75">14 rue des Tonneliers, à deux pas des Halles. Stationnement facile place Gaston-Paillhou.</p>
+          <div class="mt-4 flex flex-col">
+            <a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-display text-3xl hover:text-or">06 00 00 00 00</a>
+            <a href="mailto:contact@exemple.fr" class="lien-or inline-flex min-h-11 items-center self-start text-craie/80 hover:text-or">contact@exemple.fr</a>
+          </div>
+
+          <dl id="horaires" class="mt-6 border-t border-craie/10">
+            <div data-jours="2,3,4,5" class="flex justify-between gap-4 border-b border-craie/10 py-2.5 transition-colors"><dt>Mardi au vendredi</dt><dd class="text-right">10 h – 13 h, 15 h 30 – 20 h</dd></div>
+            <div data-jours="6" class="flex justify-between gap-4 border-b border-craie/10 py-2.5 transition-colors"><dt>Samedi</dt><dd>9 h 30 – 20 h</dd></div>
+            <div data-jours="0" class="flex justify-between gap-4 border-b border-craie/10 py-2.5 transition-colors"><dt>Dimanche</dt><dd>10 h – 13 h</dd></div>
+            <div data-jours="1" class="flex justify-between gap-4 border-b border-craie/10 py-2.5 text-craie/50 transition-colors"><dt>Lundi</dt><dd>Fermé</dd></div>
+          </dl>
+
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="14 rue des Tonneliers, 37000 Tours" class="mt-6 md:h-56 rounded-none overflow-hidden border border-or/25 text-craie"></div>
+
+          <div class="mt-6 divide-y divide-craie/10 border-y border-craie/10">
+            <details>
+              <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-semibold">Peut-on faire une liste de mariage&nbsp;?<span class="plus font-display text-3xl font-light leading-none text-or" aria-hidden="true">+</span></summary>
+              <p class="pb-4 text-craie/75">Oui : on goûte ensemble, on fixe un budget par bouteille et on livre la salle la veille. Les bouteilles non ouvertes sont reprises.</p>
+            </details>
+            <details>
+              <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-semibold">Vendez-vous des bières et spiritueux&nbsp;?<span class="plus font-display text-3xl font-light leading-none text-or" aria-hidden="true">+</span></summary>
+              <p class="pb-4 text-craie/75">Une petite étagère : bières de la brasserie du quartier, cognacs et armagnacs de producteurs, deux whiskies français.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Formulaire de réservation.
+             Pour le relier : créez un formulaire gratuit sur https://formspree.io (ou Netlify Forms, Basin…),
+             puis remplacez action="#" par l'adresse fournie, par ex. action="https://formspree.io/f/xxxxxx".
+             Avec Netlify, ajoutez simplement l'attribut data-netlify="true" sur la balise <form>. -->
+        <form id="reserver" action="#" method="post" class="rv self-start border border-or/30 p-6 md:p-10" style="--d:120ms">
+          <h3 class="font-display text-4xl font-light">Réserver ou commander</h3>
+          <p class="mt-2 text-craie/70">Une place le jeudi, un coffret, une caisse pour une fête : on vous rappelle dans la journée.</p>
+          <div class="mt-6 space-y-5">
+            <label class="block"><span class="text-[15px] text-craie/70">Votre prénom</span><input name="prenom" autocomplete="given-name" required class="field"></label>
+            <label class="block"><span class="text-[15px] text-craie/70">Téléphone ou e-mail</span><input name="contact" autocomplete="tel" required class="field"></label>
+            <label class="block"><span class="text-[15px] text-craie/70">Votre demande</span>
+              <select id="demande" name="demande" class="field bg-cave">
+                <option>Dégustation du jeudi 5 novembre : les chenins de Loire</option>
+                <option>Dégustation du jeudi 19 novembre : vins nature</option>
+                <option>Dégustation du jeudi 3 décembre : champagnes de vignerons</option>
+                <option>Un coffret cadeau</option>
+                <option>Une commande pour un événement</option>
+              </select>
+            </label>
+            <label class="block"><span class="text-[15px] text-craie/70">Précisions</span><textarea name="message" rows="2" placeholder="Ex. : 2 places, ou un coffret de 3 rouges autour de 60 €" class="field"></textarea></label>
+          </div>
+          <button type="submit" class="btn btn-plein mt-8 bg-or text-nuit hover:bg-or-pale">Envoyer ma demande</button>
+          <p class="mt-4 text-[15px] text-craie/50">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="px-5 py-10 text-[15px] text-craie/60 md:px-8">
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 border-t border-or/20 pt-8 md:flex-row md:items-center md:justify-between">
+      <p><span class="font-display text-xl text-craie">Le Sarment</span>, caviste à Tours. SIRET 000 000 000 00000. Vente d'alcool interdite aux mineurs.</p>
+      <p>© 2026 Le Sarment. <a href="#" class="lien-or inline-flex min-h-11 items-center hover:text-craie">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 gap-3 border-t border-or/20 bg-nuit/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center gap-2 border border-craie/25 font-semibold text-craie">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z" fill="currentColor"/></svg>
+      <span>Appeler</span>
+    </a>
+    <a href="#reserver" class="inline-flex min-h-12 items-center justify-center bg-or font-semibold text-nuit">Réserver</a>
+  </div>
+
+  <script>
+  (function () {
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var $ = function (s, c) { return (c || document).querySelector(s); };
+    var $$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)); };
+
+    // Menu mobile plein écran
+    var b = $('#menuBtn'), m = $('#menu'), ico = $('#menuIco'), txt = $('#menuTxt');
+    function menu(open) {
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      ico.setAttribute('d', open ? 'M6 6l12 12M18 6 6 18' : 'M4 9h16M8 15h12'); txt.textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    b.addEventListener('click', function () { menu(b.getAttribute('aria-expanded') !== 'true'); });
+    $$('#menu a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && b.getAttribute('aria-expanded') === 'true') { menu(false); b.focus(); } });
+
+    // Accords mets et vins : onglets accessibles (flèches gauche/droite)
+    var tabs = $$('#onglets [role=tab]'), curseur = $('#curseur');
+    function place(t) { curseur.style.width = t.offsetWidth + 'px'; curseur.style.transform = 'translateX(' + t.offsetLeft + 'px)'; }
+    function choisir(t, focus) {
+      tabs.forEach(function (x) {
+        var on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1;
+        var p = document.getElementById(x.getAttribute('aria-controls')); p.hidden = !on;
+      });
+      place(t); if (focus) t.focus();
+      t.scrollIntoView && t.parentNode.scrollWidth > t.parentNode.clientWidth && t.parentNode.scrollTo({ left: t.offsetLeft - 20, behavior: reduit ? 'auto' : 'smooth' });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { choisir(t); });
+      t.addEventListener('keydown', function (e) {
+        var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (k) { e.preventDefault(); choisir(tabs[(i + k + tabs.length) % tabs.length], true); }
+      });
+    });
+    place(tabs[0]); window.addEventListener('resize', function () { place($('#onglets [aria-selected=true]')); });
+
+    // Agenda : « Réserver ma place » présélectionne la bonne date dans le formulaire
+    var sel = $('#demande');
+    $$('[data-atelier]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        var cle = a.getAttribute('data-atelier').split(' :')[0].replace('Jeudi', 'jeudi');
+        [].forEach.call(sel.options, function (o, i) { if (o.text.indexOf(cle) > -1) sel.selectedIndex = i; });
+      });
+    });
+
+    // Horaires : le jour en cours est souligné d'or
+    var j = new Date().getDay();
+    $$('#horaires [data-jours]').forEach(function (row) {
+      if (row.getAttribute('data-jours').split(',').indexOf(String(j)) > -1) { row.classList.add('text-or'); row.classList.remove('text-craie/50'); }
+    });
+
+    // Signature : la bouteille verse et le verre se remplit
+    var scene = $('.scene'), titre = $('#titre');
+    if (reduit || !('IntersectionObserver' in window)) { scene.classList.add('verse', 'servi'); titre.classList.add('titre-pret'); }
+    else {
+      requestAnimationFrame(function () { setTimeout(function () { titre.classList.add('titre-pret'); }, 60); });
+      setTimeout(function () { scene.classList.add('verse'); }, 700);
+      setTimeout(function () { scene.classList.add('servi'); }, 2700);
+    }
+
+    if (!('IntersectionObserver' in window)) return;
+
+    // Apparitions au défilement (et filets dorés qui se tracent)
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv').forEach(function (el) { if (reduit) el.classList.add('vu'); else io.observe(el); });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cormorant-garamond-latin-300-normal.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+  @font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cormorant-garamond-latin-300-italic.woff2') format('woff2'); font-weight: 300; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Cormorant Garamond'; src: url('fonts/cormorant-garamond-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Commissioner'; src: url('fonts/commissioner-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Commissioner'; src: url('fonts/commissioner-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+  :focus-visible { outline: 2px solid theme('colors.or.DEFAULT / 100%'); outline-offset: 4px; }
+  summary { list-style: none; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+  ::selection { background: theme('colors.vin.DEFAULT / 100%'); color: theme('colors.craie / 100%'); }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .capitales { text-transform: uppercase; letter-spacing: .32em; }
+  /* Grain très léger, comme un papier d'étiquette */
+  .grain { background-image: radial-gradient(rgb(255 255 255 / .035) 1px, transparent 1.2px); background-size: 5px 5px; }
+}
+
+@layer components {
+  .btn { @apply inline-flex min-h-12 w-full items-center justify-center gap-2 whitespace-nowrap px-7 text-base font-semibold tracking-wide transition duration-300 sm:w-auto; }
+  .field { @apply w-full border-0 border-b border-craie/25 bg-transparent px-0 py-3 text-base text-craie placeholder-craie/35 transition focus:border-or focus:outline-none focus:ring-0; }
+  .lien-or { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .4s ease, color .3s ease; }
+  .lien-or:hover, .lien-or:focus-visible { background-size: 100% 1px; }
+}
+
+/* ===== Animations ===== */
+
+/* 1. Titre : chaque mot se pose en resserrant son interlettrage (contenu visible sans JS) */
+.js .mot { display: inline-block; opacity: 0; letter-spacing: .28em; filter: blur(3px); transition: opacity .8s ease, letter-spacing .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; transition-delay: var(--d, 0ms); }
+.js .titre-pret .mot { opacity: 1; letter-spacing: 0; filter: none; }
+.js .pose { opacity: 0; transform: translateY(10px); transition: opacity .7s ease, transform .7s ease; transition-delay: var(--d, 0ms); }
+.js .titre-pret .pose { opacity: 1; transform: none; }
+
+/* 2. Signature : la bouteille s'incline, le vin coule et remplit le verre, puis ondule */
+.bouteille { transition: transform .8s cubic-bezier(.5,0,.3,1), opacity .6s ease; }
+.filet { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset .5s linear .5s, opacity .4s ease; }
+.niveau { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.6s cubic-bezier(.3,.1,.3,1) .7s; }
+.js .scene:not(.verse) .niveau { transform: scaleY(.04); }
+.js .scene:not(.verse) .bouteille { transform: translate(26px, -30px); opacity: 0; }
+.js .scene:not(.verse) .filet { stroke-dashoffset: 1; }
+.js .scene.servi .filet { opacity: 0; transition: opacity .4s ease; }
+.js .scene.servi .bouteille { transform: translate(26px, -30px); opacity: 0; }
+.vague { animation: vague 6s ease-in-out infinite; }
+@keyframes vague { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-36px); } }
+.reflet { animation: reflet 7s ease-in-out infinite; }
+@keyframes reflet { 0%, 100% { opacity: .18; } 50% { opacity: .38; } }
+
+/* 3. Apparition au défilement + filets dorés qui se tracent */
+.js .rv { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+.js .rv.vu { opacity: 1; transform: none; }
+.js .filet-or { transform: scaleX(0); transform-origin: left; transition: transform .8s cubic-bezier(.6,0,.2,1); transition-delay: var(--d, 0ms); }
+.js .vu .filet-or, .js .filet-or.vu { transform: scaleX(1); }
+
+/* 4. Bouteilles qui se soulèvent et s'inclinent au survol */
+.carte-bouteille svg { transition: transform .5s cubic-bezier(.2,.8,.2,1); transform-origin: 50% 100%; }
+.carte-bouteille:hover svg, .carte-bouteille:focus-within svg { transform: translateY(-10px) rotate(-6deg); }
+.carte-bouteille .etiquette-ombre { transition: opacity .5s ease; }
+.carte-bouteille:hover .etiquette-ombre { opacity: .25; }
+
+/* 5. Accords mets et vins : onglets, curseur doré et panneau en fondu */
+.curseur { transition: transform .45s cubic-bezier(.3,.7,.2,1), width .45s cubic-bezier(.3,.7,.2,1); }
+.panneau { animation: fondu .55s ease both; }
+@keyframes fondu { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* 6. Questions qui s'ouvrent */
+details .plus { transition: transform .35s ease; }
+details[open] .plus { transform: rotate(45deg); }
+
+.btn-plein { position: relative; overflow: hidden; }
+.btn-plein::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / .22) 50%, transparent 70%); transform: translateX(-120%); transition: transform .7s ease; }
+.btn-plein:hover::after { transform: translateX(120%); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js .mot, .js .pose, .js .rv { opacity: 1 !important; transform: none !important; letter-spacing: 0 !important; filter: none !important; }
+  .js .filet-or { transform: none !important; }
+  .js .scene .niveau { transform: none !important; }
+  .js .scene .bouteille, .js .scene .filet { opacity: 0 !important; }
+  .js .mot { display: inline; }
+}
