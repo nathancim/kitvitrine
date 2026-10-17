@@ -2,9 +2,9 @@
   "id": "uh7vc122tj7u",
   "jeton_hash": "1d1b0647f747364a362da8cffaa344a2a5c902ed4e2c8f1a27dc89fda32fa256",
   "cree_le": "2026-10-14T07:16:37.533Z",
-  "maj_le": "2026-10-14T07:18:46.957Z",
-  "statut": "ouvert",
-  "dernier": "visiteur",
+  "maj_le": "2026-10-17T08:22:10.000Z",
+  "statut": "clos",
+  "dernier": "kit-vitrine",
   "prenom": "Tto",
   "email": "nathancimarosti@gmail.com",
   "page": "/",
@@ -24,6 +24,11 @@
       "de": "visiteur",
       "le": "2026-10-14T07:18:46.957Z",
       "texte": "Merci"
+    },
+    {
+      "de": "kit-vitrine",
+      "le": "2026-10-17T08:22:10.000Z",
+      "texte": "Avec plaisir ! Bonne chance pour l'ouverture de votre marché de pommes de terre. N'hésitez pas à nous écrire ici si vous avez d'autres questions.\n\nL'équipe Kit Vitrine"
     }
   ]
 }
