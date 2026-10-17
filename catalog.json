@@ -902,6 +902,62 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "3a5d69f40bb2d0cb0df9cd23175000a7"
+    },
+    {
+      "slug": "meandre",
+      "title": "Méandre",
+      "tagline": "Site vitrine pour loueur de canoës-kayaks",
+      "description": "Une page rétro façon affiche de vacances des années 70 pour une base de canoës-kayaks. En ouverture, un grand titre en Shrikhand arrive mot par mot au-dessus d'une affiche : le soleil couchant se lève bande après bande entre deux falaises, puis un canoë glisse sur la rivière et se balance au rythme des pagaies, sous un badge rond qui tourne. Un bandeau oblique défile, puis les descentes se présentent en billets découpés posés en quinconce (carrousel sur téléphone), le déroulé en quatre badges numérotés le long d'une rivière qui se dessine, des chiffres-clés qui comptent, une carte postale « Bons baisers de… » à côté des avis, l'accordéon « Bon à savoir » et le formulaire de réservation avec horaires de saison et carte. Bleu rivière, jaune soleil et orange couchant sur fond crème, titres en Shrikhand et texte en DM Sans.",
+      "univers": [
+        "tourisme"
+      ],
+      "style": "Chaleureux",
+      "couleur": "bleu",
+      "direction": "retro",
+      "animations": [
+        "soleil couchant qui se lève bande après bande",
+        "titre qui arrive mot par mot",
+        "canoë qui glisse sur la rivière et se balance au rythme des pagaies",
+        "badge rond qui tourne et bandeau oblique qui défile",
+        "rivière du déroulé qui se dessine et apparition au défilement",
+        "chiffres qui comptent",
+        "billets qui se redressent et se soulèvent au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-17",
+      "tags": [
+        "canoë",
+        "kayak",
+        "location de canoë",
+        "base nautique",
+        "descente de rivière",
+        "paddle",
+        "canoë-kayak",
+        "activité de plein air",
+        "loisirs nautiques",
+        "bivouac"
+      ],
+      "sections": [
+        "Affiche d'accueil avec soleil couchant, rivière et canoë",
+        "Bandeau défilant des prestations",
+        "Parcours en billets rétro avec distance, durée et prix",
+        "Déroulé en quatre étapes le long de la rivière",
+        "Chiffres-clés",
+        "Carte postale et avis des clients",
+        "Bon à savoir en accordéon",
+        "Réservation : formulaire, horaires, adresse et carte"
+      ],
+      "palette": [
+        "#1D5C70",
+        "#F2A33A",
+        "#D9572B",
+        "#FBF1DC",
+        "#173038"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "8ac89471675c1604904568745d5b9550"
     }
   ]
 }

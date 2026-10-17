@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Shrikhand'; src: url('fonts/shrikhand-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'DM Sans'; src: url('fonts/dm-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'DM Sans'; src: url('fonts/dm-sans-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'DM Sans'; src: url('fonts/dm-sans-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+  :focus-visible { outline: 3px solid rgb(var(--kv-brique)); outline-offset: 3px; border-radius: 8px; }
+  summary { list-style: none; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  /* Rayures rétro « couchant » */
+  .rayures { background-image: linear-gradient(to bottom, rgb(var(--kv-soleil)) 0 25%, rgb(var(--kv-creme)) 25% 33%, rgb(var(--kv-brique)) 33% 58%, rgb(var(--kv-creme)) 58% 66%, rgb(var(--kv-riviere)) 66% 100%); }
+  /* Grain de papier d'affiche */
+  .grain { background-image: radial-gradient(circle at 1px 1px, rgb(23 48 56 / .07) 1px, transparent 1.5px); background-size: 7px 7px; }
+}
+
+@layer components {
+  .btn { @apply inline-flex min-h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-full px-7 text-lg font-bold transition duration-300 sm:w-auto; }
+  .field { @apply w-full rounded-xl border-2 border-nuit/15 bg-creme px-4 py-3 text-base text-nuit placeholder-nuit/40 transition focus:border-riviere focus:outline-none; }
+  /* Ticket de parcours : coins découpés et ligne pointillée */
+  .ticket { @apply relative rounded-2xl bg-creme text-nuit; -webkit-mask: radial-gradient(circle 13px at 0 66%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 66%, transparent 98%, #000) right / 51% 100% no-repeat; mask: radial-gradient(circle 13px at 0 66%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 13px at 100% 66%, transparent 98%, #000) right / 51% 100% no-repeat; }
+}
+
+/* ===== Animations ===== */
+
+/* 1. Héros : les bandes du soleil se lèvent l'une après l'autre (visible sans JS) */
+.js .bande { transform: translateY(40px); opacity: 0; transition: transform .8s cubic-bezier(.2,.8,.2,1), opacity .6s ease; transition-delay: var(--d, 0ms); }
+.js .leve .bande { transform: none; opacity: 1; }
+/* Titre du héros : les mots arrivent en vague */
+.js .mot { display: inline-block; opacity: 0; transform: translateY(.45em) rotate(-4deg); transition: opacity .5s ease, transform .6s cubic-bezier(.2,.9,.3,1.2); transition-delay: var(--d, 0ms); }
+.js .leve .mot { opacity: 1; transform: none; }
+
+/* 2. Signature : le canoë arrive au fil de l'eau puis se balance, les vaguelettes se dessinent */
+.canoe { transform-box: view-box; transition: transform 1.6s cubic-bezier(.25,.8,.3,1) .5s; }
+.js .scene:not(.leve) .canoe { transform: translateX(-190px); }
+.tangue { transform-box: fill-box; transform-origin: 50% 70%; animation: tangue 3.6s ease-in-out infinite; }
+@keyframes tangue { 0%, 100% { transform: rotate(-2deg) translateY(0); } 50% { transform: rotate(2deg) translateY(2px); } }
+.pagaie { transform-box: fill-box; transform-origin: 50% 20%; animation: rame 1.8s ease-in-out infinite; }
+@keyframes rame { 0%, 100% { transform: rotate(-16deg); } 50% { transform: rotate(18deg); } }
+.vaguelette { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset .8s ease; transition-delay: var(--d, 0ms); }
+.js .scene:not(.leve) .vaguelette { stroke-dashoffset: 1; }
+
+/* 3. Badge rond qui tourne lentement */
+.tourne { animation: tourne 24s linear infinite; transform-origin: 50% 50%; }
+@keyframes tourne { to { transform: rotate(360deg); } }
+
+/* 4. Bandeau oblique qui défile */
+.defile { animation: defile 34s linear infinite; }
+@keyframes defile { to { transform: translateX(-50%); } }
+
+/* 5. Apparition au défilement */
+.js .rv { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+.js .rv.vu { opacity: 1; transform: none; }
+
+/* 6. La rivière du déroulé se dessine quand on arrive dessus */
+.trace { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s ease-in-out .2s; }
+.js .deroule:not(.vu) .trace { stroke-dashoffset: 1; }
+
+/* 7. Tickets qui se redressent et se soulèvent au survol */
+.billet { transition: transform .35s cubic-bezier(.2,.8,.2,1), filter .35s ease; transform: rotate(var(--r, 0deg)); }
+@media (hover: hover) {
+  .billet:hover { transform: rotate(0deg) translateY(-8px); filter: drop-shadow(0 18px 16px rgb(23 48 56 / .28)); }
+  .lien-souligne { background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size .3s ease; }
+  .lien-souligne:hover { background-size: 100% 2px; }
+}
+.btn:active { transform: scale(.97); }
+
+/* FAQ : le « + » tourne, la réponse glisse */
+details .plus { transition: transform .3s ease; }
+details[open] .plus { transform: rotate(45deg); }
+details[open] > p { animation: ouvre .35s ease; }
+@keyframes ouvre { from { opacity: 0; transform: translateY(-4px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .bande, .js .mot, .js .rv { opacity: 1 !important; transform: none !important; }
+  .js .scene .canoe { transform: none !important; }
+  .js .scene .vaguelette, .js .deroule .trace { stroke-dashoffset: 0 !important; }
+  .billet { transform: none !important; }
+}

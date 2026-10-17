@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Le Méandre — Location de canoës et kayaks sur la Vézère</title>
+  <meta name="description" content="Le Méandre, base de canoës-kayaks à Saint-Léon-sur-Vézère : descentes de 6 à 22 km, navette incluse, gilets fournis, ouvert d'avril à octobre. Réservation en ligne ou par téléphone.">
+  <meta name="theme-color" content="#1D5C70">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-creme font-sans text-[17px] leading-relaxed text-nuit antialiased pb-24 md:pb-0">
+
+  <!-- ===== Navigation : logo au centre, liens répartis de chaque côté (ordinateur) ===== -->
+  <header class="sticky top-0 z-40 border-b-4 border-nuit bg-creme/95 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:h-20 md:px-8">
+      <nav class="hidden flex-1 items-center gap-1 lg:flex" aria-label="Navigation principale, partie gauche">
+        <a href="#parcours" class="inline-flex min-h-11 items-center rounded-full px-4 font-bold uppercase tracking-wider text-[15px] transition hover:bg-sable">Parcours</a>
+        <a href="#deroule" class="inline-flex min-h-11 items-center rounded-full px-4 font-bold uppercase tracking-wider text-[15px] transition hover:bg-sable">Déroulé</a>
+        <a href="#avis" class="inline-flex min-h-11 items-center rounded-full px-4 font-bold uppercase tracking-wider text-[15px] transition hover:bg-sable">Avis</a>
+      </nav>
+      <a href="#accueil" class="inline-flex min-h-11 items-center gap-2.5 lg:flex-col lg:gap-0" aria-label="Le Méandre, retour en haut de page">
+        <svg data-kv-logo="Logo" class="h-11 w-11 shrink-0 lg:-mb-1 lg:h-12 lg:w-12" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="23" class="fill-riviere"/>
+          <path d="M8 26a16 16 0 0 1 32 0Z" class="fill-soleil"/>
+          <path d="M11 22h26M10 26h28" class="stroke-riviere" stroke-width="2"/>
+          <path d="M9 31c4-2 7 2 11 0s7 2 11 0 6 1 8 0" fill="none" class="stroke-creme" stroke-width="2" stroke-linecap="round"/>
+          <path d="M13 27.5h22c-2 3-5.5 4-11 4s-9-1-11-4Z" class="fill-brique"/>
+        </svg>
+        <span class="font-display text-[1.45rem] leading-none text-riviere lg:text-lg">Le Méandre</span>
+      </a>
+      <div class="flex flex-1 items-center justify-end gap-2">
+        <nav class="hidden items-center gap-1 lg:flex" aria-label="Navigation principale, partie droite">
+          <a href="#bon-a-savoir" class="inline-flex min-h-11 items-center rounded-full px-4 font-bold uppercase tracking-wider text-[15px] transition hover:bg-sable">Bon à savoir</a>
+          <a href="#reserver" class="ml-2 inline-flex min-h-11 items-center rounded-full border-2 border-nuit bg-soleil px-5 font-bold uppercase tracking-wider text-[15px] shadow-[3px_3px_0_0] shadow-nuit transition hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0]">Réserver</a>
+        </nav>
+        <button id="burger" type="button" class="inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-nuit bg-soleil lg:hidden" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 bottom-0 flex-col overflow-y-auto bg-riviere px-5 pb-28 pt-6 text-creme lg:hidden" aria-label="Navigation mobile">
+      <a href="#parcours" class="flex min-h-12 items-center border-b-2 border-creme/15 font-display text-3xl">Les parcours</a>
+      <a href="#deroule" class="flex min-h-12 items-center border-b-2 border-creme/15 font-display text-3xl">Le déroulé</a>
+      <a href="#avis" class="flex min-h-12 items-center border-b-2 border-creme/15 font-display text-3xl">Avis</a>
+      <a href="#bon-a-savoir" class="flex min-h-12 items-center border-b-2 border-creme/15 font-display text-3xl">Bon à savoir</a>
+      <a href="#reserver" class="flex min-h-12 items-center font-display text-3xl text-soleil">Réserver</a>
+      <a href="tel:+33600000000" class="mt-8 inline-flex min-h-12 items-center gap-2 text-lg font-bold">06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <main id="accueil">
+
+    <!-- ===== Héros centré : affiche rétro, soleil en bandes et rivière ===== -->
+    <section class="scene grain relative overflow-x-clip px-4 pt-8 text-center md:pt-14">
+      <p class="mx-auto inline-flex items-center gap-2 rounded-full border-2 border-nuit bg-sable px-4 py-1.5 text-[15px] font-bold uppercase tracking-[.14em]">
+        <span class="h-2.5 w-2.5 rounded-full bg-brique" aria-hidden="true"></span>
+        <span>Saint-Léon-sur-Vézère</span>
+      </p>
+      <h1 class="mx-auto mt-5 max-w-4xl font-display text-[clamp(2.6rem,10.5vw,6.4rem)] leading-[.98] text-riviere">
+        <span class="mot" style="--d:100ms">Descendez</span> <span class="mot text-brique" style="--d:220ms">la</span> <span class="mot text-brique" style="--d:340ms">Vézère</span>
+      </h1>
+      <p class="mx-auto mt-4 max-w-xl text-lg md:text-xl">Canoës, kayaks et paddles à louer à la demi-journée ou à la journée. On vous dépose en amont, vous rentrez au fil de l'eau.</p>
+      <div class="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
+        <a href="#reserver" class="btn border-2 border-nuit bg-brique text-creme shadow-[4px_4px_0_0] shadow-nuit hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0]">Réserver ma descente</a>
+        <a href="#parcours" class="btn border-2 border-nuit bg-creme hover:bg-sable">Voir les parcours</a>
+      </div>
+
+      <!-- Illustration principale (cliquez dessus en mode édition pour mettre votre photo) -->
+      <div class="relative mx-auto mt-8 max-w-5xl md:mt-12">
+        <svg data-kv-image="Photo de canoës sur la rivière" class="block h-auto max-h-[38vh] w-full md:max-h-none" viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Un canoë descend une rivière entre deux falaises, sous un grand soleil couchant en bandes">
+          <defs><clipPath id="disque"><circle cx="400" cy="250" r="190"/></clipPath></defs>
+          <g clip-path="url(#disque)">
+            <rect class="bande fill-soleil" style="--d:0ms" x="200" y="56" width="400" height="56"/>
+            <rect class="bande fill-soleil" style="--d:90ms" x="200" y="122" width="400" height="40" opacity=".85"/>
+            <rect class="bande fill-brique" style="--d:180ms" x="200" y="172" width="400" height="30" opacity=".8"/>
+            <rect class="bande fill-brique" style="--d:270ms" x="200" y="212" width="400" height="22"/>
+            <rect class="bande fill-brique" style="--d:360ms" x="200" y="244" width="400" height="14"/>
+          </g>
+          <path d="M0 250c90-40 150-30 230-6 70 20 130 10 200-14 90-30 200-40 370 14v156H0Z" class="fill-creme"/>
+          <path d="M0 250c90-40 150-30 230-6 70 20 130 10 200-14 90-30 200-40 370 14v156H0Z" class="fill-riviere-fonce" opacity=".35"/>
+          <path d="M0 210c40 0 70 20 100 50l60 70 40 70H0Z" class="fill-riviere"/>
+          <path d="M800 200c-60 10-110 40-140 80l-50 60-30 60h220Z" class="fill-riviere"/>
+          <path d="M60 230l20-14 16 10M700 214l18-16 20 12" fill="none" class="stroke-riviere-fonce" stroke-width="4" stroke-linecap="round"/>
+          <path d="M0 400c140-40 250-60 330-90 60-24 90-40 140-46 40-4 80 6 120 16 70 18 140 30 210 40v80Z" class="fill-riviere" opacity=".75"/>
+          <path d="M220 400c90-40 180-70 240-100 30-14 60-26 100-26-30 18-70 40-110 70-40 30-60 46-70 56Z" class="fill-creme" opacity=".7"/>
+          <path class="vaguelette stroke-creme" style="--d:900ms" pathLength="1" d="M300 352c14-6 26-6 40 0s26 6 40 0" fill="none" stroke-width="4" stroke-linecap="round"/>
+          <path class="vaguelette stroke-creme" style="--d:1050ms" pathLength="1" d="M520 330c12-5 22-5 34 0s22 5 34 0" fill="none" stroke-width="4" stroke-linecap="round"/>
+          <path class="vaguelette stroke-creme" style="--d:1200ms" pathLength="1" d="M180 380c12-5 22-5 34 0s22 5 34 0" fill="none" stroke-width="4" stroke-linecap="round"/>
+          <g class="canoe">
+            <g class="tangue">
+              <path class="pagaie stroke-nuit" d="M378 268l-22 52" stroke-width="4" stroke-linecap="round"/>
+              <path class="pagaie stroke-nuit" style="animation-delay:-.9s" d="M448 268l24 50" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="380" cy="262" r="9" class="fill-nuit"/>
+              <path d="M370 290c0-12 4-20 10-20s10 8 10 20Z" class="fill-soleil"/>
+              <circle cx="444" cy="260" r="9" class="fill-nuit"/>
+              <path d="M434 290c0-12 4-22 10-22s10 10 10 22Z" class="fill-creme"/>
+              <path d="M334 288h150c-8 16-34 24-75 24s-67-8-75-24Z" class="fill-brique"/>
+              <path d="M340 292h138" class="stroke-nuit" stroke-width="3" opacity=".35"/>
+            </g>
+          </g>
+        </svg>
+        <!-- Badge rond qui tourne -->
+        <div class="absolute -top-4 right-1 h-24 w-24 md:-top-6 md:right-8 md:h-36 md:w-36" aria-hidden="true">
+          <svg class="tourne h-full w-full" viewBox="0 0 120 120">
+            <defs><path id="cercle" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+            <circle cx="60" cy="60" r="58" class="fill-soleil stroke-nuit" stroke-width="3"/>
+            <text class="fill-nuit" font-size="13.5" font-weight="700" letter-spacing="2.4"><textPath href="#cercle">AVRIL — OCTOBRE · NAVETTE INCLUSE ·</textPath></text>
+          </svg>
+          <span class="absolute inset-0 flex items-center justify-center font-display text-xl text-brique md:text-3xl">1978</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Bandeau oblique défilant ===== -->
+    <div class="relative z-10 -mt-3 overflow-x-clip py-3" aria-hidden="true">
+      <div class="-mx-4 -rotate-2 border-y-4 border-nuit bg-soleil py-3">
+        <div class="defile flex w-max gap-8 whitespace-nowrap font-display text-2xl text-nuit md:text-3xl">
+          <span>Canoë biplace</span><span class="text-brique">✺</span><span>Kayak solo</span><span class="text-brique">✺</span><span>Paddle</span><span class="text-brique">✺</span><span>Gilets fournis</span><span class="text-brique">✺</span><span>Bidon étanche offert</span><span class="text-brique">✺</span><span>Plages de baignade</span><span class="text-brique">✺</span>
+          <span>Canoë biplace</span><span class="text-brique">✺</span><span>Kayak solo</span><span class="text-brique">✺</span><span>Paddle</span><span class="text-brique">✺</span><span>Gilets fournis</span><span class="text-brique">✺</span><span>Bidon étanche offert</span><span class="text-brique">✺</span><span>Plages de baignade</span><span class="text-brique">✺</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Parcours : billets rétro (carrousel sur mobile, billets en quinconce sur ordinateur) ===== -->
+    <section id="parcours" class="overflow-x-clip bg-riviere py-14 text-creme md:py-24">
+      <div class="mx-auto max-w-6xl px-4 md:px-8">
+        <div class="rv md:flex md:items-end md:justify-between md:gap-10">
+          <h2 class="font-display text-4xl leading-tight sm:text-6xl">Choisissez<br class="hidden sm:block"> votre billet</h2>
+          <p class="mt-3 max-w-md text-creme/85 md:mt-0">Quatre descentes, de la balade en famille à l'aventure sur deux jours. Prix par bateau, navette et équipement compris.</p>
+        </div>
+      </div>
+      <ul class="rv no-scrollbar mt-8 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-6 md:mx-auto md:mt-14 md:grid md:max-w-6xl md:grid-cols-2 md:gap-x-10 md:gap-y-12 md:overflow-visible md:px-8 lg:grid-cols-4 lg:gap-x-6">
+        <li class="w-[82%] shrink-0 snap-start md:w-auto">
+          <div class="billet h-full" style="--r:-2deg">
+          <article class="ticket flex h-full flex-col p-6">
+            <p class="flex items-center justify-between text-[15px] font-bold uppercase tracking-[.14em] text-brique"><span>Billet n° 1</span><span>2 h</span></p>
+            <h3 class="mt-3 font-display text-3xl text-riviere">La Balade</h3>
+            <p class="mt-1 font-bold">6 km · Montignac → Le Méandre</p>
+            <p class="mt-3 flex-1 text-[16px]">Le parcours des familles : courant doux, une grande plage de galets pour le pique-nique.</p>
+            <div class="mt-6 flex items-end justify-between border-t-2 border-dashed border-nuit/25 pt-5">
+              <span class="text-[15px] font-medium">Dès 7 ans</span>
+              <span class="font-display text-3xl text-nuit">32 €</span>
+            </div>
+          </article>
+          </div>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start md:mt-8 md:w-auto">
+          <div class="billet h-full" style="--r:1.5deg">
+          <article class="ticket flex h-full flex-col p-6">
+            <p class="flex items-center justify-between text-[15px] font-bold uppercase tracking-[.14em] text-brique"><span>Billet n° 2</span><span>3 h 30</span></p>
+            <h3 class="mt-3 font-display text-3xl text-riviere">Les Falaises</h3>
+            <p class="mt-1 font-bold">12 km · Thonac → Le Méandre</p>
+            <p class="mt-3 flex-1 text-[16px]">Sous les abris troglodytes, avec deux petits rapides pour pimenter la matinée.</p>
+            <div class="mt-6 flex items-end justify-between border-t-2 border-dashed border-nuit/25 pt-5">
+              <span class="text-[15px] font-medium">Le plus demandé</span>
+              <span class="font-display text-3xl text-nuit">42 €</span>
+            </div>
+          </article>
+          </div>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start md:w-auto">
+          <div class="billet h-full" style="--r:-1deg">
+          <article class="ticket flex h-full flex-col p-6">
+            <p class="flex items-center justify-between text-[15px] font-bold uppercase tracking-[.14em] text-brique"><span>Billet n° 3</span><span>Journée</span></p>
+            <h3 class="mt-3 font-display text-3xl text-riviere">La Grande</h3>
+            <p class="mt-1 font-bold">22 km · Montignac → Le Moustier</p>
+            <p class="mt-3 flex-1 text-[16px]">Toute la vallée d'une traite, pauses baignade comprises. Départ avant 11 h.</p>
+            <div class="mt-6 flex items-end justify-between border-t-2 border-dashed border-nuit/25 pt-5">
+              <span class="text-[15px] font-medium">Bons nageurs</span>
+              <span class="font-display text-3xl text-nuit">55 €</span>
+            </div>
+          </article>
+          </div>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start md:mt-8 md:w-auto">
+          <div class="billet h-full" style="--r:2deg">
+          <article class="ticket flex h-full flex-col bg-soleil p-6">
+            <p class="flex items-center justify-between text-[15px] font-bold uppercase tracking-[.14em] text-brique"><span>Billet n° 4</span><span>2 jours</span></p>
+            <h3 class="mt-3 font-display text-3xl text-riviere">Le Bivouac</h3>
+            <p class="mt-1 font-bold">34 km · nuit au bord de l'eau</p>
+            <p class="mt-3 flex-1 text-[16px]">Tente, bidons et carte fournis. On récupère vos bagages au camping du soir.</p>
+            <div class="mt-6 flex items-end justify-between border-t-2 border-dashed border-nuit/25 pt-5">
+              <span class="text-[15px] font-medium">Sur réservation</span>
+              <span class="font-display text-3xl text-nuit">120 €</span>
+            </div>
+          </article>
+          </div>
+        </li>
+      </ul>
+      <p class="mx-auto mt-2 max-w-6xl px-4 text-[16px] text-creme/80 md:mt-14 md:px-8">Kayak solo : −30 %. Paddle : 18 € l'heure, au départ de la base.</p>
+    </section>
+
+    <!-- ===== Déroulé : la rivière se dessine, 4 étapes numérotées dans des badges ===== -->
+    <section id="deroule" class="deroule rv relative overflow-x-clip py-14 md:py-24">
+      <svg class="pointer-events-none absolute bottom-0 top-0 left-6 h-full w-16 md:top-40 md:h-auto md:left-1/2 md:w-40 md:-translate-x-1/2" viewBox="0 0 60 600" preserveAspectRatio="none" aria-hidden="true">
+        <path class="trace stroke-riviere" pathLength="1" d="M30 0c30 60-30 90 0 150s-30 90 0 150 30 90 0 150-30 90 0 150" fill="none" stroke-width="10" stroke-linecap="round" opacity=".18"/>
+      </svg>
+      <div class="relative mx-auto max-w-5xl px-4 md:px-8">
+        <h2 class="pl-14 font-display text-4xl leading-tight text-riviere sm:text-6xl md:pl-0 md:text-center">Comment ça se passe</h2>
+        <ol class="mt-10 space-y-8 md:mt-16 md:space-y-4">
+          <li class="rv grid grid-cols-[3.5rem_1fr] items-start gap-4 md:w-1/2 md:grid-cols-[1fr_4.5rem] md:pr-12 md:text-right">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full border-4 border-nuit bg-soleil font-display text-2xl md:order-2 md:h-[4.5rem] md:w-[4.5rem] md:text-3xl" aria-hidden="true">1</span>
+            <div class="md:order-1">
+              <h3 class="text-xl font-bold md:text-2xl">Vous réservez</h3>
+              <p class="mt-1">En ligne ou par téléphone. En juillet-août, prévoyez deux ou trois jours d'avance.</p>
+            </div>
+          </li>
+          <li class="rv grid grid-cols-[3.5rem_1fr] items-start gap-4 md:ml-auto md:w-1/2 md:grid-cols-[4.5rem_1fr] md:pl-12">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full border-4 border-nuit bg-brique font-display text-2xl text-creme md:h-[4.5rem] md:w-[4.5rem] md:text-3xl" aria-hidden="true">2</span>
+            <div>
+              <h3 class="text-xl font-bold md:text-2xl">On vous emmène en amont</h3>
+              <p class="mt-1">Garez-vous à la base : notre minibus vous dépose au départ avec les bateaux.</p>
+            </div>
+          </li>
+          <li class="rv grid grid-cols-[3.5rem_1fr] items-start gap-4 md:w-1/2 md:grid-cols-[1fr_4.5rem] md:pr-12 md:text-right">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full border-4 border-nuit bg-creme font-display text-2xl text-riviere md:order-2 md:h-[4.5rem] md:w-[4.5rem] md:text-3xl" aria-hidden="true">3</span>
+            <div class="md:order-1">
+              <h3 class="text-xl font-bold md:text-2xl">Vous descendez à votre rythme</h3>
+              <p class="mt-1">Petit briefing, gilets, carte des plages : la rivière est à vous.</p>
+            </div>
+          </li>
+          <li class="rv grid grid-cols-[3.5rem_1fr] items-start gap-4 md:ml-auto md:w-1/2 md:grid-cols-[4.5rem_1fr] md:pl-12">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full border-4 border-nuit bg-riviere font-display text-2xl text-creme md:h-[4.5rem] md:w-[4.5rem] md:text-3xl" aria-hidden="true">4</span>
+            <div>
+              <h3 class="text-xl font-bold md:text-2xl">Vous arrivez à la base</h3>
+              <p class="mt-1">Directement à votre voiture. Douches chaudes et buvette sur place.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Chiffres-clés sur rayures couchant ===== -->
+    <section class="border-y-4 border-nuit bg-sable" aria-label="Le Méandre en chiffres">
+      <dl class="mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
+        <div class="rv flex flex-col-reverse border-b-2 border-r-2 border-nuit/20 px-4 py-6 text-center md:border-0 md:py-10">
+          <dt class="text-[15px] font-bold uppercase tracking-[.12em]">de rivière</dt>
+          <dd class="font-display text-5xl text-riviere md:text-6xl"><span data-compte="34">34</span><span class="text-3xl md:text-4xl"> km</span></dd>
+        </div>
+        <div class="rv flex flex-col-reverse border-b-2 border-nuit/20 px-4 py-6 text-center md:border-0 md:border-l-2 md:py-10" style="--d:80ms">
+          <dt class="text-[15px] font-bold uppercase tracking-[.12em]">bateaux</dt>
+          <dd class="font-display text-5xl text-brique md:text-6xl"><span data-compte="140">140</span></dd>
+        </div>
+        <div class="rv flex flex-col-reverse border-r-2 border-nuit/20 px-4 py-6 text-center md:border-0 md:border-l-2 md:py-10" style="--d:160ms">
+          <dt class="text-[15px] font-bold uppercase tracking-[.12em]">plages</dt>
+          <dd class="font-display text-5xl text-riviere md:text-6xl"><span data-compte="9">9</span></dd>
+        </div>
+        <div class="rv flex flex-col-reverse px-4 py-6 text-center md:border-l-2 md:border-nuit/20 md:py-10" style="--d:240ms">
+          <dt class="text-[15px] font-bold uppercase tracking-[.12em]">saisons</dt>
+          <dd class="font-display text-5xl text-brique md:text-6xl"><span data-compte="48">48</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ===== Carte postale + avis ===== -->
+    <section id="avis" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16">
+        <figure class="rv relative mx-auto w-full max-w-lg -rotate-2 border-4 border-nuit bg-creme p-3 shadow-[8px_8px_0_0] shadow-nuit">
+          <!-- Deuxième emplacement photo (cliquez dessus en mode édition) -->
+          <div data-kv-image="Photo d'un groupe en canoë ou d'une plage de la rivière" class="aspect-[4/3] overflow-hidden bg-sable">
+            <svg class="h-full w-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Carte postale : deux canoës près d'une plage de galets, sous les arbres">
+              <rect width="400" height="300" class="fill-sable"/>
+              <circle cx="300" cy="90" r="46" class="fill-soleil"/>
+              <path d="M0 120c50-30 90-40 140-20 40 16 70 0 110-20 60-28 110-10 150 10v210H0Z" class="fill-riviere" opacity=".55"/>
+              <path d="M0 150c30-10 60 0 70 20 6-30 40-40 60-24 14-26 50-26 64 0 20-12 46 0 50 20v134H0Z" class="fill-riviere-fonce"/>
+              <path d="M0 210c80-14 160-10 240 6s120 14 160 4v80H0Z" class="fill-riviere"/>
+              <path d="M210 300c30-40 90-56 190-60v60Z" class="fill-creme"/>
+              <circle cx="300" cy="270" r="5" class="fill-sable"/><circle cx="330" cy="262" r="4" class="fill-sable"/><circle cx="360" cy="276" r="6" class="fill-sable"/>
+              <path d="M60 236h86c-5 9-20 13-43 13s-38-4-43-13Z" class="fill-brique"/>
+              <path d="M150 256h70c-4 8-16 11-35 11s-31-3-35-11Z" class="fill-soleil"/>
+              <path d="M40 228c10-4 20-4 30 0M180 248c8-3 16-3 24 0" fill="none" class="stroke-creme" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <figcaption class="flex items-center justify-between gap-3 px-1 pt-3">
+            <span class="font-display text-xl text-riviere">Bons baisers de la Vézère</span>
+            <span class="flex h-12 w-10 shrink-0 items-center justify-center border-2 border-dashed border-brique text-[15px] font-bold text-brique" aria-hidden="true">24</span>
+          </figcaption>
+        </figure>
+
+        <div class="min-w-0">
+          <h2 class="rv font-display text-4xl leading-tight text-riviere sm:text-6xl">Ils ont pagayé</h2>
+          <p class="rv mt-2 font-bold"><span class="text-brique" aria-hidden="true">★★★★★</span> 4,9 / 5 sur 620 avis</p>
+          <ul class="rv no-scrollbar -mx-4 mt-6 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 lg:mx-0 lg:block lg:space-y-4 lg:overflow-visible lg:px-0">
+            <li class="w-[82%] shrink-0 snap-start rounded-2xl border-2 border-nuit bg-sable p-5 lg:w-auto">
+              <blockquote class="text-[17px]">« Navette à l'heure, bateaux impeccables et une équipe qui prend le temps d'expliquer. Les enfants veulent revenir. »</blockquote>
+              <p class="mt-3 font-bold">Claire · La Balade en famille</p>
+            </li>
+            <li class="w-[82%] shrink-0 snap-start rounded-2xl border-2 border-nuit bg-sable p-5 lg:w-auto">
+              <blockquote class="text-[17px]">« Les Falaises le matin, c'est magique : personne sur l'eau et la lumière sur les abris. »</blockquote>
+              <p class="mt-3 font-bold">Mehdi · Les Falaises</p>
+            </li>
+            <li class="w-[82%] shrink-0 snap-start rounded-2xl border-2 border-nuit bg-sable p-5 lg:w-auto">
+              <blockquote class="text-[17px]">« Bivouac parfaitement organisé, bagages au camping à notre arrivée. Une vraie petite aventure. »</blockquote>
+              <p class="mt-3 font-bold">Sophie et Paul · Le Bivouac</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Bon à savoir : accordéon ===== -->
+    <section id="bon-a-savoir" class="bg-riviere-fonce py-14 text-creme md:py-24">
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 md:px-8 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+        <div class="rv">
+          <h2 class="font-display text-4xl leading-tight sm:text-6xl">Bon à savoir</h2>
+          <p class="mt-3 text-creme/85">Les questions qu'on nous pose le plus souvent au comptoir.</p>
+        </div>
+        <div class="rv divide-y-2 divide-creme/15 border-y-2 border-creme/15">
+          <details class="group" open>
+            <summary class="flex items-center justify-between gap-4 py-4 text-lg font-bold">Faut-il savoir nager ?<span class="plus font-display text-3xl text-soleil" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-creme/85">Oui, savoir nager 25 mètres et s'immerger. Le gilet est obligatoire et fourni à toutes les tailles.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center justify-between gap-4 py-4 text-lg font-bold">À partir de quel âge ?<span class="plus font-display text-3xl text-soleil" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-creme/85">Dès 7 ans au milieu d'un canoë avec deux adultes, dès 12 ans en kayak solo accompagné.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center justify-between gap-4 py-4 text-lg font-bold">Que faut-il emporter ?<span class="plus font-display text-3xl text-soleil" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-creme/85">Maillot, chaussures qui vont dans l'eau, crème solaire, casquette et pique-nique. Le bidon étanche est offert.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center justify-between gap-4 py-4 text-lg font-bold">Et s'il pleut ou si l'eau monte ?<span class="plus font-display text-3xl text-soleil" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-creme/85">On vous prévient la veille et on reporte sans frais. Si la rivière est fermée par la préfecture, on rembourse.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center justify-between gap-4 py-4 text-lg font-bold">Les chiens sont-ils acceptés ?<span class="plus font-display text-3xl text-soleil" aria-hidden="true">+</span></summary>
+            <p class="pb-5 text-creme/85">Oui, en canoë biplace, avec un gilet pour chien que nous prêtons gratuitement.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Réserver : formulaire, horaires, accès ===== -->
+    <section id="reserver" class="grain py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 md:px-8 lg:grid-cols-[1.3fr_1fr] lg:gap-14">
+        <div class="rv">
+          <h2 class="font-display text-4xl leading-tight text-riviere sm:text-6xl">Réservez votre descente</h2>
+          <p class="mt-3">On vous rappelle dans la journée pour confirmer l'heure de navette.</p>
+          <!-- Formulaire de réservation.
+               Pour recevoir les demandes par e-mail, créez un formulaire gratuit sur Formspree (formspree.io)
+               puis remplacez action="#" par l'adresse fournie, par ex. action="https://formspree.io/f/xxxxxx".
+               Avec Netlify, ajoutez simplement l'attribut data-netlify="true" sur la balise <form>. -->
+          <form action="#" method="post" class="mt-6 grid gap-4 rounded-3xl border-4 border-nuit bg-sable p-5 shadow-[6px_6px_0_0] shadow-nuit sm:grid-cols-2 md:p-8">
+            <label class="grid gap-1.5 font-bold sm:col-span-2">Parcours
+              <select name="parcours" class="field">
+                <option>La Balade · 6 km</option>
+                <option selected>Les Falaises · 12 km</option>
+                <option>La Grande · 22 km</option>
+                <option>Le Bivouac · 2 jours</option>
+                <option>Paddle à l'heure</option>
+              </select>
+            </label>
+            <label class="grid gap-1.5 font-bold">Date
+              <input type="date" name="date" class="field" required>
+            </label>
+            <label class="grid gap-1.5 font-bold">Nombre de personnes
+              <input type="number" name="personnes" min="1" max="40" value="2" class="field" required>
+            </label>
+            <label class="grid gap-1.5 font-bold">Nom
+              <input type="text" name="nom" autocomplete="name" class="field" required>
+            </label>
+            <label class="grid gap-1.5 font-bold">Téléphone
+              <input type="tel" name="telephone" autocomplete="tel" class="field" required>
+            </label>
+            <label class="grid gap-1.5 font-bold sm:col-span-2">E-mail
+              <input type="email" name="email" autocomplete="email" class="field" placeholder="vous@exemple.fr">
+            </label>
+            <button type="submit" class="btn border-2 border-nuit bg-brique text-creme shadow-[4px_4px_0_0] shadow-nuit hover:-translate-y-0.5 sm:col-span-2 sm:justify-self-start">Envoyer ma demande</button>
+          </form>
+        </div>
+
+        <aside class="rv space-y-6" style="--d:120ms">
+          <div class="rounded-3xl bg-riviere p-6 text-creme">
+            <h3 class="font-display text-2xl text-soleil">Horaires</h3>
+            <ul class="mt-3 space-y-1.5 text-[16px]">
+              <li class="flex justify-between gap-4"><span>Avril, mai, juin, septembre</span><span class="font-bold">9 h – 18 h</span></li>
+              <li class="flex justify-between gap-4"><span>Juillet et août</span><span class="font-bold">8 h 30 – 19 h</span></li>
+              <li class="flex justify-between gap-4"><span>Octobre</span><span class="font-bold">week-ends</span></li>
+            </ul>
+            <p class="mt-3 text-[15px] text-creme/80">Dernière navette : 15 h pour les Falaises.</p>
+          </div>
+          <div>
+            <h3 class="font-display text-2xl text-riviere">Nous trouver</h3>
+            <p class="mt-2">Base du Méandre, route des Plages, 24290 Saint-Léon-sur-Vézère. Grand parking ombragé.</p>
+            <p class="mt-2 flex flex-wrap gap-x-5">
+              <a href="tel:+33600000000" class="lien-souligne inline-flex min-h-11 items-center font-bold text-riviere">06 00 00 00 00</a>
+              <a href="mailto:contact@exemple.fr" class="lien-souligne inline-flex min-h-11 items-center font-bold text-riviere">contact@exemple.fr</a>
+            </p>
+            <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+            <div data-kv-map="Saint-Léon-sur-Vézère, 24290" class="mt-6 md:h-56 rounded-2xl overflow-hidden border-2 border-nuit bg-sable text-nuit"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-nuit text-creme/80">
+    <div class="rayures h-4" aria-hidden="true"></div>
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 md:flex-row md:items-center md:justify-between md:px-8">
+      <p class="font-display text-2xl text-creme">Le Méandre</p>
+      <p class="text-[15px]">Base de canoës-kayaks agréée · Ouvert d'avril à octobre</p>
+      <p class="flex flex-wrap gap-x-5 text-[15px]">
+        <a href="#reserver" class="inline-flex min-h-11 items-center underline-offset-4 hover:underline">Réserver</a>
+        <a href="#" class="inline-flex min-h-11 items-center underline-offset-4 hover:underline">Mentions légales</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-3 border-t-4 border-nuit bg-creme px-3 pt-3 md:hidden" style="padding-bottom: max(.75rem, env(safe-area-inset-bottom))">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-nuit bg-creme text-lg font-bold">Appeler</a>
+    <a href="#reserver" class="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-nuit bg-brique text-lg font-bold text-creme">Réserver</a>
+  </div>
+
+  <script>
+  (function () {
+    var $ = function (s) { return document.querySelector(s); };
+    var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile
+    var b = $('#burger'), m = $('#menu');
+    function menu(ouvert) {
+      b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+      m.classList.toggle('hidden', !ouvert); m.classList.toggle('flex', ouvert);
+      document.body.style.overflow = ouvert ? 'hidden' : '';
+    }
+    b.addEventListener('click', function () { menu(b.getAttribute('aria-expanded') !== 'true'); });
+    $$('#menu a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && b.getAttribute('aria-expanded') === 'true') { menu(false); b.focus(); } });
+
+    if (!('IntersectionObserver' in window)) return;
+
+    // Héros : soleil en bandes, titre mot par mot, arrivée du canoë
+    var scene = $('.scene');
+    if (reduit) scene.classList.add('leve');
+    else requestAnimationFrame(function () { setTimeout(function () { scene.classList.add('leve'); }, 80); });
+
+    // Apparitions au défilement (et la rivière du déroulé qui se dessine)
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv').forEach(function (el) { if (reduit) el.classList.add('vu'); else io.observe(el); });
+
+    // Chiffres qui comptent
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io2.unobserve(e.target);
+        var el = e.target, fin = +el.getAttribute('data-compte'), t0 = null;
+        if (reduit) return;
+        function pas(t) { t0 = t0 || t; var k = Math.min(1, (t - t0) / 800); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); }
+        requestAnimationFrame(pas);
+      });
+    }, { threshold: 0.6 });
+    $$('[data-compte]').forEach(function (el) { io2.observe(el); });
+  })();
+  </script>
+</body>
+</html>
