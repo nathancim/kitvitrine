@@ -11,6 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "@fontsource/albert-sans": "^5.3.0",
+    "@fontsource/alegreya": "^5.3.0",
+    "@fontsource/alegreya-sans": "^5.3.0",
     "@fontsource/atkinson-hyperlegible": "^5.3.0",
     "@fontsource/big-shoulders-display": "^5.3.0",
     "@fontsource/bodoni-moda": "^5.3.0",

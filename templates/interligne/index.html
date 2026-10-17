@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Interligne — Élise Marchand, traductrice assermentée à Lyon (anglais, allemand, italien)</title>
+  <meta name="description" content="Traductions assermentées d'actes d'état civil, diplômes, jugements et documents d'entreprise, anglais, allemand et italien. Devis sous 2 heures ouvrées, envoi du PDF certifié et de l'original par courrier.">
+  <meta name="theme-color" content="#F3F4EF">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-papier font-sans text-[18px] leading-relaxed text-encre antialiased pb-24 md:pb-0">
+
+  <!-- ===== Navigation : barre classique, menu déroulant sur mobile ===== -->
+  <header class="relative z-40 border-b border-encre/15 bg-papier">
+    <div class="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-5 md:h-20 md:px-8">
+      <a href="#accueil" class="inline-flex min-h-11 items-center gap-3" aria-label="Interligne, retour en haut de page">
+        <svg data-kv-logo="Logo" class="h-10 w-10 shrink-0" viewBox="0 0 40 40" aria-hidden="true">
+          <rect x="1" y="1" width="38" height="38" rx="9" class="fill-sapin"/>
+          <path d="M14 14l-5 6 5 6M19 14l-5 6 5 6M21 14l5 6-5 6M26 14l5 6-5 6" fill="none" class="stroke-papier" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="flex flex-col leading-none">
+          <span class="font-serif text-[1.55rem] font-bold tracking-tight">Interligne</span>
+          <span class="mt-1 text-[14px] text-encre/60">Élise Marchand, traductrice</span>
+        </span>
+      </a>
+      <nav class="hidden items-center gap-1 md:flex" aria-label="Navigation principale">
+        <a href="#documents" class="souligne mx-2 inline-flex min-h-11 items-center text-[16px]">Documents</a>
+        <a href="#methode" class="souligne mx-2 inline-flex min-h-11 items-center text-[16px]">Méthode</a>
+        <a href="#tarifs" class="souligne mx-2 inline-flex min-h-11 items-center text-[16px]">Tarifs</a>
+        <a href="#contact" class="souligne mx-2 inline-flex min-h-11 items-center text-[16px]">Questions</a>
+        <a href="#devis" class="ml-3 inline-flex min-h-11 items-center rounded-full bg-sapin px-5 text-[16px] font-medium text-papier transition hover:bg-sapin-fonce">Demander un devis</a>
+      </nav>
+      <button id="menuBtn" type="button" class="inline-flex min-h-11 items-center gap-2 rounded-full border border-encre/25 px-4 text-[16px] font-medium md:hidden" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span id="menuTxt">Menu</span>
+        <svg class="h-4 w-4 transition-transform duration-300" id="menuIco" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <!-- Menu mobile : panneau déroulant -->
+    <nav id="menu" class="absolute inset-x-0 top-full hidden border-b border-encre/15 bg-papier px-5 pb-6 shadow-[0_18px_30px_-18px_rgb(0_0_0/0.25)] md:hidden" aria-label="Menu mobile">
+      <a href="#documents" class="flex min-h-12 items-center border-b border-encre/10 font-serif text-2xl">Documents traduits</a>
+      <a href="#methode" class="flex min-h-12 items-center border-b border-encre/10 font-serif text-2xl">Comment ça se passe</a>
+      <a href="#tarifs" class="flex min-h-12 items-center border-b border-encre/10 font-serif text-2xl">Tarifs</a>
+      <a href="#contact" class="flex min-h-12 items-center border-b border-encre/10 font-serif text-2xl">Questions et contact</a>
+      <a href="#devis" class="btn mt-6 bg-sapin text-papier">Demander un devis</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== Accueil : entrée de dictionnaire + acte qui se traduit ===== -->
+    <section id="accueil" class="overflow-x-clip">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 pb-12 pt-8 md:grid-cols-12 md:gap-10 md:px-8 md:pb-20 md:pt-16">
+        <div id="titre" class="md:col-span-7 md:pt-4">
+          <p class="pose flex flex-wrap items-baseline gap-x-3" style="--d:0ms">
+            <span class="font-serif text-[1.65rem] font-bold">in·ter·ligne</span>
+            <span class="font-serif text-lg italic text-encre/60">nom masculin</span>
+          </p>
+          <p class="pose mt-1 max-w-md font-serif text-lg italic leading-snug text-encre/70" style="--d:120ms">L'espace entre deux lignes, là où un texte passe d'une langue à l'autre.</p>
+          <span class="pose mt-6 block h-px w-full bg-encre/20" style="--d:200ms" aria-hidden="true"></span>
+          <h1 class="pose mt-6 font-serif text-[clamp(2.5rem,7.4vw,5.1rem)] font-bold leading-[1.02] tracking-tight" style="--d:280ms">Vos documents officiels, traduits et certifiés.</h1>
+          <p class="pose mt-5 max-w-xl text-encre/80" style="--d:420ms">Élise Marchand, traductrice-interprète assermentée près la cour d'appel de Lyon. Anglais, allemand et italien vers le français, et inversement.</p>
+          <div class="pose mt-7 flex flex-col gap-3 sm:flex-row" style="--d:540ms">
+            <a href="#devis" class="btn bg-sapin text-papier hover:bg-sapin-fonce">Demander un devis</a>
+            <a href="tel:+33600000000" class="btn border border-encre/25 hover:border-encre">Appeler le 06 00 00 00 00</a>
+          </div>
+          <p class="pose mt-4 text-[16px] text-encre/60" style="--d:640ms">Devis gratuit sous 2 heures ouvrées, sans vous déplacer.</p>
+        </div>
+
+        <!-- Illustration : l'acte se traduit puis reçoit le tampon. Cliquez dessus en mode édition pour mettre votre photo. -->
+        <div data-kv-image="Photo de votre bureau ou d'un document traduit et tamponné" class="relative flex h-[300px] flex-col md:col-span-5 md:h-[470px]">
+          <svg class="acte min-h-0 w-full flex-1" viewBox="0 0 400 340" role="img" aria-label="Acte de naissance traduit en français, avec le tampon « traduction certifiée conforme »">
+            <defs><path id="cercleTampon" d="M262 268m-31 0a31 31 0 1 1 62 0a31 31 0 1 1 -62 0"/></defs>
+            <g class="feuille-dessous" style="transform-origin:200px 180px">
+              <rect x="80" y="30" width="250" height="296" rx="5" transform="rotate(-4 200 180)" class="fill-calque stroke-encre/20"/>
+            </g>
+            <g transform="rotate(2 200 170)">
+              <rect x="70" y="16" width="260" height="304" rx="5" fill="#FFFFFF" class="stroke-encre/25"/>
+              <text id="aTitre" class="champ fill-encre" x="200" y="60" text-anchor="middle" font-family="Alegreya, Georgia, serif" font-size="20" font-weight="700" letter-spacing="1.2" data-fr="ACTE DE NAISSANCE" data-en="CERTIFICATE OF BIRTH" data-de="GEBURTSURKUNDE" data-it="ATTO DI NASCITA">ACTE DE NAISSANCE</text>
+              <text id="aSous" class="fill-encre/60" x="200" y="80" text-anchor="middle" font-family="Alegreya, Georgia, serif" font-size="11.5" font-style="italic">Traduction de l'anglais</text>
+              <line x1="94" x2="306" y1="94" y2="94" class="stroke-encre/30"/>
+              <g font-family="Alegreya Sans, system-ui, sans-serif" font-size="11.5" class="fill-encre/70">
+                <text class="champ" x="94" y="124" data-fr="Nom" data-en="Surname" data-de="Familienname" data-it="Cognome">Nom</text>
+                <text class="champ" x="94" y="152" data-fr="Prénoms" data-en="Given names" data-de="Vornamen" data-it="Nomi">Prénoms</text>
+                <text class="champ" x="94" y="180" data-fr="Né(e) le" data-en="Date of birth" data-de="Geboren am" data-it="Nato il">Né(e) le</text>
+                <text class="champ" x="94" y="208" data-fr="Lieu de naissance" data-en="Place of birth" data-de="Geburtsort" data-it="Luogo di nascita">Lieu de naissance</text>
+              </g>
+              <g class="fill-calque">
+                <rect x="196" y="115" width="104" height="11" rx="5.5"/>
+                <rect x="196" y="143" width="84" height="11" rx="5.5"/>
+                <rect x="196" y="171" width="64" height="11" rx="5.5"/>
+                <rect x="196" y="199" width="96" height="11" rx="5.5"/>
+              </g>
+              <line x1="94" x2="306" y1="226" y2="226" class="stroke-encre/15"/>
+              <text x="94" y="252" font-family="Alegreya, Georgia, serif" font-size="11" font-style="italic" class="fill-encre/60">Fait à Lyon, pour servir et valoir</text>
+              <path class="paraphe stroke-encre" pathLength="1" d="M98 290c10-18 18-22 20-14s-8 18-2 16 14-24 20-18-2 16 4 14 10-10 16-8 4 6 12 2" fill="none" stroke-width="1.6" stroke-linecap="round"/>
+              <g class="tampon">
+                <circle cx="262" cy="268" r="40" fill="none" class="stroke-tampon" stroke-width="2.4" opacity=".85"/>
+                <circle cx="262" cy="268" r="25" fill="none" class="stroke-tampon" stroke-width="1.2" opacity=".85"/>
+                <text font-family="Alegreya Sans, system-ui, sans-serif" font-size="7.6" font-weight="700" letter-spacing="1.1" class="fill-tampon" opacity=".9"><textPath href="#cercleTampon">TRADUCTION CERTIFIÉE CONFORME ✦ COUR D'APPEL ✦</textPath></text>
+                <text x="262" y="266" text-anchor="middle" font-family="Alegreya, Georgia, serif" font-size="13" font-weight="700" class="fill-tampon">E. M.</text>
+                <text x="262" y="278" text-anchor="middle" font-family="Alegreya Sans, system-ui, sans-serif" font-size="7" class="fill-tampon">LYON</text>
+              </g>
+            </g>
+          </svg>
+          <div class="mt-2 flex items-center justify-center gap-2" role="group" aria-label="Langue de l'original">
+            <span class="mr-1 text-[15px] text-encre/60">Original en</span>
+            <button type="button" class="choix-langue min-h-11 rounded-full border border-encre/25 px-4 text-[15px] font-medium transition" data-langue="en" aria-pressed="true">anglais</button>
+            <button type="button" class="choix-langue min-h-11 rounded-full border border-encre/25 px-4 text-[15px] font-medium transition" data-langue="de" aria-pressed="false">allemand</button>
+            <button type="button" class="choix-langue min-h-11 rounded-full border border-encre/25 px-4 text-[15px] font-medium transition" data-langue="it" aria-pressed="false">italien</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bandeau d'accréditation -->
+      <div class="hidden border-y border-encre/15 bg-calque/60 sm:block">
+        <ul class="mx-auto grid max-w-6xl grid-cols-1 px-5 sm:grid-cols-3 md:px-8">
+          <li class="flex items-baseline gap-3 border-b border-encre/10 py-3 sm:border-b-0 sm:border-r sm:py-5"><span class="font-serif text-xl font-bold">Anglais</span><span class="text-encre/65">vers et depuis le français</span></li>
+          <li class="flex items-baseline gap-3 border-b border-encre/10 py-3 sm:border-b-0 sm:border-r sm:py-5 sm:pl-6"><span class="font-serif text-xl font-bold">Allemand</span><span class="text-encre/65">vers et depuis le français</span></li>
+          <li class="flex items-baseline gap-3 py-3 sm:py-5 sm:pl-6"><span class="font-serif text-xl font-bold">Italien</span><span class="text-encre/65">vers et depuis le français</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Documents : colonne de marge + entrées de dictionnaire ===== -->
+    <section id="documents" class="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-12 md:gap-10 md:px-8 md:py-24">
+      <div class="rv md:col-span-4">
+        <div class="md:sticky md:top-8">
+          <h2 class="font-serif text-4xl font-bold leading-tight sm:text-5xl">Ce que je traduis</h2>
+          <span class="filet mt-5 block h-0.5 w-16 bg-sapin" aria-hidden="true"></span>
+          <p class="mt-5 text-encre/75">Des traductions acceptées par les mairies, préfectures, consulats, universités, tribunaux et notaires.</p>
+        </div>
+      </div>
+      <dl class="grid gap-x-10 md:col-span-8 md:grid-cols-2">
+        <div class="entree rv border-t border-encre/15 py-4 md:py-5">
+          <dt class="flex items-center gap-3"><span class="trait h-0.5 w-6 bg-sapin" aria-hidden="true"></span><span class="vedette font-serif text-2xl font-bold">Actes d'état civil</span></dt>
+          <dd class="mt-2 text-encre/75">Naissance, mariage, divorce, décès, livret de famille : pour un mariage, un PACS ou un dossier en préfecture.</dd>
+        </div>
+        <div class="entree rv border-t border-encre/15 py-4 md:py-5" style="--d:80ms">
+          <dt class="flex items-center gap-3"><span class="trait h-0.5 w-6 bg-sapin" aria-hidden="true"></span><span class="vedette font-serif text-2xl font-bold">Diplômes et relevés</span></dt>
+          <dd class="mt-2 text-encre/75">Pour une inscription à l'université, une équivalence ou une candidature à l'étranger.</dd>
+        </div>
+        <div class="entree rv border-t border-encre/15 py-4 md:py-5">
+          <dt class="flex items-center gap-3"><span class="trait h-0.5 w-6 bg-sapin" aria-hidden="true"></span><span class="vedette font-serif text-2xl font-bold">Permis de conduire</span></dt>
+          <dd class="mt-2 text-encre/75">La traduction demandée pour échanger un permis étranger contre un permis français.</dd>
+        </div>
+        <div class="entree rv border-t border-encre/15 py-4 md:py-5" style="--d:80ms">
+          <dt class="flex items-center gap-3"><span class="trait h-0.5 w-6 bg-sapin" aria-hidden="true"></span><span class="vedette font-serif text-2xl font-bold">Jugements et actes notariés</span></dt>
+          <dd class="mt-2 text-encre/75">Divorces prononcés à l'étranger, successions, procurations, testaments.</dd>
+        </div>
+        <div class="entree rv border-t border-encre/15 py-4 md:py-5">
+          <dt class="flex items-center gap-3"><span class="trait h-0.5 w-6 bg-sapin" aria-hidden="true"></span><span class="vedette font-serif text-2xl font-bold">Documents d'entreprise</span></dt>
+          <dd class="mt-2 text-encre/75">Statuts, extraits Kbis, contrats, bilans, appels d'offres.</dd>
+        </div>
+        <div class="entree rv border-t border-encre/15 py-4 md:py-5" style="--d:80ms">
+          <dt class="flex items-center gap-3"><span class="trait h-0.5 w-6 bg-sapin" aria-hidden="true"></span><span class="vedette font-serif text-2xl font-bold">Interprétariat</span></dt>
+          <dd class="mt-2 text-encre/75">Mariage en mairie, rendez-vous chez le notaire, audience au tribunal.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ===== Méthode : quatre étapes (carrousel sur téléphone) ===== -->
+    <section id="methode" class="overflow-x-clip bg-sapin py-14 text-papier md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <h2 class="rv max-w-2xl font-serif text-4xl font-bold leading-tight sm:text-5xl">Quatre étapes, sans vous déplacer</h2>
+      </div>
+      <ol class="rv no-scrollbar mx-auto mt-8 flex max-w-6xl snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 md:mt-14 md:grid md:grid-cols-4 md:gap-8 md:overflow-visible md:px-8">
+        <li class="w-[80%] shrink-0 snap-start md:w-auto" style="--d:0ms">
+          <span class="filet block h-px w-full bg-papier/40" aria-hidden="true"></span>
+          <p class="mt-4 font-serif text-5xl italic text-papier/60">1</p>
+          <h3 class="mt-2 font-serif text-2xl font-bold">Envoyez un scan</h3>
+          <p class="mt-2 text-papier/80">Une photo nette ou un scan de chaque page, par e-mail ou depuis le formulaire.</p>
+        </li>
+        <li class="w-[80%] shrink-0 snap-start md:w-auto" style="--d:120ms">
+          <span class="filet block h-px w-full bg-papier/40" style="--d:120ms" aria-hidden="true"></span>
+          <p class="mt-4 font-serif text-5xl italic text-papier/60">2</p>
+          <h3 class="mt-2 font-serif text-2xl font-bold">Recevez le devis</h3>
+          <p class="mt-2 text-papier/80">Prix ferme et date de remise sous 2 heures ouvrées. Rien à payer avant d'accepter.</p>
+        </li>
+        <li class="w-[80%] shrink-0 snap-start md:w-auto" style="--d:240ms">
+          <span class="filet block h-px w-full bg-papier/40" style="--d:240ms" aria-hidden="true"></span>
+          <p class="mt-4 font-serif text-5xl italic text-papier/60">3</p>
+          <h3 class="mt-2 font-serif text-2xl font-bold">Je traduis et certifie</h3>
+          <p class="mt-2 text-papier/80">Traduction, relecture, puis tampon, signature et numéro d'enregistrement sur chaque page.</p>
+        </li>
+        <li class="w-[80%] shrink-0 snap-start md:w-auto" style="--d:360ms">
+          <span class="filet block h-px w-full bg-papier/40" style="--d:360ms" aria-hidden="true"></span>
+          <p class="mt-4 font-serif text-5xl italic text-papier/60">4</p>
+          <h3 class="mt-2 font-serif text-2xl font-bold">Vous recevez tout</h3>
+          <p class="mt-2 text-papier/80">Le PDF certifié par e-mail, l'original papier par courrier suivi ou à retirer au cabinet.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== Le cabinet : portrait, grande citation, chiffres-clés ===== -->
+    <section id="cabinet" class="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-12 md:gap-12 md:px-8 md:py-24">
+      <div data-kv-image="Portrait de vous à votre bureau" class="rv relative h-[220px] overflow-hidden rounded-2xl bg-calque md:col-span-5 md:h-auto md:min-h-[440px]">
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="440" fill="#E3E8DF"/>
+          <rect x="250" y="40" width="110" height="150" rx="4" fill="#D3DBD0"/>
+          <g fill="#24533F"><rect x="262" y="70" width="14" height="110" rx="2"/><rect x="280" y="80" width="12" height="100" rx="2" fill="#3E46A3"/><rect x="296" y="62" width="16" height="118" rx="2" fill="#16231E"/><rect x="316" y="76" width="12" height="104" rx="2"/><rect x="332" y="90" width="18" height="90" rx="2" fill="#B9C4B5"/></g>
+          <path d="M70 120l40-60h30l-25 60z" fill="#16231E"/><path d="M78 120h62l-20 30H98z" fill="#F7E9A8" opacity=".55"/>
+          <rect x="0" y="300" width="400" height="140" fill="#C9D3C8"/>
+          <path d="M70 310c40-14 90-14 130 0 40-14 90-14 130 0v40c-40-14-90-14-130 0-40-14-90-14-130 0z" fill="#FFFFFF"/>
+          <path d="M200 310v40" stroke="#16231E" stroke-opacity=".3"/>
+          <g stroke="#16231E" stroke-opacity=".25" stroke-width="2" stroke-linecap="round"><path d="M88 318h90M88 326h80M222 318h90M222 326h70M222 334h84"/></g>
+          <ellipse cx="340" cy="312" rx="22" ry="8" fill="#16231E" opacity=".15"/><rect x="322" y="282" width="36" height="30" rx="6" fill="#3E46A3"/>
+          <circle cx="200" cy="200" r="46" fill="#16231E"/><path d="M110 300c8-56 46-80 90-80s82 24 90 80z" fill="#24533F"/>
+          <circle cx="200" cy="208" r="36" fill="#E9C9A8"/><path d="M164 204c0-30 16-46 36-46s36 16 36 46c-8-14-22-22-36-22s-28 8-36 22z" fill="#16231E"/>
+        </svg>
+      </div>
+      <div class="md:col-span-7 md:pt-4">
+        <figure class="rv">
+          <blockquote class="font-serif text-[1.7rem] italic leading-snug sm:text-4xl">« Un nom mal orthographié peut bloquer un dossier pendant des mois. Je relis chaque date et chaque accent comme si c'était le mien. »</blockquote>
+          <figcaption class="mt-4 text-encre/65">Élise Marchand, traductrice assermentée depuis 2012</figcaption>
+        </figure>
+        <p class="lettrine rv mt-8 max-w-xl text-encre/80">Formée à Strasbourg, j'ai travaillé six ans entre Munich et Turin avant d'ouvrir mon cabinet à Lyon. Particuliers, avocats, notaires et entreprises me confient leurs documents : je réponds moi-même, au téléphone comme par e-mail.</p>
+        <dl class="rv mt-10 grid grid-cols-3 border-t border-encre/15 pt-6">
+          <div><dt class="sr-only">Années d'exercice</dt><dd class="font-serif text-4xl font-bold text-sapin sm:text-5xl"><span data-compte="14">14</span></dd><dd class="mt-1 text-[16px] leading-snug text-encre/65">ans d'exercice</dd></div>
+          <div><dt class="sr-only">Documents certifiés</dt><dd class="font-serif text-4xl font-bold text-sapin sm:text-5xl"><span data-compte="6200">6 200</span></dd><dd class="mt-1 text-[16px] leading-snug text-encre/65">documents certifiés</dd></div>
+          <div><dt class="sr-only">Délai pour un devis</dt><dd class="font-serif text-4xl font-bold text-sapin sm:text-5xl"><span data-compte="2">2</span> h</dd><dd class="mt-1 text-[16px] leading-snug text-encre/65">pour recevoir un devis</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Tarifs : liste à points de conduite ===== -->
+    <section id="tarifs" class="border-t border-encre/15 bg-calque/50">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-12 md:gap-10 md:px-8 md:py-24">
+        <div class="rv md:col-span-4">
+          <h2 class="font-serif text-4xl font-bold leading-tight sm:text-5xl">Tarifs</h2>
+          <span class="filet mt-5 block h-0.5 w-16 bg-sapin" aria-hidden="true"></span>
+          <p class="mt-5 text-encre/75">Prix TTC par document d'une page, tampon, signature et PDF compris.</p>
+        </div>
+        <div class="md:col-span-8">
+          <ul class="rv font-serif text-xl sm:text-2xl">
+            <li class="flex items-end border-b border-encre/10 py-3"><span>Acte d'état civil</span><span class="conduite" aria-hidden="true"></span><span class="whitespace-nowrap font-bold">35 €</span></li>
+            <li class="flex items-end border-b border-encre/10 py-3"><span>Permis de conduire</span><span class="conduite" aria-hidden="true"></span><span class="whitespace-nowrap font-bold">35 €</span></li>
+            <li class="flex items-end border-b border-encre/10 py-3"><span>Diplôme</span><span class="conduite" aria-hidden="true"></span><span class="whitespace-nowrap font-bold">45 €</span></li>
+            <li class="flex items-end border-b border-encre/10 py-3"><span>Relevé de notes</span><span class="conduite" aria-hidden="true"></span><span class="whitespace-nowrap font-bold">dès 50 €</span></li>
+            <li class="flex items-end border-b border-encre/10 py-3"><span>Jugement, contrat, statuts</span><span class="conduite" aria-hidden="true"></span><span class="whitespace-nowrap font-bold">sur devis</span></li>
+            <li class="flex items-end border-b border-encre/10 py-3"><span>Interprète, mariage en mairie</span><span class="conduite" aria-hidden="true"></span><span class="whitespace-nowrap font-bold">180 €</span></li>
+          </ul>
+          <p class="rv mt-5 text-[16px] text-encre/65">Urgence en 24 heures : +30 %. Envoi de l'original par courrier suivi : 6 €.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Avis (carrousel sur téléphone) ===== -->
+    <section id="avis" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <h2 class="rv font-serif text-4xl font-bold leading-tight sm:text-5xl">Ils m'ont confié leurs papiers</h2>
+      </div>
+      <div class="rv no-scrollbar mx-auto mt-8 flex max-w-6xl snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 md:mt-12 md:grid md:grid-cols-12 md:gap-8 md:overflow-visible md:px-8">
+        <figure class="flex w-[84%] shrink-0 snap-start flex-col rounded-2xl border border-encre/15 bg-white p-6 md:col-span-6 md:row-span-2 md:w-auto md:p-10">
+          <blockquote class="font-serif text-xl leading-snug md:text-3xl"><p>« Mon acte de naissance italien traduit en deux jours, accepté sans souci par la mairie pour notre mariage. Élise a même repéré une erreur de date sur l'original. »</p></blockquote>
+          <figcaption class="mt-auto pt-5 text-[16px] text-encre/65">Marta, mariage à Villeurbanne</figcaption>
+        </figure>
+        <figure class="flex w-[84%] shrink-0 snap-start flex-col rounded-2xl border border-encre/15 bg-white p-6 md:col-span-6 md:w-auto" style="--d:100ms">
+          <blockquote><p>« Diplômes et relevés de notes allemands pour une inscription en master : devis le matin, PDF le lendemain, originaux par courrier suivi. »</p></blockquote>
+          <figcaption class="mt-auto pt-4 text-[16px] text-encre/65">Jonas, étudiant à Lyon</figcaption>
+        </figure>
+        <figure class="flex w-[84%] shrink-0 snap-start flex-col rounded-2xl border border-encre/15 bg-white p-6 md:col-span-6 md:w-auto" style="--d:200ms">
+          <blockquote><p>« Interprète chez le notaire pour vendre la maison familiale à un couple anglais. Calme, précise, et tout le monde a compris ce qu'il signait. »</p></blockquote>
+          <figcaption class="mt-auto pt-4 text-[16px] text-encre/65">Inès, vente immobilière</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Questions, coordonnées et devis ===== -->
+    <section id="contact" class="border-t border-encre/15">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-12 md:px-8 md:py-24">
+        <div class="md:col-span-5">
+          <h2 class="rv font-serif text-4xl font-bold leading-tight sm:text-5xl">Questions fréquentes</h2>
+          <div class="rv mt-6 border-t border-encre/15">
+            <details class="border-b border-encre/15">
+              <summary class="flex items-center justify-between gap-4 py-4 font-serif text-xl font-bold">Qu'est-ce qu'une traduction assermentée ?<span class="plus text-2xl font-normal text-sapin" aria-hidden="true">+</span></summary>
+              <p class="pb-4 text-encre/75">Une traduction faite par un traducteur inscrit auprès d'une cour d'appel, avec son tampon et sa signature. C'est celle que demandent les administrations françaises.</p>
+            </details>
+            <details class="border-b border-encre/15">
+              <summary class="flex items-center justify-between gap-4 py-4 font-serif text-xl font-bold">Faut-il m'envoyer l'original ?<span class="plus text-2xl font-normal text-sapin" aria-hidden="true">+</span></summary>
+              <p class="pb-4 text-encre/75">Non, un scan lisible suffit presque toujours. Si l'organisme demande autre chose, je vous le précise sur le devis.</p>
+            </details>
+            <details class="border-b border-encre/15">
+              <summary class="flex items-center justify-between gap-4 py-4 font-serif text-xl font-bold">Et l'apostille ?<span class="plus text-2xl font-normal text-sapin" aria-hidden="true">+</span></summary>
+              <p class="pb-4 text-encre/75">Elle se demande dans le pays qui a délivré le document, avant la traduction. Je vous dis si votre démarche en a besoin.</p>
+            </details>
+            <details class="border-b border-encre/15">
+              <summary class="flex items-center justify-between gap-4 py-4 font-serif text-xl font-bold">Recevez-vous au cabinet ?<span class="plus text-2xl font-normal text-sapin" aria-hidden="true">+</span></summary>
+              <p class="pb-4 text-encre/75">Sur rendez-vous, du lundi au vendredi, de 9 h à 18 h. Les originaux peuvent y être retirés.</p>
+            </details>
+          </div>
+          <ul class="rv mt-8 space-y-1">
+            <li><a href="tel:+33600000000" class="souligne inline-flex min-h-11 items-center font-serif text-2xl font-bold">06 00 00 00 00</a></li>
+            <li><a href="mailto:contact@exemple.fr" class="souligne inline-flex min-h-11 items-center">contact@exemple.fr</a></li>
+            <li><p class="text-encre/70">12 rue des Imprimeurs, 69002 Lyon. Métro Cordeliers.</p></li>
+          </ul>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="12 rue des Imprimeurs, 69002 Lyon" class="mt-6 md:h-56 rounded-2xl overflow-hidden border border-encre/15 text-encre"></div>
+        </div>
+
+        <!-- Formulaire de devis.
+             Pour le relier : créez un formulaire gratuit sur https://formspree.io (ou Netlify Forms, Basin…),
+             puis remplacez action="#" par l'adresse fournie, par ex. action="https://formspree.io/f/xxxxxx".
+             Avec Netlify, ajoutez simplement l'attribut data-netlify="true" sur la balise <form>.
+             Les scans des documents arrivent ensuite en réponse à votre premier e-mail. -->
+        <form id="devis" action="#" method="post" class="rv self-start rounded-2xl border border-encre/15 bg-white p-6 md:col-span-7 md:p-10" style="--d:120ms">
+          <h2 class="font-serif text-3xl font-bold sm:text-4xl">Demander un devis</h2>
+          <p class="mt-2 text-encre/70">Réponse sous 2 heures ouvrées. Vous m'enverrez ensuite les scans par e-mail.</p>
+          <div class="mt-6 grid gap-5 sm:grid-cols-2">
+            <label class="block"><span class="text-[16px] font-medium">Votre prénom</span><input name="prenom" autocomplete="given-name" required class="field mt-1"></label>
+            <label class="block"><span class="text-[16px] font-medium">E-mail</span><input name="email" type="email" autocomplete="email" required class="field mt-1"></label>
+            <label class="block"><span class="text-[16px] font-medium">Langue de l'original</span>
+              <select name="langue" class="field mt-1">
+                <option>Anglais vers français</option>
+                <option>Allemand vers français</option>
+                <option>Italien vers français</option>
+                <option>Français vers anglais</option>
+                <option>Français vers allemand</option>
+                <option>Français vers italien</option>
+              </select>
+            </label>
+            <label class="block"><span class="text-[16px] font-medium">Type de document</span>
+              <select name="document" class="field mt-1">
+                <option>Acte d'état civil</option>
+                <option>Diplôme ou relevé de notes</option>
+                <option>Permis de conduire</option>
+                <option>Jugement ou acte notarié</option>
+                <option>Document d'entreprise</option>
+                <option>Interprétariat</option>
+              </select>
+            </label>
+            <label class="block sm:col-span-2"><span class="text-[16px] font-medium">Précisions</span><textarea name="message" rows="3" placeholder="Ex. : 3 pages, pour un dossier en préfecture avant le 15 du mois" class="field mt-1"></textarea></label>
+          </div>
+          <button type="submit" class="btn mt-7 bg-sapin text-papier hover:bg-sapin-fonce">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-encre/15 px-5 py-10 text-[16px] text-encre/65 md:px-8">
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 md:flex-row md:items-center md:justify-between">
+      <p><span class="font-serif text-xl font-bold text-encre">Interligne</span>, Élise Marchand, traductrice-interprète à Lyon. SIRET 000 000 000 00000.</p>
+      <p>© 2026 Interligne. <a href="#" class="souligne inline-flex min-h-11 items-center">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 gap-3 border-t border-encre/15 bg-papier/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-encre/25 font-medium">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z" fill="currentColor"/></svg>
+      <span>Appeler</span>
+    </a>
+    <a href="#devis" class="inline-flex min-h-12 items-center justify-center rounded-full bg-sapin font-medium text-papier">Devis gratuit</a>
+  </div>
+
+  <script>
+  (function () {
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var $ = function (s, c) { return (c || document).querySelector(s); };
+    var $$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)); };
+
+    // Menu mobile déroulant
+    var b = $('#menuBtn'), m = $('#menu'), ico = $('#menuIco'), txt = $('#menuTxt');
+    function menu(open) {
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      m.classList.toggle('hidden', !open); ico.style.transform = open ? 'rotate(180deg)' : ''; txt.textContent = open ? 'Fermer' : 'Menu';
+    }
+    b.addEventListener('click', function () { menu(b.getAttribute('aria-expanded') !== 'true'); });
+    $$('#menu a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && b.getAttribute('aria-expanded') === 'true') { menu(false); b.focus(); } });
+
+    // Entrée du héros
+    var titre = $('#titre');
+    if (reduit) titre.classList.add('pret');
+    else requestAnimationFrame(function () { setTimeout(function () { titre.classList.add('pret'); }, 60); });
+
+    // Signature : l'acte se traduit lettre par lettre, puis le tampon se pose
+    var acte = $('.acte'), champs = $$('.acte .champ'), sous = $('#aSous'), boutons = $$('.choix-langue');
+    var noms = { en: "de l'anglais", de: "de l'allemand", it: "de l'italien" }, tour = 0, auto = true;
+    function brouille(el, cible, duree, n) {
+      var depart = el.textContent, t0 = null, maj = 'ABCDEFGHIKLMNOPRSTUVZ', min = 'abcdefghiklmnoprstuvz';
+      function pas(t) {
+        if (n !== tour) return;
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / duree), k = Math.floor(p * cible.length), s = cible.slice(0, k);
+        var lg = Math.round(depart.length + (cible.length - depart.length) * p);
+        for (var i = k; i < lg; i++) { var c = cible[i] || depart[i] || 'a'; s += c === ' ' ? ' ' : (c === c.toUpperCase() ? maj : min)[Math.random() * 21 | 0]; }
+        el.textContent = s;
+        if (p < 1) requestAnimationFrame(pas); else el.textContent = cible;
+      }
+      requestAnimationFrame(pas);
+    }
+    function jouer(l) {
+      if (!acte) return;
+      var n = ++tour;
+      boutons.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-langue') === l); });
+      sous.textContent = 'Traduction ' + noms[l];
+      if (reduit) { champs.forEach(function (el) { el.textContent = el.getAttribute('data-fr'); }); acte.classList.add('certifie'); return; }
+      acte.classList.remove('certifie');
+      champs.forEach(function (el) { el.textContent = el.getAttribute('data-' + l); });
+      setTimeout(function () {
+        if (n !== tour) return;
+        champs.forEach(function (el, i) { setTimeout(function () { brouille(el, el.getAttribute('data-fr'), 650, n); }, i * 150); });
+        setTimeout(function () { if (n === tour) acte.classList.add('certifie'); }, champs.length * 150 + 750);
+      }, 900);
+    }
+    boutons.forEach(function (x) { x.addEventListener('click', function () { auto = false; jouer(x.getAttribute('data-langue')); }); });
+    if (acte) {
+      if (reduit || !('IntersectionObserver' in window)) acte.classList.add('certifie');
+      else {
+        // Lecture automatique une fois par langue quand l'acte est visible, puis on s'arrête
+        var ordre = ['en', 'de', 'it'], idx = 0;
+        var suite = function () { if (!auto) return; jouer(ordre[idx]); idx++; if (idx < ordre.length) setTimeout(suite, 5600); };
+        var vu = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { vu.disconnect(); suite(); } }, { threshold: .4 });
+        vu.observe(acte);
+      }
+    }
+
+    if (!('IntersectionObserver' in window)) return;
+
+    // Chiffres qui comptent
+    var cpt = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; cpt.unobserve(e.target);
+        var el = e.target, fin = +el.getAttribute('data-compte'), t0 = null;
+        function pas(t) { if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 900), v = Math.round(fin * (1 - Math.pow(1 - p, 3)));
+          el.textContent = v.toLocaleString('fr-FR').replace(/ /g, ' '); if (p < 1) requestAnimationFrame(pas); }
+        requestAnimationFrame(pas);
+      });
+    }, { threshold: .6 });
+    if (!reduit) $$('[data-compte]').forEach(function (el) { cpt.observe(el); });
+
+    // Apparitions au défilement (et filets qui se tracent)
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv, .filet').forEach(function (el) { if (reduit) el.classList.add('vu'); else io.observe(el); });
+  })();
+  </script>
+</body>
+</html>

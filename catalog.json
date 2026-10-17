@@ -847,6 +847,61 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "a8dbcad2c25466e53c54a15b7fa736c7"
+    },
+    {
+      "slug": "interligne",
+      "title": "Interligne",
+      "tagline": "Site vitrine pour traducteur assermenté",
+      "description": "Une page éditoriale pour traductrice ou traducteur-interprète assermenté. En ouverture, une entrée de dictionnaire et un grand titre à empattements font face à un acte de naissance : son en-tête et ses rubriques se traduisent lettre par lettre depuis l'anglais, l'allemand ou l'italien, puis le tampon « traduction certifiée conforme » se pose et la signature se trace. Viennent les documents traduits en entrées de dictionnaire avec une colonne de marge, la méthode en quatre étapes sur fond vert sapin (carrousel sur téléphone), le portrait avec une grande citation, une lettrine et des chiffres qui comptent, les tarifs en liste à points de conduite, les avis, puis questions fréquentes, coordonnées, carte et formulaire de devis. Vert sapin, papier gris-vert et encre de tampon indigo, titres en Alegreya et texte en Alegreya Sans.",
+      "univers": [
+        "independants"
+      ],
+      "style": "Moderne",
+      "couleur": "vert",
+      "direction": "editorial",
+      "animations": [
+        "en-tête d'acte qui se traduit lettre par lettre depuis l'anglais, l'allemand ou l'italien",
+        "tampon de certification qui se pose et signature qui se trace",
+        "lignes du titre qui se posent l'une après l'autre",
+        "filets qui se tracent et apparition au défilement",
+        "chiffres qui comptent",
+        "entrées du dictionnaire qui se décalent au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-17",
+      "tags": [
+        "traducteur assermenté",
+        "traductrice",
+        "traduction certifiée",
+        "interprète",
+        "traduction officielle",
+        "traducteur juré",
+        "actes d'état civil",
+        "apostille",
+        "anglais",
+        "allemand"
+      ],
+      "sections": [
+        "Accueil en entrée de dictionnaire, avec l'acte qui se traduit et reçoit le tampon",
+        "Langues de travail",
+        "Documents traduits en entrées de dictionnaire",
+        "Méthode en quatre étapes",
+        "Portrait, grande citation et chiffres-clés",
+        "Tarifs à points de conduite",
+        "Avis des clients",
+        "Questions fréquentes, coordonnées, carte et formulaire de devis"
+      ],
+      "palette": [
+        "#24533F",
+        "#3E46A3",
+        "#F3F4EF",
+        "#E3E8DF",
+        "#16231E"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "3a5d69f40bb2d0cb0df9cd23175000a7"
     }
   ]
 }
