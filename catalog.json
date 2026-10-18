@@ -958,6 +958,61 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "8ac89471675c1604904568745d5b9550"
+    },
+    {
+      "slug": "cambre",
+      "title": "Cambré",
+      "tagline": "Site vitrine pour école de danse",
+      "description": "Une page façon affiche de spectacle pour une école de danse. En ouverture, un titre géant en Anton dont les lignes glissent depuis des côtés opposés, à côté d'une danseuse en arabesque qui se pose dans un rond de lumière pendant qu'un ruban rose se dessine autour d'elle, puis ondule ; une pastille « Inscriptions ouvertes » tourne dans le coin. Un bandeau oblique fait défiler les disciplines, puis les six cours se présentent en affiches numérotées dans une grille asymétrique (carrousel sur téléphone), le planning par âge en accordéons sous un « 22 » géant, le gala sur aplat noir avec chiffres qui comptent et paroles d'élèves, trois formules aux prix d'affiche, les questions avant le premier cours et le formulaire de cours d'essai avec adresse et carte. Rose fuchsia, jaune citron et noir encre sur fond papier, titres en Anton et texte en Space Grotesk.",
+      "univers": [
+        "associations"
+      ],
+      "style": "Audacieux",
+      "couleur": "rose",
+      "direction": "affiche",
+      "animations": [
+        "lignes du titre qui glissent depuis des côtés opposés",
+        "danseuse qui se pose et ruban qui se dessine puis ondule",
+        "pastille qui tourne et bandeau oblique qui défile",
+        "affiches de cours qui se redressent et se soulèvent au survol",
+        "chiffres qui comptent",
+        "apparition au défilement et menu mobile qui arrive lien par lien"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-18",
+      "tags": [
+        "école de danse",
+        "cours de danse",
+        "danse classique",
+        "modern jazz",
+        "danse contemporaine",
+        "hip-hop",
+        "éveil à la danse",
+        "barre au sol",
+        "gala de danse",
+        "studio de danse"
+      ],
+      "sections": [
+        "Accueil façon affiche avec danseuse au ruban",
+        "Bandeau oblique des disciplines",
+        "Six cours en affiches numérotées",
+        "Planning par âge en accordéons",
+        "Le gala : chiffres-clés et paroles d'élèves",
+        "Tarifs en trois formules",
+        "Questions avant le premier cours",
+        "Cours d'essai : formulaire, adresse, horaires et carte"
+      ],
+      "palette": [
+        "#C8286A",
+        "#DDF04C",
+        "#18131B",
+        "#F6D9E3",
+        "#F5EFE6"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "bc75fce190d56a79f469a1233eb71837"
     }
   ]
 }

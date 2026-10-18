@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Studio Cambré — École de danse à Vichy : classique, jazz, contemporain, hip-hop</title>
+  <meta name="description" content="Studio Cambré, école de danse à Vichy dès 4 ans : éveil, classique, jazz, contemporain, hip-hop et barre au sol pour adultes. Cours d'essai gratuit, gala de fin d'année au théâtre.">
+  <meta name="theme-color" content="#C8286A">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-papier font-sans text-[17px] leading-relaxed text-encre antialiased pb-24 md:pb-0">
+
+  <!-- ===== En-tête : logo à gauche, menu en pilule flottante (ordinateur) ===== -->
+  <header class="sticky top-0 z-40 bg-papier/95 backdrop-blur md:bg-transparent md:backdrop-blur-none">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:h-24 md:px-8">
+      <a href="#accueil" class="inline-flex min-h-11 items-center gap-2.5" aria-label="Studio Cambré, retour en haut de page">
+        <svg data-kv-logo="Logo" class="h-11 w-11 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" class="fill-encre"/>
+          <circle cx="21" cy="11" r="4.5" class="fill-citron"/>
+          <path d="M21 17 19 31l-3 12M19 31l17-6M20 20 8 13M21 20l12-5" fill="none" class="stroke-papier" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 27c4 5 13 5 17 0" fill="none" class="stroke-rose" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="font-display text-[1.6rem] uppercase leading-none tracking-wide">Cambré</span>
+      </a>
+      <nav class="hidden items-center gap-1 rounded-full border-2 border-encre bg-papier p-1.5 shadow-[4px_4px_0_0] shadow-encre lg:flex" aria-label="Navigation principale">
+        <a href="#cours" class="inline-flex min-h-11 items-center rounded-full px-5 font-bold uppercase tracking-wide text-[15px] transition hover:bg-poudre">Les cours</a>
+        <a href="#planning" class="inline-flex min-h-11 items-center rounded-full px-5 font-bold uppercase tracking-wide text-[15px] transition hover:bg-poudre">Planning</a>
+        <a href="#gala" class="inline-flex min-h-11 items-center rounded-full px-5 font-bold uppercase tracking-wide text-[15px] transition hover:bg-poudre">Le gala</a>
+        <a href="#tarifs" class="inline-flex min-h-11 items-center rounded-full px-5 font-bold uppercase tracking-wide text-[15px] transition hover:bg-poudre">Tarifs</a>
+        <a href="#essai" class="inline-flex min-h-11 items-center rounded-full bg-rose px-5 font-bold uppercase tracking-wide text-[15px] text-papier transition hover:bg-encre">Cours d'essai</a>
+      </nav>
+      <a href="tel:+33600000000" class="hidden min-h-11 items-center font-bold lg:inline-flex">06 00 00 00 00</a>
+      <button id="burger" type="button" class="inline-flex h-12 w-12 items-center justify-center bg-encre text-papier lg:hidden" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 bottom-0 flex-col overflow-y-auto bg-rose px-5 pb-28 pt-6 text-papier lg:hidden" aria-label="Navigation mobile">
+      <a href="#cours" style="--d:0ms" class="flex min-h-12 items-center border-b-2 border-papier/25 py-1 font-display text-5xl uppercase">Les cours</a>
+      <a href="#planning" style="--d:60ms" class="flex min-h-12 items-center border-b-2 border-papier/25 py-1 font-display text-5xl uppercase">Planning</a>
+      <a href="#gala" style="--d:120ms" class="flex min-h-12 items-center border-b-2 border-papier/25 py-1 font-display text-5xl uppercase">Le gala</a>
+      <a href="#tarifs" style="--d:180ms" class="flex min-h-12 items-center border-b-2 border-papier/25 py-1 font-display text-5xl uppercase">Tarifs</a>
+      <a href="#essai" style="--d:240ms" class="flex min-h-12 items-center py-1 font-display text-5xl uppercase text-citron">Cours d'essai</a>
+      <a href="tel:+33600000000" style="--d:300ms" class="mt-8 inline-flex min-h-12 items-center text-lg font-bold">06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <main id="accueil">
+
+    <!-- ===== Héros : titre géant d'affiche et danseuse au ruban ===== -->
+    <section class="scene relative overflow-x-clip pb-8 md:pb-16">
+      <div class="mx-auto grid max-w-7xl items-end gap-4 px-4 md:px-8 lg:grid-cols-[1.25fr_1fr] lg:gap-6">
+        <div class="relative z-10 pt-3 md:pt-6">
+          <p class="pose inline-flex items-center gap-2 bg-encre px-3 py-1 text-[15px] font-bold uppercase tracking-[.16em] text-papier" style="--d:0ms">
+            <span>École de danse · Vichy</span>
+          </p>
+          <h1 class="mt-3 font-display uppercase leading-[.86] tracking-tight text-[clamp(3.6rem,18.5vw,10.5rem)]">
+            <span class="ligne" style="--x:-70px;--d:100ms">Entrez</span>
+            <span class="ligne text-rose" style="--x:70px;--d:220ms">dans la</span>
+            <span class="ligne" style="--x:-70px;--d:340ms"><span class="contour">dan</span>se.</span>
+          </h1>
+          <p class="pose mt-4 max-w-xl text-lg md:text-xl" style="--d:500ms">Classique, jazz, contemporain et hip-hop, de 4 à 77 ans. Des cours en petits groupes et un gala chaque juin sur la scène du théâtre.</p>
+          <div class="pose mt-5 flex flex-col gap-3 sm:flex-row" style="--d:620ms">
+            <a href="#essai" class="btn bg-rose text-papier shadow-[5px_5px_0_0] shadow-encre hover:-translate-y-0.5 hover:shadow-[7px_7px_0_0]">Réserver un cours d'essai</a>
+            <a href="#planning" class="btn hidden border-2 border-encre hover:bg-encre hover:text-papier sm:inline-flex">Voir le planning</a>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+          <svg data-kv-image="Photo d'une danseuse ou d'un cours au studio" class="block h-auto max-h-[36vh] w-full md:max-h-[560px]" viewBox="0 0 400 400" role="img" aria-label="Une danseuse en arabesque sur pointe, un long ruban rose tournoie autour d'elle dans un rond de lumière">
+            <rect width="400" height="400" class="fill-papier"/>
+            <circle class="projecteur fill-citron" cx="215" cy="200" r="158"/>
+            <g class="trame-svg" fill="#18131B" opacity=".14">
+              <circle cx="110" cy="320" r="3"/><circle cx="125" cy="332" r="3"/><circle cx="140" cy="344" r="3"/><circle cx="300" cy="96" r="3"/><circle cx="315" cy="84" r="3"/><circle cx="330" cy="72" r="3"/>
+            </g>
+            <ellipse cx="205" cy="362" rx="70" ry="9" fill="#18131B" opacity=".18"/>
+            <g class="danseuse">
+              <!-- jambe d'appui sur pointe et jambe levée -->
+              <path d="M204 236 L198 300 L203 356" fill="none" stroke="#18131B" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M210 236 L280 214 L344 196" fill="none" stroke="#18131B" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- buste -->
+              <path d="M192 156 C188 186 196 214 206 238" fill="none" stroke="#18131B" stroke-width="24" stroke-linecap="round"/>
+              <!-- tutu -->
+              <path d="M160 238 Q206 214 256 226 L246 244 Q204 236 168 254 Z" class="fill-rose"/>
+              <!-- bras -->
+              <path d="M190 160 L146 136 L106 112" fill="none" stroke="#18131B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M196 160 L240 148 L282 156" fill="none" stroke="#18131B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- tête et chignon -->
+              <circle cx="186" cy="128" r="17" fill="#18131B"/>
+              <circle cx="197" cy="114" r="8" fill="#18131B"/>
+            </g>
+            <!-- ruban qui se dessine puis ondule -->
+            <g class="ondule">
+              <path class="ruban" pathLength="1" d="M106 112 C 60 70, 28 120, 58 160 S 128 200, 96 250 S 30 300, 70 336 S 160 350, 150 300" fill="none" stroke="#C8286A" stroke-width="7" stroke-linecap="round"/>
+            </g>
+            <!-- étoiles -->
+            <path d="M330 286l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#18131B"/>
+            <path d="M74 60l3.5 8 8 3.5-8 3.5-3.5 8-3.5-8-8-3.5 8-3.5z" fill="#C8286A"/>
+          </svg>
+          <!-- Pastille qui tourne -->
+          <div class="pointer-events-none absolute -right-1 top-0 h-24 w-24 md:-right-4 md:-top-2 md:h-36 md:w-36" aria-hidden="true">
+            <svg class="tourne h-full w-full" viewBox="0 0 120 120">
+              <defs><path id="cercle" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+              <circle cx="60" cy="60" r="58" class="fill-encre"/>
+              <text font-family="Space Grotesk, sans-serif" font-weight="700" font-size="11" class="fill-papier"><textPath href="#cercle" textLength="272" lengthAdjust="spacing">INSCRIPTIONS OUVERTES ✦ 2026-27 ✦</textPath></text>
+              <path d="M60 42l5 12 13 1-10 8 3 13-11-7-11 7 3-13-10-8 13-1z" class="fill-citron"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Bandeau oblique des disciplines ===== -->
+    <div class="relative z-10 overflow-x-clip py-3" aria-hidden="true">
+    <div class="-mx-6 -rotate-2 border-y-4 border-encre bg-citron py-3">
+      <div class="defile flex w-max gap-8 whitespace-nowrap font-display text-3xl uppercase md:text-4xl">
+        <span>Éveil ✦ Classique ✦ Jazz ✦ Contemporain ✦ Hip-hop ✦ Barre au sol ✦ Éveil ✦ Classique ✦ Jazz ✦ Contemporain ✦ Hip-hop ✦ Barre au sol ✦</span>
+        <span>Éveil ✦ Classique ✦ Jazz ✦ Contemporain ✦ Hip-hop ✦ Barre au sol ✦ Éveil ✦ Classique ✦ Jazz ✦ Contemporain ✦ Hip-hop ✦ Barre au sol ✦</span>
+      </div>
+    </div>
+    </div>
+
+    <!-- ===== Les cours : affiches numérotées en grille asymétrique (carrousel sur mobile) ===== -->
+    <section id="cours" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-8">
+        <div class="rv flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+          <h2 class="font-display text-[clamp(2.8rem,12vw,6.5rem)] uppercase leading-[.9]">Six cours,<br><span class="text-rose">une scène.</span></h2>
+          <p class="max-w-sm md:text-right">Chaque cours a son professeur diplômé d'État et son niveau. On vous oriente au cours d'essai.</p>
+        </div>
+      </div>
+      <ul class="rv no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scroll-padding:1rem] md:mx-auto md:grid md:max-w-7xl md:grid-cols-6 md:gap-6 md:overflow-visible md:px-8">
+        <li class="affiche w-[82%] shrink-0 snap-start border-4 border-encre bg-rose p-5 text-papier md:col-span-3 md:row-span-2 md:w-auto md:p-8" style="--r:-1.5deg">
+          <p class="num font-display text-6xl leading-none text-citron md:text-8xl">01</p>
+          <h3 class="mt-3 font-display text-4xl uppercase md:text-6xl">Classique</h3>
+          <p class="mt-2 text-papier/90">La base de tout : placement, barre, pointes à partir de 11 ans. Rigueur et beaucoup de musique.</p>
+          <p class="mt-4 inline-block bg-encre px-3 py-1 text-[15px] font-bold uppercase tracking-wider">Dès 7 ans</p>
+        </li>
+        <li class="affiche w-[82%] shrink-0 snap-start border-4 border-encre bg-papier p-5 md:col-span-3 md:w-auto" style="--r:1deg;--d:80ms">
+          <div class="flex items-baseline gap-4"><p class="num font-display text-5xl leading-none text-rose">02</p><h3 class="font-display text-4xl uppercase">Jazz</h3></div>
+          <p class="mt-2">Énergie, isolations et chorégraphies sur des musiques actuelles.</p>
+          <p class="mt-3 text-[15px] font-bold uppercase tracking-wider">Dès 8 ans</p>
+        </li>
+        <li class="affiche w-[82%] shrink-0 snap-start border-4 border-encre bg-encre p-5 text-papier md:col-span-3 md:w-auto" style="--r:-1deg;--d:160ms">
+          <div class="flex items-baseline gap-4"><p class="num font-display text-5xl leading-none text-citron">03</p><h3 class="font-display text-4xl uppercase">Contemporain</h3></div>
+          <p class="mt-2 text-papier/90">Le sol, le souffle, l'improvisation. On cherche son propre mouvement.</p>
+          <p class="mt-3 text-[15px] font-bold uppercase tracking-wider">Dès 10 ans</p>
+        </li>
+        <li class="affiche w-[82%] shrink-0 snap-start border-4 border-encre bg-citron p-5 md:col-span-2 md:w-auto" style="--r:1.5deg">
+          <p class="num font-display text-5xl leading-none">04</p>
+          <h3 class="mt-1 font-display text-4xl uppercase">Hip-hop</h3>
+          <p class="mt-2">Groove, top rock et battles bienveillantes entre élèves.</p>
+          <p class="mt-3 text-[15px] font-bold uppercase tracking-wider">Dès 9 ans</p>
+        </li>
+        <li class="affiche w-[82%] shrink-0 snap-start border-4 border-encre bg-poudre p-5 md:col-span-2 md:w-auto" style="--r:-1deg;--d:80ms">
+          <p class="num font-display text-5xl leading-none text-rose">05</p>
+          <h3 class="mt-1 font-display text-4xl uppercase">Éveil</h3>
+          <p class="mt-2">Rythme, espace et imaginaire pour les petits, sans technique imposée.</p>
+          <p class="mt-3 text-[15px] font-bold uppercase tracking-wider">4 à 6 ans</p>
+        </li>
+        <li class="affiche w-[82%] shrink-0 snap-start border-4 border-encre bg-papier p-5 md:col-span-2 md:w-auto" style="--r:1deg;--d:160ms">
+          <p class="num font-display text-5xl leading-none text-rose">06</p>
+          <h3 class="mt-1 font-display text-4xl uppercase">Barre au sol</h3>
+          <p class="mt-2">Gainage et souplesse en douceur, pour les adultes, débutants bienvenus.</p>
+          <p class="mt-3 text-[15px] font-bold uppercase tracking-wider">Adultes</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Planning par âge (accordéons) ===== -->
+    <section id="planning" class="border-y-4 border-encre bg-poudre py-14 md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 md:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+        <div class="rv">
+          <p class="font-display text-[clamp(4.5rem,22vw,11rem)] uppercase leading-[.8] text-rose">22</p>
+          <h2 class="mt-2 font-display text-4xl uppercase leading-none sm:text-6xl">cours par semaine</h2>
+          <p class="mt-4 max-w-md">Du lundi au samedi, dans nos deux salles parquetées. Les horaires suivent le calendrier scolaire.</p>
+        </div>
+        <div class="rv border-t-4 border-encre" style="--d:120ms">
+          <details class="group border-b-4 border-encre" open>
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-3xl uppercase md:text-4xl">Petits · 4–6 ans <span class="plus font-sans text-3xl font-bold leading-none" aria-hidden="true">+</span></summary>
+            <ul class="grid gap-1 pb-5 sm:grid-cols-2">
+              <li><strong>Mercredi 10 h 00</strong> · Éveil (45 min)</li>
+              <li><strong>Samedi 9 h 30</strong> · Éveil (45 min)</li>
+            </ul>
+          </details>
+          <details class="group border-b-4 border-encre">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-3xl uppercase md:text-4xl">Enfants · 7–11 ans <span class="plus font-sans text-3xl font-bold leading-none" aria-hidden="true">+</span></summary>
+            <ul class="grid gap-1 pb-5 sm:grid-cols-2">
+              <li><strong>Mercredi 14 h 00</strong> · Classique initiation</li>
+              <li><strong>Mercredi 15 h 15</strong> · Jazz enfants</li>
+              <li><strong>Vendredi 17 h 15</strong> · Hip-hop débutants</li>
+              <li><strong>Samedi 10 h 30</strong> · Classique 1<sup>er</sup> cycle</li>
+            </ul>
+          </details>
+          <details class="group border-b-4 border-encre">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-3xl uppercase md:text-4xl">Ados · 12–17 ans <span class="plus font-sans text-3xl font-bold leading-none" aria-hidden="true">+</span></summary>
+            <ul class="grid gap-1 pb-5 sm:grid-cols-2">
+              <li><strong>Lundi 18 h 00</strong> · Contemporain</li>
+              <li><strong>Mardi 18 h 00</strong> · Classique &amp; pointes</li>
+              <li><strong>Jeudi 18 h 00</strong> · Jazz avancé</li>
+              <li><strong>Vendredi 18 h 30</strong> · Hip-hop crew</li>
+            </ul>
+          </details>
+          <details class="group border-b-4 border-encre">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-3xl uppercase md:text-4xl">Adultes <span class="plus font-sans text-3xl font-bold leading-none" aria-hidden="true">+</span></summary>
+            <ul class="grid gap-1 pb-5 sm:grid-cols-2">
+              <li><strong>Lundi 12 h 30</strong> · Barre au sol</li>
+              <li><strong>Mardi 19 h 30</strong> · Classique adultes</li>
+              <li><strong>Jeudi 19 h 30</strong> · Contemporain</li>
+              <li><strong>Samedi 11 h 30</strong> · Barre au sol</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Le gala : aplat sombre, chiffres-clés et grande citation ===== -->
+    <section id="gala" class="sur-sombre relative overflow-x-clip bg-encre py-14 text-papier md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-8">
+        <div class="rv grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <h2 class="font-display text-[clamp(3rem,14vw,8rem)] uppercase leading-[.86]">Le gala,<br><span class="text-citron">juin 2027</span></h2>
+          <p class="max-w-sm text-papier/85">Deux soirs au théâtre municipal, costumes cousus à l'atelier, tous les élèves sur scène, même les petits.</p>
+        </div>
+        <dl class="mt-10 grid grid-cols-2 gap-px border-4 border-papier bg-papier md:grid-cols-4">
+          <div class="rv bg-encre p-4 md:p-6"><dt class="text-[15px] uppercase tracking-wider text-papier/75">Élèves</dt><dd class="font-display text-5xl text-citron md:text-7xl"><span data-compte="186">186</span></dd></div>
+          <div class="rv bg-encre p-4 md:p-6" style="--d:80ms"><dt class="text-[15px] uppercase tracking-wider text-papier/75">Professeurs</dt><dd class="font-display text-5xl md:text-7xl"><span data-compte="6">6</span></dd></div>
+          <div class="rv bg-encre p-4 md:p-6" style="--d:160ms"><dt class="text-[15px] uppercase tracking-wider text-papier/75">Costumes</dt><dd class="font-display text-5xl md:text-7xl"><span data-compte="240">240</span></dd></div>
+          <div class="rv bg-encre p-4 md:p-6" style="--d:240ms"><dt class="text-[15px] uppercase tracking-wider text-papier/75">Saisons</dt><dd class="font-display text-5xl text-rose md:text-7xl"><span data-compte="14">14</span></dd></div>
+        </dl>
+        <!-- Avis en carrousel sur mobile -->
+        <ul class="rv no-scrollbar -mx-4 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 [scroll-padding:1rem] md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0">
+          <li class="w-[85%] shrink-0 snap-start border-l-4 border-rose pl-4 md:w-auto">
+            <blockquote class="text-lg">« Ma fille est entrée timide à l'éveil, elle a dansé un solo au dernier gala. »</blockquote>
+            <p class="mt-2 text-[15px] font-bold uppercase tracking-wider text-citron">Sandrine, maman d'Inès</p>
+          </li>
+          <li class="w-[85%] shrink-0 snap-start border-l-4 border-rose pl-4 md:w-auto" style="--d:80ms">
+            <blockquote class="text-lg">« Reprendre la danse à 52 ans, je n'y croyais pas. La barre au sol du lundi midi, c'est sacré. »</blockquote>
+            <p class="mt-2 text-[15px] font-bold uppercase tracking-wider text-citron">Martine, adulte</p>
+          </li>
+          <li class="w-[85%] shrink-0 snap-start border-l-4 border-rose pl-4 md:w-auto" style="--d:160ms">
+            <blockquote class="text-lg">« Le crew hip-hop, c'est ma deuxième famille. Et les profs écoutent vraiment. »</blockquote>
+            <p class="mt-2 text-[15px] font-bold uppercase tracking-wider text-citron">Yanis, 15 ans</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Tarifs : trois formules, grands prix d'affiche ===== -->
+    <section id="tarifs" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-8">
+        <div class="rv flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+          <h2 class="font-display text-[clamp(2.8rem,12vw,6.5rem)] uppercase leading-[.9]">Tarifs<span class="text-rose">.</span></h2>
+          <p class="max-w-md md:text-right">À l'année, payables en trois fois. Pass'Sport et chèques vacances acceptés. Adhésion : 25 €.</p>
+        </div>
+      </div>
+      <ul class="rv no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scroll-padding:1rem] md:mx-auto md:grid md:max-w-7xl md:grid-cols-3 md:gap-6 md:overflow-visible md:px-8">
+        <li class="affiche flex w-[82%] shrink-0 snap-start flex-col border-4 border-encre bg-papier p-5 md:w-auto md:p-7" style="--r:-1deg">
+          <h3 class="font-bold uppercase tracking-wider">1 cours / semaine</h3>
+          <p class="mt-1 font-display text-7xl leading-none">220 €</p>
+          <p class="mt-2">Pour découvrir une discipline à son rythme.</p>
+        </li>
+        <li class="affiche flex w-[82%] shrink-0 snap-start flex-col border-4 border-encre bg-rose p-5 text-papier md:w-auto md:p-7" style="--r:1deg;--d:80ms">
+          <h3 class="font-bold uppercase tracking-wider"><span class="mr-2 bg-citron px-2 text-encre">Le + choisi</span>2 cours</h3>
+          <p class="mt-1 font-display text-7xl leading-none">360 €</p>
+          <p class="mt-2 text-papier/90">Classique + jazz, ou deux cours de sa discipline.</p>
+        </li>
+        <li class="affiche flex w-[82%] shrink-0 snap-start flex-col border-4 border-encre bg-citron p-5 md:w-auto md:p-7" style="--r:-1deg;--d:160ms">
+          <h3 class="font-bold uppercase tracking-wider">Illimité</h3>
+          <p class="mt-1 font-display text-7xl leading-none">480 €</p>
+          <p class="mt-2">Tous les cours de son âge, idéal pour les ados passionnés.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Questions fréquentes ===== -->
+    <section id="questions" class="pb-14 md:pb-24">
+      <div class="mx-auto grid max-w-7xl gap-6 px-4 md:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+        <h2 class="rv font-display text-4xl uppercase leading-none sm:text-6xl">Avant le premier cours</h2>
+        <div class="rv border-t-4 border-encre" style="--d:100ms">
+          <details class="border-b-2 border-encre">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-bold">Quelle tenue prévoir ? <span class="plus text-2xl leading-none" aria-hidden="true">+</span></summary>
+            <p class="pb-4">Une tenue souple et des chaussettes suffisent pour l'essai. La tenue de cours (justaucorps, chaussons) se commande ensuite au studio.</p>
+          </details>
+          <details class="border-b-2 border-encre">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-bold">Peut-on commencer en cours d'année ? <span class="plus text-2xl leading-none" aria-hidden="true">+</span></summary>
+            <p class="pb-4">Oui, tant qu'il reste de la place. Le tarif est alors calculé au prorata des trimestres restants.</p>
+          </details>
+          <details class="border-b-2 border-encre">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-bold">Les parents peuvent-ils assister ? <span class="plus text-2xl leading-none" aria-hidden="true">+</span></summary>
+            <p class="pb-4">Les portes s'ouvrent aux familles la dernière semaine de chaque trimestre. Le reste du temps, un salon d'attente vous accueille.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Cours d'essai : formulaire, adresse et carte ===== -->
+    <section id="essai" class="border-t-4 border-encre bg-rose py-14 text-papier md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 md:px-8 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <div class="rv">
+          <h2 class="font-display text-[clamp(2.8rem,12vw,6rem)] uppercase leading-[.9]">Le premier cours<br><span class="text-citron">est offert.</span></h2>
+          <p class="mt-3">Dites-nous qui veut danser, on vous propose un créneau dans la semaine.</p>
+          <!-- Formulaire de demande de cours d'essai.
+               Pour recevoir les demandes par e-mail, créez un formulaire gratuit sur Formspree (formspree.io)
+               puis remplacez action="#" par l'adresse fournie, par ex. action="https://formspree.io/f/xxxxxx".
+               Avec Netlify, ajoutez simplement l'attribut data-netlify="true" sur la balise <form>. -->
+          <form action="#" method="post" class="mt-6 grid gap-4 border-4 border-encre bg-papier p-5 text-encre shadow-[8px_8px_0_0] shadow-encre sm:grid-cols-2 md:p-8">
+            <label class="grid gap-1.5 font-bold">Votre nom
+              <input name="nom" type="text" autocomplete="name" required class="field" placeholder="Prénom et nom">
+            </label>
+            <label class="grid gap-1.5 font-bold">Téléphone
+              <input name="telephone" type="tel" autocomplete="tel" class="field" placeholder="06 00 00 00 00">
+            </label>
+            <label class="grid gap-1.5 font-bold">Âge du danseur
+              <input name="age" type="text" class="field" placeholder="ex. 8 ans, adulte">
+            </label>
+            <label class="grid gap-1.5 font-bold">Cours souhaité
+              <select name="cours" class="field">
+                <option>Éveil</option><option selected>Classique</option><option>Jazz</option><option>Contemporain</option><option>Hip-hop</option><option>Barre au sol</option><option>Je ne sais pas encore</option>
+              </select>
+            </label>
+            <label class="grid gap-1.5 font-bold sm:col-span-2">E-mail
+              <input name="email" type="email" autocomplete="email" required class="field" placeholder="contact@exemple.fr">
+            </label>
+            <button type="submit" class="btn bg-encre text-papier hover:bg-rose sm:col-span-2 sm:justify-self-start">Envoyer ma demande</button>
+          </form>
+        </div>
+        <div class="rv lg:pt-4" style="--d:120ms">
+          <h3 class="font-display text-3xl uppercase">Le studio</h3>
+          <p class="mt-2">8 rue de l'Industrie, 03200 Vichy<br>Parking gratuit dans la cour.</p>
+          <p class="mt-4"><strong>Accueil :</strong> lundi au vendredi 16 h–20 h, mercredi et samedi 9 h–18 h</p>
+          <div class="mt-4 flex flex-col gap-1">
+            <a href="tel:+33600000000" class="lien inline-flex min-h-11 items-center self-start text-xl font-bold">06 00 00 00 00</a>
+            <a href="mailto:contact@exemple.fr" class="lien inline-flex min-h-11 items-center self-start text-xl font-bold">contact@exemple.fr</a>
+          </div>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="8 rue de l'Industrie, 03200 Vichy" class="mt-6 md:h-64 overflow-hidden border-4 border-encre bg-papier text-encre"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-encre py-8 text-papier">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 md:flex-row md:items-center md:justify-between md:px-8">
+      <p class="font-display text-3xl uppercase">Studio Cambré</p>
+      <p class="text-[15px] text-papier/80">École de danse associative · Professeurs diplômés d'État</p>
+      <p class="flex flex-wrap gap-x-5 text-[15px]">
+        <a href="#essai" class="lien inline-flex min-h-11 items-center">Cours d'essai</a>
+        <a href="#" class="lien inline-flex min-h-11 items-center">Mentions légales</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-3 border-t-4 border-encre bg-papier px-3 pt-3 md:hidden" style="padding-bottom: max(.75rem, env(safe-area-inset-bottom))">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center border-2 border-encre text-lg font-bold uppercase">Appeler</a>
+    <a href="#essai" class="inline-flex min-h-12 items-center justify-center border-2 border-encre bg-rose text-lg font-bold uppercase text-papier">Cours d'essai</a>
+  </div>
+
+  <script>
+  (function () {
+    var $ = function (s) { return document.querySelector(s); };
+    var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile
+    var b = $('#burger'), m = $('#menu');
+    function menu(ouvert) {
+      b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+      m.classList.toggle('hidden', !ouvert); m.classList.toggle('flex', ouvert);
+      document.body.style.overflow = ouvert ? 'hidden' : '';
+    }
+    b.addEventListener('click', function () { menu(b.getAttribute('aria-expanded') !== 'true'); });
+    $$('#menu a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && b.getAttribute('aria-expanded') === 'true') { menu(false); b.focus(); } });
+
+    if (!('IntersectionObserver' in window)) return;
+
+    // Héros : lignes du titre, danseuse qui se pose, ruban qui se dessine
+    var scene = $('.scene');
+    if (reduit) scene.classList.add('entre');
+    else requestAnimationFrame(function () { setTimeout(function () { scene.classList.add('entre'); }, 60); });
+
+    // Apparitions au défilement
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv').forEach(function (el) { if (reduit) el.classList.add('vu'); else io.observe(el); });
+
+    // Chiffres qui comptent
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io2.unobserve(e.target);
+        var el = e.target, fin = +el.getAttribute('data-compte'), t0 = null;
+        if (reduit) return;
+        function pas(t) { t0 = t0 || t; var k = Math.min(1, (t - t0) / 800); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); }
+        requestAnimationFrame(pas);
+      });
+    }, { threshold: 0.6 });
+    $$('[data-compte]').forEach(function (el) { io2.observe(el); });
+  })();
+  </script>
+</body>
+</html>
