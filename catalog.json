@@ -1120,6 +1120,59 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "b598f8520333a7025932a1b4bd38f980"
+    },
+    {
+      "slug": "empreinte",
+      "title": "Empreinte",
+      "tagline": "Site vitrine pour podologue",
+      "description": "Une page en écran partagé pour une pédicure-podologue. Sur ordinateur, la moitié droite reste fixe : un podoscope sombre où les deux empreintes de pied se dessinent trait par trait, puis la carte des appuis s'allume en couleurs chaudes, sous une lumière qui balaie doucement la plaque. À gauche, le contenu défile : chaque consultation (pédicurie, semelles orthopédiques, podologie du sport, pied diabétique, enfants) éclaire sa zone sur l'empreinte, du talon aux orteils, avec une légende qui change. Suivent le premier bilan en quatre temps sur une frise qui se trace, les tarifs et le remboursement, les avis sur fond encre, les questions en accordéons et la demande de rappel avec horaires, adresse et carte. Typographie Sora très fine, safran et corail sur ivoire, navigation latérale numérotée.",
+      "univers": [
+        "sante-bien-etre"
+      ],
+      "style": "Minimal",
+      "couleur": "jaune",
+      "direction": "split",
+      "animations": [
+        "empreintes qui se dessinent sur le podoscope puis carte des appuis qui s'allume",
+        "zone du soin consulté qui s'éclaire sur l'empreinte",
+        "lumière du podoscope qui balaie la plaque",
+        "titre qui apparaît mot par mot",
+        "frise du bilan qui se trace et chiffres qui comptent",
+        "cartes qui se soulèvent au survol et apparition au défilement"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-18",
+      "tags": [
+        "podologue",
+        "pédicure-podologue",
+        "semelles orthopédiques",
+        "orthèses plantaires",
+        "podologie du sport",
+        "pied diabétique",
+        "soins des pieds",
+        "ongle incarné",
+        "bilan podologique"
+      ],
+      "sections": [
+        "Accueil en écran partagé avec le podoscope fixe",
+        "Consultations qui éclairent leur zone sur l'empreinte",
+        "Premier bilan en quatre temps",
+        "Tarifs et remboursement",
+        "Avis des patients",
+        "Questions avant de venir",
+        "Rendez-vous : demande de rappel, horaires, adresse et carte"
+      ],
+      "palette": [
+        "#E2A93B",
+        "#E0674B",
+        "#18202E",
+        "#ECE5D6",
+        "#F7F4EC"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "f8615924bd026ebf021d567396c6cf96"
     }
   ]
 }

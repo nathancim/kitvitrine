@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Sora'; src: url('fonts/sora-latin-300-normal.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+  @font-face { font-family: 'Sora'; src: url('fonts/sora-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  @font-face { font-family: 'Rethink Sans'; src: url('fonts/rethink-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Rethink Sans'; src: url('fonts/rethink-sans-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Rethink Sans'; src: url('fonts/rethink-sans-latin-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  @media (min-width: 1024px) { html { scroll-padding-top: 1.5rem; } }
+  :focus-visible { outline: 3px solid rgb(var(--kv-safran)); outline-offset: 3px; }
+  summary { list-style: none; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+  ::selection { background: rgb(var(--kv-safran)); color: rgb(var(--kv-encre)); }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .tnum { font-variant-numeric: tabular-nums; }
+}
+
+@layer components {
+  .btn { @apply inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full px-7 text-[17px] font-semibold transition duration-300 sm:w-auto; }
+  .field { @apply w-full rounded-2xl border border-encre/20 bg-ivoire px-4 py-3 text-base font-normal text-encre placeholder-encre/40 transition focus:border-encre focus:outline-none; }
+  .eyebrow { @apply text-[15px] font-medium uppercase tracking-[.14em]; }
+}
+
+/* ===== Podoscope : plaque de verre, empreintes, carte des appuis ===== */
+.podo .contour { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.podo .chaleur { transition: opacity .8s ease; }
+.podo .cible { opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.6); transition: opacity .45s ease, transform .5s cubic-bezier(.3,1.4,.5,1); }
+.podo[data-actif="orteils"] .cible-orteils,
+.podo[data-actif="voute"] .cible-voute,
+.podo[data-actif="avant-pied"] .cible-avant-pied,
+.podo[data-actif="points"] .cible-points,
+.podo[data-actif="talon"] .cible-talon { opacity: 1; transform: none; }
+.podo:not([data-actif="repos"]) .chaleur { opacity: .45; }
+.cible circle { animation: pouls 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes pouls { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+.balayage { animation: balaie 7s ease-in-out infinite; }
+@keyframes balaie { 0% { transform: translateY(-60px); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateY(470px); opacity: 0; } }
+
+/* 1. Signature : les empreintes se dessinent, puis la carte des appuis s'allume */
+.js .scene .contour { stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s cubic-bezier(.5,0,.25,1); transition-delay: var(--d, 0ms); }
+.js .scene.entre .contour { stroke-dashoffset: 0; }
+.js .scene .chaleur { opacity: 0; transition: opacity .8s ease 1.2s; }
+.js .scene.entre .chaleur { opacity: 1; }
+.js .scene.entre:not([data-actif="repos"]) .chaleur { opacity: .45; transition-delay: 0s; }
+
+/* 2. Titre : les mots se posent un par un (visible sans JS) */
+.mot { display: inline-block; }
+.js .titre .mot { opacity: 0; transform: translateY(.45em); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--i, 0) * 70ms + 100ms); }
+.js .titre.entre .mot { opacity: 1; transform: none; }
+
+/* Légende du podoscope : changement de zone en fondu */
+.legende { transition: opacity .3s ease, transform .3s ease; }
+.legende.change { opacity: 0; transform: translateY(6px); }
+
+/* 3. Frise du premier bilan qui se trace au défilement */
+.frise { transform-origin: 50% 0; }
+.js .etapes .frise { transform: scaleY(0); transition: transform 1.2s cubic-bezier(.5,0,.2,1) .15s; }
+.js .etapes.vu .frise { transform: none; }
+.js .etapes .pastille { transform: scale(.4); opacity: 0; transition: transform .5s cubic-bezier(.3,1.5,.5,1), opacity .3s ease; transition-delay: calc(var(--i, 0) * 260ms + 250ms); }
+.js .etapes.vu .pastille { transform: none; opacity: 1; }
+
+/* 4. Apparition au défilement */
+.js .rv { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+.js .rv.vu { opacity: 1; transform: none; }
+
+/* Navigation latérale : repère du lien actif */
+.repere { transform-origin: 0 50%; transform: scaleX(.35); transition: transform .4s cubic-bezier(.2,.8,.2,1), background-color .3s ease; }
+.index a[aria-current="true"] .repere { transform: scaleX(1); background-color: rgb(var(--kv-safran)); }
+.index a[aria-current="true"] { color: rgb(var(--kv-ivoire)); }
+
+/* Survol et toucher */
+.soin, .avis { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, background-color .3s ease, border-color .3s ease; }
+.soin .mini .point-zone { transition: transform .4s cubic-bezier(.3,1.5,.5,1); transform-box: fill-box; transform-origin: center; }
+@media (hover: hover) {
+  .soin:hover, .avis:hover { transform: translateY(-6px); box-shadow: 0 18px 40px -24px rgb(var(--kv-encre) / .45); }
+  .soin:hover .mini .point-zone { transform: scale(1.5); }
+  .lien { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size .35s ease; }
+  .lien:hover { background-size: 100% 1.5px; }
+  .btn-safran:hover { background-color: rgb(var(--kv-encre)); color: rgb(var(--kv-ivoire)); }
+  .btn-ligne:hover { background-color: rgb(var(--kv-encre)); color: rgb(var(--kv-ivoire)); }
+  .btn-clair:hover { background-color: rgb(var(--kv-safran)); color: rgb(var(--kv-encre)); }
+}
+.soin.actif { border-color: rgb(var(--kv-safran)); background-color: rgb(var(--kv-ivoire)); }
+.btn:active { transform: scale(.97); }
+.fleche { transition: transform .3s ease; }
+.btn:hover .fleche { transform: translateX(4px); }
+
+/* Questions : le plus devient un moins, la réponse glisse */
+details .plus { transition: transform .35s ease; }
+details[open] .plus { transform: rotate(45deg); }
+details[open] > div { animation: ouvre .4s ease; }
+@keyframes ouvre { from { opacity: 0; transform: translateY(-6px); } }
+
+/* Menu mobile : les liens arrivent l'un après l'autre */
+#menu.flex a { animation: glisse .45s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, 0ms); }
+@keyframes glisse { from { opacity: 0; transform: translateY(10px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .titre .mot, .js .rv, .js .etapes .pastille, .js .etapes .frise, .legende.change { opacity: 1 !important; transform: none !important; }
+  .js .scene .contour { stroke-dashoffset: 0 !important; }
+  .js .scene .chaleur { opacity: 1; }
+  .balayage { display: none; }
+}
