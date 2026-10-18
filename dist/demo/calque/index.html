@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Atelier Calque — Tatouage fine line à Annecy, sur rendez-vous</title>
+  <meta name="description" content="Atelier Calque, salon de tatouage fine line à Annecy : botanique, lignes fines et petits symboles dessinés sur mesure. Flash du mois, devis gratuit, retouche offerte.">
+  <meta name="theme-color" content="#5A3BA6">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-stencil=Couleur principale (violet calque);--kv-peau=Couleur d'accent (étiquettes, adhésif);--kv-encre=Texte et traits;--kv-calque=Fond des sections;--kv-papier=Fond de page">
+</head>
+<body class="grain bg-papier font-sans text-[17px] leading-relaxed text-encre antialiased pb-24 md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Calque</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/calque/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- ===== En-tête : menu centré autour du logo (ordinateur), menu plein écran (téléphone) ===== -->
+  <header class="sticky top-0 z-40 border-b border-encre/10 bg-papier">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:h-20 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+      <nav class="hidden items-center gap-7 text-[16px] lg:flex" aria-label="Navigation principale, première partie">
+        <a href="#flash" class="lien inline-flex min-h-11 items-center">Flash du mois</a>
+        <a href="#deroule" class="lien inline-flex min-h-11 items-center">Comment ça se passe</a>
+        <a href="#tarifs" class="lien inline-flex min-h-11 items-center">Tarifs</a>
+      </nav>
+      <a href="#accueil" class="inline-flex min-h-11 items-center gap-2.5" aria-label="Atelier Calque, retour en haut de page">
+        <svg data-kv-logo="Logo" class="h-10 w-10 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" class="fill-encre"/>
+          <path d="M24 38V12M24 30c-6-2-9-6-9-11M24 24c6-2 9-6 9-11M24 18c-3-1-5-3-5-6" class="trait stroke-papier" stroke-width="2"/>
+          <circle cx="33" cy="13" r="2.4" class="fill-peau"/>
+        </svg>
+        <span class="font-serif text-[1.7rem] leading-none">Atelier Calque</span>
+      </a>
+      <div class="flex items-center justify-end gap-7">
+        <nav class="hidden items-center gap-7 text-[16px] lg:flex" aria-label="Navigation principale, seconde partie">
+          <a href="#soins" class="lien inline-flex min-h-11 items-center">Questions</a>
+          <a href="#avis" class="lien inline-flex min-h-11 items-center">Avis</a>
+        </nav>
+        <a href="#projet" class="btn btn-encre hidden !w-auto bg-encre text-papier lg:inline-flex">Proposer un projet</a>
+        <button id="burger" type="button" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-encre/25 lg:hidden" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18M7 16h14" class="trait stroke-current" stroke-width="1.8"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 bottom-0 flex-col overflow-y-auto bg-papier px-6 pb-28 pt-6 lg:hidden" aria-label="Navigation mobile">
+      <a href="#flash" style="--d:0ms" class="flex min-h-12 items-center border-b border-encre/15 py-3 font-serif text-[2rem]">Flash du mois</a>
+      <a href="#deroule" style="--d:50ms" class="flex min-h-12 items-center border-b border-encre/15 py-3 font-serif text-[2rem]">Comment ça se passe</a>
+      <a href="#tarifs" style="--d:100ms" class="flex min-h-12 items-center border-b border-encre/15 py-3 font-serif text-[2rem]">Tarifs</a>
+      <a href="#soins" style="--d:150ms" class="flex min-h-12 items-center border-b border-encre/15 py-3 font-serif text-[2rem]">Questions et soins</a>
+      <a href="#avis" style="--d:200ms" class="flex min-h-12 items-center border-b border-encre/15 py-3 font-serif text-[2rem]">Avis</a>
+      <a href="#projet" style="--d:250ms" class="btn mt-8 bg-stencil text-papier">Proposer un projet</a>
+      <p class="mt-6 font-main text-[1.7rem] leading-tight text-stencil">Sur rendez-vous, du mardi au samedi.</p>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Accueil : titre centré, puis la feuille de calque avec le motif qui se trace ===== -->
+    <section id="accueil" class="scene relative overflow-x-clip pb-14 pt-8 md:pb-24 md:pt-16">
+      <div class="mx-auto max-w-5xl px-4 text-center md:px-8">
+        <p class="pose font-main text-[1.7rem] leading-none text-stencil md:text-[2.1rem]" style="--d:0ms">tatouage fine line, à Annecy</p>
+        <h1 class="mt-3 font-serif text-[clamp(2.7rem,11vw,6.4rem)] leading-[.98] tracking-[-.01em]">
+          <span class="mot" style="--i:0">Des</span> <span class="mot" style="--i:1">traits</span> <span class="mot" style="--i:2">fins,</span>
+          <span class="mot" style="--i:3">faits</span> <span class="mot" style="--i:4">pour</span> <span class="mot" style="--i:5">vieillir</span> <span class="mot" style="--i:6">avec</span> <span class="mot" style="--i:7">vous.</span>
+        </h1>
+        <p class="pose mx-auto mt-5 max-w-xl text-encre/75 md:text-lg" style="--d:700ms">Jeanne dessine chaque pièce pour une seule personne&nbsp;: botanique, lignes, petits symboles. Une cliente à la fois, dans un atelier calme de la vieille ville.</p>
+        <div class="pose mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row" style="--d:850ms">
+          <a href="#projet" class="btn btn-encre bg-encre text-papier">Proposer un projet</a>
+          <a href="#flash" class="btn btn-ligne border border-encre/40">Voir le flash du mois</a>
+        </div>
+      </div>
+
+      <div class="relative mx-auto mt-10 max-w-5xl px-4 md:mt-16 md:px-8">
+        <!-- Notes au crayon autour de la feuille (ordinateur) -->
+        <p class="note absolute left-8 top-16 hidden max-w-[11rem] rotate-[-4deg] font-main text-[1.8rem] leading-[1.05] text-stencil md:block" style="--d:2300ms">aiguille 3RL, trait très fin</p>
+        <svg class="note absolute left-36 top-36 hidden h-16 w-40 text-stencil md:block" style="--d:2400ms" viewBox="0 0 160 64" aria-hidden="true"><path d="M4 6c30 6 70 20 140 48M144 54l-14 0M144 54l-6-12" class="trait stroke-current" stroke-width="1.5"/></svg>
+        <p class="note absolute bottom-24 right-6 hidden max-w-[11rem] rotate-[3deg] text-right font-main text-[1.8rem] leading-[1.05] text-stencil md:block" style="--d:2600ms">9 cm, intérieur de l'avant-bras</p>
+        <svg class="note absolute bottom-40 right-40 hidden h-16 w-36 text-stencil md:block" style="--d:2700ms" viewBox="0 0 144 64" aria-hidden="true"><path d="M140 60C100 50 50 34 6 8M6 8l14 2M6 8l6 12" class="trait stroke-current" stroke-width="1.5"/></svg>
+
+        <div class="feuille relative mx-auto h-[38vh] max-h-[340px] w-full max-w-[300px] rotate-[-1.5deg] md:h-[540px] md:max-h-none md:max-w-[440px]" data-kv-image="Photo d'un tatouage fine line réalisé à l'atelier (cicatrisé de préférence)">
+          <span class="adhesif -top-2 left-6 rotate-[-6deg]" aria-hidden="true"></span>
+          <span class="adhesif -bottom-2 right-6 rotate-[4deg]" aria-hidden="true"></span>
+          <svg class="h-full w-full p-4 md:p-8" viewBox="0 0 320 380" role="img" aria-label="Dessin au trait d'une branche d'olivier sous un croissant de lune, d'abord tracé au calque violet puis repassé à l'encre">
+            <g class="calque-violet text-stencil">
+              <path d="M150 370C130 280 205 170 148 40 M168 205C200 190 230 172 262 160" pathLength="1" class="trait trace stroke-current" stroke-width="1.4" style="--d:200ms"/>
+              <path d="M146.5 336.7Q136.3 307.1 108.7 292.3Q118.9 321.9 146.5 336.7ZM147.6 313.6Q175.2 301.7 187.4 274.2Q159.8 286.1 147.6 313.6ZM150.6 289.7Q145.6 261.3 122.6 244Q127.5 272.4 150.6 289.7ZM154.7 265Q181 256.6 194.2 232.4Q168 240.8 154.7 265ZM159.4 239.6Q155.8 213.5 135.2 197.2Q138.8 223.3 159.4 239.6ZM163.9 213.4Q187.6 205.3 199 183Q175.3 191.1 163.9 213.4ZM167.6 186.4Q162.7 163.1 143 149.9Q147.8 173.2 167.6 186.4ZM169.6 158.7Q189.9 149 197.5 127.8Q177.2 137.5 169.6 158.7ZM169.4 130.1Q161.9 110.3 142.5 101.6Q150 121.5 169.4 130.1ZM166.2 100.9Q182.2 89 184.9 69.2Q168.8 81.1 166.2 100.9ZM159.3 70.8Q149 55.2 130.6 51.8Q140.8 67.5 159.3 70.8ZM148 40Q149.1 27.5 139.2 19.8Q138.1 32.3 148 40ZM196.4 190.9Q209 177 206.3 158.4Q193.7 172.3 196.4 190.9ZM219.7 179Q233.1 192.2 251.8 190.2Q238.3 177 219.7 179ZM243 167.8Q256.4 154.6 254.7 135.9Q241.3 149.1 243 167.8ZM262 160Q273.5 162.1 280.7 153Q269.3 150.9 262 160Z" pathLength="1" class="trait trace stroke-current" stroke-width="1.4" style="--d:400ms"/>
+              <path d="M152.5 277.5Q154.5 285.5 162.5 291.5M156 300a6.5 8.5 0 1 0 13 0a6.5 8.5 0 1 0 -13 0ZM168.3 179.5Q166.3 187.5 158.3 193.5M151.8 202a6.5 8.5 0 1 0 13 0a6.5 8.5 0 1 0 -13 0ZM226.2 175.8Q228.2 183.8 236.2 189.8M229.7 198.3a6.5 8.5 0 1 0 13 0a6.5 8.5 0 1 0 -13 0Z" pathLength="1" class="trait trace stroke-current" stroke-width="1.4" style="--d:600ms"/>
+              <path d="M262 40a34 34 0 1 0 30 52a27 27 0 1 1 -30 -52ZM78 70v14M71 77h14M290 140v10M285 145h10M60 170v8M56 174h8" pathLength="1" class="trait trace stroke-current" stroke-width="1.4" style="--d:500ms"/>
+            </g>
+            <g class="text-encre">
+              <path d="M150 370C130 280 205 170 148 40 M168 205C200 190 230 172 262 160" pathLength="1" class="trait trace stroke-current" stroke-width="1.7" style="--d:1500ms"/>
+              <path d="M146.5 336.7Q136.3 307.1 108.7 292.3Q118.9 321.9 146.5 336.7ZM147.6 313.6Q175.2 301.7 187.4 274.2Q159.8 286.1 147.6 313.6ZM150.6 289.7Q145.6 261.3 122.6 244Q127.5 272.4 150.6 289.7ZM154.7 265Q181 256.6 194.2 232.4Q168 240.8 154.7 265ZM159.4 239.6Q155.8 213.5 135.2 197.2Q138.8 223.3 159.4 239.6ZM163.9 213.4Q187.6 205.3 199 183Q175.3 191.1 163.9 213.4ZM167.6 186.4Q162.7 163.1 143 149.9Q147.8 173.2 167.6 186.4ZM169.6 158.7Q189.9 149 197.5 127.8Q177.2 137.5 169.6 158.7ZM169.4 130.1Q161.9 110.3 142.5 101.6Q150 121.5 169.4 130.1ZM166.2 100.9Q182.2 89 184.9 69.2Q168.8 81.1 166.2 100.9ZM159.3 70.8Q149 55.2 130.6 51.8Q140.8 67.5 159.3 70.8ZM148 40Q149.1 27.5 139.2 19.8Q138.1 32.3 148 40ZM196.4 190.9Q209 177 206.3 158.4Q193.7 172.3 196.4 190.9ZM219.7 179Q233.1 192.2 251.8 190.2Q238.3 177 219.7 179ZM243 167.8Q256.4 154.6 254.7 135.9Q241.3 149.1 243 167.8ZM262 160Q273.5 162.1 280.7 153Q269.3 150.9 262 160Z" pathLength="1" class="trait trace stroke-current" stroke-width="1.7" style="--d:1700ms"/>
+              <path d="M146.5 336.7L117 302M147.6 313.6L178.6 282.9M150.6 289.7L128.7 254M154.7 265L185.5 239.6M159.4 239.6L140.5 206.5M163.9 213.4L191.3 189.7M167.6 186.4L148.4 157.9M169.6 158.7L191.4 134.6M169.4 130.1L148.4 107.9M166.2 100.9L180.8 76.2M159.3 70.8L136.9 56M148 40L141.1 24.3M196.4 190.9L204.1 165.6M219.7 179L244.7 187.7M243 167.8L252.1 142.9M262 160L276.6 154.5" pathLength="1" class="trait trace stroke-current" stroke-width="1" style="--d:2000ms"/>
+              <path d="M152.5 277.5Q154.5 285.5 162.5 291.5M156 300a6.5 8.5 0 1 0 13 0a6.5 8.5 0 1 0 -13 0ZM168.3 179.5Q166.3 187.5 158.3 193.5M151.8 202a6.5 8.5 0 1 0 13 0a6.5 8.5 0 1 0 -13 0ZM226.2 175.8Q228.2 183.8 236.2 189.8M229.7 198.3a6.5 8.5 0 1 0 13 0a6.5 8.5 0 1 0 -13 0Z" pathLength="1" class="trait trace stroke-current" stroke-width="1.7" style="--d:1900ms"/>
+              <g class="lune"><path d="M262 40a34 34 0 1 0 30 52a27 27 0 1 1 -30 -52Z" pathLength="1" class="trait trace stroke-current" stroke-width="1.7" style="--d:1800ms"/></g>
+              <path d="M78 70v14M71 77h14M290 140v10M285 145h10M60 170v8M56 174h8" pathLength="1" class="trait trace stroke-current" stroke-width="1.5" style="--d:2100ms"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Flash du mois : planche de dessins épinglés (carrousel sur téléphone) ===== -->
+    <section id="flash" class="overflow-x-clip bg-calque py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-8">
+        <div class="rv grid gap-3 md:grid-cols-[1fr_1fr] md:items-end md:gap-12">
+          <h2 class="font-serif text-[clamp(2.3rem,8vw,4.4rem)] leading-[1]">Le flash du mois</h2>
+          <p class="max-w-md text-encre/75">Des dessins prêts à tatouer, chacun réalisé une seule fois. Une fois réservé, il quitte la planche.</p>
+        </div>
+      </div>
+      <ul data-groupe class="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-6 pt-2 [scroll-padding-inline:1rem] md:mx-auto md:mt-14 md:grid md:max-w-7xl md:grid-cols-3 md:gap-x-10 md:gap-y-14 md:overflow-visible md:px-8">
+        <li class="flash w-[78%] shrink-0 snap-start md:w-auto md:[--y:0rem] md:[--r:-2deg]">
+          <figure class="feuille relative h-full px-5 pb-5 pt-6">
+            <span class="adhesif -top-2 left-1/2 -translate-x-1/2 rotate-[-3deg]" aria-hidden="true"></span>
+            <svg class="mx-auto h-40 w-40 md:h-48 md:w-48" viewBox="0 0 120 120" role="img" aria-label="Lune fine entourée de trois étoiles">
+              <path d="M70 22a38 38 0 1 0 28 64a30 30 0 1 1 -28 -64Z M30 30v10M25 35h10 M92 30v8M88 34h8 M84 98v8M80 102h8" class="trait stroke-stencil opacity-60" stroke-width="1" transform="translate(1.5 1.5)"/>
+              <path d="M70 22a38 38 0 1 0 28 64a30 30 0 1 1 -28 -64Z M30 30v10M25 35h10 M92 30v8M88 34h8 M84 98v8M80 102h8" pathLength="1" class="trait encre-flash stroke-encre" stroke-width="1.2"/>
+            </svg>
+            <figcaption class="mt-3 flex items-end justify-between gap-3 border-t border-dashed border-encre/25 pt-3">
+              <span><span class="block font-serif text-2xl leading-tight">Croissant de lune</span><span class="block text-[16px] text-encre/70">6 cm, nuque ou cheville</span></span>
+              <span class="shrink-0 rounded-full bg-peau px-3 py-1 font-serif text-xl">90 €</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="flash w-[78%] shrink-0 snap-start md:w-auto md:[--y:2.5rem] md:[--r:1.5deg]">
+          <figure class="feuille relative h-full px-5 pb-5 pt-6">
+            <span class="adhesif -top-2 left-1/2 -translate-x-1/2 rotate-[-3deg]" aria-hidden="true"></span>
+            <svg class="mx-auto h-40 w-40 md:h-48 md:w-48" viewBox="0 0 120 120" role="img" aria-label="Feuille de fougère dessinée au trait">
+              <path d="M60 112C56 80 70 50 58 16M59.3 103.3Q47.6 92.9 31.9 92.1Q43.6 102.6 59.3 103.3ZM59.3 103.3Q74.9 101.5 85.9 90.3Q70.3 92.1 59.3 103.3ZM59.3 94.7Q49.2 84.3 34.8 82.7Q44.9 93.1 59.3 94.7ZM59.3 94.7Q73.8 94.1 84.6 84.4Q70.1 85.1 59.3 94.7ZM59.9 86.1Q51.1 76.2 38 74.2Q46.8 84.1 59.9 86.1ZM59.9 86.1Q73.1 86.2 83.3 77.8Q70.1 77.7 59.9 86.1ZM60.7 77.6Q53 68.4 41.2 66.3Q48.8 75.5 60.7 77.6ZM60.7 77.6Q72.7 78 82.1 70.6Q70.1 70.1 60.7 77.6ZM61.6 69Q54.7 60.7 44.1 58.9Q50.9 67.3 61.6 69ZM61.6 69Q72.3 69.5 80.7 62.7Q70 62.3 61.6 69ZM62.4 60.4Q56.2 53.2 46.8 51.9Q52.9 59.2 62.4 60.4ZM62.4 60.4Q71.9 60.7 79.2 54.5Q69.6 54.3 62.4 60.4ZM62.9 51.8Q57.3 45.7 49 45Q54.6 51.1 62.9 51.8ZM62.9 51.8Q71.2 51.7 77.2 46Q68.9 46.1 62.9 51.8ZM62.9 43Q57.9 38.1 50.8 38.1Q55.8 43.1 62.9 43ZM62.9 43Q70 42.6 74.7 37.3Q67.6 37.8 62.9 43ZM62.2 34.2Q57.8 30.4 52 31Q56.4 34.8 62.2 34.2ZM62.2 34.2Q68 33.4 71.4 28.6Q65.6 29.4 62.2 34.2ZM60.7 25.2Q56.9 22.4 52.5 23.6Q56.2 26.3 60.7 25.2ZM60.7 25.2Q65.2 24.2 67.3 20.1Q62.8 21.1 60.7 25.2Z" class="trait stroke-stencil opacity-60" stroke-width="1" transform="translate(1.5 1.5)"/>
+              <path d="M60 112C56 80 70 50 58 16M59.3 103.3Q47.6 92.9 31.9 92.1Q43.6 102.6 59.3 103.3ZM59.3 103.3Q74.9 101.5 85.9 90.3Q70.3 92.1 59.3 103.3ZM59.3 94.7Q49.2 84.3 34.8 82.7Q44.9 93.1 59.3 94.7ZM59.3 94.7Q73.8 94.1 84.6 84.4Q70.1 85.1 59.3 94.7ZM59.9 86.1Q51.1 76.2 38 74.2Q46.8 84.1 59.9 86.1ZM59.9 86.1Q73.1 86.2 83.3 77.8Q70.1 77.7 59.9 86.1ZM60.7 77.6Q53 68.4 41.2 66.3Q48.8 75.5 60.7 77.6ZM60.7 77.6Q72.7 78 82.1 70.6Q70.1 70.1 60.7 77.6ZM61.6 69Q54.7 60.7 44.1 58.9Q50.9 67.3 61.6 69ZM61.6 69Q72.3 69.5 80.7 62.7Q70 62.3 61.6 69ZM62.4 60.4Q56.2 53.2 46.8 51.9Q52.9 59.2 62.4 60.4ZM62.4 60.4Q71.9 60.7 79.2 54.5Q69.6 54.3 62.4 60.4ZM62.9 51.8Q57.3 45.7 49 45Q54.6 51.1 62.9 51.8ZM62.9 51.8Q71.2 51.7 77.2 46Q68.9 46.1 62.9 51.8ZM62.9 43Q57.9 38.1 50.8 38.1Q55.8 43.1 62.9 43ZM62.9 43Q70 42.6 74.7 37.3Q67.6 37.8 62.9 43ZM62.2 34.2Q57.8 30.4 52 31Q56.4 34.8 62.2 34.2ZM62.2 34.2Q68 33.4 71.4 28.6Q65.6 29.4 62.2 34.2ZM60.7 25.2Q56.9 22.4 52.5 23.6Q56.2 26.3 60.7 25.2ZM60.7 25.2Q65.2 24.2 67.3 20.1Q62.8 21.1 60.7 25.2Z" pathLength="1" class="trait encre-flash stroke-encre" stroke-width="1.2"/>
+            </svg>
+            <figcaption class="mt-3 flex items-end justify-between gap-3 border-t border-dashed border-encre/25 pt-3">
+              <span><span class="block font-serif text-2xl leading-tight">Fougère</span><span class="block text-[16px] text-encre/70">12 cm, avant-bras ou côtes</span></span>
+              <span class="shrink-0 rounded-full bg-peau px-3 py-1 font-serif text-xl">180 €</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="flash w-[78%] shrink-0 snap-start md:w-auto md:[--y:0.75rem] md:[--r:-1deg]">
+          <figure class="feuille relative h-full px-5 pb-5 pt-6">
+            <span class="adhesif -top-2 left-1/2 -translate-x-1/2 rotate-[-3deg]" aria-hidden="true"></span>
+            <p class="tampon rv absolute right-3 top-3 rounded-full border-2 border-dashed border-stencil bg-papier/80 px-3 py-1 font-main text-[1.5rem] leading-none text-stencil">réservé</p>
+            <svg class="mx-auto h-40 w-40 md:h-48 md:w-48" viewBox="0 0 120 120" role="img" aria-label="Vague qui s'enroule au-dessus de deux lignes d'eau">
+              <path d="M14 84C30 84 34 52 58 46C80 41 92 58 82 68C74 76 62 70 66 62C69 56 78 58 78 58 M14 96C40 96 60 90 80 84C94 80 102 84 108 90 M20 106C44 104 70 104 104 102" class="trait stroke-stencil opacity-60" stroke-width="1" transform="translate(1.5 1.5)"/>
+              <path d="M14 84C30 84 34 52 58 46C80 41 92 58 82 68C74 76 62 70 66 62C69 56 78 58 78 58 M14 96C40 96 60 90 80 84C94 80 102 84 108 90 M20 106C44 104 70 104 104 102" pathLength="1" class="trait encre-flash stroke-encre" stroke-width="1.2"/>
+            </svg>
+            <figcaption class="mt-3 flex items-end justify-between gap-3 border-t border-dashed border-encre/25 pt-3">
+              <span><span class="block font-serif text-2xl leading-tight">Petite vague</span><span class="block text-[16px] text-encre/70">7 cm, cheville ou poignet</span></span>
+              <span class="shrink-0 rounded-full bg-peau px-3 py-1 font-serif text-xl line-through decoration-1 opacity-60">110 €</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="flash w-[78%] shrink-0 snap-start md:w-auto md:[--y:-.5rem] md:[--r:2deg]">
+          <figure class="feuille relative h-full px-5 pb-5 pt-6">
+            <span class="adhesif -top-2 left-1/2 -translate-x-1/2 rotate-[-3deg]" aria-hidden="true"></span>
+            <svg class="mx-auto h-40 w-40 md:h-48 md:w-48" viewBox="0 0 120 120" role="img" aria-label="Brin de lavande au trait">
+              <path d="M60 112C58 90 62 60 60 20M60 30Q60.7 24.5 55.7 22.1Q55 27.6 60 30ZM60 30Q65 27.6 64.3 22.1Q59.3 24.5 60 30ZM60 38Q60.7 32.6 55.8 30.3Q55.1 35.7 60 38ZM60 38Q64.9 35.7 64.2 30.3Q59.3 32.6 60 38ZM60 46Q60.7 40.7 55.9 38.5Q55.1 43.8 60 46ZM60 46Q64.9 43.8 64.1 38.5Q59.3 40.7 60 46ZM60 54Q60.8 48.8 56 46.6Q55.2 51.8 60 54ZM60 54Q64.8 51.8 64 46.6Q59.2 48.8 60 54ZM60 62Q60.8 56.9 56.1 54.8Q55.2 59.9 60 62ZM60 62Q64.8 59.9 63.9 54.8Q59.2 56.9 60 62ZM60 70Q60.9 65 56.2 63Q55.3 68 60 70ZM60 70Q64.7 68 63.8 63Q59.1 65 60 70ZM60 78Q60.9 73 56.3 71.2Q55.3 76.1 60 78ZM60 78Q64.7 76.1 63.7 71.2Q59.1 73 60 78ZM60 86Q61 81.1 56.4 79.3Q55.4 84.2 60 86ZM60 86Q64.6 84.2 63.6 79.3Q59 81.1 60 86ZM60 94Q61 89.2 56.5 87.5Q55.4 92.3 60 94ZM60 94Q64.6 92.3 63.5 87.5Q59 89.2 60 94ZM60 96C52 90 46 92 40 86M60 104C68 98 74 100 80 94" class="trait stroke-stencil opacity-60" stroke-width="1" transform="translate(1.5 1.5)"/>
+              <path d="M60 112C58 90 62 60 60 20M60 30Q60.7 24.5 55.7 22.1Q55 27.6 60 30ZM60 30Q65 27.6 64.3 22.1Q59.3 24.5 60 30ZM60 38Q60.7 32.6 55.8 30.3Q55.1 35.7 60 38ZM60 38Q64.9 35.7 64.2 30.3Q59.3 32.6 60 38ZM60 46Q60.7 40.7 55.9 38.5Q55.1 43.8 60 46ZM60 46Q64.9 43.8 64.1 38.5Q59.3 40.7 60 46ZM60 54Q60.8 48.8 56 46.6Q55.2 51.8 60 54ZM60 54Q64.8 51.8 64 46.6Q59.2 48.8 60 54ZM60 62Q60.8 56.9 56.1 54.8Q55.2 59.9 60 62ZM60 62Q64.8 59.9 63.9 54.8Q59.2 56.9 60 62ZM60 70Q60.9 65 56.2 63Q55.3 68 60 70ZM60 70Q64.7 68 63.8 63Q59.1 65 60 70ZM60 78Q60.9 73 56.3 71.2Q55.3 76.1 60 78ZM60 78Q64.7 76.1 63.7 71.2Q59.1 73 60 78ZM60 86Q61 81.1 56.4 79.3Q55.4 84.2 60 86ZM60 86Q64.6 84.2 63.6 79.3Q59 81.1 60 86ZM60 94Q61 89.2 56.5 87.5Q55.4 92.3 60 94ZM60 94Q64.6 92.3 63.5 87.5Q59 89.2 60 94ZM60 96C52 90 46 92 40 86M60 104C68 98 74 100 80 94" pathLength="1" class="trait encre-flash stroke-encre" stroke-width="1.2"/>
+            </svg>
+            <figcaption class="mt-3 flex items-end justify-between gap-3 border-t border-dashed border-encre/25 pt-3">
+              <span><span class="block font-serif text-2xl leading-tight">Brin de lavande</span><span class="block text-[16px] text-encre/70">9 cm, intérieur du bras</span></span>
+              <span class="shrink-0 rounded-full bg-peau px-3 py-1 font-serif text-xl">120 €</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="flash w-[78%] shrink-0 snap-start md:w-auto md:[--y:2rem] md:[--r:-1.5deg]">
+          <figure class="feuille relative h-full px-5 pb-5 pt-6">
+            <span class="adhesif -top-2 left-1/2 -translate-x-1/2 rotate-[-3deg]" aria-hidden="true"></span>
+            <svg class="mx-auto h-40 w-40 md:h-48 md:w-48" viewBox="0 0 120 120" role="img" aria-label="Montagnes au trait qui se reflètent dans un lac">
+              <path d="M10 82L36 42L48 58L66 26L92 70L102 60L112 82Z M58 38L66 26L74 40 M30 52L36 42L42 50 M14 94C26 90 34 98 46 94S66 90 78 94S98 98 108 94 M26 104C36 101 44 107 56 104S74 101 86 104" class="trait stroke-stencil opacity-60" stroke-width="1" transform="translate(1.5 1.5)"/>
+              <path d="M10 82L36 42L48 58L66 26L92 70L102 60L112 82Z M58 38L66 26L74 40 M30 52L36 42L42 50 M14 94C26 90 34 98 46 94S66 90 78 94S98 98 108 94 M26 104C36 101 44 107 56 104S74 101 86 104" pathLength="1" class="trait encre-flash stroke-encre" stroke-width="1.2"/>
+            </svg>
+            <figcaption class="mt-3 flex items-end justify-between gap-3 border-t border-dashed border-encre/25 pt-3">
+              <span><span class="block font-serif text-2xl leading-tight">Les dents du lac</span><span class="block text-[16px] text-encre/70">8 cm, avant-bras</span></span>
+              <span class="shrink-0 rounded-full bg-peau px-3 py-1 font-serif text-xl">150 €</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="flash w-[78%] shrink-0 snap-start md:w-auto md:[--y:.5rem] md:[--r:1deg]">
+          <figure class="feuille relative h-full px-5 pb-5 pt-6">
+            <span class="adhesif -top-2 left-1/2 -translate-x-1/2 rotate-[-3deg]" aria-hidden="true"></span>
+            <svg class="mx-auto h-40 w-40 md:h-48 md:w-48" viewBox="0 0 120 120" role="img" aria-label="Petit soleil entouré de rayons">
+              <path d="M60 60m-20 0a20 20 0 1 0 40 0a20 20 0 1 0 -40 0M88 60L100 60M84.2 74L89.4 77M74 84.2L80 94.6M60 88L60 94M46 84.2L40 94.6M35.8 74L30.6 77M32 60L20 60M35.8 46L30.6 43M46 35.8L40 25.4M60 32L60 26M74 35.8L80 25.4M84.2 46L89.4 43" class="trait stroke-stencil opacity-60" stroke-width="1" transform="translate(1.5 1.5)"/>
+              <path d="M60 60m-20 0a20 20 0 1 0 40 0a20 20 0 1 0 -40 0M88 60L100 60M84.2 74L89.4 77M74 84.2L80 94.6M60 88L60 94M46 84.2L40 94.6M35.8 74L30.6 77M32 60L20 60M35.8 46L30.6 43M46 35.8L40 25.4M60 32L60 26M74 35.8L80 25.4M84.2 46L89.4 43" pathLength="1" class="trait encre-flash stroke-encre" stroke-width="1.2"/>
+            </svg>
+            <figcaption class="mt-3 flex items-end justify-between gap-3 border-t border-dashed border-encre/25 pt-3">
+              <span><span class="block font-serif text-2xl leading-tight">Soleil</span><span class="block text-[16px] text-encre/70">5 cm, épaule ou clavicule</span></span>
+              <span class="shrink-0 rounded-full bg-peau px-3 py-1 font-serif text-xl">90 €</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+      <p class="mx-auto mt-4 max-w-7xl px-4 font-main text-[1.6rem] leading-tight text-stencil md:mt-10 md:px-8">Pour en réserver un, indiquez son nom dans le formulaire en bas de page.</p>
+    </section>
+
+    <!-- ===== Déroulé : cinq étapes reliées par un fil pointillé ===== -->
+    <section id="deroule" class="py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-8">
+        <h2 class="rv max-w-3xl font-serif text-[clamp(2.3rem,8vw,4.4rem)] leading-[1]">Du premier message à la peau cicatrisée</h2>
+        <div class="rv relative mt-10 md:mt-16">
+          <svg class="absolute left-[15px] top-2 h-[calc(100%-1rem)] w-1 md:left-0 md:top-[27px] md:h-1 md:w-full" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true">
+            <g class="fil-masque"><path d="M50 0V100" class="trait fil stroke-stencil md:hidden" stroke-width="1.5"/><path d="M0 50H100" class="trait fil hidden stroke-stencil md:block" stroke-width="1.5"/></g>
+          </svg>
+          <ol class="relative grid gap-7 md:grid-cols-5 md:gap-8">
+            <li class="grid grid-cols-[32px_1fr] gap-4 md:block">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-papier font-serif text-xl italic text-stencil ring-1 ring-stencil md:mb-5 md:h-14 md:w-14 md:text-3xl">1</span>
+              <div><h3 class="text-lg font-bold">Vous écrivez</h3><p class="mt-1 text-encre/75">L'idée, l'emplacement, la taille. Une photo de référence aide, même approximative.</p></div>
+            </li>
+            <li class="grid grid-cols-[32px_1fr] gap-4 md:block">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-papier font-serif text-xl italic text-stencil ring-1 ring-stencil md:mb-5 md:h-14 md:w-14 md:text-3xl">2</span>
+              <div><h3 class="text-lg font-bold">On en parle</h3><p class="mt-1 text-encre/75">Réponse sous 5 jours avec un prix et une date. L'acompte de 50&nbsp;€ bloque le créneau.</p></div>
+            </li>
+            <li class="grid grid-cols-[32px_1fr] gap-4 md:block">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-papier font-serif text-xl italic text-stencil ring-1 ring-stencil md:mb-5 md:h-14 md:w-14 md:text-3xl">3</span>
+              <div><h3 class="text-lg font-bold">Le dessin</h3><p class="mt-1 text-encre/75">Vous le découvrez le jour même. On ajuste ensemble jusqu'à ce qu'il vous ressemble.</p></div>
+            </li>
+            <li class="grid grid-cols-[32px_1fr] gap-4 md:block">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-papier font-serif text-xl italic text-stencil ring-1 ring-stencil md:mb-5 md:h-14 md:w-14 md:text-3xl">4</span>
+              <div><h3 class="text-lg font-bold">Le calque, puis l'encre</h3><p class="mt-1 text-encre/75">Le motif est posé en violet sur la peau. Vous validez dans le miroir avant le premier trait.</p></div>
+            </li>
+            <li class="grid grid-cols-[32px_1fr] gap-4 md:block">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-papier font-serif text-xl italic text-stencil ring-1 ring-stencil md:mb-5 md:h-14 md:w-14 md:text-3xl">5</span>
+              <div><h3 class="text-lg font-bold">Trois semaines après</h3><p class="mt-1 text-encre/75">Envoyez une photo. Si un trait a bougé, la retouche est offerte dans les trois mois.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Tarifs : texte à gauche, étiquette de prix à droite ===== -->
+    <section id="tarifs" class="sur-fonce overflow-x-clip bg-encre py-14 text-papier md:py-24">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-[1fr_1.1fr] md:gap-16 md:px-8">
+        <div class="rv">
+          <h2 class="font-serif text-[clamp(2.3rem,8vw,4.4rem)] leading-[1]">Un prix annoncé, qui ne bouge pas le jour J</h2>
+          <p class="mt-5 max-w-md text-papier/75">Il dépend de la taille, de l'emplacement et du temps passé au dessin. Vous le connaissez avant de verser l'acompte, qui est ensuite déduit.</p>
+          <p class="mt-5 font-main text-[1.8rem] leading-tight text-peau">Encres végétales, aiguilles à usage unique.</p>
+        </div>
+        <div class="rv relative" style="--d:150ms">
+          <div class="relative mx-auto max-w-md rotate-[1.5deg] rounded-[18px] bg-peau p-6 pt-16 text-encre md:p-10 md:pt-16">
+            <span class="absolute left-1/2 top-4 h-4 w-4 -translate-x-1/2 rounded-full bg-encre ring-4 ring-papier/40" aria-hidden="true"></span>
+            <dl class="divide-y divide-dashed divide-encre/30">
+              <div class="flex items-baseline justify-between gap-4 py-3"><dt>Petite pièce, jusqu'à 5&nbsp;cm</dt><dd class="shrink-0 font-serif text-2xl">dès 90&nbsp;€</dd></div>
+              <div class="flex items-baseline justify-between gap-4 py-3"><dt>Flash du mois</dt><dd class="shrink-0 font-serif text-2xl">90 à 220&nbsp;€</dd></div>
+              <div class="flex items-baseline justify-between gap-4 py-3"><dt>Projet sur mesure</dt><dd class="shrink-0 font-serif text-2xl">dès 150&nbsp;€</dd></div>
+              <div class="flex items-baseline justify-between gap-4 py-3"><dt>Demi-journée, grande pièce</dt><dd class="shrink-0 font-serif text-2xl">380&nbsp;€</dd></div>
+              <div class="flex items-baseline justify-between gap-4 py-3"><dt>Retouche dans les 3 mois</dt><dd class="shrink-0 font-serif text-2xl">offerte</dd></div>
+            </dl>
+            <p class="tampon rv absolute right-1 -top-10 flex h-24 w-24 items-center justify-center rounded-full border-2 border-dashed border-stencil bg-peau text-center font-main text-[1.45rem] leading-[.95] text-stencil md:-right-10 md:-top-12 md:h-28 md:w-28 md:text-[1.7rem]">acompte déduit</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Questions et soins : accordéons ===== -->
+    <section id="soins" class="py-14 md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-[1fr_1.5fr] md:gap-16 md:px-8">
+        <div class="rv">
+          <h2 class="font-serif text-[clamp(2.3rem,8vw,4.4rem)] leading-[1]">Avant, pendant, après</h2>
+          <p class="mt-4 max-w-sm text-encre/75">Les questions qu'on me pose le plus, et la fiche de soins que vous emportez en partant.</p>
+        </div>
+        <div class="rv divide-y divide-encre/15 border-y border-encre/15" style="--d:100ms">
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-medium">Faut-il avoir 18 ans&nbsp;?<span class="plus font-serif text-3xl leading-none text-stencil" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/75"><p>Oui, sans exception, même avec l'accord des parents. Une pièce d'identité vous sera demandée le jour de la séance.</p></div>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-medium">Est-ce que ça fait mal&nbsp;?<span class="plus font-serif text-3xl leading-none text-stencil" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/75"><p>Le trait fin se supporte bien : on parle souvent de griffure. Les côtes et le dessus du pied sont plus sensibles, on fait des pauses quand vous voulez.</p></div>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-medium">Comment préparer la séance&nbsp;?<span class="plus font-serif text-3xl leading-none text-stencil" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/75"><p>Mangez avant de venir, évitez l'alcool la veille et le soleil sur la zone la semaine d'avant. Portez un vêtement qui laisse l'emplacement accessible.</p></div>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-medium">Les soins des trois premières semaines<span class="plus font-serif text-3xl leading-none text-stencil" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/75"><ul class="grid gap-2">
+              <li>Gardez le film 24&nbsp;h, puis lavez à l'eau tiède et au savon doux.</li>
+              <li>Une fine couche de crème cicatrisante, deux fois par jour.</li>
+              <li>Ni bain, ni piscine, ni soleil pendant trois semaines.</li>
+            </ul></div>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-medium">Peut-on tatouer sur une cicatrice&nbsp;?<span class="plus font-serif text-3xl leading-none text-stencil" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/75"><p>Sur une cicatrice de plus d'un an, souvent oui. Envoyez une photo avec votre demande, je vous dis franchement ce qui tiendra dans le temps.</p></div>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-lg font-medium">Déplacer ou annuler un rendez-vous<span class="plus font-serif text-3xl leading-none text-stencil" aria-hidden="true">+</span></summary>
+            <div class="pb-5 text-encre/75"><p>Prévenez au moins 72&nbsp;h avant : l'acompte est reporté sur la nouvelle date. En dessous, il reste acquis à l'atelier.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Avis : grandes citations sur fond calque (carrousel sur téléphone) ===== -->
+    <section id="avis" class="overflow-x-clip bg-calque py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-8">
+        <h2 class="rv font-serif text-[clamp(2.3rem,8vw,4.4rem)] leading-[1]">Ce qu'elles et ils en disent</h2>
+      </div>
+      <ul data-groupe class="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [scroll-padding-inline:1rem] md:mx-auto md:mt-12 md:grid md:max-w-7xl md:grid-cols-[1.4fr_1fr_1fr] md:gap-10 md:overflow-visible md:px-8">
+        <li class="rv w-[84%] shrink-0 snap-start md:w-auto">
+          <figure class="h-full border-t-2 border-stencil pt-5">
+            <blockquote class="font-serif text-[1.6rem] leading-snug md:text-[2.1rem]">«&nbsp;Elle a redessiné trois fois ma branche de mimosa sans jamais soupirer. Deux ans après, le trait est toujours net.&nbsp;»</blockquote>
+            <figcaption class="mt-4 text-[16px] text-encre/70">Camille, poignet</figcaption>
+          </figure>
+        </li>
+        <li class="rv w-[84%] shrink-0 snap-start md:w-auto" style="--d:100ms">
+          <figure class="h-full border-t-2 border-encre/30 pt-5">
+            <blockquote class="font-serif text-[1.45rem] leading-snug">«&nbsp;Premier tatouage à 41 ans. J'avais peur, elle a tout expliqué, et la séance a passé très vite.&nbsp;»</blockquote>
+            <figcaption class="mt-4 text-[16px] text-encre/70">Sophie, cheville</figcaption>
+          </figure>
+        </li>
+        <li class="rv w-[84%] shrink-0 snap-start md:w-auto" style="--d:200ms">
+          <figure class="h-full border-t-2 border-encre/30 pt-5">
+            <blockquote class="font-serif text-[1.45rem] leading-snug">«&nbsp;J'ai pris la vague du flash de juin. Atelier propre, calme, et un prix exactement celui annoncé.&nbsp;»</blockquote>
+            <figcaption class="mt-4 text-[16px] text-encre/70">Mathis, avant-bras</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Projet : formulaire, adresse, horaires et carte ===== -->
+    <section id="projet" class="py-14 md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-4 md:px-8 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
+        <div class="rv">
+          <h2 class="font-serif text-[clamp(2.3rem,8vw,4.4rem)] leading-[1]">Racontez-moi votre projet</h2>
+          <p class="mt-3 text-encre/75">Réponse sous 5 jours ouvrés, avec un prix et une proposition de date.</p>
+          <!-- Formulaire de demande de projet.
+               Pour recevoir les demandes par e-mail, créez un formulaire gratuit sur Formspree (formspree.io)
+               puis remplacez action="#" par l'adresse fournie, par ex. action="https://formspree.io/f/xxxxxx".
+               Avec Netlify, ajoutez simplement l'attribut data-netlify="true" sur la balise <form>. -->
+          <form action="#" method="post" class="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+            <label class="grid gap-1 text-[16px] font-medium">Prénom
+              <input name="prenom" type="text" autocomplete="given-name" required class="field" placeholder="Votre prénom">
+            </label>
+            <label class="grid gap-1 text-[16px] font-medium">E-mail
+              <input name="email" type="email" autocomplete="email" required class="field" placeholder="vous@exemple.fr">
+            </label>
+            <label class="grid gap-1 text-[16px] font-medium">Emplacement
+              <select name="emplacement" class="field">
+                <option>Poignet</option><option>Avant-bras</option><option>Cheville</option><option>Clavicule</option><option>Côtes</option><option>Dos</option><option>Autre, à préciser</option>
+              </select>
+            </label>
+            <label class="grid gap-1 text-[16px] font-medium">Taille approximative
+              <select name="taille" class="field">
+                <option>Moins de 5 cm</option><option>5 à 10 cm</option><option>10 à 20 cm</option><option>Plus grand</option>
+              </select>
+            </label>
+            <label class="grid gap-1 text-[16px] font-medium sm:col-span-2">Votre idée, ou le nom du flash
+              <textarea name="message" rows="3" required class="field resize-y" placeholder="Une branche d'olivier, très fine, qui suit l'os du poignet…"></textarea>
+            </label>
+            <label class="flex min-h-11 items-center gap-3 text-[16px] sm:col-span-2">
+              <input name="majeur" type="checkbox" required class="h-5 w-5 shrink-0 accent-stencil">
+              J'ai 18 ans ou plus.
+            </label>
+            <div class="sm:col-span-2"><button type="submit" class="btn btn-encre bg-encre text-papier">Envoyer ma demande</button></div>
+          </form>
+        </div>
+
+        <div class="rv" style="--d:120ms">
+          <div class="relative bg-calque p-6 md:p-8">
+            <p class="tampon rv absolute -right-1 -top-6 rounded-full border-2 border-dashed border-stencil bg-papier px-4 py-2 font-main text-[1.5rem] leading-none text-stencil">sur rendez-vous</p>
+            <h3 class="font-serif text-3xl">L'atelier</h3>
+            <p class="mt-3">3 rue de l'Île, 74000 Annecy<br>Au premier étage, sonnette «&nbsp;Calque&nbsp;».</p>
+            <p class="mt-3 text-encre/75">Du mardi au samedi, de 10&nbsp;h à 18&nbsp;h.</p>
+            <p class="mt-4 flex flex-col">
+              <a href="tel:+33600000000" class="lien inline-flex min-h-11 items-center self-start text-lg font-medium">06 00 00 00 00</a>
+              <a href="mailto:contact@exemple.fr" class="lien inline-flex min-h-11 items-center self-start text-lg font-medium">contact@exemple.fr</a>
+            </p>
+            <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+            <div data-kv-map="3 rue de l'Île, 74000 Annecy" class="mt-6 md:h-60 overflow-hidden rounded-[14px] bg-papier text-encre"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-encre/15 py-10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 md:flex-row md:items-center md:justify-between md:px-8">
+      <p class="font-serif text-3xl">Atelier Calque</p>
+      <p class="text-[16px] text-encre/70">Tatouage fine line, salon déclaré et formé à l'hygiène.</p>
+      <p class="flex flex-wrap gap-x-6 text-[16px]">
+        <a href="#projet" class="lien inline-flex min-h-11 items-center">Proposer un projet</a>
+        <a href="#" class="lien inline-flex min-h-11 items-center">Mentions légales</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-3 border-t border-encre/15 bg-papier px-3 pt-3 md:hidden" style="padding-bottom: max(.75rem, env(safe-area-inset-bottom))">
+    <a href="tel:+33600000000" class="inline-flex min-h-12 items-center justify-center rounded-full border border-encre/40 text-[17px] font-medium">Appeler</a>
+    <a href="#projet" class="inline-flex min-h-12 items-center justify-center rounded-full bg-encre text-[17px] font-medium text-papier">Proposer un projet</a>
+  </div>
+
+  <script>
+  (function () {
+    var $ = function (s) { return document.querySelector(s); };
+    var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+    var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile
+    var b = $('#burger'), m = $('#menu');
+    function menu(ouvert) {
+      b.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      b.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+      m.classList.toggle('hidden', !ouvert); m.classList.toggle('flex', ouvert);
+      document.body.style.overflow = ouvert ? 'hidden' : '';
+    }
+    b.addEventListener('click', function () { menu(b.getAttribute('aria-expanded') !== 'true'); });
+    $$('#menu a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && b.getAttribute('aria-expanded') === 'true') { menu(false); b.focus(); } });
+
+    if (!('IntersectionObserver' in window)) return;
+
+    // Héros : mots du titre, puis le motif tracé au calque et repassé à l'encre
+    var scene = $('.scene');
+    if (reduit) scene.classList.add('entre');
+    else requestAnimationFrame(function () { setTimeout(function () { scene.classList.add('entre'); }, 60); });
+
+    // Apparitions au défilement (sections, fil du déroulé, tampons, flash)
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return; io.unobserve(e.target);
+        // Carrousels : les cartes hors écran (à droite) apparaissent avec la rangée
+        if (e.target.hasAttribute('data-groupe')) Array.prototype.forEach.call(e.target.querySelectorAll('.rv, .flash'), function (el, i) { el.style.setProperty('--d', (i * 90) + 'ms'); el.classList.add('vu'); });
+        else e.target.classList.add('vu');
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv, .flash').forEach(function (el) { if (reduit) el.classList.add('vu'); else if (!el.closest('[data-groupe]')) io.observe(el); });
+    $$('[data-groupe]').forEach(function (g) { if (!reduit) io.observe(g); });
+  })();
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>

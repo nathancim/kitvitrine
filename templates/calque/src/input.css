@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Instrument Serif'; src: url('fonts/instrument-serif-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Instrument Serif'; src: url('fonts/instrument-serif-latin-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Hanken Grotesk'; src: url('fonts/hanken-grotesk-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Hanken Grotesk'; src: url('fonts/hanken-grotesk-latin-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Hanken Grotesk'; src: url('fonts/hanken-grotesk-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'Reenie Beanie'; src: url('fonts/reenie-beanie-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  :focus-visible { outline: 2px dashed rgb(var(--kv-stencil)); outline-offset: 4px; }
+  .sur-fonce :focus-visible { outline-color: rgb(var(--kv-peau)); }
+  summary { list-style: none; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+  ::selection { background: rgb(var(--kv-stencil) / .25); }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  /* Grain de papier (bruit SVG en ligne, aucune image externe) */
+  .grain { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.15 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  /* Papier calque : légèrement translucide, bord net */
+  .feuille { background-color: rgb(255 255 255 / .72); box-shadow: 0 1px 0 rgb(var(--kv-encre) / .06), 0 18px 40px -22px rgb(var(--kv-encre) / .35); }
+  /* Morceau d'adhésif */
+  .adhesif { position: absolute; width: 74px; height: 22px; background: rgb(var(--kv-peau) / .75); mix-blend-mode: multiply; }
+  .trait { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+}
+
+@layer components {
+  .btn { @apply inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full px-7 text-[17px] font-medium transition duration-300 sm:w-auto; }
+  .field { @apply w-full rounded-none border-0 border-b-2 border-encre/30 bg-transparent px-1 py-3 text-base text-encre placeholder-encre/40 transition focus:border-stencil focus:outline-none; }
+}
+
+/* ===== Animations ===== */
+
+/* 1. Titre : les mots se posent l'un après l'autre (visible sans JS) */
+.js .mot { display: inline-block; opacity: 0; transform: translateY(.35em); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--i, 0) * 70ms + 100ms); }
+.js .scene.entre .mot { opacity: 1; transform: none; }
+.js .pose { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; transition-delay: var(--d, 0ms); }
+.js .scene.entre .pose { opacity: 1; transform: none; }
+
+/* 2. Signature : le motif se trace d'abord au calque violet, puis l'encre repasse dessus */
+.trace { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.js .scene .trace { transition: stroke-dashoffset 1.4s cubic-bezier(.5,0,.25,1); transition-delay: var(--d, 0ms); }
+.js .scene:not(.entre) .trace { stroke-dashoffset: 1; }
+.calque-violet { transition: transform .8s ease 2.6s, opacity .8s ease 2.6s; }
+.js .scene.entre .calque-violet { transform: translate(5px, 4px); opacity: .55; }
+.js .note { opacity: 0; transition: opacity .6s ease; transition-delay: var(--d, 0ms); }
+.js .scene.entre .note { opacity: 1; }
+.lune { transform-box: fill-box; transform-origin: 50% 50%; animation: balance 7s ease-in-out 3.5s infinite; }
+@keyframes balance { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-8deg); } }
+
+/* 3. Planche de flash : au survol, l'encre repasse le dessin et la feuille se soulève */
+.flash { transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease; transform: rotate(var(--r, 0deg)) translateY(var(--y, 0)); }
+.flash .encre-flash { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.js .flash .encre-flash { stroke-dashoffset: 1; transition: stroke-dashoffset .8s cubic-bezier(.5,0,.25,1); }
+.flash.vu .encre-flash { stroke-dashoffset: 0; transition-delay: .3s; }
+@media (hover: hover) {
+  .flash:hover { transform: rotate(0deg) translateY(calc(var(--y, 0px) - 8px)); box-shadow: 0 28px 50px -24px rgb(var(--kv-encre) / .45); }
+  .flash:hover .encre-flash { animation: repasse .8s cubic-bezier(.5,0,.25,1); }
+  .lien { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size .35s ease; }
+  .lien:hover { background-size: 100% 1.5px; }
+  .btn-encre:hover { background-color: rgb(var(--kv-stencil)); }
+  .btn-ligne:hover { background-color: rgb(var(--kv-encre)); color: rgb(var(--kv-papier)); }
+}
+@keyframes repasse { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.btn:active, .flash:active { transform: scale(.97); }
+
+/* 4. Déroulé : le fil pointillé se dessine quand la section arrive */
+.fil { stroke-dasharray: 4 7; }
+.js .fil-masque { transform-origin: 0 0; transform: scaleX(0); transition: transform 1.6s cubic-bezier(.5,0,.25,1) .2s; }
+.js .vu .fil-masque { transform: none; }
+@media (max-width: 767px) { .js .fil-masque { transform: scaleY(0); } .js .vu .fil-masque { transform: none; } }
+
+/* 5. Apparition au défilement */
+.js .rv { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+.js .rv.vu { opacity: 1; transform: none; }
+
+/* 6. Tampon qui se pose */
+.tampon { transform: rotate(-9deg); }
+.js .tampon.rv { opacity: 0; transform: rotate(-9deg) scale(1.35); transition: opacity .35s ease .3s, transform .45s cubic-bezier(.3,1.5,.5,1) .3s; }
+.js .tampon.rv.vu { opacity: .9; transform: rotate(-9deg) scale(1); }
+
+/* Questions : le « + » tourne, la réponse glisse */
+details .plus { transition: transform .3s ease; }
+details[open] .plus { transform: rotate(45deg); }
+details[open] > div { animation: ouvre .35s ease; }
+@keyframes ouvre { from { opacity: 0; transform: translateY(-6px); } }
+
+/* Menu mobile : les liens arrivent l'un après l'autre */
+#menu.flex a { animation: glisse .4s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d, 0ms); }
+@keyframes glisse { from { opacity: 0; transform: translateY(12px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .mot, .js .pose, .js .rv, .js .note { opacity: 1 !important; transform: none !important; }
+  .js .tampon.rv { opacity: .9 !important; transform: rotate(-9deg) !important; }
+  .trace, .flash .encre-flash, .js .scene:not(.entre) .trace { stroke-dashoffset: 0 !important; }
+  .js .fil-masque { transform: none !important; }
+  .flash { transform: none !important; }
+}

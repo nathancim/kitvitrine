@@ -1013,6 +1013,59 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "bc75fce190d56a79f469a1233eb71837"
+    },
+    {
+      "slug": "calque",
+      "title": "Calque",
+      "tagline": "Site vitrine pour tatoueur",
+      "description": "Une page sur papier calque pour un salon de tatouage fine line. En ouverture, un titre centré en Instrument Serif dont les mots se posent un à un, puis une feuille scotchée où une branche d'olivier sous un croissant de lune se trace d'abord au violet du calque, avant que l'encre noire ne repasse chaque trait ; des notes au crayon indiquent l'aiguille et l'emplacement. Le flash du mois s'épingle en planche de six dessins avec étiquette de prix et tampon « réservé » (carrousel sur téléphone), le déroulé en cinq étapes suit un fil pointillé qui se dessine, les tarifs tiennent sur une étiquette rose chair avec son tampon « acompte déduit », puis les questions et soins en accordéons, les avis en grandes citations et le formulaire de projet avec adresse, horaires et carte. Violet calque, rose chair et encre sur papier grainé, titres en Instrument Serif, texte en Hanken Grotesk et annotations manuscrites en Reenie Beanie.",
+      "univers": [
+        "creatifs"
+      ],
+      "style": "Élégant",
+      "couleur": "violet",
+      "direction": "artisanal",
+      "animations": [
+        "titre qui apparaît mot par mot",
+        "motif tracé au calque violet puis repassé à l'encre",
+        "notes au crayon qui apparaissent autour de la feuille",
+        "flash qui se repasse à l'encre et se soulève au survol",
+        "fil pointillé du déroulé qui se dessine",
+        "tampons qui se posent et apparition au défilement"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-18",
+      "tags": [
+        "tatoueur",
+        "tatoueuse",
+        "salon de tatouage",
+        "tatouage fine line",
+        "tattoo",
+        "flash tattoo",
+        "tatouage minimaliste",
+        "tatouage botanique",
+        "studio de tatouage"
+      ],
+      "sections": [
+        "Accueil centré avec feuille de calque et motif qui se trace",
+        "Flash du mois en planche épinglée",
+        "Déroulé en cinq étapes sur un fil pointillé",
+        "Tarifs sur étiquette avec tampon",
+        "Questions et soins en accordéons",
+        "Avis en grandes citations",
+        "Projet : formulaire, adresse, horaires et carte"
+      ],
+      "palette": [
+        "#5A3BA6",
+        "#E7C3B3",
+        "#1D1B24",
+        "#E9E7F0",
+        "#F8F7FA"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "c94174f4a362ee31286a9a82e1014e3c"
     }
   ]
 }
