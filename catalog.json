@@ -1066,6 +1066,60 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "c94174f4a362ee31286a9a82e1014e3c"
+    },
+    {
+      "slug": "planche",
+      "title": "Planche",
+      "tagline": "Site vitrine pour maraîcher bio",
+      "description": "Une page en grille suisse pour un maraîcher bio qui vend en paniers. Les colonnes de la page restent visibles comme les planches du jardin. En ouverture, un grand titre en Archivo très gras dont les lignes montent l'une après l'autre, à côté du plan des six planches en récolte qui se sèment rang par rang, puis les poireaux, carottes et courges poussent. Le panier de la semaine s'affiche sous un énorme numéro de semaine, en onglets petit ou grand panier, avec le numéro de planche de chaque légume ; le calendrier des récoltes tient en douze colonnes dont les barres s'étirent mois par mois jusqu'au repère du mois en cours. Suivent les trois points de retrait en tableau, la ferme en chiffres qui comptent sur fond noir, les avis en carrousel, les questions en accordéons et le formulaire d'abonnement avec adresse et carte. Vert poireau, rouge radis et encre sur papier clair, une seule famille de caractères.",
+      "univers": [
+        "terroir"
+      ],
+      "style": "Moderne",
+      "couleur": "vert",
+      "direction": "suisse",
+      "animations": [
+        "lignes du titre qui montent une à une",
+        "planches qui se sèment rang par rang et plants qui poussent",
+        "feuillage qui bouge doucement",
+        "barres du calendrier qui s'étirent jusqu'au mois en cours",
+        "onglets du panier animés",
+        "chiffres qui comptent et apparition au défilement"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-18",
+      "tags": [
+        "maraîcher",
+        "maraîchage bio",
+        "paniers de légumes",
+        "légumes de saison",
+        "AMAP",
+        "vente directe",
+        "vente à la ferme",
+        "producteur de légumes",
+        "ferme bio"
+      ],
+      "sections": [
+        "Accueil avec titre géant et plan des planches qui se sèment",
+        "Panier de la semaine en onglets sous le numéro de semaine",
+        "Calendrier des récoltes en douze colonnes",
+        "Trois points de retrait en tableau",
+        "La ferme et ses chiffres-clés",
+        "Avis des abonnés",
+        "Questions avant de s'abonner",
+        "Abonnement : formulaire, adresse et carte"
+      ],
+      "palette": [
+        "#2E6B3E",
+        "#D2414F",
+        "#1A1E19",
+        "#E3EBD6",
+        "#F5F6F1"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "b598f8520333a7025932a1b4bd38f980"
     }
   ]
 }
