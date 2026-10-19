@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Toque — Chef à domicile à Bordeaux</title>
+  <meta name="description" content="Toque, chef à domicile à Bordeaux : dîners à deux, grandes tablées et ateliers cuisine. Courses au marché, service à table et cuisine rendue propre. Menus de saison dès 65 € par personne.">
+  <meta name="theme-color" content="#F6F7F2">
+  <link rel="preload" href="assets/fonts/gilda-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-bouteille=Couleur principale (vert bouteille)|--kv-bouteille-deep;--kv-betterave=Couleur d'accent (betterave);--kv-courge=Accent chaud (courge rôtie);--kv-sauge=Fond des sections;--kv-papier=Fond de page;--kv-encre=Texte">
+</head>
+<body class="bg-papier font-sans text-encre antialiased pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Toque</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/toque/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- Navigation : sur ordinateur, le nom au centre comme le titre d'un magazine, les rubriques de part et d'autre -->
+  <header class="sticky top-0 z-40 border-b border-encre/15 bg-papier/95 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 md:grid md:grid-cols-[1fr_auto_1fr] md:px-8">
+      <nav class="hidden md:flex items-center gap-7 text-[0.95rem]" aria-label="Rubriques">
+        <a href="#carte" class="lien inline-flex min-h-11 items-center">La carte</a>
+        <a href="#chef" class="lien inline-flex min-h-11 items-center">Le chef</a>
+        <a href="#soiree" class="lien inline-flex min-h-11 items-center">La soirée</a>
+      </nav>
+      <a href="#accueil" class="flex min-h-[3.5rem] items-center gap-2.5 md:justify-center">
+        <svg data-kv-logo="Logo" class="h-9 w-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M11 24c-5 0-7.5-3.6-7.5-7 0-4 3.4-7 7.4-6.7C12.4 6 16 3.5 20 3.5s7.6 2.5 9.1 6.8c4-.3 7.4 2.7 7.4 6.7 0 3.4-2.5 7-7.5 7z" class="fill-bouteille"/>
+          <path d="M11 24h18v8.5a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2z" class="fill-bouteille"/>
+          <path d="M11.5 28.5h17" class="stroke-papier" stroke-width="1.6"/>
+          <circle cx="31" cy="34" r="3.6" class="fill-betterave"/>
+        </svg>
+        <span class="font-display text-[1.9rem] leading-none tracking-tight md:text-[2.2rem]">Toque</span>
+      </a>
+      <div class="hidden md:flex items-center justify-end gap-7 text-[0.95rem]">
+        <a href="#avis" class="lien inline-flex min-h-11 items-center">Avis</a>
+        <a href="#questions" class="lien inline-flex min-h-11 items-center">Questions</a>
+        <a href="#reserver" class="btn min-h-11 bg-bouteille px-5 text-papier hover:bg-betterave">Réserver une date</a>
+      </div>
+      <button id="menuBtn" type="button" class="md:hidden inline-flex min-h-11 items-center gap-2.5 px-1 font-medium" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span>Menu</span>
+        <svg class="h-4 w-6" viewBox="0 0 24 16" aria-hidden="true"><path d="M0 3h24M6 13h18" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+    </div>
+    <nav id="menu" class="hidden md:hidden flex-col border-t border-encre/15 bg-papier px-5 pb-6 pt-2" aria-label="Navigation mobile">
+      <a href="#carte" class="flex min-h-[3.25rem] items-center border-b border-encre/10 font-display text-[1.7rem]">La carte</a>
+      <a href="#chef" class="flex min-h-[3.25rem] items-center border-b border-encre/10 font-display text-[1.7rem]">Le chef</a>
+      <a href="#soiree" class="flex min-h-[3.25rem] items-center border-b border-encre/10 font-display text-[1.7rem]">La soirée</a>
+      <a href="#avis" class="flex min-h-[3.25rem] items-center border-b border-encre/10 font-display text-[1.7rem]">Avis</a>
+      <a href="#questions" class="flex min-h-[3.25rem] items-center border-b border-encre/10 font-display text-[1.7rem]">Questions</a>
+      <a href="#reserver" class="btn mt-5 w-full bg-bouteille text-papier">Réserver une date</a>
+    </nav>
+  </header>
+
+  <main id="accueil">
+
+    <!-- Accueil : une couverture de magazine. Titre à gauche, l'assiette dressée en « photo de couverture » -->
+    <section class="overflow-x-clip" aria-labelledby="titre">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <div class="flex items-center justify-between gap-4 py-3 text-[0.95rem] text-encre/70 md:py-4">
+          <p class="italic">Carte d’automne</p>
+          <p>Bordeaux, Médoc et Bassin</p>
+        </div>
+        <div class="filet grid gap-6 pb-12 pt-7 md:grid-cols-12 md:gap-10 md:pb-20 md:pt-14">
+          <div class="md:col-span-7 md:pt-6">
+            <h1 id="titre" class="font-display text-[clamp(2.9rem,12.5vw,4.6rem)] md:text-[clamp(3.6rem,6.2vw,5.6rem)] leading-[0.98] tracking-[-0.015em]">
+              <span class="ligne"><span style="--d:100ms">Le restaurant,</span></span>
+              <span class="ligne"><span style="--d:260ms">c’est chez vous</span></span>
+              <span class="ligne"><span style="--d:420ms">ce soir.</span></span>
+            </h1>
+            <p class="apres mt-5 max-w-md text-[1.1rem] leading-relaxed text-encre/80 md:mt-7 md:text-[1.2rem]" style="--d:650ms">Je fais les courses au marché, je cuisine dans votre cuisine, je sers à table et je repars en la laissant propre. Vous n’avez qu’à mettre le couvert.</p>
+            <div class="apres mt-6 flex flex-col gap-3 sm:flex-row md:mt-9" style="--d:800ms">
+              <a href="#reserver" class="btn w-full bg-bouteille text-papier hover:bg-betterave sm:w-auto">Réserver une date</a>
+              <a href="#carte" class="btn hidden w-full border border-encre/30 hover:border-encre sm:inline-flex sm:w-auto">Lire la carte</a>
+            </div>
+          </div>
+          <figure class="md:col-span-5">
+            <div data-kv-image="Photo d'un plat dressé, vue de dessus" class="mx-auto aspect-[23/20] max-h-[38vh] w-full max-w-[34rem] md:max-h-none">
+              <svg class="h-full w-full" viewBox="0 0 460 400" role="img" aria-label="Assiette de courge rôtie, betterave et noisettes, vue de dessus">
+                <!-- L'assiette -->
+                <g class="assiette">
+                  <circle cx="200" cy="200" r="186" fill="#E4E8DE"/>
+                  <circle cx="196" cy="196" r="186" fill="#FFFFFF"/>
+                  <circle cx="196" cy="196" r="128" fill="#FAFBF8" stroke="#E7EAE2" stroke-width="2"/>
+                </g>
+                <!-- La sauce : un trait de purée de betterave tiré à la cuillère -->
+                <path class="trait" pathLength="1" style="--d:750ms" d="M108 248c30-62 104-98 182-70" fill="none" stroke="#8F2747" stroke-width="22" stroke-linecap="round"/>
+                <path class="trait" pathLength="1" style="--d:1000ms" d="M126 266c38-34 92-48 140-36" fill="none" stroke="#B4486A" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+                <!-- Courge rôtie -->
+                <g class="pince" style="--d:1250ms"><path d="M150 152c30-26 78-22 98 6-30-12-66-8-98 18z" fill="#D9883A"/><path d="M150 152c30-26 78-22 98 6" fill="none" stroke="#A85E1F" stroke-width="4" stroke-linecap="round"/></g>
+                <g class="pince" style="--d:1400ms"><path d="M214 206c34-6 64 12 68 42-18-24-44-30-72-22z" fill="#E39B4E"/><path d="M214 206c34-6 64 12 68 42" fill="none" stroke="#A85E1F" stroke-width="4" stroke-linecap="round"/></g>
+                <!-- Quenelle de crème crue -->
+                <g class="pince" style="--d:1550ms"><ellipse cx="196" cy="196" rx="30" ry="17" transform="rotate(-24 196 196)" fill="#F4EEDC"/><path d="M178 196c10-10 26-16 38-14" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/></g>
+                <!-- Noisettes torréfiées et points de sauce -->
+                <g class="pince" style="--d:1650ms"><circle cx="252" cy="160" r="8" fill="#8A5A34"/><circle cx="160" cy="214" r="7" fill="#8A5A34"/><circle cx="238" cy="274" r="6" fill="#8A5A34"/></g>
+                <g class="pince" style="--d:1700ms"><circle cx="128" cy="186" r="5" fill="#8F2747"/><circle cx="276" cy="200" r="4" fill="#8F2747"/><circle cx="182" cy="128" r="3.5" fill="#8F2747"/></g>
+                <!-- Pousses et herbes -->
+                <g class="frisson" style="--d:1850ms"><path d="M226 176c4-14 14-22 26-24-2 12-12 22-26 24z" fill="#5E8A4E"/><path d="M226 176c8-6 14-12 20-20" stroke="#3F6634" stroke-width="2" fill="none"/></g>
+                <g class="frisson" style="--d:1950ms"><path d="M170 238c-12-4-18-14-18-26 12 2 20 12 18 26z" fill="#6E9B5C"/></g>
+                <g class="frisson" style="--d:2050ms"><path d="M206 132c6-10 16-14 26-12-6 10-16 14-26 12z" fill="#5E8A4E"/></g>
+                <!-- Couverts -->
+                <g class="couverts" fill="#AEB6A8">
+                  <rect x="414" y="70" width="8" height="270" rx="4"/>
+                  <path d="M436 70h14v96c0 8-4 12-8 12v162h-6z"/>
+                </g>
+              </svg>
+            </div>
+            <figcaption class="mt-3 text-center text-[0.95rem] italic text-encre/70 md:text-left">Courge rôtie, betterave et noisettes, du menu d’automne.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- La carte : trois formules en onglets, le menu de la formule choisie s'écrit dans la page -->
+    <section id="carte" class="bg-sauge py-14 md:py-24" aria-labelledby="carte-titre">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-12 md:gap-10 md:px-8">
+        <div class="md:col-span-5">
+          <h2 id="carte-titre" class="rv font-display text-[clamp(2.3rem,8vw,3.6rem)] leading-[1.02]">La carte change avec le marché</h2>
+          <p class="rv mt-3 max-w-sm leading-relaxed text-encre/80" style="--d:80ms">Trois façons de recevoir. Le menu se règle ensemble au téléphone, selon vos goûts et les allergies de chacun.</p>
+          <div class="rv mt-6 grid grid-cols-3 border-b border-encre/20 md:mt-10 md:flex md:flex-col md:border-b-0" role="tablist" aria-label="Formules" style="--d:140ms">
+            <button type="button" role="tab" id="t-deux" class="onglet md:border-t md:border-encre/20" aria-selected="true" aria-controls="p-deux">Dîner à deux</button>
+            <button type="button" role="tab" id="t-tablee" class="onglet md:border-t md:border-encre/20" aria-selected="false" aria-controls="p-tablee" tabindex="-1">Grande tablée</button>
+            <button type="button" role="tab" id="t-atelier" class="onglet md:border-y md:border-encre/20" aria-selected="false" aria-controls="p-atelier" tabindex="-1">Atelier cuisine</button>
+          </div>
+        </div>
+
+        <div class="rv md:col-span-7" style="--d:200ms">
+          <div class="bg-papier px-5 py-7 shadow-[0_24px_50px_-30px_rgb(24_34_27/.45)] sm:px-10 md:px-14 md:py-12">
+            <div id="p-deux" class="panneau" role="tabpanel" aria-labelledby="t-deux" tabindex="0">
+              <div class="flex items-baseline justify-between gap-4">
+                <h3 class="font-display text-[1.9rem] leading-tight">Dîner à deux</h3>
+                <p class="shrink-0 font-display text-[1.6rem] text-betterave">95 €</p>
+              </div>
+              <p class="mt-1 text-[0.98rem] italic text-encre/70">par personne, quatre temps, pour un anniversaire ou juste un mardi</p>
+              <ul class="mt-6 space-y-4">
+                <li style="--i:0"><p class="flex items-baseline gap-2 font-medium">Mise en bouche</p><p class="italic text-encre/75">Velouté de cèpes, huile de noisette</p></li>
+                <li style="--i:1"><p class="flex items-baseline gap-2 font-medium">Entrée</p><p class="italic text-encre/75">Courge rôtie, betterave, crème crue et noisettes</p></li>
+                <li style="--i:2"><p class="flex items-baseline gap-2 font-medium">Plat</p><p class="italic text-encre/75">Pigeon de Mios, jus aux mûres, panais fondant</p></li>
+                <li style="--i:3"><p class="flex items-baseline gap-2 font-medium">Dessert</p><p class="italic text-encre/75">Poire pochée au vin de Graves, sablé breton</p></li>
+              </ul>
+            </div>
+            <div id="p-tablee" class="panneau" role="tabpanel" aria-labelledby="t-tablee" tabindex="0" hidden>
+              <div class="flex items-baseline justify-between gap-4">
+                <h3 class="font-display text-[1.9rem] leading-tight">Grande tablée</h3>
+                <p class="shrink-0 font-display text-[1.6rem] text-betterave">72 €</p>
+              </div>
+              <p class="mt-1 text-[0.98rem] italic text-encre/70">par personne, de 6 à 14&nbsp;convives, plats à partager au milieu de la table</p>
+              <ul class="mt-6 space-y-4">
+                <li style="--i:0"><p class="flex items-baseline gap-2 font-medium">À partager</p><p class="italic text-encre/75">Huîtres du Bassin, pain de seigle et beurre demi-sel</p></li>
+                <li style="--i:1"><p class="flex items-baseline gap-2 font-medium">Entrée</p><p class="italic text-encre/75">Salade de lentilles, magret fumé maison, noix</p></li>
+                <li style="--i:2"><p class="flex items-baseline gap-2 font-medium">Plat en cocotte</p><p class="italic text-encre/75">Épaule d’agneau confite sept heures, légumes racines</p></li>
+                <li style="--i:3"><p class="flex items-baseline gap-2 font-medium">Dessert</p><p class="italic text-encre/75">Grande tarte fine aux pommes, crème au calvados</p></li>
+              </ul>
+            </div>
+            <div id="p-atelier" class="panneau" role="tabpanel" aria-labelledby="t-atelier" tabindex="0" hidden>
+              <div class="flex items-baseline justify-between gap-4">
+                <h3 class="font-display text-[1.9rem] leading-tight">Atelier cuisine</h3>
+                <p class="shrink-0 font-display text-[1.6rem] text-betterave">65 €</p>
+              </div>
+              <p class="mt-1 text-[0.98rem] italic text-encre/70">par personne, de 4 à 8, trois heures aux fourneaux puis à table</p>
+              <ul class="mt-6 space-y-4">
+                <li style="--i:0"><p class="flex items-baseline gap-2 font-medium">Les bases</p><p class="italic text-encre/75">Tenir son couteau, tailler en brunoise, monter un jus</p></li>
+                <li style="--i:1"><p class="flex items-baseline gap-2 font-medium">On cuisine</p><p class="italic text-encre/75">Un plat de saison et un dessert, chacun à son poste</p></li>
+                <li style="--i:2"><p class="flex items-baseline gap-2 font-medium">On dresse</p><p class="italic text-encre/75">L’assiette comme au restaurant, pince et cuillère</p></li>
+                <li style="--i:3"><p class="flex items-baseline gap-2 font-medium">On repart</p><p class="italic text-encre/75">Avec les fiches recettes et le tablier</p></li>
+              </ul>
+            </div>
+            <p class="mt-7 border-t border-encre/15 pt-4 text-[0.98rem] text-encre/75">Toujours compris : les courses, la cuisine chez vous, le service à table et la vaisselle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le chef : mise en page de magazine, portrait légendé, lettrine et grande citation -->
+    <section id="chef" class="py-14 md:py-24" aria-labelledby="chef-titre">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-12 md:gap-12 md:px-8">
+        <figure class="rv order-2 md:order-1 md:col-span-5">
+          <div data-kv-image="Portrait du chef en cuisine" class="h-56 overflow-hidden bg-bouteille md:h-[30rem]">
+            <svg class="h-full w-full" viewBox="0 0 400 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="400" height="480" fill="#2D4A37"/>
+              <!-- Planche, couteau et légumes, vus de dessus -->
+              <rect x="70" y="120" width="260" height="300" rx="22" fill="#C9A77A"/>
+              <rect x="70" y="120" width="260" height="300" rx="22" fill="none" stroke="#A9865A" stroke-width="3"/>
+              <circle cx="300" cy="150" r="9" fill="#2D4A37"/>
+              <path d="M110 380l170-170" stroke="#DCE3D4" stroke-width="18" stroke-linecap="round"/>
+              <path d="M268 222l40-40" stroke="#18221B" stroke-width="20" stroke-linecap="round"/>
+              <circle cx="150" cy="200" r="40" fill="#D9883A"/>
+              <path d="M150 160c-4-16 2-30 14-36" stroke="#5E8A4E" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <circle cx="230" cy="330" r="30" fill="#8F2747"/>
+              <circle cx="230" cy="330" r="18" fill="none" stroke="#B4486A" stroke-width="4"/>
+              <path d="M120 290h8M134 300h8M116 306h8" stroke="#F4EEDC" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <figcaption class="mt-3 text-[0.95rem] italic text-encre/70">Bastien, quinze ans de brigades à Bordeaux et à Lyon.</figcaption>
+        </figure>
+        <div class="order-1 md:order-2 md:col-span-7 md:pt-4">
+          <h2 id="chef-titre" class="rv font-display text-[clamp(2.3rem,8vw,3.6rem)] leading-[1.02]">Un chef, pas un traiteur</h2>
+          <p class="rv lettrine mt-5 text-[1.08rem] leading-[1.75] text-encre/85" style="--d:80ms">Après quinze ans de restaurants étoilés, j’ai rangé la veste de brigade pour cuisiner là où l’on dîne vraiment : chez les gens. Tout est préparé sur place, rien n’arrive en barquette. Je viens avec mes couteaux, mes casseroles s’il le faut, et les produits achetés le matin même aux Capucins.</p>
+          <blockquote class="rv mt-8 border-l-2 border-betterave pl-5 md:mt-12 md:pl-8" style="--d:140ms">
+            <p class="font-display text-[1.7rem] leading-snug md:text-[2.3rem]">Le plus beau compliment, c’est quand on oublie que je suis là.</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- La soirée : une vraie chronologie, de l'heure du marché à la cuisine rendue -->
+    <section id="soiree" class="overflow-x-clip bg-bouteille py-14 text-papier md:py-24" aria-labelledby="soiree-titre">
+      <div class="rv mx-auto max-w-6xl px-5 md:px-8">
+        <h2 id="soiree-titre" class="font-display text-[clamp(2.3rem,8vw,3.6rem)] leading-[1.02]">Votre soirée, heure par heure</h2>
+        <div class="relative mt-8 md:mt-14">
+        <span class="fil absolute bottom-2 left-[0.3rem] top-2 w-px bg-courge md:bottom-auto md:left-0 md:right-0 md:top-[0.3rem] md:h-px md:w-auto" aria-hidden="true"></span>
+        <ol class="grid gap-6 pl-8 md:grid-cols-4 md:gap-8 md:pl-0 md:pt-10">
+          <li class="relative">
+            <span class="absolute -left-8 top-1.5 h-3 w-3 rounded-full bg-courge md:-top-10 md:left-0" aria-hidden="true"></span>
+            <p class="font-display text-[1.6rem] text-courge">10&nbsp;h</p>
+            <p class="mt-1 leading-relaxed text-papier/85">Marché des Capucins : poisson, volaille, légumes du jour.</p>
+          </li>
+          <li class="relative">
+            <span class="absolute -left-8 top-1.5 h-3 w-3 rounded-full bg-courge md:-top-10 md:left-0" aria-hidden="true"></span>
+            <p class="font-display text-[1.6rem] text-courge">17&nbsp;h</p>
+            <p class="mt-1 leading-relaxed text-papier/85">J’arrive chez vous, je découvre la cuisine et je m’installe.</p>
+          </li>
+          <li class="relative">
+            <span class="absolute -left-8 top-1.5 h-3 w-3 rounded-full bg-courge md:-top-10 md:left-0" aria-hidden="true"></span>
+            <p class="font-display text-[1.6rem] text-courge">20&nbsp;h</p>
+            <p class="mt-1 leading-relaxed text-papier/85">Service à l’assiette, plat après plat, en racontant chacun.</p>
+          </li>
+          <li class="relative">
+            <span class="absolute -left-8 top-1.5 h-3 w-3 rounded-full bg-courge md:-top-10 md:left-0" aria-hidden="true"></span>
+            <p class="font-display text-[1.6rem] text-courge">23&nbsp;h 30</p>
+            <p class="mt-1 leading-relaxed text-papier/85">Vaisselle faite, plans de travail essuyés. Je repars sans bruit.</p>
+          </li>
+        </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Avis : grandes citations ; carrousel sur mobile -->
+    <section id="avis" class="py-14 md:py-24" aria-labelledby="avis-titre">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <h2 id="avis-titre" class="rv font-display text-[clamp(2.3rem,8vw,3.6rem)] leading-[1.02]">Ils ont reçu</h2>
+        <ul class="rv no-scrollbar -mx-5 mt-7 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-2 md:mx-0 md:mt-12 md:grid md:grid-cols-3 md:gap-10 md:overflow-visible md:px-0">
+          <li class="avis w-[82%] shrink-0 snap-start border-t-2 border-encre pt-5 md:w-auto">
+            <blockquote>
+              <p class="font-display text-[1.45rem] leading-snug">« Quarante ans de mariage, quatorze à table. Personne n’a vu passer la soirée. »</p>
+            </blockquote>
+            <p class="mt-4 text-[0.98rem] text-encre/70">Martine, Caudéran</p>
+          </li>
+          <li class="avis w-[82%] shrink-0 snap-start border-t-2 border-encre pt-5 md:w-auto" style="--d:90ms">
+            <blockquote>
+              <p class="font-display text-[1.45rem] leading-snug">« Il a cuisiné dans ma kitchenette de 4&nbsp;m² et c’était meilleur qu’au restaurant. »</p>
+            </blockquote>
+            <p class="mt-4 text-[0.98rem] text-encre/70">Hugo, Chartrons</p>
+          </li>
+          <li class="avis w-[82%] shrink-0 snap-start border-t-2 border-encre pt-5 md:w-auto" style="--d:180ms">
+            <blockquote>
+              <p class="font-display text-[1.45rem] leading-snug">« L’atelier pour les 30&nbsp;ans de ma sœur : on sait enfin tailler une brunoise. »</p>
+            </blockquote>
+            <p class="mt-4 text-[0.98rem] text-encre/70">Inès, Arcachon</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Questions fréquentes -->
+    <section id="questions" class="border-t border-encre/15 py-14 md:py-24" aria-labelledby="questions-titre">
+      <div class="mx-auto grid max-w-6xl gap-6 px-5 md:grid-cols-12 md:gap-10 md:px-8">
+        <h2 id="questions-titre" class="rv font-display text-[clamp(2.3rem,8vw,3.6rem)] leading-[1.02] md:col-span-4">Avant de réserver</h2>
+        <div class="rv md:col-span-8" style="--d:80ms">
+          <details class="group border-t border-encre/20">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-[1.08rem] font-medium">Ma cuisine est petite, est-ce un problème ?<span class="croix shrink-0 text-2xl text-betterave" aria-hidden="true">+</span></summary>
+            <p class="pb-5 leading-relaxed text-encre/80">Non. Deux feux et un four suffisent. Je passe ou j’appelle avant pour voir l’équipement et j’apporte ce qui manque.</p>
+          </details>
+          <details class="group border-t border-encre/20">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-[1.08rem] font-medium">Et si un invité est allergique ou végétarien ?<span class="croix shrink-0 text-2xl text-betterave" aria-hidden="true">+</span></summary>
+            <p class="pb-5 leading-relaxed text-encre/80">Dites-le moi à la réservation : chaque assiette est adaptée, sans menu à part ni supplément.</p>
+          </details>
+          <details class="group border-t border-encre/20">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-[1.08rem] font-medium">Le vin est-il compris ?<span class="croix shrink-0 text-2xl text-betterave" aria-hidden="true">+</span></summary>
+            <p class="pb-5 leading-relaxed text-encre/80">Non, mais je vous propose un accord avec un caviste du quartier, livré le jour même si vous le souhaitez.</p>
+          </details>
+          <details class="group border-y border-encre/20">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 text-[1.08rem] font-medium">Combien de temps à l’avance faut-il réserver ?<span class="croix shrink-0 text-2xl text-betterave" aria-hidden="true">+</span></summary>
+            <p class="pb-5 leading-relaxed text-encre/80">Deux à trois semaines pour un samedi, quelques jours en semaine. Un acompte de 30 % bloque la date.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Réserver : formulaire, coordonnées et zone de déplacement -->
+    <section id="reserver" class="bg-sauge py-14 md:py-24" aria-labelledby="reserver-titre">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-12 md:px-8">
+        <div class="md:col-span-7">
+          <h2 id="reserver-titre" class="rv font-display text-[clamp(2.3rem,8vw,3.6rem)] leading-[1.02]">Réserver une date</h2>
+          <p class="rv mt-3 max-w-md leading-relaxed text-encre/80" style="--d:80ms">Je vous rappelle sous 24&nbsp;heures pour composer le menu ensemble.</p>
+          <!--
+            Formulaire de réservation : il n'envoie rien tant qu'il n'est pas relié à un service.
+            - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+            - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+            - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+          -->
+          <form class="rv mt-6 grid grid-cols-2 gap-x-5 gap-y-5 md:mt-8" action="#" method="post" style="--d:140ms">
+            <label class="col-span-2 block sm:col-span-1"><span class="font-medium">Prénom</span>
+              <input type="text" name="prenom" autocomplete="given-name" class="field" required>
+            </label>
+            <label class="col-span-2 block sm:col-span-1"><span class="font-medium">Téléphone</span>
+              <input type="tel" name="telephone" autocomplete="tel" class="field" required>
+            </label>
+            <label class="block"><span class="font-medium">Date</span>
+              <input type="date" name="date" class="field min-h-[2.9rem]">
+            </label>
+            <label class="block"><span class="font-medium">Convives</span>
+              <input type="number" name="convives" min="2" max="14" value="6" inputmode="numeric" class="field">
+            </label>
+            <label class="col-span-2 block"><span class="font-medium">Formule</span>
+              <select name="formule" class="field">
+                <option>Dîner à deux</option>
+                <option>Grande tablée</option>
+                <option>Atelier cuisine</option>
+                <option>Je ne sais pas encore</option>
+              </select>
+            </label>
+            <label class="col-span-2 block"><span class="font-medium">L’occasion, vos envies</span>
+              <textarea name="message" rows="2" class="field" placeholder="Anniversaire, un invité végétarien, on adore le poisson"></textarea>
+            </label>
+            <button type="submit" class="btn col-span-2 w-full bg-bouteille text-papier hover:bg-betterave sm:w-fit">Envoyer ma demande</button>
+          </form>
+        </div>
+        <div class="md:col-span-5 md:pt-3">
+          <div class="rv border-t-2 border-encre pt-5" style="--d:100ms">
+            <h3 class="font-display text-[1.7rem]">Me joindre</h3>
+            <div class="mt-1 flex flex-col items-start">
+              <a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-display text-[1.9rem] hover:text-betterave transition-colors">06 00 00 00 00</a>
+              <a href="mailto:contact@exemple.fr" class="lien inline-flex min-h-11 items-center">contact@exemple.fr</a>
+            </div>
+            <p class="mt-1 leading-relaxed text-encre/80">Du mardi au samedi, midi et soir. Appels entre 14&nbsp;h et 16&nbsp;h.</p>
+          </div>
+          <div class="rv mt-8 border-t-2 border-encre pt-5" style="--d:160ms">
+            <h3 class="font-display text-[1.7rem]">Où je me déplace</h3>
+            <p class="mt-2 leading-relaxed text-encre/80">Bordeaux et 40&nbsp;km autour : Médoc, Entre-deux-Mers, Bassin d’Arcachon. Au-delà, frais de route.</p>
+            <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+            <div data-kv-map="Bordeaux, Gironde" class="mt-6 md:h-56 overflow-hidden bg-papier text-encre"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-encre text-papier">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 md:flex-row md:items-center md:justify-between md:px-8">
+      <p class="font-display text-[1.6rem]">Toque, chef à domicile</p>
+      <ul class="flex flex-wrap items-center gap-x-6 gap-y-1 text-[0.95rem] text-papier/70">
+        <li>SIRET 000 000 000 00000</li>
+        <li><a href="#accueil" class="lien inline-flex min-h-11 items-center">Haut de page</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="fixed inset-x-0 bottom-0 z-40 border-t border-encre/15 bg-papier/95 px-4 pt-3 backdrop-blur md:hidden" style="padding-bottom: calc(.75rem + env(safe-area-inset-bottom))">
+    <div class="grid grid-cols-2 gap-3">
+      <a href="tel:+33600000000" class="btn w-full border border-encre/30 px-3">Appeler</a>
+      <a href="#reserver" class="btn w-full bg-bouteille px-3 text-papier">Réserver</a>
+    </div>
+  </div>
+
+  <script>
+  (() => {
+    // Menu mobile
+    const btn = document.getElementById('menuBtn'), menu = document.getElementById('menu');
+    const ouvrir = (o) => { btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); menu.classList.toggle('hidden', !o); menu.classList.toggle('flex', o); };
+    btn.addEventListener('click', () => ouvrir(btn.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => ouvrir(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') ouvrir(false); });
+
+    // Apparition au défilement
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.rv').forEach(el => io.observe(el));
+    }
+
+    // La carte : onglets (flèches gauche/droite au clavier), le menu choisi s'écrit ligne par ligne
+    const onglets = [...document.querySelectorAll('[role="tab"]')];
+    const choisir = (t, focus) => {
+      onglets.forEach(o => {
+        const actif = o === t, p = document.getElementById(o.getAttribute('aria-controls'));
+        o.setAttribute('aria-selected', actif); o.tabIndex = actif ? 0 : -1;
+        p.hidden = !actif; p.classList.remove('entre');
+        if (actif) { void p.offsetWidth; p.classList.add('entre'); }
+      });
+      if (focus) t.focus();
+    };
+    onglets.forEach((t, i) => {
+      t.addEventListener('click', () => choisir(t));
+      t.addEventListener('keydown', e => {
+        const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        if (d) { e.preventDefault(); choisir(onglets[(i + d + onglets.length) % onglets.length], true); }
+      });
+    });
+  })();
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>

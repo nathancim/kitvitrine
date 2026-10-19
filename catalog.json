@@ -1281,6 +1281,59 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "20b6785e1b172ca8a07112ad8b1f8b99"
+    },
+    {
+      "slug": "toque",
+      "title": "Toque",
+      "tagline": "Site vitrine pour chef à domicile",
+      "description": "Une page éditoriale, mise en page comme un magazine de cuisine, pour un chef à domicile. La couverture annonce la carte de saison en grande typographie qui monte ligne par ligne, et la « photo de couverture » est une assiette vue de dessus qui se dresse sous vos yeux : la sauce se trace à la cuillère, puis la courge, la quenelle, les noisettes et les herbes sont posées à la pince. La carte se lit en onglets (dîner à deux, grande tablée, atelier cuisine), chaque menu s'écrivant ligne par ligne avec ses points de conduite et son prix. Suivent le portrait du chef avec lettrine et grande citation, la soirée heure par heure sur un fil qui se trace, les avis en grandes citations, les questions en accordéons et la réservation avec zone de déplacement et carte. Vert bouteille, sauge et betterave, typographies Gilda Display et Red Hat Text, nom centré dans la navigation comme un titre de magazine.",
+      "univers": [
+        "restauration"
+      ],
+      "style": "Élégant",
+      "couleur": "vert",
+      "direction": "editorial",
+      "animations": [
+        "titre qui monte ligne par ligne derrière un cache",
+        "assiette qui se dresse : sauce tracée puis éléments posés à la pince",
+        "menu qui s'écrit ligne par ligne au changement d'onglet",
+        "fil de la soirée qui se trace au défilement",
+        "herbes qui frémissent doucement et soulignements dessinés au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-19",
+      "tags": [
+        "chef à domicile",
+        "cuisinier à domicile",
+        "chef privé",
+        "dîner à domicile",
+        "traiteur",
+        "cours de cuisine",
+        "atelier cuisine",
+        "repas de fête",
+        "gastronomie"
+      ],
+      "sections": [
+        "Accueil : titre en couverture et assiette qui se dresse",
+        "La carte en trois formules (onglets)",
+        "Le chef : portrait, lettrine et citation",
+        "La soirée heure par heure",
+        "Avis des clients",
+        "Questions fréquentes",
+        "Réservation : formulaire, coordonnées, zone de déplacement et carte"
+      ],
+      "palette": [
+        "#2D4A37",
+        "#8F2747",
+        "#D9883A",
+        "#DCE3D4",
+        "#F6F7F2",
+        "#18221B"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "b8c867f3e36f596b826a7a38ab0eae91"
     }
   ]
 }
