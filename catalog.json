@@ -1173,6 +1173,60 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "f8615924bd026ebf021d567396c6cf96"
+    },
+    {
+      "slug": "rappel",
+      "title": "Rappel",
+      "tagline": "Site vitrine pour éducateur canin",
+      "description": "Une page néo-brutaliste pour une éducatrice canine : angles vifs, bordures noires épaisses et ombres pleines, tomate, bleu ciel et jaune balle de tennis sur un terrain quadrillé. Le titre géant « Un chien qui revient quand on l'appelle » arrive mot par mot, puis la balle tombe dans la scène, rebondit et roule jusqu'au chien, qui la suit des yeux en remuant la queue ; les ordres « Assis » et « Au pied » se collent comme des autocollants, et un bouton relance la balle. Suivent un bandeau défilant des ordres, les quatre formules sur des fiches de travers (école du chiot, éducation à domicile, chien réactif, balades éducatives), le parcours en six séances présenté comme une carte que l'on tamponne case par case, l'ardoise des tarifs, les avis signés par les chiens, les questions en accordéons et la demande de bilan avec horaires, terrain et carte. Typographies Bowlby One et Familjen Grotesk, navigation en rangée de cases.",
+      "univers": [
+        "animaux"
+      ],
+      "style": "Audacieux",
+      "couleur": "rouge",
+      "direction": "brutaliste",
+      "animations": [
+        "balle qui tombe et rebondit, chien qui la suit des yeux et remue la queue",
+        "titre qui apparaît mot par mot",
+        "ordres qui se collent comme des autocollants",
+        "cases du parcours tamponnées au défilement",
+        "bandeau défilant des ordres",
+        "chiffres qui comptent et fiches qui se soulèvent au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-19",
+      "tags": [
+        "éducateur canin",
+        "éducatrice canine",
+        "éducation canine",
+        "dressage chien",
+        "école du chiot",
+        "comportementaliste canin",
+        "chien réactif",
+        "rappel du chien",
+        "marche en laisse"
+      ],
+      "sections": [
+        "Accueil : titre géant et chien qui attend sa balle",
+        "Bandeau des ordres",
+        "Les quatre formules",
+        "Le parcours en six séances",
+        "Tarifs",
+        "Avis des maîtres et de leurs chiens",
+        "Questions avant la première séance",
+        "Réserver un bilan : formulaire, horaires, terrain et carte"
+      ],
+      "palette": [
+        "#EE4B2B",
+        "#8FC3EE",
+        "#DDEB4F",
+        "#151515",
+        "#E8F0F7"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "20671bdb2ef82d44f9a9a4d0602e0e35"
     }
   ]
 }

@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rappel — Éducatrice canine à Angers</title>
+  <meta name="description" content="Rappel, éducation canine positive à Angers : école du chiot, cours à domicile, chiens réactifs, balades éducatives. Bilan comportemental à la maison, sans collier de dressage.">
+  <meta name="theme-color" content="#EE4B2B">
+  <link rel="preload" href="assets/fonts/bowlby-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-nuage font-sans text-encre antialiased pb-[calc(5.5rem+env(safe-area-inset-bottom))] md:pb-0">
+
+  <!-- En-tête : une rangée de cases, comme les plots d'un parcours -->
+  <header class="sticky top-0 z-40 bg-nuage border-b-4 border-encre">
+    <div class="flex items-stretch">
+      <a href="#accueil" class="flex min-h-[4rem] items-center gap-3 px-4 sm:px-6 lg:border-r-4 lg:border-encre lg:pr-8">
+        <svg data-kv-logo="Logo" class="h-10 w-10 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+          <rect x="2" y="2" width="44" height="44" class="fill-balle" stroke="#151515" stroke-width="4"/>
+          <path d="M13 17 9 8l9 5M35 17l4-9-9 5" fill="#151515"/>
+          <path d="M12 20c0-6 5-9 12-9s12 3 12 9v6c0 7-5 13-12 13s-12-6-12-13z" class="fill-tomate" stroke="#151515" stroke-width="3.5"/>
+          <circle cx="19" cy="24" r="2.4" fill="#151515"/><circle cx="29" cy="24" r="2.4" fill="#151515"/>
+          <path d="M21 31h6l-3 3z" fill="#151515" stroke="#151515" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <span class="font-display text-[1.6rem] leading-none tracking-tight">Rappel</span>
+      </a>
+      <nav class="hidden lg:flex flex-1 items-stretch font-bold" aria-label="Navigation principale">
+        <a href="#cours" class="flex flex-1 items-center justify-center border-r-4 border-encre px-4 hover:bg-ciel transition-colors">Les cours</a>
+        <a href="#parcours" class="flex flex-1 items-center justify-center border-r-4 border-encre px-4 hover:bg-ciel transition-colors">Le parcours</a>
+        <a href="#tarifs" class="flex flex-1 items-center justify-center border-r-4 border-encre px-4 hover:bg-ciel transition-colors">Tarifs</a>
+        <a href="#avis" class="flex flex-1 items-center justify-center border-r-4 border-encre px-4 hover:bg-ciel transition-colors">Avis</a>
+        <a href="tel:+33600000000" class="flex items-center justify-center border-r-4 border-encre px-6 hover:bg-ciel transition-colors">06 00 00 00 00</a>
+        <a href="#contact" class="flex items-center justify-center bg-tomate px-8 hover:bg-balle transition-colors">Réserver un bilan</a>
+      </nav>
+      <button id="menuBtn" type="button" class="lg:hidden ml-auto flex min-h-[4rem] items-center gap-2 border-l-4 border-encre bg-balle px-5 font-bold" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="h-5 w-5" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="3"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+    <nav id="menu" class="hidden fixed inset-x-0 top-[4.25rem] bottom-0 z-40 flex-col bg-tomate px-4 pt-3 pb-28 overflow-y-auto lg:hidden" aria-label="Navigation mobile">
+      <a href="#cours" class="flex min-h-[3.5rem] items-center border-b-4 border-encre font-display text-2xl">Les cours</a>
+      <a href="#parcours" class="flex min-h-[3.5rem] items-center border-b-4 border-encre font-display text-2xl">Le parcours</a>
+      <a href="#tarifs" class="flex min-h-[3.5rem] items-center border-b-4 border-encre font-display text-2xl">Tarifs</a>
+      <a href="#avis" class="flex min-h-[3.5rem] items-center border-b-4 border-encre font-display text-2xl">Avis</a>
+      <a href="#questions" class="flex min-h-[3.5rem] items-center border-b-4 border-encre font-display text-2xl">Questions</a>
+      <a href="#contact" class="flex min-h-[3.5rem] items-center border-b-4 border-encre font-display text-2xl">Réserver un bilan</a>
+      <a href="tel:+33600000000" class="btn mt-6 w-full bg-white">Appeler le 06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <!-- Accueil : titre géant, puis l'illustration du chien qui attend sa balle -->
+    <section id="accueil" class="terrain overflow-x-clip border-b-4 border-encre">
+      <div class="mx-auto max-w-[88rem] px-4 sm:px-6 pt-7 pb-12 md:pt-14 md:pb-20">
+        <h1 id="titre" class="font-display uppercase leading-[1.04] tracking-tight text-[clamp(2.35rem,10.4vw,7.4rem)] max-w-[15ch]">Un chien qui revient quand on l'appelle.</h1>
+
+        <div class="mt-6 grid gap-8 lg:mt-10 lg:grid-cols-12 lg:gap-12 lg:items-end">
+          <div class="lg:col-span-5 lg:pb-4">
+            <p class="text-lg leading-relaxed max-w-[34ch] sm:text-xl">Maud, éducatrice canine à Angers. Des séances courtes, à la maison ou sur le terrain, avec des friandises et sans collier de dressage.</p>
+            <div class="mt-6 flex flex-col gap-4 sm:flex-row">
+              <a href="#contact" class="btn w-full sm:w-auto bg-tomate">Réserver un bilan</a>
+              <a href="#cours" class="btn w-full sm:w-auto bg-white">Voir les cours</a>
+            </div>
+            <ul class="mt-7 hidden sm:flex flex-wrap gap-x-6 gap-y-2 font-semibold">
+              <li>Certifiée ACACED</li>
+              <li>Chiots dès 2 mois</li>
+              <li>Angers et 20 km autour</li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div class="bloc relative mx-auto aspect-[4/3] max-h-[40vh] lg:max-h-none bg-ciel overflow-hidden" style="max-width: min(100%, calc(40vh * 4 / 3))" id="scene">
+              <!-- Illustration : le chien assis attend sa balle. Remplacez-la par votre photo en mode édition. -->
+              <svg data-kv-image="Photo de vous avec un chien en séance" class="absolute inset-0 h-full w-full" viewBox="0 0 480 360" role="img" aria-label="Un chien assis suit des yeux une balle qui rebondit">
+                <rect x="0" y="292" width="480" height="68" fill="#DDEB4F"/>
+                <path d="M0 292h480" stroke="#151515" stroke-width="5"/>
+                <path d="M30 318h40M120 338h30M390 328h50M300 346h24" stroke="#151515" stroke-width="4" stroke-linecap="round" opacity=".35"/>
+                <!-- Queue (remue) -->
+                <g class="queue">
+                  <path d="M318 318c34-8 52-44 40-82" fill="none" stroke="#151515" stroke-width="24" stroke-linecap="round"/>
+                  <path d="M318 318c34-8 52-44 40-82" fill="none" stroke="#F2BE74" stroke-width="13" stroke-linecap="round"/>
+                </g>
+                <!-- Corps assis -->
+                <ellipse cx="268" cy="262" rx="86" ry="62" fill="#F2BE74" stroke="#151515" stroke-width="5"/>
+                <path d="M300 300c22 0 40 8 40 18H262c0-10 18-18 38-18z" fill="#E09A4C" stroke="#151515" stroke-width="5" stroke-linejoin="round"/>
+                <path d="M168 178c-14 46-12 96 2 140h66c0-46 14-86 30-120z" fill="#F2BE74" stroke="#151515" stroke-width="5" stroke-linejoin="round"/>
+                <path d="M190 220c8 18 10 46 6 70" fill="none" stroke="#151515" stroke-width="4" stroke-linecap="round" opacity=".4"/>
+                <rect x="174" y="262" width="28" height="58" fill="#F2BE74" stroke="#151515" stroke-width="5"/>
+                <rect x="208" y="266" width="28" height="54" fill="#F2BE74" stroke="#151515" stroke-width="5"/>
+                <path d="M168 318h38M204 318h36" stroke="#151515" stroke-width="5"/>
+                <!-- Tête (suit la balle) -->
+                <g class="tete">
+                  <path d="M150 184q42 20 86-2l5 18q-46 24-94 2z" fill="#EE4B2B" stroke="#151515" stroke-width="4.5" stroke-linejoin="round"/>
+                  <circle cx="196" cy="214" r="9" fill="#DDEB4F" stroke="#151515" stroke-width="4"/>
+                  <circle cx="186" cy="132" r="58" fill="#F2BE74" stroke="#151515" stroke-width="5"/>
+                  <ellipse cx="132" cy="152" rx="38" ry="26" fill="#FBE3C0" stroke="#151515" stroke-width="5"/>
+                  <ellipse cx="102" cy="144" rx="12" ry="10" fill="#151515"/>
+                  <path d="M108 168q16 10 34 2" fill="none" stroke="#151515" stroke-width="4" stroke-linecap="round"/>
+                  <circle cx="168" cy="118" r="8" fill="#151515"/><circle cx="165" cy="115" r="2.5" fill="#fff"/>
+                  <path d="M156 100q12-8 24-2" fill="none" stroke="#151515" stroke-width="4" stroke-linecap="round"/>
+                  <path class="oreille" d="M196 82c44-6 64 34 44 92-18-14-34-46-44-92z" fill="#C9813A" stroke="#151515" stroke-width="5" stroke-linejoin="round"/>
+                </g>
+                <!-- Balle (tombe et rebondit) -->
+                <g class="balle">
+                  <circle cx="70" cy="270" r="22" fill="#DDEB4F" stroke="#151515" stroke-width="5"/>
+                  <path d="M52 257q18 13 0 27M88 257q-18 13 0 27" fill="none" stroke="#151515" stroke-width="3.5"/>
+                </g>
+              </svg>
+              <span class="ordre pose absolute left-3 top-3 bg-white" style="--r:-6deg; transform: rotate(-6deg); animation-delay: .9s">Assis</span>
+              <span class="ordre pose absolute right-3 top-4 bg-balle" style="--r:5deg; transform: rotate(5deg); animation-delay: 1.05s">Au pied</span>
+              <span class="ordre pose absolute right-6 top-[38%] bg-white hidden sm:inline-flex" style="--r:-3deg; transform: rotate(-3deg); animation-delay: 1.2s">Pas bouger</span>
+              <button id="lancer" type="button" class="ordre absolute bottom-3 right-3 min-h-11 bg-tomate" style="transform: rotate(-4deg)">Lancer la balle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bandeau défilant des ordres travaillés -->
+    <div class="overflow-x-clip border-b-4 border-encre bg-encre text-nuage py-3" aria-hidden="true">
+      <div class="defile font-display text-xl sm:text-2xl uppercase whitespace-nowrap">
+        <span class="flex shrink-0 items-center gap-6 pr-6"><span>Assis</span><span class="text-balle">✦</span><span>Couché</span><span class="text-balle">✦</span><span>Au pied</span><span class="text-balle">✦</span><span>Pas bouger</span><span class="text-balle">✦</span><span>Lâche</span><span class="text-balle">✦</span><span>Ici</span><span class="text-balle">✦</span><span>Marche en laisse</span><span class="text-balle">✦</span></span>
+        <span class="flex shrink-0 items-center gap-6 pr-6"><span>Assis</span><span class="text-balle">✦</span><span>Couché</span><span class="text-balle">✦</span><span>Au pied</span><span class="text-balle">✦</span><span>Pas bouger</span><span class="text-balle">✦</span><span>Lâche</span><span class="text-balle">✦</span><span>Ici</span><span class="text-balle">✦</span><span>Marche en laisse</span><span class="text-balle">✦</span></span>
+      </div>
+    </div>
+
+    <!-- Les cours : fiches de travers, en carrousel sur téléphone -->
+    <section id="cours" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-[88rem] px-4 sm:px-6">
+        <div class="md:flex md:items-end md:justify-between md:gap-10">
+          <h2 class="font-display uppercase leading-[1.1] tracking-tight text-[2.1rem] sm:text-5xl lg:text-6xl max-w-[16ch]">Quatre formules pour avancer</h2>
+          <p class="mt-4 max-w-[38ch] text-lg md:mt-0">Chaque chien commence par un bilan. On choisit ensuite la formule qui lui va, et à vous.</p>
+        </div>
+      </div>
+
+      <ul class="no-scrollbar mt-9 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-6 pt-3 scroll-px-4 sm:px-6 md:mx-auto md:grid md:max-w-[88rem] md:grid-cols-12 md:gap-7 md:overflow-visible md:pb-0 lg:gap-9" style="scroll-padding-inline: 1rem">
+        <li class="w-[82%] shrink-0 snap-start md:w-auto md:col-span-7 md:row-span-2">
+          <article class="bloc souleve flex h-full flex-col bg-tomate p-6 sm:p-8" style="--r:-1deg; transform: rotate(-1deg)">
+            <p class="font-bold">De 2 à 6 mois</p>
+            <h3 class="mt-3 font-display text-3xl uppercase leading-[1.08] sm:text-5xl lg:text-6xl">L'école du chiot</h3>
+            <p class="mt-4 max-w-[40ch] text-lg md:text-xl">Le samedi matin, six chiots au maximum. Ils apprennent à jouer sans mordre, à rester calmes près des autres et à revenir au premier appel. Vous apprenez à lire leurs signaux.</p>
+            <ul class="mt-6 hidden md:grid grid-cols-3 border-[3px] border-encre bg-white text-center font-bold">
+              <li class="border-r-[3px] border-encre px-3 py-3">Jouer sans mordre</li>
+              <li class="border-r-[3px] border-encre px-3 py-3">Rester seul</li>
+              <li class="px-3 py-3">Croiser un vélo</li>
+            </ul>
+            <dl class="mt-auto pt-6 flex flex-wrap gap-3">
+              <div class="ordre bg-white"><dt class="sr-only">Durée</dt><dd>45 min</dd></div>
+              <div class="ordre bg-balle"><dt class="sr-only">Prix</dt><dd>16 € la séance</dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start md:w-auto md:col-span-5">
+          <article class="bloc souleve flex h-full flex-col bg-white p-6 sm:p-7" style="--r:1.2deg; transform: rotate(1.2deg)">
+            <p class="font-bold">À la maison</p>
+            <h3 class="mt-3 font-display text-2xl uppercase leading-[1.08] sm:text-3xl">L'éducation de base</h3>
+            <p class="mt-3">Marche en laisse, propreté, sauts sur les invités : on travaille là où les problèmes arrivent, chez vous.</p>
+            <dl class="mt-auto pt-5 flex flex-wrap gap-3">
+              <div class="ordre bg-nuage"><dt class="sr-only">Durée</dt><dd>1 h</dd></div>
+              <div class="ordre bg-balle"><dt class="sr-only">Prix</dt><dd>55 €</dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start md:w-auto md:col-span-5">
+          <article class="bloc souleve flex h-full flex-col bg-ciel p-6 sm:p-7" style="--r:-.8deg; transform: rotate(-.8deg)">
+            <p class="font-bold">Peurs, aboiements, tensions</p>
+            <h3 class="mt-3 font-display text-2xl uppercase leading-[1.08] sm:text-3xl">Le chien réactif</h3>
+            <p class="mt-3">Il aboie sur les vélos ou se raidit à la vue d'un congénère ? Un suivi au calme, à distance, pas à pas.</p>
+            <dl class="mt-auto pt-5 flex flex-wrap gap-3">
+              <div class="ordre bg-white"><dt class="sr-only">Format</dt><dd>Sur mesure</dd></div>
+              <div class="ordre bg-balle"><dt class="sr-only">Prix</dt><dd>dès 60 €</dd></div>
+            </dl>
+          </article>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start md:w-auto md:col-span-12 lg:col-span-8 lg:col-start-3">
+          <article class="bloc souleve flex h-full flex-col gap-4 bg-balle p-6 sm:p-7 md:flex-row md:items-center md:justify-between" style="--r:.6deg; transform: rotate(.6deg)">
+            <div>
+              <p class="font-bold">Le dimanche, en groupe</p>
+              <h3 class="mt-3 font-display text-2xl uppercase leading-[1.08] sm:text-3xl">Les balades éducatives</h3>
+              <p class="mt-3 max-w-[48ch]">Bords de Loire, centre-ville, forêt : on met en pratique au milieu des vraies distractions.</p>
+            </div>
+            <dl class="flex flex-wrap gap-3 md:shrink-0">
+              <div class="ordre bg-white"><dt class="sr-only">Durée</dt><dd>1 h 30</dd></div>
+              <div class="ordre bg-tomate"><dt class="sr-only">Prix</dt><dd>12 €</dd></div>
+            </dl>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Le parcours : une carte à tamponner, case par case -->
+    <section id="parcours" class="border-y-4 border-encre bg-white py-14 md:py-24">
+      <div class="mx-auto max-w-[88rem] px-4 sm:px-6 grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <div class="lg:col-span-4">
+          <h2 class="font-display uppercase leading-[1.1] tracking-tight text-[2.1rem] sm:text-5xl">Le parcours en six séances</h2>
+          <p class="mt-4 text-lg max-w-[36ch]">Le forfait le plus demandé. Une séance tous les dix jours environ, et des exercices de cinq minutes à faire entre deux.</p>
+          <dl class="mt-8 grid grid-cols-3 border-4 border-encre text-center">
+            <div class="flex flex-col border-r-4 border-encre p-3"><dt class="text-[15px] font-semibold">ans de terrain</dt><dd class="order-first font-display text-3xl tnum" data-compte="11">11</dd></div>
+            <div class="flex flex-col border-r-4 border-encre p-3"><dt class="text-[15px] font-semibold">chiens par cours</dt><dd class="order-first font-display text-3xl tnum" data-compte="6">6</dd></div>
+            <div class="flex flex-col p-3"><dt class="text-[15px] font-semibold">binômes suivis</dt><dd class="order-first font-display text-3xl tnum" data-compte="940">940</dd></div>
+          </dl>
+        </div>
+
+        <ol class="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-3 border-l-4 border-t-4 border-encre" data-carnet>
+          <li class="rv relative grid grid-cols-[2.25rem_1fr] gap-x-3 border-b-4 border-r-4 border-encre px-4 py-4 sm:block sm:p-6 sm:min-h-[13rem]">
+            <span class="row-span-2 font-display text-3xl leading-none sm:text-4xl tnum">1</span>
+            <h3 class="pr-24 text-xl font-bold leading-tight sm:mt-1 sm:pr-0">Le bilan à la maison</h3>
+            <p class="mt-1">On observe votre chien chez lui, on fixe trois objectifs.</p>
+            <span class="tampon pointer-events-none absolute right-3 top-3 border-[3px] border-tomate px-2 py-0.5 font-display text-sm uppercase text-tomate" aria-hidden="true">Validé</span>
+          </li>
+          <li class="rv relative grid grid-cols-[2.25rem_1fr] gap-x-3 border-b-4 border-r-4 border-encre px-4 py-4 sm:block sm:p-6 sm:min-h-[13rem]">
+            <span class="row-span-2 font-display text-3xl leading-none sm:text-4xl tnum">2</span>
+            <h3 class="pr-24 text-xl font-bold leading-tight sm:mt-1 sm:pr-0">Les bases</h3>
+            <p class="mt-1">Le regard, l'assis, le couché, et un mot pour dire « c'est bien ».</p>
+            <span class="tampon pointer-events-none absolute right-3 top-3 border-[3px] border-tomate px-2 py-0.5 font-display text-sm uppercase text-tomate" aria-hidden="true">Validé</span>
+          </li>
+          <li class="rv relative grid grid-cols-[2.25rem_1fr] gap-x-3 border-b-4 border-r-4 border-encre px-4 py-4 sm:block sm:p-6 sm:min-h-[13rem]">
+            <span class="row-span-2 font-display text-3xl leading-none sm:text-4xl tnum">3</span>
+            <h3 class="pr-24 text-xl font-bold leading-tight sm:mt-1 sm:pr-0">La laisse détendue</h3>
+            <p class="mt-1">Fini le traîneau : on marche côte à côte, laisse en U.</p>
+            <span class="tampon pointer-events-none absolute right-3 top-3 border-[3px] border-tomate px-2 py-0.5 font-display text-sm uppercase text-tomate" aria-hidden="true">Validé</span>
+          </li>
+          <li class="rv relative grid grid-cols-[2.25rem_1fr] gap-x-3 border-b-4 border-r-4 border-encre px-4 py-4 sm:block sm:p-6 sm:min-h-[13rem]">
+            <span class="row-span-2 font-display text-3xl leading-none sm:text-4xl tnum">4</span>
+            <h3 class="pr-24 text-xl font-bold leading-tight sm:mt-1 sm:pr-0">Le rappel au parc</h3>
+            <p class="mt-1">Avec une longe de 10 m, puis sans, quand il est prêt.</p>
+            <span class="tampon pointer-events-none absolute right-3 top-3 border-[3px] border-tomate px-2 py-0.5 font-display text-sm uppercase text-tomate" aria-hidden="true">Validé</span>
+          </li>
+          <li class="rv relative grid grid-cols-[2.25rem_1fr] gap-x-3 border-b-4 border-r-4 border-encre px-4 py-4 sm:block sm:p-6 sm:min-h-[13rem]">
+            <span class="row-span-2 font-display text-3xl leading-none sm:text-4xl tnum">5</span>
+            <h3 class="pr-24 text-xl font-bold leading-tight sm:mt-1 sm:pr-0">Les distractions</h3>
+            <p class="mt-1">Vélos, enfants, autres chiens : on garde son attention.</p>
+            <span class="tampon pointer-events-none absolute right-3 top-3 border-[3px] border-tomate px-2 py-0.5 font-display text-sm uppercase text-tomate" aria-hidden="true">Validé</span>
+          </li>
+          <li class="rv relative border-b-4 border-r-4 border-encre bg-tomate p-5 sm:p-6 sm:min-h-[13rem]">
+            <span class="row-span-2 font-display text-3xl leading-none sm:text-4xl tnum">6</span>
+            <h3 class="pr-24 text-xl font-bold leading-tight sm:mt-1 sm:pr-0">La sortie en ville</h3>
+            <p class="mt-1">Marché, terrasse, bus : vous repartez autonomes.</p>
+            <span class="tampon pointer-events-none absolute right-3 top-3 border-[3px] border-encre bg-balle px-2 py-0.5 font-display text-sm uppercase" aria-hidden="true">Diplômé</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Tarifs : l'ardoise -->
+    <section id="tarifs" class="py-14 md:py-24">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2 class="font-display uppercase leading-[1.1] tracking-tight text-[2.1rem] sm:text-5xl">Les tarifs</h2>
+        <div class="bloc mt-8 bg-white">
+          <dl class="divide-y-4 divide-encre">
+            <div class="flex items-baseline justify-between gap-4 p-4 sm:p-6"><dt><span class="block text-lg font-bold">Bilan comportemental</span><span class="block text-[15px]">1 h 30 à la maison, compte rendu écrit</span></dt><dd class="font-display text-2xl sm:text-3xl whitespace-nowrap">75 €</dd></div>
+            <div class="flex items-baseline justify-between gap-4 bg-balle p-4 sm:p-6"><dt><span class="block text-lg font-bold">Forfait parcours, six séances</span><span class="block text-[15px]">bilan compris, à régler en deux fois</span></dt><dd class="font-display text-2xl sm:text-3xl whitespace-nowrap">310 €</dd></div>
+            <div class="flex items-baseline justify-between gap-4 p-4 sm:p-6"><dt><span class="block text-lg font-bold">Séance individuelle</span><span class="block text-[15px]">1 h, à domicile ou sur le terrain</span></dt><dd class="font-display text-2xl sm:text-3xl whitespace-nowrap">55 €</dd></div>
+            <div class="flex items-baseline justify-between gap-4 p-4 sm:p-6"><dt><span class="block text-lg font-bold">École du chiot</span><span class="block text-[15px]">carte de 8 séances : 112 €</span></dt><dd class="font-display text-2xl sm:text-3xl whitespace-nowrap">16 €</dd></div>
+            <div class="flex items-baseline justify-between gap-4 p-4 sm:p-6"><dt><span class="block text-lg font-bold">Balade éducative</span><span class="block text-[15px]">le dimanche, groupes de six</span></dt><dd class="font-display text-2xl sm:text-3xl whitespace-nowrap">12 €</dd></div>
+          </dl>
+        </div>
+        <p class="mt-5 text-[15px]">Déplacements gratuits dans Angers, 0,50 € par kilomètre au-delà. Paiement par carte, virement ou espèces.</p>
+      </div>
+    </section>
+
+    <!-- Avis -->
+    <section id="avis" class="overflow-x-clip border-y-4 border-encre bg-ciel py-14 md:py-24">
+      <div class="mx-auto max-w-[88rem] px-4 sm:px-6">
+        <h2 class="font-display uppercase leading-[1.1] tracking-tight text-[2.1rem] sm:text-5xl">Ils sont revenus</h2>
+      </div>
+      <ul class="no-scrollbar mt-9 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-6 pt-2 sm:px-6 lg:mx-auto lg:grid lg:max-w-[88rem] lg:grid-cols-4 lg:overflow-visible" style="scroll-padding-inline: 1rem">
+        <li class="w-[82%] shrink-0 snap-start sm:w-[22rem] lg:w-auto">
+          <figure class="bloc-sm souleve flex h-full flex-col bg-white p-6" style="--r:-1.5deg; transform: rotate(-1.5deg)">
+            <p class="font-display text-2xl uppercase leading-none">Pixel</p>
+            <p class="mt-1 text-[15px] font-semibold">berger australien, 8 mois</p>
+            <blockquote class="mt-4 text-lg leading-snug">Il tirait comme un traîneau. Depuis la troisième séance, on fait le tour du lac de Maine sans que j'aie mal à l'épaule.</blockquote>
+            <figcaption class="mt-auto pt-4 font-bold">Camille</figcaption>
+          </figure>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start sm:w-[22rem] lg:w-auto">
+          <figure class="bloc-sm souleve flex h-full flex-col bg-balle p-6" style="--r:1.2deg; transform: rotate(1.2deg)">
+            <p class="font-display text-2xl uppercase leading-none">Noisette</p>
+            <p class="mt-1 text-[15px] font-semibold">croisée griffon, 3 ans</p>
+            <blockquote class="mt-4 text-lg leading-snug">Adoptée au refuge, elle aboyait sur chaque chien. Maud nous a appris à voir venir la tension avant l'explosion.</blockquote>
+            <figcaption class="mt-auto pt-4 font-bold">Julien</figcaption>
+          </figure>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start sm:w-[22rem] lg:w-auto">
+          <figure class="bloc-sm souleve flex h-full flex-col bg-white p-6" style="--r:-.6deg; transform: rotate(-.6deg)">
+            <p class="font-display text-2xl uppercase leading-none">Oscar</p>
+            <p class="mt-1 text-[15px] font-semibold">labrador, 4 mois</p>
+            <blockquote class="mt-4 text-lg leading-snug">L'école du chiot du samedi, c'est son moment préféré de la semaine. Le mien aussi, je crois.</blockquote>
+            <figcaption class="mt-auto pt-4 font-bold">Inès</figcaption>
+          </figure>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start sm:w-[22rem] lg:w-auto">
+          <figure class="bloc-sm souleve flex h-full flex-col bg-tomate p-6" style="--r:1.6deg; transform: rotate(1.6deg)">
+            <p class="font-display text-2xl uppercase leading-none">Tic</p>
+            <p class="mt-1 text-[15px] font-semibold">jack russell, 6 ans</p>
+            <blockquote class="mt-4 text-lg leading-snug">Le rappel, on n'y croyait plus. Il revient même quand il voit un lapin. Presque toujours.</blockquote>
+            <figcaption class="mt-auto pt-4 font-bold">Hélène</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Questions -->
+    <section id="questions" class="py-14 md:py-24">
+      <div class="mx-auto max-w-[88rem] px-4 sm:px-6 grid gap-8 lg:grid-cols-12 lg:gap-12">
+        <h2 class="lg:col-span-4 font-display uppercase leading-[1.1] tracking-tight text-[2.1rem] sm:text-5xl">Avant la première séance</h2>
+        <div class="lg:col-span-8 border-t-4 border-encre">
+          <details class="group border-b-4 border-encre">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-lg font-bold">À partir de quel âge ?<span class="plus font-display text-3xl leading-none" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[60ch]">Dès 2 mois, une semaine après le premier vaccin. Il n'y a pas d'âge limite : on apprend très bien à 10 ans.</p>
+          </details>
+          <details class="group border-b-4 border-encre">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-lg font-bold">Que faut-il apporter ?<span class="plus font-display text-3xl leading-none" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[60ch]">Un harnais, une laisse de 2 m, ses friandises préférées coupées en petits dés et une gamelle d'eau. Je prête les longes.</p>
+          </details>
+          <details class="group border-b-4 border-encre">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-lg font-bold">Utilisez-vous des colliers de dressage ?<span class="plus font-display text-3xl leading-none" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[60ch]">Jamais : ni étrangleur, ni pointes, ni électrique. Je travaille en renforcement positif, en récompensant ce qu'on veut voir revenir.</p>
+          </details>
+          <details class="group border-b-4 border-encre">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 text-lg font-bold">Mon chien est réactif, peut-il venir en groupe ?<span class="plus font-display text-3xl leading-none" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[60ch]">D'abord en séance individuelle. Les balades de groupe viennent ensuite, quand il est prêt, avec une place à distance.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact : demande de bilan, terrain et carte -->
+    <section id="contact" class="sur-encre border-t-4 border-encre bg-encre text-nuage py-14 md:py-24">
+      <div class="mx-auto max-w-[88rem] px-4 sm:px-6 grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <div class="lg:col-span-5">
+          <h2 class="font-display uppercase leading-[1.1] tracking-tight text-[2.1rem] sm:text-5xl">Réserver un bilan</h2>
+          <p class="mt-4 text-lg max-w-[38ch]">Dites-moi qui est votre chien et ce qui coince. Je vous rappelle sous 48 h pour fixer le jour.</p>
+          <dl class="mt-7 grid gap-4">
+            <div><dt class="font-bold text-balle">Téléphone</dt><dd><a href="tel:+33600000000" class="inline-flex min-h-11 items-center text-xl font-bold underline decoration-2 underline-offset-4">06 00 00 00 00</a></dd></div>
+            <div><dt class="font-bold text-balle">E-mail</dt><dd><a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center text-lg underline decoration-2 underline-offset-4">contact@exemple.fr</a></dd></div>
+            <div><dt class="font-bold text-balle">Horaires</dt><dd>Lundi au vendredi, 9 h – 19 h sur rendez-vous. Samedi matin : école du chiot.</dd></div>
+            <div><dt class="font-bold text-balle">Le terrain</dt><dd>Chemin des Hirondelles, 49000 Angers. À domicile dans un rayon de 20 km.</dd></div>
+          </dl>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Chemin des Hirondelles, 49000 Angers" class="mt-6 md:h-56 border-4 border-nuage overflow-hidden bg-nuage text-encre"></div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <!--
+            Formulaire de demande de bilan : il n'envoie rien tant qu'il n'est pas relié à un service.
+            - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+            - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+            - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+          -->
+          <form class="border-4 border-nuage bg-nuage text-encre p-5 sm:p-8 grid grid-cols-2 gap-x-3 sm:gap-x-5 gap-y-4" style="box-shadow: 10px 10px 0 rgb(var(--kv-tomate))" action="#" method="post">
+            <label class="block col-span-2 sm:col-span-1"><span class="font-bold">Votre prénom</span>
+              <input type="text" name="prenom" autocomplete="given-name" class="field mt-1.5" required>
+            </label>
+            <label class="block col-span-2 sm:col-span-1"><span class="font-bold">Téléphone</span>
+              <input type="tel" name="telephone" autocomplete="tel" class="field mt-1.5" required>
+            </label>
+            <label class="block"><span class="font-bold">Nom du chien</span>
+              <input type="text" name="chien" class="field mt-1.5" placeholder="Pixel">
+            </label>
+            <label class="block"><span class="font-bold">Race et âge</span>
+              <input type="text" name="race" class="field mt-1.5" placeholder="Croisé, 2 ans">
+            </label>
+            <label class="block col-span-2"><span class="font-bold">Ce qui coince</span>
+              <select name="besoin" class="field mt-1.5">
+                <option>Chiot : bien démarrer</option>
+                <option>Il tire en laisse</option>
+                <option>Il ne revient pas</option>
+                <option>Aboiements, peurs, réactivité</option>
+                <option>Autre chose</option>
+              </select>
+            </label>
+            <label class="block col-span-2"><span class="font-bold">Quelques mots</span>
+              <textarea name="message" rows="3" class="field mt-1.5" placeholder="Depuis quand, dans quelles situations…"></textarea>
+            </label>
+            <button type="submit" class="btn col-span-2 w-full bg-tomate">Envoyer ma demande</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-4 border-nuage/20 bg-encre text-nuage/80 text-[15px]">
+    <div class="mx-auto max-w-[88rem] px-4 sm:px-6 py-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+      <p><span class="font-display text-nuage">Rappel</span> <span class="block sm:inline sm:ml-2">Éducation canine positive à Angers</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 grid grid-cols-[auto_1fr] gap-3 border-t-4 border-encre bg-nuage px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <a href="tel:+33600000000" class="btn !px-5 bg-white">Appeler</a>
+    <a href="#contact" class="btn bg-tomate">Réserver un bilan</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const js = document.documentElement.classList.contains('js');
+
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Titre : les mots arrivent un à un
+    const titre = document.getElementById('titre');
+    if (js && !calme) {
+      titre.setAttribute('aria-label', titre.textContent.trim());
+      titre.innerHTML = titre.textContent.trim().split(/\s+/).map((w, i) => `<span class="mot" aria-hidden="true" style="animation-delay:${80 + i * 110}ms">${w}</span>`).join(' ');
+    }
+
+    // Signature : la balle tombe et rebondit, le chien la suit des yeux (rejouée par « Lancer la balle »)
+    const anim = [...document.querySelectorAll('#scene .balle, #scene .tete, #scene .oreille')];
+    const lancer = () => { if (calme) return; anim.forEach(el => { el.classList.remove('lance'); void el.getBoundingClientRect(); el.classList.add('lance'); }); };
+    if (js) setTimeout(lancer, 350);
+    document.getElementById('lancer').addEventListener('click', lancer);
+
+    if ('IntersectionObserver' in window) {
+      // Apparition au défilement : les cases du carnet arrivent puis reçoivent leur tampon
+      document.querySelectorAll('[data-carnet] .rv').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 110 + 'ms'; const t = el.querySelector('.tampon'); if (t) t.style.transitionDelay = 350 + (i % 3) * 110 + 'ms'; });
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
+      document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+      // Chiffres qui comptent
+      const compte = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        compte.unobserve(e.target);
+        if (calme) return;
+        const el = e.target, fin = +el.dataset.compte, t0 = performance.now(), d = 800;
+        const pas = t => { const k = Math.min(1, (t - t0) / d); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); };
+        requestAnimationFrame(pas);
+      }), { threshold: .6 });
+      document.querySelectorAll('[data-compte]').forEach(el => compte.observe(el));
+    }
+  </script>
+</body>
+</html>
