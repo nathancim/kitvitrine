@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Calepin — Carreleur-faïencier à Tours</title>
+  <meta name="description" content="Calepin, carrelage et faïence à Tours : salles de bains, douches à l'italienne, sols grand format, crédences et terrasses. Visite et devis gratuits sous 48 h, pose sans sous-traitance.">
+  <meta name="theme-color" content="#D5D7D1">
+  <link rel="preload" href="assets/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="ciment font-sans text-nuit antialiased pb-[calc(5.25rem+env(safe-area-inset-bottom))] md:pb-0">
+
+  <!-- Navigation : une pilule flottante, posée comme un carreau sur le mur -->
+  <header class="fixed inset-x-2.5 top-2.5 z-40 md:inset-x-0 md:flex md:justify-center">
+    <div class="flex items-center gap-1 rounded-full bg-nuit/95 p-1.5 pl-2 text-faience shadow-[0_10px_30px_-12px_rgb(19_32_58/.6)] backdrop-blur md:gap-2">
+      <a href="#accueil" class="flex min-h-11 items-center gap-2.5 rounded-full pl-1.5 pr-3">
+        <svg data-kv-logo="Logo" class="h-8 w-8 shrink-0" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="1" y="1" width="14" height="14" rx="3" class="fill-faience"/>
+          <rect x="17" y="1" width="14" height="14" rx="3" class="fill-moutarde"/>
+          <rect x="1" y="17" width="14" height="14" rx="3" class="fill-cobalt"/>
+          <rect x="17" y="17" width="14" height="14" rx="3" class="fill-celadon"/>
+        </svg>
+        <span class="font-display text-[1.45rem] leading-none">Calepin</span>
+      </a>
+      <nav class="hidden md:flex items-center text-[0.95rem]" aria-label="Navigation principale">
+        <a href="#travaux" class="inline-flex min-h-11 items-center rounded-full px-4 hover:bg-faience/10 transition-colors">Travaux</a>
+        <a href="#poses" class="inline-flex min-h-11 items-center rounded-full px-4 hover:bg-faience/10 transition-colors">Poses</a>
+        <a href="#chantiers" class="inline-flex min-h-11 items-center rounded-full px-4 hover:bg-faience/10 transition-colors">Chantiers</a>
+        <a href="#questions" class="inline-flex min-h-11 items-center rounded-full px-4 hover:bg-faience/10 transition-colors">Questions</a>
+        <a href="tel:+33600000000" class="inline-flex min-h-11 items-center rounded-full px-4 hover:bg-faience/10 transition-colors">06 00 00 00 00</a>
+      </nav>
+      <a href="#contact" class="hidden md:inline-flex min-h-11 items-center rounded-full bg-moutarde px-5 font-semibold text-nuit hover:bg-faience transition-colors">Demander un devis</a>
+      <button id="menuBtn" type="button" class="md:hidden ml-auto inline-flex min-h-11 items-center gap-2 rounded-full bg-faience/10 px-4 font-medium" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span>Menu</span>
+        <svg class="h-4 w-4" viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="9" y="1" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="1" y="9" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="currentColor"/></svg>
+      </button>
+    </div>
+    <nav id="menu" class="hidden md:hidden mt-2.5 flex-col gap-2.5" aria-label="Navigation mobile">
+      <div class="grid grid-cols-2 gap-2.5">
+        <a href="#travaux" class="tuile flex min-h-[5.5rem] items-end p-4 font-display text-2xl">Travaux</a>
+        <a href="#poses" class="tuile tuile-celadon flex min-h-[5.5rem] items-end p-4 font-display text-2xl">Poses</a>
+        <a href="#chantiers" class="tuile tuile-celadon flex min-h-[5.5rem] items-end p-4 font-display text-2xl">Chantiers</a>
+        <a href="#questions" class="tuile flex min-h-[5.5rem] items-end p-4 font-display text-2xl">Questions</a>
+      </div>
+      <a href="#contact" class="tuile tuile-moutarde flex min-h-[3.5rem] items-center px-4 font-semibold">Demander une visite gratuite</a>
+      <a href="tel:+33600000000" class="tuile tuile-cobalt flex min-h-[3.5rem] items-center px-4 font-semibold">Appeler le 06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <main id="contenu" class="mx-auto max-w-[84rem] px-2.5 pt-[4.6rem] md:px-4 md:pt-24">
+
+    <!-- Accueil : une mosaïque de tuiles. Titre, salle de bains dessinée, puis quatre petits widgets -->
+    <section id="accueil" class="grid gap-2.5 md:grid-cols-12" aria-labelledby="titre">
+      <div class="tuile flex flex-col justify-between p-6 sm:p-10 md:col-span-7 md:row-span-2 md:min-h-[34rem]">
+        <p class="inline-flex w-fit items-center gap-2 rounded-full bg-joint/70 px-3 py-1 text-[0.95rem]">
+          <span class="h-2.5 w-2.5 rounded-sm bg-cobalt" aria-hidden="true"></span>
+          Karim, carreleur-faïencier à Tours
+        </p>
+        <div>
+          <h1 id="titre" class="mt-6 font-display text-[clamp(2.5rem,10.5vw,5.4rem)] leading-[0.98] tracking-[-0.01em]">Le carrelage posé droit, du premier carreau au dernier joint.</h1>
+          <p class="mt-5 max-w-[38ch] text-[1.05rem] leading-relaxed text-nuit/80 sm:text-lg">Salles de bains, douches à l'italienne, sols et terrasses. Je prépare le support, je dessine la pose avec vous et je carrelle moi-même, sans sous-traiter.</p>
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a href="#contact" class="btn w-full sm:w-auto bg-cobalt text-faience hover:bg-cobalt-deep">Demander une visite gratuite</a>
+            <a href="tel:+33600000000" class="btn w-full sm:w-auto bg-joint/70 hover:bg-joint">Appeler le 06 00 00 00 00</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tuile overflow-hidden h-[36vh] min-h-[14rem] max-h-[22rem] md:col-span-5 md:row-span-2 md:h-auto md:max-h-none">
+        <svg data-kv-image="Photo d'une salle de bains que vous avez carrelée" class="h-full w-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Une douche à l'italienne carrelée de faïence blanche et céladon, sol en carreaux de ciment bleus">
+          <rect width="400" height="400" fill="#BFC3BB"/>
+          <g class="mur">
+            <rect x="1.5" y="1.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:935ms"/>
+            <rect x="52.5" y="1.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:957ms"/>
+            <rect x="103.5" y="1.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:979ms"/>
+            <rect x="154.5" y="1.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:1001ms"/>
+            <rect x="205.5" y="1.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:1023ms"/>
+            <rect x="256.5" y="1.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:1045ms"/>
+            <rect x="307.5" y="1.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:1067ms"/>
+            <rect x="358.5" y="1.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:1089ms"/>
+            <rect x="-24" y="26.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:850ms"/>
+            <rect x="27" y="26.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:872ms"/>
+            <rect x="78" y="26.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:894ms"/>
+            <rect x="129" y="26.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:916ms"/>
+            <rect x="180" y="26.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:938ms"/>
+            <rect x="231" y="26.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:960ms"/>
+            <rect x="282" y="26.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:982ms"/>
+            <rect x="333" y="26.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:1004ms"/>
+            <rect x="384" y="26.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:1026ms"/>
+            <rect x="1.5" y="51.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:765ms"/>
+            <rect x="52.5" y="51.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:787ms"/>
+            <rect x="103.5" y="51.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:809ms"/>
+            <rect x="154.5" y="51.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:831ms"/>
+            <rect x="205.5" y="51.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:853ms"/>
+            <rect x="256.5" y="51.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:875ms"/>
+            <rect x="307.5" y="51.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:897ms"/>
+            <rect x="358.5" y="51.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:919ms"/>
+            <rect x="-24" y="76.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:680ms"/>
+            <rect x="27" y="76.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:702ms"/>
+            <rect x="78" y="76.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:724ms"/>
+            <rect x="129" y="76.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:746ms"/>
+            <rect x="180" y="76.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:768ms"/>
+            <rect x="231" y="76.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:790ms"/>
+            <rect x="282" y="76.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:812ms"/>
+            <rect x="333" y="76.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:834ms"/>
+            <rect x="384" y="76.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:856ms"/>
+            <rect x="1.5" y="101.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:595ms"/>
+            <rect x="52.5" y="101.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:617ms"/>
+            <rect x="103.5" y="101.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:639ms"/>
+            <rect x="154.5" y="101.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:661ms"/>
+            <rect x="205.5" y="101.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:683ms"/>
+            <rect x="256.5" y="101.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:705ms"/>
+            <rect x="307.5" y="101.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:727ms"/>
+            <rect x="358.5" y="101.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:749ms"/>
+            <rect x="-24" y="126.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:510ms"/>
+            <rect x="27" y="126.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:532ms"/>
+            <rect x="78" y="126.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:554ms"/>
+            <rect x="129" y="126.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:576ms"/>
+            <rect x="180" y="126.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:598ms"/>
+            <rect x="231" y="126.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:620ms"/>
+            <rect x="282" y="126.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:642ms"/>
+            <rect x="333" y="126.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:664ms"/>
+            <rect x="384" y="126.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:686ms"/>
+            <rect x="1.5" y="151.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:425ms"/>
+            <rect x="52.5" y="151.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:447ms"/>
+            <rect x="103.5" y="151.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:469ms"/>
+            <rect x="154.5" y="151.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:491ms"/>
+            <rect x="205.5" y="151.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:513ms"/>
+            <rect x="256.5" y="151.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:535ms"/>
+            <rect x="307.5" y="151.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:557ms"/>
+            <rect x="358.5" y="151.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:579ms"/>
+            <rect x="-24" y="176.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:340ms"/>
+            <rect x="27" y="176.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:362ms"/>
+            <rect x="78" y="176.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:384ms"/>
+            <rect x="129" y="176.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:406ms"/>
+            <rect x="180" y="176.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:428ms"/>
+            <rect x="231" y="176.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:450ms"/>
+            <rect x="282" y="176.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:472ms"/>
+            <rect x="333" y="176.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:494ms"/>
+            <rect x="384" y="176.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:516ms"/>
+            <rect x="1.5" y="201.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:255ms"/>
+            <rect x="52.5" y="201.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:277ms"/>
+            <rect x="103.5" y="201.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:299ms"/>
+            <rect x="154.5" y="201.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:321ms"/>
+            <rect x="205.5" y="201.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:343ms"/>
+            <rect x="256.5" y="201.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:365ms"/>
+            <rect x="307.5" y="201.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:387ms"/>
+            <rect x="358.5" y="201.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:409ms"/>
+            <rect x="-24" y="226.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:170ms"/>
+            <rect x="27" y="226.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:192ms"/>
+            <rect x="78" y="226.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:214ms"/>
+            <rect x="129" y="226.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:236ms"/>
+            <rect x="180" y="226.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:258ms"/>
+            <rect x="231" y="226.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:280ms"/>
+            <rect x="282" y="226.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:302ms"/>
+            <rect x="333" y="226.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:324ms"/>
+            <rect x="384" y="226.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:346ms"/>
+            <rect x="1.5" y="251.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:85ms"/>
+            <rect x="52.5" y="251.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:107ms"/>
+            <rect x="103.5" y="251.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:129ms"/>
+            <rect x="154.5" y="251.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:151ms"/>
+            <rect x="205.5" y="251.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:173ms"/>
+            <rect x="256.5" y="251.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:195ms"/>
+            <rect x="307.5" y="251.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:217ms"/>
+            <rect x="358.5" y="251.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:239ms"/>
+            <rect x="-24" y="276.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:0ms"/>
+            <rect x="27" y="276.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:22ms"/>
+            <rect x="78" y="276.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:44ms"/>
+            <rect x="129" y="276.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:66ms"/>
+            <rect x="180" y="276.5" width="48" height="22" rx="2.5" class="fill-faience" style="--d:88ms"/>
+            <rect x="231" y="276.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:110ms"/>
+            <rect x="282" y="276.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:132ms"/>
+            <rect x="333" y="276.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:154ms"/>
+            <rect x="384" y="276.5" width="48" height="22" rx="2.5" class="fill-celadon" style="--d:176ms"/>
+          </g>
+          <g>
+            <rect x="-12.5" y="284" width="55" height="55" rx="2" class="fill-cobalt"/>
+            <path d="M15 290 l22 22 -22 22 -22 -22z" class="fill-moutarde" opacity=".9"/>
+            <rect x="-12.5" y="342" width="55" height="58" rx="2" class="fill-cobalt"/>
+            <path d="M15 348 l22 22 -22 22 -22 -22z" class="fill-faience" opacity=".85"/>
+            <rect x="45.5" y="284" width="55" height="55" rx="2" class="fill-cobalt"/>
+            <path d="M73 290 l22 22 -22 22 -22 -22z" class="fill-moutarde" opacity=".9"/>
+            <rect x="45.5" y="342" width="55" height="58" rx="2" class="fill-cobalt"/>
+            <path d="M73 348 l22 22 -22 22 -22 -22z" class="fill-faience" opacity=".85"/>
+            <rect x="103.5" y="284" width="55" height="55" rx="2" class="fill-cobalt"/>
+            <path d="M131 290 l22 22 -22 22 -22 -22z" class="fill-moutarde" opacity=".9"/>
+            <rect x="103.5" y="342" width="55" height="58" rx="2" class="fill-cobalt"/>
+            <path d="M131 348 l22 22 -22 22 -22 -22z" class="fill-faience" opacity=".85"/>
+            <rect x="161.5" y="284" width="55" height="55" rx="2" class="fill-cobalt"/>
+            <path d="M189 290 l22 22 -22 22 -22 -22z" class="fill-moutarde" opacity=".9"/>
+            <rect x="161.5" y="342" width="55" height="58" rx="2" class="fill-cobalt"/>
+            <path d="M189 348 l22 22 -22 22 -22 -22z" class="fill-faience" opacity=".85"/>
+            <rect x="219.5" y="284" width="55" height="55" rx="2" class="fill-cobalt"/>
+            <path d="M247 290 l22 22 -22 22 -22 -22z" class="fill-moutarde" opacity=".9"/>
+            <rect x="219.5" y="342" width="55" height="58" rx="2" class="fill-cobalt"/>
+            <path d="M247 348 l22 22 -22 22 -22 -22z" class="fill-faience" opacity=".85"/>
+            <rect x="277.5" y="284" width="55" height="55" rx="2" class="fill-cobalt"/>
+            <path d="M305 290 l22 22 -22 22 -22 -22z" class="fill-moutarde" opacity=".9"/>
+            <rect x="277.5" y="342" width="55" height="58" rx="2" class="fill-cobalt"/>
+            <path d="M305 348 l22 22 -22 22 -22 -22z" class="fill-faience" opacity=".85"/>
+            <rect x="335.5" y="284" width="55" height="55" rx="2" class="fill-cobalt"/>
+            <path d="M363 290 l22 22 -22 22 -22 -22z" class="fill-moutarde" opacity=".9"/>
+            <rect x="335.5" y="342" width="55" height="58" rx="2" class="fill-cobalt"/>
+            <path d="M363 348 l22 22 -22 22 -22 -22z" class="fill-faience" opacity=".85"/>
+            <rect x="393.5" y="284" width="55" height="55" rx="2" class="fill-cobalt"/>
+            <path d="M421 290 l22 22 -22 22 -22 -22z" class="fill-moutarde" opacity=".9"/>
+            <rect x="393.5" y="342" width="55" height="58" rx="2" class="fill-cobalt"/>
+            <path d="M421 348 l22 22 -22 22 -22 -22z" class="fill-faience" opacity=".85"/>
+          </g>
+          <g class="joints">
+            <!-- Niche maçonnée -->
+            <rect x="52" y="104" width="118" height="66" rx="4" fill="#E4E6E0"/>
+            <rect x="52" y="104" width="118" height="8" rx="3" fill="#C8CCC4"/>
+            <rect x="70" y="128" width="16" height="42" rx="5" class="fill-moutarde"/>
+            <rect x="92" y="138" width="14" height="32" rx="5" class="fill-cobalt"/>
+            <circle cx="132" cy="160" r="10" fill="#FBFBF8"/>
+            <!-- Paroi de verre -->
+            <rect x="220" y="26" width="5" height="258" rx="2" fill="#9AA3A0"/>
+            <rect x="225" y="26" width="2" height="258" fill="#FFFFFF" opacity=".5"/>
+            <!-- Douche -->
+            <rect x="326" y="0" width="6" height="58" fill="#8D9592"/>
+            <path d="M300 58h58a4 4 0 0 1 4 4v4h-66v-4a4 4 0 0 1 4-4z" fill="#7B8481"/>
+            <g fill="#2350A0" opacity=".55">
+              <rect class="eau" x="306" y="74" width="2.5" height="12" rx="1.2"/>
+              <rect class="eau" x="320" y="80" width="2.5" height="12" rx="1.2" style="animation-delay:2.6s"/>
+              <rect class="eau" x="334" y="72" width="2.5" height="12" rx="1.2" style="animation-delay:3.1s"/>
+              <rect class="eau" x="348" y="78" width="2.5" height="12" rx="1.2" style="animation-delay:2.3s"/>
+            </g>
+            <rect x="322" y="150" width="14" height="22" rx="4" fill="#8D9592"/>
+            <rect x="314" y="156" width="30" height="6" rx="3" fill="#7B8481"/>
+            <!-- Caniveau -->
+            <rect x="244" y="370" width="140" height="9" rx="3" fill="#8D9592"/>
+            <path d="M252 374.5h124" stroke="#5E6663" stroke-width="2" stroke-dasharray="4 4"/>
+            <!-- Tabouret et plante -->
+            <rect x="40" y="246" width="70" height="10" rx="4" fill="#B98A55"/>
+            <rect x="48" y="256" width="7" height="44" rx="3" fill="#A27645"/>
+            <rect x="95" y="256" width="7" height="44" rx="3" fill="#A27645"/>
+            <path d="M58 246c-4-26 4-44 18-52-4 18 0 34-4 52zM76 246c0-20 10-34 26-38-8 14-10 26-14 38z" fill="#3F7A5A"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Mini-widgets : quatre tuiles courtes -->
+      <div class="grid grid-cols-2 gap-2.5 md:col-span-12 md:grid-cols-4">
+        <div class="tuile tuile-cobalt souleve p-4 sm:p-5">
+          <p class="font-display text-3xl sm:text-4xl">48 h</p>
+          <p class="mt-1 text-[0.95rem] text-faience/80">pour recevoir le devis</p>
+        </div>
+        <div class="tuile tuile-moutarde souleve p-4 sm:p-5">
+          <p class="font-display text-3xl sm:text-4xl">4,9 / 5</p>
+          <p class="mt-1 text-[0.95rem]">sur 62 avis clients</p>
+        </div>
+        <div class="tuile tuile-celadon souleve p-4 sm:p-5">
+          <p class="font-display text-3xl sm:text-4xl">30 km</p>
+          <p class="mt-1 text-[0.95rem]">autour de Tours</p>
+        </div>
+        <div class="tuile souleve p-4 sm:p-5">
+          <p class="font-display text-3xl sm:text-4xl">10 ans</p>
+          <p class="mt-1 text-[0.95rem]">de garantie décennale</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travaux : un bento de tuiles de tailles différentes ; carrousel sur mobile -->
+    <section id="travaux" class="mt-2.5" aria-labelledby="travaux-titre">
+      <div class="grid gap-2.5 md:grid-cols-12">
+        <div class="tuile tuile-nuit rv p-6 sm:p-8 md:col-span-4 md:row-span-2 flex flex-col justify-between">
+          <h2 id="travaux-titre" class="font-display text-[clamp(2rem,7vw,3.2rem)] leading-[1.02]">Ce que je carrelle</h2>
+          <p class="mt-4 text-[1.05rem] leading-relaxed text-faience/75">Du carreau de 2 cm à la dalle de 120 × 120. Chaque chantier commence par le support : c'est lui qui décide si le carrelage tiendra trente ans.</p>
+        </div>
+
+        <ul class="rv -mx-2.5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-2.5 scroll-px-2.5 no-scrollbar md:mx-0 md:grid md:grid-cols-8 md:overflow-visible md:px-0 md:col-span-8" aria-label="Les travaux">
+          <li class="tuile tuile-celadon souleve snap-start shrink-0 w-[82%] sm:w-[55%] md:w-auto md:col-span-5 p-6">
+            <svg class="h-12 w-12" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" class="fill-faience"/><rect x="26" y="2" width="20" height="20" rx="3" class="fill-faience"/><rect x="2" y="26" width="20" height="20" rx="3" class="fill-faience"/><rect x="26" y="26" width="20" height="20" rx="3" class="fill-cobalt"/></svg>
+            <h3 class="mt-5 font-display text-2xl">Salle de bains complète</h3>
+            <p class="mt-2 leading-relaxed">Dépose, étanchéité sous carrelage, faïence murale et sol. Comptez 8 à 12 jours pour une pièce de 6 m².</p>
+          </li>
+          <li class="tuile souleve snap-start shrink-0 w-[82%] sm:w-[55%] md:w-auto md:col-span-3 p-6" style="--d:80ms">
+            <svg class="h-12 w-12" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="4" class="fill-celadon"/><path d="M8 38h32" stroke="#13203A" stroke-width="3" stroke-dasharray="4 3"/><path d="M14 8h20" stroke="#13203A" stroke-width="3" stroke-linecap="round"/><path d="M18 14v6M24 14v8M30 14v6" stroke="#2350A0" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <h3 class="mt-5 font-display text-2xl">Douche à l'italienne</h3>
+            <p class="mt-2 leading-relaxed">Receveur maçonné, pente vers un caniveau, étanchéité sous le carrelage.</p>
+          </li>
+          <li class="tuile souleve snap-start shrink-0 w-[82%] sm:w-[55%] md:w-auto md:col-span-3 p-6" style="--d:140ms">
+            <svg class="h-12 w-12" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="21" rx="3" class="fill-joint"/><rect x="2" y="25" width="21" height="21" rx="3" class="fill-joint"/><rect x="25" y="25" width="21" height="21" rx="3" class="fill-moutarde"/></svg>
+            <h3 class="mt-5 font-display text-2xl">Sols grand format</h3>
+            <p class="mt-2 leading-relaxed">Grès cérame jusqu'à 120 × 120, double encollage : aucun carreau qui sonne creux.</p>
+          </li>
+          <li class="tuile tuile-cobalt souleve snap-start shrink-0 w-[82%] sm:w-[55%] md:w-auto md:col-span-5 p-6" style="--d:200ms">
+            <svg class="h-12 w-12" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="13" height="13" rx="2" class="fill-celadon"/><rect x="17.5" y="2" width="13" height="13" rx="2" class="fill-celadon" opacity=".8"/><rect x="33" y="2" width="13" height="13" rx="2" class="fill-celadon"/><rect x="2" y="17.5" width="13" height="13" rx="2" class="fill-celadon" opacity=".7"/><rect x="17.5" y="17.5" width="13" height="13" rx="2" class="fill-celadon"/><rect x="33" y="17.5" width="13" height="13" rx="2" class="fill-celadon" opacity=".85"/><rect x="2" y="36" width="44" height="10" rx="2" class="fill-faience"/></svg>
+            <h3 class="mt-5 font-display text-2xl">Crédence et cuisine</h3>
+            <p class="mt-2 leading-relaxed text-faience/85">Faïence, zellige ou métro biseauté, découpes autour des prises au millimètre.</p>
+          </li>
+          <li class="tuile tuile-moutarde souleve snap-start shrink-0 w-[82%] sm:w-[55%] md:w-auto md:col-span-4 p-6" style="--d:80ms">
+            <svg class="h-12 w-12" viewBox="0 0 48 48" aria-hidden="true"><circle cx="38" cy="10" r="7" class="fill-faience"/><rect x="2" y="26" width="20" height="9" rx="2" class="fill-faience"/><rect x="25" y="26" width="21" height="9" rx="2" class="fill-faience"/><path d="M8 35v9M18 35v9M30 35v9M40 35v9" stroke="#13203A" stroke-width="3"/></svg>
+            <h3 class="mt-5 font-display text-2xl">Terrasse et piscine</h3>
+            <p class="mt-2 leading-relaxed">Dalles collées ou sur plots, pente d'évacuation, carrelage antidérapant.</p>
+          </li>
+          <li class="tuile souleve snap-start shrink-0 w-[82%] sm:w-[55%] md:w-auto md:col-span-4 p-6" style="--d:140ms">
+            <svg class="h-12 w-12" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 2 46 24 24 46 2 24z" class="fill-cobalt"/><path d="M24 12 36 24 24 36 12 24z" class="fill-moutarde"/><path d="M24 20 28 24 24 28 20 24z" class="fill-faience"/></svg>
+            <h3 class="mt-5 font-display text-2xl">Réparations et tomettes</h3>
+            <p class="mt-2 leading-relaxed">Carreau cassé remplacé, tomettes anciennes reprises, joints refaits.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Poses : le calepinage interactif (signature) et le calculateur de surface -->
+    <section id="poses" class="mt-2.5 grid gap-2.5 md:grid-cols-12" aria-labelledby="poses-titre">
+      <div class="tuile rv p-6 sm:p-8 md:col-span-7">
+        <h2 id="poses-titre" class="font-display text-[clamp(2rem,7vw,3.2rem)] leading-[1.02]">Changez la pose, la pièce change.</h2>
+        <p class="mt-3 max-w-[52ch] leading-relaxed text-nuit/80">Avant le premier carreau, je dessine le calepinage : d'où part la première rangée, où tombent les coupes. Essayez les poses ici, on affinera sur plan.</p>
+
+        <div class="mt-5 overflow-hidden rounded-xl bg-joint">
+          <svg id="calepinage" class="block h-auto w-full" viewBox="0 0 360 240" role="img" aria-labelledby="pose-nom">
+            <defs><clipPath id="panneau"><rect width="360" height="240" rx="6"/></clipPath></defs>
+            <rect width="360" height="240" fill="#C4C8C0"/>
+            <g id="pose" clip-path="url(#panneau)"></g>
+          </svg>
+        </div>
+        <div class="mt-4 flex flex-wrap gap-2" role="group" aria-label="Choisir une pose">
+          <button type="button" class="pose-btn" data-pose="droite" aria-pressed="true">Droite</button>
+          <button type="button" class="pose-btn" data-pose="decalee" aria-pressed="false">Décalée</button>
+          <button type="button" class="pose-btn" data-pose="vannerie" aria-pressed="false">Vannerie</button>
+          <button type="button" class="pose-btn" data-pose="diagonale" aria-pressed="false">Diagonale</button>
+        </div>
+        <p id="pose-nom" class="mt-3 min-h-[3rem] text-[0.98rem] leading-relaxed text-nuit/75" aria-live="polite">Pose droite : sobre et intemporelle, les joints filent d'un mur à l'autre.</p>
+      </div>
+
+      <!-- Calculateur : surface + chute selon la pose -->
+      <div class="tuile tuile-cobalt rv p-6 sm:p-8 md:col-span-5 flex flex-col" style="--d:100ms">
+        <h3 class="font-display text-[1.9rem] leading-tight">Combien de carrelage commander&nbsp;?</h3>
+        <p class="mt-2 text-faience/80">Indiquez la pièce, j'ajoute la chute selon la pose.</p>
+        <form id="calcul" class="mt-5 grid grid-cols-2 gap-3" onsubmit="return false">
+          <label class="block"><span class="text-[0.95rem]">Longueur (m)</span>
+            <input name="long" type="number" inputmode="decimal" min="0.5" max="40" step="0.1" value="3.2" class="field border-transparent">
+          </label>
+          <label class="block"><span class="text-[0.95rem]">Largeur (m)</span>
+            <input name="larg" type="number" inputmode="decimal" min="0.5" max="40" step="0.1" value="2.4" class="field border-transparent">
+          </label>
+          <label class="block col-span-2"><span class="text-[0.95rem]">Format des carreaux</span>
+            <select name="format" class="field border-transparent">
+              <option value="0.04">20 × 20 cm</option>
+              <option value="0.18">30 × 60 cm</option>
+              <option value="0.36" selected>60 × 60 cm</option>
+              <option value="0.72">60 × 120 cm</option>
+            </select>
+          </label>
+          <label class="block col-span-2"><span class="text-[0.95rem]">Pose</span>
+            <select name="chute" class="field border-transparent">
+              <option value="droite" data-chute="10">Droite (10 % de chute)</option>
+              <option value="decalee" data-chute="10">Décalée (10 % de chute)</option>
+              <option value="vannerie" data-chute="12">Vannerie (12 % de chute)</option>
+              <option value="diagonale" data-chute="15">Diagonale (15 % de chute)</option>
+            </select>
+          </label>
+        </form>
+        <dl class="mt-6 grid grid-cols-2 gap-2.5 md:mt-auto md:pt-6">
+          <div class="rounded-xl bg-faience/10 p-4"><dt class="text-[0.95rem] text-faience/75">À commander</dt><dd id="res-m2" class="mt-1 font-display text-2xl sm:text-3xl">8,5 m²</dd></div>
+          <div class="rounded-xl bg-moutarde p-4 text-nuit"><dt class="text-[0.95rem]">Soit environ</dt><dd id="res-nb" class="mt-1 font-display text-2xl sm:text-3xl">24 carreaux</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Le chantier : cinq étapes reliées par le cordeau bleu du carreleur -->
+    <section id="chantier" class="mt-2.5 tuile tuile-celadon p-6 sm:p-8 md:p-10" aria-labelledby="chantier-titre">
+      <h2 id="chantier-titre" class="font-display text-[clamp(2rem,7vw,3.2rem)] leading-[1.02] max-w-[18ch]">Un chantier, du support au joint</h2>
+      <ol class="cordeau-bloc rv relative mt-7 grid gap-5 md:mt-10 md:grid-cols-5 md:gap-6">
+        <li class="relative pl-12 md:pl-0 md:pt-14">
+          <span class="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-lg bg-nuit font-display text-lg text-faience" aria-hidden="true">1</span>
+          <h3 class="font-semibold text-lg">Visite et métré</h3>
+          <p class="mt-1 leading-relaxed text-nuit/80">Gratuite, 45 minutes. Je sonde le sol et je mesure.</p>
+        </li>
+        <li class="relative pl-12 md:pl-0 md:pt-14">
+          <span class="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-lg bg-nuit font-display text-lg text-faience" aria-hidden="true">2</span>
+          <h3 class="font-semibold text-lg">Devis et calepinage</h3>
+          <p class="mt-1 leading-relaxed text-nuit/80">Sous 48 h, avec le plan de pose et la date de début.</p>
+        </li>
+        <li class="relative pl-12 md:pl-0 md:pt-14">
+          <span class="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-lg bg-nuit font-display text-lg text-faience" aria-hidden="true">3</span>
+          <h3 class="font-semibold text-lg">Préparation</h3>
+          <p class="mt-1 leading-relaxed text-nuit/80">Dépose, ragréage, étanchéité. Le travail qu'on ne voit plus.</p>
+        </li>
+        <li class="relative pl-12 md:pl-0 md:pt-14">
+          <span class="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-lg bg-nuit font-display text-lg text-faience" aria-hidden="true">4</span>
+          <h3 class="font-semibold text-lg">Pose</h3>
+          <p class="mt-1 leading-relaxed text-nuit/80">Niveau laser, croisillons, double encollage des grands formats.</p>
+        </li>
+        <li class="relative pl-12 md:pl-0 md:pt-14">
+          <span class="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-lg bg-cobalt font-display text-lg text-faience" aria-hidden="true">5</span>
+          <h3 class="font-semibold text-lg">Joints et nettoyage</h3>
+          <p class="mt-1 leading-relaxed text-nuit/80">Joint époxy dans la douche, chantier rendu propre.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Chantiers récents : chaque réalisation avec l'avis du client ; carrousel sur mobile -->
+    <section id="chantiers" class="mt-2.5" aria-labelledby="chantiers-titre">
+      <div class="tuile tuile-moutarde rv flex flex-col gap-2 p-6 sm:p-8 md:flex-row md:items-end md:justify-between">
+        <h2 id="chantiers-titre" class="font-display text-[clamp(2rem,7vw,3.2rem)] leading-[1.02]">Chantiers récents</h2>
+        <p class="max-w-[40ch] leading-relaxed md:text-right">Ce que les clients en disent, une fois les joints secs.</p>
+      </div>
+      <ul class="rv -mx-2.5 mt-2.5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-2.5 scroll-px-2.5 no-scrollbar md:mx-0 md:grid md:grid-cols-4 md:overflow-visible md:px-0" aria-label="Réalisations et avis">
+        <li class="tuile souleve snap-start shrink-0 w-[82%] sm:w-[48%] md:w-auto overflow-hidden flex flex-col">
+          <div class="aspect-[16/11] overflow-hidden rounded-t-tuile" data-kv-image="Photo d'une douche à l'italienne réalisée">
+            <svg class="h-full w-full" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="220" fill="#0F2C5E"/>
+              <rect x="1" y="1" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="1" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="1" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="1" y="70" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="1" y="93" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="1" y="116" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="1" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="1" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="1" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="1" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="24" y="1" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="24" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="24" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="24" y="70" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="24" y="93" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="24" y="116" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="24" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="24" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="24" y="185" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="24" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="47" y="1" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="47" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="47" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="47" y="70" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="47" y="93" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="47" y="116" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="47" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="47" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="47" y="185" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="47" y="208" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="70" y="1" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="70" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="70" y="47" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="70" y="70" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="70" y="93" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="70" y="116" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="70" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="70" y="162" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="70" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="70" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="93" y="1" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="93" y="24" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="93" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="93" y="70" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="93" y="139" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="93" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="93" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="93" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="116" y="1" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="116" y="24" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="116" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="116" y="70" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="116" y="139" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="116" y="162" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="116" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="116" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="139" y="1" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="139" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="139" y="47" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="139" y="70" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="139" y="139" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="139" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="139" y="185" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="139" y="208" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="162" y="1" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="162" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="162" y="47" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="162" y="70" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="162" y="93" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="162" y="116" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="162" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="162" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="162" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="162" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="185" y="1" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="185" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="185" y="47" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="185" y="70" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="185" y="93" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="185" y="116" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="185" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="185" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="185" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="185" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="208" y="1" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="208" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="208" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="208" y="70" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="208" y="93" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="208" y="116" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="208" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="208" y="162" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="208" y="185" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="208" y="208" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="231" y="1" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="231" y="24" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.85"/>
+                <rect x="231" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="231" y="70" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="231" y="93" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="231" y="116" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="231" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="231" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="231" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="231" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="254" y="1" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="254" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="254" y="47" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="254" y="70" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="254" y="93" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="254" y="116" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="254" y="139" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="254" y="162" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="254" y="185" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="254" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="277" y="1" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="277" y="24" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="277" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="277" y="70" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="277" y="93" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="277" y="116" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="277" y="139" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="277" y="162" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="277" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="277" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="300" y="1" width="21" height="21" rx="2" class="fill-cobalt" opacity="1"/>
+                <rect x="300" y="24" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="300" y="47" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+                <rect x="300" y="70" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="300" y="93" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="300" y="116" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="1"/>
+                <rect x="300" y="139" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="300" y="162" width="21" height="21" rx="2" class="fill-cobalt-deep" opacity="0.92"/>
+                <rect x="300" y="185" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.92"/>
+                <rect x="300" y="208" width="21" height="21" rx="2" class="fill-cobalt" opacity="0.85"/>
+              <rect x="72" y="70" width="70" height="50" rx="3" fill="#0F2C5E"/>
+              <rect x="80" y="92" width="10" height="28" rx="3" class="fill-moutarde"/><rect x="95" y="100" width="10" height="20" rx="3" class="fill-faience"/>
+              <rect x="246" y="0" width="5" height="40" fill="#C9CEC8"/><path d="M226 40h44v6h-44z" fill="#C9CEC8"/>
+              <rect x="0" y="196" width="320" height="24" class="fill-faience"/><rect x="180" y="204" width="120" height="6" rx="2" fill="#9AA3A0"/>
+            </svg>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <h3 class="font-semibold">Douche à l'italienne, Joué-lès-Tours</h3>
+            <p class="text-[0.95rem] text-nuit/65">Zellige cobalt, 6 jours</p>
+            <blockquote class="mt-3 font-display text-xl leading-snug">« Il a passé une heure à caler la pente avec nous. Pas une goutte qui stagne depuis un an. »</blockquote>
+            <p class="mt-auto pt-3 text-[0.95rem]">Sophie</p>
+          </div>
+        </li>
+        <li class="tuile souleve snap-start shrink-0 w-[82%] sm:w-[48%] md:w-auto overflow-hidden flex flex-col" style="--d:80ms">
+          <div class="aspect-[16/11] overflow-hidden rounded-t-tuile">
+            <svg class="h-full w-full" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="220" fill="#E9E4D8"/>
+              <rect x="0" y="146" width="320" height="74" fill="#BFC3BB"/>
+              <rect x="1" y="150" width="80" height="20" rx="1.5" class="fill-faience"/>
+                <rect x="83" y="150" width="80" height="20" rx="1.5" class="fill-faience"/>
+                <rect x="165" y="150" width="80" height="20" rx="1.5" class="fill-faience"/>
+                <rect x="247" y="150" width="80" height="20" rx="1.5" class="fill-faience"/>
+                <rect x="329" y="150" width="80" height="20" rx="1.5" class="fill-faience"/>
+                <rect x="411" y="150" width="80" height="20" rx="1.5" class="fill-faience"/>
+                <rect x="-39" y="172" width="80" height="22" rx="1.5" class="fill-faience"/>
+                <rect x="43" y="172" width="80" height="22" rx="1.5" class="fill-faience"/>
+                <rect x="125" y="172" width="80" height="22" rx="1.5" class="fill-faience"/>
+                <rect x="207" y="172" width="80" height="22" rx="1.5" class="fill-faience"/>
+                <rect x="289" y="172" width="80" height="22" rx="1.5" class="fill-faience"/>
+                <rect x="371" y="172" width="80" height="22" rx="1.5" class="fill-faience"/>
+                <rect x="1" y="196" width="80" height="24" rx="1.5" class="fill-faience"/>
+                <rect x="83" y="196" width="80" height="24" rx="1.5" class="fill-faience"/>
+                <rect x="165" y="196" width="80" height="24" rx="1.5" class="fill-faience"/>
+                <rect x="247" y="196" width="80" height="24" rx="1.5" class="fill-faience"/>
+                <rect x="329" y="196" width="80" height="24" rx="1.5" class="fill-faience"/>
+                <rect x="411" y="196" width="80" height="24" rx="1.5" class="fill-faience"/>
+              <rect x="190" y="40" width="80" height="60" rx="3" fill="#FBFBF8" opacity=".7"/><path d="M230 40v60M190 70h80" stroke="#E9E4D8" stroke-width="3"/>
+              <rect x="40" y="96" width="130" height="40" rx="10" class="fill-cobalt"/><rect x="34" y="84" width="28" height="56" rx="10" class="fill-cobalt-deep"/><rect x="150" y="84" width="28" height="56" rx="10" class="fill-cobalt-deep"/>
+              <rect x="70" y="84" width="34" height="22" rx="6" class="fill-moutarde"/>
+              <path d="M286 146v-46" stroke="#3F7A5A" stroke-width="3"/><path d="M286 110c-14-6-18-20-14-30 10 4 14 14 14 30zm0-6c12-8 18-20 14-30-10 6-14 16-14 30z" fill="#3F7A5A"/><rect x="276" y="128" width="20" height="18" rx="3" class="fill-faience"/>
+            </svg>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <h3 class="font-semibold">Séjour de 45 m², Saint-Cyr-sur-Loire</h3>
+            <p class="text-[0.95rem] text-nuit/65">Grès 60 × 120, 5 jours</p>
+            <blockquote class="mt-3 font-display text-xl leading-snug">« Des carreaux immenses et pas un seul qui sonne creux. Le chantier était rangé chaque soir. »</blockquote>
+            <p class="mt-auto pt-3 text-[0.95rem]">Thomas</p>
+          </div>
+        </li>
+        <li class="tuile souleve snap-start shrink-0 w-[82%] sm:w-[48%] md:w-auto overflow-hidden flex flex-col" style="--d:140ms">
+          <div class="aspect-[16/11] overflow-hidden rounded-t-tuile">
+            <svg class="h-full w-full" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="220" fill="#F3F2EE"/>
+              <rect x="0" y="0" width="320" height="20" fill="#E4E3DD"/>
+              <rect x="0.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="0.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="0.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="0.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="0.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="0.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="0.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="16.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="16.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="16.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="16.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="16.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="16.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="16.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="32.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="32.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="32.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="32.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="32.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="32.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="32.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="48.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="48.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="48.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="48.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="48.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="48.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="48.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="64.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="64.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="64.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="64.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="64.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="64.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="64.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="80.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="80.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="80.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="80.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="80.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="80.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="80.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="96.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="96.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="96.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="96.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="96.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="96.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="96.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="112.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="112.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="112.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="112.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="112.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="112.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="112.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="128.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="128.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="128.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="128.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="128.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="128.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="128.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="144.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="144.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="144.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="144.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="144.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="144.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="144.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="160.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="160.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="160.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="160.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="160.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="160.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="160.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="176.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="176.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="176.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="176.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="176.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="176.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="176.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="192.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="192.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="192.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="192.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="192.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="192.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="192.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="208.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="208.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="208.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="208.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="208.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="208.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="208.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="224.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="224.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="224.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="224.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="224.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="224.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="224.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="240.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="240.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="240.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="240.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="240.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="240.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="240.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="256.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="256.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="256.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="256.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="256.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="256.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="256.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="272.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="272.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="272.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="272.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="272.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="272.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="272.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="288.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="288.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="288.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="288.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="1"/>
+                <rect x="288.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="288.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="288.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="304.8" y="20.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="304.8" y="36.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+                <rect x="304.8" y="52.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="304.8" y="68.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="304.8" y="84.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.78"/>
+                <rect x="304.8" y="100.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.7"/>
+                <rect x="304.8" y="116.8" width="14.4" height="14.4" rx="1.5" class="fill-celadon" opacity="0.9"/>
+              <rect x="0" y="134" width="320" height="12" fill="#2B2F36"/><rect x="0" y="146" width="320" height="74" fill="#FBFBF8"/>
+              <path d="M0 182h320" stroke="#E4E3DD" stroke-width="2"/><path d="M106 146v74M214 146v74" stroke="#E4E3DD" stroke-width="2"/>
+              <path d="M70 134v-30a12 12 0 0 1 24 0v6" stroke="#8D9592" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <rect x="190" y="126" width="90" height="8" rx="2" fill="#1A1D22"/><circle cx="215" cy="130" r="2" fill="#555"/><circle cx="255" cy="130" r="2" fill="#555"/>
+            </svg>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <h3 class="font-semibold">Crédence de cuisine, Tours centre</h3>
+            <p class="text-[0.95rem] text-nuit/65">Zellige céladon, 2 jours</p>
+            <blockquote class="mt-3 font-display text-xl leading-snug">« Il nous a conseillé de garder les irrégularités du zellige. C'est ce qui fait tout. »</blockquote>
+            <p class="mt-auto pt-3 text-[0.95rem]">Inès</p>
+          </div>
+        </li>
+        <li class="tuile souleve snap-start shrink-0 w-[82%] sm:w-[48%] md:w-auto overflow-hidden flex flex-col" style="--d:200ms">
+          <div class="aspect-[16/11] overflow-hidden rounded-t-tuile">
+            <svg class="h-full w-full" viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="320" height="220" fill="#CFE3EC"/>
+              <circle cx="262" cy="46" r="20" class="fill-moutarde"/>
+              <path d="M0 120c60-18 120-22 180-10s100 8 140-4v26H0z" fill="#8FB59A"/>
+              <rect x="0" y="128" width="320" height="92" fill="#6C6F66"/>
+              <rect x="0" y="132" width="60" height="26" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="63" y="132" width="60" height="26" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="126" y="132" width="60" height="26" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="189" y="132" width="60" height="26" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="252" y="132" width="60" height="26" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="315" y="132" width="60" height="26" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="-20" y="160" width="66" height="30" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="49" y="160" width="66" height="30" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="118" y="160" width="66" height="30" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="187" y="160" width="66" height="30" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="256" y="160" width="66" height="30" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="-46" y="192" width="74" height="34" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="31" y="192" width="74" height="34" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="108" y="192" width="74" height="34" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="185" y="192" width="74" height="34" rx="1.5" class="fill-moutarde" opacity=".85"/>
+                <rect x="262" y="192" width="74" height="34" rx="1.5" class="fill-moutarde" opacity=".85"/>
+              <rect x="34" y="96" width="30" height="36" rx="4" class="fill-cobalt"/><path d="M49 96c-10-14-8-30 0-38 8 8 10 24 0 38z" fill="#3F7A5A"/>
+            </svg>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <h3 class="font-semibold">Terrasse de 30 m², Montlouis</h3>
+            <p class="text-[0.95rem] text-nuit/65">Dalles sur plots, 4 jours</p>
+            <blockquote class="mt-3 font-display text-xl leading-snug">« La pente est parfaite : l'eau file vers le jardin, même sous l'orage. »</blockquote>
+            <p class="mt-auto pt-3 text-[0.95rem]">Pascal</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Questions fréquentes -->
+    <section id="questions" class="mt-2.5 grid gap-2.5 md:grid-cols-12" aria-labelledby="questions-titre">
+      <div class="tuile tuile-nuit rv p-6 sm:p-8 md:col-span-4">
+        <h2 id="questions-titre" class="font-display text-[clamp(2rem,7vw,3.2rem)] leading-[1.02]">Vos questions</h2>
+        <p class="mt-3 leading-relaxed text-faience/75">Celles qu'on me pose à chaque visite.</p>
+      </div>
+      <div class="tuile rv px-6 py-2 sm:px-8 md:col-span-8" style="--d:80ms">
+        <details class="group border-b-2 border-joint">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold text-lg">Peut-on carreler sur l'ancien carrelage&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-joint text-xl" aria-hidden="true">+</span></summary>
+          <p class="pb-5 leading-relaxed text-nuit/80">Souvent, oui, s'il est bien collé et plan : je le vérifie au maillet pendant la visite. On évite la dépose et la poussière, mais il faut parfois raboter les portes.</p>
+        </details>
+        <details class="group border-b-2 border-joint">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold text-lg">Fournissez-vous le carrelage&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-joint text-xl" aria-hidden="true">+</span></summary>
+          <p class="pb-5 leading-relaxed text-nuit/80">Les deux sont possibles. Je commande chez mes fournisseurs ou je pose celui que vous avez choisi ; je vérifie alors les quantités et le numéro de lot avant de commencer.</p>
+        </details>
+        <details class="group border-b-2 border-joint">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold text-lg">Combien de temps pour une salle de bains&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-joint text-xl" aria-hidden="true">+</span></summary>
+          <p class="pb-5 leading-relaxed text-nuit/80">De 8 à 12 jours ouvrés pour 5 à 7 m² avec douche à l'italienne, séchage de l'étanchéité compris. La date de début figure sur le devis.</p>
+        </details>
+        <details class="group">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold text-lg">Quand peut-on marcher dessus&nbsp;?<span class="plus grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-joint text-xl" aria-hidden="true">+</span></summary>
+          <p class="pb-5 leading-relaxed text-nuit/80">24 heures après la pose pour marcher, 48 heures après les joints pour laver à l'eau, une semaine avant d'installer un meuble lourd.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contact : formulaire, horaires et zone d'intervention -->
+    <section id="contact" class="mt-2.5 grid gap-2.5 md:grid-cols-12" aria-labelledby="contact-titre">
+      <div class="tuile rv p-6 sm:p-8 md:col-span-7 md:row-span-2">
+        <h2 id="contact-titre" class="font-display text-[clamp(2rem,7vw,3.2rem)] leading-[1.02]">Demander une visite gratuite</h2>
+        <p class="mt-3 leading-relaxed text-nuit/80">Décrivez la pièce en deux lignes. Je vous rappelle le soir même pour fixer un créneau.</p>
+        <!--
+          Formulaire de demande de visite : il n'envoie rien tant qu'il n'est pas relié à un service.
+          - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+          - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+          - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+        -->
+        <form class="mt-6 grid gap-4 sm:grid-cols-2" action="#" method="post">
+          <label class="block"><span class="font-medium">Prénom</span>
+            <input type="text" name="prenom" autocomplete="given-name" class="field" required>
+          </label>
+          <label class="block"><span class="font-medium">Téléphone</span>
+            <input type="tel" name="telephone" autocomplete="tel" class="field" required>
+          </label>
+          <label class="block"><span class="font-medium">Commune</span>
+            <input type="text" name="commune" autocomplete="address-level2" class="field" placeholder="Tours">
+          </label>
+          <label class="block"><span class="font-medium">Travaux</span>
+            <select name="travaux" class="field">
+              <option>Salle de bains</option>
+              <option>Douche à l'italienne</option>
+              <option>Sol intérieur</option>
+              <option>Crédence ou cuisine</option>
+              <option>Terrasse ou piscine</option>
+              <option>Réparation</option>
+            </select>
+          </label>
+          <label class="block sm:col-span-2"><span class="font-medium">Votre projet</span>
+            <textarea name="message" rows="3" class="field" placeholder="Salle de bains de 6 m², remplacer la baignoire par une douche"></textarea>
+          </label>
+          <button type="submit" class="btn w-full bg-cobalt text-faience hover:bg-cobalt-deep sm:col-span-2 sm:w-fit">Envoyer ma demande</button>
+        </form>
+      </div>
+
+      <div class="tuile tuile-cobalt rv p-6 sm:p-8 md:col-span-5" style="--d:80ms">
+        <h3 class="font-display text-[1.9rem] leading-tight">Me joindre</h3>
+        <div class="mt-3 flex flex-col items-start">
+          <a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-display text-3xl hover:text-moutarde transition-colors">06 00 00 00 00</a>
+          <a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center text-faience/85 underline decoration-moutarde decoration-2 underline-offset-4">contact@exemple.fr</a>
+        </div>
+        <dl class="mt-4 space-y-1 text-[0.98rem]">
+          <div class="flex justify-between gap-4 border-t border-faience/20 pt-2"><dt>Chantiers</dt><dd>lun. au ven., 7 h 30 – 17 h</dd></div>
+          <div class="flex justify-between gap-4 border-t border-faience/20 pt-2"><dt>Rappels</dt><dd>chaque soir, 18 h – 19 h</dd></div>
+        </dl>
+      </div>
+
+      <div class="tuile tuile-celadon rv p-6 sm:p-8 md:col-span-5" style="--d:140ms">
+        <h3 class="font-display text-[1.9rem] leading-tight">Zone d'intervention</h3>
+        <p class="mt-2 leading-relaxed">Tours et 30 km autour : Joué, Saint-Cyr, Montlouis, Amboise, Chambray.</p>
+        <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+        <div data-kv-map="Tours, Indre-et-Loire" class="mt-6 md:h-56 rounded-xl overflow-hidden bg-faience text-nuit"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-[84rem] px-2.5 pb-2.5 pt-2.5 md:px-4 md:pb-4">
+    <div class="tuile tuile-nuit flex flex-col gap-4 p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
+      <p class="font-display text-2xl">Calepin, carrelage et faïence</p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-1 text-[0.95rem] text-faience/75">
+        <li>SIRET 000 000 000 00000</li>
+        <li>Assurance décennale n° 0000000</li>
+        <li><a href="#accueil" class="inline-flex min-h-11 items-center underline underline-offset-4">Haut de page</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="fixed inset-x-0 bottom-0 z-40 bg-joint/95 px-2.5 pt-2.5 backdrop-blur md:hidden" style="padding-bottom: calc(.625rem + env(safe-area-inset-bottom))">
+    <div class="grid grid-cols-2 gap-2.5">
+      <a href="tel:+33600000000" class="btn w-full bg-nuit text-faience">Appeler</a>
+      <a href="#contact" class="btn w-full bg-moutarde text-nuit">Devis gratuit</a>
+    </div>
+  </div>
+
+  <script>
+  (() => {
+    const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile
+    const btn = document.getElementById('menuBtn'), menu = document.getElementById('menu');
+    const ouvrir = (o) => { btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); menu.classList.toggle('hidden', !o); menu.classList.toggle('flex', o); };
+    btn.addEventListener('click', () => ouvrir(btn.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => ouvrir(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') ouvrir(false); });
+
+    // Apparition au défilement
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.rv').forEach(el => io.observe(el));
+    }
+
+    // Signature : le calepinage. Chaque pose est une liste de carreaux (centre, taille, rotation, couleur).
+    const NS = 'http://www.w3.org/2000/svg', J = 4, W = 360, H = 240;
+    const poses = {
+      droite() { const t = []; for (let i = 0; i < 6; i++) for (let j = 0; j < 4; j++) t.push([30 + 60 * i, 30 + 60 * j, 60, 60, 0, (i * 7 + j * 3) % 9 === 4 ? 'fill-celadon' : 'fill-faience']); return t; },
+      decalee() { const t = []; for (let j = 0; j < 4; j++) for (let x = j % 2 ? -60 : 0; x < W; x += 120) t.push([x + 60, 30 + 60 * j, 120, 60, 0, (x / 60 + j) % 3 === 0 ? 'fill-faience' : 'fill-celadon']); return t; },
+      vannerie() { const t = []; for (let i = 0; i < 6; i++) for (let j = 0; j < 4; j++) { const cx = 30 + 60 * i, cy = 30 + 60 * j, h = (i + j) % 2 === 0, c = h ? 'fill-cobalt' : 'fill-faience'; if (h) t.push([cx, cy - 15, 60, 30, 0, c], [cx, cy + 15, 60, 30, 0, c]); else t.push([cx - 15, cy, 30, 60, 0, c], [cx + 15, cy, 30, 60, 0, c]); } return t; },
+      diagonale() { const t = [], s = Math.SQRT1_2 * 60; for (let a = -5; a <= 5; a++) for (let b = -5; b <= 5; b++) { const cx = 180 + (a - b) * s, cy = 120 + (a + b) * s; if (cx > -45 && cx < W + 45 && cy > -45 && cy < H + 45) t.push([cx, cy, 60, 60, 45, (a + b) % 2 === 0 ? ((a % 3 === 0 && b % 3 === 0) ? 'fill-moutarde' : 'fill-cobalt') : 'fill-faience']); } return t; },
+    };
+    const textes = {
+      droite: 'Pose droite : sobre et intemporelle, les joints filent d\'un mur à l\'autre.',
+      decalee: 'Pose décalée : les carreaux longs agrandissent la pièce dans le sens de la pose.',
+      vannerie: 'Vannerie : des paires de carreaux croisées, comme un tressage. Très belle en sol de salle de bains.',
+      diagonale: 'Diagonale : le damier tourné à 45° élargit les petites pièces. Un peu plus de coupes.',
+    };
+    const calcul = Object.fromEntries(Object.entries(poses).map(([k, f]) => [k, f().sort((p, q) => p[0] - q[0] || p[1] - q[1])]));
+    const N = Math.max(...Object.values(calcul).map(t => t.length));
+    const g = document.getElementById('pose'), rects = [];
+    for (let k = 0; k < N; k++) { const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', -30); r.setAttribute('y', -30); r.setAttribute('width', 60); r.setAttribute('height', 60); r.setAttribute('rx', 5); g.appendChild(r); rects.push(r); }
+    const poser = (nom) => {
+      const t = calcul[nom];
+      rects.forEach((r, k) => {
+        const p = t[Math.min(k, t.length - 1)], cache = k >= t.length;
+        const [cx, cy, w, h, rot, c] = p;
+        r.style.setProperty('--d', Math.round(cx * 1.1 + cy * .6) + 'ms');
+        r.style.transform = `translate(${cx}px, ${cy}px) rotate(${rot}deg) scale(${cache ? 0 : (w - J) / 60}, ${cache ? 0 : (h - J) / 60})`;
+        r.style.opacity = cache ? 0 : 1;
+        r.setAttribute('class', c);
+      });
+      document.getElementById('pose-nom').textContent = textes[nom];
+      document.querySelectorAll('[data-pose]').forEach(b => b.setAttribute('aria-pressed', b.dataset.pose === nom));
+    };
+    let poseActuelle = 'droite';
+    document.querySelectorAll('[data-pose]').forEach(b => b.addEventListener('click', () => { poseActuelle = b.dataset.pose; poser(poseActuelle); const s = form.elements.chute; s.value = poseActuelle; majCalcul(); }));
+    // Premier affichage : les carreaux poussent depuis le centre quand le panneau devient visible
+    if (!reduit && 'IntersectionObserver' in window) {
+      rects.forEach(r => { r.style.transform = 'translate(180px, 120px) scale(0)'; r.style.opacity = 0; });
+      const io2 = new IntersectionObserver(es => { if (es[0].isIntersecting) { io2.disconnect(); requestAnimationFrame(() => poser(poseActuelle)); } }, { threshold: .35 });
+      io2.observe(document.getElementById('calepinage'));
+    } else poser(poseActuelle);
+
+    // Calculateur de surface
+    const form = document.getElementById('calcul'), m2 = document.getElementById('res-m2'), nb = document.getElementById('res-nb');
+    const fr = (n, d = 1) => n.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
+    const bond = el => { el.classList.remove('bond'); void el.offsetWidth; el.classList.add('bond'); };
+    function majCalcul() {
+      const L = parseFloat(String(form.elements.long.value).replace(',', '.')) || 0, l = parseFloat(String(form.elements.larg.value).replace(',', '.')) || 0;
+      const opt = form.elements.chute.selectedOptions[0], chute = +opt.dataset.chute / 100, surf = L * l * (1 + chute);
+      const n = Math.ceil(surf / +form.elements.format.value);
+      m2.textContent = fr(Math.ceil(surf * 10) / 10) + ' m²';
+      nb.textContent = n + (n > 1 ? ' carreaux' : ' carreau');
+      bond(m2); bond(nb);
+    }
+    form.addEventListener('input', majCalcul);
+    form.elements.chute.addEventListener('change', () => { poseActuelle = form.elements.chute.value; poser(poseActuelle); });
+    majCalcul();
+  })();
+  </script>
+</body>
+</html>

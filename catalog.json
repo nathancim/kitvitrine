@@ -1227,6 +1227,60 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "20671bdb2ef82d44f9a9a4d0602e0e35"
+    },
+    {
+      "slug": "calepin",
+      "title": "Calepin",
+      "tagline": "Site vitrine pour carreleur",
+      "description": "Une page en grille bento pour un carreleur-faïencier : toute la page est un mur carrelé, chaque bloc est un carreau émaillé et les espaces entre eux sont les joints. En ouverture, la salle de bains dessinée se carrelle sous vos yeux, rangée par rangée en partant du bas, puis la douche se met à couler. Le bloc signature est un calepinage interactif : on choisit une pose droite, décalée, en vannerie ou en diagonale et les carreaux se déplacent pour recomposer le motif ; à côté, un calculateur indique la surface à commander avec la chute et le nombre de carreaux selon le format. Suivent les six types de travaux, le chantier en cinq étapes reliées par le cordeau bleu qui se tend, les chantiers récents avec l'avis de chaque client, les questions en accordéons et la demande de visite avec horaires, zone et carte. Bleu cobalt, céladon et moutarde sur joint gris ciment, typographies DM Serif Display et Geologica, navigation en pilule flottante.",
+      "univers": [
+        "artisans"
+      ],
+      "style": "Chaleureux",
+      "couleur": "bleu",
+      "direction": "bento",
+      "animations": [
+        "carreaux du mur posés un à un, de bas en haut, au chargement",
+        "calepinage dont les carreaux se recomposent quand on change de pose",
+        "cordeau bleu qui se tend entre les étapes du chantier",
+        "tuiles qui se posent au défilement et se soulèvent au survol",
+        "calculateur de carrelage dont le résultat rebondit"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-19",
+      "tags": [
+        "carreleur",
+        "carrelage",
+        "faïence",
+        "faïencier",
+        "pose de carrelage",
+        "douche à l'italienne",
+        "salle de bains",
+        "crédence",
+        "terrasse carrelée",
+        "mosaïque"
+      ],
+      "sections": [
+        "Accueil : titre, salle de bains qui se carrelle et quatre mini-widgets",
+        "Les six types de travaux",
+        "Calepinage interactif et calculateur de carrelage",
+        "Le chantier en cinq étapes",
+        "Chantiers récents avec l'avis des clients",
+        "Questions fréquentes",
+        "Demande de visite : formulaire, horaires, zone et carte"
+      ],
+      "palette": [
+        "#2350A0",
+        "#A9D2C6",
+        "#E0A93B",
+        "#FBFBF8",
+        "#D5D7D1",
+        "#13203A"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "20b6785e1b172ca8a07112ad8b1f8b99"
     }
   ]
 }
