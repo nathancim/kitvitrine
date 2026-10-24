@@ -1334,6 +1334,62 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "b8c867f3e36f596b826a7a38ab0eae91"
+    },
+    {
+      "slug": "signet",
+      "title": "Signet",
+      "tagline": "Site vitrine pour librairie indépendante",
+      "description": "Une page illustrée et ludique pour une librairie de quartier. En ouverture, le titre se pose mot par mot au-dessus d'une grande scène dessinée : deux étagères où les livres tombent un à un avec un petit rebond, une pile au pied de la fenêtre, une plante et le chat de la librairie endormi sur le rayon. Le rayon des coups de cœur est la pièce maîtresse : on touche une tranche, le livre sort de l'étagère et la fiche du libraire s'ouvre (genre, prix, avis). Suivent les services en étiquettes inclinées (commande en 48 h, coin des petits, club de lecture, carte cadeau), l'agenda avec bandeau défilant et rendez-vous en tickets, le formulaire « Commander un livre » en trois étapes, les avis des habitués, puis horaires, accès avec carte et questions fréquentes. Violet glycine, jaune citron, rose corail et vert menthe, typographies Abril Fatface et Literata, navigation en pilule flottante.",
+      "univers": [
+        "commerces"
+      ],
+      "style": "Moderne",
+      "couleur": "violet",
+      "direction": "illustre",
+      "animations": [
+        "titre qui se pose mot par mot",
+        "livres qui tombent sur l'étagère avec un rebond",
+        "tranche qui sort du rayon et fiche qui s'ouvre au toucher",
+        "bandeau défilant de l'agenda",
+        "chat, étoiles et avion en papier qui flottent doucement",
+        "étiquettes qui se soulèvent et se redressent au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-24",
+      "tags": [
+        "librairie",
+        "librairie indépendante",
+        "libraire",
+        "livres",
+        "bande dessinée",
+        "livres jeunesse",
+        "club de lecture",
+        "rencontres d'auteurs",
+        "commande de livres",
+        "carte cadeau"
+      ],
+      "sections": [
+        "Accueil : titre et scène de l'étagère",
+        "Le rayon des coups de cœur (tranches interactives)",
+        "La librairie : quatre services",
+        "Agenda : bandeau défilant et prochains rendez-vous",
+        "Commander un livre : trois étapes et formulaire",
+        "Avis des habitués",
+        "Horaires, accès, carte et questions fréquentes"
+      ],
+      "palette": [
+        "#5A3CC2",
+        "#FFD23F",
+        "#F2668B",
+        "#3DB394",
+        "#ECE5FF",
+        "#FBF8FF",
+        "#21163A"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "4b315be9adc3b1aebe9bc3a80b155673"
     }
   ]
 }

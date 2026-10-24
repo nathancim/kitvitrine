@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Signet — Librairie indépendante à Tours</title>
+  <meta name="description" content="Signet, librairie indépendante à Tours : romans, jeunesse, bande dessinée et beaux livres. Coups de cœur des libraires, commande de tout livre disponible en 48 h, club de lecture et rencontres d'auteurs.">
+  <meta name="theme-color" content="#FBF8FF">
+  <link rel="preload" href="assets/fonts/abril-fatface-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-glycine=Couleur principale (violet glycine)|--kv-glycine-fonce;--kv-citron=Couleur d'accent (jaune citron);--kv-corail=Accent chaud (rose corail);--kv-menthe=Accent frais (vert menthe);--kv-lilas=Fond des sections;--kv-papier=Fond de page;--kv-encre=Texte et sections foncées">
+</head>
+<body class="bg-papier font-sans text-encre antialiased pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Signet</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/signet/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- Navigation : une pilule flottante qui reste en haut de l'écran -->
+  <header class="sticky top-0 z-40 px-3 pt-3 md:pt-4">
+    <div class="mx-auto flex max-w-4xl items-center justify-between gap-4 rounded-full border-2 border-encre bg-papier/95 py-1 pl-4 pr-2 shadow-[0_5px_0_0_rgb(var(--kv-encre))] backdrop-blur md:pl-5">
+      <a href="#accueil" class="flex min-h-11 items-center gap-2">
+        <svg data-kv-logo="Logo" class="h-9 w-8 shrink-0" viewBox="0 0 32 36" aria-hidden="true">
+          <rect x="2" y="3" width="22" height="30" rx="3" class="fill-glycine"/>
+          <rect x="6" y="3" width="2.5" height="30" class="fill-encre" opacity=".25"/>
+          <path d="M16 0h8v19l-4-3.4-4 3.4z" class="fill-corail"/>
+          <circle cx="27" cy="29" r="4" class="fill-citron"/>
+        </svg>
+        <span class="font-display text-[1.6rem] leading-none">Signet</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6" aria-label="Rubriques">
+        <a href="#coups-de-coeur" class="lien inline-flex min-h-11 items-center">Coups de cœur</a>
+        <a href="#agenda" class="lien inline-flex min-h-11 items-center">Agenda</a>
+        <a href="#infos" class="lien inline-flex min-h-11 items-center">Horaires</a>
+        <a href="#commander" class="btn min-h-11 bg-glycine px-5 text-papier hover:bg-glycine-fonce">Commander un livre</a>
+      </nav>
+      <button id="menuBtn" type="button" class="md:hidden inline-flex min-h-11 items-center gap-2 rounded-full bg-encre px-4 font-semibold text-papier" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span>Menu</span>
+        <svg class="h-3.5 w-5" viewBox="0 0 20 14" aria-hidden="true"><path d="M1 2h18M1 12h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav id="menu" class="hidden md:hidden mx-auto mt-2 max-w-4xl flex-col rounded-[1.75rem] border-2 border-encre bg-papier px-5 pb-5 pt-2 shadow-[0_5px_0_0_rgb(var(--kv-encre))]" aria-label="Navigation mobile">
+      <a href="#coups-de-coeur" class="flex min-h-12 items-center border-b border-encre/10 font-display text-[1.6rem]">Coups de cœur</a>
+      <a href="#librairie" class="flex min-h-12 items-center border-b border-encre/10 font-display text-[1.6rem]">La librairie</a>
+      <a href="#agenda" class="flex min-h-12 items-center border-b border-encre/10 font-display text-[1.6rem]">Agenda</a>
+      <a href="#infos" class="flex min-h-12 items-center border-b border-encre/10 font-display text-[1.6rem]">Horaires et accès</a>
+      <a href="#commander" class="btn mt-4 w-full bg-glycine text-papier">Commander un livre</a>
+    </nav>
+  </header>
+
+  <main id="accueil">
+
+    <!-- Accueil : titre centré, puis la grande scène de l'étagère où les livres viennent se ranger -->
+    <section class="overflow-x-clip pb-10 pt-8 md:pb-16 md:pt-14" aria-labelledby="titre">
+      <div class="mx-auto max-w-5xl px-5 text-center md:px-8">
+        <p class="apres inline-flex items-center gap-2 rounded-full bg-citron px-4 py-1.5 text-[0.95rem] font-semibold" style="--d:0ms">Librairie indépendante, rue des Halles à Tours</p>
+        <h1 id="titre" class="mx-auto mt-5 max-w-3xl font-display text-[clamp(2.5rem,10.5vw,5.4rem)] leading-[1.02]">
+          <span class="mot" style="--d:100ms">Ici,</span> <span class="mot" style="--d:180ms">chaque</span> <span class="mot" style="--d:260ms">livre</span> <span class="mot" style="--d:340ms">a</span> <span class="mot" style="--d:420ms">été</span> <span class="mot" style="--d:500ms">lu</span> <span class="mot" style="--d:580ms">avant</span> <span class="mot" style="--d:660ms">vous.</span>
+        </h1>
+        <p class="apres mx-auto mt-5 max-w-xl text-[1.05rem] leading-relaxed text-encre/80 md:text-lg" style="--d:800ms">Romans, jeunesse, bande dessinée et beaux livres choisis par Claire et Hugo. Le titre qui vous manque, on le commande&nbsp;: il est là en 48&nbsp;heures.</p>
+        <div class="apres mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row" style="--d:950ms">
+          <a href="#commander" class="btn w-full bg-glycine text-papier shadow-[0_5px_0_0_rgb(var(--kv-encre))] hover:bg-glycine-fonce sm:w-auto">Commander un livre</a>
+          <a href="#coups-de-coeur" class="btn w-full border-2 border-encre bg-papier hover:bg-citron sm:w-auto">Nos coups de cœur</a>
+        </div>
+      </div>
+      <div class="mx-auto mt-9 max-w-5xl px-5 md:mt-12 md:px-8">
+        <div data-kv-image="Photo de la librairie : la vitrine ou les rayonnages" class="relative mx-auto aspect-[64/38] max-h-[40vh] overflow-hidden rounded-[2rem] bg-lilas md:max-h-none md:rounded-[2.75rem]">
+          <svg class="absolute inset-0 h-full w-full" viewBox="0 0 640 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M450 330V120a80 80 0 0 1 160 0v210z" class="fill-papier" opacity=".75"/>
+          <path d="M530 40v290M450 190h160" class="stroke-lilas" stroke-width="6"/>
+          <circle cx="575" cy="85" r="16" class="fill-citron flotte" style="--f:-2s"/>
+          <rect x="0" y="352" width="640" height="28" class="fill-glycine" opacity=".18"/>
+          <rect x="34" y="160" width="372" height="11" rx="5" class="fill-encre"/>
+          <path d="M70 171l-10 24M370 171l10 24" class="stroke-encre" stroke-width="5" stroke-linecap="round"/>
+          <g class="tombe" style="--d:300ms"><rect x="52" y="72" width="22" height="88" rx="2.5" class="fill-glycine"/><rect x="52" y="81" width="22" height="3" class="fill-papier" opacity=".55"/><rect x="52" y="144" width="22" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:410ms"><rect x="77" y="88" width="18" height="72" rx="2.5" class="fill-citron"/><rect x="77" y="97" width="18" height="3" class="fill-encre" opacity=".55"/><rect x="77" y="144" width="18" height="3" class="fill-encre" opacity=".55"/></g>
+          <g class="tombe" style="--d:520ms"><rect x="98" y="62" width="28" height="98" rx="2.5" class="fill-corail"/><rect x="98" y="71" width="28" height="3" class="fill-papier" opacity=".55"/><rect x="98" y="144" width="28" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:630ms"><rect x="129" y="80" width="20" height="80" rx="2.5" class="fill-encre"/><rect x="129" y="89" width="20" height="3" class="fill-papier" opacity=".55"/><rect x="129" y="144" width="20" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:740ms"><rect x="152" y="68" width="24" height="92" rx="2.5" class="fill-menthe"/><rect x="152" y="77" width="24" height="3" class="fill-papier" opacity=".55"/><rect x="152" y="144" width="24" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:850ms"><rect x="179" y="94" width="16" height="66" rx="2.5" class="fill-glycine-fonce"/><rect x="179" y="103" width="16" height="3" class="fill-papier" opacity=".55"/><rect x="179" y="144" width="16" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:960ms"><rect x="198" y="74" width="26" height="86" rx="2.5" class="fill-papier"/><rect x="198" y="83" width="26" height="3" class="fill-encre" opacity=".55"/><rect x="198" y="144" width="26" height="3" class="fill-encre" opacity=".55"/></g>
+          <g class="tombe" style="--d:1070ms" transform="rotate(-14 231 160)"><rect x="231" y="78" width="20" height="82" rx="2.5" class="fill-corail"/><rect x="231" y="87" width="20" height="3" class="fill-papier" opacity=".55"/><rect x="231" y="144" width="20" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="chat"><path d="M396 156c10-2 18-12 10-20" class="stroke-encre" stroke-width="7" fill="none" stroke-linecap="round"/><ellipse cx="352" cy="144" rx="44" ry="17" class="fill-encre"/><circle cx="308" cy="146" r="15" class="fill-encre"/><path d="M296 136l2-14 9 9zM311 131l7-12 4 13z" class="fill-encre"/><path d="M300 147q4 3 8 0M312 147q4 3 8 0" class="stroke-papier" stroke-width="2" fill="none" stroke-linecap="round"/><text x="282" y="112" class="fill-glycine flotte font-display" font-size="22" style="--f:-1s">z</text><text x="266" y="92" class="fill-glycine flotte font-display" font-size="15" style="--f:-3s">z</text></g>
+          <rect x="96" y="290" width="350" height="11" rx="5" class="fill-encre"/>
+          <path d="M130 301l-10 24M412 301l10 24" class="stroke-encre" stroke-width="5" stroke-linecap="round"/>
+          <g class="tombe" style="--d:1180ms"><rect x="112" y="198" width="24" height="92" rx="2.5" class="fill-menthe"/><rect x="112" y="207" width="24" height="3" class="fill-papier" opacity=".55"/><rect x="112" y="274" width="24" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:1290ms"><rect x="139" y="212" width="18" height="78" rx="2.5" class="fill-glycine"/><rect x="139" y="221" width="18" height="3" class="fill-papier" opacity=".55"/><rect x="139" y="274" width="18" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:1400ms"><rect x="160" y="190" width="22" height="100" rx="2.5" class="fill-papier"/><rect x="160" y="199" width="22" height="3" class="fill-encre" opacity=".55"/><rect x="160" y="274" width="22" height="3" class="fill-encre" opacity=".55"/></g>
+          <g class="tombe" style="--d:1510ms"><rect x="185" y="206" width="28" height="84" rx="2.5" class="fill-citron"/><rect x="185" y="215" width="28" height="3" class="fill-encre" opacity=".55"/><rect x="185" y="274" width="28" height="3" class="fill-encre" opacity=".55"/></g>
+          <g class="tombe" style="--d:1620ms"><rect x="216" y="220" width="18" height="70" rx="2.5" class="fill-corail"/><rect x="216" y="229" width="18" height="3" class="fill-papier" opacity=".55"/><rect x="216" y="274" width="18" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:1730ms"><rect x="237" y="196" width="24" height="94" rx="2.5" class="fill-encre"/><rect x="237" y="205" width="24" height="3" class="fill-papier" opacity=".55"/><rect x="237" y="274" width="24" height="3" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:1840ms"><rect x="272" y="276" width="78" height="14" rx="2.5" class="fill-glycine"/><rect x="336" y="276" width="3" height="14" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:1950ms"><rect x="276" y="262" width="70" height="14" rx="2.5" class="fill-corail"/><rect x="332" y="262" width="3" height="14" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:2060ms"><rect x="274" y="248" width="74" height="14" rx="2.5" class="fill-citron"/><rect x="334" y="248" width="3" height="14" class="fill-papier" opacity=".55"/></g>
+          <g class="tombe" style="--d:2170ms"><path d="M364 290l-4-30h40l-4 30z" class="fill-corail"/><g class="respire"><path d="M380 258c-14-10-22-30-12-44 10 12 14 28 12 44zm0 0c6-16 20-26 34-24-4 14-18 22-34 24zm0 0c-12-4-26-2-34 6 10 6 24 4 34-6z" class="fill-menthe"/></g></g>
+          <g class="tombe" style="--d:2280ms"><rect x="470" y="334" width="118" height="18" rx="3" class="fill-encre"/><rect x="478" y="334" width="3" height="18" class="fill-papier" opacity=".5"/></g>
+          <g class="tombe" style="--d:2390ms"><rect x="478" y="316" width="104" height="18" rx="3" class="fill-citron"/><rect x="486" y="316" width="3" height="18" class="fill-papier" opacity=".5"/></g>
+          <g class="tombe" style="--d:2500ms"><rect x="466" y="298" width="112" height="18" rx="3" class="fill-glycine"/><rect x="474" y="298" width="3" height="18" class="fill-papier" opacity=".5"/></g>
+          <g class="tombe" style="--d:2610ms"><rect x="482" y="280" width="92" height="18" rx="3" class="fill-corail"/><rect x="490" y="280" width="3" height="18" class="fill-papier" opacity=".5"/></g>
+          <path d="M40 52l5 11 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2z" class="fill-corail flotte" style="--f:-1.5s"/>
+          <path d="M226 40l4 8 9 1-7 6 2 9-8-4-8 4 2-9-7-6 9-1z" class="fill-citron flotte" style="--f:-4s"/>
+          <g class="flotte" style="--f:-2.5s"><path d="M470 214l58-20-22 46-10-18z" class="fill-papier stroke-encre" stroke-width="2.5" stroke-linejoin="round"/><path d="M496 222l32-28" class="stroke-encre" stroke-width="2.5"/></g>
+          <text x="150" y="56" class="fill-glycine flotte font-display" font-size="34" opacity=".35" style="--f:-5s">é</text>
+          <text x="22" y="250" class="fill-menthe flotte font-display" font-size="40" opacity=".6" style="--f:-3.5s">a</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coups de cœur : un rayon de tranches de livres. On touche une tranche, le livre sort et la fiche du libraire s'ouvre -->
+    <section id="coups-de-coeur" class="bg-lilas py-14 md:py-24" aria-labelledby="cdc-titre">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <div class="md:flex md:items-end md:justify-between md:gap-10">
+          <h2 id="cdc-titre" class="rv font-display text-[clamp(2.2rem,8vw,3.6rem)] leading-[1.02]">Le rayon des coups de cœur</h2>
+          <p class="rv mt-3 max-w-sm leading-relaxed text-encre/80 md:mt-0" style="--d:80ms">Touchez une tranche pour sortir le livre du rayon et lire ce qu’on en pense.</p>
+        </div>
+        <div class="mt-10 grid gap-8 md:mt-14 md:grid-cols-12 md:items-end md:gap-12">
+          <div class="rv md:col-span-5" style="--d:120ms">
+            <div class="flex items-end justify-between gap-1.5 px-1 pt-6 sm:justify-center sm:gap-2 md:gap-2.5" role="tablist" aria-label="Coups de cœur des libraires">
+              <button type="button" role="tab" id="t-phare" aria-controls="p-phare" aria-selected="true" class="tranche h-[11.5rem] max-w-[3.25rem] md:max-w-[4.23rem] bg-glycine text-citron md:h-[14rem]"><span class="tranche-titre">Les Saisons du phare</span><span class="font-display text-sm">IM</span></button>
+              <button type="button" role="tab" id="t-ours" aria-controls="p-ours" aria-selected="false" tabindex="-1" class="tranche h-[8.5rem] max-w-[3.6rem] md:max-w-[4.68rem] bg-citron text-encre md:h-[10.5rem]"><span class="tranche-titre">Petit Ours veille</span><span class="font-display text-sm">LB</span></button>
+              <button type="button" role="tab" id="t-tanger" aria-controls="p-tanger" aria-selected="false" tabindex="-1" class="tranche h-[10.5rem] max-w-[2.9rem] md:max-w-[3.77rem] bg-encre text-corail md:h-[13rem]"><span class="tranche-titre">Nuit blanche à Tanger</span><span class="font-display text-sm">MS</span></button>
+              <button type="button" role="tab" id="t-miel" aria-controls="p-miel" aria-selected="false" tabindex="-1" class="tranche h-[9.5rem] max-w-[3.4rem] md:max-w-[4.42rem] bg-corail text-papier md:h-[12rem]"><span class="tranche-titre">Une cuillère de miel</span><span class="font-display text-sm">AP</span></button>
+              <button type="button" role="tab" id="t-atlas" aria-controls="p-atlas" aria-selected="false" tabindex="-1" class="tranche h-[12rem] max-w-[3.75rem] md:max-w-[4.88rem] bg-menthe text-encre md:h-[14.5rem]"><span class="tranche-titre">Atlas des rivières</span><span class="font-display text-sm">JV</span></button>
+              <button type="button" role="tab" id="t-jardin" aria-controls="p-jardin" aria-selected="false" tabindex="-1" class="tranche h-[10rem] max-w-[3rem] md:max-w-[3.9rem] bg-glycine-fonce text-papier md:h-[12.5rem]"><span class="tranche-titre">Le Jardin des chiffres</span><span class="font-display text-sm">NR</span></button>
+            </div>
+            <div class="h-3.5 rounded-full bg-encre" aria-hidden="true"></div>
+            <div class="mx-6 h-3 rounded-b-xl bg-encre/25" aria-hidden="true"></div>
+          </div>
+
+          <div class="md:col-span-7">
+            <!-- Une fiche par livre : titre, auteur, genre, prix et le mot du libraire -->
+            <article id="p-phare" role="tabpanel" aria-labelledby="t-phare" class="fiche grid grid-cols-[auto_1fr] items-start gap-x-5 gap-y-4 rounded-[2rem] bg-papier p-5 shadow-[0_6px_0_0_rgb(var(--kv-encre))] md:gap-x-8 md:p-8">
+              <div class="couv flex h-32 w-[5.5rem] md:row-span-2 shrink-0 flex-col justify-between rounded-r-xl rounded-l-sm bg-glycine p-2.5 text-citron md:h-52 md:w-36 md:p-4" aria-hidden="true"><span class="font-display text-[0.95rem] leading-tight md:text-xl">Les Saisons du phare</span><span class="text-xs md:text-sm">Iris Morel</span></div>
+              <div class="txt min-w-0">
+                <p class="text-[0.95rem] text-encre/65">Roman, 312 pages, 21,50&nbsp;€</p>
+                <h3 class="mt-1 font-display text-[1.6rem] leading-tight md:text-[2.1rem]">Les Saisons du phare</h3>
+                <p class="mt-0.5 italic">Iris Morel</p>
+              </div>
+              <div class="txt col-span-2 md:col-span-1 md:col-start-2">
+                <p class="text-[0.95rem] font-semibold text-glycine">Le mot de Claire</p>
+                <blockquote class="mt-1 leading-relaxed">« Un gardien tient le journal d’une île qui se vide, saison après saison. On le lit d’une traite, puis on le relit pour les phrases. »</blockquote>
+              </div>
+            </article>
+            <article id="p-ours" role="tabpanel" aria-labelledby="t-ours" hidden class="fiche grid grid-cols-[auto_1fr] items-start gap-x-5 gap-y-4 rounded-[2rem] bg-papier p-5 shadow-[0_6px_0_0_rgb(var(--kv-encre))] md:gap-x-8 md:p-8">
+              <div class="couv flex h-32 w-[5.5rem] md:row-span-2 shrink-0 flex-col justify-between rounded-r-xl rounded-l-sm bg-citron p-2.5 text-encre md:h-52 md:w-36 md:p-4" aria-hidden="true"><span class="font-display text-[0.95rem] leading-tight md:text-xl">Petit Ours veille</span><span class="text-xs md:text-sm">Lou Bastide</span></div>
+              <div class="txt min-w-0">
+                <p class="text-[0.95rem] text-encre/65">Album jeunesse, dès 3 ans, 14,90&nbsp;€</p>
+                <h3 class="mt-1 font-display text-[1.6rem] leading-tight md:text-[2.1rem]">Petit Ours veille</h3>
+                <p class="mt-0.5 italic">Lou Bastide</p>
+              </div>
+              <div class="txt col-span-2 md:col-span-1 md:col-start-2">
+                <p class="text-[0.95rem] font-semibold text-glycine">Le mot d’Hugo</p>
+                <blockquote class="mt-1 leading-relaxed">« L’ours qui ne veut pas dormir tant que toute la forêt n’est pas couchée. Les enfants le réclament tous les soirs, les parents aussi. »</blockquote>
+              </div>
+            </article>
+            <article id="p-tanger" role="tabpanel" aria-labelledby="t-tanger" hidden class="fiche grid grid-cols-[auto_1fr] items-start gap-x-5 gap-y-4 rounded-[2rem] bg-papier p-5 shadow-[0_6px_0_0_rgb(var(--kv-encre))] md:gap-x-8 md:p-8">
+              <div class="couv flex h-32 w-[5.5rem] md:row-span-2 shrink-0 flex-col justify-between rounded-r-xl rounded-l-sm bg-encre p-2.5 text-corail md:h-52 md:w-36 md:p-4" aria-hidden="true"><span class="font-display text-[0.95rem] leading-tight md:text-xl">Nuit blanche à Tanger</span><span class="text-xs text-papier md:text-sm">Malik Serrano</span></div>
+              <div class="txt min-w-0">
+                <p class="text-[0.95rem] text-encre/65">Polar, 380 pages, 20,90&nbsp;€</p>
+                <h3 class="mt-1 font-display text-[1.6rem] leading-tight md:text-[2.1rem]">Nuit blanche à Tanger</h3>
+                <p class="mt-0.5 italic">Malik Serrano</p>
+              </div>
+              <div class="txt col-span-2 md:col-span-1 md:col-start-2">
+                <p class="text-[0.95rem] font-semibold text-glycine">Le mot d’Hugo</p>
+                <blockquote class="mt-1 leading-relaxed">« Une seule nuit, un port, trois témoins qui mentent. Prévoyez de ne pas dormir non plus. »</blockquote>
+              </div>
+            </article>
+            <article id="p-miel" role="tabpanel" aria-labelledby="t-miel" hidden class="fiche grid grid-cols-[auto_1fr] items-start gap-x-5 gap-y-4 rounded-[2rem] bg-papier p-5 shadow-[0_6px_0_0_rgb(var(--kv-encre))] md:gap-x-8 md:p-8">
+              <div class="couv flex h-32 w-[5.5rem] md:row-span-2 shrink-0 flex-col justify-between rounded-r-xl rounded-l-sm bg-corail p-2.5 text-papier md:h-52 md:w-36 md:p-4" aria-hidden="true"><span class="font-display text-[0.95rem] leading-tight md:text-xl">Une cuillère de miel</span><span class="text-xs md:text-sm">Anna Prieur</span></div>
+              <div class="txt min-w-0">
+                <p class="text-[0.95rem] text-encre/65">Bande dessinée, 168 pages, 24&nbsp;€</p>
+                <h3 class="mt-1 font-display text-[1.6rem] leading-tight md:text-[2.1rem]">Une cuillère de miel</h3>
+                <p class="mt-0.5 italic">Anna Prieur</p>
+              </div>
+              <div class="txt col-span-2 md:col-span-1 md:col-start-2">
+                <p class="text-[0.95rem] font-semibold text-glycine">Le mot de Claire</p>
+                <blockquote class="mt-1 leading-relaxed">« Une grand-mère, sa petite-fille et un été de ruches à reprendre. Tendre sans être mièvre, et des aquarelles à tomber. »</blockquote>
+              </div>
+            </article>
+            <article id="p-atlas" role="tabpanel" aria-labelledby="t-atlas" hidden class="fiche grid grid-cols-[auto_1fr] items-start gap-x-5 gap-y-4 rounded-[2rem] bg-papier p-5 shadow-[0_6px_0_0_rgb(var(--kv-encre))] md:gap-x-8 md:p-8">
+              <div class="couv flex h-32 w-[5.5rem] md:row-span-2 shrink-0 flex-col justify-between rounded-r-xl rounded-l-sm bg-menthe p-2.5 text-encre md:h-52 md:w-36 md:p-4" aria-hidden="true"><span class="font-display text-[0.95rem] leading-tight md:text-xl">Atlas des rivières</span><span class="text-xs md:text-sm">Jeanne Vidal</span></div>
+              <div class="txt min-w-0">
+                <p class="text-[0.95rem] text-encre/65">Beau livre, 45 cartes dessinées, 35&nbsp;€</p>
+                <h3 class="mt-1 font-display text-[1.6rem] leading-tight md:text-[2.1rem]">Atlas des rivières</h3>
+                <p class="mt-0.5 italic">Jeanne Vidal</p>
+              </div>
+              <div class="txt col-span-2 md:col-span-1 md:col-start-2">
+                <p class="text-[0.95rem] font-semibold text-glycine">Le mot de Claire</p>
+                <blockquote class="mt-1 leading-relaxed">« Quarante-cinq rivières de France racontées de la source à l’embouchure. Le cadeau qu’on finit par garder pour soi. »</blockquote>
+              </div>
+            </article>
+            <article id="p-jardin" role="tabpanel" aria-labelledby="t-jardin" hidden class="fiche grid grid-cols-[auto_1fr] items-start gap-x-5 gap-y-4 rounded-[2rem] bg-papier p-5 shadow-[0_6px_0_0_rgb(var(--kv-encre))] md:gap-x-8 md:p-8">
+              <div class="couv flex h-32 w-[5.5rem] md:row-span-2 shrink-0 flex-col justify-between rounded-r-xl rounded-l-sm bg-glycine-fonce p-2.5 text-papier md:h-52 md:w-36 md:p-4" aria-hidden="true"><span class="font-display text-[0.95rem] leading-tight md:text-xl">Le Jardin des chiffres</span><span class="text-xs md:text-sm">Noé Rambert</span></div>
+              <div class="txt min-w-0">
+                <p class="text-[0.95rem] text-encre/65">Essai, 224 pages, 19&nbsp;€</p>
+                <h3 class="mt-1 font-display text-[1.6rem] leading-tight md:text-[2.1rem]">Le Jardin des chiffres</h3>
+                <p class="mt-0.5 italic">Noé Rambert</p>
+              </div>
+              <div class="txt col-span-2 md:col-span-1 md:col-start-2">
+                <p class="text-[0.95rem] font-semibold text-glycine">Le mot d’Hugo</p>
+                <blockquote class="mt-1 leading-relaxed">« Les maths expliquées avec des graines, des escargots et des tournesols. Même les fâchés avec les chiffres en redemandent. »</blockquote>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- La librairie : quatre services en étiquettes légèrement inclinées (carrousel sur mobile) -->
+    <section id="librairie" class="overflow-x-clip py-14 md:py-24" aria-labelledby="lib-titre">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <h2 id="lib-titre" class="rv max-w-2xl font-display text-[clamp(2.2rem,8vw,3.6rem)] leading-[1.02]">Plus qu’un endroit où acheter des livres</h2>
+      </div>
+      <ul class="rv no-scrollbar mx-auto mt-8 flex max-w-6xl snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-4 pt-2 md:mt-12 md:grid md:grid-cols-4 md:gap-6 md:overflow-visible md:px-8">
+        <li class="carte w-[78%] shrink-0 snap-start rounded-[1.75rem] border-2 border-encre bg-citron p-6 md:w-auto md:-rotate-2" style="--d:0ms">
+          <svg class="h-14 w-14" viewBox="0 0 56 56" aria-hidden="true"><rect x="8" y="16" width="34" height="30" rx="4" class="fill-papier stroke-encre" stroke-width="2.5"/><path d="M8 26h34" class="stroke-encre" stroke-width="2.5"/><path d="M38 34l10 0m-4-4 4 4-4 4" class="stroke-encre" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="36" r="3" class="fill-corail"/></svg>
+          <h3 class="mt-4 font-display text-[1.55rem] leading-tight">Commandé en 48&nbsp;h</h3>
+          <p class="mt-2 leading-relaxed">Tout livre disponible chez l’éditeur, sans frais, à retirer ici. On vous prévient par SMS.</p>
+        </li>
+        <li class="carte w-[78%] shrink-0 snap-start rounded-[1.75rem] border-2 border-encre bg-papier p-6 md:w-auto md:rotate-1" style="--d:80ms">
+          <svg class="h-14 w-14" viewBox="0 0 56 56" aria-hidden="true"><circle cx="22" cy="20" r="9" class="fill-menthe stroke-encre" stroke-width="2.5"/><circle cx="16" cy="12" r="3.5" class="fill-menthe stroke-encre" stroke-width="2.5"/><circle cx="28" cy="12" r="3.5" class="fill-menthe stroke-encre" stroke-width="2.5"/><path d="M10 46c2-8 7-12 12-12s10 4 12 12z" class="fill-menthe stroke-encre" stroke-width="2.5"/><path d="M36 22l12-4v24l-12 4z" class="fill-citron stroke-encre" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <h3 class="mt-4 font-display text-[1.55rem] leading-tight">Le coin des petits</h3>
+          <p class="mt-2 leading-relaxed">Des albums à hauteur d’enfant, des coussins, et une lecture contée chaque mercredi à 10&nbsp;h&nbsp;30.</p>
+        </li>
+        <li class="carte w-[78%] shrink-0 snap-start rounded-[1.75rem] border-2 border-encre bg-menthe p-6 md:w-auto md:-rotate-1" style="--d:160ms">
+          <svg class="h-14 w-14" viewBox="0 0 56 56" aria-hidden="true"><path d="M6 14h22v24H14l-8 7z" class="fill-papier stroke-encre" stroke-width="2.5" stroke-linejoin="round"/><path d="M50 22H32v18h10l8 6z" class="fill-corail stroke-encre" stroke-width="2.5" stroke-linejoin="round"/><path d="M12 22h10M12 28h7" class="stroke-encre" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <h3 class="mt-4 font-display text-[1.55rem] leading-tight">Le club du jeudi</h3>
+          <p class="mt-2 leading-relaxed">Un livre par mois, une douzaine de lecteurs, un jeudi soir sur deux. Ouvert à tous, sans inscription.</p>
+        </li>
+        <li class="carte w-[78%] shrink-0 snap-start rounded-[1.75rem] border-2 border-encre bg-corail p-6 text-encre md:w-auto md:rotate-2" style="--d:240ms">
+          <svg class="h-14 w-14" viewBox="0 0 56 56" aria-hidden="true"><rect x="6" y="20" width="44" height="28" rx="4" class="fill-citron stroke-encre" stroke-width="2.5"/><path d="M28 20v28M6 30h44" class="stroke-encre" stroke-width="2.5"/><path d="M28 20c-4-10-14-10-12-3 1 3 7 3 12 3zm0 0c4-10 14-10 12-3-1 3-7 3-12 3z" class="fill-papier stroke-encre" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <h3 class="mt-4 font-display text-[1.55rem] leading-tight">La carte cadeau</h3>
+          <p class="mt-2 leading-relaxed">Du montant de votre choix, valable un an, avec un mot glissé dedans si vous voulez.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Agenda : bandeau défilant, puis les prochains rendez-vous en tickets -->
+    <section id="agenda" class="overflow-x-clip bg-encre pb-14 text-papier md:pb-24" aria-labelledby="agenda-titre">
+      <div class="overflow-x-clip border-y-2 border-encre bg-citron py-3 text-encre" aria-hidden="true">
+        <div class="bandeau gap-x-8 font-display text-[1.35rem] md:text-[1.6rem]">
+          <span class="flex shrink-0 gap-8 pr-8"><span>Rencontre avec Iris Morel</span><span class="text-corail">✦</span><span>Lecture contée le mercredi</span><span class="text-corail">✦</span><span>Club du jeudi</span><span class="text-corail">✦</span><span>Dédicaces BD</span><span class="text-corail">✦</span></span>
+          <span class="copie flex shrink-0 gap-8 pr-8"><span>Rencontre avec Iris Morel</span><span class="text-corail">✦</span><span>Lecture contée le mercredi</span><span class="text-corail">✦</span><span>Club du jeudi</span><span class="text-corail">✦</span><span>Dédicaces BD</span><span class="text-corail">✦</span></span>
+        </div>
+      </div>
+      <div class="mx-auto max-w-6xl px-5 pt-12 md:px-8 md:pt-20">
+        <div class="md:grid md:grid-cols-12 md:gap-12">
+          <div class="md:col-span-4">
+            <h2 id="agenda-titre" class="rv font-display text-[clamp(2.2rem,8vw,3.6rem)] leading-[1.02]">Les prochains rendez-vous</h2>
+            <p class="rv mt-3 leading-relaxed text-papier/75" style="--d:80ms">Entrée libre. Pour les rencontres, réservez votre place, c’est vite complet.</p>
+          </div>
+          <ol class="mt-8 space-y-4 md:col-span-8 md:mt-0">
+            <li class="rv flex overflow-hidden rounded-[1.5rem] bg-papier text-encre" style="--d:0ms">
+              <p class="flex w-20 shrink-0 flex-col items-center justify-center border-r-2 border-dashed border-encre/25 bg-corail py-4 md:w-28"><span class="font-display text-[2rem] leading-none md:text-[2.6rem]">07</span><span class="text-[0.95rem]">nov.</span></p>
+              <div class="min-w-0 p-4 md:p-6"><h3 class="font-display text-[1.3rem] leading-tight md:text-[1.6rem]">Rencontre avec Iris Morel</h3><p class="mt-1 text-[0.95rem] text-encre/75">Samedi à 17&nbsp;h, autour des <em>Saisons du phare</em>. Dédicace ensuite.</p></div>
+            </li>
+            <li class="rv flex overflow-hidden rounded-[1.5rem] bg-papier text-encre" style="--d:80ms">
+              <p class="flex w-20 shrink-0 flex-col items-center justify-center border-r-2 border-dashed border-encre/25 bg-citron py-4 md:w-28"><span class="font-display text-[2rem] leading-none md:text-[2.6rem]">13</span><span class="text-[0.95rem]">nov.</span></p>
+              <div class="min-w-0 p-4 md:p-6"><h3 class="font-display text-[1.3rem] leading-tight md:text-[1.6rem]">Club du jeudi</h3><p class="mt-1 text-[0.95rem] text-encre/75">Jeudi à 19&nbsp;h. Ce mois-ci, un premier roman venu d’Islande.</p></div>
+            </li>
+            <li class="rv flex overflow-hidden rounded-[1.5rem] bg-papier text-encre" style="--d:160ms">
+              <p class="flex w-20 shrink-0 flex-col items-center justify-center border-r-2 border-dashed border-encre/25 bg-menthe py-4 md:w-28"><span class="font-display text-[2rem] leading-none md:text-[2.6rem]">22</span><span class="text-[0.95rem]">nov.</span></p>
+              <div class="min-w-0 p-4 md:p-6"><h3 class="font-display text-[1.3rem] leading-tight md:text-[1.6rem]">Dédicaces BD</h3><p class="mt-1 text-[0.95rem] text-encre/75">Samedi de 14&nbsp;h à 18&nbsp;h, deux autrices de la région au crayon.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commander un livre : trois étapes courtes et le formulaire -->
+    <section id="commander" class="py-14 md:py-24" aria-labelledby="commander-titre">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-12 md:gap-12 md:px-8">
+        <div class="md:col-span-5">
+          <h2 id="commander-titre" class="rv font-display text-[clamp(2.2rem,8vw,3.6rem)] leading-[1.02]">Commander un livre</h2>
+          <ol class="mt-6 space-y-4">
+            <li class="rv flex items-start gap-4" style="--d:60ms"><span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-citron font-display text-xl" aria-hidden="true">1</span><p class="pt-2 leading-relaxed">Donnez-nous le titre, ou décrivez-le&nbsp;: «&nbsp;le roman avec un phare sur la couverture&nbsp;» nous suffit souvent.</p></li>
+            <li class="rv flex items-start gap-4" style="--d:120ms"><span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-menthe font-display text-xl" aria-hidden="true">2</span><p class="pt-2 leading-relaxed">On le commande le jour même chez l’éditeur, sans frais.</p></li>
+            <li class="rv flex items-start gap-4" style="--d:180ms"><span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-corail font-display text-xl" aria-hidden="true">3</span><p class="pt-2 leading-relaxed">Un SMS vous prévient&nbsp;: il vous attend en caisse, vous payez en le retirant.</p></li>
+          </ol>
+        </div>
+        <div class="md:col-span-7">
+          <!--
+            Formulaire de commande : il n'envoie rien tant qu'il n'est pas relié à un service.
+            - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+            - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+            - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+          -->
+          <form class="rv grid gap-4 rounded-[2rem] border-2 border-encre bg-lilas p-5 shadow-[0_6px_0_0_rgb(var(--kv-encre))] sm:grid-cols-2 md:p-8" action="#" method="post" style="--d:100ms">
+            <label class="block sm:col-span-2"><span class="font-semibold">Le livre (titre, auteur, ou ce dont vous vous souvenez)</span>
+              <input type="text" name="livre" id="champ-livre" class="field" placeholder="Les Saisons du phare, Iris Morel" required>
+            </label>
+            <label class="block"><span class="font-semibold">Prénom</span>
+              <input type="text" name="prenom" autocomplete="given-name" class="field" required>
+            </label>
+            <label class="block"><span class="font-semibold">Téléphone (pour le SMS)</span>
+              <input type="tel" name="telephone" autocomplete="tel" class="field" required>
+            </label>
+            <label class="block sm:col-span-2"><span class="font-semibold">Un mot pour nous</span>
+              <textarea name="message" rows="2" class="field" placeholder="C’est pour offrir, vous pouvez l’emballer ?"></textarea>
+            </label>
+            <button type="submit" class="btn w-full bg-glycine text-papier hover:bg-glycine-fonce sm:col-span-2 sm:w-fit">Envoyer ma commande</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Avis des lecteurs : carrousel sur mobile -->
+    <section class="overflow-x-clip bg-glycine py-14 text-papier md:py-20" aria-labelledby="avis-titre">
+      <div class="mx-auto max-w-6xl px-5 md:px-8">
+        <h2 id="avis-titre" class="rv font-display text-[clamp(2rem,7vw,3rem)] leading-[1.05]">Ce qu’en disent les habitués</h2>
+      </div>
+      <ul class="rv no-scrollbar mx-auto mt-8 flex max-w-6xl snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-2 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-8">
+        <li class="w-[82%] shrink-0 snap-start md:w-auto" style="--d:0ms">
+          <figure class="h-full rounded-[1.75rem] bg-papier p-6 text-encre">
+            <blockquote class="font-display text-[1.3rem] leading-snug">« J’avais oublié le titre, je me souvenais d’un chat orange. Hugo l’a retrouvé en deux minutes. »</blockquote>
+            <figcaption class="mt-4 text-[0.95rem] text-encre/70">Marion, cliente depuis l’ouverture</figcaption>
+          </figure>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start md:w-auto" style="--d:80ms">
+          <figure class="h-full rounded-[1.75rem] bg-citron p-6 text-encre">
+            <blockquote class="font-display text-[1.3rem] leading-snug">« Mes enfants veulent y aller chaque mercredi. La lecture contée est devenue notre rituel. »</blockquote>
+            <figcaption class="mt-4 text-[0.95rem] text-encre/70">Jérôme, papa de deux lecteurs</figcaption>
+          </figure>
+        </li>
+        <li class="w-[82%] shrink-0 snap-start md:w-auto" style="--d:160ms">
+          <figure class="h-full rounded-[1.75rem] bg-papier p-6 text-encre">
+            <blockquote class="font-display text-[1.3rem] leading-snug">« Je demande “un polar qui ne fait pas trop peur” et on me tend toujours le bon. »</blockquote>
+            <figcaption class="mt-4 text-[0.95rem] text-encre/70">Inès, membre du club du jeudi</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Horaires, accès et questions -->
+    <section id="infos" class="bg-lilas py-14 md:py-24" aria-labelledby="infos-titre">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-12 md:gap-12 md:px-8">
+        <div class="md:col-span-6">
+          <h2 id="infos-titre" class="rv font-display text-[clamp(2.2rem,8vw,3.6rem)] leading-[1.02]">Passer nous voir</h2>
+          <dl class="rv mt-6 rounded-[1.75rem] bg-papier p-5 md:p-7" style="--d:80ms">
+            <div class="flex justify-between gap-4 border-b border-encre/10 py-2.5"><dt class="font-semibold">Mardi au samedi</dt><dd>10&nbsp;h – 19&nbsp;h</dd></div>
+            <div class="flex justify-between gap-4 border-b border-encre/10 py-2.5"><dt class="font-semibold">Dimanche</dt><dd>10&nbsp;h – 13&nbsp;h</dd></div>
+            <div class="flex justify-between gap-4 py-2.5"><dt class="font-semibold">Lundi</dt><dd class="text-encre/65">Fermé, on lit</dd></div>
+          </dl>
+          <div class="rv mt-6" style="--d:120ms">
+            <p class="text-lg leading-relaxed">18 rue des Halles, 37000 Tours<br><span class="text-encre/75">À deux pas des Halles, arrêt de tram Nationale.</span></p>
+            <div class="mt-2 flex flex-col items-start">
+              <a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-display text-[1.7rem] transition-colors hover:text-glycine">06 00 00 00 00</a>
+              <a href="mailto:contact@exemple.fr" class="lien inline-flex min-h-11 items-center">contact@exemple.fr</a>
+            </div>
+            <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+            <div data-kv-map="18 rue des Halles, 37000 Tours" class="mt-6 md:h-64 overflow-hidden rounded-[1.75rem] border-2 border-encre bg-papier text-encre"></div>
+          </div>
+        </div>
+        <div class="md:col-span-6 md:pt-24">
+          <h3 class="rv font-display text-[1.8rem] leading-tight">Questions fréquentes</h3>
+          <div class="rv mt-4 space-y-3" style="--d:80ms">
+            <details class="group rounded-[1.5rem] bg-papier px-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">Vous reprenez les livres d’occasion&nbsp;?<span class="plus flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-citron text-xl" aria-hidden="true">+</span></summary>
+              <p class="pb-5 leading-relaxed text-encre/80">Non, nous vendons uniquement du neuf. Une boîte à livres vous attend devant la vitrine pour faire voyager les vôtres.</p>
+            </details>
+            <details class="group rounded-[1.5rem] bg-papier px-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">Et si le livre est épuisé&nbsp;?<span class="plus flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-menthe text-xl" aria-hidden="true">+</span></summary>
+              <p class="pb-5 leading-relaxed text-encre/80">On vérifie s’il existe une réédition ou une version poche, et on vous propose des lectures proches.</p>
+            </details>
+            <details class="group rounded-[1.5rem] bg-papier px-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold">Vous faites les commandes des écoles&nbsp;?<span class="plus flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-corail text-xl" aria-hidden="true">+</span></summary>
+              <p class="pb-5 leading-relaxed text-encre/80">Oui, pour les écoles, bibliothèques et comités d’entreprise, avec facture et remise de collectivité.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-encre text-papier">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-10 md:flex-row md:items-center md:justify-between md:px-8">
+      <p class="font-display text-[1.6rem]">Signet, librairie indépendante</p>
+      <ul class="flex flex-wrap items-center gap-x-6 gap-y-1 text-[0.95rem] text-papier/70">
+        <li>SIRET 000 000 000 00000</li>
+        <li><a href="#accueil" class="lien inline-flex min-h-11 items-center">Haut de page</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Barre d'action mobile -->
+  <div class="fixed inset-x-0 bottom-0 z-40 border-t-2 border-encre bg-papier/95 px-4 pt-3 backdrop-blur md:hidden" style="padding-bottom: calc(.75rem + env(safe-area-inset-bottom))">
+    <div class="grid grid-cols-2 gap-3">
+      <a href="tel:+33600000000" class="btn w-full border-2 border-encre px-3">Appeler</a>
+      <a href="#commander" class="btn w-full bg-glycine px-3 text-papier">Commander</a>
+    </div>
+  </div>
+
+  <script>
+  (() => {
+    // Menu mobile
+    const btn = document.getElementById('menuBtn'), menu = document.getElementById('menu');
+    const ouvrir = (o) => { btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'Fermer le menu' : 'Ouvrir le menu'); menu.classList.toggle('hidden', !o); menu.classList.toggle('flex', o); };
+    btn.addEventListener('click', () => ouvrir(btn.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => ouvrir(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') ouvrir(false); });
+
+    // Apparition au défilement
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.rv').forEach(el => io.observe(el));
+    }
+
+    // Rayon des coups de cœur : chaque tranche est un onglet (flèches gauche/droite au clavier)
+    const tranches = [...document.querySelectorAll('[role="tab"]')];
+    const choisir = (t, focus) => {
+      tranches.forEach(o => {
+        const actif = o === t, p = document.getElementById(o.getAttribute('aria-controls'));
+        o.setAttribute('aria-selected', actif); o.tabIndex = actif ? 0 : -1;
+        p.hidden = !actif; p.classList.remove('entre');
+        if (actif) { void p.offsetWidth; p.classList.add('entre'); }
+      });
+      if (focus) t.focus();
+    };
+    tranches.forEach((t, i) => {
+      t.addEventListener('click', () => choisir(t));
+      t.addEventListener('keydown', e => {
+        const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        if (d) { e.preventDefault(); choisir(tranches[(i + d + tranches.length) % tranches.length], true); }
+      });
+    });
+  })();
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>
