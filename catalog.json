@@ -1390,6 +1390,62 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "4b315be9adc3b1aebe9bc3a80b155673"
+    },
+    {
+      "slug": "etiquette",
+      "title": "Étiquette",
+      "tagline": "Site vitrine pour diagnostiqueur immobilier",
+      "description": "Une page au ton d'affiche pour un diagnostiqueur immobilier indépendant. Le titre géant « Vendre. Louer. Sans surprise. » se colle ligne par ligne à côté d'une maison en coupe sur aplat jaune, inspectée par une loupe, avec sa pastille « certifié » qui tourne ; un bandeau oblique fait défiler tous les diagnostics. Les onglets « Je vends / Je loue » affichent les diagnostics obligatoires en affichettes numérotées (avec leur durée de validité). La pièce maîtresse est l'étiquette énergie interactive : les barres A à G s'allongent une à une, on touche une classe, le curseur « votre bien » s'y pose et explique ce qu'elle change pour vendre ou louer. Suivent les packs à prix affichés, le déroulé en trois temps avec chiffres-clés sur aplat noir, les avis, les questions fréquentes et un formulaire de devis avec la zone d'intervention et la carte. Jaune signalisation, noir et rouge braise, typographies Barlow Condensed et Hanken Grotesk.",
+      "univers": [
+        "independants"
+      ],
+      "style": "Audacieux",
+      "couleur": "jaune",
+      "direction": "affiche",
+      "animations": [
+        "titre qui se colle ligne par ligne",
+        "étiquette énergie qui se remplit barre par barre et curseur qui se pose sur la classe touchée",
+        "bandeau oblique qui défile",
+        "loupe qui inspecte la maison et pastille qui tourne",
+        "onglets vente / location qui glissent",
+        "affichettes qui se soulèvent au survol",
+        "chiffres qui comptent"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-25",
+      "tags": [
+        "diagnostiqueur immobilier",
+        "diagnostic immobilier",
+        "DPE",
+        "diagnostic amiante",
+        "diagnostic plomb",
+        "diagnostic électricité",
+        "loi Carrez",
+        "surface Boutin",
+        "audit énergétique",
+        "diagnostics vente location"
+      ],
+      "sections": [
+        "Accueil : titre d'affiche, maison en coupe et bandeau défilant",
+        "Diagnostics obligatoires : onglets vente / location",
+        "Le DPE en clair : étiquette énergie interactive",
+        "Les packs à prix affichés",
+        "Déroulé en trois temps et chiffres-clés",
+        "Avis clients",
+        "Questions fréquentes",
+        "Devis gratuit : coordonnées, zone, carte et formulaire"
+      ],
+      "palette": [
+        "#FFD400",
+        "#FF4A1C",
+        "#141414",
+        "#F7F4EC",
+        "#ECE5D3"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "dd3c6ed6ff5399eb21b5ebee86859489"
     }
   ]
 }

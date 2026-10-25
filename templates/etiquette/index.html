@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Étiquette — Diagnostics immobiliers à Tours</title>
+  <meta name="description" content="Étiquette, diagnostiqueur immobilier certifié à Tours : DPE, amiante, plomb, électricité, gaz, termites, Carrez et Boutin. Tous vos diagnostics en une visite, rapport sous 48 h.">
+  <meta name="theme-color" content="#FFD400">
+  <link rel="preload" href="assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-craie font-sans text-encre antialiased pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
+
+  <!-- ===== En-tête : barre noire classique, bouton devis jaune ===== -->
+  <header class="sticky top-0 z-40 bg-encre text-craie">
+    <div class="mx-auto flex max-w-[90rem] items-center gap-4 px-4 sm:px-6">
+      <a href="#accueil" class="flex min-h-[4rem] items-center gap-3">
+        <svg data-kv-logo="Logo" class="h-10 w-10 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+          <rect width="48" height="48" class="fill-soleil"/>
+          <rect x="8" y="9" width="14" height="6" fill="#009C6D"/>
+          <rect x="8" y="18" width="20" height="6" fill="#A5CC74"/>
+          <rect x="8" y="27" width="26" height="6" fill="#F2A945"/>
+          <rect x="8" y="36" width="32" height="6" fill="#D7221F"/>
+          <path d="M44 21l-7 4.5 7 4.5z" fill="#141414"/>
+        </svg>
+        <span class="font-display text-[1.9rem] font-extrabold uppercase leading-none tracking-tight">Étiquette</span>
+      </a>
+      <nav class="ml-auto hidden lg:flex items-center gap-1 font-display text-xl font-semibold uppercase tracking-wide" aria-label="Navigation principale">
+        <a href="#diagnostics" class="flex min-h-[4rem] items-center px-4 hover:text-soleil transition-colors">Diagnostics</a>
+        <a href="#dpe" class="flex min-h-[4rem] items-center px-4 hover:text-soleil transition-colors">Le DPE</a>
+        <a href="#tarifs" class="flex min-h-[4rem] items-center px-4 hover:text-soleil transition-colors">Tarifs</a>
+        <a href="#questions" class="flex min-h-[4rem] items-center px-4 hover:text-soleil transition-colors">Questions</a>
+        <a href="tel:+33600000000" class="flex min-h-[4rem] items-center px-4 hover:text-soleil transition-colors">06 00 00 00 00</a>
+        <a href="#devis" class="btn ml-2 bg-soleil text-encre hover:bg-braise">Devis gratuit</a>
+      </nav>
+      <button id="menuBtn" type="button" class="lg:hidden ml-auto flex min-h-[3rem] items-center gap-2 bg-soleil px-4 font-display text-xl font-semibold uppercase text-encre" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="h-5 w-5" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="3"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+    <nav id="menu" class="hidden fixed inset-x-0 top-[4rem] bottom-0 z-40 flex-col bg-soleil px-4 pt-2 pb-28 text-encre overflow-y-auto lg:hidden" aria-label="Navigation mobile">
+      <a href="#diagnostics" class="affiche flex min-h-[3.75rem] items-center border-b-[3px] border-encre text-4xl">Diagnostics</a>
+      <a href="#dpe" class="affiche flex min-h-[3.75rem] items-center border-b-[3px] border-encre text-4xl">Le DPE</a>
+      <a href="#tarifs" class="affiche flex min-h-[3.75rem] items-center border-b-[3px] border-encre text-4xl">Tarifs</a>
+      <a href="#avis" class="affiche flex min-h-[3.75rem] items-center border-b-[3px] border-encre text-4xl">Avis</a>
+      <a href="#questions" class="affiche flex min-h-[3.75rem] items-center border-b-[3px] border-encre text-4xl">Questions</a>
+      <a href="#devis" class="affiche flex min-h-[3.75rem] items-center border-b-[3px] border-encre text-4xl">Devis gratuit</a>
+      <a href="tel:+33600000000" class="btn mt-6 w-full bg-encre text-soleil">Appeler le 06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <!-- ===== Accueil : titre d'affiche géant, maison en coupe sur aplat jaune ===== -->
+    <section id="accueil" class="overflow-x-clip">
+      <div class="mx-auto grid max-w-[90rem] gap-6 px-4 pt-6 pb-8 sm:px-6 md:pt-12 lg:grid-cols-12 lg:gap-x-12 lg:pb-16">
+        <h1 id="titre" class="affiche lg:col-span-7 text-[clamp(3.4rem,15.5vw,10.5rem)]" aria-label="Vendre. Louer. Sans surprise.">
+          <span class="ligne block overflow-hidden pb-[.06em]" aria-hidden="true"><span style="animation-delay:.05s">Vendre.</span></span>
+          <span class="ligne block overflow-hidden pb-[.06em]" aria-hidden="true"><span style="animation-delay:.18s">Louer.</span></span>
+          <span class="ligne block overflow-hidden pb-[.06em] text-braise" aria-hidden="true"><span style="animation-delay:.31s">Sans surprise.</span></span>
+        </h1>
+
+        <div class="lg:col-span-7 lg:row-start-2">
+          <p class="max-w-[40ch] text-lg leading-relaxed sm:text-xl">Julien, diagnostiqueur certifié à Tours. DPE, amiante, plomb, électricité, gaz : tout votre dossier en une seule visite, rapport sous 48&nbsp;h.</p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a href="#devis" class="btn w-full sm:w-auto bg-encre text-soleil hover:bg-braise hover:text-encre">Demander un devis</a>
+            <a href="tel:+33600000000" class="btn w-full sm:w-auto border-[3px] border-encre hover:bg-soleil">Appeler</a>
+          </div>
+          <ul class="mt-7 hidden sm:flex flex-wrap gap-x-6 gap-y-2 font-semibold">
+            <li>Certifié par un organisme accrédité COFRAC</li>
+            <li>Rendez-vous sous 48 h</li>
+            <li>Tours et 30 km autour</li>
+          </ul>
+        </div>
+
+        <div class="relative lg:col-span-5 lg:row-span-2 lg:row-start-1 lg:col-start-8 lg:self-end">
+          <div class="pose relative mx-auto aspect-[4/3] bg-soleil overflow-hidden" style="max-height: 40vh; max-width: min(100%, calc(40vh * 4 / 3))" id="affiche">
+            <!-- Illustration : une maison en coupe que la loupe inspecte. Remplacez-la par votre photo en mode édition. -->
+            <svg data-kv-image="Photo de vous en visite dans un logement" class="absolute inset-0 h-full w-full" viewBox="0 0 480 360" role="img" aria-label="Maison en coupe avec tableau électrique, radiateur et étiquette énergie, inspectée à la loupe">
+              <path d="M0 318h480v42H0z" fill="#141414"/>
+              <!-- maison -->
+              <path d="M96 150 240 54l144 96" fill="none" stroke="#141414" stroke-width="10" stroke-linejoin="miter"/>
+              <path d="M116 146h248v172H116z" fill="#F7F4EC" stroke="#141414" stroke-width="8"/>
+              <path d="M116 232h248M240 146v86" stroke="#141414" stroke-width="6"/>
+              <path d="M318 74h22v44" fill="none" stroke="#141414" stroke-width="8"/>
+              <!-- combles : laine isolante -->
+              <path d="M150 140c10-8 20-8 30 0s20 8 30 0 20-8 30 0 20 8 30 0 20-8 30 0" fill="none" stroke="#F2A945" stroke-width="6" stroke-linecap="round"/>
+              <!-- tableau électrique -->
+              <rect x="134" y="162" width="46" height="56" fill="#141414"/>
+              <path d="M142 176h30M142 188h30M142 200h30" stroke="#FFD400" stroke-width="5"/>
+              <!-- fenêtre -->
+              <rect x="262" y="164" width="80" height="52" fill="#BFD9EA" stroke="#141414" stroke-width="6"/>
+              <path d="M302 164v52" stroke="#141414" stroke-width="5"/>
+              <!-- radiateur et chaudière -->
+              <rect x="134" y="270" width="70" height="34" fill="#F7F4EC" stroke="#141414" stroke-width="5"/>
+              <path d="M148 270v34M162 270v34M176 270v34M190 270v34" stroke="#141414" stroke-width="4"/>
+              <rect x="300" y="248" width="44" height="56" fill="#FF4A1C" stroke="#141414" stroke-width="5"/>
+              <circle cx="322" cy="270" r="7" fill="#141414"/>
+              <path d="M322 304v14M204 290h40v-30h56" fill="none" stroke="#141414" stroke-width="5"/>
+              <!-- étiquette énergie au mur -->
+              <rect x="228" y="250" width="54" height="56" fill="#fff" stroke="#141414" stroke-width="4"/>
+              <rect x="234" y="257" width="14" height="6" fill="#009C6D"/><rect x="234" y="266" width="20" height="6" fill="#52B153"/>
+              <rect x="234" y="275" width="26" height="6" fill="#A5CC74"/><rect x="234" y="284" width="32" height="6" fill="#F4E70F"/>
+              <rect x="234" y="293" width="38" height="6" fill="#F2A945"/>
+              <!-- loupe qui se déplace -->
+              <g class="loupe">
+                <circle cx="404" cy="96" r="38" fill="#fff" fill-opacity=".35" stroke="#141414" stroke-width="10"/>
+                <path d="M432 124l30 30" stroke="#141414" stroke-width="14" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+          <!-- Pastille qui tourne -->
+          <svg class="tourne absolute -top-6 right-1 h-24 w-24 sm:h-28 sm:w-28 lg:-left-10 lg:right-auto" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="58" class="fill-braise"/>
+            <defs><path id="rond" d="M60 60m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs>
+            <text font-family="Barlow Condensed, sans-serif" font-weight="800" font-size="15" fill="#141414"><textPath href="#rond" textLength="252" lengthAdjust="spacing">CERTIFIÉ · ASSURÉ · INDÉPENDANT ·</textPath></text>
+            <path d="M44 62l11 11 22-24" fill="none" stroke="#141414" stroke-width="8"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- ===== Bandeau oblique qui défile ===== -->
+      <div class="py-6 md:py-8" aria-hidden="true">
+        <div class="-ml-[5%] w-[110%] -rotate-2 bg-encre py-3 text-soleil overflow-hidden">
+          <div class="defile affiche text-[2rem] md:text-5xl whitespace-nowrap">
+            <span class="px-4">DPE ✦ Amiante ✦ Plomb ✦ Électricité ✦ Gaz ✦ Termites ✦ Loi Carrez ✦ Surface Boutin ✦ État des risques ✦</span>
+            <span class="px-4">DPE ✦ Amiante ✦ Plomb ✦ Électricité ✦ Gaz ✦ Termites ✦ Loi Carrez ✦ Surface Boutin ✦ État des risques ✦</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Quels diagnostics ? Onglets vente / location, affichettes numérotées ===== -->
+    <section id="diagnostics" class="bg-papier py-14 md:py-24 overflow-x-clip">
+      <div class="mx-auto max-w-[90rem] px-4 sm:px-6">
+        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="font-display text-xl font-semibold uppercase tracking-widest text-braise">Votre dossier</p>
+            <h2 class="affiche mt-2 text-[clamp(2.6rem,9vw,5.5rem)] max-w-[14ch]">Ce qu'il vous faut. Ni plus, ni moins.</h2>
+          </div>
+          <div class="grid grid-cols-2 border-[3px] border-encre md:w-[22rem]" role="tablist" aria-label="Votre projet">
+            <button type="button" role="tab" id="tab-vente" aria-controls="p-vente" aria-selected="true" class="onglet btn min-h-[3.25rem] px-3">Je vends</button>
+            <button type="button" role="tab" id="tab-location" aria-controls="p-location" aria-selected="false" tabindex="-1" class="onglet btn min-h-[3.25rem] px-3">Je loue</button>
+          </div>
+        </div>
+
+        <div id="p-vente" role="tabpanel" aria-labelledby="tab-vente" class="panneau mt-8">
+          <ul class="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 scroll-px-4 pb-2 md:mx-0 md:grid md:grid-cols-4 md:gap-4 md:overflow-visible md:px-0">
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">01</span><h3 class="affiche mt-2 text-3xl">DPE</h3><p class="mt-2">Toujours obligatoire. Valable 10 ans.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">02</span><h3 class="affiche mt-2 text-3xl">Amiante</h3><p class="mt-2">Permis de construire avant juillet 1997. Sans limite si rien n'est trouvé.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">03</span><h3 class="affiche mt-2 text-3xl">Plomb</h3><p class="mt-2">Logement construit avant 1949. Un an s'il y a du plomb, sans limite sinon.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">04</span><h3 class="affiche mt-2 text-3xl">Électricité</h3><p class="mt-2">Installation de plus de 15 ans. Valable 3 ans.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">05</span><h3 class="affiche mt-2 text-3xl">Gaz</h3><p class="mt-2">Installation de plus de 15 ans. Valable 3 ans.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">06</span><h3 class="affiche mt-2 text-3xl">Termites</h3><p class="mt-2">Communes classées par arrêté préfectoral. Valable 6 mois.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">07</span><h3 class="affiche mt-2 text-3xl">État des risques</h3><p class="mt-2">Toujours obligatoire. Valable 6 mois, je le joins au dossier.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-soleil p-5 md:w-auto"><span class="affiche block text-5xl text-braise">08</span><h3 class="affiche mt-2 text-3xl">Loi Carrez</h3><p class="mt-2">Lot de copropriété. Valable tant qu'il n'y a pas de travaux.</p></li>
+          </ul>
+        </div>
+
+        <div id="p-location" role="tabpanel" aria-labelledby="tab-location" class="panneau mt-8" hidden>
+          <ul class="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 scroll-px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0">
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">01</span><h3 class="affiche mt-2 text-3xl">DPE</h3><p class="mt-2">Toujours obligatoire. Les classes F et G limitent la mise en location.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">02</span><h3 class="affiche mt-2 text-3xl">Plomb</h3><p class="mt-2">Logement construit avant 1949. Six ans s'il y a du plomb.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">03</span><h3 class="affiche mt-2 text-3xl">Électricité</h3><p class="mt-2">Installation de plus de 15 ans. Valable 6 ans.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">04</span><h3 class="affiche mt-2 text-3xl">Gaz</h3><p class="mt-2">Installation de plus de 15 ans. Valable 6 ans.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-craie p-5 md:w-auto"><span class="affiche block text-5xl text-braise">05</span><h3 class="affiche mt-2 text-3xl">État des risques</h3><p class="mt-2">Toujours obligatoire, à jour de moins de 6 mois à la signature du bail.</p></li>
+            <li class="souleve w-[80%] shrink-0 snap-start border-t-8 border-encre bg-soleil p-5 md:w-auto"><span class="affiche block text-5xl text-braise">06</span><h3 class="affiche mt-2 text-3xl">Surface Boutin</h3><p class="mt-2">La surface habitable à inscrire dans le bail, mesurée pièce par pièce.</p></li>
+          </ul>
+        </div>
+        <p class="mt-6 hidden max-w-[60ch] text-[16px] sm:block">Un doute sur votre cas ? Donnez-moi l'année de construction et la surface : je vous dis au téléphone ce qui est obligatoire.</p>
+      </div>
+    </section>
+
+    <!-- ===== Le DPE : l'étiquette interactive (signature) ===== -->
+    <section id="dpe" class="py-14 md:py-24">
+      <div class="mx-auto grid max-w-[90rem] gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12">
+        <div class="lg:col-span-5">
+          <p class="font-display text-xl font-semibold uppercase tracking-widest text-braise">Le DPE en clair</p>
+          <h2 class="affiche mt-2 text-[clamp(2.6rem,9vw,5.5rem)]">Quelle lettre pour votre logement ?</h2>
+          <p class="mt-4 max-w-[42ch] text-lg">Touchez une classe pour voir ce qu'elle change pour une vente ou une location.</p>
+          <dl id="detail" class="mt-6 hidden border-l-8 border-encre bg-papier p-5 lg:block" aria-live="polite">
+            <dt class="affiche text-4xl"><span data-d="titre">Classe D</span></dt>
+            <dd class="mt-1 font-semibold"><span data-d="seuil">De 181 à 250 kWh/m²/an</span></dd>
+            <dd class="mt-3"><span data-d="texte">La moyenne du parc français. Aucune restriction pour vendre ou louer, mais quelques travaux font vite gagner une lettre.</span></dd>
+          </dl>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div data-echelle class="relative pr-14 sm:pr-20">
+            <ul class="grid gap-1.5" aria-label="Classes énergie du DPE">
+              <li><button type="button" class="classe flex h-12 w-full items-center" aria-pressed="false" data-i="0" data-titre="Classe A" data-seuil="Jusqu'à 70 kWh/m²/an" data-texte="Logement très performant, souvent neuf ou entièrement rénové. Un vrai argument de vente."><span class="barre flex h-full w-[34%] items-center justify-between px-3 text-white" style="background:#009C6D"><span class="affiche text-3xl">A</span><span class="hidden sm:inline text-[15px] font-semibold">≤ 70</span></span></button></li>
+              <li><button type="button" class="classe flex h-12 w-full items-center" aria-pressed="false" data-i="1" data-titre="Classe B" data-seuil="De 71 à 110 kWh/m²/an" data-texte="Très bonne isolation et chauffage efficace. Aucune contrainte, une étiquette qui rassure les acheteurs."><span class="barre flex h-full w-[45%] items-center justify-between px-3 text-white" style="background:#52B153"><span class="affiche text-3xl">B</span><span class="hidden sm:inline text-[15px] font-semibold">71 – 110</span></span></button></li>
+              <li><button type="button" class="classe flex h-12 w-full items-center" aria-pressed="false" data-i="2" data-titre="Classe C" data-seuil="De 111 à 180 kWh/m²/an" data-texte="Bon niveau, fréquent après une rénovation. Aucune restriction pour vendre ou louer."><span class="barre flex h-full w-[56%] items-center justify-between px-3 text-encre" style="background:#A5CC74"><span class="affiche text-3xl">C</span><span class="hidden sm:inline text-[15px] font-semibold">111 – 180</span></span></button></li>
+              <li><button type="button" class="classe flex h-12 w-full items-center" aria-pressed="true" data-i="3" data-titre="Classe D" data-seuil="De 181 à 250 kWh/m²/an" data-texte="La moyenne du parc français. Aucune restriction pour vendre ou louer, mais quelques travaux font vite gagner une lettre."><span class="barre flex h-full w-[67%] items-center justify-between px-3 text-encre" style="background:#F4E70F"><span class="affiche text-3xl">D</span><span class="hidden sm:inline text-[15px] font-semibold">181 – 250</span></span></button></li>
+              <li><button type="button" class="classe flex h-12 w-full items-center" aria-pressed="false" data-i="4" data-titre="Classe E" data-seuil="De 251 à 330 kWh/m²/an" data-texte="Interdit à la mise en location en 2034. Pour vendre une maison classée E, un audit énergétique est obligatoire."><span class="barre flex h-full w-[78%] items-center justify-between px-3 text-encre" style="background:#F2A945"><span class="affiche text-3xl">E</span><span class="hidden sm:inline text-[15px] font-semibold">251 – 330</span></span></button></li>
+              <li><button type="button" class="classe flex h-12 w-full items-center" aria-pressed="false" data-i="5" data-titre="Classe F" data-seuil="De 331 à 420 kWh/m²/an" data-texte="Passoire thermique : loyer gelé, et plus de nouvelle location à partir de 2028. Audit énergétique obligatoire pour vendre une maison."><span class="barre flex h-full w-[89%] items-center justify-between px-3 text-white" style="background:#EB6F2D"><span class="affiche text-3xl">F</span><span class="hidden sm:inline text-[15px] font-semibold">331 – 420</span></span></button></li>
+              <li><button type="button" class="classe flex h-12 w-full items-center" aria-pressed="false" data-i="6" data-titre="Classe G" data-seuil="Plus de 420 kWh/m²/an" data-texte="Ne peut plus être proposé à la location depuis le 1er janvier 2025. La vente reste possible, avec audit énergétique pour une maison."><span class="barre flex h-full w-full items-center justify-between px-3 text-white" style="background:#D7221F"><span class="affiche text-3xl">G</span><span class="hidden sm:inline text-[15px] font-semibold">&gt; 420</span></span></button></li>
+            </ul>
+            <!-- Curseur « Votre bien » qui se pose sur la classe choisie -->
+            <div id="curseur" class="curseur pointer-events-none absolute right-0 top-0 flex h-12 w-12 items-center sm:w-[4.5rem]" style="transform: translateY(162px)" aria-hidden="true">
+              <svg class="h-12 w-full" viewBox="0 0 72 48" preserveAspectRatio="none"><path d="M0 24 18 0h54v48H18z" class="fill-encre"/></svg>
+              <span id="curseurLettre" class="affiche absolute inset-0 flex items-center justify-end pr-2.5 text-3xl text-soleil sm:pr-4">D</span>
+            </div>
+          </div>
+          <dl id="detailMobile" class="mt-6 border-l-8 border-encre bg-papier p-5 lg:hidden" aria-live="polite">
+            <dt class="affiche text-4xl"><span data-d="titre">Classe D</span></dt>
+            <dd class="mt-1 font-semibold"><span data-d="seuil">De 181 à 250 kWh/m²/an</span></dd>
+            <dd class="mt-3"><span data-d="texte">La moyenne du parc français. Aucune restriction pour vendre ou louer, mais quelques travaux font vite gagner une lettre.</span></dd>
+          </dl>
+          <p class="mt-4 hidden text-[15px] text-encre/70 sm:block">Seuils en énergie primaire. La classe retient aussi les émissions de CO₂ : c'est la moins bonne des deux qui compte.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Tarifs : trois affiches de prix ===== -->
+    <section id="tarifs" class="border-t-[3px] border-encre bg-craie py-14 md:py-24">
+      <div class="mx-auto max-w-[90rem] px-4 sm:px-6">
+        <h2 class="affiche text-[clamp(2.6rem,9vw,5.5rem)]">Les packs, <span class="text-braise">prix affichés.</span></h2>
+        <ul class="no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 scroll-px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0">
+          <li class="souleve flex w-[82%] shrink-0 snap-start flex-col border-[3px] border-encre bg-white p-6 md:w-auto">
+            <h3 class="affiche text-3xl">Location appartement</h3>
+            <p class="affiche mt-4 text-7xl tnum">180 €</p>
+            <p class="mt-1 text-[15px] font-semibold uppercase tracking-wide">T.T.C., à partir de</p>
+            <p class="mt-4">DPE, électricité, gaz, état des risques et surface Boutin.</p>
+            <a href="#devis" class="btn mt-auto w-full border-[3px] border-encre hover:bg-soleil">Choisir ce pack</a>
+          </li>
+          <li class="souleve flex w-[82%] shrink-0 snap-start flex-col bg-soleil p-6 md:w-auto">
+            <h3 class="affiche text-3xl">Vente appartement</h3>
+            <p class="affiche mt-4 text-7xl tnum">290 €</p>
+            <p class="mt-1 text-[15px] font-semibold uppercase tracking-wide">T.T.C., à partir de</p>
+            <p class="mt-4">DPE, amiante, électricité, gaz, état des risques et Loi Carrez.</p>
+            <a href="#devis" class="btn mt-6 w-full bg-encre text-soleil hover:bg-braise hover:text-encre">Choisir ce pack</a>
+          </li>
+          <li class="souleve flex w-[82%] shrink-0 snap-start flex-col border-[3px] border-encre bg-white p-6 md:w-auto">
+            <h3 class="affiche text-3xl">Vente maison</h3>
+            <p class="affiche mt-4 text-7xl tnum">390 €</p>
+            <p class="mt-1 text-[15px] font-semibold uppercase tracking-wide">T.T.C., à partir de</p>
+            <p class="mt-4">Le pack appartement, plus plomb et termites si votre maison est concernée.</p>
+            <a href="#devis" class="btn mt-auto w-full border-[3px] border-encre hover:bg-soleil">Choisir ce pack</a>
+          </li>
+        </ul>
+        <p class="mt-6 hidden text-[16px] sm:block">DPE seul à partir de 120 €. Devis gratuit et ferme avant la visite, sans frais de déplacement dans un rayon de 30 km.</p>
+      </div>
+    </section>
+
+    <!-- ===== Déroulé et chiffres-clés : aplat noir ===== -->
+    <section class="bg-encre py-14 text-craie md:py-24">
+      <div class="mx-auto max-w-[90rem] px-4 sm:px-6">
+        <h2 class="affiche text-[clamp(2.6rem,9vw,5.5rem)] max-w-[16ch]">Un appel, une visite, <span class="text-soleil">c'est réglé.</span></h2>
+        <ol class="rv no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 scroll-px-4 md:mx-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0">
+          <li class="w-[80%] shrink-0 snap-start border-t-[3px] border-soleil pt-4 md:w-auto"><span class="affiche block text-6xl text-soleil">1</span><h3 class="affiche mt-1 text-3xl">Vous appelez</h3><p class="mt-2 text-craie/85">Devis immédiat et rendez-vous sous 48 h, samedi matin compris.</p></li>
+          <li class="w-[80%] shrink-0 snap-start border-t-[3px] border-soleil pt-4 md:w-auto"><span class="affiche block text-6xl text-soleil">2</span><h3 class="affiche mt-1 text-3xl">Je visite</h3><p class="mt-2 text-craie/85">Une heure et demie pour un appartement. Vous pouvez me confier les clés.</p></li>
+          <li class="w-[80%] shrink-0 snap-start border-t-[3px] border-soleil pt-4 md:w-auto"><span class="affiche block text-6xl text-soleil">3</span><h3 class="affiche mt-1 text-3xl">Vous recevez</h3><p class="mt-2 text-craie/85">Le dossier complet en PDF sous 48 h, prêt pour le notaire ou l'agence.</p></li>
+        </ol>
+        <dl class="mt-8 grid grid-cols-3 gap-3 border-t-[3px] border-craie/25 pt-6 md:mt-14 md:pt-8">
+          <div><dt class="sr-only">Biens diagnostiqués</dt><dd class="affiche text-[clamp(2.4rem,11vw,6rem)] text-soleil tnum"><span data-compte="1400">1 400</span></dd><dd class="text-[15px] font-semibold">biens diagnostiqués</dd></div>
+          <div><dt class="sr-only">Années d'expérience</dt><dd class="affiche text-[clamp(2.4rem,11vw,6rem)] text-soleil tnum"><span data-compte="12">12</span></dd><dd class="text-[15px] font-semibold">ans de métier</dd></div>
+          <div><dt class="sr-only">Délai du rapport</dt><dd class="affiche text-[clamp(2.4rem,11vw,6rem)] text-soleil tnum"><span data-compte="48">48</span>&nbsp;h</dd><dd class="text-[15px] font-semibold">pour le rapport</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Avis : carrousel sur mobile ===== -->
+    <section id="avis" class="bg-papier py-14 md:py-24">
+      <div class="mx-auto max-w-[90rem] px-4 sm:px-6">
+        <h2 class="affiche text-[clamp(2.6rem,9vw,5.5rem)]">Ils ont signé sereins.</h2>
+        <ul class="rv no-scrollbar -mx-4 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 scroll-px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0">
+          <li class="w-[82%] shrink-0 snap-start bg-craie p-6 md:w-auto">
+            <figure>
+              <span class="affiche block text-6xl leading-none text-braise" aria-hidden="true">“</span>
+              <blockquote class="text-lg">Rendez-vous le lendemain, rapport deux jours après. Julien m'a expliqué chaque point sans jargon. Le compromis a été signé dans les temps.</blockquote>
+              <figcaption class="mt-4 font-semibold">Claire, vente d'une maison à Joué-lès-Tours</figcaption>
+            </figure>
+          </li>
+          <li class="w-[82%] shrink-0 snap-start bg-craie p-6 md:w-auto">
+            <figure>
+              <span class="affiche block text-6xl leading-none text-braise" aria-hidden="true">“</span>
+              <blockquote class="text-lg">Mon studio risquait d'être classé F. Il m'a indiqué les travaux qui comptaient vraiment : on est passés en D.</blockquote>
+              <figcaption class="mt-4 font-semibold">Mehdi, propriétaire bailleur à Tours</figcaption>
+            </figure>
+          </li>
+          <li class="w-[82%] shrink-0 snap-start bg-craie p-6 md:w-auto">
+            <figure>
+              <span class="affiche block text-6xl leading-none text-braise" aria-hidden="true">“</span>
+              <blockquote class="text-lg">J'étais au travail, je lui ai laissé les clés chez la voisine. Tout était propre, le dossier complet dans ma boîte mail.</blockquote>
+              <figcaption class="mt-4 font-semibold">Sophie, location d'un T3 à Saint-Cyr-sur-Loire</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Questions fréquentes ===== -->
+    <section id="questions" class="py-14 md:py-24">
+      <div class="mx-auto grid max-w-[90rem] gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12">
+        <h2 class="affiche text-[clamp(2.6rem,9vw,5.5rem)] lg:col-span-4">Vos questions.</h2>
+        <div class="border-t-[3px] border-encre lg:col-span-8">
+          <details class="group border-b-[3px] border-encre">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-display text-xl font-semibold uppercase sm:text-2xl">Mon DPE de 2019 est-il encore valable ?<span class="plus affiche text-4xl text-braise" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[62ch]">Non. Les DPE réalisés avant le 1er juillet 2021 ne sont plus valables depuis le 1er janvier 2025 : il faut en refaire un avant de vendre ou de louer.</p>
+          </details>
+          <details class="group border-b-[3px] border-encre">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-display text-xl font-semibold uppercase sm:text-2xl">Dois-je être présent pendant la visite ?<span class="plus affiche text-4xl text-braise" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[62ch]">Ce n'est pas obligatoire. Il faut simplement que toutes les pièces, les combles et la cave soient accessibles, ainsi que vos factures d'énergie si vous les avez.</p>
+          </details>
+          <details class="group border-b-[3px] border-encre">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-display text-xl font-semibold uppercase sm:text-2xl">Mon logement est classé F ou G : que faire ?<span class="plus affiche text-4xl text-braise" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[62ch]">Vous pouvez vendre. Pour une maison, l'audit énergétique est obligatoire : il chiffre les travaux pour gagner des lettres. Pour louer, des travaux s'imposent.</p>
+          </details>
+          <details class="group border-b-[3px] border-encre">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-display text-xl font-semibold uppercase sm:text-2xl">Quand vais-je payer ?<span class="plus affiche text-4xl text-braise" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[62ch]">À la remise du rapport, par virement ou carte. Le prix est celui du devis, sans supplément le jour de la visite.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Devis : aplat jaune, coordonnées, zone et formulaire ===== -->
+    <section id="devis" class="bg-soleil py-14 md:py-24">
+      <div class="mx-auto grid max-w-[90rem] gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12">
+        <div class="lg:col-span-5">
+          <h2 class="affiche text-[clamp(2.8rem,10vw,6rem)]">Devis gratuit.</h2>
+          <p class="mt-4 max-w-[38ch] text-lg">Décrivez votre bien en trente secondes. Je vous rappelle dans la journée avec un prix ferme.</p>
+          <dl class="mt-7 grid gap-4">
+            <div><dt class="font-display text-lg font-semibold uppercase tracking-wider">Téléphone</dt><dd><a href="tel:+33600000000" class="inline-flex min-h-11 items-center affiche text-4xl">06 00 00 00 00</a></dd></div>
+            <div><dt class="font-display text-lg font-semibold uppercase tracking-wider">E-mail</dt><dd><a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center text-lg font-semibold underline decoration-2 underline-offset-4">contact@exemple.fr</a></dd></div>
+            <div><dt class="font-display text-lg font-semibold uppercase tracking-wider">Zone</dt><dd>Tours, Joué-lès-Tours, Saint-Cyr, Chambray, Amboise et 30 km autour. Du lundi au samedi midi.</dd></div>
+          </dl>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Rue Nationale, 37000 Tours" class="mt-6 md:h-56 border-[3px] border-encre overflow-hidden bg-craie text-encre"></div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <!--
+            Formulaire de demande de devis : il n'envoie rien tant qu'il n'est pas relié à un service.
+            - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+            - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+            - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+          -->
+          <form class="grid gap-5 bg-white p-5 sm:grid-cols-2 sm:p-8" action="#" method="post">
+            <fieldset class="sm:col-span-2">
+              <legend class="font-display text-lg font-semibold uppercase tracking-wider">Votre projet</legend>
+              <div class="mt-2 grid grid-cols-2 gap-3">
+                <label class="flex min-h-[3.25rem] cursor-pointer items-center gap-3 border-[3px] border-encre px-4 font-semibold has-[:checked]:bg-soleil"><input type="radio" name="projet" value="vente" class="h-5 w-5 accent-[#141414]" checked> Vente</label>
+                <label class="flex min-h-[3.25rem] cursor-pointer items-center gap-3 border-[3px] border-encre px-4 font-semibold has-[:checked]:bg-soleil"><input type="radio" name="projet" value="location" class="h-5 w-5 accent-[#141414]"> Location</label>
+              </div>
+            </fieldset>
+            <label class="block"><span class="font-display text-lg font-semibold uppercase tracking-wider">Type de bien</span>
+              <select name="bien" class="field mt-1">
+                <option>Appartement</option>
+                <option>Maison</option>
+                <option>Local professionnel</option>
+              </select>
+            </label>
+            <label class="block"><span class="font-display text-lg font-semibold uppercase tracking-wider">Construit</span>
+              <select name="annee" class="field mt-1">
+                <option>Avant 1949</option>
+                <option>Entre 1949 et 1997</option>
+                <option>Après 1997</option>
+                <option>Je ne sais pas</option>
+              </select>
+            </label>
+            <label class="block"><span class="font-display text-lg font-semibold uppercase tracking-wider">Surface (m²)</span>
+              <input type="number" name="surface" inputmode="numeric" min="5" class="field mt-1" placeholder="65">
+            </label>
+            <label class="block"><span class="font-display text-lg font-semibold uppercase tracking-wider">Commune</span>
+              <input type="text" name="commune" autocomplete="address-level2" class="field mt-1" placeholder="Tours">
+            </label>
+            <label class="block"><span class="font-display text-lg font-semibold uppercase tracking-wider">Votre prénom</span>
+              <input type="text" name="prenom" autocomplete="given-name" class="field mt-1" required>
+            </label>
+            <label class="block"><span class="font-display text-lg font-semibold uppercase tracking-wider">Téléphone</span>
+              <input type="tel" name="telephone" autocomplete="tel" class="field mt-1" required>
+            </label>
+            <button type="submit" class="btn w-full bg-encre text-soleil hover:bg-braise hover:text-encre sm:col-span-2">Recevoir mon devis</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-encre text-craie/80 text-[15px]">
+    <div class="mx-auto flex max-w-[90rem] flex-col gap-2 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p><span class="font-display text-xl font-extrabold uppercase text-soleil">Étiquette</span> <span class="block sm:ml-2 sm:inline">Diagnostics immobiliers à Tours · certification n° 0000</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 grid grid-cols-[auto_1fr] gap-2 bg-encre px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <a href="tel:+33600000000" class="btn !px-5 border-[3px] border-soleil text-soleil">Appeler</a>
+    <a href="#devis" class="btn bg-soleil text-encre">Devis gratuit</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Onglets vente / location (flèches du clavier comprises)
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const choisir = t => tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => choisir(t));
+      t.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; choisir(n); n.focus(); } });
+    });
+
+    // Signature : l'étiquette DPE. Touchez une classe, le curseur s'y pose et le détail se met à jour.
+    const classes = [...document.querySelectorAll('.classe')], curseur = document.getElementById('curseur');
+    const pas = () => { const a = classes[0].parentElement.getBoundingClientRect(), b2 = classes[1].parentElement.getBoundingClientRect(); return b2.top - a.top; };
+    const poser = btn => {
+      classes.forEach(c => c.setAttribute('aria-pressed', c === btn));
+      curseur.style.transform = `translateY(${btn.dataset.i * pas()}px)`;
+      document.getElementById('curseurLettre').textContent = btn.dataset.titre.slice(-1);
+      document.querySelectorAll('#detail, #detailMobile').forEach(d => {
+        for (const k of ['titre', 'seuil', 'texte']) d.querySelector(`[data-d="${k}"]`).textContent = btn.dataset[k];
+        if (!calme) { d.classList.remove('maj'); void d.offsetWidth; d.classList.add('maj'); }
+      });
+    };
+    classes.forEach(c => c.addEventListener('click', () => poser(c)));
+    const actif = () => classes.find(c => c.getAttribute('aria-pressed') === 'true');
+    curseur.style.transform = `translateY(${actif().dataset.i * pas()}px)`;
+    addEventListener('resize', () => { curseur.style.transform = `translateY(${actif().dataset.i * pas()}px)`; });
+
+    if ('IntersectionObserver' in window) {
+      // Barres de l'étiquette qui s'allongent une à une
+      document.querySelectorAll('[data-echelle] .barre').forEach((el, i) => el.style.transitionDelay = i * 90 + 'ms');
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
+      document.querySelectorAll('.rv, [data-echelle]').forEach(el => io.observe(el));
+
+      // Chiffres qui comptent
+      const compte = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        compte.unobserve(e.target);
+        if (calme) return;
+        const el = e.target, fin = +el.dataset.compte, t0 = performance.now(), d = 800;
+        const avance = t => { const k = Math.min(1, (t - t0) / d); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))).toLocaleString('fr-FR'); if (k < 1) requestAnimationFrame(avance); };
+        requestAnimationFrame(avance);
+      }), { threshold: .6 });
+      document.querySelectorAll('[data-compte]').forEach(el => compte.observe(el));
+    }
+  </script>
+</body>
+</html>
