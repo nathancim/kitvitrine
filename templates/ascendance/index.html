@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ascendance — École de parapente et baptêmes biplace au lac d'Annecy</title>
+  <meta name="description" content="Ascendance, école de parapente au bord du lac d'Annecy : baptêmes en biplace dès 6 ans, vols thermiques, grands vols et stages d'initiation. Moniteurs brevetés d'État, vols d'avril à octobre.">
+  <meta name="theme-color" content="#D6E6EA">
+  <link rel="preload" href="assets/fonts/unbounded-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-brume font-sans text-encre antialiased pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
+
+  <!-- ===== En-tête : logo, altimètre qui suit la lecture, réservation ===== -->
+  <header class="sticky top-0 z-40 border-b border-encre/10 bg-brume/90 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6">
+      <a href="#accueil" class="flex min-h-11 items-center gap-2.5">
+        <svg data-kv-logo="Logo" class="h-9 w-9 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="24" class="fill-ciel"/>
+          <path d="M7 19c9-9 25-9 34 0l-4 3c-7-6-19-6-26 0z" class="fill-voile"/>
+          <path d="M11 22l11 16M37 22L26 38M24 16v22" stroke="#15212A" stroke-width="1.4" fill="none"/>
+          <circle cx="24" cy="39" r="3" fill="#15212A"/>
+        </svg>
+        <span class="font-display text-base font-semibold tracking-tight sm:text-lg">Ascendance</span>
+      </a>
+
+      <span class="ml-auto inline-flex items-baseline gap-1 rounded-full bg-white px-3 py-1.5 font-display text-sm font-semibold text-encre lg:ml-8" aria-hidden="true" title="Altitude">
+        <svg class="h-3 w-3 self-center fill-voile" viewBox="0 0 12 12"><path d="M6 12L0 2h12z"/></svg>
+        <span id="alti" class="tnum">1&nbsp;250</span> m
+      </span>
+
+      <nav class="ml-auto hidden lg:flex items-center gap-1 text-[16px] font-medium" aria-label="Navigation principale">
+        <a href="#vols" class="flex min-h-11 items-center rounded-full px-4 hover:bg-white transition-colors">Les vols</a>
+        <a href="#meteo" class="flex min-h-11 items-center rounded-full px-4 hover:bg-white transition-colors">Météo</a>
+        <a href="#deroule" class="flex min-h-11 items-center rounded-full px-4 hover:bg-white transition-colors">Déroulé</a>
+        <a href="#stages" class="flex min-h-11 items-center rounded-full px-4 hover:bg-white transition-colors">Stages</a>
+        <a href="#questions" class="flex min-h-11 items-center rounded-full px-4 hover:bg-white transition-colors">Questions</a>
+        <a href="#reserver" class="btn ml-2 bg-voile text-white hover:bg-encre">Réserver un vol</a>
+      </nav>
+
+      <button id="menuBtn" type="button" class="lg:hidden flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full bg-encre px-3 sm:px-4 font-semibold text-brume" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="h-4 w-4" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <span class="sr-only sm:not-sr-only">Menu</span>
+      </button>
+    </div>
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 bottom-0 z-40 flex-col bg-relief px-4 pt-4 pb-28 text-brume overflow-y-auto lg:hidden" aria-label="Navigation mobile">
+      <a href="#vols" class="titre flex min-h-[3.5rem] items-center border-b border-brume/20 text-2xl">Les vols</a>
+      <a href="#meteo" class="titre flex min-h-[3.5rem] items-center border-b border-brume/20 text-2xl">La météo</a>
+      <a href="#deroule" class="titre flex min-h-[3.5rem] items-center border-b border-brume/20 text-2xl">Le déroulé</a>
+      <a href="#stages" class="titre flex min-h-[3.5rem] items-center border-b border-brume/20 text-2xl">Les stages</a>
+      <a href="#avis" class="titre flex min-h-[3.5rem] items-center border-b border-brume/20 text-2xl">Avis</a>
+      <a href="#questions" class="titre flex min-h-[3.5rem] items-center border-b border-brume/20 text-2xl">Questions</a>
+      <a href="#reserver" class="titre flex min-h-[3.5rem] items-center border-b border-brume/20 text-2xl">Réserver</a>
+      <a href="tel:+33600000000" class="btn mt-8 w-full bg-voile text-white">Appeler le 06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <!-- ===== Altimètre latéral (ordinateur) : la voile descend du décollage à l'atterrissage au fil de la page ===== -->
+  <aside class="hidden lg:block fixed left-0 top-16 bottom-0 z-30 w-20 border-r border-encre/10 bg-brume" aria-hidden="true">
+    <div id="rail" class="absolute inset-x-0 top-8 bottom-8">
+      <div class="absolute left-10 top-0 bottom-0 w-px bg-encre/20"></div>
+      <span class="absolute left-0 right-0 top-0 -translate-y-1/2 text-center font-display text-[11px] font-semibold tnum">1&nbsp;250</span>
+      <span class="absolute left-0 right-0 top-1/4 -translate-y-1/2 text-center font-display text-[11px] text-encre/50 tnum">1&nbsp;050</span>
+      <span class="absolute left-0 right-0 top-1/2 -translate-y-1/2 text-center font-display text-[11px] text-encre/50 tnum">850</span>
+      <span class="absolute left-0 right-0 top-3/4 -translate-y-1/2 text-center font-display text-[11px] text-encre/50 tnum">650</span>
+      <span class="absolute left-0 right-0 bottom-0 translate-y-1/2 text-center font-display text-[11px] font-semibold tnum">450</span>
+      <svg id="repere" class="repere absolute left-[1.35rem] top-0 h-9 w-9 -translate-y-1/2" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="22" class="fill-brume"/>
+        <path d="M6 18c10-9 26-9 36 0l-4 3c-8-6-20-6-28 0z" class="fill-voile"/>
+        <path d="M10 21l12 15M38 21L26 36" stroke="#15212A" stroke-width="1.5" fill="none"/>
+        <circle cx="24" cy="37" r="3.5" fill="#15212A"/>
+      </svg>
+    </div>
+  </aside>
+
+  <main id="contenu" class="lg:ml-20">
+    <!-- ===== Accueil : titre géant dans le ciel, paysage du lac en bas, vol qui se dessine ===== -->
+    <section id="accueil" class="relative overflow-x-clip bg-gradient-to-b from-ciel to-brume">
+      <div class="relative z-10 mx-auto max-w-7xl px-4 pt-8 sm:px-6 md:pt-16">
+        <p class="alti text-voile">1&nbsp;250 m · le décollage</p>
+        <h1 class="titre mt-3 max-w-[14ch] md:max-w-[16ch] text-[clamp(2.5rem,10.5vw,6.6rem)] font-extrabold" aria-label="Volez à deux au-dessus du lac.">
+          <span class="mot" aria-hidden="true" style="animation-delay:.05s">Volez</span>
+          <span class="mot" aria-hidden="true" style="animation-delay:.15s">à</span>
+          <span class="mot" aria-hidden="true" style="animation-delay:.25s">deux</span>
+          <span class="mot" aria-hidden="true" style="animation-delay:.35s">au-dessus</span>
+          <span class="mot" aria-hidden="true" style="animation-delay:.45s">du</span>
+          <span class="mot" aria-hidden="true" style="animation-delay:.55s">lac.</span>
+        </h1>
+        <div class="apres mt-5 grid gap-6 md:mt-8 md:grid-cols-[minmax(0,34rem)_auto] md:items-end md:gap-12">
+          <p class="text-lg md:text-xl">Baptêmes en biplace, vols thermiques et stages au lac d'Annecy. Vous n'avez rien à savoir : un moniteur breveté d'État pilote, vous profitez.</p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a href="#reserver" class="btn w-full sm:w-auto bg-voile text-white hover:bg-encre">Réserver un baptême</a>
+            <a href="#vols" class="btn w-full sm:w-auto border-2 border-encre/20 bg-white/60 hover:bg-white">Voir les vols et les prix</a>
+          </div>
+        </div>
+      </div>
+
+      <div data-kv-image="Photo d'un vol en parapente biplace au-dessus du lac" class="relative mt-2 h-[34vh] min-h-[220px] md:mt-4 md:h-[52vh] md:max-h-[560px]">
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Parapente biplace au-dessus des montagnes et du lac, sur une trajectoire qui va du décollage à l'atterrissage">
+          <circle cx="980" cy="150" r="54" class="fill-soleil" opacity=".9"/>
+          <g class="nuage lent" opacity=".9"><path d="M120 150a26 26 0 0 1 48-12 20 20 0 0 1 34 14h-82z" fill="#fff"/></g>
+          <g class="nuage" opacity=".95"><path d="M780 110a30 30 0 0 1 56-14 24 24 0 0 1 40 16h-96z" fill="#fff"/></g>
+          <!-- Montagnes en trois plans -->
+          <path d="M0 380l140-120 90 60 150-170 130 130 110-70 160 150 140-110 130 80 150-120v380H0z" class="fill-relief" opacity=".28"/>
+          <path d="M0 420l90-60 120 30 170-150 140 140 120-60 150 110 120-80 150 70 140-40v220H0z" class="fill-relief" opacity=".55"/>
+          <path d="M0 300l120 40 130 90 120 40 140 30H0z" class="fill-relief"/>
+          <path d="M0 300l40-20 30 8" class="fill-relief"/>
+          <!-- Le lac et la prairie d'atterrissage -->
+          <path d="M0 480c200-22 420-30 640-20s420 24 560 10v110H0z" class="fill-ciel"/>
+          <path d="M0 500c240-14 460-18 680-8s380 18 520 6" stroke="#fff" stroke-width="3" fill="none" opacity=".7"/>
+          <path d="M760 470c140-6 300-4 440 4v86H760z" fill="#6E9A5B" opacity=".85"/>
+          <!-- Manche à air de l'atterrissage -->
+          <path d="M1080 470v-46" stroke="#15212A" stroke-width="3"/>
+          <path d="M1080 426l34 6v10l-34 4z" class="fill-voile"/>
+          <!-- Trajectoire : décollage, deux thermiques, approche -->
+          <path class="trajectoire" d="M150 290c80-40 150-90 230-110 50-12 70 30 30 40s-40-40 10-60c90-36 160-10 240 10 50 12 60 60 20 64s-30-50 20-56c100-10 160 60 220 130 40 46 90 80 160 120" stroke="#15212A" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round" fill="none" opacity=".75"/>
+          <!-- La voile biplace -->
+          <g class="flotte">
+            <g transform="translate(560 70)">
+              <path d="M0 40C40 0 160 0 200 40l-14 14C150 22 50 22 14 54z" class="fill-voile"/>
+              <path d="M40 22l4 18M70 14l2 16M100 12v16M130 14l-2 16M160 22l-4 18" stroke="#fff" stroke-width="2" opacity=".55"/>
+              <path d="M14 54L92 150M60 34l36 116M100 28v122M140 34l-36 116M186 54L108 150" stroke="#15212A" stroke-width="1.2" opacity=".7"/>
+              <rect x="88" y="146" width="24" height="14" rx="5" fill="#15212A"/>
+              <circle cx="94" cy="142" r="6" class="fill-soleil"/>
+              <circle cx="108" cy="138" r="6" fill="#fff"/>
+              <path d="M88 160l-8 14M112 160l10 12" stroke="#15212A" stroke-width="4" stroke-linecap="round"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== Les vols : trois formules, chacune avec son profil d'altitude ===== -->
+    <section id="vols" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <p class="alti text-voile">1&nbsp;200 m · les vols</p>
+        <div class="mt-3 grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
+          <h2 class="titre text-[clamp(1.9rem,6vw,3.6rem)]">Trois façons de prendre l'air</h2>
+          <p class="max-w-[40ch] text-encre/75">La courbe montre le vol : plus elle remonte, plus on reste en l'air.</p>
+        </div>
+      </div>
+      <div class="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-4 sm:px-6 md:mx-auto md:grid md:max-w-7xl md:grid-cols-3 md:gap-6 md:overflow-visible">
+        <article class="carte flex w-[82%] shrink-0 snap-start flex-col rounded-[2rem] bg-white p-6 md:w-auto">
+          <h3 class="font-display text-xl font-semibold">Découverte</h3>
+          <p class="text-encre/70">15 à 20 minutes · dès 6 ans</p>
+          <svg class="profil mt-4 h-24 w-full" viewBox="0 0 240 96" aria-hidden="true">
+            <path d="M0 88h240" stroke="#15212A" stroke-opacity=".15"/>
+            <path class="trace" pathLength="1" d="M4 14C40 22 70 30 100 40s60 18 90 30 40 16 46 18" stroke="#D2462E" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="4" cy="14" r="4" fill="#15212A"/>
+          </svg>
+          <p class="mt-3">Une glissade tranquille du décollage au lac. Idéal pour un premier vol ou pour les enfants.</p>
+          <p class="mt-auto pt-6 font-display text-4xl font-extrabold tnum">95&nbsp;€</p>
+          <a href="#reserver" data-formule="Découverte" class="btn mt-4 w-full bg-encre text-brume hover:bg-voile">Réserver ce vol</a>
+        </article>
+        <article class="carte flex w-[82%] shrink-0 snap-start flex-col rounded-[2rem] bg-relief p-6 text-brume md:w-auto" style="transition-delay:.08s">
+          <h3 class="font-display text-xl font-semibold">Thermique</h3>
+          <p class="text-brume/75">30 à 40 minutes · le plus demandé</p>
+          <svg class="profil mt-4 h-24 w-full" viewBox="0 0 240 96" aria-hidden="true">
+            <path d="M0 88h240" stroke="#fff" stroke-opacity=".2"/>
+            <path class="trace" pathLength="1" d="M4 24C20 30 34 40 48 42s14-28 28-30 18 22 34 26 14-24 30-26 22 24 40 36 30 24 56 34" stroke="#F0B43C" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="4" cy="24" r="4" fill="#fff"/>
+          </svg>
+          <p class="mt-3">On enroule les ascendances au-dessus de la forêt pour gagner de la hauteur, puis on file vers le lac.</p>
+          <p class="mt-auto pt-6 font-display text-4xl font-extrabold tnum">140&nbsp;€</p>
+          <a href="#reserver" data-formule="Thermique" class="btn mt-4 w-full bg-soleil text-encre hover:bg-white">Réserver ce vol</a>
+        </article>
+        <article class="carte flex w-[82%] shrink-0 snap-start flex-col rounded-[2rem] bg-white p-6 md:w-auto" style="transition-delay:.16s">
+          <h3 class="font-display text-xl font-semibold">Grand vol</h3>
+          <p class="text-encre/70">Une heure · en fin de matinée</p>
+          <svg class="profil mt-4 h-24 w-full" viewBox="0 0 240 96" aria-hidden="true">
+            <path d="M0 88h240" stroke="#15212A" stroke-opacity=".15"/>
+            <path d="M0 30h240" stroke="#15212A" stroke-opacity=".15" stroke-dasharray="3 5"/>
+            <path class="trace" pathLength="1" d="M4 30C18 36 28 40 38 34s16-24 30-24 18 16 32 10 16-14 30-8 16 18 32 10 16-8 28 4 20 32 40 46 22 14 36 16" stroke="#D2462E" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="4" cy="30" r="4" fill="#15212A"/>
+          </svg>
+          <p class="mt-3">On monte plus haut que le décollage et l'on fait le tour des sommets. Pour ceux qui en veulent plus.</p>
+          <p class="mt-auto pt-6 font-display text-4xl font-extrabold tnum">190&nbsp;€</p>
+          <a href="#reserver" data-formule="Grand vol" class="btn mt-4 w-full bg-encre text-brume hover:bg-voile">Réserver ce vol</a>
+        </article>
+      </div>
+      <p class="mx-auto mt-4 max-w-7xl px-4 text-encre/75 sm:px-6">En option : photos et vidéo de votre vol, 30&nbsp;€. Bons cadeaux valables un an.</p>
+    </section>
+
+    <!-- ===== Météo : la manche à air et les conditions du jour ===== -->
+    <section id="meteo" class="bg-relief py-14 text-brume md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 md:grid-cols-2 md:items-center md:gap-16">
+        <div>
+          <p class="alti text-soleil">1&nbsp;000 m · lire le ciel</p>
+          <h2 class="titre mt-3 text-[clamp(1.9rem,6vw,3.6rem)]">C'est le vent qui décide</h2>
+          <p class="mt-4 max-w-[46ch] text-brume/85">On vole quand le vent reste sous 20&nbsp;km/h. La veille à 18&nbsp;h, vous recevez un SMS qui confirme votre créneau. S'il faut annuler, on reporte sans frais, ou on vous rembourse.</p>
+        </div>
+        <div class="rv rounded-[2rem] bg-brume/10 p-6 ring-1 ring-brume/15 md:p-8">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="font-display text-lg font-semibold">Ce matin au décollage</h3>
+            <span class="shrink-0 whitespace-nowrap rounded-full bg-soleil px-3 py-1 text-[15px] font-semibold text-encre">On vole</span>
+          </div>
+          <svg class="mt-4 h-24 w-full" viewBox="0 0 320 96" aria-hidden="true">
+            <path d="M40 92V10" stroke="#F3F7F7" stroke-width="4" stroke-linecap="round"/>
+            <g class="manche" style="--angle:8deg" transform="translate(42 18)">
+              <path class="anneau" d="M0 0h44v34H0z" fill="#D2462E"/>
+              <path class="anneau" d="M44 2h42v30H44z" fill="#F3F7F7"/>
+              <path class="anneau" d="M86 4h40v26H86z" fill="#D2462E"/>
+              <path class="anneau" d="M126 6h38v22h-38z" fill="#F3F7F7"/>
+              <path class="anneau" d="M164 8h36v18h-36z" fill="#D2462E"/>
+            </g>
+          </svg>
+          <dl class="mt-4 grid grid-cols-2 gap-x-6 gap-y-4">
+            <div><dt class="text-[15px] text-brume/70">Vent</dt><dd class="font-display text-lg font-semibold">12 km/h nord-ouest</dd></div>
+            <div><dt class="text-[15px] text-brume/70">Plafond</dt><dd class="font-display text-lg font-semibold tnum">2&nbsp;300 m</dd></div>
+            <div><dt class="text-[15px] text-brume/70">Thermiques</dt><dd class="font-display text-lg font-semibold">Dès 11 h</dd></div>
+            <div><dt class="text-[15px] text-brume/70">Prochain créneau</dt><dd class="font-display text-lg font-semibold">14 h 30</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Déroulé d'un baptême : un fil qui descend et se remplit ===== -->
+    <section id="deroule" class="py-14 md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-20">
+        <div class="lg:sticky lg:top-28 lg:self-start">
+          <p class="alti text-voile">850 m · votre baptême</p>
+          <h2 class="titre mt-3 text-[clamp(1.9rem,6vw,3.6rem)]">Une heure, dont vingt minutes en l'air</h2>
+          <p class="mt-4 hidden max-w-[40ch] text-encre/75 sm:block">Prévoyez des chaussures fermées et une veste. Le casque, la sellette et la radio sont fournis.</p>
+        </div>
+        <ol id="fil" class="relative grid gap-6 pl-10 md:gap-8">
+          <li class="absolute left-[11px] top-2 bottom-2 w-[3px] rounded bg-encre/10" aria-hidden="true"><span id="filPlein" class="block h-full w-full origin-top rounded bg-voile"></span></li>
+          <li class="etape relative">
+            <span class="absolute -left-10 top-1 h-6 w-6 rounded-full border-[3px] border-voile bg-brume" aria-hidden="true"></span>
+            <p class="font-display text-sm font-semibold text-voile tnum">9 h 00</p>
+            <h3 class="mt-1 font-display text-lg font-semibold">Rendez-vous au bord du lac</h3>
+            <p class="mt-1 text-encre/80">On se retrouve à l'atterrissage et la navette nous monte au décollage.</p>
+          </li>
+          <li class="etape relative">
+            <span class="absolute -left-10 top-1 h-6 w-6 rounded-full border-[3px] border-voile bg-brume" aria-hidden="true"></span>
+            <p class="font-display text-sm font-semibold text-voile tnum">9 h 30</p>
+            <h3 class="mt-1 font-display text-lg font-semibold">Briefing et sellette</h3>
+            <p class="mt-1 text-encre/80">Trois consignes, pas plus. On ajuste le casque et la sellette.</p>
+          </li>
+          <li class="etape relative">
+            <span class="absolute -left-10 top-1 h-6 w-6 rounded-full border-[3px] border-voile bg-brume" aria-hidden="true"></span>
+            <p class="font-display text-sm font-semibold text-voile tnum">9 h 45</p>
+            <h3 class="mt-1 font-display text-lg font-semibold">Quelques pas, et vos pieds quittent le sol</h3>
+            <p class="mt-1 text-encre/80">La voile monte au-dessus de vos têtes ; on court ensemble sur la pente.</p>
+          </li>
+          <li class="etape relative">
+            <span class="absolute -left-10 top-1 h-6 w-6 rounded-full bg-voile" aria-hidden="true"></span>
+            <p class="font-display text-sm font-semibold text-voile tnum">9 h 50</p>
+            <h3 class="mt-1 font-display text-lg font-semibold">Le vol</h3>
+            <p class="mt-1 text-encre/80">Forêt, sommets, puis le lac. Si vous le voulez, vous prenez les commandes.</p>
+          </li>
+          <li class="etape relative">
+            <span class="absolute -left-10 top-1 h-6 w-6 rounded-full border-[3px] border-voile bg-brume" aria-hidden="true"></span>
+            <p class="font-display text-sm font-semibold text-voile tnum">10 h 10</p>
+            <h3 class="mt-1 font-display text-lg font-semibold">Posé sur l'herbe</h3>
+            <p class="mt-1 text-encre/80">Atterrissage en douceur, debout ou assis. Les photos sont prêtes au café.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Stages : apprendre à voler seul ===== -->
+    <section id="stages" class="overflow-x-clip bg-ciel py-14 md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 md:grid-cols-[5fr_6fr] md:items-center md:gap-16">
+        <div data-kv-image="Photo de l'équipe de moniteurs au décollage" class="rv relative order-2 aspect-[4/3] overflow-hidden rounded-[2rem] bg-brume md:order-1">
+          <svg class="absolute inset-0 h-full w-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Élève qui gonfle sa voile sur la pente école, sous le regard d'un moniteur">
+            <rect width="400" height="300" class="fill-brume"/>
+            <path d="M0 200l400-70v170H0z" fill="#6E9A5B"/>
+            <path d="M0 222l400-70" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+            <g class="flotte">
+              <path d="M80 70c60-60 180-60 240 0l-18 16c-50-44-154-44-204 0z" class="fill-voile"/>
+              <path d="M98 86l92 124M150 50l44 160M250 50l-44 160M302 86l-92 124" stroke="#15212A" stroke-width="1.3" opacity=".6"/>
+            </g>
+            <circle cx="200" cy="206" r="12" class="fill-soleil"/>
+            <path d="M200 218v40M200 258l-16 34M200 258l18 32M200 230l-24-18M200 230l24-18" stroke="#15212A" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="330" cy="215" r="10" fill="#15212A"/>
+            <path d="M330 225v38M330 263l-10 28M330 263l10 28M330 238l-20 12" stroke="#15212A" stroke-width="7" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="order-1 md:order-2">
+          <p class="alti text-voile">700 m · et après ?</p>
+          <h2 class="titre mt-3 text-[clamp(1.9rem,6vw,3.6rem)]">Apprendre à voler seul</h2>
+          <p class="mt-4 max-w-[46ch]">Cinq jours sur la pente école puis vos premiers grands vols, guidé à la radio. Matériel prêté.</p>
+          <ul class="mt-6 grid gap-3">
+            <li class="flex items-baseline justify-between gap-4 border-b border-encre/15 pb-3"><span class="font-semibold">Stage initiation, 5 jours</span><span class="font-display text-xl font-semibold tnum">690&nbsp;€</span></li>
+            <li class="flex items-baseline justify-between gap-4 border-b border-encre/15 pb-3"><span class="font-semibold">Stage progression, 5 jours</span><span class="font-display text-xl font-semibold tnum">720&nbsp;€</span></li>
+            <li class="flex items-baseline justify-between gap-4 border-b border-encre/15 pb-3"><span class="font-semibold">Journée pente école</span><span class="font-display text-xl font-semibold tnum">120&nbsp;€</span></li>
+          </ul>
+          <p class="mt-5 hidden text-encre/75 sm:block">18 saisons au bord du lac, quatre moniteurs brevetés d'État, une école labellisée par la fédération.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Avis ===== -->
+    <section id="avis" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <p class="alti text-voile">600 m · ils ont volé</p>
+        <h2 class="titre mt-3 max-w-[22ch] text-[clamp(1.9rem,6vw,3.6rem)]">Ce qu'ils en disent en reposant le pied</h2>
+      </div>
+      <div class="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-2 sm:px-6 md:mx-auto md:grid md:max-w-7xl md:grid-cols-3 md:overflow-visible">
+        <figure class="w-[82%] shrink-0 snap-start rounded-[2rem] border-2 border-encre/10 p-6 md:w-auto">
+          <blockquote class="text-lg">« J'avais le vertige sur une échelle. Là-haut, rien du tout : juste le silence et le lac. »</blockquote>
+          <figcaption class="mt-4 font-semibold">Hélène <span class="font-normal text-encre/65">— vol Découverte</span></figcaption>
+        </figure>
+        <figure class="w-[82%] shrink-0 snap-start rounded-[2rem] border-2 border-encre/10 p-6 md:w-auto" style="transition-delay:.08s">
+          <blockquote class="text-lg">« Offert pour mes 60 ans. Quarante minutes à tourner avec les buses, je n'oublierai pas. »</blockquote>
+          <figcaption class="mt-4 font-semibold">Gérard <span class="font-normal text-encre/65">— vol Thermique</span></figcaption>
+        </figure>
+        <figure class="w-[82%] shrink-0 snap-start rounded-[2rem] border-2 border-encre/10 p-6 md:w-auto" style="transition-delay:.16s">
+          <blockquote class="text-lg">« Notre fils de 9 ans a piloté deux minutes. Il en parle encore à tout le monde. »</blockquote>
+          <figcaption class="mt-4 font-semibold">Claire <span class="font-normal text-encre/65">— deux vols Découverte</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Questions fréquentes ===== -->
+    <section id="questions" class="pb-14 md:pb-24">
+      <div class="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-20">
+        <div>
+          <p class="alti text-voile">500 m · avant de venir</p>
+          <h2 class="titre mt-3 text-[clamp(1.9rem,6vw,3.6rem)]">Vos questions</h2>
+        </div>
+        <div class="border-t border-encre/15">
+          <details class="border-b border-encre/15">
+            <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 font-semibold sm:text-lg">À partir de quel âge peut-on voler ?<span class="plus font-display text-2xl text-voile" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[60ch] text-encre/80">Dès 6 ans, et de 20 à 110 kg. Pas besoin d'être sportif : il suffit de pouvoir faire quelques pas en courant.</p>
+          </details>
+          <details class="border-b border-encre/15">
+            <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 font-semibold sm:text-lg">J'ai le vertige, est-ce un problème ?<span class="plus font-display text-2xl text-voile" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[60ch] text-encre/80">Très rarement. Sans appui au sol, la sensation de vide disparaît presque toujours. On vole calmement si vous le demandez.</p>
+          </details>
+          <details class="border-b border-encre/15">
+            <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 font-semibold sm:text-lg">Que se passe-t-il si la météo ne permet pas de voler ?<span class="plus font-display text-2xl text-voile" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[60ch] text-encre/80">On vous prévient la veille à 18 h, puis le matin si besoin. Votre vol est reporté sans frais, ou remboursé.</p>
+          </details>
+          <details class="border-b border-encre/15">
+            <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 font-semibold sm:text-lg">Peut-on offrir un vol ?<span class="plus font-display text-2xl text-voile" aria-hidden="true">+</span></summary>
+            <p class="pb-5 max-w-[60ch] text-encre/80">Oui : le bon cadeau est envoyé par e-mail le jour même et reste valable un an, sur la formule de votre choix.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Réservation : atterrissage, coordonnées, carte et formulaire ===== -->
+    <section id="reserver" class="bg-relief py-14 text-brume md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[5fr_7fr] lg:gap-16">
+        <div>
+          <p class="alti text-soleil">450 m · l'atterrissage</p>
+          <h2 class="titre mt-3 text-[clamp(1.9rem,6vw,3.6rem)]">On se retrouve au bord du lac</h2>
+          <dl class="mt-6 grid gap-4">
+            <div><dt class="text-[15px] text-brume/70">Téléphone</dt><dd><a href="tel:+33600000000" class="inline-flex min-h-11 items-center font-display text-2xl font-semibold">06 00 00 00 00</a></dd></div>
+            <div><dt class="text-[15px] text-brume/70">E-mail</dt><dd><a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center text-lg underline decoration-2 underline-offset-4">contact@exemple.fr</a></dd></div>
+            <div><dt class="text-[15px] text-brume/70">Rendez-vous</dt><dd>Terrain d'atterrissage, route du Bout du Lac, Doussard. Tous les jours d'avril à octobre, de 8 h à 19 h.</dd></div>
+          </dl>
+          <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+          <div data-kv-map="Doussard, 74210" class="mt-6 md:h-56 rounded-[1.5rem] overflow-hidden bg-brume/10 text-brume"></div>
+        </div>
+
+        <!--
+          Formulaire de réservation : il n'envoie rien tant qu'il n'est pas relié à un service.
+          - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+          - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+          - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+        -->
+        <form id="formulaire" class="grid content-start self-start gap-4 rounded-[2rem] bg-brume p-5 text-encre sm:grid-cols-2 sm:p-8" action="#" method="post">
+          <label class="block sm:col-span-2"><span class="font-semibold">Votre vol</span>
+            <select name="formule" id="formule" class="field mt-1">
+              <option>Découverte</option>
+              <option>Thermique</option>
+              <option>Grand vol</option>
+              <option>Stage initiation</option>
+              <option>Bon cadeau</option>
+            </select>
+          </label>
+          <label class="block"><span class="font-semibold">Date souhaitée</span>
+            <input type="date" name="date" class="field mt-1">
+          </label>
+          <label class="block"><span class="font-semibold">Nombre de passagers</span>
+            <input type="number" name="passagers" inputmode="numeric" min="1" max="6" value="1" class="field mt-1">
+          </label>
+          <label class="block"><span class="font-semibold">Votre prénom</span>
+            <input type="text" name="prenom" autocomplete="given-name" class="field mt-1" required>
+          </label>
+          <label class="block"><span class="font-semibold">Téléphone</span>
+            <input type="tel" name="telephone" autocomplete="tel" class="field mt-1" required>
+          </label>
+          <label class="block sm:col-span-2"><span class="font-semibold">Âge et poids de chaque passager</span>
+            <input type="text" name="passagers_detail" class="field mt-1" placeholder="Ex. : 42 ans, 70 kg ; 9 ans, 30 kg">
+          </label>
+          <button type="submit" class="btn w-full bg-voile text-white hover:bg-encre sm:col-span-2">Demander mon créneau</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-encre text-brume/80 text-[15px] lg:ml-20">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p><span class="font-display font-semibold text-brume">Ascendance</span> <span class="block sm:ml-2 sm:inline">École de parapente au lac d'Annecy · moniteurs brevetés d'État</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 grid grid-cols-[auto_1fr] gap-2 border-t border-encre/10 bg-brume px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <a href="tel:+33600000000" class="btn !px-5 border-2 border-encre/20 bg-white">Appeler</a>
+    <a href="#reserver" class="btn bg-voile text-white">Réserver un vol</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // « Réserver ce vol » : la formule est choisie d'avance dans le formulaire
+    const choix = document.getElementById('formule');
+    document.querySelectorAll('[data-formule]').forEach(a => a.addEventListener('click', () => { choix.value = a.dataset.formule; }));
+
+    // Apparition au défilement (profils de vol, étapes, cartes)
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }), { threshold: .2, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.rv, .profil, .etape').forEach(el => io.observe(el));
+    }
+
+    // Signature : l'altimètre. De 1 250 m au décollage à 450 m à l'atterrissage, au fil de la lecture.
+    const HAUT = 1250, BAS = 450;
+    const alti = document.getElementById('alti'), repere = document.getElementById('repere'), rail = document.getElementById('rail');
+    const fil = document.getElementById('fil'), filPlein = document.getElementById('filPlein');
+    const fmt = n => n >= 1000 ? Math.floor(n / 1000) + ' ' + String(n % 1000).padStart(3, '0') : String(n);
+    let attente = false;
+    const maj = () => {
+      attente = false;
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+      alti.textContent = fmt(Math.round((HAUT - (HAUT - BAS) * p) / 5) * 5);
+      if (rail.offsetHeight) repere.style.transform = `translateY(calc(${p * rail.offsetHeight}px - 50%))`;
+      // Le fil du déroulé se remplit à mesure qu'on le parcourt
+      if (!calme) { const r = fil.getBoundingClientRect(); const q = Math.min(1, Math.max(0, (innerHeight * .65 - r.top) / r.height)); filPlein.style.transform = `scaleY(${q})`; }
+    };
+    addEventListener('scroll', () => { if (!attente) { attente = true; requestAnimationFrame(maj); } }, { passive: true });
+    addEventListener('resize', maj);
+    maj();
+  </script>
+</body>
+</html>

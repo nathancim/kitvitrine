@@ -1446,6 +1446,63 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "dd3c6ed6ff5399eb21b5ebee86859489"
+    },
+    {
+      "slug": "ascendance",
+      "title": "Ascendance",
+      "tagline": "Site vitrine pour école de parapente",
+      "description": "Une page qui se lit comme un vol, pour une école de parapente et ses baptêmes biplace. Le récit descend du décollage à l’atterrissage : un altimètre, dans l’en-tête et sur un rail latéral où la voile glisse le long de l’échelle, passe de 1 250 m à 450 m au fil de la lecture, et chaque section porte son altitude. En ouverture, le titre « Volez à deux au-dessus du lac. » monte mot par mot au-dessus d’un paysage de montagnes et de lac où la trajectoire du vol se dessine et où la voile flotte. Les trois formules ont chacune leur profil d’altitude qui se trace (carrousel sur téléphone), la météo du jour s’affiche avec une manche à air qui ondule, le déroulé d’un baptême suit un fil qui se remplit, puis viennent les stages, les avis, les questions fréquentes et la réservation au bord du lac avec carte. Rouge voile, jaune soleil, vert montagne et bleu ciel, titres en Unbounded et texte en Instrument Sans.",
+      "univers": [
+        "tourisme"
+      ],
+      "style": "Nature",
+      "couleur": "rouge",
+      "direction": "recit",
+      "animations": [
+        "altimètre qui descend de 1 250 m à 450 m au fil de la lecture",
+        "titre qui monte mot par mot",
+        "trajectoire du vol qui se dessine et voile qui flotte",
+        "profils d’altitude des vols qui se tracent",
+        "manche à air qui ondule au vent",
+        "fil du déroulé qui se remplit au défilement",
+        "cartes qui prennent de la hauteur au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-26",
+      "tags": [
+        "parapente",
+        "école de parapente",
+        "baptême parapente",
+        "vol biplace",
+        "parapente tandem",
+        "stage parapente",
+        "vol libre",
+        "moniteur parapente",
+        "bon cadeau parapente",
+        "sports aériens"
+      ],
+      "sections": [
+        "Accueil : titre, paysage du lac et trajectoire du vol",
+        "Les vols : trois formules avec leur profil d’altitude",
+        "Météo du jour et manche à air",
+        "Déroulé d’un baptême, heure par heure",
+        "Stages pour apprendre à voler seul",
+        "Avis des passagers",
+        "Questions fréquentes",
+        "Réservation : coordonnées, carte et formulaire"
+      ],
+      "palette": [
+        "#D2462E",
+        "#F0B43C",
+        "#1F3B33",
+        "#D6E6EA",
+        "#F3F7F7",
+        "#15212A"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "93ab311465140a433fe03e870fa6af5f"
     }
   ]
 }
