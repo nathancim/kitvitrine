@@ -1503,6 +1503,65 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "93ab311465140a433fe03e870fa6af5f"
+    },
+    {
+      "slug": "revers",
+      "title": "Revers",
+      "tagline": "Site vitrine pour club de tennis",
+      "description": "Une page tirée au cordeau pour un club de tennis associatif, construite sur une grille suisse à douze colonnes : filets noirs, sections numérotées de 01 à 07, titres en grotesque serrée et étiquettes en caractères à chasse fixe. En ouverture, « Jeu, set et club. » sort de sous son filet pendant que les lignes d'un court vu du dessus se tracent à la craie ; puis un échange se joue sur ce court, la balle passe le filet avec son ombre et le tableau de score suit les points. Viennent les chiffres du club qui comptent, les tarifs d'adhésion en lignes, l'école de tennis en onglets par âge, l'occupation des six courts sur la journée, un bandeau des rendez-vous de la saison, les avis des adhérents, les questions fréquentes et la demande de séance d'essai avec carte. Vert gazon, terre battue et craie, titres en Inter Tight et étiquettes en JetBrains Mono.",
+      "univers": [
+        "associations"
+      ],
+      "style": "Minimal",
+      "couleur": "vert",
+      "direction": "suisse",
+      "animations": [
+        "lignes du court qui se tracent à la craie",
+        "titre qui sort de sous son filet ligne par ligne",
+        "échange de balle sur le court avec tableau de score qui suit",
+        "chiffres du club qui comptent",
+        "filets de section qui se tirent au défilement",
+        "onglets de l'école avec fond qui glisse",
+        "créneaux des courts qui se remplissent",
+        "bandeau défilant des rendez-vous"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-27",
+      "tags": [
+        "club de tennis",
+        "tennis",
+        "école de tennis",
+        "cours de tennis",
+        "tennis club",
+        "terre battue",
+        "adhésion tennis",
+        "stage de tennis",
+        "association sportive",
+        "tennis loisir"
+      ],
+      "sections": [
+        "Accueil : titre, court vu du dessus où se joue un échange, chiffres clés",
+        "01 Le club : courts, club-house et services",
+        "02 Adhésion : tarifs de la saison",
+        "03 École de tennis : onglets par âge",
+        "04 Les courts : occupation du jour",
+        "Bandeau des rendez-vous de la saison",
+        "05 Avis des adhérents",
+        "06 Questions fréquentes",
+        "07 Contact : coordonnées, carte et demande d'essai"
+      ],
+      "palette": [
+        "#2F6B4B",
+        "#C4562C",
+        "#173A29",
+        "#E8E9E2",
+        "#F6F5F0",
+        "#111512"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "ffbcb119dcec8e0ff4e217f079a7d68c"
     }
   ]
 }

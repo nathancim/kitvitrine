@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tennis Club des Tilleuls — Courts, école de tennis et adhésions à Chamalières</title>
+  <meta name="description" content="Tennis Club des Tilleuls à Chamalières : six courts dont deux couverts, école de tennis dès 4 ans, cours adultes, tournoi open et séance d'essai offerte. Adhésion annuelle licence FFT comprise.">
+  <meta name="theme-color" content="#F6F5F0">
+  <link rel="preload" href="assets/fonts/inter-tight-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-gazon=Couleur principale (le court);--kv-terre=Couleur d'accent (terre battue);--kv-foret=Sections sombres;--kv-ligne=Fond des sections claires;--kv-craie=Fond de page;--kv-encre=Texte">
+</head>
+<body class="bg-craie font-sans text-encre antialiased pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Revers</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/revers/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- ===== En-tête : logo, navigation numérotée, essai gratuit ===== -->
+  <header class="sticky top-0 z-40 border-b-2 border-encre bg-craie">
+    <div class="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 md:px-6">
+      <a href="#accueil" class="flex min-h-11 items-center gap-3">
+        <svg data-kv-logo="Logo" class="h-9 w-9 shrink-0" viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" class="fill-gazon"/>
+          <path d="M6 8h28v24H6zM6 11h28M6 29h28M20 6v28M12 11v18M28 11v18M12 20h16" stroke="#F6F5F0" stroke-width="1.6" fill="none"/>
+          <circle cx="29" cy="15" r="4" fill="#DCE85A" stroke="#111512" stroke-width=".8"/>
+        </svg>
+        <span class="text-[17px] font-extrabold leading-none tracking-tight">TC des Tilleuls</span>
+      </a>
+
+      <nav class="ml-auto hidden lg:flex items-center" aria-label="Navigation principale">
+        <a href="#club" class="flex min-h-11 items-baseline gap-1.5 px-3 text-[16px] font-medium hover:text-terre"><span class="font-mono text-xs text-encre/50">01</span>Le club</a>
+        <a href="#adhesion" class="flex min-h-11 items-baseline gap-1.5 px-3 text-[16px] font-medium hover:text-terre"><span class="font-mono text-xs text-encre/50">02</span>Adhésion</a>
+        <a href="#ecole" class="flex min-h-11 items-baseline gap-1.5 px-3 text-[16px] font-medium hover:text-terre"><span class="font-mono text-xs text-encre/50">03</span>École</a>
+        <a href="#courts" class="flex min-h-11 items-baseline gap-1.5 px-3 text-[16px] font-medium hover:text-terre"><span class="font-mono text-xs text-encre/50">04</span>Courts</a>
+        <a href="#questions" class="flex min-h-11 items-baseline gap-1.5 px-3 text-[16px] font-medium hover:text-terre"><span class="font-mono text-xs text-encre/50">06</span>Questions</a>
+        <a href="#contact" class="btn ml-3 bg-encre text-craie hover:bg-terre">Essai gratuit <span class="fl" aria-hidden="true">→</span></a>
+      </nav>
+
+      <button id="menuBtn" type="button" class="lg:hidden ml-auto flex min-h-11 min-w-11 items-center gap-2 border-2 border-encre px-3 font-mono text-sm font-semibold uppercase tracking-wider" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="h-4 w-4" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Menu</span>
+      </button>
+    </div>
+    <nav id="menu" class="hidden fixed inset-x-0 top-16 bottom-0 z-40 flex-col bg-craie px-4 pt-2 pb-28 overflow-y-auto lg:hidden" aria-label="Navigation mobile">
+      <a href="#club" class="flex min-h-[3.5rem] items-baseline gap-4 border-b border-encre/20 pt-4 text-3xl font-extrabold tracking-tight"><span class="font-mono text-sm font-normal text-terre">01</span>Le club</a>
+      <a href="#adhesion" class="flex min-h-[3.5rem] items-baseline gap-4 border-b border-encre/20 pt-4 text-3xl font-extrabold tracking-tight"><span class="font-mono text-sm font-normal text-terre">02</span>Adhésion</a>
+      <a href="#ecole" class="flex min-h-[3.5rem] items-baseline gap-4 border-b border-encre/20 pt-4 text-3xl font-extrabold tracking-tight"><span class="font-mono text-sm font-normal text-terre">03</span>École de tennis</a>
+      <a href="#courts" class="flex min-h-[3.5rem] items-baseline gap-4 border-b border-encre/20 pt-4 text-3xl font-extrabold tracking-tight"><span class="font-mono text-sm font-normal text-terre">04</span>Les courts</a>
+      <a href="#avis" class="flex min-h-[3.5rem] items-baseline gap-4 border-b border-encre/20 pt-4 text-3xl font-extrabold tracking-tight"><span class="font-mono text-sm font-normal text-terre">05</span>Adhérents</a>
+      <a href="#questions" class="flex min-h-[3.5rem] items-baseline gap-4 border-b border-encre/20 pt-4 text-3xl font-extrabold tracking-tight"><span class="font-mono text-sm font-normal text-terre">06</span>Questions</a>
+      <a href="#contact" class="flex min-h-[3.5rem] items-baseline gap-4 border-b border-encre/20 pt-4 text-3xl font-extrabold tracking-tight"><span class="font-mono text-sm font-normal text-terre">07</span>Contact</a>
+      <a href="tel:+33600000000" class="btn mt-8 w-full bg-encre text-craie">Appeler le 06 00 00 00 00</a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <!-- ===== Accueil : titre sur la grille, court vu du dessus où se joue un échange ===== -->
+    <section id="accueil" class="relative overflow-x-clip">
+      <!-- Grille à 12 colonnes visible en filigrane (ordinateur) -->
+      <div class="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
+        <div class="mx-auto grid h-full max-w-7xl grid-cols-12 gap-6 px-6">
+          <span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-l border-encre/[.07]"></span><span class="border-x border-encre/[.07]"></span>
+        </div>
+      </div>
+
+      <div class="relative mx-auto grid max-w-7xl grid-cols-12 gap-x-4 px-4 pt-6 md:gap-x-6 md:px-6 md:pt-12">
+        <p class="etiq !text-[15px] col-span-12 flex flex-wrap gap-x-6 gap-y-1 text-encre/70 md:col-span-9"><span>Tennis club associatif</span><span>Chamalières</span><span>Depuis 1962</span></p>
+        <h1 class="titre col-span-12 mt-4 text-[clamp(3.1rem,15vw,11.5rem)]" aria-label="Jeu, set et club.">
+          <span class="lig block overflow-hidden pb-[.06em]" aria-hidden="true"><span style="animation-delay:.05s">Jeu, set</span></span>
+          <span class="lig block overflow-hidden pb-[.06em]" aria-hidden="true"><span style="animation-delay:.18s">et <span class="text-terre">club.</span></span></span>
+        </h1>
+      </div>
+
+      <div class="relative mx-auto mt-6 grid max-w-7xl grid-cols-12 gap-x-4 gap-y-6 px-4 md:mt-10 md:gap-x-6 md:px-6">
+        <div class="apres col-span-12 md:order-2 md:col-span-4 md:pt-1">
+          <p class="text-lg md:text-xl">Six courts, une école de tennis dès 4 ans et un club-house où l'on reste après le match. La première séance est offerte.</p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+            <a href="#contact" class="btn w-full sm:w-auto bg-terre text-white hover:bg-encre">Réserver mon essai <span class="fl" aria-hidden="true">→</span></a>
+            <a href="#adhesion" class="btn w-full sm:w-auto border-2 border-encre hover:bg-encre hover:text-craie">Voir les tarifs</a>
+          </div>
+        </div>
+
+        <div data-kv-image="Photo des courts du club vus d'en haut" class="relative col-span-12 h-[34vh] min-h-[210px] max-h-[340px] md:order-1 md:col-span-8 md:h-auto md:max-h-none md:aspect-[2/1]">
+          <svg id="court" class="absolute inset-0 h-full w-full" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Court de tennis vu du dessus, deux joueurs en plein échange">
+            <rect width="800" height="400" class="fill-foret"/>
+            <rect x="44" y="36" width="712" height="328" class="fill-gazon"/>
+            <g stroke="#F6F5F0" stroke-width="4" fill="none" stroke-linecap="square">
+              <path class="trait" pathLength="1" style="animation-delay:.1s" d="M44 36h712v328H44z"/>
+              <path class="trait" pathLength="1" style="animation-delay:.35s" d="M44 77h712M44 323h712"/>
+              <path class="trait" pathLength="1" style="animation-delay:.55s" d="M208 77v246M592 77v246"/>
+              <path class="trait" pathLength="1" style="animation-delay:.7s" d="M208 200h384M44 200h12M744 200h12"/>
+            </g>
+            <path d="M400 22v356" stroke="#111512" stroke-width="7"/>
+            <path d="M400 22v356" stroke="#F6F5F0" stroke-width="2" stroke-dasharray="3 5"/>
+            <!-- Joueurs (vus du dessus) -->
+            <g id="j1" transform="translate(70 150)"><circle r="15" fill="#F6F5F0" stroke="#111512" stroke-width="2"/><path d="M8 -6l22 -14" stroke="#111512" stroke-width="3" stroke-linecap="round"/><circle cx="34" cy="-22" r="8" fill="none" stroke="#111512" stroke-width="2.5"/></g>
+            <g id="j2" transform="translate(730 250)"><circle r="15" class="fill-terre" stroke="#111512" stroke-width="2"/><path d="M-8 6l-22 14" stroke="#111512" stroke-width="3" stroke-linecap="round"/><circle cx="-34" cy="22" r="8" fill="none" stroke="#111512" stroke-width="2.5"/></g>
+            <!-- La balle et son ombre -->
+            <ellipse id="ombre" cx="470" cy="236" rx="9" ry="5" fill="#111512" opacity=".3"/>
+            <circle id="balle" cx="470" cy="214" r="9" fill="#DCE85A" stroke="#111512" stroke-width="1.5"/>
+          </svg>
+          <!-- Tableau de score (décoratif) : il suit l'échange -->
+          <div class="absolute left-3 top-3 border-2 border-encre bg-craie font-mono text-[13px] leading-none md:left-4 md:top-4 md:text-sm" aria-hidden="true">
+            <span class="flex items-center justify-between gap-6 border-b border-encre px-3 py-2"><span>INÈS</span><b id="s1" class="tnum">40</b></span>
+            <span class="flex items-center justify-between gap-6 px-3 py-2"><span>MARC</span><b id="s2" class="tnum text-terre">15</b></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chiffres clés, sur la grille -->
+      <dl class="relative mx-auto mt-8 grid max-w-7xl grid-cols-2 border-t-2 border-encre md:mt-12 md:grid-cols-4">
+        <div class="border-b border-r border-encre/20 px-4 py-5 md:border-b-0 md:px-6"><dt class="etiq text-encre/60">Courts</dt><dd class="mt-2 text-5xl font-extrabold tracking-tighter tnum md:text-6xl"><span class="compte" data-n="6">6</span></dd></div>
+        <div class="border-b border-encre/20 px-4 py-5 md:border-b-0 md:border-r md:px-6"><dt class="etiq text-encre/60">Adhérents</dt><dd class="mt-2 text-5xl font-extrabold tracking-tighter tnum md:text-6xl"><span class="compte" data-n="320">320</span></dd></div>
+        <div class="border-r border-encre/20 px-4 py-5 md:px-6"><dt class="etiq text-encre/60">Enfants à l'école</dt><dd class="mt-2 text-5xl font-extrabold tracking-tighter tnum md:text-6xl"><span class="compte" data-n="140">140</span></dd></div>
+        <div class="px-4 py-5 md:px-6"><dt class="etiq text-encre/60">Enseignants D.E.</dt><dd class="mt-2 text-5xl font-extrabold tracking-tighter tnum md:text-6xl"><span class="compte" data-n="4">4</span></dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== 01 Le club ===== -->
+    <section id="club" class="border-t-2 border-encre py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="tete">
+          <p class="num">01</p>
+          <p class="rub">Le club</p>
+          <h2 class="titre col-span-12 text-[clamp(2.2rem,6.5vw,4.6rem)] md:col-span-7">Un club de quartier, des courts de tournoi.</h2>
+        </div>
+        <div class="mt-8 grid grid-cols-12 gap-x-4 gap-y-8 md:mt-14 md:gap-x-6">
+          <div data-kv-image="Photo du club-house et de la terrasse" class="rv relative col-span-12 aspect-[16/10] overflow-hidden bg-ligne md:col-span-7">
+            <svg class="absolute inset-0 h-full w-full" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Le club-house sous les tilleuls, sa terrasse et deux courts en terre battue">
+              <rect width="640" height="400" class="fill-ligne"/>
+              <path d="M0 290h640v110H0z" class="fill-terre"/>
+              <path d="M40 300h260v80H40zM340 300h260v80H340z" fill="none" stroke="#F6F5F0" stroke-width="3"/>
+              <path d="M170 300v80M470 300v80" stroke="#111512" stroke-width="3"/>
+              <!-- Tilleuls -->
+              <g class="fill-gazon"><circle cx="70" cy="150" r="62"/><circle cx="120" cy="120" r="54"/><circle cx="560" cy="140" r="66"/><circle cx="600" cy="190" r="48"/></g>
+              <path d="M90 190v100M575 200v90" stroke="#111512" stroke-width="8"/>
+              <!-- Club-house -->
+              <path d="M200 170h250v120H200z" fill="#F6F5F0" stroke="#111512" stroke-width="3"/>
+              <path d="M186 172l139-60 139 60z" fill="#111512"/>
+              <path d="M222 200h50v40h-50zM292 200h50v40h-50zM362 200h66v90h-66z" class="fill-foret"/>
+              <path d="M200 260h150" stroke="#111512" stroke-width="3"/>
+              <path d="M215 260v30M335 260v30" stroke="#111512" stroke-width="3"/>
+              <circle cx="250" cy="250" r="9" class="fill-terre"/><circle cx="300" cy="250" r="9" class="fill-terre"/>
+              <text x="325" y="160" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="15" fill="#F6F5F0" letter-spacing="2">TC TILLEULS</text>
+            </svg>
+          </div>
+          <div class="col-span-12 md:col-span-5">
+            <p class="text-lg">Quatre courts en terre battue sous les tilleuls, deux courts couverts en résine pour l'hiver, un mur d'entraînement et un club-house avec terrasse.</p>
+            <p class="mt-4 hidden text-encre/75 sm:block">Le club est une association : les bénévoles organisent les tournois internes, les soirées double et la fête de l'école. Joueurs loisirs comme classés, tout le monde trouve un partenaire.</p>
+            <ul class="mt-6 hidden border-t border-encre/20 sm:block">
+              <li class="flex min-h-11 items-center justify-between gap-4 border-b border-encre/20 py-2"><span>Ouvert tous les jours</span><span class="font-mono text-sm">7 h — 22 h</span></li>
+              <li class="flex min-h-11 items-center justify-between gap-4 border-b border-encre/20 py-2"><span>Éclairage de nuit</span><span class="font-mono text-sm">6 courts</span></li>
+              <li class="flex min-h-11 items-center justify-between gap-4 border-b border-encre/20 py-2"><span>Prêt de raquettes</span><span class="font-mono text-sm">Gratuit</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 Adhésion : tarifs en lignes ===== -->
+    <section id="adhesion" class="bg-ligne py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="tete">
+          <p class="num">02</p>
+          <p class="rub">Adhésion 2026–2027</p>
+          <h2 class="titre col-span-12 text-[clamp(2.2rem,6.5vw,4.6rem)] md:col-span-7">Une cotisation, toute la saison sur les courts.</h2>
+        </div>
+        <div class="mt-8 grid grid-cols-12 gap-x-6 md:mt-14">
+          <p class="col-span-12 mb-6 text-encre/75 md:col-span-4 md:mb-0 md:pr-6">Licence FFT et assurance comprises. Paiement en trois fois, Pass'Sport et chèques-vacances acceptés.</p>
+          <ul class="col-span-12 border-t-2 border-encre md:col-span-8">
+            <li class="rang flex items-center justify-between gap-4 border-b border-encre/25 py-4">
+              <div><h3 class="text-xl font-bold tracking-tight">Adulte</h3><p class="text-encre/70">Accès libre aux six courts</p></div>
+              <p class="shrink-0 text-3xl font-extrabold tracking-tighter tnum">220&nbsp;€</p>
+            </li>
+            <li class="rang flex items-center justify-between gap-4 border-b border-encre/25 py-4">
+              <div><h3 class="text-xl font-bold tracking-tight">Jeune <span class="font-mono text-sm font-normal text-encre/60">moins de 18 ans</span></h3><p class="text-encre/70">Hors cours de l'école</p></div>
+              <p class="shrink-0 text-3xl font-extrabold tracking-tighter tnum">110&nbsp;€</p>
+            </li>
+            <li class="rang flex items-center justify-between gap-4 border-b border-encre/25 py-4">
+              <div><h3 class="text-xl font-bold tracking-tight">Étudiant</h3><p class="text-encre/70">Sur présentation de la carte</p></div>
+              <p class="shrink-0 text-3xl font-extrabold tracking-tighter tnum">140&nbsp;€</p>
+            </li>
+            <li class="rang flex items-center justify-between gap-4 border-b border-encre/25 py-4">
+              <div><h3 class="text-xl font-bold tracking-tight">Famille</h3><p class="text-encre/70">À partir de trois membres</p></div>
+              <p class="shrink-0 text-3xl font-extrabold tracking-tighter tnum">480&nbsp;€</p>
+            </li>
+            <li class="rang flex items-center justify-between gap-4 border-b border-encre/25 py-4">
+              <div><h3 class="text-xl font-bold tracking-tight">Été <span class="font-mono text-sm font-normal text-encre/60">juin — août</span></h3><p class="text-encre/70">Pour essayer avant la rentrée</p></div>
+              <p class="shrink-0 text-3xl font-extrabold tracking-tighter tnum">75&nbsp;€</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 École de tennis : onglets par âge ===== -->
+    <section id="ecole" class="py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="tete">
+          <p class="num">03</p>
+          <p class="rub">École de tennis</p>
+          <h2 class="titre col-span-12 text-[clamp(2.2rem,6.5vw,4.6rem)] md:col-span-7">Des cours pour chaque âge, de 4 à 77 ans.</h2>
+        </div>
+
+        <div class="mt-8 md:mt-14">
+          <div id="onglets" role="tablist" aria-label="Groupes de l'école de tennis" class="relative grid grid-cols-2 border-2 border-encre md:grid-cols-4">
+            <span id="curseur" class="absolute left-0 top-0 bg-encre" aria-hidden="true"></span>
+            <button role="tab" id="t-mini" aria-controls="p-mini" aria-selected="true" class="ongl min-h-[3.25rem] px-3 text-left font-semibold md:text-center"><span class="font-mono text-xs opacity-60">4–6</span> Mini-tennis</button>
+            <button role="tab" id="t-enfants" aria-controls="p-enfants" aria-selected="false" tabindex="-1" class="ongl min-h-[3.25rem] px-3 text-left font-semibold md:text-center"><span class="font-mono text-xs opacity-60">7–12</span> Enfants</button>
+            <button role="tab" id="t-ados" aria-controls="p-ados" aria-selected="false" tabindex="-1" class="ongl min-h-[3.25rem] px-3 text-left font-semibold md:text-center"><span class="font-mono text-xs opacity-60">13–17</span> Ados</button>
+            <button role="tab" id="t-adultes" aria-controls="p-adultes" aria-selected="false" tabindex="-1" class="ongl min-h-[3.25rem] px-3 text-left font-semibold md:text-center"><span class="font-mono text-xs opacity-60">18+</span> Adultes</button>
+          </div>
+
+          <div id="p-mini" role="tabpanel" aria-labelledby="t-mini" class="panneau grid grid-cols-12 gap-x-6 gap-y-4 pt-8">
+            <p class="col-span-12 text-[clamp(4.5rem,18vw,10rem)] font-extrabold leading-[.85] tracking-tighter text-terre md:col-span-5" aria-hidden="true">4–6</p>
+            <div class="col-span-12 md:col-span-7">
+              <h3 class="text-2xl font-bold tracking-tight">Mini-tennis</h3>
+              <p class="mt-2 text-encre/80">Balles en mousse, filets bas et petits terrains : on apprend à renvoyer la balle en jouant. Raquette prêtée toute l'année.</p>
+              <dl class="mt-5 grid gap-y-2 border-t border-encre/20 pt-4">
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Créneau</dt><dd class="font-mono text-[15px]">Mercredi 10 h · samedi 9 h</dd></div>
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Groupe</dt><dd class="font-mono text-[15px]">6 enfants · 45 min</dd></div>
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Saison</dt><dd class="font-mono text-[15px]">190 € adhésion incluse</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div id="p-enfants" role="tabpanel" aria-labelledby="t-enfants" class="panneau grid grid-cols-12 gap-x-6 gap-y-4 pt-8" hidden>
+            <p class="col-span-12 text-[clamp(4.5rem,18vw,10rem)] font-extrabold leading-[.85] tracking-tighter text-terre md:col-span-5" aria-hidden="true">7–12</p>
+            <div class="col-span-12 md:col-span-7">
+              <h3 class="text-2xl font-bold tracking-tight">Enfants</h3>
+              <p class="mt-2 text-encre/80">Le parcours Galaxie de la fédération : balles rouges, orange puis vertes, et les premiers matchs entre clubs voisins.</p>
+              <dl class="mt-5 grid gap-y-2 border-t border-encre/20 pt-4">
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Créneau</dt><dd class="font-mono text-[15px]">Mercredi 14 h · samedi 10 h</dd></div>
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Groupe</dt><dd class="font-mono text-[15px]">6 enfants · 1 h</dd></div>
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Saison</dt><dd class="font-mono text-[15px]">260 € adhésion incluse</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div id="p-ados" role="tabpanel" aria-labelledby="t-ados" class="panneau grid grid-cols-12 gap-x-6 gap-y-4 pt-8" hidden>
+            <p class="col-span-12 text-[clamp(4.5rem,18vw,10rem)] font-extrabold leading-[.85] tracking-tighter text-terre md:col-span-5" aria-hidden="true">13–17</p>
+            <div class="col-span-12 md:col-span-7">
+              <h3 class="text-2xl font-bold tracking-tight">Ados</h3>
+              <p class="mt-2 text-encre/80">Technique, tactique et préparation physique, avec une section compétition pour ceux qui veulent jouer les championnats par équipe.</p>
+              <dl class="mt-5 grid gap-y-2 border-t border-encre/20 pt-4">
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Créneau</dt><dd class="font-mono text-[15px]">Mardi ou jeudi 18 h</dd></div>
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Groupe</dt><dd class="font-mono text-[15px]">4 joueurs · 1 h 30</dd></div>
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Saison</dt><dd class="font-mono text-[15px]">320 € adhésion incluse</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div id="p-adultes" role="tabpanel" aria-labelledby="t-adultes" class="panneau grid grid-cols-12 gap-x-6 gap-y-4 pt-8" hidden>
+            <p class="col-span-12 text-[clamp(4.5rem,18vw,10rem)] font-extrabold leading-[.85] tracking-tighter text-terre md:col-span-5" aria-hidden="true">18+</p>
+            <div class="col-span-12 md:col-span-7">
+              <h3 class="text-2xl font-bold tracking-tight">Adultes</h3>
+              <p class="mt-2 text-encre/80">Débutants, reprise ou perfectionnement : groupes par niveau le soir, et leçons particulières à la carte avec l'enseignant de votre choix.</p>
+              <dl class="mt-5 grid gap-y-2 border-t border-encre/20 pt-4">
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Créneau</dt><dd class="font-mono text-[15px]">Lundi au jeudi, 19 h ou 20 h</dd></div>
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Groupe</dt><dd class="font-mono text-[15px]">4 joueurs · 1 h 30</dd></div>
+                <div class="flex justify-between gap-4"><dt class="text-encre/60">Saison</dt><dd class="font-mono text-[15px]">250 € + adhésion</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 Les courts : occupation du jour ===== -->
+    <section id="courts" class="bg-foret py-14 text-craie md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="tete">
+          <p class="num">04</p>
+          <p class="rub">Les courts</p>
+          <h2 class="titre col-span-12 text-[clamp(2.2rem,6.5vw,4.6rem)] md:col-span-7">Aujourd'hui sur les courts</h2>
+        </div>
+        <div class="mt-8 grid grid-cols-12 gap-x-6 gap-y-6 md:mt-14">
+          <p class="col-span-12 text-craie/80 md:col-span-4 md:pr-6">Les adhérents réservent en ligne jusqu'à sept jours à l'avance. Vous venez avec un ami non adhérent&nbsp;? 12&nbsp;€ l'heure.</p>
+          <div class="creneaux col-span-12 md:col-span-8">
+            <div class="flex justify-between pl-[5.5rem] font-mono text-[13px] text-craie/60 md:pl-40" aria-hidden="true"><span>8 h</span><span>12 h</span><span>16 h</span><span>20 h</span><span>22 h</span></div>
+            <ul class="mt-2 border-t border-craie/30">
+              <li class="flex items-center gap-3 border-b border-craie/20 py-3 md:gap-4">
+                <span class="w-[4.75rem] shrink-0 font-mono text-[13px] leading-tight md:w-36 md:text-sm">Court 1<span class="block text-craie/60 md:inline"> · terre</span></span>
+                <span class="relative h-7 flex-1 bg-craie/10" role="img" aria-label="Court 1 : occupé de 9 h à 11 h et de 17 h à 20 h"><span class="occ absolute inset-y-0 bg-terre" style="left:7%;width:14%"></span><span class="occ absolute inset-y-0 bg-terre" style="left:64%;width:22%"></span></span>
+              </li>
+              <li class="flex items-center gap-3 border-b border-craie/20 py-3 md:gap-4">
+                <span class="w-[4.75rem] shrink-0 font-mono text-[13px] leading-tight md:w-36 md:text-sm">Court 2<span class="block text-craie/60 md:inline"> · terre</span></span>
+                <span class="relative h-7 flex-1 bg-craie/10" role="img" aria-label="Court 2 : occupé de 14 h à 16 h et de 18 h à 21 h"><span class="occ absolute inset-y-0 bg-terre" style="left:43%;width:14%"></span><span class="occ absolute inset-y-0 bg-terre" style="left:71%;width:22%"></span></span>
+              </li>
+              <li class="flex items-center gap-3 border-b border-craie/20 py-3 md:gap-4">
+                <span class="w-[4.75rem] shrink-0 font-mono text-[13px] leading-tight md:w-36 md:text-sm">Court 3<span class="block text-craie/60 md:inline"> · terre</span></span>
+                <span class="relative h-7 flex-1 bg-craie/10" role="img" aria-label="Court 3 : école de tennis de 10 h à 12 h et de 14 h à 17 h"><span class="occ absolute inset-y-0 bg-craie/70" style="left:14%;width:14%"></span><span class="occ absolute inset-y-0 bg-craie/70" style="left:43%;width:22%"></span></span>
+              </li>
+              <li class="flex items-center gap-3 border-b border-craie/20 py-3 md:gap-4">
+                <span class="w-[4.75rem] shrink-0 font-mono text-[13px] leading-tight md:w-36 md:text-sm">Court 4<span class="block text-craie/60 md:inline"> · terre</span></span>
+                <span class="relative h-7 flex-1 bg-craie/10" role="img" aria-label="Court 4 : occupé de 19 h à 21 h"><span class="occ absolute inset-y-0 bg-terre" style="left:79%;width:14%"></span></span>
+              </li>
+              <li class="flex items-center gap-3 border-b border-craie/20 py-3 md:gap-4">
+                <span class="w-[4.75rem] shrink-0 font-mono text-[13px] leading-tight md:w-36 md:text-sm">Court 5<span class="block text-craie/60 md:inline"> · couvert</span></span>
+                <span class="relative h-7 flex-1 bg-craie/10" role="img" aria-label="Court 5 : occupé de 8 h à 10 h et de 18 h à 22 h"><span class="occ absolute inset-y-0 bg-terre" style="left:0;width:14%"></span><span class="occ absolute inset-y-0 bg-terre" style="left:71%;width:29%"></span></span>
+              </li>
+              <li class="flex items-center gap-3 border-b border-craie/20 py-3 md:gap-4">
+                <span class="w-[4.75rem] shrink-0 font-mono text-[13px] leading-tight md:w-36 md:text-sm">Court 6<span class="block text-craie/60 md:inline"> · couvert</span></span>
+                <span class="relative h-7 flex-1 bg-craie/10" role="img" aria-label="Court 6 : occupé de 12 h à 14 h et de 19 h à 22 h"><span class="occ absolute inset-y-0 bg-terre" style="left:29%;width:14%"></span><span class="occ absolute inset-y-0 bg-terre" style="left:79%;width:21%"></span></span>
+              </li>
+            </ul>
+            <p class="mt-4 flex flex-wrap gap-x-6 gap-y-1 font-mono text-[13px] text-craie/70"><span><span class="mr-2 inline-block h-3 w-3 bg-terre align-middle"></span>Réservé</span><span><span class="mr-2 inline-block h-3 w-3 bg-craie/70 align-middle"></span>École de tennis</span><span><span class="mr-2 inline-block h-3 w-3 bg-craie/10 align-middle"></span>Libre</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Bandeau : les rendez-vous de la saison ===== -->
+    <div class="bandeau overflow-x-clip border-y-2 border-encre bg-terre py-4 text-white">
+      <div class="defile items-center gap-x-10 gap-y-2 px-4 font-mono text-[15px] uppercase tracking-[0.08em]">
+        <span class="whitespace-nowrap">Tournoi open homologué · 7 au 22 juin</span><span aria-hidden="true">✱</span>
+        <span class="whitespace-nowrap">Stage de Toussaint · 20 au 24 octobre</span><span aria-hidden="true">✱</span>
+        <span class="whitespace-nowrap">Double mixte · chaque vendredi 19 h</span><span aria-hidden="true">✱</span>
+        <span class="whitespace-nowrap">Fête de l'école · 27 juin</span><span aria-hidden="true">✱</span>
+        <span class="copie whitespace-nowrap" aria-hidden="true">Tournoi open homologué · 7 au 22 juin</span><span class="copie" aria-hidden="true">✱</span>
+        <span class="copie whitespace-nowrap" aria-hidden="true">Stage de Toussaint · 20 au 24 octobre</span><span class="copie" aria-hidden="true">✱</span>
+        <span class="copie whitespace-nowrap" aria-hidden="true">Double mixte · chaque vendredi 19 h</span><span class="copie" aria-hidden="true">✱</span>
+        <span class="copie whitespace-nowrap" aria-hidden="true">Fête de l'école · 27 juin</span><span class="copie" aria-hidden="true">✱</span>
+      </div>
+    </div>
+
+    <!-- ===== 05 Adhérents : avis en carrousel ===== -->
+    <section id="avis" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="tete">
+          <p class="num">05</p>
+          <p class="rub">Les adhérents</p>
+          <h2 class="titre col-span-12 text-[clamp(2.2rem,6.5vw,4.6rem)] md:col-span-7">Ils ont pris leur licence ici.</h2>
+        </div>
+      </div>
+      <div class="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 md:mx-auto md:mt-14 md:grid md:max-w-7xl md:grid-cols-3 md:gap-6 md:overflow-visible md:px-6">
+        <figure class="w-[82%] shrink-0 snap-start border-t-2 border-encre pt-5 md:w-auto">
+          <p class="font-mono text-sm text-terre">Adhérente depuis 2019</p>
+          <blockquote class="mt-3 text-xl font-medium leading-snug tracking-tight">« J'ai repris à 45 ans dans le groupe du jeudi. Deux saisons plus tard, je joue les matchs par équipe. »</blockquote>
+          <figcaption class="mt-4 font-semibold">Sandrine</figcaption>
+        </figure>
+        <figure class="w-[82%] shrink-0 snap-start border-t-2 border-encre pt-5 md:w-auto">
+          <p class="font-mono text-sm text-terre">Parent, école de tennis</p>
+          <blockquote class="mt-3 text-xl font-medium leading-snug tracking-tight">« Nos deux filles y vont le mercredi. Les enseignants les connaissent par leur prénom, et le goûter de Noël est un rituel. »</blockquote>
+          <figcaption class="mt-4 font-semibold">Karim</figcaption>
+        </figure>
+        <figure class="w-[82%] shrink-0 snap-start border-t-2 border-encre pt-5 md:w-auto">
+          <p class="font-mono text-sm text-terre">Classé 15/2</p>
+          <blockquote class="mt-3 text-xl font-medium leading-snug tracking-tight">« Les courts en terre sont les mieux entretenus du secteur. Et on trouve toujours un partenaire le dimanche matin. »</blockquote>
+          <figcaption class="mt-4 font-semibold">Julien</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 06 Questions fréquentes ===== -->
+    <section id="questions" class="pb-14 md:pb-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="tete">
+          <p class="num">06</p>
+          <p class="rub">Questions</p>
+          <h2 class="titre col-span-12 text-[clamp(2.2rem,6.5vw,4.6rem)] md:col-span-7">Avant de venir</h2>
+        </div>
+        <div class="mt-6 grid grid-cols-12 md:mt-10">
+          <div class="col-span-12 border-t border-encre/20 md:col-span-8 md:col-start-5">
+            <details class="border-b border-encre/20">
+              <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 text-lg font-semibold">Comment se passe la séance d'essai&nbsp;?<span class="plus font-mono text-2xl text-terre" aria-hidden="true">+</span></summary>
+              <p class="pb-5 max-w-[60ch] text-encre/80">Une heure avec un enseignant, seul ou en petit groupe selon votre niveau. Raquette et balles prêtées, il suffit de chaussures de sport.</p>
+            </details>
+            <details class="border-b border-encre/20">
+              <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 text-lg font-semibold">Peut-on s'inscrire en cours d'année&nbsp;?<span class="plus font-mono text-2xl text-terre" aria-hidden="true">+</span></summary>
+              <p class="pb-5 max-w-[60ch] text-encre/80">Oui. La cotisation est calculée au prorata des mois restants à partir de janvier, et l'école accueille de nouveaux élèves s'il reste des places.</p>
+            </details>
+            <details class="border-b border-encre/20">
+              <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 text-lg font-semibold">Comment réserver un court&nbsp;?<span class="plus font-mono text-2xl text-terre" aria-hidden="true">+</span></summary>
+              <p class="pb-5 max-w-[60ch] text-encre/80">Avec l'application du club, jusqu'à sept jours à l'avance, par créneaux d'une heure. L'accès aux courts se fait avec le badge remis à l'inscription.</p>
+            </details>
+            <details class="border-b border-encre/20">
+              <summary class="flex min-h-11 cursor-pointer items-center justify-between gap-4 py-4 text-lg font-semibold">Y a-t-il des stages pendant les vacances&nbsp;?<span class="plus font-mono text-2xl text-terre" aria-hidden="true">+</span></summary>
+              <p class="pb-5 max-w-[60ch] text-encre/80">À chaque période de vacances scolaires : stages enfants le matin, ouverts aussi aux non-adhérents, et stages adultes en soirée.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 07 Contact : coordonnées, carte, formulaire ===== -->
+    <section id="contact" class="border-t-2 border-encre bg-ligne py-14 md:py-24">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="tete">
+          <p class="num">07</p>
+          <p class="rub">Contact</p>
+          <h2 class="titre col-span-12 text-[clamp(2.2rem,6.5vw,4.6rem)] md:col-span-7">Votre premier échange est offert.</h2>
+        </div>
+        <div class="mt-8 grid grid-cols-12 gap-x-6 gap-y-10 md:mt-14">
+          <div class="col-span-12 md:col-span-5">
+            <dl class="grid gap-4">
+              <div><dt class="etiq text-encre/60">Téléphone</dt><dd><a href="tel:+33600000000" class="inline-flex min-h-11 items-center text-3xl font-extrabold tracking-tight">06 00 00 00 00</a></dd></div>
+              <div><dt class="etiq text-encre/60">E-mail</dt><dd><a href="mailto:contact@exemple.fr" class="inline-flex min-h-11 items-center text-lg underline decoration-2 underline-offset-4">contact@exemple.fr</a></dd></div>
+              <div><dt class="etiq text-encre/60">Adresse</dt><dd>12 allée des Tilleuls, 63400 Chamalières. Parking et arceaux vélos devant le club-house.</dd></div>
+              <div class="hidden sm:block"><dt class="etiq text-encre/60">Secrétariat</dt><dd>Mercredi 14 h – 19 h, samedi 9 h – 12 h</dd></div>
+            </dl>
+            <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+            <div data-kv-map="Chamalières, 63400" class="mt-6 md:h-56 overflow-hidden border-2 border-encre bg-craie text-encre"></div>
+          </div>
+
+          <!--
+            Formulaire de contact : il n'envoie rien tant qu'il n'est pas relié à un service.
+            - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+            - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+            - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+          -->
+          <form class="col-span-12 grid content-start gap-6 border-2 border-encre bg-craie p-5 sm:grid-cols-2 sm:p-8 md:col-span-7" action="#" method="post">
+            <label class="block sm:col-span-2"><span class="etiq text-encre/70">Votre demande</span>
+              <select name="objet" class="field mt-1">
+                <option>Séance d'essai gratuite</option>
+                <option>Adhésion</option>
+                <option>École de tennis (enfant)</option>
+                <option>Cours adultes</option>
+                <option>Stage de vacances</option>
+              </select>
+            </label>
+            <label class="block"><span class="etiq text-encre/70">Prénom</span>
+              <input type="text" name="prenom" autocomplete="given-name" class="field mt-1" required>
+            </label>
+            <label class="block"><span class="etiq text-encre/70">Téléphone</span>
+              <input type="tel" name="telephone" autocomplete="tel" class="field mt-1" required>
+            </label>
+            <label class="block sm:col-span-2"><span class="etiq text-encre/70">Niveau, âge, disponibilités</span>
+              <textarea name="message" rows="3" class="field mt-1" placeholder="Ex. : débutant, 38 ans, plutôt le soir"></textarea>
+            </label>
+            <button type="submit" class="btn w-full bg-encre text-craie hover:bg-terre sm:col-span-2">Envoyer ma demande <span class="fl" aria-hidden="true">→</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-encre text-[15px] text-craie/80">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-8 sm:flex-row sm:items-center sm:justify-between md:px-6">
+      <p><span class="font-extrabold text-craie">TC des Tilleuls</span> <span class="block sm:ml-2 sm:inline">Association loi 1901 affiliée à la FFT</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-40 grid grid-cols-[auto_1fr] gap-2 border-t-2 border-encre bg-craie px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <a href="tel:+33600000000" class="btn !px-5 border-2 border-encre">Appeler</a>
+    <a href="#contact" class="btn bg-terre text-white">Séance d'essai offerte</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile plein écran
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('span').textContent = open ? 'Fermer' : 'Menu';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Onglets de l'école : le fond noir glisse sous l'onglet choisi
+    const tabs = [...document.querySelectorAll('[role=tab]')], curseur = document.getElementById('curseur');
+    const place = t => { curseur.style.width = t.offsetWidth + 'px'; curseur.style.height = t.offsetHeight + 'px'; curseur.style.transform = `translate(${t.offsetLeft}px, ${t.offsetTop}px)`; };
+    const choisir = (t, focus) => {
+      tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+      place(t); if (focus) t.focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => choisir(t));
+      t.addEventListener('keydown', e => { const d = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key]; if (d) { e.preventDefault(); choisir(tabs[(i + d + tabs.length) % tabs.length], true); } });
+    });
+    const actif = () => tabs.find(t => t.getAttribute('aria-selected') === 'true');
+    place(actif()); addEventListener('resize', () => place(actif())); document.fonts && document.fonts.ready.then(() => place(actif()));
+
+    // Apparition au défilement + chiffres qui comptent
+    const compte = el => { const n = +el.dataset.n, t0 = performance.now(), d = 900; const pas = t => { const p = Math.min(1, (t - t0) / d); el.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(pas); }; requestAnimationFrame(pas); };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vu'); if (e.target.classList.contains('compte') && !calme) compte(e.target); io.unobserve(e.target); } }), { threshold: .2, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('.tete, .rv, .creneaux, .compte').forEach(el => io.observe(el));
+    }
+
+    // Signature : un échange se joue sur le court du héros, le tableau de score suit
+    if (!calme) {
+      const balle = document.getElementById('balle'), ombre = document.getElementById('ombre');
+      const j1 = document.getElementById('j1'), j2 = document.getElementById('j2');
+      const s1 = document.getElementById('s1'), s2 = document.getElementById('s2');
+      const score = [['0', '0'], ['15', '0'], ['15', '15'], ['30', '15'], ['40', '15'], ['JEU', '']];
+      let point = 4, coups = 0, de = { x: 92, y: 150 }, vers = { x: 708, y: 250 }, t0 = performance.now(), y1 = 150, y2 = 250, visible = true;
+      const DUREE = 1150;
+      new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(document.getElementById('court'));
+      const nouveauCoup = () => {
+        coups++;
+        if (coups % 5 === 0) { point = (point + 1) % score.length; s1.textContent = score[point][0]; s2.textContent = score[point][1]; }
+        de = vers; vers = { x: de.x < 400 ? 708 : 92, y: 95 + Math.random() * 210 };
+      };
+      const boucle = t => {
+        let p = (t - t0) / DUREE;
+        if (p >= 1) { t0 = t; p = 0; nouveauCoup(); }
+        if (visible) {
+          const x = de.x + (vers.x - de.x) * p, y = de.y + (vers.y - de.y) * p, h = Math.sin(Math.PI * p) * 46;
+          balle.setAttribute('cx', x); balle.setAttribute('cy', y - h); balle.setAttribute('r', 9 + h / 14);
+          ombre.setAttribute('cx', x); ombre.setAttribute('cy', y + 8); ombre.setAttribute('opacity', .32 - h / 260);
+          // Chaque joueur glisse vers l'endroit où la balle va retomber chez lui
+          if (vers.x > 400) y2 += (vers.y - y2) * .06; else y1 += (vers.y - y1) * .06;
+          j1.setAttribute('transform', `translate(${70 - Math.max(0, 1 - p * 3) * 6} ${y1})`);
+          j2.setAttribute('transform', `translate(730 ${y2})`);
+        }
+        requestAnimationFrame(boucle);
+      };
+      setTimeout(() => { t0 = performance.now(); requestAnimationFrame(boucle); }, 1200);
+    }
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>
