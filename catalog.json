@@ -1562,6 +1562,64 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "ffbcb119dcec8e0ff4e217f079a7d68c"
+    },
+    {
+      "slug": "larsen",
+      "title": "Larsen",
+      "tagline": "Site vitrine pour studio d'enregistrement",
+      "description": "Une page nocturne pour un studio d'enregistrement, mixage et mastering : fond prune presque noir, halos rose « en enregistrement » et ambre, cartes en verre dépoli et navigation en pilule flottante. En ouverture, « Enregistrez comme vous jouez. » arrive mot par mot, puis les formes d'onde de quatre pistes (voix, guitare, basse, batterie) se dessinent et une tête de lecture les parcourt pendant que le compteur défile et que les vumètres bougent. Suivent un bandeau des styles enregistrés, les sessions et tarifs en grille asymétrique où un halo suit le pointeur, la cabine et son matériel en accordéons avec chiffres qui comptent, le déroulé d'une session sur une frise dont les marqueurs s'allument, les avis d'artistes en carrousel, les questions fréquentes et la réservation avec carte. Titres en Syne, texte en Outfit.",
+      "univers": [
+        "creatifs"
+      ],
+      "style": "Moderne",
+      "couleur": "rose",
+      "direction": "sombre",
+      "animations": [
+        "titre qui arrive mot par mot",
+        "formes d'onde qui se dessinent",
+        "tête de lecture qui parcourt les pistes avec compteur et vumètres",
+        "halo de lumière qui suit le pointeur sur les cartes",
+        "bandeau défilant des styles enregistrés",
+        "frise dont les marqueurs s'allument au défilement",
+        "chiffres du studio qui comptent",
+        "ondes du micro qui respirent"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-28",
+      "tags": [
+        "studio d'enregistrement",
+        "studio de musique",
+        "enregistrement",
+        "mixage",
+        "mastering",
+        "home studio",
+        "ingénieur du son",
+        "podcast",
+        "voix off",
+        "studio rap"
+      ],
+      "sections": [
+        "Accueil : titre, pistes du morceau avec tête de lecture, compteur et vumètres",
+        "Bandeau des styles enregistrés",
+        "Sessions et tarifs : enregistrement, mixage, mastering, podcast",
+        "Le studio : cabine, chiffres et matériel en accordéons",
+        "Déroulé d'une session en quatre étapes",
+        "Avis des artistes en carrousel",
+        "Questions fréquentes",
+        "Contact : coordonnées, horaires, carte et réservation"
+      ],
+      "palette": [
+        "#EE4D8D",
+        "#F4B860",
+        "#17111B",
+        "#241B2B",
+        "#F5EEF3",
+        "#B3A6BA"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "89a81e192ae10453b728cf290e54c640"
     }
   ]
 }
