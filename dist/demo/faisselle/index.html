@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Chèvrerie des Grands Prés — Fromages de chèvre fermiers au lait cru, en Gâtine (Deux-Sèvres)</title>
+  <meta name="description" content="Chèvrerie des Grands Prés à Pompaire, en Gâtine : 46 chèvres au pré, fromages de chèvre fermiers au lait cru moulés à la louche et affinés à la ferme. Boutique à la ferme, marchés de Parthenay et Niort, plateaux sur commande.">
+  <meta name="theme-color" content="#E3EAF1">
+  <link rel="preload" href="assets/fonts/caprasimo-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-ardoise=Couleur principale (bleu cendré)|--kv-ardoise-fonce;--kv-foin=Couleur d'accent (foin)|--kv-foin-pale;--kv-luzerne=Couleur douce (prairie)|--kv-luzerne-pale;--kv-brume=Fond des sections;--kv-lait=Fond de page;--kv-encre=Texte">
+</head>
+<body class="bg-lait font-sans text-encre antialiased pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Faisselle</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/faisselle/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- ===== Navigation : logo au centre, liens de part et d'autre (ordinateur) ===== -->
+  <header class="sticky top-0 z-50 bg-brume/90 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-6xl items-center px-4 md:h-20 md:px-6">
+      <nav class="hidden flex-1 items-center gap-1 md:flex" aria-label="Navigation principale, à gauche">
+        <a href="#fromages" class="lien inline-flex min-h-11 items-center px-3 text-[16px] font-bold">Nos fromages</a>
+        <a href="#affinage" class="lien inline-flex min-h-11 items-center px-3 text-[16px] font-bold">L'affinage</a>
+        <a href="#troupeau" class="lien inline-flex min-h-11 items-center px-3 text-[16px] font-bold">Le troupeau</a>
+      </nav>
+
+      <a href="#accueil" class="flex min-h-11 items-center gap-2.5 md:flex-col md:gap-0.5">
+        <svg data-kv-logo="Logo" class="h-10 w-10 shrink-0 md:h-11 md:w-11" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 3c11 0 21 8 21 20s-9 22-21 22S3 36 3 24 13 3 24 3z" class="fill-ardoise"/>
+          <path d="M15 33v-8c0-5 4-8 9-8s9 3 9 8v8" fill="none" stroke="#F5F7F1" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="24" cy="25" rx="9" ry="3.2" fill="#F5F7F1"/>
+          <path d="M17 13c1-4 4-6 7-6M31 13c-1-4-4-6-7-6" fill="none" class="stroke-foin" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <span class="font-display text-[19px] leading-none md:text-[17px]">Les Grands Prés</span>
+      </a>
+
+      <nav class="hidden flex-1 items-center justify-end gap-1 md:flex" aria-label="Navigation principale, à droite">
+        <a href="#ferme" class="lien inline-flex min-h-11 items-center px-3 text-[16px] font-bold">Ferme et marchés</a>
+        <a href="#avis" class="lien inline-flex min-h-11 items-center px-3 text-[16px] font-bold">Avis</a>
+        <a href="#contact" class="btn ml-2 !min-h-11 bg-ardoise !px-5 text-lait hover:bg-ardoise-fonce">Commander</a>
+      </nav>
+
+      <button id="menuBtn" type="button" class="ml-auto inline-flex min-h-11 items-center gap-2 rounded-full bg-ardoise px-4 text-[16px] font-extrabold text-lait md:hidden" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="h-4 w-4" viewBox="0 0 16 16" aria-hidden="true"><circle cx="3" cy="8" r="2" fill="currentColor"/><circle cx="8" cy="8" r="2" fill="currentColor"/><circle cx="13" cy="8" r="2" fill="currentColor"/></svg>
+        <span class="txt">Menu</span>
+      </button>
+    </div>
+
+    <nav id="menu" class="hidden flex-col border-t border-ardoise/10 bg-brume px-4 pb-5 pt-2 md:hidden" aria-label="Navigation mobile">
+      <a href="#fromages" class="flex min-h-12 items-center border-b border-ardoise/10 font-display text-2xl">Nos fromages</a>
+      <a href="#affinage" class="flex min-h-12 items-center border-b border-ardoise/10 font-display text-2xl">L'affinage</a>
+      <a href="#troupeau" class="flex min-h-12 items-center border-b border-ardoise/10 font-display text-2xl">Le troupeau</a>
+      <a href="#ferme" class="flex min-h-12 items-center border-b border-ardoise/10 font-display text-2xl">Ferme et marchés</a>
+      <a href="#avis" class="flex min-h-12 items-center border-b border-ardoise/10 font-display text-2xl">Avis</a>
+      <a href="#contact" class="btn mt-4 w-full bg-ardoise text-lait">Commander un plateau</a>
+    </nav>
+  </header>
+
+  <main id="accueil">
+    <!-- ===== Héros : titre centré, le pré et ses chèvres en dessous ===== -->
+    <section class="relative overflow-x-clip bg-brume">
+      <div class="mx-auto max-w-3xl px-5 pb-6 pt-8 text-center md:pb-4 md:pt-16">
+        <p class="monte inline-flex items-center gap-2 rounded-full bg-lait px-4 py-1.5 text-[15px] font-bold text-ardoise">
+          <svg class="h-4 w-4" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" class="fill-foin"/></svg>
+          <span>Lait cru, moulé à la louche</span>
+        </p>
+        <h1 class="titre monte monte-2 mt-4 text-[2.6rem] sm:text-6xl md:text-[5.2rem]">Des chèvres au pré, des fromages qui en ont le goût.</h1>
+        <p class="monte monte-3 mx-auto mt-4 max-w-xl text-[17px] md:text-lg">Nos 46 chèvres pâturent en Gâtine d'avril à novembre. On trait, on caille et on affine ici, à la ferme.<span class="hidden sm:inline"> Puis on vous retrouve à la boutique ou sur les marchés.</span></p>
+        <div class="monte monte-3 mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <a href="#contact" class="btn w-full bg-ardoise text-lait hover:bg-ardoise-fonce sm:w-auto">Commander un plateau</a>
+          <a href="#ferme" class="btn w-full border-2 border-ardoise/25 bg-lait/60 text-ardoise sm:w-auto">Venir à la ferme</a>
+        </div>
+      </div>
+
+      <div data-kv-image="Photo de vos chèvres au pré" class="relative h-[34vh] max-h-[300px] min-h-[220px] md:h-auto md:max-h-[560px] md:min-h-0 md:aspect-[5/2]">
+        <svg class="absolute inset-0 h-full w-full" viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Trois chèvres broutent sur les collines, devant la chèvrerie, sous un soleil couleur de foin">
+          <circle cx="612" cy="128" r="40" class="fill-foin"/>
+          <g class="nuage" fill="#FFFFFF" opacity=".9"><path d="M120 122c0-14 12-24 26-22 6-10 22-12 31-3 13-3 24 6 23 18 9 2 13 15 4 21H128c-9-2-13-9-8-14z"/></g>
+          <g class="nuage" fill="#FFFFFF" opacity=".75" style="animation-delay:-9s"><path d="M440 140c0-10 9-17 19-15 5-8 17-9 24-2 10-2 18 5 17 13 7 2 9 11 3 15H476c-7-2-10-7-6-11z"/></g>
+          <path class="colline colline-1 fill-luzerne-pale" d="M0 210 C140 150 300 160 420 190 C560 225 690 160 800 170 V400 H0Z"/>
+          <!-- La chèvrerie -->
+          <g class="colline colline-1">
+            <rect x="232" y="146" width="62" height="40" fill="#FFFFFF"/>
+            <path d="M224 150 L263 120 L302 150Z" class="fill-ardoise"/>
+            <path d="M255 186v-20a8 8 0 0 1 16 0v20z" class="fill-ardoise-fonce"/>
+            <rect x="238" y="156" width="10" height="9" rx="2" class="fill-ardoise" opacity=".5"/>
+            <rect x="278" y="156" width="10" height="9" rx="2" class="fill-ardoise" opacity=".5"/>
+          </g>
+          <path class="colline colline-2 fill-luzerne" d="M0 270 C130 225 270 235 400 262 C540 292 670 240 800 250 V400H0Z"/>
+          <g fill="none" stroke="#8FAA82" stroke-width="3" stroke-linecap="round" class="colline colline-2">
+            <path d="M150 300l4-12M158 300l0-14M166 300l-4-11"/><path d="M590 312l4-12M598 312l0-14M606 312l-4-11"/><path d="M348 318l3-10M354 318l0-12M360 318l-3-9"/>
+          </g>
+          <g class="chevre-entree"><g transform="translate(176 192) scale(.82)" class="chevre chevre-a"><g class="queue"><path d="M106 40 q9 -8 7 -18" fill="none" stroke="#B9824F" stroke-width="5" stroke-linecap="round"/></g>
+<g fill="#3A2F2A"><rect x="53" y="62" width="7" height="31" rx="3.5"/><rect x="98" y="62" width="7" height="31" rx="3.5"/></g>
+<g fill="#3A2F2A" opacity=".85"><rect x="41" y="62" width="7" height="33" rx="3.5"/><rect x="86" y="62" width="7" height="33" rx="3.5"/></g>
+<path d="M30 48 C30 36 46 32 62 33 L94 33 C107 33 112 43 110 55 C108 66 101 71 89 71 L46 71 C35 71 30 61 30 48Z" fill="#B9824F"/>
+<g class="tete"><path d="M44 46 L29 22 L41 16 L56 41Z" fill="#B9824F"/><path d="M30 12 C32 2 42 -2 48 3" fill="none" stroke="#9C8B74" stroke-width="3.5" stroke-linecap="round"/><path d="M20 12 C29 8 40 13 39 22 L24 36 C17 39 9 35 11 28Z" fill="#B9824F"/><path d="M37 17 q12 -3 16 5 q-9 2 -16 -5z" fill="#B9824F"/><path d="M15 34 l-1 9 l7 -7z" fill="#B9824F"/><circle cx="26" cy="19" r="2" fill="#1F2B3A"/><circle cx="13" cy="30" r="1.3" fill="#1F2B3A" opacity=".6"/></g></g></g>
+          <g class="chevre-entree" style="animation-delay:.85s"><g transform="translate(372 210) scale(.9)" class="chevre chevre-b"><g class="queue"><path d="M106 40 q9 -8 7 -18" fill="none" stroke="#D5D8CF" stroke-width="5" stroke-linecap="round"/></g>
+<g fill="#3A2F2A"><rect x="53" y="62" width="7" height="31" rx="3.5"/><rect x="98" y="62" width="7" height="31" rx="3.5"/></g>
+<g fill="#3A2F2A" opacity=".85"><rect x="41" y="62" width="7" height="33" rx="3.5"/><rect x="86" y="62" width="7" height="33" rx="3.5"/></g>
+<path d="M30 48 C30 36 46 32 62 33 L94 33 C107 33 112 43 110 55 C108 66 101 71 89 71 L46 71 C35 71 30 61 30 48Z" fill="#FFFFFF" stroke="#D5D8CF" stroke-width="1.5"/>
+<g class="tete"><path d="M44 46 L29 22 L41 16 L56 41Z" fill="#FFFFFF" stroke="#D5D8CF" stroke-width="1.5"/><path d="M30 12 C32 2 42 -2 48 3" fill="none" stroke="#9C8B74" stroke-width="3.5" stroke-linecap="round"/><path d="M20 12 C29 8 40 13 39 22 L24 36 C17 39 9 35 11 28Z" fill="#FFFFFF" stroke="#D5D8CF" stroke-width="1.5"/><path d="M37 17 q12 -3 16 5 q-9 2 -16 -5z" fill="#FFFFFF" stroke="#D5D8CF" stroke-width="1.5"/><path d="M15 34 l-1 9 l7 -7z" fill="#FFFFFF" stroke="#D5D8CF" stroke-width="1.5"/><circle cx="26" cy="19" r="2" fill="#1F2B3A"/><circle cx="13" cy="30" r="1.3" fill="#1F2B3A" opacity=".6"/></g></g></g>
+          <g class="chevre-entree" style="animation-delay:1s"><g transform="translate(624 232) scale(-.74 .74)" class="chevre chevre-c"><g class="queue"><path d="M106 40 q9 -8 7 -18" fill="none" stroke="#4A3A33" stroke-width="5" stroke-linecap="round"/></g>
+<g fill="#2A201D"><rect x="53" y="62" width="7" height="31" rx="3.5"/><rect x="98" y="62" width="7" height="31" rx="3.5"/></g>
+<g fill="#2A201D" opacity=".85"><rect x="41" y="62" width="7" height="33" rx="3.5"/><rect x="86" y="62" width="7" height="33" rx="3.5"/></g>
+<path d="M30 48 C30 36 46 32 62 33 L94 33 C107 33 112 43 110 55 C108 66 101 71 89 71 L46 71 C35 71 30 61 30 48Z" fill="#4A3A33"/>
+<g class="tete"><path d="M44 46 L29 22 L41 16 L56 41Z" fill="#4A3A33"/><path d="M30 12 C32 2 42 -2 48 3" fill="none" stroke="#9C8B74" stroke-width="3.5" stroke-linecap="round"/><path d="M20 12 C29 8 40 13 39 22 L24 36 C17 39 9 35 11 28Z" fill="#4A3A33"/><path d="M37 17 q12 -3 16 5 q-9 2 -16 -5z" fill="#4A3A33"/><path d="M15 34 l-1 9 l7 -7z" fill="#4A3A33"/><circle cx="26" cy="19" r="2" fill="#1F2B3A"/><circle cx="13" cy="30" r="1.3" fill="#1F2B3A" opacity=".6"/></g></g></g>
+          <path class="colline colline-3 fill-lait" d="M0 345 C170 312 330 330 470 340 C610 350 710 325 800 332 V400H0Z"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== Les fromages : des galets posés comme sur un plateau ===== -->
+    <section id="fromages" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-6">
+        <div class="rv max-w-2xl">
+          <h2 class="titre text-4xl sm:text-5xl md:text-6xl">Six fromages, un seul lait.</h2>
+          <p class="mt-3 text-[17px] md:text-lg">Tout part de la traite du matin. Selon le moule, le temps et la cave, il devient crottin, bûche ou tomme.</p>
+        </div>
+      </div>
+      <ul class="carrousel no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:mx-auto md:mt-14 md:grid md:max-w-6xl md:grid-cols-3 md:gap-x-7 md:gap-y-10 md:overflow-visible md:px-6 md:pb-0">
+        <li class="roule fromage w-[80%] shrink-0 snap-start bg-brume p-6 md:w-auto md:p-8">
+          <svg class="meule mx-auto h-28 w-40" viewBox="0 0 160 110" aria-hidden="true">
+            <ellipse cx="80" cy="96" rx="52" ry="9" fill="#1F2B3A" opacity=".08"/>
+            <path d="M42 46v38a38 11 0 0 0 76 0V46" fill="#F3EEDD"/><ellipse cx="80" cy="46" rx="38" ry="11" fill="#FFFDF5"/>
+            <path d="M48 60q4 3 2 9M106 66q3 4 0 9" stroke="#E2D8BC" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <h3 class="titre mt-4 text-[1.7rem]">Le crottin</h3>
+          <p class="mt-2 text-[16px]">Notre fromage de tous les jours. Frais, demi-sec ou sec, vous choisissez son âge.</p>
+          <p class="mt-4 font-extrabold text-ardoise"><span>2,80 €</span> <span class="font-normal text-encre/70">la pièce</span></p>
+        </li>
+        <li class="roule fromage w-[80%] shrink-0 snap-start bg-luzerne-pale p-6 md:mt-12 md:w-auto md:p-8">
+          <svg class="meule mx-auto h-28 w-40" viewBox="0 0 160 110" aria-hidden="true">
+            <ellipse cx="80" cy="96" rx="64" ry="9" fill="#1F2B3A" opacity=".08"/>
+            <rect x="18" y="42" width="114" height="46" rx="23" fill="#6D7684"/>
+            <g fill="#4E5663" opacity=".6"><circle cx="40" cy="56" r="2"/><circle cx="62" cy="72" r="2.4"/><circle cx="88" cy="54" r="1.8"/><circle cx="104" cy="76" r="2"/></g>
+            <ellipse cx="132" cy="65" rx="14" ry="23" fill="#59606C"/><ellipse cx="132" cy="65" rx="11" ry="20" fill="#FAF8F0"/>
+          </svg>
+          <h3 class="titre mt-4 text-[1.7rem]">La bûche cendrée</h3>
+          <p class="mt-2 text-[16px]">Roulée dans la cendre de bois. Pâte crayeuse au cœur, fondante sous la croûte.</p>
+          <p class="mt-4 font-extrabold text-ardoise"><span>7,50 €</span> <span class="font-normal text-encre/70">la bûche de 250 g</span></p>
+        </li>
+        <li class="roule fromage w-[80%] shrink-0 snap-start bg-foin-pale p-6 md:w-auto md:p-8">
+          <svg class="meule mx-auto h-28 w-40" viewBox="0 0 160 110" aria-hidden="true">
+            <ellipse cx="80" cy="96" rx="52" ry="9" fill="#1F2B3A" opacity=".08"/>
+            <path d="M44 90 L62 30 H98 L116 90Z" fill="#7A8290"/><path d="M62 30 H98 L94 40 H66Z" fill="#9AA1AC"/>
+            <path d="M80 30 V90" stroke="#5E6672" stroke-width="1.5" opacity=".5"/>
+          </svg>
+          <h3 class="titre mt-4 text-[1.7rem]">La pyramide</h3>
+          <p class="mt-2 text-[16px]">Cendrée elle aussi, affinée trois semaines. Le goût le plus corsé de la cave.</p>
+          <p class="mt-4 font-extrabold text-ardoise"><span>6,90 €</span> <span class="font-normal text-encre/70">la pièce</span></p>
+        </li>
+        <li class="roule fromage w-[80%] shrink-0 snap-start bg-foin-pale p-6 md:-mt-6 md:w-auto md:p-8">
+          <svg class="meule mx-auto h-28 w-40" viewBox="0 0 160 110" aria-hidden="true">
+            <ellipse cx="80" cy="98" rx="46" ry="8" fill="#1F2B3A" opacity=".08"/>
+            <path d="M46 40 L54 94 H106 L114 40Z" fill="#FFFFFF" stroke="#C9D3DE" stroke-width="2"/>
+            <ellipse cx="80" cy="40" rx="34" ry="8" fill="#F7F4EA" stroke="#C9D3DE" stroke-width="2"/>
+            <g class="fill-ardoise" opacity=".35"><circle cx="62" cy="58" r="2"/><circle cx="74" cy="64" r="2"/><circle cx="88" cy="58" r="2"/><circle cx="98" cy="68" r="2"/><circle cx="66" cy="76" r="2"/><circle cx="82" cy="80" r="2"/></g>
+          </svg>
+          <h3 class="titre mt-4 text-[1.7rem]">La faisselle</h3>
+          <p class="mt-2 text-[16px]">Caillé du jour, égoutté dans son pot. Avec du miel, des herbes ou de la crème.</p>
+          <p class="mt-4 font-extrabold text-ardoise"><span>3,20 €</span> <span class="font-normal text-encre/70">le pot de 500 g</span></p>
+        </li>
+        <li class="roule fromage w-[80%] shrink-0 snap-start bg-brume p-6 md:mt-6 md:w-auto md:p-8">
+          <svg class="meule mx-auto h-28 w-40" viewBox="0 0 160 110" aria-hidden="true">
+            <ellipse cx="80" cy="96" rx="66" ry="9" fill="#1F2B3A" opacity=".08"/>
+            <path d="M16 52v28a64 14 0 0 0 128 0V52" fill="#C9A46A"/>
+            <ellipse cx="80" cy="52" rx="64" ry="14" fill="#E3CC97"/>
+            <path d="M80 52 L144 52 A64 14 0 0 1 120 63Z" fill="#F4E7C2"/>
+            <path d="M120 63v28" stroke="#B48F55" stroke-width="1.5"/>
+          </svg>
+          <h3 class="titre mt-4 text-[1.7rem]">La tomme de chèvre</h3>
+          <p class="mt-2 text-[16px]">Pâte pressée, trois mois de cave. Douce, un peu noisette, elle se garde bien.</p>
+          <p class="mt-4 font-extrabold text-ardoise"><span>26 €</span> <span class="font-normal text-encre/70">le kilo, à la coupe</span></p>
+        </li>
+        <li class="roule fromage w-[80%] shrink-0 snap-start bg-luzerne-pale p-6 md:mt-0 md:w-auto md:p-8">
+          <svg class="meule mx-auto h-28 w-40" viewBox="0 0 160 110" aria-hidden="true">
+            <ellipse cx="80" cy="94" rx="44" ry="8" fill="#1F2B3A" opacity=".08"/>
+            <path d="M48 56c0-14 14-22 32-22s32 8 32 22-14 34-32 34-32-20-32-34z" fill="#FFFDF7"/>
+            <g fill="#6E9A5B"><path d="M62 52l4-3 2 4z"/><path d="M84 46l5 -1 -1 4z"/><path d="M96 60l4 2 -4 2z"/><path d="M70 70l3 3 -4 1z"/><path d="M88 76l4 -2 0 4z"/></g>
+          </svg>
+          <h3 class="titre mt-4 text-[1.7rem]">Le frais aux herbes</h3>
+          <p class="mt-2 text-[16px]">Ciboulette, ail des ours ou poivre, selon la saison. À tartiner dès l'apéritif.</p>
+          <p class="mt-4 font-extrabold text-ardoise"><span>3,40 €</span> <span class="font-normal text-encre/70">la pièce</span></p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Signature : choisir l'âge du crottin ===== -->
+    <section id="affinage" class="overflow-x-clip bg-brume py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl items-center gap-8 px-5 md:grid-cols-2 md:gap-14 md:px-6">
+        <div class="rv md:order-2">
+          <h2 class="titre text-4xl sm:text-5xl md:text-6xl">Frais ou sec&nbsp;? Choisissez son âge.</h2>
+          <p class="mt-3 text-[17px] md:text-lg">Le même crottin change de jour en jour dans notre cave. Touchez un âge pour le voir s'affiner.</p>
+
+          <div class="mt-6 flex gap-1 rounded-full bg-lait p-1.5" role="tablist" aria-label="Âge du crottin">
+            <button type="button" class="age" role="tab" id="t0" aria-controls="p0" aria-selected="true" data-stade="0" data-gout="18">Frais</button>
+            <button type="button" class="age" role="tab" id="t1" aria-controls="p1" aria-selected="false" data-stade="1" data-gout="46" tabindex="-1">Demi-sec</button>
+            <button type="button" class="age" role="tab" id="t2" aria-controls="p2" aria-selected="false" data-stade="2" data-gout="88" tabindex="-1">Sec</button>
+            <button type="button" class="age" role="tab" id="t3" aria-controls="p3" aria-selected="false" data-stade="3" data-gout="58" tabindex="-1">Cendré</button>
+          </div>
+
+          <div class="mt-6 min-h-[9.5rem]">
+            <div id="p0" role="tabpanel" aria-labelledby="t0">
+              <p class="font-extrabold text-ardoise">De 2 à 4 jours</p>
+              <p class="mt-1 text-[17px]">Tout juste démoulé, blanc et tendre. Un goût de lait, légèrement acidulé. À tartiner, ou tiède sur une salade.</p>
+            </div>
+            <div id="p1" role="tabpanel" aria-labelledby="t1" hidden>
+              <p class="font-extrabold text-ardoise">Autour de 10 jours</p>
+              <p class="mt-1 text-[17px]">La croûte blondit et se couvre d'une fine fleur. La pâte se resserre, la noisette arrive. Le préféré des plateaux.</p>
+            </div>
+            <div id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+              <p class="font-extrabold text-ardoise">De 3 à 5 semaines</p>
+              <p class="mt-1 text-[17px]">Petit, dur, croûte dorée marbrée de bleu. Il se casse plus qu'il ne se coupe. Un goût franc, pour les amateurs.</p>
+            </div>
+            <div id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+              <p class="font-extrabold text-ardoise">Autour de 15 jours</p>
+              <p class="mt-1 text-[17px]">Roulé dans la cendre de bois au démoulage. Sous sa robe grise, une pâte douce et fondante sous la croûte.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="rv md:order-1">
+          <div class="galet-a relative mx-auto aspect-[6/5] max-h-[300px] w-full max-w-md bg-lait md:max-h-none">
+            <svg id="cave" data-stade="0" class="absolute inset-0 h-full w-full" viewBox="0 0 240 200" role="img" aria-label="Un crottin de chèvre posé sur une planche, qui change d'aspect selon l'âge choisi">
+              <ellipse cx="120" cy="160" rx="92" ry="16" fill="#C9A46A"/>
+              <ellipse cx="120" cy="156" rx="92" ry="16" fill="#DDBE86"/>
+              <path d="M44 154q30 6 60 2M128 160q30 2 56-6" stroke="#C9A46A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <g class="crottin">
+                <path class="croute croute-cote" d="M78 88v58a42 12 0 0 0 84 0V88" fill="#FBFBF6"/>
+                <ellipse class="croute croute-haut" cx="120" cy="88" rx="42" ry="12" fill="#FFFFFF"/>
+                <g class="flore flore-1" fill="#AEB8C6"><circle cx="92" cy="110" r="3"/><circle cx="104" cy="128" r="2.2"/><circle cx="138" cy="104" r="2.6"/><circle cx="150" cy="130" r="3"/><circle cx="118" cy="86" r="2.4"/><circle cx="102" cy="92" r="1.8"/></g>
+                <g class="flore flore-2" fill="#7F93AE"><circle cx="86" cy="132" r="3.4"/><circle cx="124" cy="118" r="2.8"/><circle cx="146" cy="114" r="2"/><circle cx="134" cy="88" r="2.6"/><circle cx="112" cy="140" r="2.4"/></g>
+                <path class="fissure" d="M96 100q6 8 2 16M140 120q-5 7 0 14" stroke="#B89A5E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <g class="cendre" fill="#3F4652" opacity="0"><circle cx="90" cy="104" r="1.6"/><circle cx="108" cy="122" r="1.4"/><circle cx="130" cy="110" r="1.8"/><circle cx="150" cy="136" r="1.4"/><circle cx="96" cy="138" r="1.6"/><circle cx="122" cy="92" r="1.4"/><circle cx="142" cy="90" r="1.2"/><circle cx="116" cy="140" r="1.5"/></g>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="mx-auto mt-5 max-w-md">
+            <span class="flex items-center justify-between text-[15px] font-bold"><span>Doux</span><span>Corsé</span></span>
+            <span class="mt-1.5 block h-3 overflow-hidden rounded-full bg-lait" aria-hidden="true"><span id="gout" class="jauge-remplie block h-full rounded-full bg-foin" style="width:18%"></span></span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Le troupeau ===== -->
+    <section id="troupeau" class="relative overflow-x-clip bg-ardoise text-lait">
+      <svg class="absolute inset-x-0 top-0 h-10 w-full md:h-16" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H800V18C640 52 480 8 330 30 200 48 90 26 0 40Z" class="fill-brume"/></svg>
+      <div class="mx-auto grid max-w-6xl items-center gap-8 px-5 pb-14 pt-20 md:grid-cols-12 md:gap-12 md:px-6 md:pb-24 md:pt-32">
+        <div data-kv-image="Photo du troupeau ou de la traite" class="galet-photo rv relative mx-auto aspect-square w-full max-w-[280px] overflow-hidden bg-luzerne md:col-span-5 md:max-w-none">
+          <svg class="absolute inset-0 h-full w-full" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Une chèvre chamoisée près d'une botte de foin">
+            <rect width="300" height="300" class="fill-luzerne-pale"/>
+            <circle cx="236" cy="70" r="30" class="fill-foin"/>
+            <path d="M0 210C80 180 200 190 300 206V300H0Z" class="fill-luzerne"/>
+            <g transform="translate(190 168)"><rect x="0" y="0" width="86" height="56" rx="10" fill="#E8C778"/><path d="M8 14h70M8 28h70M8 42h70" stroke="#C9A04E" stroke-width="2.5" stroke-linecap="round"/></g>
+            <g transform="translate(18 92) scale(1.75)" class="chevre chevre-b"><g class="queue"><path d="M106 40 q9 -8 7 -18" fill="none" stroke="#B9824F" stroke-width="5" stroke-linecap="round"/></g>
+<g fill="#3A2F2A"><rect x="53" y="62" width="7" height="31" rx="3.5"/><rect x="98" y="62" width="7" height="31" rx="3.5"/></g>
+<g fill="#3A2F2A" opacity=".85"><rect x="41" y="62" width="7" height="33" rx="3.5"/><rect x="86" y="62" width="7" height="33" rx="3.5"/></g>
+<path d="M30 48 C30 36 46 32 62 33 L94 33 C107 33 112 43 110 55 C108 66 101 71 89 71 L46 71 C35 71 30 61 30 48Z" fill="#B9824F"/>
+<g class="tete"><path d="M44 46 L29 22 L41 16 L56 41Z" fill="#B9824F"/><path d="M30 12 C32 2 42 -2 48 3" fill="none" stroke="#9C8B74" stroke-width="3.5" stroke-linecap="round"/><path d="M20 12 C29 8 40 13 39 22 L24 36 C17 39 9 35 11 28Z" fill="#B9824F"/><path d="M37 17 q12 -3 16 5 q-9 2 -16 -5z" fill="#B9824F"/><path d="M15 34 l-1 9 l7 -7z" fill="#B9824F"/><circle cx="26" cy="19" r="2" fill="#1F2B3A"/><circle cx="13" cy="30" r="1.3" fill="#1F2B3A" opacity=".6"/></g></g>
+          </svg>
+        </div>
+        <div class="md:col-span-7">
+          <h2 class="titre rv text-4xl sm:text-5xl md:text-6xl">Des Alpines et des Poitevines, chacune avec son prénom.</h2>
+          <p class="rv mt-4 max-w-xl text-[17px] text-lait/85 md:text-lg">Elles sortent au pré dès que l'herbe pousse et rentrent le soir à la chèvrerie. L'hiver, foin de nos prairies et céréales de la ferme. Le chevreau reste sous sa mère ses premières semaines.</p>
+          <dl class="mt-8 grid grid-cols-3 gap-3 text-center md:max-w-lg">
+            <div class="galet-a rv bg-lait/10 px-2 py-5"><dt class="sr-only">Chèvres</dt><dd class="font-display text-4xl md:text-5xl"><span class="compte" data-n="46">46</span></dd><dd class="mt-1 text-[15px] text-lait/85">chèvres</dd></div>
+            <div class="galet-b rv bg-lait/10 px-2 py-5"><dt class="sr-only">Prairies</dt><dd class="font-display text-4xl md:text-5xl"><span class="compte" data-n="18">18</span></dd><dd class="mt-1 text-[15px] text-lait/85">hectares de prés</dd></div>
+            <div class="galet-c rv bg-lait/10 px-2 py-5"><dt class="sr-only">Mois au pré</dt><dd class="font-display text-4xl md:text-5xl"><span class="compte" data-n="8">8</span></dd><dd class="mt-1 text-[15px] text-lait/85">mois dehors</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Où nous trouver : boutique, marchés, carte ===== -->
+    <section id="ferme" class="py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-6">
+        <h2 class="titre rv max-w-2xl text-4xl sm:text-5xl md:text-6xl">À la ferme ou au marché, toute la semaine.</h2>
+        <div class="mt-8 grid gap-5 md:mt-12 md:grid-cols-5 md:gap-7">
+          <div class="rv rounded-[2.5rem] bg-luzerne-pale p-6 md:col-span-2 md:p-8">
+            <h3 class="titre text-[1.7rem]">La boutique de la ferme</h3>
+            <p class="mt-2 text-[16px]">Libre-service à côté de la fromagerie. Venez à 17 h, vous verrez la traite.</p>
+            <dl class="mt-4 space-y-1.5 text-[16px]">
+              <div class="flex justify-between gap-4"><dt class="font-bold">Mercredi et vendredi</dt><dd>16 h – 19 h</dd></div>
+              <div class="flex justify-between gap-4"><dt class="font-bold">Samedi</dt><dd>9 h – 12 h</dd></div>
+            </dl>
+            <p class="mt-4 text-[16px]">Lieu-dit La Garenne, 79200 Pompaire</p>
+          </div>
+          <div class="rv rounded-[2.5rem] bg-brume p-6 md:col-span-3 md:p-8">
+            <h3 class="titre text-[1.7rem]">Sur les marchés</h3>
+            <ul class="mt-3 divide-y divide-ardoise/10 text-[16px]">
+              <li class="flex flex-wrap items-baseline justify-between gap-x-4 py-2.5"><span class="font-bold">Mardi</span><span>Marché de Parthenay, place du Drapeau</span></li>
+              <li class="flex flex-wrap items-baseline justify-between gap-x-4 py-2.5"><span class="font-bold">Jeudi</span><span>Halles de Niort, allée des producteurs</span></li>
+              <li class="flex flex-wrap items-baseline justify-between gap-x-4 py-2.5"><span class="font-bold">Dimanche</span><span>Marché de Secondigny, de mai à octobre</span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Carte : l'adresse se change en mode édition (« Modifier l'adresse ») ou dans data-kv-map -->
+        <div data-kv-map="Lieu-dit La Garenne, 79200 Pompaire" class="rv mt-6 md:h-64 rounded-[2rem] overflow-hidden bg-brume text-encre"></div>
+      </div>
+    </section>
+
+    <!-- ===== Avis ===== -->
+    <section id="avis" class="overflow-x-clip bg-foin-pale py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-6">
+        <h2 class="titre rv text-4xl sm:text-5xl md:text-6xl">Ce qu'on nous dit au marché</h2>
+      </div>
+      <ul class="carrousel no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 md:mx-auto md:grid md:max-w-6xl md:grid-cols-3 md:gap-7 md:overflow-visible md:px-6">
+        <li class="roule galet-b w-[82%] shrink-0 snap-start bg-lait px-9 py-10 md:w-auto">
+          <blockquote class="text-[17px]">« Le demi-sec est devenu une institution le dimanche. Et ma fille ne veut plus que la faisselle au miel. »</blockquote>
+          <p class="mt-3 font-extrabold text-ardoise">Hélène, Parthenay</p>
+        </li>
+        <li class="roule galet-c w-[82%] shrink-0 snap-start bg-lait px-9 py-10 md:mt-8 md:w-auto">
+          <blockquote class="text-[17px]">« Plateau de 20 personnes pour un mariage : beau, généreux, livré à l'heure. Les invités ont tout fini. »</blockquote>
+          <p class="mt-3 font-extrabold text-ardoise">Julien, Niort</p>
+        </li>
+        <li class="roule galet-a w-[82%] shrink-0 snap-start bg-lait px-9 py-10 md:w-auto">
+          <blockquote class="text-[17px]">« On est venus voir la traite avec les enfants. Ils connaissent maintenant Praline et Noisette par leur nom. »</blockquote>
+          <p class="mt-3 font-extrabold text-ardoise">Camille, Saint-Maixent</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Questions fréquentes ===== -->
+    <section id="faq" class="py-14 md:py-24">
+      <div class="mx-auto max-w-3xl px-5 md:px-6">
+        <h2 class="titre rv text-4xl sm:text-5xl md:text-6xl">Vos questions</h2>
+        <div class="mt-6 divide-y divide-ardoise/15 border-y border-ardoise/15">
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-[17px] font-extrabold">Vos fromages sont-ils au lait cru&nbsp;?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-5 text-[16px]">Oui, tous, sauf la tomme qui est thermisée. Le lait cru est déconseillé aux femmes enceintes et aux jeunes enfants : demandez-nous conseil.</p>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-[17px] font-extrabold">Peut-on visiter la ferme&nbsp;?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-5 text-[16px]">Pendant les heures de boutique, vous pouvez voir les chèvres et la traite de 17 h. Pour un groupe ou une classe, appelez-nous avant.</p>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-[17px] font-extrabold">Comment conserver un crottin&nbsp;?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-5 text-[16px]">Au réfrigérateur, dans une boîte avec un papier, jamais dans du film. Sortez-le une heure avant de le servir.</p>
+          </details>
+          <details class="group">
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 text-[17px] font-extrabold">Pourquoi n'y a-t-il pas de fromage en hiver&nbsp;?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-5 text-[16px]">Les chèvres se reposent avant les mises bas, de décembre à février. On garde un peu de tomme pour vous faire patienter.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Commande et contact ===== -->
+    <section id="contact" class="bg-brume py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-12 md:gap-12 md:px-6">
+        <div class="rv md:col-span-5">
+          <h2 class="titre text-4xl sm:text-5xl md:text-6xl">Un plateau, une visite&nbsp;?</h2>
+          <p class="mt-3 text-[17px]">Plateaux de 6 à 40 personnes, à retirer à la ferme ou au marché. Prévenez-nous trois jours avant.</p>
+          <ul class="mt-5 space-y-1 text-[17px]">
+            <li><a href="tel:+33600000000" class="lien inline-flex min-h-11 items-center font-extrabold">06 00 00 00 00</a></li>
+            <li><a href="mailto:contact@exemple.fr" class="lien inline-flex min-h-11 items-center font-extrabold">contact@exemple.fr</a></li>
+          </ul>
+        </div>
+
+        <!--
+          Formulaire de contact : il n'envoie rien tant qu'il n'est pas relié à un service.
+          - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+          - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+          - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+        -->
+        <form class="rv grid content-start gap-5 rounded-[2.5rem] bg-lait p-5 sm:grid-cols-2 sm:p-8 md:col-span-7" action="#" method="post">
+          <fieldset class="sm:col-span-2">
+            <legend class="text-[15px] font-bold">Votre demande</legend>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <label class="puce"><input type="radio" name="demande" value="Plateau" class="sr-only" checked><span>Un plateau</span></label>
+              <label class="puce"><input type="radio" name="demande" value="Visite" class="sr-only"><span>Une visite</span></label>
+              <label class="puce"><input type="radio" name="demande" value="Autre" class="sr-only"><span>Autre chose</span></label>
+            </div>
+          </fieldset>
+          <label class="block"><span class="text-[15px] font-bold">Prénom</span>
+            <input type="text" name="prenom" autocomplete="given-name" class="champ mt-1.5" required>
+          </label>
+          <label class="block"><span class="text-[15px] font-bold">Téléphone</span>
+            <input type="tel" name="telephone" autocomplete="tel" class="champ mt-1.5" required>
+          </label>
+          <label class="block sm:col-span-2"><span class="text-[15px] font-bold">Pour quand, et combien de personnes&nbsp;?</span>
+            <textarea name="message" rows="3" class="champ mt-1.5" placeholder="Ex. : samedi 14, un plateau pour 12, retrait au marché de Parthenay"></textarea>
+          </label>
+          <button type="submit" class="btn w-full bg-ardoise text-lait hover:bg-ardoise-fonce sm:col-span-2">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-ardoise-fonce text-[15px] text-lait/80">
+    <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-8 sm:flex-row sm:items-center sm:justify-between md:px-6">
+      <p><span class="font-display text-[17px] text-lait">Chèvrerie des Grands Prés</span> <span class="block sm:ml-2 sm:inline">Fromages de chèvre fermiers en Gâtine</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-[auto_1fr] gap-2 bg-lait/95 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-8px_24px_-16px_rgba(31,43,58,.5)] backdrop-blur md:hidden">
+    <a href="tel:+33600000000" class="btn !px-5 border-2 border-ardoise/25 text-ardoise">Appeler</a>
+    <a href="#contact" class="btn bg-ardoise text-lait">Commander</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile déroulant
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('.txt').textContent = open ? 'Fermer' : 'Menu';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // Apparition au défilement et chiffres qui comptent
+    const compte = el => { const n = +el.dataset.n, t0 = performance.now(), d = 800; const pas = t => { const p = Math.min(1, (t - t0) / d); el.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(pas); }; requestAnimationFrame(pas); };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) {
+        const t = e.target; t.classList.add('vu');
+        // Carrousels : toutes les cartes roulent ensemble, même celles encore hors de l'écran
+        t.querySelectorAll(':scope > .roule').forEach(c => c.classList.add('vu'));
+        if (t.classList.contains('compte') && !calme) compte(t);
+        io.unobserve(t);
+      } }), { threshold: .15, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('.rv, .compte, .carrousel').forEach(el => io.observe(el));
+    }
+
+    // Signature : le crottin s'affine selon l'âge choisi (onglets accessibles au clavier)
+    const onglets = [...document.querySelectorAll('[role="tab"]')], cave = document.getElementById('cave'), gout = document.getElementById('gout');
+    const choisir = (t, focus) => {
+      onglets.forEach(o => {
+        const actif = o === t;
+        o.setAttribute('aria-selected', actif); o.tabIndex = actif ? 0 : -1;
+        document.getElementById(o.getAttribute('aria-controls')).hidden = !actif;
+      });
+      cave.dataset.stade = t.dataset.stade; gout.style.width = t.dataset.gout + '%';
+      if (focus) t.focus();
+    };
+    onglets.forEach((o, i) => {
+      o.addEventListener('click', () => choisir(o));
+      o.addEventListener('keydown', e => {
+        const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (d) { e.preventDefault(); choisir(onglets[(i + d + onglets.length) % onglets.length], true); }
+      });
+    });
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>

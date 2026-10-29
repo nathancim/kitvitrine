@@ -1620,6 +1620,63 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "89a81e192ae10453b728cf290e54c640"
+    },
+    {
+      "slug": "faisselle",
+      "title": "Faisselle",
+      "tagline": "Site vitrine pour chèvrerie fermière",
+      "description": "Une page douce et ronde pour une chèvrerie qui fabrique ses fromages de chèvre au lait cru : formes de galets, bleu cendré, vert prairie et jaune foin. En ouverture, le titre monte au-dessus d'un pré dont les collines se posent une à une, avec la chèvrerie au loin et trois chèvres qui broutent en remuant la queue. Suivent les six fromages posés comme sur un plateau (carrousel sur mobile), un crottin qui s'affine sous vos yeux quand on choisit son âge (frais, demi-sec, sec, cendré) avec une jauge de goût, le troupeau et ses chiffres qui comptent, la boutique à la ferme et les marchés de la semaine avec carte, les avis, les questions fréquentes et la commande de plateaux. Titres en Caprasimo, texte en Mulish.",
+      "univers": [
+        "terroir"
+      ],
+      "style": "Chaleureux",
+      "couleur": "bleu",
+      "direction": "organique",
+      "animations": [
+        "collines du pré qui se posent l'une après l'autre",
+        "chèvres qui broutent et remuent la queue",
+        "crottin qui s'affine selon l'âge choisi, avec jauge de goût",
+        "fromages qui roulent jusqu'à leur place au défilement",
+        "cartes en galet qui se déforment et se soulèvent au survol",
+        "chiffres du troupeau qui comptent",
+        "nuages qui dérivent"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-29",
+      "tags": [
+        "chèvrerie",
+        "fromage de chèvre",
+        "chevrier",
+        "producteur de fromage",
+        "fromagerie fermière",
+        "crottin",
+        "lait cru",
+        "vente à la ferme",
+        "marché de producteurs",
+        "ferme caprine"
+      ],
+      "sections": [
+        "Accueil : titre, pré illustré avec la chèvrerie et trois chèvres",
+        "Les six fromages en plateau (carrousel sur mobile)",
+        "L'affinage : choisir l'âge du crottin",
+        "Le troupeau et ses chiffres",
+        "Boutique à la ferme, marchés de la semaine et carte",
+        "Avis des clients en carrousel",
+        "Questions fréquentes",
+        "Commande de plateau ou visite : coordonnées et formulaire"
+      ],
+      "palette": [
+        "#2F4F7F",
+        "#E8B64C",
+        "#B7CCAB",
+        "#E3EAF1",
+        "#F5F7F1",
+        "#1F2B3A"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "a2ae407a83ce9bca7d1fe037e702fb55"
     }
   ]
 }

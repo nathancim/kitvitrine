@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face { font-family: 'Caprasimo'; src: url('fonts/caprasimo-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Mulish'; src: url('fonts/mulish-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Mulish'; src: url('fonts/mulish-latin-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'Mulish'; src: url('fonts/mulish-latin-800-normal.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-tap-highlight-color: transparent; }
+  body { font-size: 17px; line-height: 1.6; }
+  :focus-visible { outline: 3px solid rgb(var(--kv-ardoise)); outline-offset: 3px; border-radius: 10px; }
+  .bg-ardoise :focus-visible, .bg-ardoise-fonce :focus-visible { outline-color: rgb(var(--kv-foin)); }
+  summary { list-style: none; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+  [hidden] { display: none !important; }
+}
+
+@layer components {
+  /* Titres : Caprasimo, ronde et gourmande, interlignage serré */
+  .titre { @apply font-display; font-weight: 400; line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance; }
+
+  /* Boutons en galet : ils se gonflent doucement au survol */
+  .btn { @apply inline-flex min-h-[3.25rem] items-center justify-center gap-2 px-7 text-[17px] font-extrabold; border-radius: 999px; transition: background-color .3s ease, color .3s ease, transform .4s cubic-bezier(.3,1.6,.5,1), border-radius .5s ease; }
+  @media (hover: hover) { .btn:hover { transform: scale(1.04); border-radius: 42% 58% 55% 45% / 60% 50% 50% 40%; } }
+  .btn:active { transform: scale(.96); }
+
+  /* Formes organiques : chaque galet a son propre contour */
+  .galet-a { border-radius: 58% 42% 52% 48% / 46% 54% 46% 54%; }
+  .galet-b { border-radius: 44% 56% 40% 60% / 58% 42% 58% 42%; }
+  .galet-c { border-radius: 52% 48% 62% 38% / 40% 60% 40% 60%; }
+  .galet-photo { border-radius: 46% 54% 42% 58% / 52% 40% 60% 48%; }
+
+  /* Cartes des fromages : un galet coloré, qui se déforme et se soulève au survol */
+  .fromage { position: relative; border-radius: 2.75rem 2.75rem 2.75rem 2.75rem / 2.25rem 2.25rem 2.25rem 2.25rem; transition: transform .5s cubic-bezier(.3,1.4,.5,1), border-radius .7s ease, box-shadow .5s ease; }
+  @media (hover: hover) {
+    .fromage:hover { transform: translateY(-6px) rotate(-.6deg); border-radius: 3.5rem 2rem 3.25rem 2.25rem / 2.5rem 3.25rem 2rem 3rem; box-shadow: 0 22px 40px -24px rgb(var(--kv-ardoise) / .55); }
+    .fromage:hover .meule { transform: rotate(-8deg) scale(1.05); }
+  }
+  .meule { transition: transform .6s cubic-bezier(.3,1.5,.5,1); transform-origin: 50% 80%; }
+
+  .champ { @apply block w-full rounded-2xl border-2 border-ardoise/15 bg-white px-4 py-3 text-base text-encre placeholder-encre/40; transition: border-color .3s ease, box-shadow .3s ease; }
+  .champ:focus { outline: none; border-color: rgb(var(--kv-ardoise)); box-shadow: 0 0 0 4px rgb(var(--kv-ardoise) / .15); }
+  .puce span { @apply inline-flex min-h-11 cursor-pointer items-center rounded-full border-2 border-ardoise/20 bg-white px-4 text-[16px] font-bold; transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
+  .puce input:checked + span { background: rgb(var(--kv-ardoise)); border-color: rgb(var(--kv-ardoise)); color: rgb(var(--kv-lait)); }
+  .puce input:focus-visible + span { outline: 3px solid rgb(var(--kv-foin)); outline-offset: 3px; }
+
+  /* Soulignement en vaguelette qui se dessine */
+  .lien { background: linear-gradient(currentColor, currentColor) left calc(100% - 9px) / 0 2px no-repeat; transition: background-size .4s cubic-bezier(.2,1,.3,1); }
+  .lien:hover { background-size: 100% 2px; }
+
+  /* Onglets d'affinage */
+  .age { @apply flex min-h-12 flex-1 items-center justify-center whitespace-nowrap rounded-full px-2 text-center text-[16px] font-extrabold text-ardoise; transition: background-color .35s ease, color .35s ease; }
+  .age[aria-selected="true"] { background: rgb(var(--kv-ardoise)); color: rgb(var(--kv-lait)); }
+  @media (hover: hover) { .age:not([aria-selected="true"]):hover { background: rgb(var(--kv-ardoise) / .1); } }
+
+  .plus { position: relative; width: 22px; height: 22px; flex-shrink: 0; border-radius: 999px; background: rgb(var(--kv-foin)); transition: transform .4s cubic-bezier(.3,1.5,.5,1); }
+  .plus::before, .plus::after { content: ""; position: absolute; left: 6px; right: 6px; top: 10px; height: 2px; border-radius: 2px; background: rgb(var(--kv-encre)); }
+  .plus::after { transform: rotate(90deg); }
+  details[open] .plus { transform: rotate(135deg); }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .carrousel { scroll-padding-left: 1.25rem; }
+  @media (min-width: 768px) { .carrousel { scroll-padding-left: 0; } }
+}
+
+/* ===== Animations ===== */
+
+/* Apparition au défilement : visible par défaut, masqué seulement si JS est là */
+.js .rv { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,1,.3,1); }
+.js .rv.vu { opacity: 1; transform: none; }
+/* Les fromages « roulent » jusqu'à leur place */
+.js .roule { opacity: 0; transform: translateX(40px) rotate(8deg); transition: opacity .6s ease, transform .8s cubic-bezier(.25,1.3,.5,1); }
+.js .roule.vu { opacity: 1; transform: none; }
+.roule:nth-child(2) { transition-delay: .08s; } .roule:nth-child(3) { transition-delay: .16s; }
+.roule:nth-child(4) { transition-delay: .24s; } .roule:nth-child(5) { transition-delay: .32s; } .roule:nth-child(6) { transition-delay: .4s; }
+
+/* Héros : le titre monte, puis les collines du pré se posent l'une après l'autre */
+.monte { animation: monte .8s cubic-bezier(.2,1,.3,1) both; }
+.monte-2 { animation-delay: .12s; } .monte-3 { animation-delay: .24s; }
+@keyframes monte { from { opacity: 0; transform: translateY(22px); } }
+.colline { animation: pose .8s cubic-bezier(.25,1.25,.5,1) both; }
+.colline-1 { animation-delay: .15s; } .colline-2 { animation-delay: .3s; } .colline-3 { animation-delay: .45s; }
+@keyframes pose { from { transform: translateY(70px); } }
+.chevre-entree { animation: entree .7s cubic-bezier(.25,1.4,.5,1) both; animation-delay: .7s; }
+.chevre-entree:nth-of-type(2) { animation-delay: .82s; } .chevre-entree:nth-of-type(3) { animation-delay: .94s; }
+@keyframes entree { from { opacity: 0; transform: translateY(18px); } }
+
+/* Les chèvres broutent et remuent la queue */
+.chevre .tete { transform-box: fill-box; transform-origin: 85% 90%; animation: broute 5.5s ease-in-out infinite; }
+.chevre .queue { transform-box: fill-box; transform-origin: 0% 100%; animation: queue 1.6s ease-in-out infinite; }
+.chevre-b .tete { animation-delay: -2s; animation-duration: 6.5s; } .chevre-b .queue { animation-delay: -.6s; }
+.chevre-c .tete { animation-delay: -3.6s; } .chevre-c .queue { animation-delay: -1.1s; animation-duration: 2s; }
+@keyframes broute { 0%, 38%, 100% { transform: rotate(0); } 48%, 88% { transform: rotate(-32deg); } 60%, 74% { transform: rotate(-28deg); } }
+@keyframes queue { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-22deg); } }
+.nuage { animation: derive 26s ease-in-out infinite alternate; }
+@keyframes derive { to { transform: translateX(46px); } }
+
+/* Signature : le crottin s'affine (taille, croûte, fleur bleue, cendre) */
+.crottin { transform-box: fill-box; transform-origin: 50% 100%; transition: transform .8s cubic-bezier(.3,1.3,.5,1); }
+.crottin .croute { transition: fill .8s ease; }
+.crottin .flore, .crottin .cendre, .crottin .fissure { transition: opacity .8s ease; opacity: 0; }
+[data-stade="0"] .crottin { transform: scale(1); }
+[data-stade="1"] .crottin { transform: scale(.9, .88); }
+[data-stade="2"] .crottin { transform: scale(.8, .76); }
+[data-stade="3"] .crottin { transform: scale(.86, .84); }
+[data-stade="0"] .croute-cote { fill: #FBFBF6; } [data-stade="0"] .croute-haut { fill: #FFFFFF; }
+[data-stade="1"] .croute-cote { fill: #F1E8CF; } [data-stade="1"] .croute-haut { fill: #F7F0DC; }
+[data-stade="2"] .croute-cote { fill: #DFC793; } [data-stade="2"] .croute-haut { fill: #E9D6A8; }
+[data-stade="3"] .croute-cote { fill: #6D7684; } [data-stade="3"] .croute-haut { fill: #858E9B; }
+[data-stade="1"] .flore-1 { opacity: .8; }
+[data-stade="2"] .flore-1, [data-stade="2"] .flore-2, [data-stade="2"] .fissure { opacity: 1; }
+[data-stade="3"] .cendre { opacity: 1; }
+.jauge-remplie { transition: width .8s cubic-bezier(.3,1.2,.5,1); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .rv, .js .roule { opacity: 1; transform: none; }
+}
