@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lucie Garnier, orthophoniste à Rennes — Bilans et rééducation, enfants et adultes</title>
+  <meta name="description" content="Cabinet d'orthophonie de Lucie Garnier à Rennes : bilans et rééducation du langage oral et écrit (dyslexie, dysorthographie), du bégaiement, de la voix et de la déglutition, pour les enfants, les adolescents, les adultes et les seniors. Sur prescription médicale.">
+  <meta name="theme-color" content="#FBF9F3">
+  <link rel="preload" href="assets/fonts/lexend-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>if ('IntersectionObserver' in window) document.documentElement.classList.add('js');</script>
+  <meta name="kv-couleurs" content="--kv-marge=Couleur principale (marge rouge)|--kv-marge-fonce;--kv-encre=Encre (texte et titres)|--kv-encre-fonce;--kv-fluo=Surligneur;--kv-ligne=Lignes du cahier;--kv-calque=Fond des sections;--kv-papier=Fond de page">
+</head>
+<body class="bg-papier font-sans text-encre antialiased pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
+<!-- Bandeau ajouté uniquement sur la démo Kit Vitrine (en haut, non fixé : ne gêne pas la barre d'action mobile du template) -->
+<div data-kv-demo style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;background:#161B26;color:#fff;font:500 14px/1.3 system-ui,sans-serif">
+  <span style="min-width:0">Démo : <strong>Syllabe</strong> · 29 €</span>
+  <span style="display:flex;gap:8px">
+    <a href="#edition" style="color:#fff;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)">Essayer l'édition</a>
+    <a href="/templates/syllabe/" style="background:#F0BE3D;color:#161B26;padding:8px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;white-space:nowrap;font-weight:600">Voir l'offre</a>
+  </span>
+</div>
+
+
+  <!-- ===== Navigation : le nom à gauche, les rubriques en intercalaires de classeur ===== -->
+  <header class="sticky top-0 z-50 border-b-2 border-encre bg-papier">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:h-[4.75rem] md:items-end md:px-6">
+      <a href="#accueil" class="flex min-h-11 items-center gap-3 md:self-center">
+        <svg data-kv-logo="Logo" class="h-11 w-11 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M6 8h36a3 3 0 0 1 3 3v20a3 3 0 0 1-3 3H20l-9 8v-8H6a3 3 0 0 1-3-3V11a3 3 0 0 1 3-3z" class="fill-encre"/>
+          <path d="M10 22q4 6 8 0M20 22q4 6 8 0" fill="none" stroke="#FBF9F3" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M30 22q4 6 8 0" fill="none" class="stroke-fluo" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <span class="flex flex-col leading-tight">
+          <span class="font-display text-[18px] font-extrabold tracking-tight">Lucie Garnier</span>
+          <span class="text-[15px] text-encre/75">Orthophoniste à Rennes</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-end gap-1.5 md:flex" aria-label="Navigation principale">
+        <a href="#pour-qui" class="intercalaire bg-fluo">Pour qui&nbsp;?</a>
+        <a href="#seance" class="intercalaire bg-calque">En séance</a>
+        <a href="#deroule" class="intercalaire bg-ligne/60">Le déroulé</a>
+        <a href="#avis" class="intercalaire bg-marge/15">Avis</a>
+        <a href="#contact" class="intercalaire mb-0 bg-marge text-papier">Demander un bilan</a>
+      </nav>
+
+      <button id="menuBtn" type="button" class="inline-flex min-h-11 items-center gap-2 rounded-lg border-2 border-encre px-4 font-display text-[16px] font-bold md:hidden" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg class="h-4 w-5" viewBox="0 0 20 16" aria-hidden="true"><path d="M1 3h18M1 8h18M1 13h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span class="txt">Menu</span>
+      </button>
+    </div>
+
+    <nav id="menu" class="hidden flex-col gap-2 border-t-2 border-encre bg-calque px-4 pb-5 pt-4 md:hidden" aria-label="Navigation mobile">
+      <a href="#pour-qui" class="flex min-h-12 items-center rounded-lg border-2 border-encre bg-fluo px-4 font-display text-xl font-bold">Pour qui&nbsp;?</a>
+      <a href="#seance" class="flex min-h-12 items-center rounded-lg border-2 border-encre bg-papier px-4 font-display text-xl font-bold">En séance</a>
+      <a href="#deroule" class="flex min-h-12 items-center rounded-lg border-2 border-encre bg-ligne/60 px-4 font-display text-xl font-bold">Le déroulé</a>
+      <a href="#avis" class="flex min-h-12 items-center rounded-lg border-2 border-encre bg-marge/15 px-4 font-display text-xl font-bold">Avis</a>
+      <a href="#contact" class="btn btn-plein mt-2 w-full">Demander un bilan</a>
+    </nav>
+  </header>
+
+  <main id="accueil">
+    <!-- ===== Héros : une page de cahier, avec sa marge rouge et la date écrite à la main ===== -->
+    <section class="seyes relative overflow-x-clip">
+      <div class="relative mx-auto grid max-w-6xl gap-8 px-5 pb-12 pl-12 pt-7 md:grid-cols-12 md:gap-10 md:pb-24 md:pl-28 md:pr-6 md:pt-16">
+        <span class="trait-marge trace-marge left-7 md:left-16" aria-hidden="true"></span>
+        <div class="md:col-span-7">
+          <p class="main ecrit text-[17px] md:text-[20px]"><span id="date">Lundi 2 novembre</span></p>
+          <h1 class="titre titre-mots mt-3 text-[2.55rem] sm:text-6xl md:text-[4.6rem]">Retrouver le plaisir de parler, de lire et d'écrire.</h1>
+          <p class="mt-4 max-w-xl text-[17px] md:text-lg">Bilans et rééducation du langage, de la voix et de la déglutition<span class="hidden sm:inline">, à tout âge</span>. Pour les tout-petits qui cherchent leurs mots comme pour les adultes après un AVC.</p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a href="#contact" class="btn btn-plein w-full sm:w-auto">Demander un bilan</a>
+            <a href="tel:+33600000000" class="btn btn-trait w-full sm:w-auto">Appeler le cabinet</a>
+          </div>
+          <p class="mt-5 hidden max-w-md text-[16px] text-encre/80 sm:block">Sur prescription médicale. Les séances sont remboursées par l'Assurance maladie et votre mutuelle.</p>
+        </div>
+
+        <figure class="pose relative mx-auto self-start w-[74%] max-w-[300px] rotate-[2.2deg] bg-white p-3 pb-2 shadow-[0_18px_30px_-18px_rgba(28,42,94,.55)] md:col-span-5 md:mt-6 md:w-full md:max-w-none md:p-4">
+          <span class="scotch bg-fluo/60" aria-hidden="true"></span>
+          <div data-kv-image="Photo du cabinet ou de vous en séance" class="relative aspect-[5/4] overflow-hidden bg-calque">
+            <svg class="absolute inset-0 h-full w-full" viewBox="0 0 320 256" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Le cabinet : une table avec des cubes de lettres, un livre ouvert et un miroir, une étagère de livres et une fenêtre lumineuse">
+              <rect width="320" height="256" fill="#E3EBF6"/>
+              <rect y="214" width="320" height="42" fill="#CFDAEA"/>
+              <!-- Fenêtre -->
+              <rect x="198" y="24" width="92" height="98" rx="4" fill="#FFFFFF" stroke="#1C2A5E" stroke-width="4"/>
+              <rect x="204" y="30" width="80" height="86" fill="#F7F1C9"/>
+              <circle cx="262" cy="56" r="13" class="fill-fluo"/>
+              <path d="M244 30v86M204 73h80" stroke="#1C2A5E" stroke-width="4"/>
+              <!-- Étagère et livres -->
+              <rect x="22" y="92" width="132" height="7" rx="2" fill="#1C2A5E"/>
+              <rect x="30" y="52" width="13" height="40" rx="2" class="fill-marge"/>
+              <rect x="45" y="58" width="11" height="34" rx="2" fill="#1C2A5E"/>
+              <rect x="58" y="48" width="14" height="44" rx="2" class="fill-fluo"/>
+              <rect x="74" y="60" width="10" height="32" rx="2" fill="#A7BEE2"/>
+              <path d="M88 92l14-34 9 4-13 30z" class="fill-marge" opacity=".7"/>
+              <path d="M128 92c-6-10-4-22 6-26 8 6 8 18 2 26z" fill="#5E8C6A"/><rect x="124" y="82" width="18" height="12" rx="2" fill="#FFFFFF" stroke="#1C2A5E" stroke-width="2"/>
+              <!-- Table -->
+              <rect x="14" y="170" width="292" height="12" rx="3" fill="#D9A86C"/>
+              <path d="M30 182v50M290 182v50" stroke="#B9874E" stroke-width="8" stroke-linecap="round"/>
+              <!-- Cubes de lettres -->
+              <g font-family="Lexend, sans-serif" font-weight="800" text-anchor="middle">
+                <rect x="34" y="136" width="34" height="34" rx="4" class="fill-marge"/><text x="51" y="161" font-size="22" fill="#FBF9F3">A</text>
+                <rect x="72" y="136" width="34" height="34" rx="4" class="fill-fluo"/><text x="89" y="161" font-size="22" fill="#1C2A5E">b</text>
+                <rect x="53" y="102" width="34" height="34" rx="4" fill="#1C2A5E" transform="rotate(-6 70 119)"/><text x="70" y="127" font-size="22" fill="#FBF9F3" transform="rotate(-6 70 119)">o</text>
+              </g>
+              <!-- Livre ouvert -->
+              <path d="M124 168l40-8v-34l-40 8z" fill="#FFFFFF" stroke="#1C2A5E" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M204 168l-40-8v-34l40 8z" fill="#FFFFFF" stroke="#1C2A5E" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M132 146l24-5M132 154l24-5M172 141l24 5M172 149l18 4" stroke="#A7BEE2" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="146" cy="138" r="5" class="fill-marge"/>
+              <!-- Miroir d'articulation -->
+              <path d="M252 168l6-26h8l6 26z" fill="#1C2A5E"/>
+              <ellipse cx="262" cy="122" rx="22" ry="27" fill="#FFFFFF" stroke="#1C2A5E" stroke-width="4"/>
+              <path d="M250 112q6-8 14-9" stroke="#A7BEE2" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- Bulle de parole -->
+              <path d="M108 30h62a8 8 0 0 1 8 8v20a8 8 0 0 1-8 8h-34l-12 10v-10h-16a8 8 0 0 1-8-8V38a8 8 0 0 1 8-8z" fill="#FFFFFF" stroke="#1C2A5E" stroke-width="3"/>
+              <path d="M114 48q7 9 14 0M132 48q7 9 14 0M150 48q7 9 14 0" fill="none" stroke-width="3" stroke-linecap="round" class="stroke-marge"/>
+            </svg>
+          </div>
+          <figcaption class="main px-1 pb-1 pt-2 text-center text-[15px] md:text-[16px]">Le cabinet, rue des Tanneurs</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Pour qui ? Des intercalaires, un par âge ===== -->
+    <section id="pour-qui" class="bg-calque py-14 md:py-24">
+      <div class="mx-auto max-w-5xl px-5 md:px-6">
+        <div class="rv max-w-2xl">
+          <h2 class="titre text-4xl sm:text-5xl md:text-6xl">De 3 à 99 ans, chacun son rythme.</h2>
+          <p class="mt-3 text-[17px] md:text-lg">Choisissez un âge pour voir ce que l'on travaille ensemble.</p>
+        </div>
+
+        <div class="rv mt-8 md:mt-12">
+          <div class="flex gap-1.5 px-1" role="tablist" aria-label="Âge du patient">
+            <button type="button" class="onglet bg-fluo" role="tab" id="t-enfants" aria-controls="p-enfants" aria-selected="true">Enfants</button>
+            <button type="button" class="onglet bg-marge/20" role="tab" id="t-ados" aria-controls="p-ados" aria-selected="false" tabindex="-1">Ados</button>
+            <button type="button" class="onglet bg-ligne/60" role="tab" id="t-adultes" aria-controls="p-adultes" aria-selected="false" tabindex="-1">Adultes</button>
+            <button type="button" class="onglet bg-white/70" role="tab" id="t-seniors" aria-controls="p-seniors" aria-selected="false" tabindex="-1">Seniors</button>
+          </div>
+          <div class="relative rounded-b-xl rounded-tr-xl border-2 border-encre bg-papier p-5 shadow-[6px_6px_0_rgb(var(--kv-encre))] sm:p-8 md:min-h-[16rem] md:p-10">
+            <div id="p-enfants" role="tabpanel" aria-labelledby="t-enfants" class="grid gap-5 md:grid-cols-5 md:gap-10">
+              <div class="md:col-span-2">
+                <h3 class="font-display text-2xl font-bold md:text-[1.7rem]">Dès la maternelle</h3>
+                <p class="mt-2 text-[16px] md:text-[17px]">Un enfant qui parle peu à 3 ans, que l'on comprend mal, ou qui peine à entrer dans la lecture au CP&nbsp;: plus on agit tôt, plus c'est simple.</p>
+              </div>
+              <ul class="space-y-2.5 text-[16px] md:col-span-3 md:text-[17px]">
+                <li class="coche">Retard de parole et de langage</li>
+                <li class="coche">Sons mal prononcés, «&nbsp;cheveu sur la langue&nbsp;»</li>
+                <li class="coche">Lecture et orthographe&nbsp;: dyslexie, dysorthographie</li>
+                <li class="coche">Bégaiement du jeune enfant</li>
+                <li class="coche">Calcul et raisonnement&nbsp;: dyscalculie</li>
+              </ul>
+            </div>
+            <div id="p-ados" role="tabpanel" aria-labelledby="t-ados" class="grid gap-5 md:grid-cols-5 md:gap-10" hidden>
+              <div class="md:col-span-2">
+                <h3 class="font-display text-2xl font-bold md:text-[1.7rem]">Au collège et au lycée</h3>
+                <p class="mt-2 text-[16px] md:text-[17px]">On consolide l'écrit, on trouve des stratégies pour les devoirs, et le bilan appuie la demande d'aménagements aux examens.</p>
+              </div>
+              <ul class="space-y-2.5 text-[16px] md:col-span-3 md:text-[17px]">
+                <li class="coche">Dyslexie et dysorthographie qui persistent</li>
+                <li class="coche">Tiers-temps et aménagements au brevet et au bac</li>
+                <li class="coche">Bégaiement, prise de parole à l'oral</li>
+                <li class="coche">Déglutition atypique, avant ou pendant l'orthodontie</li>
+              </ul>
+            </div>
+            <div id="p-adultes" role="tabpanel" aria-labelledby="t-adultes" class="grid gap-5 md:grid-cols-5 md:gap-10" hidden>
+              <div class="md:col-span-2">
+                <h3 class="font-display text-2xl font-bold md:text-[1.7rem]">Pour les adultes</h3>
+                <p class="mt-2 text-[16px] md:text-[17px]">Votre voix est votre outil de travail, ou un accident a bousculé la parole&nbsp;: on reconstruit pas à pas.</p>
+              </div>
+              <ul class="space-y-2.5 text-[16px] md:col-span-3 md:text-[17px]">
+                <li class="coche">Voix fatiguée ou enrouée (enseignants, chanteurs, commerciaux)</li>
+                <li class="coche">Langage après un AVC ou un traumatisme crânien</li>
+                <li class="coche">Bégaiement à l'âge adulte</li>
+                <li class="coche">Difficultés pour avaler</li>
+              </ul>
+            </div>
+            <div id="p-seniors" role="tabpanel" aria-labelledby="t-seniors" class="grid gap-5 md:grid-cols-5 md:gap-10" hidden>
+              <div class="md:col-span-2">
+                <h3 class="font-display text-2xl font-bold md:text-[1.7rem]">Bien vieillir avec les mots</h3>
+                <p class="mt-2 text-[16px] md:text-[17px]">Garder sa voix, ses mots et le plaisir de la conversation, en lien avec le médecin et la famille. Visites à domicile si besoin.</p>
+              </div>
+              <ul class="space-y-2.5 text-[16px] md:col-span-3 md:text-[17px]">
+                <li class="coche">Mots qui échappent, mémoire qui flanche</li>
+                <li class="coche">Voix qui faiblit (maladie de Parkinson)</li>
+                <li class="coche">Fausses routes en mangeant ou en buvant</li>
+                <li class="coche">Lecture labiale pour mieux suivre malgré la baisse d'audition</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== En séance : signature, les arcs de syllabes ===== -->
+    <section id="seance" class="overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl items-center gap-8 px-5 md:grid-cols-12 md:gap-12 md:px-6">
+        <div class="rv md:col-span-5">
+          <h2 class="titre text-4xl sm:text-5xl md:text-6xl">Une syllabe après l'autre.</h2>
+          <p class="mt-4 text-[17px] md:text-lg">Couper un mot, colorer ses syllabes, tracer un arc sous chacune&nbsp;: <span class="surligne">des gestes simples pour entendre et voir comment le mot est construit.</span></p>
+          <p class="mt-3 text-[16px] text-encre/80 md:text-[17px]">Touchez un mot pour essayer, comme en séance.</p>
+        </div>
+
+        <div class="rv md:col-span-7">
+          <div id="scene" class="scene seyes relative overflow-hidden rounded-xl border-2 border-encre py-8 pl-10 pr-4 shadow-[6px_6px_0_rgb(var(--kv-ligne))] sm:pl-16 md:py-12" style="--fin:1.7s">
+            <span class="trait-marge left-6 sm:left-10" aria-hidden="true"></span>
+            <div id="sceneMot" aria-live="polite">
+              <p class="mot text-[2.3rem] sm:text-6xl md:text-[4.4rem]" aria-label="papillon : pa, pi, llon"><span class="syl" style="--i:0">pa</span><span class="syl" style="--i:1">pi</span><span class="syl" style="--i:2">llon</span></p>
+              <p class="bravo main mt-8 text-[22px] text-marge md:text-[26px]">Bravo&nbsp;!</p>
+            </div>
+          </div>
+          <div class="mt-5 flex flex-wrap gap-2" role="group" aria-label="Choisir un mot">
+            <button type="button" class="chip" data-mot="pa|pi|llon" aria-pressed="true">papillon</button>
+            <button type="button" class="chip" data-mot="cro|co|dile" aria-pressed="false">crocodile</button>
+            <button type="button" class="chip" data-mot="lo|co|mo|tive" aria-pressed="false">locomotive</button>
+            <button type="button" class="chip" data-mot="cho|co|lat" aria-pressed="false">chocolat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Le déroulé : de l'ordonnance aux séances ===== -->
+    <section id="deroule" class="overflow-x-clip bg-encre py-14 text-papier md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-6">
+        <h2 class="titre rv max-w-2xl text-4xl sm:text-5xl md:text-6xl">Du premier appel aux séances.</h2>
+      </div>
+      <div class="rv relative md:mx-auto md:mt-16 md:max-w-6xl md:px-6">
+        <svg class="chemin pointer-events-none absolute inset-x-6 -top-11 hidden h-10 md:block" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M10 28 C120 4 210 36 330 18 S560 2 670 22 S880 34 985 12" pathLength="1" fill="none" class="stroke-marge" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <ol class="carrousel no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 md:mt-0 md:grid md:grid-cols-4 md:gap-6 md:overflow-visible md:px-0">
+          <li class="w-[80%] shrink-0 snap-start rounded-xl border-2 border-papier/25 p-6 md:w-auto">
+            <p class="main text-[30px] leading-none text-fluo">1.</p>
+            <h3 class="mt-4 font-display text-xl font-bold">L'ordonnance</h3>
+            <p class="mt-2 text-[16px] text-papier/85">Votre médecin prescrit un «&nbsp;bilan orthophonique et rééducation si nécessaire&nbsp;». Gardez-la pour le premier rendez-vous.</p>
+          </li>
+          <li class="w-[80%] shrink-0 snap-start rounded-xl border-2 border-papier/25 p-6 md:mt-8 md:w-auto">
+            <p class="main text-[30px] leading-none text-fluo">2.</p>
+            <h3 class="mt-4 font-display text-xl font-bold">Le bilan</h3>
+            <p class="mt-2 text-[16px] text-papier/85">Une heure à une heure et demie d'échanges et d'épreuves. Le compte rendu part chez le médecin sous quinze jours.</p>
+          </li>
+          <li class="w-[80%] shrink-0 snap-start rounded-xl border-2 border-papier/25 p-6 md:w-auto">
+            <p class="main text-[30px] leading-none text-fluo">3.</p>
+            <h3 class="mt-4 font-display text-xl font-bold">Les séances</h3>
+            <p class="mt-2 text-[16px] text-papier/85">Trente à quarante-cinq minutes, une ou deux fois par semaine, avec un petit jeu à refaire à la maison.</p>
+          </li>
+          <li class="w-[80%] shrink-0 snap-start rounded-xl border-2 border-papier/25 p-6 md:mt-8 md:w-auto">
+            <p class="main text-[30px] leading-none text-fluo">4.</p>
+            <h3 class="mt-4 font-display text-xl font-bold">Le point d'étape</h3>
+            <p class="mt-2 text-[16px] text-papier/85">On mesure les progrès ensemble, avec vous et le médecin, et on décide de la suite ou de l'arrêt.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="mx-auto max-w-6xl px-5 md:px-6">
+        <dl class="rv mt-10 grid grid-cols-3 gap-3 border-t-2 border-papier/20 pt-8 md:mt-16 md:gap-8">
+          <div><dt class="sr-only">Durée d'une séance</dt><dd class="font-display text-4xl font-extrabold text-fluo md:text-6xl"><span class="compte" data-n="30">30</span><span class="text-2xl md:text-4xl"> min</span></dd><dd class="mt-1 text-[15px] text-papier/80 md:text-[17px]">par séance</dd></div>
+          <div><dt class="sr-only">Part remboursée par l'Assurance maladie</dt><dd class="font-display text-4xl font-extrabold text-fluo md:text-6xl"><span class="compte" data-n="60">60</span><span class="text-2xl md:text-4xl">&nbsp;%</span></dd><dd class="mt-1 text-[15px] text-papier/80 md:text-[17px]">remboursés, le reste par la mutuelle</dd></div>
+          <div><dt class="sr-only">Délai pour un bilan</dt><dd class="font-display text-4xl font-extrabold text-fluo md:text-6xl"><span class="compte" data-n="4">4</span><span class="text-2xl md:text-4xl"> mois</span></dd><dd class="mt-1 text-[15px] text-papier/80 md:text-[17px]">d'attente pour un bilan</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Avis : des post-it collés sur la page ===== -->
+    <section id="avis" class="seyes overflow-x-clip py-14 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 md:px-6">
+        <h2 class="titre rv text-4xl sm:text-5xl md:text-6xl">Ils en parlent mieux que nous.</h2>
+      </div>
+      <ul class="carrousel no-scrollbar mt-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-6 pt-6 md:mx-auto md:mt-10 md:grid md:max-w-6xl md:grid-cols-3 md:gap-8 md:overflow-visible md:px-6">
+        <li class="postit w-[80%] shrink-0 snap-start rounded-sm bg-fluo px-6 pb-6 pt-8 md:w-auto">
+          <span class="scotch" aria-hidden="true"></span>
+          <blockquote class="text-[17px]">«&nbsp;Léo ne voulait plus ouvrir un livre. Après un an, il lit des bandes dessinées tout seul le soir.&nbsp;»</blockquote>
+          <p class="main mt-4 text-[16px]">Aurélie, maman de Léo</p>
+        </li>
+        <li class="postit w-[80%] shrink-0 snap-start rounded-sm bg-[#F6D3CC] px-6 pb-6 pt-8 md:mt-6 md:w-auto">
+          <span class="scotch" aria-hidden="true"></span>
+          <blockquote class="text-[17px]">«&nbsp;Enseignant, je finissais mes journées sans voix. J'ai appris à respirer et à poser ma voix. Plus d'extinction depuis la rentrée.&nbsp;»</blockquote>
+          <p class="main mt-4 text-[16px]">Thomas</p>
+        </li>
+        <li class="postit w-[80%] shrink-0 snap-start rounded-sm bg-white px-6 pb-6 pt-8 md:w-auto">
+          <span class="scotch" aria-hidden="true"></span>
+          <blockquote class="text-[17px]">«&nbsp;Après l'AVC de mon mari, elle venait à la maison. Il a retrouvé ses mots petit à petit, avec beaucoup de patience.&nbsp;»</blockquote>
+          <p class="main mt-4 text-[16px]">Monique</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Questions fréquentes ===== -->
+    <section id="faq" class="py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl gap-6 px-5 md:grid-cols-12 md:gap-12 md:px-6">
+        <h2 class="titre rv text-4xl sm:text-5xl md:col-span-4 md:text-6xl">Vos questions</h2>
+        <div class="divide-y-2 divide-encre/15 border-y-2 border-encre/15 md:col-span-8">
+          <details>
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-[17px] font-bold">Faut-il une ordonnance&nbsp;?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-5 text-[16px]">Oui, de votre médecin traitant, du pédiatre ou d'un spécialiste. Sans ordonnance, les séances ne sont pas remboursées.</p>
+          </details>
+          <details>
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-[17px] font-bold">Combien de temps dure une rééducation&nbsp;?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-5 text-[16px]">Quelques mois pour un son mal prononcé, souvent plus d'un an pour une dyslexie. On en parle franchement dès le bilan.</p>
+          </details>
+          <details>
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-[17px] font-bold">Venez-vous à domicile&nbsp;?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-5 text-[16px]">Oui, dans Rennes, pour les patients qui ne peuvent pas se déplacer, si l'ordonnance le précise.</p>
+          </details>
+          <details>
+            <summary class="flex min-h-11 items-center justify-between gap-4 py-4 font-display text-[17px] font-bold">Que se passe-t-il pendant l'attente&nbsp;?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-5 text-[16px]">Je vous rappelle sous une semaine pour faire le point. Les situations urgentes passent en priorité&nbsp;: bégaiement d'un jeune enfant, AVC récent, difficultés pour avaler.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact : demande de bilan ===== -->
+    <section id="contact" class="bg-calque py-14 md:py-24">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-12 md:gap-12 md:px-6">
+        <div class="rv md:col-span-5">
+          <h2 class="titre text-4xl sm:text-5xl md:text-6xl">Demander un bilan</h2>
+          <p class="mt-3 text-[17px]">Laissez vos coordonnées&nbsp;: je vous rappelle pour fixer le rendez-vous ou vous inscrire sur la liste d'attente.</p>
+          <ul class="mt-4 space-y-1 text-[17px]">
+            <li><a href="tel:+33600000000" class="lien inline-flex min-h-11 items-center font-display font-bold">06 00 00 00 00</a></li>
+            <li><a href="mailto:contact@exemple.fr" class="lien inline-flex min-h-11 items-center font-display font-bold">contact@exemple.fr</a></li>
+          </ul>
+          <p class="mt-4 font-display text-[16px] font-medium">14 rue des Tanneurs, 35000 Rennes. Rez-de-chaussée accessible en fauteuil.</p>
+          <dl class="mt-3 space-y-1 font-display text-[16px] font-medium">
+            <div class="flex justify-between gap-4 border-b border-encre/15 py-1"><dt class="font-bold">Lundi, mardi, jeudi</dt><dd>8 h 30 – 19 h</dd></div>
+            <div class="flex justify-between gap-4 border-b border-encre/15 py-1"><dt class="font-bold">Mercredi</dt><dd>8 h 30 – 12 h 30</dd></div>
+            <div class="flex justify-between gap-4 py-1"><dt class="font-bold">Vendredi</dt><dd>8 h 30 – 16 h</dd></div>
+          </dl>
+          <!-- Carte : l'adresse se change en mode édition («&nbsp;Modifier l'adresse&nbsp;») ou dans data-kv-map -->
+          <div data-kv-map="14 rue des Tanneurs, 35000 Rennes" class="mt-6 md:h-56 rounded-xl border-2 border-encre overflow-hidden bg-papier text-encre"></div>
+        </div>
+
+        <!--
+          Formulaire de contact : il n'envoie rien tant qu'il n'est pas relié à un service.
+          - Formspree : remplacez action="#" par l'adresse fournie (https://formspree.io/f/xxxx).
+          - Netlify Forms : ajoutez l'attribut data-netlify="true" sur la balise <form>.
+          - Sinon : action="mailto:contact@exemple.fr" (ouvre la messagerie du visiteur).
+        -->
+        <form class="rv grid self-start content-start gap-5 rounded-xl border-2 border-encre bg-papier p-5 shadow-[6px_6px_0_rgb(var(--kv-encre))] sm:grid-cols-2 sm:p-8 md:col-span-7" action="#" method="post">
+          <fieldset class="sm:col-span-2">
+            <legend class="text-[15px] font-bold">Le bilan concerne</legend>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <label class="puce"><input type="radio" name="patient" value="Enfant" class="sr-only" checked><span>Un enfant</span></label>
+              <label class="puce"><input type="radio" name="patient" value="Adolescent" class="sr-only"><span>Un ado</span></label>
+              <label class="puce"><input type="radio" name="patient" value="Adulte" class="sr-only"><span>Un adulte</span></label>
+            </div>
+          </fieldset>
+          <label class="block"><span class="text-[15px] font-bold">Votre prénom et nom</span>
+            <input type="text" name="nom" autocomplete="name" class="champ mt-1.5" required>
+          </label>
+          <label class="block"><span class="text-[15px] font-bold">Téléphone</span>
+            <input type="tel" name="telephone" autocomplete="tel" class="champ mt-1.5" required>
+          </label>
+          <label class="block sm:col-span-2"><span class="text-[15px] font-bold">En quelques mots</span>
+            <textarea name="message" rows="3" class="champ mt-1.5" placeholder="Ex. : mon fils de 7 ans, en CE1, confond les lettres ; nous avons l'ordonnance."></textarea>
+          </label>
+          <label class="flex min-h-11 items-center gap-3 text-[16px] sm:col-span-2"><input type="checkbox" name="ordonnance" class="h-5 w-5 shrink-0 accent-[rgb(var(--kv-marge))]"><span>J'ai déjà l'ordonnance du médecin</span></label>
+          <button type="submit" class="btn btn-plein w-full sm:col-span-2">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-2 border-encre bg-papier font-display text-[15px] font-medium">
+    <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-8 sm:flex-row sm:items-center sm:justify-between md:px-6">
+      <p><span class="font-display font-bold">Lucie Garnier, orthophoniste</span> <span class="block text-encre/75 sm:ml-2 sm:inline">Diplômée en 2012, conventionnée</span></p>
+      <p>© 2026 <a href="#" class="inline-flex min-h-11 items-center underline underline-offset-4">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <!-- ===== Barre d'action mobile ===== -->
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-[auto_1fr] gap-3 border-t-2 border-encre bg-papier px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
+    <a href="tel:+33600000000" class="btn btn-trait !px-5">Appeler</a>
+    <a href="#contact" class="btn btn-plein">Demander un bilan</a>
+  </div>
+
+  <script>
+    const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile déroulant
+    const b = document.getElementById('menuBtn'), m = document.getElementById('menu');
+    const setMenu = open => {
+      m.classList.toggle('hidden', !open); m.classList.toggle('flex', open);
+      b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      b.querySelector('.txt').textContent = open ? 'Fermer' : 'Menu';
+    };
+    b.addEventListener('click', () => setMenu(m.classList.contains('hidden')));
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.classList.contains('hidden')) { setMenu(false); b.focus(); } });
+
+    // La date du jour, écrite en haut de la page comme dans un cahier
+    const d = new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+    document.getElementById('date').textContent = d.charAt(0).toUpperCase() + d.slice(1);
+
+    // Titre qui arrive mot par mot
+    const h1 = document.querySelector('.titre-mots');
+    if (!calme && document.documentElement.classList.contains('js')) {
+      h1.innerHTML = h1.textContent.trim().split(/\s+/).map((w, i) => `<span class="m" style="--i:${i}">${w}</span>`).join(' ');
+    }
+
+    // Apparition au défilement, chiffres qui comptent, arcs de syllabes
+    const scene = document.getElementById('scene');
+    const compte = el => { const n = +el.dataset.n, t0 = performance.now(), dur = 800; const pas = t => { const p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(pas); }; requestAnimationFrame(pas); };
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) {
+        const t = e.target; t.classList.add('vu');
+        if (t.classList.contains('compte') && !calme) compte(t);
+        if (t === scene) scene.classList.add('joue');
+        io.unobserve(t);
+      } }), { threshold: .2, rootMargin: '0px 0px -30px 0px' });
+      document.querySelectorAll('.rv, .compte, #scene').forEach(el => io.observe(el));
+    }
+
+    // Signature : toucher un mot le découpe en syllabes, les arcs se tracent puis «&nbsp;Bravo !&nbsp;» s'écrit
+    const zone = document.getElementById('sceneMot'), chips = [...document.querySelectorAll('.chip')];
+    chips.forEach(c => c.addEventListener('click', () => {
+      chips.forEach(x => x.setAttribute('aria-pressed', x === c));
+      const syl = c.dataset.mot.split('|');
+      scene.classList.remove('joue');
+      scene.style.setProperty('--fin', (syl.length * .42 + .5) + 's');
+      zone.innerHTML = `<p class="mot text-[2.3rem] sm:text-6xl md:text-[4.4rem]" aria-label="${c.textContent} : ${syl.join(', ')}">${syl.map((s, i) => `<span class="syl" style="--i:${i}">${s}</span>`).join('')}</p><p class="bravo main mt-8 text-[22px] text-marge md:text-[26px]">Bravo&nbsp;!</p>`;
+      void scene.offsetWidth;
+      requestAnimationFrame(() => scene.classList.add('joue'));
+    }));
+
+    // Intercalaires «&nbsp;Pour qui ?&nbsp;» : onglets accessibles au clavier, la page tourne
+    const onglets = [...document.querySelectorAll('[role="tab"]')];
+    const choisir = (t, focus) => {
+      onglets.forEach(o => {
+        const actif = o === t, p = document.getElementById(o.getAttribute('aria-controls'));
+        o.setAttribute('aria-selected', actif); o.tabIndex = actif ? 0 : -1; p.hidden = !actif;
+        if (actif && !calme) { p.classList.remove('page-tourne'); void p.offsetWidth; p.classList.add('page-tourne'); }
+      });
+      if (focus) t.focus();
+    };
+    onglets.forEach((o, i) => {
+      o.addEventListener('click', () => choisir(o));
+      o.addEventListener('keydown', e => {
+        const s = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (s) { e.preventDefault(); choisir(onglets[(i + s + onglets.length) % onglets.length], true); }
+      });
+    });
+  </script>
+<script src="assets/kv-edition.js" defer></script>
+</body>
+</html>

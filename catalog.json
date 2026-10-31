@@ -1677,6 +1677,63 @@
       "shopify_url": "",
       "shopify_product_id": "",
       "dl_token": "a2ae407a83ce9bca7d1fe037e702fb55"
+    },
+    {
+      "slug": "syllabe",
+      "title": "Syllabe",
+      "tagline": "Site vitrine pour orthophoniste",
+      "description": "Une page de cahier pour une orthophoniste : papier à grands carreaux Seyès, marge rouge, date écrite à la main en cursive scolaire et intercalaires de classeur en guise de menu. En ouverture, le titre arrive mot par mot pendant que la marge se trace et que la photo du cabinet se pose, scotchée sur la page. Suivent les publics en intercalaires (enfants, ados, adultes, seniors) dont la page tourne, la séance où l'on touche un mot pour le voir se découper en syllabes colorées avec leurs arcs, le déroulé de l'ordonnance au point d'étape avec ses chiffres, les avis en post-it, les questions fréquentes et la demande de bilan avec carte. Rouge marge, encre bleue et jaune surligneur ; titres en Lexend, texte en Atkinson Hyperlegible, deux polices pensées pour la lisibilité, et annotations en Playwrite FR Moderne.",
+      "univers": [
+        "sante-bien-etre"
+      ],
+      "style": "Audacieux",
+      "couleur": "rouge",
+      "direction": "artisanal",
+      "animations": [
+        "marge rouge qui se trace et date qui s'écrit à la main",
+        "titre qui arrive mot par mot",
+        "photo du cabinet qui se pose, scotchée sur la page",
+        "mot découpé en syllabes avec arcs qui se tracent, puis « Bravo ! »",
+        "intercalaires dont la page tourne",
+        "surligneur qui passe sur une phrase",
+        "chemin rouge entre les étapes et chiffres qui comptent",
+        "post-it qui se redressent au survol"
+      ],
+      "pages": 1,
+      "prix": 29,
+      "date": "2026-10-31",
+      "tags": [
+        "orthophoniste",
+        "orthophonie",
+        "dyslexie",
+        "bégaiement",
+        "rééducation du langage",
+        "logopède",
+        "troubles du langage",
+        "voix",
+        "déglutition",
+        "bilan orthophonique"
+      ],
+      "sections": [
+        "Accueil : page de cahier, titre, date à la main et photo du cabinet",
+        "Pour qui ? Intercalaires enfants, ados, adultes, seniors",
+        "En séance : découper un mot en syllabes (interactif)",
+        "Le déroulé en 4 étapes (carrousel sur mobile) et chiffres-clés",
+        "Avis en post-it (carrousel sur mobile)",
+        "Questions fréquentes",
+        "Demande de bilan : coordonnées, horaires, carte et formulaire"
+      ],
+      "palette": [
+        "#C9352C",
+        "#1C2A5E",
+        "#F5DC4B",
+        "#A7BEE2",
+        "#ECF1F8",
+        "#FBF9F3"
+      ],
+      "shopify_url": "",
+      "shopify_product_id": "",
+      "dl_token": "59ccd43503627130dab98e4c70e0f54f"
     }
   ]
 }
